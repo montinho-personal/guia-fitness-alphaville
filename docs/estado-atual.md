@@ -93,7 +93,11 @@ A nota de SEO do Lighthouse ficou em 66 porque as páginas estão com `noindex`,
 
 ## Pré-visualização na Vercel
 
-O projeto `onde-treinar-alphaville` foi criado no time Montinho Personal Trainer, ligado a este repositório. Cada push em um branch gera uma pré-visualização com `PUBLIC_MOSTRAR_EM_REVISAO=true` e `PUBLIC_INDEXAVEL=false`. O branch de produção é `main`, que ainda não tem o código: nada vai para produção até o merge, e o build de produção falha de propósito enquanto não houver conteúdo aprovado.
+O projeto `onde-treinar-alphaville` foi criado no time Montinho Personal Trainer, ligado a este repositório, com `PUBLIC_MOSTRAR_EM_REVISAO=true` nas pré-visualizações e `PUBLIC_INDEXAVEL=false` em todos os ambientes. O branch de produção é `main`, que ainda não tem o código.
+
+**A pré-visualização ainda não está no ar.** Três tentativas de build falharam, todas a partir do commit `995e155`, que lia a trava de pré-visualização por um nome de variável que o Astro não lê do ambiente da Vercel. A correção está nos commits seguintes, que não chegaram ao GitHub: o envio passou a ser recusado com erro 403, tanto pelo `git push` quanto pela API. Quando esses commits forem enviados, o push dispara a pré-visualização sem outra mudança.
+
+Capturas de tela do site rodando localmente estão em [`capturas/`](capturas/).
 
 ## Pendências para o lançamento
 
