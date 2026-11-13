@@ -4,7 +4,7 @@ import { readFileSync, readdirSync, statSync, existsSync, mkdirSync, writeFileSy
 import { join, relative } from 'node:path';
 import { parse } from 'yaml';
 
-const DIST = 'dist', SITE = 'https://ondetreinaralphaville.com.br';
+const DIST = 'dist', SITE = readFileSync('astro.config.mjs', 'utf8').match(/site: '([^']+)'/)[1];
 const LIMITE_SIM_INTERNA = 0.30, AVISO_SIM_INTERNA = 0.15; // Jaccard sobre sequências de 5 palavras
 const LIMITE_SIM_EXTERNA = 0.12, AVISO_SIM_EXTERNA = 0.05; // fração das sequências da página que existem em um texto do corpus externo
 const DIAS_VALIDADE = 90;

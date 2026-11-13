@@ -1,6 +1,6 @@
 # Auditoria do build
 
-Gerada em 2026-11-13T21:32:01.336Z
+Gerada em 2026-11-13T22:48:36.178Z
 
 **Resultado:** sem erros bloqueantes · 18 aviso(s)
 
@@ -8,7 +8,7 @@ Gerada em 2026-11-13T21:32:01.336Z
 - 53 páginas HTML analisadas
 - 2086 links internos verificados; 65 destinos externos distintos
 - sitemap com 52 URLs
-- site em pré-lançamento: robots bloqueia e 53 páginas têm noindex
+- site INDEXÁVEL
 - JSON-LD de todas as páginas é válido e aponta para URLs existentes
 - 26 fichas com fonte e data para endereço, horário e modalidades
 - similaridade interna calculada para 49 páginas (1176 pares)
