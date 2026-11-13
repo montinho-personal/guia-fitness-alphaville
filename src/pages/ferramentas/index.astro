@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import Ferramentas from '../../components/Ferramentas.astro';
+---
+<Base titulo="Ferramentas para escolher academia" descricao="Comparador de academias, teste de afinidade, checklist de visita e mapa. Tudo sem cadastro, com os dados conferidos das fichas do guia." migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo verde">Ferramentas</span>
+      <h1>Decida com os dados na mão</h1>
+      <p class="linha-fina">Quatro ferramentas que usam os mesmos dados das fichas. Nenhuma pede cadastro, e nenhuma guarda suas respostas fora do seu aparelho.</p>
+    </header>
+  </div>
+  <section class="bloco escuro" aria-labelledby="lista-f"><div class="wrap"><h2 id="lista-f" class="so-leitor">Ferramentas disponíveis</h2><Ferramentas /></div></section>
+  <div class="wrap prosa bloco fino">
+    <h2>Como as ferramentas funcionam</h2>
+    <p>O comparador e o teste leem os dados das fichas e os cruzam com o que você escolhe. Não há pontuação escondida nem academia favorecida: o teste mostra, critério por critério, por que cada resultado apareceu. O Montinho Personal Trainer, que mantém o guia, não é uma das opções de resultado.</p>
+    <p>Os detalhes estão na <a href="/metodologia/">metodologia</a>.</p>
+  </div>
+</Base>

@@ -1,0 +1,122 @@
+---
+import Base from '../../layouts/Base.astro';
+import CartaoAcademia from '../../components/CartaoAcademia.astro';
+import Mantem from '../../components/Mantem.astro';
+import fila from '../../data/fila-verificacao.json';
+import { academias, REGIOES, MODALIDADES, TIPOS, e24h, abreDomingo, abreAntesDas6, temComodidade, agregador, faixasDia, urlAcademia, conferidoEm, dataLonga, dataCurta } from '../../lib/dados';
+
+const todas = await academias();
+const mods = [...new Set(todas.flatMap((a) => a.data.modalidades))];
+const ultima = new Date(Math.max(...todas.map((a) => a.data.atualizado_em.getTime())));
+const n24 = todas.filter((a) => e24h(a.data.horario)).length;
+const nDom = todas.filter((a) => abreDomingo(a.data.horario)).length;
+const abs = (u: string) => new URL(u, Astro.site).href;
+const schema = [{ '@type': 'ItemList', name: 'Academias de Alphaville e região com ficha', numberOfItems: todas.length, itemListElement: todas.map((a, i) => ({ '@type': 'ListItem', position: i + 1, name: a.data.nome, url: abs(urlAcademia(a)) })) }];
+const attrs = (a: (typeof todas)[number]) => ({
+  'data-regiao': a.data.regiao, 'data-mods': a.data.modalidades.join(' '), 'data-tipo': a.data.tipo,
+  'data-h24': String(e24h(a.data.horario)), 'data-domingo': String(abreDomingo(a.data.horario)), 'data-cedo': String(abreAntesDas6(a.data.horario)),
+  'data-estacionamento': String(temComodidade(a, 'estacionamento')), 'data-wellhub': String(!!agregador(a, 'Wellhub')), 'data-totalpass': String(!!agregador(a, 'TotalPass')),
+});
+---
+<Base titulo="Academias em Alphaville e região: guia com filtros" descricao={`${todas.length} academias, boxes e estúdios em Alphaville, Tamboré, Barueri e Santana de Parnaíba, com endereço, horários e agregadores. Filtre por região, modalidade e horário.`} migalhas={[{ nome: 'Academias', url: '/academias/' }]} schema={schema}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo verde">Guia de academias</span>
+      <h1>Academias em Alphaville e região</h1>
+      <p class="linha-fina">Todas as academias, boxes e estúdios que já têm ficha neste guia. Não é um ranking: a ordem é alfabética, e os filtros servem para você chegar às que cabem na sua rotina.</p>
+      <p class="meta"><span>{todas.length} fichas</span><span>Atualizado em {dataLonga(ultima)}</span></p>
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Em resumo</span>
+      <p>Este guia reúne {todas.length} lugares para treinar: {todas.filter((a) => a.data.regiao === 'alphaville').length} em Alphaville e Tamboré, {todas.filter((a) => a.data.regiao === 'barueri').length} em Barueri e {todas.filter((a) => a.data.regiao === 'santana-de-parnaiba').length} em Santana de Parnaíba. {n24 === 1 ? 'Uma tem' : `${n24} têm`} horário publicado de 24 horas e {nDom} abrem aos domingos. Nenhuma mensalidade foi confirmada diretamente com as academias ainda; por isso o campo aparece como "não confirmada".</p>
+    </div>
+
+    <section class="bloco fino" aria-labelledby="filtros-t">
+      <h2 id="filtros-t" class="so-leitor">Filtros</h2>
+      <form class="painel nao-imprime" id="filtros" aria-controls="lista">
+        <div class="campos c3">
+          <label class="campo"><span class="rotulo">Região</span><select name="regiao"><option value="">Toda a região</option>{Object.entries(REGIOES).map(([id, r]) => <option value={id}>{r.titulo}</option>)}</select></label>
+          <label class="campo"><span class="rotulo">Modalidade</span><select name="modalidade"><option value="">Qualquer uma</option>{mods.map((m) => <option value={m}>{MODALIDADES[m]}</option>)}</select></label>
+          <label class="campo"><span class="rotulo">Tipo</span><select name="tipo"><option value="">Qualquer tipo</option>{Object.entries(TIPOS).map(([id, t]) => <option value={id}>{t}</option>)}</select></label>
+        </div>
+        <fieldset class="chips" style="margin-top:16px">
+          <legend class="rotulo">Precisa de</legend>
+          {[['h24', 'Aberta 24 horas'], ['domingo', 'Aberta aos domingos'], ['cedo', 'Abre antes das 6h'], ['estacionamento', 'Estacionamento'], ['wellhub', 'Aceita Wellhub'], ['totalpass', 'Aceita TotalPass']].map(([v, t]) => <label class="chip"><input type="checkbox" name="filtro" value={v}><span>{t}</span></label>)}
+        </fieldset>
+        <noscript><p style="margin:12px 0 0;font-size:15px">Os filtros precisam de JavaScript. Sem ele, a lista completa e a tabela abaixo continuam disponíveis.</p></noscript>
+      </form>
+      <p class="contagem" id="contagem" aria-live="polite">{todas.length} academias</p>
+      <div class="cartoes" id="lista">
+        {todas.map((a) => <div {...attrs(a)} style="display:contents"><CartaoAcademia a={a} nivel="h3" /></div>)}
+      </div>
+      <p id="vazio" class="caixa" hidden>Nenhuma academia com ficha atende a essa combinação. Tire um dos filtros ou <a href="/academias/">veja todas</a>.</p>
+    </section>
+
+    <section class="bloco fino" aria-labelledby="tabela-t">
+      <div class="cab"><h2 id="tabela-t">Comparativo rápido</h2><a class="link-forte" href="/ferramentas/comparador/">Comparar lado a lado</a></div>
+      <div class="rolagem" tabindex="0" role="region" aria-labelledby="tabela-t">
+        <table class="dados">
+          <caption>Horários e planos conforme as páginas públicas de cada unidade. A data de conferência de cada ficha está na última coluna.</caption>
+          <thead><tr><th scope="col">Academia</th><th scope="col">Região</th><th scope="col">Dias úteis</th><th scope="col">Domingo</th><th scope="col">Wellhub a partir de</th><th scope="col">TotalPass a partir de</th><th scope="col">Conferido</th></tr></thead>
+          <tbody>
+            {todas.map((a) => (
+              <tr>
+                <th scope="row"><a href={urlAcademia(a)}>{a.data.nome}</a></th>
+                <td>{a.data.bairro}</td>
+                <td>{faixasDia(a.data.horario.seg)}</td>
+                <td>{abreDomingo(a.data.horario) ? faixasDia(a.data.horario.dom) : <span class="nao">não listado</span>}</td>
+                <td>{agregador(a, 'Wellhub')?.plano_minimo ?? <span class="nao">—</span>}</td>
+                <td>{agregador(a, 'TotalPass')?.plano_minimo ?? <span class="nao">—</span>}</td>
+                <td>{dataCurta(conferidoEm(a))}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="bloco fino prosa">
+      <h2>Como ler este guia</h2>
+      <p>Os dados de cada ficha vêm, por enquanto, das páginas públicas das unidades no Wellhub e no TotalPass, conferidas uma a uma. Isso garante endereço, horário e lista de atividades com data, mas tem limites: agregadores às vezes mostram só a janela de horário válida para os usuários deles, e não trazem a mensalidade cobrada pela academia.</p>
+      <p>Por isso cada ficha tem uma seção "O que ainda não confirmamos". Quando um dado for confirmado com a academia ou em visita, o selo da ficha muda e a data é atualizada. A <a href="/metodologia/">metodologia</a> explica cada nível de verificação.</p>
+      <h2>Academias que ainda não têm ficha</h2>
+      <p>Estas academias são conhecidas na região, mas não têm página pública que pudéssemos conferir. Elas entram quando os dados forem levantados diretamente:</p>
+      <ul>{(fila as string[]).map((n) => <li>{n}</li>)}</ul>
+      <p>Trabalha em uma delas, ou em outra que não está aqui? <a href="/correcoes/">Envie os dados</a>.</p>
+      <h2>Recortes do guia</h2>
+      <ul>
+        <li><a href="/academias/24-horas/">Academias 24 horas e de horário estendido</a></li>
+        <li><a href="/academias/wellhub-totalpass/">Academias que aceitam Wellhub e TotalPass</a></li>
+        <li><a href="/modalidades/musculacao/">Musculação: onde treinar e o que observar</a></li>
+        <li><a href="/modalidades/crossfit/">CrossFit e cross training na região</a></li>
+        <li><a href="/regioes/">Academias por região</a></li>
+      </ul>
+    </section>
+
+    <section class="bloco fino"><Mantem pagina="academias" compacta titulo="Precisa de ajuda para começar a treinar?" texto="Escolher a academia é metade da decisão. O Montinho Personal Trainer, que mantém este guia, atende presencialmente em academias e condomínios da região." /></section>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var f = document.getElementById('filtros'), itens = [].slice.call(document.querySelectorAll('#lista > div')), cont = document.getElementById('contagem'), vazio = document.getElementById('vazio');
+      var p = new URLSearchParams(location.search);
+      ['regiao', 'modalidade', 'tipo'].forEach(function (k) { if (p.get(k) && f.elements[k].querySelector('option[value="' + p.get(k) + '"]')) f.elements[k].value = p.get(k); });
+      p.getAll('filtro').forEach(function (v) { var c = f.querySelector('input[value="' + v + '"]'); if (c) c.checked = true; });
+      function aplicar() {
+        var r = f.elements.regiao.value, m = f.elements.modalidade.value, t = f.elements.tipo.value;
+        var fs = [].slice.call(f.querySelectorAll('input:checked')).map(function (c) { return c.value; }), n = 0;
+        itens.forEach(function (el) {
+          var d = el.dataset, ok = (!r || d.regiao === r) && (!m || d.mods.split(' ').indexOf(m) > -1) && (!t || d.tipo === t) && fs.every(function (k) { return d[k] === 'true'; });
+          el.hidden = !ok; if (ok) n++;
+        });
+        cont.textContent = n + (n === 1 ? ' academia' : ' academias'); vazio.hidden = n > 0;
+        var q = new URLSearchParams(); if (r) q.set('regiao', r); if (m) q.set('modalidade', m); if (t) q.set('tipo', t); fs.forEach(function (k) { q.append('filtro', k); });
+        history.replaceState(null, '', q.toString() ? '?' + q : location.pathname);
+      }
+      f.addEventListener('change', function () { aplicar(); if (window.otaEvento) otaEvento('uso_filtro_guia'); });
+      f.addEventListener('submit', function (e) { e.preventDefault(); });
+      aplicar();
+    })();
+  </script>
+</Base>

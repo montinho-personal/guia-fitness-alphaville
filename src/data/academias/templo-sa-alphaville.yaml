@@ -1,0 +1,90 @@
+nome: Templo SA
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: box
+resumo: Box de CrossFit na Alameda Araguaia, com aulas em horários fixos pela manhã e no início da noite.
+endereco: Alameda Araguaia, 122 - Alphaville Industrial, Barueri - SP, 06455-000
+geo:
+  lat: -23.499843
+  lng: -46.859071
+horario:
+  seg:
+  - 06:00-13:00
+  - 17:15-20:30
+  ter:
+  - 06:00-13:00
+  - 17:15-20:30
+  qua:
+  - 06:00-13:00
+  - 17:15-20:30
+  qui:
+  - 06:15-13:00
+  - 16:15-20:30
+  sex:
+  - 06:15-13:00
+  - 17:15-19:30
+  sab:
+  - 09:00-10:30
+  dom:
+  - 09:00-10:30
+modalidades:
+- crossfit
+atividades_listadas:
+- CrossFit
+comodidades:
+- Ar condicionado
+- Armários
+- Chuveiro
+- Estacionamento
+- Estacionamento acessível
+- Loja de artigos esportivos
+- Personal trainer
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold
+  preco_plano: R$ 319,99
+  url: https://wellhub.com/pt-br/search/partners/templo-sa-alphaville-alphaville-industrial-barueri/
+- nome: TotalPass
+  plano_minimo: TP 4
+  preco_plano: R$ 299,90
+  url: https://totalpass.com/br/academias/templo-sa-crossfit/
+mensalidade: null
+site: https://www.instagram.com/templosa/
+telefone: (11) 91607-0989
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/templo-sa-alphaville-alphaville-industrial-barueri/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+- campos:
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/templo-sa-crossfit/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+divergencias:
+- 'Nome: "Hybrid Fitness" no Wellhub e "Templo SA – CrossFit" no TotalPass.'
+- 'Horário de segunda a sexta: 6h–13h e 17h15–20h30 no Wellhub; 6h–20h30 contínuo no TotalPass.'
+pendencias:
+- Grade de aulas atual
+- Valor da mensalidade e da aula avulsa
+- Nome comercial em uso
+analise:
+- 'É um box, não uma academia de musculação: o treino acontece em aulas com horário marcado. Segundo o Wellhub, há turmas das 6h às 13h e de novo no fim da tarde, até 20h30; no sábado e no domingo há uma janela curta pela manhã.'
+- As duas fontes consultadas divergem. O Wellhub lista a unidade com o nome "Hybrid Fitness" e informa pausa no meio da tarde; o TotalPass usa o nome "Templo SA – CrossFit" e mostra horário contínuo das 6h às 20h30. Antes de ir, confirme a grade de aulas diretamente com o box.
+status: aguardando-verificacao
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

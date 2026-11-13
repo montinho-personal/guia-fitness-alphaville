@@ -1,0 +1,82 @@
+nome: VoiFit Academia
+regiao: alphaville
+bairro: 18 do Forte
+tipo: academia
+resumo: Academia no Empresarial 18 do Forte com musculação, lutas e aulas coletivas, aberta os sete dias da semana.
+endereco: Av. Alphaville, 779 - Empresarial 18 do Forte, Barueri - SP, 06472-010
+geo:
+  lat: -23.486614
+  lng: -46.856577
+horario:
+  seg:
+  - 06:00-23:00
+  ter:
+  - 06:00-23:00
+  qua:
+  - 06:00-23:00
+  qui:
+  - 06:00-23:00
+  sex:
+  - 06:00-23:00
+  sab:
+  - 09:00-17:00
+  dom:
+  - 10:00-14:00
+modalidades:
+- musculacao
+- funcional
+- lutas
+- danca
+- bike
+- pilates
+atividades_listadas:
+- Abd
+- Bike
+- Fisiculturismo
+- Funcional
+- Jiu-jitsu
+- Localizado
+- Mat Pilates
+- Muay Thai
+- Musculação
+- Ritmos
+comodidades:
+- Ar condicionado
+- Armários
+- Espaço adaptado para cadeira de rodas
+- Estacionamento
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver
+  preco_plano: R$ 149,99
+  url: https://wellhub.com/pt-br/search/partners/voifit-academia-alphaville-empresarial-18-do-forte-barueri/
+mensalidade: null
+site: https://voifit.com.br
+telefone: (11) 4193-8418
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/voifit-academia-alphaville-empresarial-18-do-forte-barueri/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta da academia
+- Regras e custo do estacionamento
+analise:
+- Fica na Av. Alphaville, dentro do Empresarial 18 do Forte. Nos dias úteis abre às 6h e fecha às 23h; no sábado e no domingo o horário é reduzido, mas a academia não fecha.
+- Além da musculação, a grade listada tem muay thai, jiu-jitsu, bike, funcional e pilates de solo. A página da unidade informa estacionamento, ar-condicionado e espaço adaptado para cadeira de rodas. No Wellhub, o acesso começa no plano Silver.
+status: aguardando-verificacao
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

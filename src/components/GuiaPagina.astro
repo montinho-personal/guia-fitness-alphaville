@@ -1,0 +1,42 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Assinatura from './Assinatura.astro';
+import Fontes from './Fontes.astro';
+import Mantem from './Mantem.astro';
+import CartaoAcademia from './CartaoAcademia.astro';
+import { academias, dataIso, dataLonga, type Guia } from '../lib/dados';
+interface Props { g: Guia }
+const { g } = Astro.props;
+const d = g.data;
+const { Content } = await render(g);
+const SECAO = { modalidades: { nome: 'Modalidades', url: '/modalidades/' }, guias: { nome: 'Guias', url: '/guias/' }, academias: { nome: 'Academias', url: '/academias/' } }[d.secao];
+const url = `${SECAO.url}${g.id}/`;
+const todas = await academias();
+const lista = todas.filter((a) => (d.lista_modalidades.length && d.lista_modalidades.some((m) => a.data.modalidades.includes(m))) || (d.lista_tipos.length && d.lista_tipos.includes(a.data.tipo)));
+const abs = (u: string) => new URL(u, Astro.site).href;
+const schema = [{ '@type': 'Article', headline: d.h1, description: d.descricao, inLanguage: 'pt-BR', datePublished: dataIso(d.publicado_em), dateModified: dataIso(d.atualizado_em), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') }, mainEntityOfPage: { '@id': `${abs(url)}#pagina` } }];
+---
+<Base titulo={d.titulo} descricao={d.descricao} tipo="article" schema={schema} migalhas={[SECAO, { nome: d.h1.split(':')[0], url }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo verde">{SECAO.nome}</span>
+      <h1>{d.h1}</h1>
+      <Assinatura autor={d.autor} revisor={d.revisor} publicado={d.publicado_em} atualizado={d.atualizado_em} />
+    </header>
+    <div class="resposta"><span class="rotulo">Resposta direta</span><p>{d.resposta}</p></div>
+    <article class="prosa"><Content /></article>
+
+    {lista.length > 0 && (
+      <section class="bloco fino" aria-labelledby="lista-t">
+        <div class="cab"><h2 id="lista-t">{lista.length} {lista.length === 1 ? 'opção' : 'opções'} com ficha no guia</h2><a class="link-forte" href="/academias/">Abrir o guia com filtros</a></div>
+        <div class="cartoes">{lista.map((a) => <CartaoAcademia a={a} />)}</div>
+      </section>
+    )}
+
+    {d.cta === 'montinho-contextual' && (
+      <section class="bloco fino"><Mantem pagina={`guia-${g.id}`} compacta titulo="Como funciona o acompanhamento presencial do Montinho" texto="Se você concluiu que quer treinar com acompanhamento, o Montinho Personal Trainer atende em academias e condomínios de Alphaville, Tamboré, Barueri e Santana de Parnaíba. A primeira conversa serve para entender sua rotina e seu objetivo." /></section>
+    )}
+    <div style="margin-top:28px"><Fontes fontes={d.fontes.map((f) => ({ ...f, data: dataLonga(d.atualizado_em) }))} /></div>
+  </div>
+</Base>

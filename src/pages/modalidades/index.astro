@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import { academias, guias, MODALIDADES } from '../../lib/dados';
+const todas = await academias();
+const gs = (await guias()).filter((g) => g.data.secao === 'modalidades');
+const cont = Object.keys(MODALIDADES).map((m) => ({ m, n: todas.filter((a) => a.data.modalidades.includes(m as never)).length })).filter((x) => x.n > 0).sort((a, b) => b.n - a.n);
+---
+<Base titulo="Modalidades de treino em Alphaville e região" descricao="Quais modalidades as academias de Alphaville, Barueri e Santana de Parnaíba oferecem, quantas têm cada uma e os guias de musculação e CrossFit." migalhas={[{ nome: 'Modalidades', url: '/modalidades/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo verde">Modalidades</span>
+      <h1>O que dá para treinar na região</h1>
+      <p class="linha-fina">As modalidades listadas pelas academias com ficha no guia, e quantas oferecem cada uma.</p>
+    </header>
+    <ol class="guias">{gs.map((g) => <li><a href={`/modalidades/${g.id}/`}><h2 style="font-size:23px;font-weight:700">{g.data.h1}</h2><p>{g.data.descricao}</p></a></li>)}</ol>
+    <section class="bloco fino">
+      <div class="cab"><h2>Todas as modalidades listadas</h2></div>
+      <div class="rolagem" tabindex="0" role="region" aria-label="Modalidades e número de academias">
+        <table class="dados" style="min-width:0">
+          <caption>Contagem feita sobre as atividades que cada unidade informa nos agregadores. Uma academia pode oferecer algo que não esteja listado.</caption>
+          <thead><tr><th scope="col">Modalidade</th><th scope="col">Academias que listam</th><th scope="col">Ver</th></tr></thead>
+          <tbody>{cont.map(({ m, n }) => <tr><th scope="row">{MODALIDADES[m]}</th><td>{n} de {todas.length}</td><td><a href={`/academias/?modalidade=${m}`}>Filtrar no guia</a></td></tr>)}</tbody>
+        </table>
+      </div>
+      <div class="prosa" style="margin-top:24px"><p>Só musculação e CrossFit têm página própria, porque são as modalidades com procura local que conseguimos observar. As demais aparecem como filtro no <a href="/academias/">guia de academias</a>. Treino de Hyrox é tratado dentro da página de <a href="/modalidades/crossfit/">CrossFit e cross training</a>.</p></div>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,70 @@
+nome: Fast Treino Alphaville
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: estudio
+rede: Fast Treino
+resumo: Estúdio de treino em circuito na Av. Juruá, no mesmo endereço da Gaviões 24h.
+endereco: Av. Juruá, 253 - Alphaville Industrial, Barueri - SP, 06455-010
+geo:
+  lat: -23.500609
+  lng: -46.853633
+horario:
+  seg:
+  - 16:00-20:00
+  ter:
+  - 16:00-20:00
+  qua:
+  - 16:00-20:00
+  qui:
+  - 16:00-20:00
+  sex:
+  - 16:00-20:00
+  sab: []
+  dom: []
+modalidades:
+- musculacao
+atividades_listadas:
+- Musculação
+- Musculação
+comodidades:
+- Ar condicionado
+- Armários
+- Chuveiro
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver
+  preco_plano: R$ 149,99
+  url: https://wellhub.com/pt-br/search/partners/fast-treino-alphaville-alphaville-industrial/
+mensalidade: null
+site: https://www.fasttreino.com.br/
+telefone: (11) 98877-1847
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/fast-treino-alphaville-alphaville-industrial/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+divergencias:
+- O horário de 16h às 20h pode ser apenas a janela de acesso via Wellhub; a fonte não distingue.
+pendencias:
+- Horário completo de funcionamento
+- Duração da sessão
+- Valor do plano direto
+analise:
+- 'O formato é de treino guiado em circuito, com sessões curtas. O horário publicado no Wellhub é restrito: das 16h às 20h, de segunda a sexta, sem funcionamento listado no fim de semana.'
+- Esse horário pode se referir apenas à janela disponível para usuários do agregador, e não ao funcionamento completo do estúdio. A fonte não esclarece. Confirme com a unidade.
+status: aguardando-verificacao
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

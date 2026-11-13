@@ -1,0 +1,9 @@
+---
+import GuiaPagina from '../../components/GuiaPagina.astro';
+import { guias, type Guia } from '../../lib/dados';
+export async function getStaticPaths() {
+  return (await guias()).filter((g) => g.data.secao === 'modalidades').map((g) => ({ params: { id: g.id }, props: { g } }));
+}
+const { g } = Astro.props as { g: Guia };
+---
+<GuiaPagina g={g} />

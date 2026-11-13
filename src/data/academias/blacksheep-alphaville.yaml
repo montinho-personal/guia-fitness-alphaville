@@ -1,0 +1,77 @@
+nome: BlackSheep Alphaville
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: box
+resumo: Box de cross training na Alameda Araguaia que lista treino de Hyrox na grade.
+endereco: Alameda Araguaia, 122 - galpao 8 - Alphaville Industrial, Barueri - SP, 06455-000
+geo:
+  lat: -23.499817
+  lng: -46.859047
+horario:
+  seg:
+  - 06:00-20:30
+  ter:
+  - 06:00-20:30
+  qua:
+  - 06:00-20:30
+  qui:
+  - 06:00-20:30
+  sex:
+  - 06:00-19:30
+  sab:
+  - 09:00-10:30
+  dom:
+  - 09:00-10:30
+modalidades:
+- cross-training
+- funcional
+- hyrox
+atividades_listadas:
+- Cross training
+- Hyrox
+- Treino funcional
+- Treino Híbrido
+comodidades:
+- Área de cardio
+- Área de pesos livres
+- Armários
+- Bebedouro
+- Chuveiro
+- Estacionamento
+- Personal trainer
+- Secador de cabelo
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold+
+  preco_plano: R$ 439,99
+  url: https://wellhub.com/pt-br/search/partners/blacksheep-alphaville-alphaville-industrial-barueri/
+mensalidade: null
+site: https://www.crossliftblacksheep.com.br
+telefone: (11) 97642-8929
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/blacksheep-alphaville-alphaville-industrial-barueri/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Grade de aulas atual
+- Valor da mensalidade
+analise:
+- Fica no mesmo conjunto de galpões do Templo SA, na Alameda Araguaia, 122. Funciona das 6h às 20h30 de segunda a quinta e até 19h30 na sexta; no fim de semana há uma janela das 9h às 10h30.
+- É a única unidade deste guia que lista Hyrox entre as atividades, ao lado de cross training e treino funcional. A página informa estacionamento, área de pesos livres e personal trainer. No Wellhub, o acesso exige o plano Gold+.
+status: aguardando-verificacao
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

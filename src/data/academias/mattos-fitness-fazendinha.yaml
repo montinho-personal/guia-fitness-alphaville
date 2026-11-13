@@ -1,0 +1,76 @@
+nome: Academia Mattos Fitness
+regiao: santana-de-parnaiba
+bairro: Fazendinha
+tipo: academia
+resumo: Academia na Estrada Tenente Marques, na Fazendinha, com musculação e lutas, que abre às 4h em dias úteis.
+endereco: Estr. Ten. Marques, 5516 - Jardim do Luar (Fazendinha), Santana de Parnaíba - SP, 06525-001
+geo:
+  lat: -23.405764
+  lng: -46.886163
+horario:
+  seg:
+  - 04:00-22:00
+  ter:
+  - 04:00-22:00
+  qua:
+  - 04:00-22:00
+  qui:
+  - 04:00-22:00
+  sex:
+  - 04:00-22:00
+  sab:
+  - 08:00-14:00
+  dom: []
+modalidades:
+- musculacao
+- lutas
+- danca
+atividades_listadas:
+- Dança
+- Fisiculturismo
+- Jiu-jitsu
+- Muay Thai
+- Musculação
+comodidades:
+- Área de alongamento
+- Área de cardio
+- Área de musculação
+- Armários
+- Bebedouro
+- Chuveiro
+- Loja de artigos esportivos
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic
+  preco_plano: R$ 69,99
+  url: https://wellhub.com/pt-br/search/partners/academia-mattos-fitness/
+mensalidade: null
+site: https://instagram.com/academia_mattos/
+telefone: (11) 95114-1639
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/academia-mattos-fitness/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta da academia
+- Confirmar se o cadastro do TotalPass é da mesma unidade
+analise:
+- Abre às 4h de segunda a sexta, o horário de abertura mais cedo entre as academias deste guia que não funcionam 24 horas, e fecha às 22h. No sábado funciona das 8h às 14h. Não há horário listado para domingo.
+- Além da musculação, a grade inclui muay thai, jiu-jitsu e dança. No Wellhub, o acesso começa no plano Basic. O TotalPass também lista uma unidade Mattos Fitness no mesmo número da Tenente Marques; não confirmamos se o cadastro é da mesma academia.
+status: aguardando-verificacao
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

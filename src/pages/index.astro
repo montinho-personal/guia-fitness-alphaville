@@ -1,0 +1,94 @@
+---
+import Base from '../layouts/Base.astro';
+import CartaoAcademia from '../components/CartaoAcademia.astro';
+import Ferramentas from '../components/Ferramentas.astro';
+import Mantem from '../components/Mantem.astro';
+import { academias, guias, REGIOES, MODALIDADES, urlRegiao } from '../lib/dados';
+
+const todas = await academias();
+const gs = await guias();
+const destaque = ['gavioes-24h-alphaville', 'bodytech-iguatemi-alphaville', 'templo-sa-alphaville', 'bluefit-tambore', 'panobianco-barueri-centro', 'forth-academia-jardim-sao-luis'];
+const cartoes = destaque.map((id) => todas.find((a) => a.id === id)).filter(Boolean);
+const porRegiao = (r: string) => todas.filter((a) => a.data.regiao === r).length;
+const mods = [...new Set(todas.flatMap((a) => a.data.modalidades))];
+const abs = (u: string) => new URL(u, Astro.site).href;
+const schema = [
+  { '@type': 'WebSite', '@id': abs('/#site'), url: abs('/'), name: 'Onde Treinar Alphaville', inLanguage: 'pt-BR', publisher: { '@id': abs('/#org') } },
+  { '@type': 'Organization', '@id': abs('/#org'), name: 'Onde Treinar Alphaville', url: abs('/'), logo: abs('/favicon.svg'), description: 'Guia local de academias e treino em Alphaville, Barueri e Santana de Parnaíba. Mantido por Montinho Personal Trainer.', parentOrganization: { '@type': 'Organization', name: 'Montinho Personal Trainer', url: 'https://www.montinhopersonal.com.br' } },
+];
+const lista = [
+  { url: '/academias/24-horas/', t: 'Academias 24 horas em Alphaville e região', p: 'Quais têm horário publicado de 24 horas, quais só parecem ter, e as que abrem mais cedo e fecham mais tarde.' },
+  { url: '/academias/wellhub-totalpass/', t: 'Academias com Wellhub e TotalPass', p: 'O plano mínimo que cada academia exige em cada agregador, e quanto esse plano custa.' },
+  ...gs.filter((g) => g.data.secao === 'guias').map((g) => ({ url: `/guias/${g.id}/`, t: g.data.h1, p: g.data.descricao })),
+];
+---
+<Base titulo="Onde Treinar Alphaville: academias com fonte e data" descricao="Guia local de academias em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Endereço, horários e planos de cada uma, com a fonte e a data de conferência." schema={schema} semSufixo>
+  <section class="bloco" style="padding-bottom:36px">
+    <div class="wrap" style="display:grid;gap:36px" id="abertura">
+      <div>
+        <h1 style="font-size:clamp(44px,11vw,78px);font-weight:800;letter-spacing:-.045em;line-height:.92">Onde treinar em Alphaville, <span class="verde" style="display:block">com fonte e data.</span></h1>
+        <p style="max-width:34em;margin:22px 0 28px;font-size:20px;color:var(--texto2)">Academias, boxes e estúdios em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Cada endereço, horário e plano mostra de onde veio e quando foi conferido.</p>
+        <form class="painel" action="/academias/" method="get" aria-label="Encontrar academias">
+          <div class="campos c3">
+            <label class="campo"><span class="rotulo">Região</span>
+              <select name="regiao"><option value="">Toda a região</option>{Object.entries(REGIOES).map(([id, r]) => <option value={id}>{r.titulo}</option>)}</select></label>
+            <label class="campo"><span class="rotulo">Modalidade</span>
+              <select name="modalidade"><option value="">Qualquer uma</option>{mods.map((m) => <option value={m}>{MODALIDADES[m]}</option>)}</select></label>
+            <label class="campo"><span class="rotulo">Precisa de</span>
+              <select name="filtro"><option value="">Sem exigência</option><option value="h24">Aberta 24 horas</option><option value="domingo">Aberta aos domingos</option><option value="cedo">Abrir antes das 6h</option><option value="estacionamento">Estacionamento</option></select></label>
+          </div>
+          <button class="btn" type="submit" style="margin-top:14px">Ver academias <i aria-hidden="true"></i></button>
+          <p style="margin:12px 0 0;font-size:15px;color:var(--cinza)">Sem cadastro. O resultado abre no guia, já filtrado.</p>
+        </form>
+      </div>
+      <nav class="placas" aria-label="Regiões">
+        <span class="rotulo verde">Comece pela sua região</span>
+        {Object.entries(REGIOES).map(([id, r]) => <a class="placa" href={urlRegiao(id)}><b>{r.titulo}</b><small>{porRegiao(id)} com ficha</small></a>)}
+        <p style="font-size:14px;color:var(--cinza);margin:4px 0 0">18 do Forte e Tamboré estão na página de Alphaville. Aldeia da Serra entra quando houver dados conferidos.</p>
+      </nav>
+    </div>
+  </section>
+  <style>@media(min-width:1000px){#abertura{grid-template-columns:1.55fr 1fr;gap:56px!important;align-items:end}}</style>
+
+  <section class="confianca" aria-label="Como o guia funciona">
+    <div class="wrap">
+      <ul>
+        <li><b>Dado com origem</b>Endereço, horário e plano mostram a fonte e a data da última conferência. <a href="/metodologia/">Metodologia</a>.</li>
+        <li><b>Sem posição paga</b>Nenhuma academia paga para aparecer ou para subir na lista.</li>
+        <li><b>Quem mantém</b>Montinho Personal Trainer, que atende presencialmente na região. <a href="/sobre/">Como isso funciona</a>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloco">
+    <div class="wrap">
+      <div class="cab">
+        <div><span class="rotulo verde">Guia de academias</span><h2>{todas.length} academias com ficha</h2></div>
+        <a class="link-forte" href="/academias/">Ver todas, com filtros</a>
+      </div>
+      <div class="cartoes">{cartoes.map((a) => <CartaoAcademia a={a!} />)}</div>
+    </div>
+  </section>
+
+  <section class="bloco escuro">
+    <div class="wrap">
+      <div class="cab">
+        <div><span class="rotulo verde">Ferramentas</span><h2>Decida com os dados na mão</h2></div>
+        <a class="link-forte" href="/ferramentas/">Todas as ferramentas</a>
+      </div>
+      <Ferramentas />
+    </div>
+  </section>
+
+  <section class="bloco">
+    <div class="wrap">
+      <div class="cab">
+        <div><span class="rotulo verde">Guias de decisão</span><h2>Antes de assinar o plano</h2></div>
+        <a class="link-forte" href="/guias/">Todos os guias</a>
+      </div>
+      <ol class="guias">{lista.map((g) => <li><a href={g.url}><h3>{g.t}</h3><p>{g.p}</p></a></li>)}</ol>
+    </div>
+  </section>
+
+  <section class="bloco" style="padding-top:0"><div class="wrap"><Mantem pagina="home" /></div></section>
+</Base>

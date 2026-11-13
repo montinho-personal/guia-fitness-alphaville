@@ -1,0 +1,26 @@
+---
+import Selo from './Selo.astro';
+import { REGIOES, MODALIDADES, TIPOS, horarioResumo, e24h, conferidoEm, dataCurta, fontesNomes, urlAcademia, agregador, type Academia } from '../lib/dados';
+interface Props { a: Academia; nivel?: 'h2' | 'h3' }
+const { a, nivel = 'h3' } = Astro.props;
+const d = a.data;
+const T = nivel;
+const ags = d.agregadores.map((g) => g.nome).join(', ');
+---
+<article class="cartao" data-academia={a.id}>
+  <span class="rotulo verde">{REGIOES[d.regiao].nome} · {d.bairro}</span>
+  <T><a href={urlAcademia(a)} data-evento="clique_academia" data-ref={a.id}>{d.nome}</a></T>
+  <ul class="tags">
+    {e24h(d.horario) && <li class="forte">24 horas</li>}
+    {d.tipo !== 'academia' && <li class="forte">{TIPOS[d.tipo]}</li>}
+    {d.modalidades.slice(0, 4).map((m) => <li>{MODALIDADES[m]}</li>)}
+    {d.modalidades.length > 4 && <li>+{d.modalidades.length - 4}</li>}
+  </ul>
+  <dl class="fatos">
+    <dt>Endereço</dt><dd>{d.endereco.split(' - ')[0]}</dd>
+    <dt>Horário</dt><dd>{horarioResumo(d.horario)}</dd>
+    <dt>Mensalidade</dt><dd>{d.mensalidade ? d.mensalidade.valor : <span class="incerto">não confirmada</span>}</dd>
+    {ags && <><dt>Agregadores</dt><dd>{ags}</dd></>}
+  </dl>
+  <Selo texto={`Conferido em ${dataCurta(conferidoEm(a))}`} detalhe={`fonte: ${fontesNomes(a).join(' e ')}`} />
+</article>

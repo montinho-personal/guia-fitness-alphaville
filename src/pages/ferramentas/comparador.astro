@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+import { academias, paraFerramentas, MODALIDADES } from '../../lib/dados';
+const todas = await academias();
+const dados = paraFerramentas(todas);
+---
+<Base titulo="Comparador de academias de Alphaville e região" descricao="Compare até três academias de Alphaville, Barueri e Santana de Parnaíba lado a lado: endereço, horários, modalidades, estrutura e plano nos agregadores." migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Comparador', url: '/ferramentas/comparador/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo verde">Ferramenta</span>
+      <h1>Comparador de academias</h1>
+      <p class="linha-fina">Escolha duas ou três academias. A tabela mostra os mesmos dados das fichas, lado a lado, com a data em que cada uma foi conferida.</p>
+    </header>
+
+    <form class="painel nao-imprime" id="cmp" aria-label="Academias a comparar">
+      <div class="campos c3">
+        {['a', 'b', 'c'].map((k, i) => (
+          <label class="campo"><span class="rotulo">{i + 1}ª academia{i === 2 ? ' (opcional)' : ''}</span>
+            <select name={k}><option value="">Escolha</option>{dados.map((d) => <option value={d.id}>{d.nome} — {d.bairro}</option>)}</select>
+          </label>
+        ))}
+      </div>
+    </form>
+
+    <section class="bloco fino" aria-live="polite">
+      <p id="cmp-vazio" class="caixa">Escolha pelo menos duas academias acima.</p>
+      <div class="rolagem" id="cmp-res" tabindex="0" role="region" aria-label="Comparação" hidden></div>
+      <p id="cmp-acoes" class="nao-imprime" style="margin-top:16px" hidden><button class="btn sec peq" type="button" id="cmp-link">Copiar link desta comparação</button> <span id="cmp-ok" class="rotulo verde" role="status"></span></p>
+      <noscript><p class="caixa">O comparador precisa de JavaScript. Sem ele, use o <a href="/academias/#tabela-t">comparativo rápido do guia</a>, que tem os mesmos dados em uma tabela.</p></noscript>
+    </section>
+
+    <div class="prosa">
+      <h2>O que o comparador mostra e o que não mostra</h2>
+      <p>Os dados vêm das páginas públicas de cada unidade nos agregadores, conferidas na data indicada. Mensalidade direta e lotação não aparecem porque ainda não foram confirmadas. Onde a estrutura mostra "não informado", a fonte não cita o item; não quer dizer que a academia não o tenha.</p>
+      <p>Depois de reduzir a lista, visite as candidatas com o <a href="/ferramentas/checklist/">checklist</a> no celular.</p>
+    </div>
+  </div>
+
+  <script type="application/json" id="dados" set:html={JSON.stringify({ dados, mods: MODALIDADES })}></script>
+  <script is:inline>
+    (function () {
+      var J = JSON.parse(document.getElementById('dados').textContent), D = J.dados, M = J.mods;
+      var f = document.getElementById('cmp'), res = document.getElementById('cmp-res'), vazio = document.getElementById('cmp-vazio'), acoes = document.getElementById('cmp-acoes');
+      var p = new URLSearchParams(location.search);
+      ['a', 'b', 'c'].forEach(function (k) { var v = p.get(k); if (v && D.some(function (d) { return d.id === v; })) f.elements[k].value = v; });
+      function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+      function sn(v) { return v ? '<span class="sim">Sim</span>' : '<span class="nao">Não informado</span>'; }
+      var LINHAS = [
+        ['Região', function (d) { return esc(d.regiaoNome + ' · ' + d.bairro); }],
+        ['Endereço', function (d) { return esc(d.endereco); }],
+        ['Horário', function (d) { return esc(d.horario); }],
+        ['Horas abertas por semana', function (d) { return d.horasSemana; }],
+        ['Abre aos domingos', function (d) { return d.domingo ? '<span class="sim">Sim</span>' : '<span class="nao">Não listado</span>'; }],
+        ['Modalidades', function (d) { return d.modalidades.map(function (m) { return esc(M[m]); }).join(', '); }],
+        ['Estacionamento', function (d) { return sn(d.estacionamento); }],
+        ['Itens de acessibilidade', function (d) { return sn(d.acessivel); }],
+        ['Estrutura informada', function (d) { return d.comodidades.length ? esc(d.comodidades.join(', ')) : '<span class="nao">Não informada</span>'; }],
+        ['Wellhub a partir de', function (d) { return d.wellhub ? esc(d.wellhub) : '<span class="nao">—</span>'; }],
+        ['TotalPass a partir de', function (d) { return d.totalpass ? esc(d.totalpass) : '<span class="nao">—</span>'; }],
+        ['Mensalidade direta', function (d) { return d.mensalidade ? esc(d.mensalidade) : '<span class="incerto">não confirmada</span>'; }],
+        ['Dados conferidos em', function (d) { return esc(d.conferido); }]
+      ];
+      function render() {
+        var ids = ['a', 'b', 'c'].map(function (k) { return f.elements[k].value; }).filter(function (v, i, arr) { return v && arr.indexOf(v) === i; });
+        var xs = ids.map(function (id) { return D.filter(function (d) { return d.id === id; })[0]; });
+        var q = new URLSearchParams(); ['a', 'b', 'c'].forEach(function (k) { if (f.elements[k].value) q.set(k, f.elements[k].value); });
+        history.replaceState(null, '', q.toString() ? '?' + q : location.pathname);
+        if (xs.length < 2) { res.hidden = true; acoes.hidden = true; vazio.hidden = false; return; }
+        var h = '<table class="dados"><caption>Dados das fichas do guia. Abra a ficha para ver a fonte de cada um.</caption><thead><tr><th scope="col">Critério</th>' + xs.map(function (d) { return '<th scope="col"><a href="' + d.url + '" style="color:inherit">' + esc(d.nome) + '</a></th>'; }).join('') + '</tr></thead><tbody>';
+        LINHAS.forEach(function (l) { h += '<tr><th scope="row">' + l[0] + '</th>' + xs.map(function (d) { return '<td>' + l[1](d) + '</td>'; }).join('') + '</tr>'; });
+        res.innerHTML = h + '</tbody></table>'; res.hidden = false; acoes.hidden = false; vazio.hidden = true;
+        if (window.otaEvento) otaEvento('uso_comparador', { academias: ids.join(',') });
+      }
+      f.addEventListener('change', render);
+      document.getElementById('cmp-link').addEventListener('click', function () {
+        var ok = document.getElementById('cmp-ok');
+        if (navigator.clipboard) navigator.clipboard.writeText(location.href).then(function () { ok.textContent = 'Link copiado'; }, function () { ok.textContent = 'Copie o endereço da barra do navegador'; });
+        else ok.textContent = 'Copie o endereço da barra do navegador';
+      });
+      render();
+    })();
+  </script>
+</Base>

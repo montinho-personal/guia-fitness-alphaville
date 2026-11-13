@@ -1,0 +1,65 @@
+---
+import Base from '../../layouts/Base.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import planos from '../../data/planos-agregadores.json';
+import { academias, agregador, ORDEM_WELLHUB, urlAcademia, REGIOES, dataLonga, dataIso } from '../../lib/dados';
+
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
+const todas = await academias();
+const wh = todas.filter((a) => agregador(a, 'Wellhub')).sort((x, y) => ORDEM_WELLHUB.indexOf(agregador(x, 'Wellhub')!.plano_minimo) - ORDEM_WELLHUB.indexOf(agregador(y, 'Wellhub')!.plano_minimo) || x.data.nome.localeCompare(y.data.nome));
+const tp = todas.filter((a) => agregador(a, 'TotalPass'));
+const porPlano = planos.wellhub.planos.map(([p, v]) => ({ p, v, xs: wh.filter((a) => agregador(a, 'Wellhub')!.plano_minimo === p) })).filter((g) => g.xs.length);
+const acumulado = (p: string) => wh.filter((a) => ORDEM_WELLHUB.indexOf(agregador(a, 'Wellhub')!.plano_minimo) <= ORDEM_WELLHUB.indexOf(p)).length;
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = 'Academias com Wellhub e TotalPass em Alphaville';
+const descricao = 'O plano mínimo do Wellhub e do TotalPass que cada academia de Alphaville, Barueri e Santana de Parnaíba exige, e quanto esse plano custa por mês.';
+const conf = new Date(planos.conferido_em);
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Wellhub e TotalPass', url: '/academias/wellhub-totalpass/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo verde">Guia de academias · agregadores</span>
+      <h1>Academias com Wellhub e TotalPass em Alphaville e região</h1>
+      <p class="linha-fina">Aceitar o agregador não basta: cada academia exige um plano mínimo, e a diferença entre eles passa de R$ 300 por mês. Aqui está o plano que cada uma pede.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Das {todas.length} academias com ficha, {wh.length} estão no Wellhub e {tp.length} no TotalPass. No Wellhub, o plano Silver (R$ 149,99 por mês) dá acesso a {acumulado('Silver')} delas; o Silver+ (R$ 199,99), a {acumulado('Silver+')}; e só o Gold+ (R$ 439,99) cobre todas as {wh.length}. Os preços são os do agregador em {dataLonga(conf)} e podem variar conforme o convênio da sua empresa.</p>
+    </div>
+
+    <div class="prosa">
+      <h2>Wellhub: o que cada plano abre</h2>
+      <p>A lista está agrupada pelo plano mínimo exigido. Quem tem um plano superior acessa também as academias dos grupos anteriores.</p>
+      {porPlano.map((g) => <>
+        <h3>A partir do {g.p} — R$ {g.v} por mês</h3>
+        <ul>{g.xs.map((a) => <li><a href={urlAcademia(a)}>{a.data.nome}</a> — {a.data.bairro}, {REGIOES[a.data.regiao].nome}{agregador(a, 'Wellhub')!.nota && <>. <em>{agregador(a, 'Wellhub')!.nota}</em></>}</li>)}</ul>
+      </>)}
+
+      <h2>TotalPass</h2>
+      <p>Só conferimos, até agora, as páginas do TotalPass de {tp.length} academias. Outras podem aceitar o agregador sem que isso esteja registrado aqui.</p>
+    </div>
+    <div class="rolagem" tabindex="0" role="region" aria-label="Academias no TotalPass" style="margin:8px 0 28px">
+      <table class="dados">
+        <caption>Plano mínimo conforme a página de cada unidade no TotalPass, em {dataLonga(conf)}.</caption>
+        <thead><tr><th scope="col">Academia</th><th scope="col">Região</th><th scope="col">Plano mínimo</th><th scope="col">Preço do plano</th></tr></thead>
+        <tbody>{tp.map((a) => <tr><th scope="row"><a href={urlAcademia(a)}>{a.data.nome}</a></th><td>{a.data.bairro}</td><td>{agregador(a, 'TotalPass')!.plano_minimo}</td><td>{agregador(a, 'TotalPass')!.preco_plano}/mês</td></tr>)}</tbody>
+      </table>
+    </div>
+    <div class="prosa">
+      <h2>Três cuidados ao usar agregador</h2>
+      <ul>
+        <li><strong>O preço do plano não é a mensalidade da academia.</strong> É o que você paga ao agregador, em geral com desconto em folha. O valor para quem contrata direto com a academia é outro, e ainda não o confirmamos para nenhuma ficha.</li>
+        <li><strong>Pode haver restrição de horário.</strong> Algumas unidades liberam o acesso pelo plano mais barato só em janelas específicas. A ficha da <a href="/academias/bodytech-iguatemi-alphaville/">Bodytech Iguatemi Alphaville</a> registra um caso assim.</li>
+        <li><strong>O horário exibido pode ser só o do agregador.</strong> Em estúdios pequenos, a página às vezes mostra apenas a janela disponível para usuários da plataforma.</li>
+      </ul>
+      <h2>Vale mais o agregador ou o plano direto?</h2>
+      <p>Depende de quanto custa a mensalidade direta, e esse é exatamente o dado que falta neste guia. A conta só fecha com os dois números na mão: o que o agregador desconta do seu salário e o que a academia cobraria de você. Peça o valor do plano direto na recepção e compare. Se você pretende frequentar mais de um lugar — musculação em uma academia e CrossFit em um <a href="/modalidades/crossfit/">box</a>, por exemplo —, o agregador tende a compensar mais.</p>
+      <p>Para filtrar o guia por agregador, use <a href="/academias/?filtro=wellhub">academias no Wellhub</a> ou <a href="/academias/?filtro=totalpass">academias no TotalPass</a>.</p>
+    </div>
+    <div style="margin-top:28px"><Fontes fontes={[{ titulo: planos.wellhub.fonte, url: planos.wellhub.url, data: dataLonga(conf) }, { titulo: planos.totalpass.fonte, url: planos.totalpass.url, data: dataLonga(conf) }, { titulo: 'Página de cada unidade nos dois agregadores, listada na respectiva ficha' }]} /></div>
+  </div>
+</Base>

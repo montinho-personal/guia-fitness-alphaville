@@ -1,0 +1,26 @@
+---
+import Institucional from '../components/Institucional.astro';
+import Contato from '../components/Contato.astro';
+---
+<Institucional titulo="Correções: avise sobre um dado errado" descricao="Encontrou um horário, endereço ou outro dado errado no Onde Treinar Alphaville? Veja como pedir a correção e como academias podem enviar informações." h1="Correções e envio de dados" fina="Um dado errado é o pior defeito que este guia pode ter. Se você encontrou um, avise." url="/correcoes/" nome="Correções">
+  <h2>Como pedir uma correção</h2>
+  <p>Envie uma mensagem com:</p>
+  <ul>
+    <li>o nome da academia e o endereço da página no guia;</li>
+    <li>o dado que está errado e o valor correto;</li>
+    <li>se possível, onde podemos conferir: site, foto da tabela na recepção, telefone.</li>
+  </ul>
+  <Contato assunto="Correção de dado" />
+
+  <h2>O que acontece depois</h2>
+  <ol>
+    <li>Conferimos a informação em uma segunda fonte ou com a própria academia.</li>
+    <li>Corrigimos a ficha e atualizamos a data de conferência.</li>
+    <li>Se o dado não puder ser confirmado, a ficha passa a mostrá-lo como "aguardando conferência".</li>
+  </ol>
+
+  <h2>Para academias</h2>
+  <p>Se você representa uma academia, box ou estúdio da região, pode enviar ou corrigir os seus dados sem custo: endereço, horários, modalidades, mensalidade e regras para personal de fora. Dados enviados pela academia entram com o selo "Confirmado com a academia".</p>
+  <p>Também é possível pedir a retirada de uma ficha. Analisamos cada pedido; informações públicas sobre um estabelecimento aberto ao público, em regra, permanecem.</p>
+  <p>Ter ficha no guia não depende de nenhuma relação comercial com o Montinho Personal Trainer, e nenhum pagamento altera o conteúdo.</p>
+</Institucional>

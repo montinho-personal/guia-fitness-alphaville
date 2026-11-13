@@ -1,0 +1,76 @@
+nome: Academia Gaviões 24h Alphaville
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: academia
+rede: Gaviões
+resumo: Unidade da rede Gaviões na Av. Juruá, listada com funcionamento 24 horas, todos os dias.
+endereco: Av. Juruá, 253 - Alphaville Industrial, Barueri - SP, 06455-010
+geo:
+  lat: -23.500589
+  lng: -46.853785
+horario:
+  seg:
+  - 00:00-23:59
+  ter:
+  - 00:00-23:59
+  qua:
+  - 00:00-23:59
+  qui:
+  - 00:00-23:59
+  sex:
+  - 00:00-23:59
+  sab:
+  - 00:00-23:59
+  dom:
+  - 00:00-23:59
+modalidades:
+- musculacao
+- funcional
+- lutas
+- danca
+atividades_listadas:
+- Caiaque
+- Fight
+- Fisiculturismo
+- Funcional infantil
+- Musculação
+- Personal dance
+- Treino Híbrido
+comodidades:
+- Banheiro acessível
+- Estacionamento acessível
+- Portas adaptadas para cadeiras de rodas
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver+
+  preco_plano: R$ 199,99
+  url: https://wellhub.com/pt-br/search/partners/academia-gavioes-24h-alphaville-alphaville-industrial/
+mensalidade: null
+site: https://academiagavioes.com.br
+telefone: (11) 94074-7584
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/academia-gavioes-24h-alphaville-alphaville-industrial/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta da academia
+- Confirmar se o funcionamento 24 horas vale para feriados
+- Equipe disponível de madrugada
+analise:
+- 'É a única academia deste guia cujo horário publicado cobre as 24 horas do dia, de segunda a domingo. Para quem trabalha em turnos ou só consegue treinar de madrugada, é o dado que mais importa. Vale confirmar com a unidade como funciona o atendimento fora do horário comercial: em academias 24 horas, é comum a madrugada ter equipe reduzida.'
+- O foco é musculação. A lista de atividades inclui também aulas de luta e dança. No Wellhub, o acesso começa no plano Silver+.
+status: aguardando-verificacao
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

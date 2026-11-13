@@ -1,0 +1,127 @@
+---
+import Base from '../../layouts/Base.astro';
+import Selo from '../../components/Selo.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import { academias, REGIOES, MODALIDADES, TIPOS, DIAS, DIAS_NOME, faixasDia, horarioResumo, e24h, conferidoEm, dataCurta, dataLonga, dataIso, nivelVerificacao, urlAcademia, urlRegiao, type Academia } from '../../lib/dados';
+
+export async function getStaticPaths() {
+  const todas = await academias();
+  return todas.map((a) => ({ params: { id: a.id }, props: { a, todas } }));
+}
+const { a, todas } = Astro.props as { a: Academia; todas: Academia[] };
+const d = a.data;
+const regiao = REGIOES[d.regiao];
+const vizinhas = todas.filter((o) => o.id !== a.id && o.data.regiao === d.regiao).sort((x, y) => Number(y.data.bairro === d.bairro) - Number(x.data.bairro === d.bairro)).slice(0, 5);
+const conf = conferidoEm(a);
+const nivel = nivelVerificacao(a);
+const NIVEL: Record<string, string> = { 'fonte-publica': 'Conferido em fonte pública', 'confirmado-com-a-academia': 'Confirmado com a academia', visita: 'Verificado em visita' };
+const CAMPOS: Record<string, string> = { endereco: 'endereço', geo: 'localização', horario: 'horário', modalidades: 'modalidades', comodidades: 'estrutura', agregadores: 'planos nos agregadores', mensalidade: 'mensalidade' };
+const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${d.nome}, ${d.endereco}`)}`;
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = `${d.nome}: horários, endereço e planos`;
+const descricao = `${d.resumo} Dados conferidos em ${dataCurta(conf)}.`.slice(0, 160);
+const schema = [{
+  '@type': 'Article', headline: titulo, description: d.resumo, inLanguage: 'pt-BR',
+  datePublished: dataIso(d.publicado_em), dateModified: dataIso(d.atualizado_em),
+  author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') },
+  publisher: { '@id': abs('/#org') }, mainEntityOfPage: { '@id': `${abs(urlAcademia(a))}#pagina` },
+  about: { '@type': 'Place', name: d.nome, address: d.endereco },
+}];
+const eSite = d.site && !/instagram\.com/.test(d.site);
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: d.nome, url: urlAcademia(a) }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo verde">{TIPOS[d.tipo]} · {regiao.nome} · {d.bairro}</span>
+      <h1>{d.nome}</h1>
+      <p class="linha-fina">{d.resumo}</p>
+      <Assinatura autor={d.autor} revisor={d.revisor} publicado={d.publicado_em} atualizado={d.atualizado_em} />
+    </header>
+
+    <div class="ficha">
+      <div>
+        <i data-dado="i" hidden></i>
+        <div class="resposta">
+          <span class="rotulo">Dados principais</span>
+          <p><strong>Endereço:</strong> {d.endereco}. <strong>Horário:</strong> {horarioResumo(d.horario)}. <strong>Mensalidade:</strong> {d.mensalidade ? d.mensalidade.valor : 'não confirmada com a academia'}.</p>
+        </div>
+        <i data-dado="f" hidden></i>
+
+        <div class="prosa">
+          <h2>O que observar em {d.nome.replace(/^Academia /, '')}</h2>
+          {d.analise.map((p) => <p>{p}</p>)}
+
+          {d.divergencias.length > 0 && (
+            <div class="caixa alerta" style="margin-bottom:18px">
+              <h3>As fontes não batem</h3>
+              <ul>{d.divergencias.map((x) => <li>{x}</li>)}</ul>
+            </div>
+          )}
+
+          <i data-dado="i" hidden></i>
+          <h2>Modalidades</h2>
+          <ul class="tags" style="margin-bottom:14px">{d.modalidades.map((m) => <li>{MODALIDADES[m]}</li>)}</ul>
+          {d.atividades_listadas.length > 0 && <p style="font-size:16px;color:var(--cinza)">Atividades listadas pela fonte: {d.atividades_listadas.join(', ')}.</p>}
+
+          {d.comodidades.length > 0 && <>
+            <h2>Estrutura informada</h2>
+            <ul class="colunas">{d.comodidades.map((c) => <li>{c}</li>)}</ul>
+          </>}
+          <i data-dado="f" hidden></i>
+
+          <h2>O que ainda não confirmamos</h2>
+          <ul>{d.pendencias.map((x) => <li>{x}</li>)}</ul>
+          <p><a href="/correcoes/">Enviar uma correção ou um dado que falta</a></p>
+        </div>
+
+        <i data-dado="i" hidden></i>
+        <div style="margin-top:28px">
+          <Fontes fontes={d.proveniencia.map((p) => ({ titulo: `${p.fonte} (${p.campos.map((c) => CAMPOS[c] ?? c).join(', ')})`, url: p.url, data: dataLonga(p.conferido_em) }))} />
+        </div>
+        <i data-dado="f" hidden></i>
+      </div>
+      <i data-dado="i" hidden></i>
+
+      <aside aria-label="Dados da academia">
+        <div class="caixa">
+          <h2>Onde fica</h2>
+          <p>{d.endereco}</p>
+          <p><a class="link-forte" href={maps} rel="noopener nofollow" data-evento="clique_mapa_externo" data-ref={a.id}>Abrir no Google Maps</a></p>
+          {d.telefone && <p style="font-size:16px">Telefone: {d.telefone}</p>}
+          {d.site && <p style="font-size:16px"><a href={d.site} rel="noopener nofollow" data-evento="clique_site_academia" data-ref={a.id}>{eSite ? 'Site da academia' : 'Instagram da academia'}</a></p>}
+        </div>
+        <div class="caixa">
+          <h2>Horário de funcionamento</h2>
+          {e24h(d.horario) ? <p><strong>24 horas, todos os dias</strong>, segundo a fonte.</p> : (
+            <table class="horarios">
+              <tbody>{DIAS.map((dia) => <tr><th scope="row">{DIAS_NOME[dia]}</th><td>{d.horario[dia].length ? faixasDia(d.horario[dia]) : <span class="incerto">sem horário listado</span>}</td></tr>)}</tbody>
+            </table>
+          )}
+
+        </div>
+        {d.agregadores.length > 0 && (
+          <div class="caixa">
+            <h2>Agregadores</h2>
+            {d.agregadores.map((g) => <p><strong>{g.nome}:</strong> a partir do plano {g.plano_minimo} ({g.preco_plano}/mês, preço do agregador). {g.nota}</p>)}
+            <p style="font-size:15px"><a href="/academias/wellhub-totalpass/">Comparar planos</a></p>
+          </div>
+        )}
+        <div class="caixa">
+          <Selo texto={`${NIVEL[nivel]} em ${dataCurta(conf)}`} />
+          <p style="font-size:15px;margin-top:10px"><a href="/metodologia/">O que este selo significa</a></p>
+        </div>
+        <a class="btn sec" href={`/ferramentas/comparador/?a=${a.id}`}>Comparar com outra academia <i aria-hidden="true"></i></a>
+      </aside>
+      <i data-dado="f" hidden></i>
+    </div>
+
+    <i data-dado="i" hidden></i>
+    <section class="bloco fino prosa" aria-labelledby="perto-t">
+      <h2 id="perto-t">Outras opções em {regiao.titulo}</h2>
+      <ul>{vizinhas.map((o) => <li><a href={urlAcademia(o)}>{o.data.nome}</a> — {o.data.bairro}</li>)}</ul>
+      <p><a href={urlRegiao(d.regiao)}>Todas as academias de {regiao.titulo}</a> · <a href="/guias/como-escolher-academia/">Como escolher uma academia</a></p>
+    </section>
+    <i data-dado="f" hidden></i>
+  </div>
+</Base>

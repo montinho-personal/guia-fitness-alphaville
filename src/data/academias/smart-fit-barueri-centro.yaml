@@ -1,0 +1,63 @@
+nome: Smart Fit Barueri Centro
+regiao: barueri
+bairro: Centro
+tipo: academia
+rede: Smart Fit
+resumo: Unidade da Smart Fit na Av. Vinte e Seis de Março, no centro de Barueri, aberta todos os dias.
+endereco: Av. Vinte e Seis de Março, 701, Centro, Barueri, SP
+geo:
+  lat: -23.511104
+  lng: -46.882225
+horario:
+  seg:
+  - 05:00-23:59
+  ter:
+  - 05:00-23:59
+  qua:
+  - 05:00-23:59
+  qui:
+  - 05:00-23:59
+  sex:
+  - 05:00-23:59
+  sab:
+  - 08:00-17:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+- bike
+atividades_listadas:
+- Musculação
+- indoor bike
+- Ginástica
+- Smart Box
+comodidades: []
+agregadores:
+- nome: TotalPass
+  plano_minimo: TP 1+
+  preco_plano: R$ 89,90
+  url: https://totalpass.com/br/academias/smart-fit-barrueri-centro/
+mensalidade: null
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/smart-fit-barrueri-centro/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade dos planos diretos da rede
+analise:
+- Funciona das 5h às 23h59 de segunda a sexta, das 8h às 17h no sábado e das 8h às 14h no domingo. Abre uma hora mais cedo e fecha uma hora mais tarde que a unidade Alphaville II da mesma rede.
+- A grade inclui musculação, bike e ginástica. Pelo TotalPass, o acesso começa no plano TP 1+, o nível de entrada mais baixo entre as academias deste guia listadas nesse agregador.
+status: aguardando-verificacao
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

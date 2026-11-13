@@ -1,0 +1,92 @@
+nome: Bluefit Barueri
+regiao: barueri
+bairro: Bethaville
+tipo: academia
+rede: Bluefit
+resumo: Unidade da rede Bluefit na Av. Trindade, em Bethaville, com musculação, lutas e aulas em grupo.
+endereco: Av. Trindade, 344 - 2023 - Bethaville I, Barueri - SP, 06404-326
+geo:
+  lat: -23.506171
+  lng: -46.867624
+horario:
+  seg:
+  - 05:00-23:59
+  ter:
+  - 05:00-23:59
+  qua:
+  - 05:00-23:59
+  qui:
+  - 05:00-23:59
+  sex:
+  - 05:00-23:59
+  sab:
+  - 08:00-16:00
+  dom:
+  - 10:00-16:00
+modalidades:
+- musculacao
+- cross-training
+- lutas
+- hiit
+atividades_listadas:
+- Aeróbica
+- Aula de pula corda
+- Aulas em grupo
+- Caiaque
+- Crossfoot
+- Fisiculturismo
+- GRIT
+- Grupos Especiais
+- Jiu-jitsu
+- Muay Thai
+- Musculação
+- Treino de Power Plate
+comodidades:
+- Ar condicionado
+- Área de alongamento
+- Área de cardio
+- Área de musculação
+- Área de pesos livres
+- Área de treino funcional
+- Armários
+- Banheiro acessível
+- Bebedouro
+- Chuveiro
+- Chuveiro acessível
+- Estacionamento
+- Estacionamento acessível
+- Personal trainer
+- Secador de cabelo
+- Vestiário
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver+
+  preco_plano: R$ 199,99
+  url: https://wellhub.com/pt-br/search/partners/academia-bluefit-barueri/
+mensalidade: null
+site: https://www.instagram.com/bluefitbarueri/
+telefone: (11) 99999-9999
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/academia-bluefit-barueri/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta da academia
+analise:
+- Abre das 5h às 23h59 de segunda a sexta. No sábado funciona das 8h às 16h, e no domingo, das 10h às 16h.
+- Além da musculação, a grade listada inclui muay thai, jiu-jitsu e aulas em grupo. A página da unidade registra itens de acessibilidade — banheiro, chuveiro e estacionamento acessíveis — que nem todas as academias da região informam. No Wellhub, o acesso começa no plano Silver+.
+status: aguardando-verificacao
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

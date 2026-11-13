@@ -1,0 +1,84 @@
+nome: SkyFit Alphaville
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: academia
+rede: SkyFit
+resumo: Academia de rede na Av. Juruá com musculação, cross training, lutas e aulas, aberta todos os dias.
+endereco: Av. Juruá, 307 - Alphaville Industrial, Barueri - SP, 06455-010
+geo:
+  lat: -23.501059
+  lng: -46.854408
+horario:
+  seg:
+  - 05:00-23:00
+  ter:
+  - 05:00-23:00
+  qua:
+  - 05:00-23:00
+  qui:
+  - 05:00-23:00
+  sex:
+  - 05:00-22:00
+  sab:
+  - 07:00-17:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+- cross-training
+- funcional
+- lutas
+- danca
+- pilates
+- corrida
+atividades_listadas:
+- Bounce training
+- Corrida na esteira
+- Cross training
+- Fisiculturismo
+- Fitness dance
+- Funcional
+- Mat Pilates
+- Muay Thai
+- Musculação
+- Pilates
+- Treino de core
+- Treino funcional
+- Zumba
+comodidades:
+- Armários
+- Chuveiro
+- Vestiário
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver
+  preco_plano: R$ 149,99
+  url: https://wellhub.com/pt-br/search/partners/skyfit-academia-alphaville-alphaville-industrial/
+mensalidade: null
+site: https://skyfitacademia.com
+telefone: (11) 98804-0056
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/skyfit-academia-alphaville-alphaville-industrial/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta da academia
+- 'Estacionamento: não consta na fonte'
+analise:
+- Abre às 5h de segunda a sexta e fecha às 23h (22h na sexta). No fim de semana funciona em horário reduzido.
+- 'A grade publicada é variada para uma academia de rede: musculação, cross training, muay thai, funcional, pilates e zumba. A lista de comodidades da página é curta — armários, chuveiro e vestiário — e não menciona estacionamento. No Wellhub, entra a partir do plano Silver.'
+status: aguardando-verificacao
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

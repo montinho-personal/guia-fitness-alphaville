@@ -1,0 +1,57 @@
+---
+import Base from '../../layouts/Base.astro';
+const grupos = [
+  { t: 'Antes de sair de casa', itens: ['Vou no dia e no horário em que pretendo treinar', 'Conferi o horário de funcionamento de todos os dias da semana', 'Medi o tempo de deslocamento no horário real, com trânsito', 'Sei se meu plano do Wellhub ou TotalPass dá acesso, e em quais horários'] },
+  { t: 'Na recepção', itens: ['Pedi o valor da mensalidade em cada tipo de plano', 'Perguntei por matrícula, taxa de manutenção e anuidade', 'Perguntei pela multa de cancelamento e pela regra de reajuste', 'Pedi o contrato para ler antes de assinar', 'Perguntei se há aula experimental ou passe de um dia', 'Perguntei como funciona em feriados', 'Perguntei se o estacionamento é pago e até que horas funciona'] },
+  { t: 'Na sala de treino', itens: ['Os aparelhos que mais uso estão livres ou com pouca fila', 'A área de pesos livres comporta o movimento deste horário', 'Há professores circulando na sala e eles se aproximam dos alunos', 'Os equipamentos estão conservados e a sala está limpa', 'A ventilação ou o ar-condicionado dão conta'] },
+  { t: 'Vestiário e estrutura', itens: ['O vestiário tem chuveiro e armários suficientes', 'Há bebedouro perto da sala de treino', 'O acesso serve para mim: escadas, elevador, vaga próxima'] },
+  { t: 'Se você pensa em treinar com personal', itens: ['Perguntei se a academia aceita personal trainer de fora', 'Perguntei qual taxa é cobrada, e de quem', 'Perguntei se há restrição de horário para atendimento com personal'] },
+];
+let n = 0;
+---
+<Base titulo="Checklist para visitar e escolher academia" descricao="Checklist com 22 pontos para a visita à academia: o que perguntar na recepção, o que observar na sala de treino e no vestiário. Para marcar no celular ou imprimir." migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Checklist', url: '/ferramentas/checklist/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo verde">Ferramenta</span>
+      <h1>Checklist de visita à academia</h1>
+      <p class="linha-fina">{grupos.reduce((s, g) => s + g.itens.length, 0)} pontos para conferir na visita. Marque no celular enquanto anda pela academia; as marcações ficam salvas só no seu aparelho.</p>
+      <p class="nao-imprime" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+        <button class="btn peq" type="button" id="ck-imprimir">Imprimir <i aria-hidden="true"></i></button>
+        <button class="btn sec peq" type="button" id="ck-compartilhar">Compartilhar</button>
+        <button class="btn sec peq" type="button" id="ck-limpar">Limpar marcações</button>
+        <span id="ck-ok" class="rotulo verde" role="status" style="align-self:center"></span>
+      </p>
+    </header>
+    <form id="ck" class="prosa">
+      <p class="contagem" id="ck-cont" aria-live="polite"></p>
+      {grupos.map((g) => (
+        <fieldset style="border:0;padding:0;margin:0 0 28px">
+          <legend style="font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-.02em;padding:0;margin-bottom:10px">{g.t}</legend>
+          {g.itens.map((i) => { const id = `ck${n++}`; return <label for={id} style="display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--linha);cursor:pointer"><input type="checkbox" id={id} style="width:22px;height:22px;margin-top:3px;flex:none;accent-color:var(--alameda)"><span>{i}</span></label>; })}
+        </fieldset>
+      ))}
+    </form>
+    <div class="prosa nao-imprime">
+      <h2>Por que visitar no seu horário</h2>
+      <p>Quase tudo o que este checklist pede depende da hora. A mesma academia pode estar vazia no meio da tarde e lotada às 19h, com metade dos professores. A visita só responde à sua pergunta se acontecer quando você de fato treinaria.</p>
+      <p>Os critérios por trás da lista estão em <a href="/guias/como-escolher-academia/">como escolher uma academia</a>. Para montar a lista de candidatas, use o <a href="/ferramentas/comparador/">comparador</a>.</p>
+    </div>
+  </div>
+  <script is:inline>
+    (function () {
+      var CH = 'ota-checklist', cs = [].slice.call(document.querySelectorAll('#ck input')), cont = document.getElementById('ck-cont'), ok = document.getElementById('ck-ok');
+      var salvo = {}; try { salvo = JSON.parse(localStorage.getItem(CH) || '{}'); } catch (e) {}
+      function atual() { var n = cs.filter(function (c) { return c.checked; }).length; cont.textContent = n + ' de ' + cs.length + ' conferidos'; }
+      cs.forEach(function (c) { c.checked = !!salvo[c.id]; c.addEventListener('change', function () { salvo[c.id] = c.checked; try { localStorage.setItem(CH, JSON.stringify(salvo)); } catch (e) {} atual(); }); });
+      atual();
+      document.getElementById('ck-imprimir').addEventListener('click', function () { window.print(); });
+      document.getElementById('ck-limpar').addEventListener('click', function () { cs.forEach(function (c) { c.checked = false; }); salvo = {}; try { localStorage.removeItem(CH); } catch (e) {} atual(); });
+      document.getElementById('ck-compartilhar').addEventListener('click', function () {
+        var d = { title: document.title, url: location.href };
+        if (navigator.share) navigator.share(d).catch(function () {});
+        else if (navigator.clipboard) navigator.clipboard.writeText(location.href).then(function () { ok.textContent = 'Link copiado'; });
+        if (window.otaEvento) otaEvento('checklist_compartilhado');
+      });
+    })();
+  </script>
+</Base>

@@ -1,0 +1,41 @@
+---
+import Institucional from '../components/Institucional.astro';
+import Selo from '../components/Selo.astro';
+---
+<Institucional titulo="Metodologia: como conferimos os dados das academias" descricao="De onde vêm o endereço, o horário e os planos de cada academia do guia, o que significa cada selo de conferência e como funcionam o comparador e o teste." h1="Metodologia" fina="De onde vem cada dado, o que cada selo significa e como as ferramentas calculam os resultados." url="/metodologia/" nome="Metodologia">
+  <h2>O princípio</h2>
+  <p>Todo dado local — endereço, horário, modalidades, estrutura, plano, preço — precisa ter uma fonte e uma data de conferência. Se não tem, não é publicado, ou aparece como "não confirmado".</p>
+
+  <h2>Os três níveis de conferência</h2>
+  <p><Selo texto="Conferido em fonte pública" /></p>
+  <p>O dado foi lido em uma página pública — a da unidade em um agregador como Wellhub ou TotalPass, ou o site da própria academia — na data indicada. É o nível de todas as fichas neste momento. Limite: agregadores às vezes mostram só o horário válido para os usuários deles, e não trazem a mensalidade direta.</p>
+  <p><Selo texto="Confirmado com a academia" /></p>
+  <p>O dado foi confirmado por telefone, mensagem ou e-mail com a própria academia, na data indicada.</p>
+  <p><Selo texto="Verificado em visita" /></p>
+  <p>Alguém do guia esteve no local na data indicada. Só descrevemos uma visita quando ela aconteceu.</p>
+  <p><Selo estado="pendente" texto="Aguardando conferência" /></p>
+  <p>O dado existe em alguma fonte, mas ainda não foi conferido ou as fontes divergem. Quando duas fontes não batem, a ficha mostra as duas versões em "As fontes não batem".</p>
+
+  <h2>O que ainda não temos</h2>
+  <ul>
+    <li><strong>Mensalidade direta.</strong> Nenhuma foi confirmada com as academias. O campo aparece como "não confirmada" em todas as fichas. Os valores exibidos são os dos planos dos agregadores, identificados como tal.</li>
+    <li><strong>Lotação por horário.</strong> Depende de observação no local.</li>
+    <li><strong>Regras para personal de fora.</strong> Dependem de confirmação com cada academia.</li>
+  </ul>
+  <p>Cada ficha lista as suas próprias pendências na seção "O que ainda não confirmamos".</p>
+
+  <h2>Validade dos dados</h2>
+  <p>A data do selo é a da conferência mais antiga entre os dados da ficha. Dados com mais de 90 dias entram em uma fila interna de reconferência. Preços e horários nunca são alterados automaticamente: toda mudança passa por uma pessoa.</p>
+
+  <h2>Quais academias entram</h2>
+  <p>Entra no guia toda academia, box ou estúdio da região que tenha endereço e horário conferíveis. A inclusão é gratuita e não depende de relação comercial. Academias conhecidas que ainda não têm dados conferíveis estão listadas no <a href="/academias/">guia</a>, em "Academias que ainda não têm ficha".</p>
+  <p>Uma página de região só é criada quando há ao menos três fichas nela.</p>
+
+  <h2>Como as ferramentas calculam</h2>
+  <p><strong>Comparador.</strong> Mostra os dados das fichas lado a lado, sem pontuação.</p>
+  <p><strong>Teste "qual academia combina com você".</strong> Cada resposta vira um critério. Para cada academia, o teste verifica se o dado da ficha atende ao critério e soma um ponto. Todos os critérios valem o mesmo. O resultado lista as academias com mais critérios atendidos e mostra quais bateram e quais não. Em caso de empate, a ordem é alfabética. O Montinho Personal Trainer não é uma opção de resultado.</p>
+  <p><strong>Horas abertas por semana.</strong> Soma das faixas de horário publicadas, de segunda a domingo, sem considerar feriados.</p>
+
+  <h2>Posições no mapa</h2>
+  <p>As coordenadas são as publicadas pelos agregadores para cada unidade e podem ter alguns metros de erro.</p>
+</Institucional>

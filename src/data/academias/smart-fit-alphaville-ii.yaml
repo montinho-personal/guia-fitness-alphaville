@@ -1,0 +1,67 @@
+nome: Smart Fit Alphaville II
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: academia
+rede: Smart Fit
+resumo: Unidade da Smart Fit na Alameda Araguaia, no segundo pavimento do estacionamento da Sodimac, aberta todos os dias.
+endereco: Alameda Araguaia, 1801, 2º Pavimento do Estacionamento Sodimac, Alphaville Industrial, Barueri, SP
+geo:
+  lat: -23.499205
+  lng: -46.84398
+horario:
+  seg:
+  - 06:00-23:00
+  ter:
+  - 06:00-23:00
+  qua:
+  - 06:00-23:00
+  qui:
+  - 06:00-23:00
+  sex:
+  - 06:00-23:00
+  sab:
+  - 08:00-17:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+- hiit
+atividades_listadas:
+- Musculação
+- Alongamento
+- Abdominais
+- Hit
+- Smart Box
+- Smart Shape
+- Hiit
+comodidades: []
+agregadores:
+- nome: TotalPass
+  plano_minimo: TP 2
+  preco_plano: R$ 119,90
+  url: https://totalpass.com/br/academias/smart-fit-alphaville-ii/
+mensalidade: null
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/smart-fit-alphaville-ii/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade dos planos diretos da rede
+- Demais unidades Smart Fit na região
+analise:
+- 'O endereço merece atenção: a academia fica no 2º pavimento do estacionamento da Sodimac, na Alameda Araguaia, 1801. Funciona das 6h às 23h de segunda a sexta, das 8h às 17h no sábado e das 8h às 14h no domingo.'
+- 'A grade listada é a padrão da rede: musculação, alongamento, abdominais e aulas curtas de alta intensidade. Pelo TotalPass, o acesso começa no plano TP 2. Esta ficha cobre apenas a unidade II; as demais unidades da Smart Fit na região ainda não foram conferidas.'
+status: aguardando-verificacao
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

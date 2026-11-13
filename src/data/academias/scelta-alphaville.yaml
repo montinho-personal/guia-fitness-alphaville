@@ -1,0 +1,84 @@
+nome: Academia Scelta
+regiao: alphaville
+bairro: Alphaville Empresarial
+tipo: academia
+resumo: Academia na Av. Andrômeda com musculação, pilates e aulas, aberta todos os dias e com serviços de apoio no local.
+endereco: Av. Andrômeda, 885 - Alphaville Empresarial, Barueri - SP, 06473-000
+geo:
+  lat: -23.485019
+  lng: -46.864879
+horario:
+  seg:
+  - 05:30-23:00
+  ter:
+  - 05:30-23:00
+  qua:
+  - 05:30-23:00
+  qui:
+  - 05:30-23:00
+  sex:
+  - 05:30-23:00
+  sab:
+  - 08:00-16:00
+  dom:
+  - 09:00-14:00
+modalidades:
+- musculacao
+- danca
+- pilates
+- hiit
+atividades_listadas:
+- Abdominal
+- Balé
+- Dança
+- Fisiculturismo
+- Glúteos
+- HIIT
+- Mat Pilates
+- Musculação
+comodidades:
+- Ar condicionado
+- Armários
+- Cafeteria
+- Chuveiro
+- Espaço adaptado para cadeira de rodas
+- Estacionamento
+- Fisioterapeuta
+- Loja de artigos esportivos
+- Mini bar
+- Personal trainer
+- Toalhas de banho
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold
+  preco_plano: R$ 319,99
+  url: https://wellhub.com/pt-br/search/partners/academia-scelta/
+mensalidade: null
+site: https://www.instagram.com/sceltaacademia/
+telefone: (11) 97500-6370
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/academia-scelta/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta da academia
+analise:
+- Abre às 5h30 em dias úteis e fecha às 23h. No sábado funciona das 8h às 16h, e no domingo, das 9h às 14h.
+- 'A página da unidade lista uma estrutura de serviços maior que a média: cafeteria, loja, toalhas de banho, fisioterapeuta e personal trainer, além de estacionamento. No Wellhub, o acesso começa no plano Gold, acima do exigido pelas academias de rede da região.'
+status: aguardando-verificacao
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

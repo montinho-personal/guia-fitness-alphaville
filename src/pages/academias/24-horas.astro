@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import { academias, hora, e24h, abertura, fechamento, abreDomingo, faixasDia, horasSemana, urlAcademia, REGIOES, dataLonga, dataIso } from '../../lib/dados';
+
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
+const todas = await academias();
+const h24 = todas.filter((a) => e24h(a.data.horario));
+const nome24 = todas.filter((a) => /24\s?h/i.test(a.data.nome) && !e24h(a.data.horario));
+const cedo = todas.filter((a) => !e24h(a.data.horario) && abertura(a.data.horario) !== null && abertura(a.data.horario)! <= 300).sort((x, y) => abertura(x.data.horario)! - abertura(y.data.horario)!);
+const tarde = todas.filter((a) => !e24h(a.data.horario) && fechamento(a.data.horario) !== null && fechamento(a.data.horario)! >= 23 * 60 + 59);
+const ordenadas = [...todas].sort((x, y) => horasSemana(y.data.horario) - horasSemana(x.data.horario));
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = 'Academia 24 horas em Alphaville e Barueri: quais são';
+const descricao = 'Quais academias de Alphaville, Barueri e Santana de Parnaíba têm horário publicado de 24 horas, quais abrem às 4h ou 5h e quais fecham à meia-noite.';
+const lista = (xs: typeof todas) => xs.map((a) => a.data.nome).join(', ').replace(/, ([^,]*)$/, ' e $1');
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: '24 horas', url: '/academias/24-horas/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo verde">Guia de academias · horário</span>
+      <h1>Academias 24 horas em Alphaville e região</h1>
+      <p class="linha-fina">Quais academias funcionam de madrugada, quais só têm "24h" no nome e, para quem não precisa da madrugada, quais abrem mais cedo e fecham mais tarde.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Entre as {todas.length} academias com ficha neste guia, {h24.length === 1 ? <>só uma tem horário publicado de 24 horas, todos os dias: a <a href={urlAcademia(h24[0])}>{h24[0].data.nome}</a>, em {h24[0].data.bairro}</> : <>{h24.length} têm horário publicado de 24 horas</>}. Outras {tarde.length} fecham à meia-noite em dias úteis, e {cedo.length} abrem às 5h ou antes.</p>
+    </div>
+
+    <div class="prosa">
+      <h2>A que funciona 24 horas</h2>
+      {h24.map((a) => <p>A <a href={urlAcademia(a)}>{a.data.nome}</a> fica em {a.data.endereco.split(' - ')[0]}, {a.data.bairro}. O horário publicado na página da unidade cobre as 24 horas do dia, de segunda a domingo. Não confirmamos no local como é o atendimento de madrugada nem o que acontece em feriados; os dois pontos estão na lista de pendências da ficha.</p>)}
+
+      {nome24.length > 0 && <>
+        <h2>Cuidado com o nome</h2>
+        {nome24.map((a) => <p>A <a href={urlAcademia(a)}>{a.data.nome}</a> tem "24h" no nome, mas o horário publicado é outro: {faixasDia(a.data.horario.seg)} de segunda a sexta, {faixasDia(a.data.horario.sab)} no sábado e {faixasDia(a.data.horario.dom)} no domingo. Pode haver acesso estendido para alunos diretos que a fonte não mostra. Se a madrugada é o motivo da sua busca, confirme com a academia antes de fechar plano.</p>)}
+      </>}
+
+      <h2>Se você treina muito cedo</h2>
+      <p>Quem precisa treinar antes do trabalho nem sempre precisa de uma academia 24 horas. Estas abrem às 5h ou antes em dias úteis:</p>
+      <ul>{cedo.map((a) => <li><a href={urlAcademia(a)}>{a.data.nome}</a> ({a.data.bairro}): abre às {hora(a.data.horario.seg[0].split('-')[0])}</li>)}</ul>
+
+      <h2>Se você treina tarde</h2>
+      <p>Estas fecham à meia-noite de segunda a sexta (algumas, um pouco antes na sexta): {lista(tarde)}. O horário de cada dia está na ficha.</p>
+
+      <h2>Todas as academias, por horas abertas na semana</h2>
+    </div>
+    <div class="rolagem" tabindex="0" role="region" aria-label="Academias por horas abertas na semana" style="margin:8px 0 28px">
+      <table class="dados">
+        <caption>Total semanal calculado a partir do horário publicado em cada ficha. Feriados não entram.</caption>
+        <thead><tr><th scope="col">Academia</th><th scope="col">Região</th><th scope="col">Segunda a sexta</th><th scope="col">Sábado</th><th scope="col">Domingo</th><th scope="col">Horas por semana</th></tr></thead>
+        <tbody>{ordenadas.map((a) => (
+          <tr><th scope="row"><a href={urlAcademia(a)}>{a.data.nome}</a></th><td>{REGIOES[a.data.regiao].nome}</td><td>{faixasDia(a.data.horario.seg)}</td><td>{faixasDia(a.data.horario.sab)}</td><td>{abreDomingo(a.data.horario) ? faixasDia(a.data.horario.dom) : <span class="nao">não listado</span>}</td><td>{horasSemana(a.data.horario)}</td></tr>
+        ))}</tbody>
+      </table>
+    </div>
+    <div class="prosa">
+      <h2>O que perguntar antes de assinar</h2>
+      <ul>
+        <li><strong>Há equipe de madrugada?</strong> Em academias 24 horas é comum o período noturno funcionar com equipe reduzida ou só com controle de acesso.</li>
+        <li><strong>O acesso de madrugada vale para todos os planos?</strong> Algumas redes restringem horários no plano mais barato.</li>
+        <li><strong>Como fica em feriado?</strong> O horário publicado costuma valer só para dias normais.</li>
+        <li><strong>O estacionamento funciona no mesmo horário?</strong> Nem sempre.</li>
+      </ul>
+      <p>O <a href="/ferramentas/checklist/">checklist de visita</a> reúne essas e outras perguntas. Para comparar horários de duas ou três academias, use o <a href="/ferramentas/comparador/">comparador</a>.</p>
+    </div>
+    <div style="margin-top:28px"><Fontes fontes={[{ titulo: 'Páginas das unidades no Wellhub e no TotalPass, listadas em cada ficha', data: dataLonga(gov.atualizado) }]} /></div>
+  </div>
+</Base>

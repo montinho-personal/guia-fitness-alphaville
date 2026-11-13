@@ -1,0 +1,106 @@
+nome: Bodytech Iguatemi Alphaville
+regiao: alphaville
+bairro: Alphaville
+tipo: academia
+rede: Bodytech
+resumo: Unidade da Bodytech na Alameda Rio Negro, junto ao Iguatemi Alphaville, com a grade de aulas mais extensa deste guia.
+endereco: Al. Rio Negro, 111 - Alphaville, Barueri - SP, 06454
+geo:
+  lat: -23.504745
+  lng: -46.848598
+horario:
+  seg:
+  - 06:00-22:00
+  ter:
+  - 06:00-22:00
+  qua:
+  - 06:00-22:00
+  qui:
+  - 06:00-22:00
+  sex:
+  - 06:00-22:00
+  sab:
+  - 09:00-15:00
+  dom: []
+modalidades:
+- musculacao
+- lutas
+- danca
+- bike
+- pilates
+- hiit
+- corrida
+atividades_listadas:
+- Abdômen e braço
+- Abdômen e glúteos
+- Abdominal
+- Alongamento
+- Aula de corrida
+- Balé
+- Ballet fitness
+- Body tech
+- Boxe
+- Circuitos funcionais
+- Duatlo
+- Fisiculturismo
+- Fitness dance
+- HIIT
+- Indoor bike
+- Jump
+- Mat Pilates
+- Mexe Fitness
+- Muay Thai
+- Musculação
+- Pernas
+- Piloxing
+- Run HIIT
+- Step aerobics
+- Street dance
+- Strong by Zumba
+- Treinamento cardio
+- Treino
+- Treino combinado
+- Treino de core
+- Treino localizado
+- Zumba
+comodidades:
+- Armários
+- Estacionamento
+- Nutricionista
+- Toalhas de treino
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver
+  preco_plano: R$ 149,99
+  url: https://wellhub.com/pt-br/search/partners/bodytech-iguatemi-alphaville/
+  nota: No plano Silver, o acesso vale apenas em horários específicos, segundo o Wellhub.
+mensalidade: null
+site: https://bodytech.com.br/academias/iguatemi-alphaville
+telefone: (11) 4195-3087
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/bodytech-iguatemi-alphaville/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta da academia
+- Quais horários o plano Silver do Wellhub cobre
+- Funcionamento aos domingos
+analise:
+- A lista de atividades publicada passa de trinta itens, de musculação e corrida a balé, boxe, bike e pilates. É a oferta de aulas mais ampla entre as academias reunidas aqui.
+- Dois pontos de atenção. A unidade não tem horário listado para domingo, e no sábado funciona das 9h às 15h. E o acesso pelo Wellhub no plano Silver vale apenas para horários específicos, segundo a própria página; quem pretende usar o agregador deve conferir quais são antes de contar com a academia no horário de pico.
+status: aguardando-verificacao
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

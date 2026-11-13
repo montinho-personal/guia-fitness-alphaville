@@ -1,0 +1,142 @@
+---
+import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource-variable/newsreader';
+import '../styles/global.css';
+import Marca from '../components/Marca.astro';
+import { INDEXAVEL, MOSTRAR_EM_REVISAO, GTM_ID } from '../lib/dados';
+
+interface Props {
+  titulo: string;
+  descricao: string;
+  migalhas?: { nome: string; url: string }[];
+  schema?: Record<string, unknown>[];
+  tipo?: 'website' | 'article';
+  noindex?: boolean;
+  semSufixo?: boolean;
+}
+const { titulo, descricao, migalhas = [], schema = [], tipo = 'website', noindex = false, semSufixo = false } = Astro.props;
+const SITE = 'Onde Treinar Alphaville';
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const SUFIXO = ' | Onde Treinar';
+// O sufixo da marca só entra quando o título continua com até 60 caracteres.
+const tituloCompleto = semSufixo || titulo.length + SUFIXO.length > 60 ? titulo : `${titulo}${SUFIXO}`;
+const trilha = [{ nome: 'Início', url: '/' }, ...migalhas];
+const abs = (u: string) => new URL(u, Astro.site).href;
+const grafo: Record<string, unknown>[] = [
+  { '@type': 'WebPage', '@id': `${canonical}#pagina`, url: canonical, name: titulo, description: descricao, inLanguage: 'pt-BR', isPartOf: { '@id': abs('/#site') } },
+  ...(migalhas.length ? [{ '@type': 'BreadcrumbList', itemListElement: trilha.map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.nome, item: abs(m.url) })) }] : []),
+  ...schema,
+];
+const nav = [
+  { nome: 'Academias', url: '/academias/' },
+  { nome: 'Regiões', url: '/regioes/' },
+  { nome: 'Modalidades', url: '/modalidades/' },
+  { nome: 'Guias', url: '/guias/' },
+  { nome: 'Ferramentas', url: '/ferramentas/' },
+];
+const atual = (u: string) => (Astro.url.pathname.startsWith(u) ? 'page' : undefined);
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{tituloCompleto}</title>
+  <meta name="description" content={descricao}>
+  <link rel="canonical" href={canonical}>
+  {(!INDEXAVEL || noindex) && <meta name="robots" content="noindex, nofollow">}
+  <meta property="og:type" content={tipo}>
+  <meta property="og:site_name" content={SITE}>
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content={titulo}>
+  <meta property="og:description" content={descricao}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={abs('/og.png')}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#12211B">
+  <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': grafo })}></script>
+</head>
+<body>
+  <a class="pula" href="#conteudo">Pular para o conteúdo</a>
+  {MOSTRAR_EM_REVISAO && <div class="previa">Pré-visualização · conteúdo em revisão, ainda não aprovado para publicação · páginas sem indexação</div>}
+  <header class="topo">
+    <div class="wrap">
+      <a class="marca" href="/"><Marca /></a>
+      <nav class="principal so-desktop" aria-label="Principal">
+        <ul>{nav.map((n) => <li><a href={n.url} aria-current={atual(n.url)}>{n.nome}</a></li>)}</ul>
+      </nav>
+      <details class="menu-m so-movel">
+        <summary>Menu</summary>
+        <nav class="principal" aria-label="Principal (celular)">
+          <ul>{nav.map((n) => <li><a href={n.url} aria-current={atual(n.url)}>{n.nome}</a></li>)}</ul>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  {migalhas.length > 0 && (
+    <nav class="migalhas wrap" aria-label="Você está em">
+      <ol>{trilha.map((m, i) => <li>{i < trilha.length - 1 ? <a href={m.url}>{m.nome}</a> : <span aria-current="page">{m.nome}</span>}</li>)}</ol>
+    </nav>
+  )}
+
+  <main id="conteudo"><slot /></main>
+
+  <footer class="rodape">
+    <div class="wrap">
+      <div class="cols">
+        <div>
+          <a class="marca" href="/"><Marca tamanho={28} /></a>
+          <p class="nota">Guia local de academias e treino. Mantido por Montinho Personal Trainer, que atende presencialmente na região. As academias citadas não pagam para aparecer. Encontrou um dado errado? <a href="/correcoes/">Peça a correção</a>.</p>
+        </div>
+        <div><h2>Guia</h2><ul>{nav.map((n) => <li><a href={n.url}>{n.nome}</a></li>)}<li><a href="/mapa/">Mapa</a></li></ul></div>
+        <div><h2>Transparência</h2><ul>
+          <li><a href="/sobre/">Sobre</a></li><li><a href="/metodologia/">Metodologia</a></li><li><a href="/politica-editorial/">Política editorial</a></li><li><a href="/correcoes/">Correções</a></li><li><a href="/privacidade/">Privacidade</a></li>
+          <li><button type="button" id="abrir-consent" style="background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Preferências de cookies</button></li>
+        </ul></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="consent" id="consent" role="dialog" aria-labelledby="consent-t" hidden>
+    <p id="consent-t"><strong>Medição de audiência.</strong> Usamos cookies de análise para saber quais páginas ajudam mais. Nada é carregado sem o seu aceite. <a href="/privacidade/">Privacidade</a>.</p>
+    <div class="acoes">
+      <button class="btn peq" type="button" data-consent="sim">Aceitar</button>
+      <button class="btn peq sec" type="button" data-consent="nao">Recusar</button>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ GTM_ID }}>
+    // Medição só após consentimento. Sem GTM_ID configurado, nada é carregado e o aviso não aparece.
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+    (function () {
+      var CHAVE = 'ota-consent', caixa = document.getElementById('consent');
+      var escolha = null; try { escolha = localStorage.getItem(CHAVE); } catch (e) {}
+      function carregar() {
+        if (!GTM_ID || window.__gtm) return; window.__gtm = true;
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+        dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+        var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID; document.head.appendChild(s);
+      }
+      if (escolha === 'sim') carregar(); else if (!escolha && GTM_ID) caixa.hidden = false;
+      caixa.addEventListener('click', function (e) {
+        var v = e.target.getAttribute && e.target.getAttribute('data-consent'); if (!v) return;
+        try { localStorage.setItem(CHAVE, v); } catch (e2) {}
+        caixa.hidden = true; if (v === 'sim') carregar();
+      });
+      document.getElementById('abrir-consent').addEventListener('click', function () { caixa.hidden = false; caixa.querySelector('button').focus(); });
+      // Eventos: qualquer elemento com data-evento. Ficam na dataLayer; só saem do navegador se houver consentimento.
+      document.addEventListener('click', function (e) {
+        var el = e.target.closest && e.target.closest('[data-evento]'); if (!el) return;
+        dataLayer.push({ event: el.getAttribute('data-evento'), ref: el.getAttribute('data-ref') || '', pagina: location.pathname });
+      });
+      window.otaEvento = function (nome, dados) { dataLayer.push(Object.assign({ event: nome, pagina: location.pathname }, dados || {})); };
+    })();
+  </script>
+</body>
+</html>
