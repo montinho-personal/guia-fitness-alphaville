@@ -16,7 +16,7 @@ Build em modo de produção (`PUBLIC_INDEXAVEL=true`, sem conteúdo em revisão)
 
 ### O que ainda impede o site de estar público
 
-1. **Domínio.** A Vercel não registra `.com.br`. É preciso registrar `ondetreinaralphaville.com.br` no Registro.br, com CPF ou CNPJ, e apontar o DNS para a Vercel. Sem o domínio, a versão de produção só abre para quem tem login no time da Vercel.
+1. **Domínio.** O portal usa `guiafitnessalphaville.com.br`, registrado na HostGator. Falta apontar o DNS para a Vercel; até lá, a versão de produção só abre para quem tem login no time da Vercel. O nome do site continua "Onde Treinar Alphaville".
 2. **Privacidade.** Falta o CPF ou CNPJ do controlador, um e-mail de contato e revisão jurídica.
 3. **Medição.** Sem `PUBLIC_GTM_ID`, o site vai ao ar sem Analytics. Search Console e Bing dependem do domínio.
 
@@ -132,7 +132,7 @@ Em ordem de dependência.
 2. **Confirmar dados com as academias.** Mensalidade, regras para personal de fora e os itens de "O que ainda não confirmamos" de cada ficha. É o que transforma o guia em algo que os agregadores não têm.
 3. **Levantar as academias sem ficha**, começando pelas de maior procura observada: Six, Ironberg, Fábrica Premium.
 4. **Privacidade.** Incluir identificação do controlador (nome ou razão social, CPF ou CNPJ) e e-mail do encarregado, e submeter a revisão jurídica. A página mostra esse aviso na pré-visualização.
-5. **Domínio.** Registrar `ondetreinaralphaville.com.br` e apontar para a Vercel. Não foi registrado.
+5. **Domínio.** `guiafitnessalphaville.com.br`, registrado na HostGator. Apontar o DNS para a Vercel.
 6. **Medição.** Criar a propriedade GA4 e o contêiner GTM, preencher `PUBLIC_GTM_ID`, marcar `clique_whatsapp` e `clique_montinho` como conversões, e verificar o domínio no Search Console e no Bing Webmaster Tools.
 7. **E-mail de contato** em `PUBLIC_EMAIL_CONTATO`.
 8. **Ligar a indexação:** `PUBLIC_INDEXAVEL=true` e `PUBLIC_MOSTRAR_EM_REVISAO=false`, depois dos itens 1 e 4.
