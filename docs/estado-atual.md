@@ -75,7 +75,7 @@ A nota de SEO do Lighthouse ficou em 66 porque as páginas estão com `noindex`,
 - **Core Web Vitals reais.** O Lighthouse mede em laboratório, contra um servidor local. Os números de campo (percentil 75) só existem com o site no ar e com tráfego.
 - **Mapa.** O código carrega o Leaflet e os marcadores, mas os servidores de imagem do OpenStreetMap não são acessíveis deste ambiente. Precisa ser conferido em um navegador comum.
 - **Carregamento do GTM e do GA4.** Sem ID configurado, só o caminho "sem medição" foi testado.
-- **Cabeçalhos de segurança.** Estão em `vercel.json`, mas só valem na Vercel. A política de conteúdo (CSP) precisa ser conferida no primeiro deploy, principalmente com o GTM ligado.
+- **Site na Vercel.** O build de pré-visualização terminou com sucesso, mas as páginas no ar não foram abertas nem testadas a partir desta sessão. Os cabeçalhos de segurança de `vercel.json` e a política de conteúdo (CSP) precisam ser conferidos lá, principalmente com o GTM ligado.
 - **Leitor de tela.** Não houve teste com NVDA ou VoiceOver.
 - **Links externos.** A auditoria lista os 50 destinos, mas não verifica se respondem.
 - **Validador de dados estruturados do Google.** O JSON-LD foi validado por estrutura, não pela ferramenta do Google.
@@ -95,7 +95,7 @@ A nota de SEO do Lighthouse ficou em 66 porque as páginas estão com `noindex`,
 
 O projeto `onde-treinar-alphaville` foi criado no time Montinho Personal Trainer, ligado a este repositório, com `PUBLIC_MOSTRAR_EM_REVISAO=true` nas pré-visualizações e `PUBLIC_INDEXAVEL=false` em todos os ambientes. O branch de produção é `main`, que ainda não tem o código.
 
-**A pré-visualização ainda não está no ar.** Três tentativas de build falharam, todas a partir do commit `995e155`, que lia a trava de pré-visualização por um nome de variável que o Astro não lê do ambiente da Vercel. A correção está nos commits seguintes, que não chegaram ao GitHub: o envio passou a ser recusado com erro 403, tanto pelo `git push` quanto pela API. Quando esses commits forem enviados, o push dispara a pré-visualização sem outra mudança.
+A pré-visualização está no ar em https://onde-treinar-alphaville-git-cl-5626f2-montinho-personal-trainer.vercel.app e é refeita a cada push no branch `claude/quirky-hamilton-jgu8mg`. O acesso exige login na Vercel com um usuário do time. As três primeiras tentativas de build falharam porque a trava de pré-visualização usava um nome de variável que o Astro não lê do ambiente da Vercel; foi renomeada para `PUBLIC_MOSTRAR_EM_REVISAO`.
 
 Capturas de tela do site rodando localmente estão em [`capturas/`](capturas/).
 
