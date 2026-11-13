@@ -27,7 +27,7 @@ Há **seis decisões** que dependem de você, listadas na [seção final](#decis
 | Repositório `guia-fitness-alphaville` | Leitura completa | Contém só um README; não há código a preservar |
 | montinhopersonal.com.br | HTML bruto, sitemap (1.180 URLs), robots, llms.txt, 8 páginas | Não li as 1.180 páginas; amostra |
 | personalporperto.com.br | HTML bruto, sitemap (1.402 URLs), robots, llms.txt, 5 páginas | Amostra |
-| alphadl.com.br, direitodeverdade.com.br | Home, sitemap, robots, 2 páginas internas cada | Amostra pequena |
+| direitodeverdade.com.br | Home, sitemap, robots, 2 páginas internas | Amostra pequena |
 | Google Search Console | Propriedades do Montinho e do Personal por Perto, últimos 90 dias, via Supermetrics | Ver nota abaixo |
 | SERP | 7 buscas via ferramenta de pesquisa web | A ferramenta é baseada nos EUA: os resultados não são a SERP que um morador de Alphaville vê, nem mostram o pacote local do Google Maps |
 | Concorrentes | HTML de 4 páginas concorrentes | grupoguiaslocais.com.br não respondeu (erro 502) |
@@ -309,7 +309,7 @@ O bloco do Montinho aparece uma vez, depois do conteúdo útil. Não há botão 
 
 ### Alternativa: Next.js
 
-É o que Montinho, Alpha DL e Direito de Verdade usam. Vantagem: mesma base de três dos quatro sites, e mais fácil se o portal ganhar área logada ou painel. Desvantagem: envia mais JavaScript por padrão (a home do Montinho tem 57 tags `<script>`, a do Personal por Perto, 10), e exige disciplina para manter as páginas estáticas.
+É o que Montinho e Direito de Verdade usam. Vantagem: mesma base de dois dos três sites analisados, e mais fácil se o portal ganhar área logada ou painel. Desvantagem: envia mais JavaScript por padrão (a home do Montinho tem 57 tags `<script>`, a do Personal por Perto, 10), e exige disciplina para manter as páginas estáticas.
 
 Para um portal de conteúdo com três ilhas interativas, Astro é a escolha mais leve e mais fácil de manter rápida. Se você prefere padronizar tudo em Next.js, é viável; o custo é atenção contínua a desempenho.
 
@@ -322,7 +322,6 @@ O prompt pede painéis de links, similaridade e pendências. Proponho que na pri
 **Reaproveitar:**
 
 - Direito de Verdade: artigo com "Publicado em" e "Atualizado em", seção "Fontes" com a legislação citada, FAQ, "Leia também"; página `/sobre` com "Como produzimos o conteúdo" e "O que não somos"; `lastmod` do sitemap com datas distintas e plausíveis (18 datas em 111 URLs).
-- Alpha DL: páginas de região com dado próprio ("o que a nossa carteira mostra", medianas de preço), schema `Place` em páginas de condomínio, áreas privadas bloqueadas no robots.
 - Personal por Perto: parâmetros UTM por posição da chamada (`utm_content`), mensagem de WhatsApp pré-preenchida com a origem, banner de consentimento.
 - Montinho: URLs com erro de digitação redirecionam com 308; URL inexistente devolve 404 real.
 
@@ -504,7 +503,7 @@ Confirmar preço e horário com a academia. Visitar. Aprovar o texto final. Nenh
 **Dados próprios**
 
 - Google Search Console, propriedades `https://www.montinhopersonal.com.br/` e `https://www.personalporperto.com.br/`, últimos 90 dias até 13/11/2026, via Supermetrics.
-- Sitemaps, robots.txt, llms.txt e HTML de montinhopersonal.com.br, personalporperto.com.br, alphadl.com.br e direitodeverdade.com.br, lidos em 13/11/2026.
+- Sitemaps, robots.txt, llms.txt e HTML de montinhopersonal.com.br, personalporperto.com.br e direitodeverdade.com.br, lidos em 13/11/2026.
 
 **Concorrentes e SERP**
 
