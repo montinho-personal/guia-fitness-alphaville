@@ -7,7 +7,7 @@ const dados = paraFerramentas(todas).map(({ id, nome, url, geo, bairro, horario,
 <Base titulo="Mapa de academias de Alphaville e região" descricao="Mapa das academias, boxes e estúdios com ficha no guia, em Alphaville, Tamboré, Barueri e Santana de Parnaíba, com a lista de endereços por região." migalhas={[{ nome: 'Mapa', url: '/mapa/' }]}>
   <div class="wrap">
     <header class="cab-pag">
-      <span class="rotulo verde">Ferramenta</span>
+      <span class="rotulo cor-marca">Ferramenta</span>
       <h1>Mapa de academias</h1>
       <p class="linha-fina">As {todas.length} academias com ficha, no mapa. A lista de endereços abaixo tem as mesmas informações, para quem prefere texto.</p>
     </header>
@@ -48,7 +48,7 @@ const dados = paraFerramentas(todas).map(({ id, nome, url, geo, bairro, horario,
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(mapa);
       const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
       const pontos = dados.map((d: any) => {
-        const m = L.circleMarker([d.geo.lat, d.geo.lng], { radius: 9, color: '#12211B', weight: 2, fillColor: d.tipo === 'box' ? '#E2502A' : '#1F6B4A', fillOpacity: 1 }).addTo(mapa);
+        const m = L.circleMarker([d.geo.lat, d.geo.lng], { radius: 9, color: '#101B2D', weight: 2, fillColor: d.tipo === 'box' ? '#E2502A' : '#1B4F9C', fillOpacity: 1 }).addTo(mapa);
         m.bindPopup(`<strong>${esc(d.nome)}</strong><br>${esc(d.bairro)}<br>${esc(d.horario)}<br><a href="${d.url}">Ver ficha</a>`);
         return [d.geo.lat, d.geo.lng] as [number, number];
       });

@@ -33,7 +33,7 @@ const eSite = d.site && !/instagram\.com/.test(d.site);
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: d.nome, url: urlAcademia(a) }]}>
   <div class="wrap">
     <header class="cab-pag">
-      <span class="rotulo verde">{TIPOS[d.tipo]} · {regiao.nome} · {d.bairro}</span>
+      <span class="rotulo cor-marca">{TIPOS[d.tipo]} · {regiao.nome} · {d.bairro}</span>
       <h1>{d.nome}</h1>
       <p class="linha-fina">{d.resumo}</p>
       <Assinatura autor={d.autor} revisor={d.revisor} publicado={d.publicado_em} atualizado={d.atualizado_em} />

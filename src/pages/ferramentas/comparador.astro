@@ -7,7 +7,7 @@ const dados = paraFerramentas(todas);
 <Base titulo="Comparador de academias de Alphaville e região" descricao="Compare até três academias de Alphaville, Barueri e Santana de Parnaíba lado a lado: endereço, horários, modalidades, estrutura e plano nos agregadores." migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Comparador', url: '/ferramentas/comparador/' }]}>
   <div class="wrap">
     <header class="cab-pag">
-      <span class="rotulo verde">Ferramenta</span>
+      <span class="rotulo cor-marca">Ferramenta</span>
       <h1>Comparador de academias</h1>
       <p class="linha-fina">Escolha duas ou três academias. A tabela mostra os mesmos dados das fichas, lado a lado, com a data em que cada uma foi conferida.</p>
     </header>
@@ -25,7 +25,7 @@ const dados = paraFerramentas(todas);
     <section class="bloco fino" aria-live="polite">
       <p id="cmp-vazio" class="caixa">Escolha pelo menos duas academias acima.</p>
       <div class="rolagem" id="cmp-res" tabindex="0" role="region" aria-label="Comparação" hidden></div>
-      <p id="cmp-acoes" class="nao-imprime" style="margin-top:16px" hidden><button class="btn sec peq" type="button" id="cmp-link">Copiar link desta comparação</button> <span id="cmp-ok" class="rotulo verde" role="status"></span></p>
+      <p id="cmp-acoes" class="nao-imprime" style="margin-top:16px" hidden><button class="btn sec peq" type="button" id="cmp-link">Copiar link desta comparação</button> <span id="cmp-ok" class="rotulo cor-marca" role="status"></span></p>
       <noscript><p class="caixa">O comparador precisa de JavaScript. Sem ele, use o <a href="/academias/#tabela-t">comparativo rápido do guia</a>, que tem os mesmos dados em uma tabela.</p></noscript>
     </section>
 

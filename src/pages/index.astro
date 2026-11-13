@@ -26,7 +26,7 @@ const lista = [
   <section class="bloco" style="padding-bottom:36px">
     <div class="wrap" style="display:grid;gap:36px" id="abertura">
       <div>
-        <h1 style="font-size:clamp(44px,11vw,78px);font-weight:800;letter-spacing:-.045em;line-height:.92">Onde treinar em Alphaville, <span class="verde" style="display:block">com fonte e data.</span></h1>
+        <h1 style="font-size:clamp(44px,11vw,78px);font-weight:800;letter-spacing:-.045em;line-height:.92">Onde treinar em Alphaville, <span class="cor-marca" style="display:block">com fonte e data.</span></h1>
         <p style="max-width:34em;margin:22px 0 28px;font-size:20px;color:var(--texto2)">Academias, boxes e estúdios em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Cada endereço, horário e plano mostra de onde veio e quando foi conferido.</p>
         <form class="painel" action="/academias/" method="get" aria-label="Encontrar academias">
           <div class="campos c3">
@@ -42,7 +42,7 @@ const lista = [
         </form>
       </div>
       <nav class="placas" aria-label="Regiões">
-        <span class="rotulo verde">Comece pela sua região</span>
+        <span class="rotulo cor-marca">Comece pela sua região</span>
         {Object.entries(REGIOES).map(([id, r]) => <a class="placa" href={urlRegiao(id)}><b>{r.titulo}</b><small>{porRegiao(id)} com ficha</small></a>)}
         <p style="font-size:14px;color:var(--cinza);margin:4px 0 0">18 do Forte e Tamboré estão na página de Alphaville. Aldeia da Serra entra quando houver dados conferidos.</p>
       </nav>
@@ -63,7 +63,7 @@ const lista = [
   <section class="bloco">
     <div class="wrap">
       <div class="cab">
-        <div><span class="rotulo verde">Guia de academias</span><h2>{todas.length} academias com ficha</h2></div>
+        <div><span class="rotulo cor-marca">Guia de academias</span><h2>{todas.length} academias com ficha</h2></div>
         <a class="link-forte" href="/academias/">Ver todas, com filtros</a>
       </div>
       <div class="cartoes">{cartoes.map((a) => <CartaoAcademia a={a!} />)}</div>
@@ -73,7 +73,7 @@ const lista = [
   <section class="bloco escuro">
     <div class="wrap">
       <div class="cab">
-        <div><span class="rotulo verde">Ferramentas</span><h2>Decida com os dados na mão</h2></div>
+        <div><span class="rotulo cor-marca">Ferramentas</span><h2>Decida com os dados na mão</h2></div>
         <a class="link-forte" href="/ferramentas/">Todas as ferramentas</a>
       </div>
       <Ferramentas />
@@ -83,7 +83,7 @@ const lista = [
   <section class="bloco">
     <div class="wrap">
       <div class="cab">
-        <div><span class="rotulo verde">Guias de decisão</span><h2>Antes de assinar o plano</h2></div>
+        <div><span class="rotulo cor-marca">Guias de decisão</span><h2>Antes de assinar o plano</h2></div>
         <a class="link-forte" href="/guias/">Todos os guias</a>
       </div>
       <ol class="guias">{lista.map((g) => <li><a href={g.url}><h3>{g.t}</h3><p>{g.p}</p></a></li>)}</ol>

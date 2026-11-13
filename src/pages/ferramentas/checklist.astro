@@ -12,14 +12,14 @@ let n = 0;
 <Base titulo="Checklist para visitar e escolher academia" descricao="Checklist com 22 pontos para a visita à academia: o que perguntar na recepção, o que observar na sala de treino e no vestiário. Para marcar no celular ou imprimir." migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Checklist', url: '/ferramentas/checklist/' }]}>
   <div class="wrap">
     <header class="cab-pag">
-      <span class="rotulo verde">Ferramenta</span>
+      <span class="rotulo cor-marca">Ferramenta</span>
       <h1>Checklist de visita à academia</h1>
       <p class="linha-fina">{grupos.reduce((s, g) => s + g.itens.length, 0)} pontos para conferir na visita. Marque no celular enquanto anda pela academia; as marcações ficam salvas só no seu aparelho.</p>
       <p class="nao-imprime" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
         <button class="btn peq" type="button" id="ck-imprimir">Imprimir <i aria-hidden="true"></i></button>
         <button class="btn sec peq" type="button" id="ck-compartilhar">Compartilhar</button>
         <button class="btn sec peq" type="button" id="ck-limpar">Limpar marcações</button>
-        <span id="ck-ok" class="rotulo verde" role="status" style="align-self:center"></span>
+        <span id="ck-ok" class="rotulo cor-marca" role="status" style="align-self:center"></span>
       </p>
     </header>
     <form id="ck" class="prosa">

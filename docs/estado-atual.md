@@ -28,6 +28,10 @@ Das páginas públicas de cada unidade no Wellhub (18 academias) e no TotalPass 
 
 Onde as fontes divergem, a ficha mostra as duas versões. Exemplos: o Templo SA aparece como "Hybrid Fitness" no Wellhub e com horário diferente no TotalPass; a Academia 24h Premium tem horário publicado das 5h às 23h.
 
+## Identidade visual
+
+A cor da marca passou de verde para azul a pedido, depois da Fase Zero. A paleta em uso é: Tinta `#101B2D`, Papel `#F5F1E8`, Cartão `#FFFDF8`, Azul `#1B4F9C`, Azul claro `#DCE6F4`, Sinal `#E2502A`, Linha `#D9D2C2`. Contraste calculado pela fórmula da WCAG: Tinta sobre Papel 15,3:1; Azul sobre Papel 7,0:1; branco sobre Azul 7,9:1. O protótipo em `docs/prototipo/` e a tabela de paleta da Fase Zero mostram a versão verde original. As capturas `guia-desktop.png` e `teste-desktop.png` também são da versão verde.
+
 ## Mudanças em relação ao plano da Fase Zero
 
 | Planejado | Feito | Motivo |

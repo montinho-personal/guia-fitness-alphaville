@@ -6,7 +6,7 @@ const todas = await academias();
 <Base titulo="Onde treinar por região: Alphaville, Barueri e Santana" descricao="Academias agrupadas por região: Alphaville e Tamboré, centro de Barueri e Santana de Parnaíba. Veja quantas têm ficha em cada uma e os bairros cobertos." migalhas={[{ nome: 'Regiões', url: '/regioes/' }]}>
   <div class="wrap">
     <header class="cab-pag">
-      <span class="rotulo verde">Regiões</span>
+      <span class="rotulo cor-marca">Regiões</span>
       <h1>Onde treinar, por região</h1>
       <p class="linha-fina">A melhor academia costuma ser a que fica no seu caminho. Comece pela região onde você mora ou trabalha.</p>
     </header>
@@ -16,7 +16,7 @@ const todas = await academias();
         const bairros = [...new Set(xs.map((a) => a.data.bairro))];
         return (
           <article class="cartao">
-            <span class="rotulo verde">{xs.length} com ficha</span>
+            <span class="rotulo cor-marca">{xs.length} com ficha</span>
             <h2 style="font-size:28px;font-weight:800"><a href={urlRegiao(id)} style="text-decoration:none">{r.titulo}</a></h2>
             <p style="margin:0">{r.descricao}</p>
             <ul class="tags">{bairros.map((b) => <li>{b}</li>)}</ul>

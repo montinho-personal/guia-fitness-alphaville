@@ -8,7 +8,7 @@ const T = nivel;
 const ags = d.agregadores.map((g) => g.nome).join(', ');
 ---
 <article class="cartao" data-academia={a.id}>
-  <span class="rotulo verde">{REGIOES[d.regiao].nome} · {d.bairro}</span>
+  <span class="rotulo cor-marca">{REGIOES[d.regiao].nome} · {d.bairro}</span>
   <T><a href={urlAcademia(a)} data-evento="clique_academia" data-ref={a.id}>{d.nome}</a></T>
   <ul class="tags">
     {e24h(d.horario) && <li class="forte">24 horas</li>}

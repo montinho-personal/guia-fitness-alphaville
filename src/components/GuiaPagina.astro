@@ -20,7 +20,7 @@ const schema = [{ '@type': 'Article', headline: d.h1, description: d.descricao, 
 <Base titulo={d.titulo} descricao={d.descricao} tipo="article" schema={schema} migalhas={[SECAO, { nome: d.h1.split(':')[0], url }]}>
   <div class="wrap">
     <header class="cab-pag">
-      <span class="rotulo verde">{SECAO.nome}</span>
+      <span class="rotulo cor-marca">{SECAO.nome}</span>
       <h1>{d.h1}</h1>
       <Assinatura autor={d.autor} revisor={d.revisor} publicado={d.publicado_em} atualizado={d.atualizado_em} />
     </header>

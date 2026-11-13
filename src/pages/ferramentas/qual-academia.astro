@@ -10,7 +10,7 @@ const planosWh = ORDEM_WELLHUB.filter((p) => todas.some((a) => a.data.agregadore
 <Base titulo="Qual academia de Alphaville combina com você? Teste" descricao="Responda cinco perguntas e veja quais academias de Alphaville, Barueri e Santana de Parnaíba atendem aos seus critérios, com a explicação de cada resultado." migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Qual academia', url: '/ferramentas/qual-academia/' }]}>
   <div class="wrap">
     <header class="cab-pag">
-      <span class="rotulo verde">Ferramenta · 2 minutos</span>
+      <span class="rotulo cor-marca">Ferramenta · 2 minutos</span>
       <h1>Qual academia combina com você</h1>
       <p class="linha-fina">Cinco perguntas. O resultado lista as academias que atendem ao que você marcou e mostra, critério por critério, o que bate e o que não bate.</p>
     </header>
@@ -73,7 +73,7 @@ const planosWh = ORDEM_WELLHUB.filter((p) => todas.some((a) => a.data.agregadore
           ? todos.length + (todos.length === 1 ? ' academia atende' : ' academias atendem') + ' a todos os ' + crit.length + ' critérios' + (todos.length > 6 ? '. Estas são as 6 primeiras em ordem alfabética.' : '.')
           : (mostra.length ? 'Nenhuma academia atende a todos os ' + crit.length + ' critérios. Estas são as que chegam mais perto.' : 'Nenhuma academia com ficha atende a algum dos critérios marcados.');
         lista.innerHTML = mostra.map(function (x) {
-          return '<article class="cartao"><span class="rotulo verde">' + esc(x.d.regiaoNome + ' · ' + x.d.bairro) + '</span><h3><a href="' + x.d.url + '">' + esc(x.d.nome) + '</a></h3>' +
+          return '<article class="cartao"><span class="rotulo cor-marca">' + esc(x.d.regiaoNome + ' · ' + x.d.bairro) + '</span><h3><a href="' + x.d.url + '">' + esc(x.d.nome) + '</a></h3>' +
             '<p style="margin:0;font-family:var(--display);font-weight:700">' + x.n + ' de ' + crit.length + ' critérios</p><ul style="list-style:none;padding:0;margin:0;font-size:16px">' +
             x.rs.map(function (r2) { return '<li class="' + (r2[1] ? 'sim-l' : 'nao-l') + '">' + (r2[1] ? '✓ ' : '✗ ') + esc(r2[0]) + '</li>'; }).join('') +
             '</ul><p class="selo" style="margin-top:auto;padding-left:0">Conferido em ' + esc(x.d.conferido) + '</p></article>';
