@@ -1,6 +1,6 @@
 # Auditoria do build
 
-Gerada em 2026-11-13T17:43:45.419Z
+Gerada em 2026-11-13T18:07:39.089Z
 
 **Resultado:** sem erros bloqueantes · 27 aviso(s)
 

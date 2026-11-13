@@ -4,13 +4,13 @@ export type Academia = CollectionEntry<'academias'>;
 export type Guia = CollectionEntry<'guias'>;
 
 export const INDEXAVEL = import.meta.env.PUBLIC_INDEXAVEL === 'true';
-// Variável sem prefixo PUBLIC_: vem do .env em desenvolvimento e do ambiente do sistema na Vercel.
-export const MOSTRAR_EM_REVISAO = (import.meta.env.MOSTRAR_EM_REVISAO ?? process.env.MOSTRAR_EM_REVISAO) === 'true';
+// Prefixo PUBLIC_ para que o valor seja lido também do ambiente do sistema (Vercel), não só do .env.
+export const MOSTRAR_EM_REVISAO = import.meta.env.PUBLIC_MOSTRAR_EM_REVISAO === 'true';
 export const WHATSAPP = import.meta.env.PUBLIC_WHATSAPP || '';
 export const GTM_ID = import.meta.env.PUBLIC_GTM_ID || '';
 
 if (INDEXAVEL && MOSTRAR_EM_REVISAO) {
-  throw new Error('PUBLIC_INDEXAVEL=true não pode ser combinado com MOSTRAR_EM_REVISAO=true: conteúdo não aprovado ficaria indexável.');
+  throw new Error('PUBLIC_INDEXAVEL=true não pode ser combinado com PUBLIC_MOSTRAR_EM_REVISAO=true: conteúdo não aprovado ficaria indexável.');
 }
 
 const APROVADOS = ['aprovado', 'publicado'];
@@ -18,7 +18,7 @@ const visivel = (status: string) => MOSTRAR_EM_REVISAO || APROVADOS.includes(sta
 
 export async function academias(): Promise<Academia[]> {
   const todas = await getCollection('academias', ({ data }) => visivel(data.status));
-  if (todas.length === 0) throw new Error('Nenhuma ficha aprovada para publicar. Aprove conteúdo (status "aprovado") ou use MOSTRAR_EM_REVISAO=true para pré-visualizar.');
+  if (todas.length === 0) throw new Error('Nenhuma ficha aprovada para publicar. Aprove conteúdo (status "aprovado") ou use PUBLIC_MOSTRAR_EM_REVISAO=true para pré-visualizar.');
   return todas.sort((a, b) => a.data.nome.localeCompare(b.data.nome, 'pt-BR'));
 }
 export async function guias(): Promise<Guia[]> {

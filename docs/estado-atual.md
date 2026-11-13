@@ -93,7 +93,7 @@ A nota de SEO do Lighthouse ficou em 66 porque as páginas estão com `noindex`,
 
 ## Pré-visualização na Vercel
 
-O projeto `onde-treinar-alphaville` foi criado no time Montinho Personal Trainer, ligado a este repositório. Cada push em um branch gera uma pré-visualização com `MOSTRAR_EM_REVISAO=true` e `PUBLIC_INDEXAVEL=false`. O branch de produção é `main`, que ainda não tem o código: nada vai para produção até o merge, e o build de produção falha de propósito enquanto não houver conteúdo aprovado.
+O projeto `onde-treinar-alphaville` foi criado no time Montinho Personal Trainer, ligado a este repositório. Cada push em um branch gera uma pré-visualização com `PUBLIC_MOSTRAR_EM_REVISAO=true` e `PUBLIC_INDEXAVEL=false`. O branch de produção é `main`, que ainda não tem o código: nada vai para produção até o merge, e o build de produção falha de propósito enquanto não houver conteúdo aprovado.
 
 ## Pendências para o lançamento
 
@@ -106,7 +106,7 @@ Em ordem de dependência.
 5. **Domínio.** Registrar `ondetreinaralphaville.com.br` e apontar para a Vercel. Não foi registrado.
 6. **Medição.** Criar a propriedade GA4 e o contêiner GTM, preencher `PUBLIC_GTM_ID`, marcar `clique_whatsapp` e `clique_montinho` como conversões, e verificar o domínio no Search Console e no Bing Webmaster Tools.
 7. **E-mail de contato** em `PUBLIC_EMAIL_CONTATO`.
-8. **Ligar a indexação:** `PUBLIC_INDEXAVEL=true` e `MOSTRAR_EM_REVISAO=false`, depois dos itens 1 e 4.
+8. **Ligar a indexação:** `PUBLIC_INDEXAVEL=true` e `PUBLIC_MOSTRAR_EM_REVISAO=false`, depois dos itens 1 e 4.
 9. **Consolidação com o Montinho** (Etapa 7 da Fase Zero), página a página, só depois de as equivalentes do portal estarem indexadas. Nada foi alterado no montinhopersonal.com.br.
 
 ## Riscos em aberto
