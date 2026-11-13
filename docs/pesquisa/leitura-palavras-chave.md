@@ -105,6 +105,20 @@ As perguntas do Google são boas para a página de CrossFit do portal:
 
 As de tênis e de emagrecimento são nacionais e ficam fora.
 
+## Terceira remessa: "como escolher academia"
+
+Matriz em [`matriz-como-escolher.csv`](matriz-como-escolher.csv), com 30 termos.
+
+**A procura é mínima.** "Como escolher academia" tem 20 buscas por mês e "como escolher a academia certa", 10. Os maiores termos da lista são de tênis ("como escolher um tênis para academia", 140), fora do tema. Vinte e um dos 30 termos têm volume zero.
+
+O que isso muda:
+
+1. O guia [como escolher uma academia](/guias/como-escolher-academia/) já existe e deve ficar, mas não vai trazer tráfego de busca por conta própria. O valor dele é de apoio: recebe links das fichas e leva ao checklist e ao comparador.
+2. Não vale criar mais conteúdo em torno dessa intenção.
+3. Há um ângulo pequeno e alinhado ao portal: "como escolher academia no Gympass" (10) e "no Wellhub" (zero, mas sugerido pelo Google). Cabe como uma seção na página de agregadores, não como artigo.
+
+As perguntas do Google para este termo são quase todas de treino ou curiosidade nacional (quantas vezes por semana treinar, maiores academias do Brasil). Um bloco é aproveitável nas fichas: **avaliação física** — o que é, quanto custa, quanto tempo dura. É um dado que dá para levantar com cada academia.
+
 ## O que ainda falta pesquisar
 
-Chegaram cinco termos-semente. Faltam, da lista combinada: "academia 24 horas", os blocos de preço e de decisão ("quanto custa academia", "como escolher academia", "academia ou personal trainer") e as regiões restantes ("academia tamboré", "academia santana de parnaíba").
+Chegaram seis termos-semente. Faltam, da lista combinada: "academia 24 horas", "quanto custa academia", "academia ou personal trainer" e as regiões restantes ("academia tamboré", "academia santana de parnaíba").
