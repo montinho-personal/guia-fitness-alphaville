@@ -17,6 +17,7 @@ const visivel = (status: string) => MOSTRAR_EM_REVISAO || APROVADOS.includes(sta
 
 export async function academias(): Promise<Academia[]> {
   const todas = await getCollection('academias', ({ data }) => visivel(data.status));
+  if (todas.length === 0) throw new Error('Nenhuma ficha aprovada para publicar. Aprove conteúdo (status "aprovado") ou use MOSTRAR_EM_REVISAO=true para pré-visualizar.');
   return todas.sort((a, b) => a.data.nome.localeCompare(b.data.nome, 'pt-BR'));
 }
 export async function guias(): Promise<Guia[]> {

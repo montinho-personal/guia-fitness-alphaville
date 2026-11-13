@@ -86,10 +86,14 @@ A nota de SEO do Lighthouse ficou em 66 porque as páginas estão com `noindex`,
 
 1. **Fichas parecidas demais entre si.** A primeira auditoria mediu até 44% de sequências em comum entre fichas, por causa de frases de modelo repetidas. Removi as frases repetidas, e a auditoria passou a medir o texto editorial separado dos blocos de dados. O maior valor caiu para 23%.
 2. **Títulos longos.** 37 páginas passavam de 65 caracteres por causa do sufixo da marca. O sufixo agora só entra quando cabe.
-3. **Afirmações que os dados não sustentavam.** Conferi os textos contra os dados e corrigi dez frases, entre elas "a entrada mais barata do guia" (havia empate) e "abre uma hora antes da maioria" (não era a maioria).
+3. **Afirmações que os dados não sustentavam.** Conferi os textos contra os dados e corrigi catorze frases, entre elas "a entrada mais barata do guia" (havia empate) e "abre uma hora antes da maioria" (não era a maioria).
 4. **Página com poucos links.** A de musculação recebia um link só; agora recebe de cinco páginas.
 5. **Hierarquia de títulos** em `/ferramentas/`.
 6. **Migalhas coladas na borda** no celular.
+
+## Pré-visualização na Vercel
+
+O projeto `onde-treinar-alphaville` foi criado no time Montinho Personal Trainer, ligado a este repositório. Cada push em um branch gera uma pré-visualização com `MOSTRAR_EM_REVISAO=true` e `PUBLIC_INDEXAVEL=false`. O branch de produção é `main`, que ainda não tem o código: nada vai para produção até o merge, e o build de produção falha de propósito enquanto não houver conteúdo aprovado.
 
 ## Pendências para o lançamento
 
