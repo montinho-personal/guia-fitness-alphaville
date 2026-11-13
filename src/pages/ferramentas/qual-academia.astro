@@ -1,0 +1,87 @@
+---
+import Base from '../../layouts/Base.astro';
+import Mantem from '../../components/Mantem.astro';
+import { academias, paraFerramentas, MODALIDADES, REGIOES, ORDEM_WELLHUB } from '../../lib/dados';
+const todas = await academias();
+const dados = paraFerramentas(todas);
+const mods = [...new Set(todas.flatMap((a) => a.data.modalidades))];
+const planosWh = ORDEM_WELLHUB.filter((p) => todas.some((a) => a.data.agregadores.some((g) => g.nome === 'Wellhub')) && ORDEM_WELLHUB.indexOf(p) <= ORDEM_WELLHUB.indexOf('Gold+'));
+---
+<Base titulo="Qual academia de Alphaville combina com você? Teste" descricao="Responda cinco perguntas e veja quais academias de Alphaville, Barueri e Santana de Parnaíba atendem aos seus critérios, com a explicação de cada resultado." migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Qual academia', url: '/ferramentas/qual-academia/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Ferramenta · 2 minutos</span>
+      <h1>Qual academia combina com você</h1>
+      <p class="linha-fina">Cinco perguntas. O resultado lista as academias que atendem ao que você marcou e mostra, critério por critério, o que bate e o que não bate.</p>
+    </header>
+
+    <form class="painel nao-imprime" id="quiz">
+      <div class="campos" style="gap:22px">
+        <label class="campo"><span class="rotulo">1. Onde você quer treinar?</span>
+          <select name="regiao"><option value="">Tanto faz</option>{Object.entries(REGIOES).map(([id, r]) => <option value={id}>{r.titulo}</option>)}</select></label>
+        <label class="campo"><span class="rotulo">2. O que você quer treinar?</span>
+          <select name="modalidade"><option value="">Ainda não sei</option>{mods.map((m) => <option value={m}>{MODALIDADES[m]}</option>)}</select></label>
+        <fieldset class="chips"><legend class="rotulo">3. Quando você treina? Marque o que for indispensável</legend>
+          {[['cedo', 'Antes das 6h'], ['tarde', 'Depois das 22h'], ['h24', 'De madrugada'], ['domingo', 'Aos domingos']].map(([v, t]) => <label class="chip"><input type="checkbox" name="quando" value={v}><span>{t}</span></label>)}
+        </fieldset>
+        <fieldset class="chips"><legend class="rotulo">4. Do que você precisa?</legend>
+          {[['estacionamento', 'Estacionamento'], ['acessivel', 'Itens de acessibilidade']].map(([v, t]) => <label class="chip"><input type="checkbox" name="precisa" value={v}><span>{t}</span></label>)}
+        </fieldset>
+        <label class="campo"><span class="rotulo">5. Você tem plano do Wellhub?</span>
+          <select name="wellhub"><option value="">Não tenho ou não quero usar</option>{planosWh.map((p) => <option value={String(ORDEM_WELLHUB.indexOf(p))}>Tenho o {p}</option>)}</select></label>
+      </div>
+      <button class="btn" type="submit" style="margin-top:20px">Ver resultado <i aria-hidden="true"></i></button>
+      <p style="margin:12px 0 0;font-size:15px;color:var(--cinza)">Suas respostas não saem do seu aparelho.</p>
+    </form>
+
+    <section class="bloco fino" id="resultado" aria-live="polite" tabindex="-1" hidden>
+      <div class="cab"><h2 id="res-t">Resultado</h2></div>
+      <p id="res-resumo" class="contagem"></p>
+      <div class="cartoes" id="res-lista"></div>
+      <p style="font-size:16px;color:var(--cinza);max-width:var(--leitura);margin-top:18px">A ordem é só pelo número de critérios atendidos; em caso de empate, alfabética. Nenhuma academia paga para aparecer. Critérios que você não marcou não contam.</p>
+    </section>
+    <noscript><p class="caixa">O teste precisa de JavaScript. Sem ele, os mesmos filtros estão no <a href="/academias/">guia de academias</a>.</p></noscript>
+
+    <div class="prosa">
+      <h2>Como o resultado é calculado</h2>
+      <p>Cada resposta vira um critério. Para cada academia, o teste confere se o dado da ficha atende ao critério e soma um ponto quando atende. Não há pesos escondidos. O Montinho Personal Trainer, que mantém o guia, não aparece entre os resultados.</p>
+      <p>O teste usa só o que está nas fichas, e as fichas ainda não têm mensalidade nem lotação. Trate o resultado como uma lista curta para visitar, não como veredito. Leve o <a href="/ferramentas/checklist/">checklist</a>.</p>
+    </div>
+    <section class="bloco fino"><Mantem pagina="quiz" compacta titulo="Precisa de ajuda para começar a treinar?" texto="Se a sua dúvida não é só onde, mas como treinar, o Montinho Personal Trainer atende presencialmente na região. Este bloco é publicidade da casa e não faz parte do resultado do teste." /></section>
+  </div>
+
+  <script type="application/json" id="dados" set:html={JSON.stringify({ dados, mods: MODALIDADES })}></script>
+  <script is:inline>
+    (function () {
+      var J = JSON.parse(document.getElementById('dados').textContent), D = J.dados, M = J.mods;
+      var f = document.getElementById('quiz'), sec = document.getElementById('resultado'), lista = document.getElementById('res-lista'), resumo = document.getElementById('res-resumo');
+      function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+      var ROT = { cedo: 'Abre antes das 6h', tarde: 'Fecha depois das 22h', h24: 'Funciona 24 horas', domingo: 'Abre aos domingos', estacionamento: 'Estacionamento informado', acessivel: 'Itens de acessibilidade informados' };
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var crit = [], r = f.elements.regiao.value, m = f.elements.modalidade.value, w = f.elements.wellhub.value;
+        if (r) crit.push(['Fica na região escolhida', function (d) { return d.regiao === r; }]);
+        if (m) crit.push(['Lista ' + M[m], function (d) { return d.modalidades.indexOf(m) > -1; }]);
+        [].forEach.call(f.querySelectorAll('input:checked'), function (c) { var k = c.value; crit.push([ROT[k], function (d) { return !!d[k]; }]); });
+        if (w !== '') crit.push(['Entra no seu plano do Wellhub', function (d) { return d.wellhubNivel !== null && d.wellhubNivel <= Number(w); }]);
+        if (!crit.length) { resumo.textContent = 'Você não marcou nenhum critério. Marque ao menos um, ou veja todas as academias no guia.'; lista.innerHTML = ''; sec.hidden = false; sec.focus(); return; }
+        var xs = D.map(function (d) { var rs = crit.map(function (c) { return [c[0], c[1](d)]; }); return { d: d, rs: rs, n: rs.filter(function (x) { return x[1]; }).length }; })
+          .sort(function (a, b) { return b.n - a.n || a.d.nome.localeCompare(b.d.nome); });
+        var todos = xs.filter(function (x) { return x.n === crit.length; });
+        var mostra = (todos.length ? todos : xs.filter(function (x) { return x.n === xs[0].n && x.n > 0; })).slice(0, 6);
+        resumo.textContent = todos.length
+          ? todos.length + (todos.length === 1 ? ' academia atende' : ' academias atendem') + ' a todos os ' + crit.length + ' critérios' + (todos.length > 6 ? '. Estas são as 6 primeiras em ordem alfabética.' : '.')
+          : (mostra.length ? 'Nenhuma academia atende a todos os ' + crit.length + ' critérios. Estas são as que chegam mais perto.' : 'Nenhuma academia com ficha atende a algum dos critérios marcados.');
+        lista.innerHTML = mostra.map(function (x) {
+          return '<article class="cartao"><span class="rotulo cor-marca">' + esc(x.d.regiaoNome + ' · ' + x.d.bairro) + '</span><h3><a href="' + x.d.url + '">' + esc(x.d.nome) + '</a></h3>' +
+            '<p style="margin:0;font-family:var(--display);font-weight:700">' + x.n + ' de ' + crit.length + ' critérios</p><ul style="list-style:none;padding:0;margin:0;font-size:16px">' +
+            x.rs.map(function (r2) { return '<li class="' + (r2[1] ? 'sim-l' : 'nao-l') + '">' + (r2[1] ? '✓ ' : '✗ ') + esc(r2[0]) + '</li>'; }).join('') +
+            '</ul><p class="selo" style="margin-top:auto;padding-left:0">Conferido em ' + esc(x.d.conferido) + '</p></article>';
+        }).join('');
+        sec.hidden = false; sec.focus(); sec.scrollIntoView({ block: 'start' });
+        if (window.otaEvento) otaEvento('quiz_concluido', { criterios: crit.length, resultados: todos.length });
+      });
+    })();
+  </script>
+  <style is:global>.sim-l{color:var(--alameda);font-weight:600}.nao-l{color:var(--cinza)}</style>
+</Base>

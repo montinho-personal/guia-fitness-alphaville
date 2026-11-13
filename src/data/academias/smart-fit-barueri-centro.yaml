@@ -1,0 +1,95 @@
+nome: Smart Fit Barueri Centro
+regiao: barueri
+bairro: Centro
+tipo: academia
+rede: Smart Fit
+resumo: Unidade da Smart Fit na Av. Vinte e Seis de Março, no centro de Barueri, aberta todos os dias.
+endereco: Av. Vinte e Seis de Março, 701, Centro, Barueri, SP
+geo:
+  lat: -23.511104
+  lng: -46.882225
+horario:
+  seg:
+  - 05:00-23:59
+  ter:
+  - 05:00-23:59
+  qua:
+  - 05:00-23:59
+  qui:
+  - 05:00-23:59
+  sex:
+  - 05:00-23:59
+  sab:
+  - 08:00-17:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+- bike
+atividades_listadas:
+- Musculação
+- indoor bike
+- Ginástica
+- Smart Box
+comodidades:
+- Ar-condicionado
+- Armário rotativo
+- Ducha aquecida
+- Professores formados
+- Smart Fit Energy
+agregadores:
+- nome: TotalPass
+  plano_minimo: TP 1+
+  preco_plano: R$ 89,90
+  url: https://totalpass.com/br/academias/smart-fit-barrueri-centro/
+mensalidade:
+  valor: a partir de R$ 139,90
+  resumo: Plano Fit a R$ 139,90 por mês com fidelidade, sem taxa de adesão.
+  planos:
+  - nome: Plano Fit
+    preco: R$ 139,90/mês
+    condicoes: Com fidelidade; sem fidelidade, mais R$ 20 por mês. Adesão grátis. Acesso só a esta unidade.
+  - nome: Plano Smart
+    preco: R$ 159,90/mês
+    condicoes: Com fidelidade; sem fidelidade, mais R$ 20 por mês. Adesão grátis.
+  - nome: Plano Black
+    preco: R$ 159,90/mês
+    condicoes: Com fidelidade. Adesão de R$ 29,90. Primeiro mês gratuito, segundo o site. Acesso a todas as unidades da rede.
+  abrangencia: unidade
+  fonte: Site oficial da Smart Fit (página da unidade)
+  url: https://www.smartfit.com.br/academias/barueri-centro
+  conferido_em: '2026-11-13'
+  aviso: O site informa que os valores exibidos são promocionais e remete às condições no próprio site.
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - comodidades
+  - mensalidade
+  fonte: Site oficial da Smart Fit (página da unidade)
+  url: https://www.smartfit.com.br/academias/barueri-centro
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/smart-fit-barrueri-centro/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- 'Estacionamento: não consta na fonte'
+analise:
+- Funciona das 5h à meia-noite de segunda a sexta, das 8h às 17h no sábado e das 8h às 14h no domingo e em feriados. Abre uma hora mais cedo e fecha uma hora mais tarde que a unidade da Sodimac, em Alphaville.
+- O Plano Fit, o mais barato da rede, custa R$ 139,90 por mês com fidelidade e dá acesso só a esta unidade. Quem quer treinar também em outras Smart Fit precisa do Plano Black, a R$ 159,90. A grade inclui musculação, bike e ginástica, e o site oferece um indicador de ocupação da unidade em tempo real.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

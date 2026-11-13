@@ -1,0 +1,10 @@
+---
+// Selo de conferência. "ok" = dado conferido em fonte pública ou direta; "pendente" = aguardando.
+const { estado = 'ok', texto, detalhe } = Astro.props;
+---
+<p class:list={['selo', { pendente: estado !== 'ok' }]}>
+  {estado === 'ok'
+    ? <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.6 8.2l2.3 2.3 4.5-4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+    : <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.2v4.6M8 11v1" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>}
+  {texto}{detalhe && <span> · {detalhe}</span>}
+</p>

@@ -1,0 +1,69 @@
+nome: CrossFit Barueri
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: box
+resumo: Box de CrossFit na Av. Juruá, em Alphaville Industrial, com aulas de segunda a sábado.
+endereco: Av. Juruá, 307 - Alphaville Industrial, Barueri - SP, 06455-010
+geo:
+  lat: -23.5004
+  lng: -46.8544
+horario:
+  seg:
+  - 06:00-22:30
+  ter:
+  - 06:00-22:30
+  qua:
+  - 06:00-22:30
+  qui:
+  - 06:00-22:30
+  sex:
+  - 06:00-21:30
+  sab:
+  - 07:00-12:00
+  dom: []
+modalidades:
+- crossfit
+- hiit
+atividades_listadas:
+- CrossFit
+- HIIT
+comodidades:
+- Armários
+- Estacionamento
+- Loja de artigos esportivos
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold
+  preco_plano: R$ 319,99
+  url: https://wellhub.com/pt-br/search/partners/crossfit-barueri/
+mensalidade: null
+site: https://crossfitbarueri.com.br
+telefone: (11) 97503-7921
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/crossfit-barueri/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Grade de aulas atual
+- Valor da mensalidade
+- 'Número do endereço: a fonte traz a grafia corrompida'
+analise:
+- Apesar do nome, o endereço listado fica em Alphaville Industrial, na Av. Juruá, e não no centro de Barueri. Funciona das 6h às 22h30 de segunda a quinta, até 21h30 na sexta e das 7h às 12h no sábado. Não há horário listado para domingo.
+- Entre os boxes reunidos aqui, é o que tem a janela mais longa em dias úteis. A página informa estacionamento, vestiário e loja. No Wellhub, o acesso começa no plano Gold.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

@@ -1,0 +1,5 @@
+{
+  "conferido_em": "2026-11-13",
+  "wellhub": { "fonte": "Tabela de planos exibida nas páginas de parceiros do Wellhub", "url": "https://wellhub.com/pt-br/", "planos": [["Starter", "39,99"], ["Basic", "69,99"], ["Basic+", "99,99"], ["Silver", "149,99"], ["Silver+", "199,99"], ["Gold", "319,99"], ["Gold+", "439,99"]] },
+  "totalpass": { "fonte": "Tabela de planos exibida nas páginas de academias do TotalPass", "url": "https://totalpass.com/br/", "planos": [["TP 1+", "89,90"], ["TP 2", "119,90"], ["TP 2+", "149,90"], ["TP 3", "199,90"], ["TP 4", "299,90"]] }
+}

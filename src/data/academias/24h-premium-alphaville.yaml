@@ -1,0 +1,113 @@
+nome: Academia 24h Premium
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: academia
+resumo: Academia na Alameda Grajaú com musculação, lutas e aulas coletivas. Apesar do nome, o horário publicado não é de 24 horas.
+endereco: Alameda Grajaú, 525 - Alphaville Industrial, Barueri - SP, 06454-050
+geo:
+  lat: -23.493885
+  lng: -46.847727
+horario:
+  seg:
+  - 05:00-23:00
+  ter:
+  - 05:00-23:00
+  qua:
+  - 05:00-23:00
+  qui:
+  - 05:00-23:00
+  sex:
+  - 05:00-23:00
+  sab:
+  - 07:00-15:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+- lutas
+- danca
+- bike
+- pilates
+- hiit
+- yoga
+- corrida
+atividades_listadas:
+- Alongamento
+- Bike
+- Body Pump
+- Boxe
+- Core
+- Corrida
+- Corrida ao ar livre
+- Fisiculturismo
+- Grit Series
+- Grit Strength
+- Jiu-jitsu
+- Mat Pilates
+- Muay Thai
+- Musculação
+- Power jump
+- Ritmos
+- Yoga
+- Zumba
+comodidades:
+- Ar condicionado
+- Área de alongamento
+- Área de cardio
+- Área de musculação
+- Área de pesos livres
+- Área de treino funcional
+- Armários
+- Balança de bioimpedância
+- Banheiro acessível
+- Bebedouro
+- Cafeteria
+- Chuveiro
+- Chuveiro acessível
+- Elevador
+- Espaço adaptado para cadeira de rodas
+- Espaços de coworking
+- Estacionamento
+- Estacionamento acessível
+- Itens de higiene pessoal
+- Loja de artigos esportivos
+- Personal trainer
+- Secador de cabelo
+- Tapete de ioga
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold+
+  preco_plano: R$ 439,99
+  url: https://wellhub.com/pt-br/search/partners/academia-24h-premium-alphaville-industrial-barueri/
+mensalidade: null
+site: https://www.instagram.com/academia24healthclub/
+telefone: (11) 4191-3515
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/academia-24h-premium-alphaville-industrial-barueri/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+divergencias:
+- O nome da academia indica 24 horas; o horário publicado no Wellhub vai das 5h às 23h em dias úteis.
+pendencias:
+- Confirmar se há funcionamento 24 horas para alunos diretos
+- Mensalidade direta da academia
+analise:
+- O nome sugere funcionamento ininterrupto, mas o horário listado no Wellhub é das 5h às 23h de segunda a sexta, das 7h às 15h no sábado e das 8h às 14h no domingo. Se você procura uma academia para treinar de madrugada, confirme com a unidade antes.
+- 'A estrutura informada é extensa: áreas de musculação, pesos livres, cardio e funcional, cafeteria, loja, elevador e espaço de coworking. A grade inclui boxe, jiu-jitsu, muay thai, bike, yoga e pilates. No Wellhub, o acesso exige o plano Gold+, o nível mais alto exigido entre as academias reunidas aqui.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

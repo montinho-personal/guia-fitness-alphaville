@@ -1,0 +1,142 @@
+---
+import Base from '../../layouts/Base.astro';
+import CartaoAcademia from '../../components/CartaoAcademia.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Mantem from '../../components/Mantem.astro';
+import { academias, REGIOES, e24h, abreDomingo, agregador, urlAcademia, urlRegiao, dataIso, type Academia, type RegiaoId } from '../../lib/dados';
+
+export async function getStaticPaths() {
+  const todas = await academias();
+  return (Object.keys(REGIOES) as RegiaoId[]).map((regiao) => ({ params: { regiao }, props: { xs: todas.filter((a) => a.data.regiao === regiao) } })).filter((p) => p.props.xs.length >= 3);
+}
+const { regiao } = Astro.params as { regiao: RegiaoId };
+const { xs } = Astro.props as { xs: Academia[] };
+const r = REGIOES[regiao];
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
+
+const bairros = [...new Set(xs.map((a) => a.data.bairro))].map((b) => ({ b, as: xs.filter((a) => a.data.bairro === b) })).sort((x, y) => y.as.length - x.as.length);
+const rua = (a: Academia) => a.data.endereco.split(',')[0];
+const naVia = (v: string) => xs.filter((a) => rua(a).includes(v));
+const n = (f: (a: Academia) => boolean) => xs.filter(f).length;
+const km = (a: Academia, b: Academia) => { const R = 6371, rad = (x: number) => (x * Math.PI) / 180, dLa = rad(b.data.geo.lat - a.data.geo.lat), dLo = rad(b.data.geo.lng - a.data.geo.lng); const h = Math.sin(dLa / 2) ** 2 + Math.cos(rad(a.data.geo.lat)) * Math.cos(rad(b.data.geo.lat)) * Math.sin(dLo / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
+const dists = xs.flatMap((a, i) => xs.slice(i + 1).map((b) => km(a, b)));
+const distMin = Math.min(...dists), distMax = Math.max(...dists);
+const nomes = (as: Academia[]) => as.map((a) => a.data.nome).join(', ').replace(/, ([^,]*)$/, ' e $1');
+const fmt = (x: number) => x.toFixed(1).replace('.', ',');
+const jurua = naVia('Juruá'), araguaia = naVia('Araguaia');
+const boxes = xs.filter((a) => a.data.tipo === 'box');
+const redes = xs.filter((a) => a.data.rede);
+
+const META: Record<RegiaoId, { titulo: string; descricao: string; h1: string; fina: string }> = {
+  alphaville: { titulo: 'Academias em Alphaville e Tamboré: onde treinar', descricao: `Onde treinar em Alphaville, Tamboré e 18 do Forte: ${xs.length} academias, boxes e estúdios por bairro, com endereço, horários e o que observar em cada um.`, h1: 'Onde treinar em Alphaville e Tamboré', fina: 'Alphaville Industrial, Empresarial 18 do Forte, o entorno do Iguatemi e o Tamboré, bairro a bairro.' },
+  barueri: { titulo: 'Academias em Barueri: onde treinar e quanto custa', descricao: `Onde treinar em Barueri fora de Alphaville: ${xs.length} academias no centro, em Bethaville, no sul e na Vila Engenho Novo, com horários, endereço e preços.`, h1: 'Onde treinar em Barueri', fina: 'Centro, Bethaville, Parque Shopping, sul de Barueri e Vila Engenho Novo, para quem mora ou trabalha fora dos bairros de Alphaville.' },
+  'santana-de-parnaiba': { titulo: 'Academias em Santana de Parnaíba: onde treinar', descricao: `Onde treinar em Santana de Parnaíba: ${xs.length} academias na Fazendinha, no Polvilho e no Jardim São Luís, com endereço, horários e o que observar.`, h1: 'Onde treinar em Santana de Parnaíba', fina: 'Fazendinha, Polvilho e Jardim São Luís: três academias de bairro, em pontos distantes do município.' },
+};
+const m = META[regiao];
+const outras = (Object.keys(REGIOES) as RegiaoId[]).filter((x) => x !== regiao);
+const abs = (u: string) => new URL(u, Astro.site).href;
+const schema = [
+  { '@type': 'Article', headline: m.h1, description: m.descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } },
+  { '@type': 'ItemList', name: m.h1, numberOfItems: xs.length, itemListElement: xs.map((a, i) => ({ '@type': 'ListItem', position: i + 1, name: a.data.nome, url: abs(urlAcademia(a)) })) },
+];
+---
+<Base titulo={m.titulo} descricao={m.descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Regiões', url: '/regioes/' }, { nome: r.titulo, url: urlRegiao(regiao) }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Região</span>
+      <h1>{m.h1}</h1>
+      <p class="linha-fina">{m.fina}</p>
+      <Assinatura {...gov} />
+    </header>
+
+    {regiao === 'alphaville' && (
+      <>
+        <div class="resposta"><span class="rotulo">Em resumo</span>
+          <p>Há {xs.length} lugares com ficha em Alphaville e Tamboré. {jurua.length + araguaia.length} deles ficam em apenas duas vias de Alphaville Industrial, a Av. Juruá e a Alameda Araguaia. {n((a) => e24h(a.data.horario)) === 1 ? 'Um funciona 24 horas' : `${n((a) => e24h(a.data.horario))} funcionam 24 horas`}, {n((a) => abreDomingo(a.data.horario))} abrem aos domingos e {boxes.length} são boxes de CrossFit ou cross training.</p>
+        </div>
+        <div class="prosa">
+          <h2>Alphaville Industrial: duas vias concentram a oferta</h2>
+          <p>Das {xs.length} fichas da região, {xs.filter((a) => a.data.bairro === 'Alphaville Industrial').length} ficam em Alphaville Industrial. E dentro do bairro a oferta se concentra em dois eixos.</p>
+          <p>Na <strong>Av. Juruá</strong> ficam {nomes(jurua)}. Gaviões e Fast Treino dividem o mesmo número, e SkyFit e CrossFit Barueri também. Na prática, são quatro propostas diferentes — musculação 24 horas, circuito rápido, academia de rede e box — em dois números vizinhos da mesma avenida, o que facilita visitar todas no mesmo dia.</p>
+          <p>Na <strong>Alameda Araguaia</strong> ficam {nomes(araguaia)}. Os dois boxes de treino em aula, Templo SA e BlackSheep, ocupam galpões do mesmo conjunto, no número 122. A Smart Fit fica mais adiante, no estacionamento da Sodimac.</p>
+          <p>Fora desses dois eixos, mas ainda no bairro, estão a <a href="/academias/bluefit-alphaville/">Bluefit Alphaville</a>, na Alameda Amazonas, e a <a href="/academias/24h-premium-alphaville/">Academia 24h Premium</a>, na Alameda Grajaú.</p>
+
+          <h2>Iguatemi, Alphaville Empresarial e 18 do Forte</h2>
+          <p>Três academias atendem quem circula pelos centros empresariais e comerciais. A <a href="/academias/bodytech-iguatemi-alphaville/">Bodytech</a> fica na Alameda Rio Negro, junto ao Iguatemi Alphaville, e tem a grade de aulas mais extensa do guia, mas não lista horário aos domingos. A <a href="/academias/scelta-alphaville/">Academia Scelta</a>, na Av. Andrômeda, abre todos os dias e informa serviços como fisioterapeuta e cafeteria. A <a href="/academias/voifit-alphaville/">VoiFit</a> fica na Av. Alphaville, dentro do Empresarial 18 do Forte.</p>
+
+          <h2>Tamboré</h2>
+          <p>Só uma academia do Tamboré tem ficha até agora: a <a href="/academias/bluefit-tambore/">Bluefit Tamboré</a>, na Av. Tucunaré. O bairro tem outras opções conhecidas, como a NitroGym e a Bio Ritmo, que ainda não entraram por falta de dados públicos conferíveis. Por isso o Tamboré ainda não tem página própria.</p>
+
+          <h2>Como escolher dentro da região</h2>
+          <ul>
+            <li><strong>Treina de madrugada ou em turnos?</strong> Veja as <a href="/academias/24-horas/">academias 24 horas</a>.</li>
+            <li><strong>Procura só musculação?</strong> Quase todas oferecem; veja <a href="/modalidades/musculacao/">o que observar na sala de pesos</a>.</li>
+            <li><strong>Quer treino em aula, com coach?</strong> Os boxes estão em <a href="/modalidades/crossfit/">CrossFit e cross training</a>.</li>
+            <li><strong>Usa Wellhub ou TotalPass?</strong> O plano mínimo varia de Silver a Gold+ na região. Veja <a href="/academias/wellhub-totalpass/">o que cada plano abre</a>.</li>
+            <li><strong>Mora em condomínio com academia?</strong> Vale pesar se a estrutura do residencial já resolve. O guia <a href="/guias/academia-ou-personal/">academia, personal ou os dois</a> trata disso.</li>
+          </ul>
+        </div>
+      </>
+    )}
+
+    {regiao === 'barueri' && (
+      <>
+        <div class="resposta"><span class="rotulo">Em resumo</span>
+          <p>Barueri tem {xs.length} academias com ficha, espalhadas por {bairros.length} bairros fora de Alphaville. {n((a) => a.data.rede === 'Smart Fit')} são unidades da Smart Fit, todas com preço publicado a partir de R$ 139,90 por mês. {n((a) => abreDomingo(a.data.horario))} abrem aos domingos, e só uma tem piscina: a Boa Forma, no Jardim Alberto.</p>
+        </div>
+        <div class="prosa">
+          <h2>Centro de Barueri</h2>
+          <p>Quatro opções ficam no centro ou a poucas quadras dele. A <a href="/academias/smart-fit-barueri-centro/">Smart Fit Barueri Centro</a>, na Av. Vinte e Seis de Março, e a <a href="/academias/panobianco-barueri-centro/">Panobianco Barueri Centro</a>, na Rua José Maria Balieiro, abrem às 5h, fecham perto da meia-noite e funcionam também no fim de semana. A Smart Fit cobra R$ 139,90 no Plano Fit; a Panobianco anuncia R$ 119,90 no plano anual da rede, mas o valor da unidade não foi confirmado.</p>
+          <p>Perto da Prefeitura, a <a href="/academias/xandu-barueri/">Academia Xandu</a> é uma academia de bairro com dança, jump e bike, e a única do guia que entra no plano mais barato do Wellhub. Para lutas, o <a href="/academias/ct-don-combat-barueri/">CT Don Combat</a>, no endereço da antiga Killer Bees, oferece boxe e muay thai.</p>
+          <h2>Bethaville e Parque Shopping</h2>
+          <p>No caminho entre o centro e Alphaville estão a <a href="/academias/bluefit-barueri/">Bluefit Barueri</a>, na Av. Trindade, em Bethaville, que lista muay thai e jiu-jitsu além da musculação, e a <a href="/academias/smart-fit-parque-shopping-barueri/">Smart Fit do Parque Shopping Barueri</a>, aberta até a meia-noite em dias úteis. Ficam a cerca de {fmt(km(xs.find((a) => a.id === 'bluefit-barueri')!, xs.find((a) => a.id === 'smart-fit-parque-shopping-barueri')!))} km uma da outra, em linha reta.</p>
+          <h2>Sul de Barueri</h2>
+          <p>A <a href="/academias/smart-fit-barueri-av-zelia/">Smart Fit da Av. Zélia</a>, no Parque dos Camargos, é uma das unidades da rede mais procuradas da região. Abre às 5h e fecha às 23h em dias úteis. No Jardim Alberto, a <a href="/academias/boa-forma-barueri/">Academia Boa Forma</a> tem piscina, natação e hidroginástica, e não lista horário aos domingos.</p>
+          <h2>Vila Engenho Novo</h2>
+          <p>Ao norte, perto do limite com Santana de Parnaíba, a <a href="/academias/impacto-barueri/">Academia Impacto</a> combina musculação, lutas e cross training e abre às 5h em dias úteis.</p>
+          <h2>Barueri ou Alphaville?</h2>
+          <p>Para quem mora em Barueri e trabalha em Alphaville, as mesmas redes estão nos dois lugares. Na Smart Fit, o Plano Fit, de R$ 139,90, só existe nas unidades de Barueri; na de Alphaville, o plano de entrada é o Smart, a R$ 149,90. Nos agregadores, as academias de Barueri também tendem a pedir planos mais baratos: a Panobianco entra no Wellhub pelo Basic, a Xandu pelo Starter, enquanto as redes de <a href="/regioes/alphaville/">Alphaville</a> pedem Silver ou Silver+. Compare tudo em <a href="/academias/precos/">quanto custa academia</a>.</p>
+          <p>Os boxes de CrossFit mais próximos ficam em Alphaville Industrial. Um deles se chama CrossFit Barueri, mas o endereço é na Av. Juruá. Veja em <a href="/modalidades/crossfit/">CrossFit e cross training</a>.</p>
+        </div>
+      </>
+    )}
+
+    {regiao === 'santana-de-parnaiba' && (
+      <>
+        <div class="resposta"><span class="rotulo">Em resumo</span>
+          <p>Santana de Parnaíba tem {xs.length} academias com ficha, todas independentes e em bairros diferentes: {bairros.map((b) => b.b).join(', ').replace(/, ([^,]*)$/, ' e $1')}. Nenhuma lista horário aos domingos. Em linha reta, a distância entre elas vai de {fmt(distMin)} a {fmt(distMax)} km, então a escolha aqui é, antes de tudo, pelo bairro.</p>
+        </div>
+        <div class="prosa">
+          <h2>Uma academia por bairro</h2>
+          <p>Diferente de Alphaville, onde várias academias dividem a mesma avenida, as opções de Santana de Parnaíba estão espalhadas pelo município.</p>
+          <ul>
+            <li><strong>Fazendinha:</strong> a <a href="/academias/mattos-fitness-fazendinha/">Academia Mattos Fitness</a>, na Estrada Tenente Marques, abre às 4h em dias úteis e tem lutas além da musculação.</li>
+            <li><strong>Polvilho:</strong> a <a href="/academias/olympia-fitness-polvilho/">Olympia Fitness</a>, na Rua Tocantins, fecha das 12h às 14h. Quem treina no almoço precisa saber disso antes.</li>
+            <li><strong>Jardim São Luís:</strong> a <a href="/academias/forth-academia-jardim-sao-luis/">Forth Academia</a> fica aberta até a meia-noite de segunda a sexta e lista pilates e funcional.</li>
+          </ul>
+          <h2>Domingo e agregadores</h2>
+          <p>Nenhuma das três tem horário listado para domingo, e no sábado todas fecham até as 15h. Quem só consegue treinar no fim de semana encontra mais opções nas redes de <a href="/regioes/barueri/">Barueri</a> e de <a href="/regioes/alphaville/">Alphaville</a>, que abrem nos dois dias.</p>
+          <p>As três estão no Wellhub em planos de entrada: Basic para a Mattos e a Olympia, Basic+ para a Forth. É a faixa de entrada mais baixa do guia, a mesma da Panobianco de Barueri. O que cada plano custa está em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
+          <h2>O que falta aqui</h2>
+          <p>Este recorte é pequeno. Faltam o centro histórico, os residenciais do lado de Alphaville e a Aldeia da Serra. Se você conhece uma academia desses bairros, <a href="/correcoes/">envie os dados</a> para que ela entre no guia.</p>
+        </div>
+      </>
+    )}
+
+    <section class="bloco fino" aria-labelledby="lista-t">
+      <div class="cab"><h2 id="lista-t">Academias de {r.titulo}, por bairro</h2><a class="link-forte" href={`/academias/?regiao=${regiao}`}>Abrir no guia com filtros</a></div>
+      {bairros.map(({ b, as }) => (
+        <>
+          <h3 style="font-size:20px;margin:22px 0 12px">{b} <span style="color:var(--cinza);font-weight:500">· {as.length}</span></h3>
+          <div class="cartoes">{as.map((a) => <CartaoAcademia a={a} nivel="h4" />)}</div>
+        </>
+      ))}
+    </section>
+
+    <section class="bloco fino prosa">
+      <h2>Outras regiões</h2>
+      <ul>{outras.map((o) => <li><a href={urlRegiao(o)}>Onde treinar em {REGIOES[o].titulo}</a></li>)}</ul>
+    </section>
+    {regiao === 'alphaville' && <section class="bloco fino"><Mantem pagina={`regiao-${regiao}`} compacta titulo="Converse com um personal em Alphaville" texto="O Montinho Personal Trainer, que mantém este guia, atende presencialmente em academias e condomínios de Alphaville e Tamboré." /></section>}
+  </div>
+</Base>

@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import { academias, REGIOES, urlRegiao } from '../../lib/dados';
+const todas = await academias();
+---
+<Base titulo="Onde treinar por região: Alphaville, Barueri e Santana" descricao="Academias agrupadas por região: Alphaville e Tamboré, centro de Barueri e Santana de Parnaíba. Veja quantas têm ficha em cada uma e os bairros cobertos." migalhas={[{ nome: 'Regiões', url: '/regioes/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Regiões</span>
+      <h1>Onde treinar, por região</h1>
+      <p class="linha-fina">A melhor academia costuma ser a que fica no seu caminho. Comece pela região onde você mora ou trabalha.</p>
+    </header>
+    <div class="cartoes">
+      {Object.entries(REGIOES).map(([id, r]) => {
+        const xs = todas.filter((a) => a.data.regiao === id);
+        const bairros = [...new Set(xs.map((a) => a.data.bairro))];
+        return (
+          <article class="cartao">
+            <span class="rotulo cor-marca">{xs.length} com ficha</span>
+            <h2 style="font-size:28px;font-weight:800"><a href={urlRegiao(id)} style="text-decoration:none">{r.titulo}</a></h2>
+            <p style="margin:0">{r.descricao}</p>
+            <ul class="tags">{bairros.map((b) => <li>{b}</li>)}</ul>
+            <a class="link-forte" href={urlRegiao(id)}>Ver academias de {r.nome}</a>
+          </article>
+        );
+      })}
+    </div>
+    <div class="prosa" style="margin-top:36px">
+      <h2>Por que só três regiões</h2>
+      <p>Uma página de região só existe quando há pelo menos três academias com dados conferidos nela. Por isso o Tamboré e o Empresarial 18 do Forte estão, por enquanto, dentro da página de Alphaville, e a Aldeia da Serra ainda não tem página. Preferimos menos páginas, com conteúdo de verdade, a uma página por bairro com o mesmo texto.</p>
+    </div>
+  </div>
+</Base>

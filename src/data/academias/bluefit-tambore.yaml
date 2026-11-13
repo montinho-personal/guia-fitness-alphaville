@@ -1,0 +1,93 @@
+nome: Bluefit Tamboré
+regiao: alphaville
+bairro: Tamboré
+tipo: academia
+rede: Bluefit
+resumo: Unidade da rede Bluefit na Av. Tucunaré, no Tamboré, voltada a musculação e aberta todos os dias.
+endereco: Av. Tucunaré, 1498 - Alphaville, Barueri - SP, 06460-020
+geo:
+  lat: -23.488764
+  lng: -46.833994
+horario:
+  seg:
+  - 05:00-23:59
+  ter:
+  - 05:00-23:59
+  qua:
+  - 05:00-23:59
+  qui:
+  - 05:00-23:59
+  sex:
+  - 05:00-23:59
+  sab:
+  - 08:00-17:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+- funcional
+- hiit
+- corrida
+atividades_listadas:
+- Cardio
+- Condicionamento corporal
+- Corrida
+- Corrida na esteira
+- Fisiculturismo
+- Fortalecimento
+- HIIT
+- Levantamento de peso
+- Musculação
+- Perda de peso
+- Pernas
+- Pesos livres
+- Queima de gordura
+- Tonificação
+- Treinamento cardio
+- Treino de resistência
+- Treino funcional
+comodidades:
+- Ar condicionado
+- Área de alongamento
+- Área de cardio
+- Área de musculação
+- Área de pesos livres
+- Armários
+- Bebedouro
+- Chuveiro
+- Estacionamento
+- Personal trainer
+- Secador de cabelo
+- Vestiário
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver
+  preco_plano: R$ 149,99
+  url: https://wellhub.com/pt-br/search/partners/academia-bluefit-tambore-granja-viana-cotia/
+mensalidade: null
+site: https://www.instagram.com/bluefitacademia
+telefone: (11) 93461-6493
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/academia-bluefit-tambore-granja-viana-cotia/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta da academia
+analise:
+- Funciona das 5h às 23h59 de segunda a sexta. No sábado abre das 8h às 17h e no domingo, das 8h às 14h.
+- A lista de atividades é centrada em musculação, pesos livres e cardio, sem a grade extensa de aulas coletivas de outras unidades da rede. A página informa estacionamento e personal trainer no local. No Wellhub, entra a partir do plano Silver, um nível abaixo do exigido pela Bluefit Alphaville.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

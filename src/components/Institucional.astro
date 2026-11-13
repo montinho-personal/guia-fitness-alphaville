@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { dataLonga } from '../lib/dados';
+interface Props { titulo: string; descricao: string; h1: string; fina?: string; url: string; nome: string; atualizado?: string }
+const { titulo, descricao, h1, fina, url, nome, atualizado = '2026-11-13' } = Astro.props;
+---
+<Base titulo={titulo} descricao={descricao} migalhas={[{ nome, url }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Transparência</span>
+      <h1>{h1}</h1>
+      {fina && <p class="linha-fina">{fina}</p>}
+      <p class="meta"><span>Atualizado em {dataLonga(new Date(atualizado))}</span></p>
+    </header>
+    <div class="prosa"><slot /></div>
+  </div>
+</Base>

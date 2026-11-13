@@ -1,0 +1,98 @@
+nome: Academia Boa Forma
+regiao: barueri
+bairro: Jardim Alberto
+tipo: academia
+resumo: Academia no Jardim Alberto com piscina, natação e hidroginástica, além de musculação e aulas coletivas.
+endereco: R. Dr. Francis D Hornet, 73 - Jardim Alberto, Barueri - SP, 06433-220
+geo:
+  lat: -23.522223
+  lng: -46.89111
+horario:
+  seg:
+  - 07:00-21:30
+  ter:
+  - 07:00-22:00
+  qua:
+  - 07:00-22:00
+  qui:
+  - 07:00-22:00
+  sex:
+  - 07:00-22:00
+  sab:
+  - 08:00-13:00
+  dom: []
+modalidades:
+- musculacao
+- funcional
+- danca
+- bike
+- corrida
+- natacao
+atividades_listadas:
+- Abdominal
+- Alongamento
+- Bike
+- Boxing Fit
+- Circuitos
+- Corrida
+- Duatlo
+- Fisiculturismo
+- Funcional
+- Hidroginástica
+- Hidroterapia
+- Jump
+- Musculação
+- Natação
+- Natação para adultos
+- Pernas
+- Personal trainer
+- Ritmos
+- Step aerobics
+- Treino localizado
+- Zumba
+comodidades:
+- Aquecedor
+- Armários
+- Chuveiro
+- Espaço adaptado para cadeira de rodas
+- Estacionamento
+- Loja de artigos esportivos
+- Piscina
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver+
+  preco_plano: R$ 199,99
+  url: https://wellhub.com/pt-br/search/partners/boa-forma-jardim-alberto-barueri/
+mensalidade: null
+site: https://instagram.com/boaformaacademiabarueri
+telefone: (11) 97782-3712
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/boa-forma-jardim-alberto-barueri/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+divergencias:
+- 'Número do endereço: 73 nos dados de localização do Wellhub e 120 no texto de apresentação da mesma página.'
+pendencias:
+- Número correto do endereço
+- Mensalidade
+- Horários das aulas de natação e hidroginástica
+analise:
+- É a única academia do guia que informa piscina, com natação para adultos, hidroginástica e hidroterapia na grade. Para quem procura academia com piscina em Barueri, é a opção a conferir primeiro.
+- Funciona das 7h às 22h de segunda a sexta (21h30 na segunda) e das 8h às 13h no sábado; não há horário listado para domingo. A página informa estacionamento e espaço adaptado para cadeira de rodas. No Wellhub, o acesso começa no plano Silver+. O número do endereço aparece de dois jeitos na mesma página, 73 e 120, na Rua Dr. Francis D Hornet.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

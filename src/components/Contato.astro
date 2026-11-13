@@ -1,0 +1,11 @@
+---
+import { WHATSAPP } from '../lib/dados';
+interface Props { assunto: string }
+const { assunto } = Astro.props;
+const email = import.meta.env.PUBLIC_EMAIL_CONTATO || '';
+const wa = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Onde Treinar Alphaville — ${assunto}: `)}`;
+---
+<ul>
+  {email && <li>E-mail: <a href={`mailto:${email}?subject=${encodeURIComponent(assunto)}`}>{email}</a></li>}
+  <li>WhatsApp: <a href={wa} rel="nofollow noopener" data-evento="clique_whatsapp" data-ref={`contato-${assunto}`}>enviar mensagem sobre "{assunto}"</a></li>
+</ul>

@@ -1,0 +1,79 @@
+nome: Smart Fit Barueri Av. Zélia
+regiao: barueri
+bairro: Parque dos Camargos
+tipo: academia
+rede: Smart Fit
+resumo: Unidade da Smart Fit na Avenida Zélia, no Parque dos Camargos, aberta todos os dias e com preço publicado no site oficial.
+endereco: Avenida Zélia, 1250 - Parque dos Camargos, Barueri - SP, 06436-000
+geo:
+  lat: -23.541077
+  lng: -46.885463
+horario:
+  seg:
+  - 05:00-23:00
+  ter:
+  - 05:00-23:00
+  qua:
+  - 05:00-23:00
+  qui:
+  - 05:00-23:00
+  sex:
+  - 05:00-23:00
+  sab:
+  - 08:00-17:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+atividades_listadas:
+- Musculação
+comodidades:
+- Ar-condicionado
+- Armário rotativo
+- Ducha aquecida
+- Professores formados
+agregadores: []
+mensalidade:
+  valor: a partir de R$ 139,90
+  resumo: Plano Fit a R$ 139,90 por mês com fidelidade, sem taxa de adesão.
+  planos:
+  - nome: Plano Fit
+    preco: R$ 139,90/mês
+    condicoes: Com fidelidade; sem fidelidade, mais R$ 20 por mês. Adesão grátis. Acesso só a esta unidade.
+  - nome: Plano Smart
+    preco: R$ 159,90/mês
+    condicoes: Com fidelidade; sem fidelidade, mais R$ 20 por mês. Adesão grátis.
+  - nome: Plano Black
+    preco: R$ 159,90/mês
+    condicoes: Com fidelidade. Adesão de R$ 29,90. Primeiro mês gratuito, segundo o site. Acesso a todas as unidades da rede.
+  abrangencia: unidade
+  fonte: Site oficial da Smart Fit (página da unidade)
+  url: https://www.smartfit.com.br/academias/barueri-av-zelia
+  conferido_em: '2026-11-13'
+  aviso: O site informa que os valores exibidos são promocionais e remete às condições no próprio site.
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - mensalidade
+  fonte: Site oficial da Smart Fit (página da unidade)
+  url: https://www.smartfit.com.br/academias/barueri-av-zelia
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Grade de aulas coletivas
+- 'Estacionamento: não consta na fonte'
+- Aceitação de Wellhub e TotalPass
+analise:
+- Fica no Parque dos Camargos, na região sul de Barueri, longe do centro e de Alphaville. Funciona das 5h às 23h de segunda a sexta, das 8h às 17h no sábado e em feriados e das 8h às 14h no domingo. É a única das quatro Smart Fit da região que fecha às 17h nos feriados, e não às 14h.
+- 'Os preços são os mesmos das outras unidades de Barueri: Plano Fit a R$ 139,90 por mês com fidelidade, válido só nesta academia, e Plano Black a R$ 159,90, com acesso a toda a rede. A estrutura informada no site é a padrão da marca, e não inclui estacionamento.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

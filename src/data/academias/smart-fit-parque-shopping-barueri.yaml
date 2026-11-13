@@ -1,0 +1,81 @@
+nome: Smart Fit Parque Shopping Barueri
+regiao: barueri
+bairro: Nova Aldeinha
+tipo: academia
+rede: Smart Fit
+resumo: Unidade da Smart Fit no Parque Shopping Barueri, aberta até a meia-noite em dias úteis e com preço publicado no site oficial.
+endereco: R. Gen. de Divisão de Pedro Rodrigues da Silva, 400 - Nova Aldeinha, Barueri - SP, 06440-180
+geo:
+  lat: -23.516797
+  lng: -46.855426
+horario:
+  seg:
+  - 05:00-23:59
+  ter:
+  - 05:00-23:59
+  qua:
+  - 05:00-23:59
+  qui:
+  - 05:00-23:59
+  sex:
+  - 05:00-23:59
+  sab:
+  - 08:00-17:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+atividades_listadas:
+- Musculação
+comodidades:
+- Ar-condicionado
+- Armário rotativo
+- Ducha aquecida
+- Balança de bioimpedância
+- Professores formados
+- Smart Fit Energy
+agregadores: []
+mensalidade:
+  valor: a partir de R$ 139,90
+  resumo: Plano Fit a R$ 139,90 por mês com fidelidade, sem taxa de adesão.
+  planos:
+  - nome: Plano Fit
+    preco: R$ 139,90/mês
+    condicoes: Com fidelidade; sem fidelidade, mais R$ 20 por mês. Adesão grátis. Acesso só a esta unidade.
+  - nome: Plano Smart
+    preco: R$ 159,90/mês
+    condicoes: Com fidelidade; sem fidelidade, mais R$ 20 por mês. Adesão grátis.
+  - nome: Plano Black
+    preco: R$ 159,90/mês
+    condicoes: Com fidelidade. Adesão de R$ 29,90. Primeiro mês gratuito, segundo o site. Acesso a todas as unidades da rede.
+  abrangencia: unidade
+  fonte: Site oficial da Smart Fit (página da unidade)
+  url: https://www.smartfit.com.br/academias/parque-shopping-barueri
+  conferido_em: '2026-11-13'
+  aviso: O site informa que os valores exibidos são promocionais e remete às condições no próprio site.
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - mensalidade
+  fonte: Site oficial da Smart Fit (página da unidade)
+  url: https://www.smartfit.com.br/academias/parque-shopping-barueri
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Grade de aulas coletivas
+- Regras do estacionamento do shopping para alunos
+- Aceitação de Wellhub e TotalPass
+analise:
+- Fica dentro do Parque Shopping Barueri, no bairro Nova Aldeinha, entre o centro de Barueri e Alphaville. Abre às 5h e fecha à meia-noite de segunda a sexta; no sábado funciona das 8h às 17h e no domingo e em feriados, das 8h às 14h.
+- O Plano Fit custa R$ 139,90 por mês com fidelidade e vale só para esta unidade; o Black, a R$ 159,90, dá acesso a toda a rede. Estar num shopping tende a facilitar o estacionamento, mas a página da unidade não informa se há convênio para alunos.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

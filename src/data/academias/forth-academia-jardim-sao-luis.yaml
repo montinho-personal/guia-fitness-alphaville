@@ -1,0 +1,82 @@
+nome: Forth Academia
+regiao: santana-de-parnaiba
+bairro: Jardim São Luís
+tipo: academia
+resumo: Academia no Jardim São Luís com musculação, funcional e pilates, aberta até meia-noite em dias úteis.
+endereco: R. Prof. Edgar de Moraes, 528 - Jardim Sao Luis, Santana de Parnaíba - SP, 06502-165
+geo:
+  lat: -23.442586
+  lng: -46.924539
+horario:
+  seg:
+  - 05:00-23:59
+  ter:
+  - 05:00-23:59
+  qua:
+  - 05:00-23:59
+  qui:
+  - 05:00-23:59
+  sex:
+  - 05:00-23:59
+  sab:
+  - 09:00-15:00
+  dom: []
+modalidades:
+- musculacao
+- funcional
+- pilates
+- hiit
+atividades_listadas:
+- Fisiculturismo
+- HIIT funcional
+- Mat Pilates
+- Power Step
+comodidades:
+- Área de cardio
+- Área de musculação
+- Área de pesos livres
+- Área de treino funcional
+- Armários
+- Banheiro acessível
+- Bebedouro
+- Cafeteria
+- Chuveiro
+- Espaço adaptado para cadeira de rodas
+- Estacionamento
+- Estacionamento acessível
+- Loja de artigos esportivos
+- Secador de cabelo
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic+
+  preco_plano: R$ 99,99
+  url: https://wellhub.com/pt-br/search/partners/forth-academia-jardim-sao-luis/
+mensalidade: null
+site: https://www.instagram.com/forthacademia/
+telefone: (11) 4154-4028
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/forth-academia-jardim-sao-luis/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta da academia
+analise:
+- Funciona das 5h às 23h59 de segunda a sexta, o fechamento mais tardio entre as academias de Santana de Parnaíba reunidas aqui. No sábado abre das 9h às 15h. Não há horário listado para domingo.
+- A página lista áreas de musculação, pesos livres, cardio e funcional, além de cafeteria, loja e estacionamento. No Wellhub, o acesso começa no plano Basic+.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

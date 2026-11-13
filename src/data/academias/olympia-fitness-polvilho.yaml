@@ -1,0 +1,78 @@
+nome: Olympia Fitness Academia
+regiao: santana-de-parnaiba
+bairro: Polvilho
+tipo: academia
+resumo: Academia de bairro na Rua Tocantins, no Polvilho, com musculação e funcional e pausa no horário de almoço.
+endereco: R. Tocantins, 148 - Polvilho, Santana de Parnaíba - SP, 06535-100
+geo:
+  lat: -23.424956
+  lng: -46.855962
+horario:
+  seg:
+  - 06:00-12:00
+  - 14:00-22:00
+  ter:
+  - 06:00-12:00
+  - 14:00-22:00
+  qua:
+  - 06:00-12:00
+  - 14:00-22:00
+  qui:
+  - 06:00-12:00
+  - 14:00-22:00
+  sex:
+  - 06:00-12:00
+  - 14:00-22:00
+  sab:
+  - 08:00-12:00
+  dom: []
+modalidades:
+- musculacao
+- funcional
+atividades_listadas:
+- Musculação
+- Treino funcional
+comodidades:
+- Adaptações para pessoas autistas
+- Ar condicionado
+- Área de cardio
+- Armários
+- Banheiro acessível
+- Bebedouro
+- Estacionamento
+- Estacionamento acessível
+- Itens de higiene pessoal
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic
+  preco_plano: R$ 69,99
+  url: https://wellhub.com/pt-br/search/partners/olympia-fitness-academia/
+mensalidade: null
+site: https://instagram.com/espaco_olympia
+telefone: (11) 97586-8309
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/olympia-fitness-academia/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta da academia
+analise:
+- 'O horário tem uma particularidade: de segunda a sexta a academia funciona das 6h às 12h e das 14h às 22h, com intervalo de duas horas no início da tarde. No sábado abre das 8h às 12h. Quem treina no horário de almoço precisa considerar essa pausa.'
+- A oferta é enxuta, com musculação e treino funcional. A página informa estacionamento, ar-condicionado e adaptações para pessoas autistas, item raro nas listagens da região. No Wellhub, o acesso começa no plano Basic.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

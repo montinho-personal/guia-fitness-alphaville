@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Protótipo — Onde Treinar Alphaville</title>
+<style>
+/*FONTS*/
+:root{
+  --tinta:#12211B; --papel:#F5F1E8; --cartao:#FFFDF8; --alameda:#1F6B4A; --sinal:#E2502A;
+  --linha:#D9D2C2; --musgo:#DCE8DF; --cinza:#55615B;
+  --display:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --texto:"Newsreader",Georgia,"Times New Roman",serif;
+  --raio:4px; --max:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--texto);font-size:18px;line-height:1.55}
+a{color:inherit}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(--sinal);outline-offset:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.rotulo{font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--display);line-height:1.02;margin:0;letter-spacing:-.02em}
+.pula{position:absolute;left:-999px}.pula:focus{left:12px;top:12px;background:var(--tinta);color:var(--papel);padding:10px 14px;z-index:9}
+
+.aviso{background:var(--tinta);color:var(--papel);font-family:var(--display);font-size:13px;padding:8px 0;text-align:center}
+.aviso b{color:#F4B9A6}
+
+/* cabeçalho */
+header.topo{border-bottom:1px solid var(--linha);background:var(--papel)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marca svg{flex:none}
+.marca .nome{font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:-.03em;line-height:.95;display:block}
+.marca .lugar{font-family:var(--display);font-weight:700;font-size:10px;letter-spacing:.3em;color:var(--alameda);display:block;margin-top:3px}
+nav.principal ul{display:none;list-style:none;margin:0;padding:0;gap:26px;font-family:var(--display);font-weight:600;font-size:15px}
+nav.principal a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+nav.principal a:hover{border-color:var(--sinal)}
+.menu-btn{font-family:var(--display);font-weight:700;font-size:14px;background:none;border:1.5px solid var(--tinta);border-radius:var(--raio);padding:9px 14px;color:var(--tinta)}
+
+/* abertura */
+.abertura{padding:44px 0 36px}
+.abertura h1{font-size:clamp(44px,11vw,78px);font-weight:800;letter-spacing:-.045em;line-height:.92}
+.abertura h1 em{font-style:normal;color:var(--alameda);display:block}
+.abertura .linha-fina{max-width:34em;margin:22px 0 28px;font-size:20px;color:#2B3A33}
+.grade-abertura{display:grid;gap:36px}
+.localizador{background:var(--cartao);border:1.5px solid var(--tinta);border-radius:var(--raio);padding:18px;box-shadow:6px 6px 0 var(--tinta)}
+.localizador .campos{display:grid;gap:12px}
+.localizador label{display:block}
+.localizador label span{display:block;margin-bottom:5px;color:var(--cinza)}
+select{width:100%;font-family:var(--display);font-size:16px;font-weight:600;padding:12px 36px 12px 12px;border:1px solid var(--linha);border-radius:var(--raio);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2312211B' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 12px center;appearance:none;color:var(--tinta)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);font-weight:700;font-size:16px;background:var(--tinta);color:var(--papel);border:0;border-radius:var(--raio);padding:14px 20px;text-decoration:none;cursor:pointer}
+.btn i{width:9px;height:9px;border-top:2.5px solid var(--sinal);border-right:2.5px solid var(--sinal);transform:rotate(45deg);display:block}
+.btn.claro{background:var(--papel);color:var(--tinta)}
+.localizador .btn{width:100%;margin-top:14px}
+.localizador p{margin:12px 0 0;font-size:15px;color:var(--cinza)}
+
+/* placas */
+.placas{display:grid;gap:10px;align-content:start}
+.placa{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--alameda);color:#fff;border-radius:var(--raio);padding:14px 16px;text-decoration:none;border:2px solid #fff;outline:1.5px solid var(--alameda)}
+.placa b{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.01em}
+.placa small{font-family:var(--display);font-size:13px;font-weight:600;opacity:.92;white-space:nowrap}
+.placa:hover{background:#185739}
+.placas .nota{font-size:14px;color:var(--cinza);margin:4px 0 0}
+
+/* faixa de confiança */
+.confianca{border-top:1.5px solid var(--tinta);border-bottom:1.5px solid var(--tinta);background:var(--cartao)}
+.confianca ul{list-style:none;margin:0;padding:0;display:grid}
+.confianca li{padding:16px 0;border-bottom:1px solid var(--linha);font-size:16px;line-height:1.4}
+.confianca li:last-child{border:0}
+.confianca li b{font-family:var(--display);display:block;font-size:16px;margin-bottom:2px}
+
+section.bloco{padding:56px 0}
+.cab{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.cab h2{font-size:clamp(30px,6vw,46px);font-weight:800;letter-spacing:-.035em}
+.cab .rotulo{color:var(--alameda);display:block;margin-bottom:10px}
+.cab a.mais{font-family:var(--display);font-weight:700;font-size:15px;text-underline-offset:4px;text-decoration-color:var(--sinal);text-decoration-thickness:2px}
+
+/* cartões de academia */
+.cartoes{display:grid;gap:16px}
+.cartao{background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);padding:18px;display:flex;flex-direction:column;gap:12px}
+.cartao .regiao{color:var(--alameda)}
+.cartao h3{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.cartao h3 a{text-decoration:none}
+.cartao h3 a:hover{text-decoration:underline;text-decoration-color:var(--sinal);text-underline-offset:4px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.tags li{font-family:var(--display);font-size:13px;font-weight:600;background:var(--musgo);border-radius:99px;padding:3px 10px}
+.tags li.forte{background:var(--tinta);color:var(--papel)}
+dl.fatos{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:16px;line-height:1.35}
+dl.fatos dt{font-family:var(--display);font-size:13px;font-weight:600;color:var(--cinza);padding-top:2px}
+dl.fatos dd{margin:0}
+.incerto{color:#8A4B12;font-style:italic}
+.selo{margin:auto 0 0;display:block;position:relative;padding-left:24px;border-top:1px dashed var(--linha);padding-top:12px;font-family:var(--display);font-size:13px;font-weight:600;line-height:1.35;color:var(--alameda)}
+.selo svg{position:absolute;left:0;top:13px}
+.selo.pendente{color:#8A4B12}
+.selo span{color:var(--cinza);font-weight:500}
+
+/* ferramentas */
+.ferr{background:var(--tinta);color:var(--papel)}
+.ferr .cab .rotulo{color:#9FD0B5}
+.ferr .cab a.mais{color:var(--papel)}
+.ferramentas{display:grid;gap:1px;background:#33453D;border:1px solid #33453D;border-radius:var(--raio);overflow:hidden}
+.ferramenta{background:var(--tinta);padding:22px;text-decoration:none;display:block}
+.ferramenta:hover{background:#1A2E26}
+.ferramenta svg{display:block;margin-bottom:14px}
+.ferramenta h3{font-size:22px;font-weight:700;margin-bottom:6px}
+.ferramenta p{margin:0;font-size:16px;color:#C9D4CD;line-height:1.4}
+.ferramenta .rotulo{color:#F4B9A6;display:block;margin-top:14px;font-size:11px}
+
+/* guias */
+ol.guias{list-style:none;margin:0;padding:0;counter-reset:g;border-top:1.5px solid var(--tinta)}
+ol.guias li{counter-increment:g;border-bottom:1px solid var(--linha)}
+ol.guias a{display:grid;grid-template-columns:44px 1fr;gap:6px 10px;padding:20px 0;text-decoration:none}
+ol.guias a::before{content:counter(g,decimal-leading-zero);font-family:var(--display);font-weight:800;font-size:15px;color:var(--sinal);padding-top:5px}
+ol.guias h3{font-size:24px;font-weight:700;letter-spacing:-.02em}
+ol.guias a:hover h3{text-decoration:underline;text-decoration-color:var(--sinal);text-underline-offset:5px}
+ol.guias p{margin:6px 0 0;font-size:17px;color:#2B3A33;grid-column:2}
+
+/* montinho */
+.mantem{background:var(--musgo);border:1.5px solid var(--tinta);border-radius:var(--raio);padding:26px 22px;display:grid;gap:20px}
+.mantem h2{font-size:clamp(28px,5.5vw,40px);font-weight:800;letter-spacing:-.035em}
+.mantem p{margin:12px 0 0;max-width:36em}
+.mantem .acoes{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.mantem .acoes a.link{font-family:var(--display);font-weight:700;font-size:15px;text-underline-offset:4px}
+
+footer{border-top:1.5px solid var(--tinta);padding:36px 0 48px;font-size:16px}
+footer .cols{display:grid;gap:28px}
+footer h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:5px 0}
+footer .nota{color:var(--cinza);max-width:34em;font-size:15px;margin-top:12px}
+
+/* quadro de identidade */
+.identidade{background:#fff;border-top:10px solid var(--sinal);padding:56px 0 72px}
+.identidade h2{font-size:clamp(30px,6vw,46px);font-weight:800;letter-spacing:-.035em;margin-bottom:8px}
+.identidade h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;margin:40px 0 14px;color:var(--alameda)}
+.logos{display:grid;gap:12px}
+.logos div{border:1px solid var(--linha);border-radius:var(--raio);padding:26px;display:flex;align-items:center;justify-content:center;min-height:120px}
+.logos .escuro{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+.logos .escuro .lugar{color:#9FD0B5}
+.logos .verde{background:var(--alameda);color:#fff;border-color:var(--alameda)}
+.logos .verde .lugar{color:#fff}
+.cores{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.cor{border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;font-family:var(--display);font-size:13px}
+.cor i{display:block;height:64px}
+.cor b{display:block;padding:8px 10px 0;font-size:15px}
+.cor span{display:block;padding:0 10px 10px;color:var(--cinza)}
+.tipos{display:grid;gap:18px}
+.tipos>div{border:1px solid var(--linha);border-radius:var(--raio);padding:20px}
+.tipos .a{font-family:var(--display);font-weight:800;font-size:46px;letter-spacing:-.04em;line-height:1}
+.tipos .b{font-family:var(--texto);font-size:21px;line-height:1.5}
+.tipos small{font-family:var(--display);font-size:13px;color:var(--cinza);display:block;margin-top:12px}
+.comps{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.comps .selo{margin:0;border:0;padding-top:0}.comps .selo svg{top:1px}
+
+@media(min-width:720px){
+  .wrap{padding:0 32px}
+  .localizador .campos{grid-template-columns:repeat(3,1fr)}
+  .localizador .btn{width:auto}
+  .confianca ul{grid-template-columns:repeat(3,1fr);gap:0 32px}
+  .confianca li{border:0;padding:20px 0}
+  .cartoes{grid-template-columns:repeat(2,1fr)}
+  .ferramentas{grid-template-columns:repeat(2,1fr)}
+  .logos{grid-template-columns:repeat(3,1fr)}
+  .cores{grid-template-columns:repeat(4,1fr)}
+  .tipos{grid-template-columns:1fr 1fr}
+  footer .cols{grid-template-columns:2fr 1fr 1fr}
+  .mantem{padding:40px}
+}
+@media(min-width:1000px){
+  nav.principal ul{display:flex}.menu-btn{display:none}
+  .abertura{padding:72px 0 56px}
+  .grade-abertura{grid-template-columns:1.55fr 1fr;gap:56px;align-items:end}
+  .cartoes{grid-template-columns:repeat(3,1fr)}
+  .ferramentas{grid-template-columns:repeat(4,1fr)}
+  .mantem{grid-template-columns:1.6fr 1fr;align-items:end}
+  .mantem .acoes{justify-content:flex-end}
+}
+@media(prefers-reduced-motion:no-preference){.placa,.ferramenta,.btn{transition:background .15s}}
+</style>
+</head>
+<body>
+<a class="pula" href="#conteudo">Pular para o conteúdo</a>
+<div class="aviso"><div class="wrap">Protótipo para aprovação · <b>dados de academias ilustrativos</b>, a reverificar antes de qualquer publicação</div></div>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#" aria-label="Onde Treinar Alphaville — início">
+      <svg width="34" height="42" viewBox="0 0 34 42" aria-hidden="true"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 0 0 2 16C2 25.5 17 41 17 41Z" fill="#12211B"/><circle cx="17" cy="16" r="9.2" fill="none" stroke="#F5F1E8" stroke-width="2.4"/><circle cx="17" cy="16" r="3.4" fill="#E2502A"/></svg>
+      <span><span class="nome">onde treinar</span><span class="lugar">ALPHAVILLE</span></span>
+    </a>
+    <nav class="principal" aria-label="Principal">
+      <ul>
+        <li><a href="#">Academias</a></li><li><a href="#">Regiões</a></li><li><a href="#">Modalidades</a></li><li><a href="#">Guias</a></li><li><a href="#">Ferramentas</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<main id="conteudo">
+<section class="abertura">
+  <div class="wrap">
+    <div class="grade-abertura">
+      <div>
+        <h1>Onde treinar em Alphaville, <em>com fonte e data.</em></h1>
+        <p class="linha-fina">Academias, modalidades e formas de treinar em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Cada endereço, horário e preço mostra de onde veio e quando foi conferido.</p>
+        <form class="localizador" action="#" aria-label="Encontrar academias">
+          <div class="campos">
+            <label><span class="rotulo">Região</span>
+              <select name="regiao"><option>Toda a região</option><option>Alphaville</option><option>Tamboré</option><option>Barueri</option><option>Santana de Parnaíba</option></select></label>
+            <label><span class="rotulo">O que você procura</span>
+              <select name="busca"><option>Musculação</option><option>CrossFit e cross training</option><option>Aberta 24 horas</option><option>Com piscina</option><option>Aceita Wellhub ou TotalPass</option></select></label>
+            <label><span class="rotulo">Mensalidade</span>
+              <select name="preco"><option>Qualquer valor</option><option>Econômica</option><option>Intermediária</option><option>Premium</option></select></label>
+          </div>
+          <button class="btn" type="submit">Ver academias <i aria-hidden="true"></i></button>
+          <p>Sem cadastro. O resultado abre no guia, já filtrado.</p>
+        </form>
+      </div>
+      <nav class="placas" aria-label="Regiões">
+        <span class="rotulo" style="color:var(--alameda)">Comece pela sua região</span>
+        <a class="placa" href="#"><b>Alphaville</b><small>14 academias</small></a>
+        <a class="placa" href="#"><b>Tamboré</b><small>5 academias</small></a>
+        <a class="placa" href="#"><b>Barueri</b><small>8 academias</small></a>
+        <a class="placa" href="#"><b>Santana de Parnaíba</b><small>7 academias</small></a>
+        <p class="nota">18 do Forte fica dentro de Alphaville. Aldeia da Serra entra quando houver dados conferidos.</p>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<section class="confianca" aria-label="Como o guia funciona">
+  <div class="wrap">
+    <ul>
+      <li><b>Dado com origem</b>Preço, horário e endereço mostram a fonte e a data da última conferência.</li>
+      <li><b>Sem posição paga</b>Nenhuma academia paga para aparecer ou para subir na lista.</li>
+      <li><b>Quem mantém</b>Montinho Personal Trainer, que atende presencialmente na região. <a href="#">Como isso funciona</a>.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="bloco">
+  <div class="wrap">
+    <div class="cab">
+      <div><span class="rotulo">Guia de academias</span><h2>Academias conferidas</h2></div>
+      <a class="mais" href="#">Ver o guia completo com filtros</a>
+    </div>
+    <div class="cartoes">
+
+      <article class="cartao">
+        <span class="rotulo regiao">Alphaville · 18 do Forte</span>
+        <h3><a href="#">VoiFit Academia</a></h3>
+        <ul class="tags"><li>Musculação</li><li>Lutas</li><li>Bike indoor</li><li>Funcional</li></ul>
+        <dl class="fatos"><dt>Endereço</dt><dd>Av. Alphaville, 779</dd><dt>Mensalidade</dt><dd class="incerto">não confirmada</dd><dt>Agregadores</dt><dd>Wellhub</dd></dl>
+        <p class="selo"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.6 8.2l2.3 2.3 4.5-4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Endereço e modalidades conferidos em 13 nov 2026 <span>· fonte: página da unidade no Wellhub</span></p>
+      </article>
+
+      <article class="cartao">
+        <span class="rotulo regiao">Alphaville Industrial</span>
+        <h3><a href="#">Academia Gaviões 24h</a></h3>
+        <ul class="tags"><li class="forte">24 horas</li><li>Musculação</li></ul>
+        <dl class="fatos"><dt>Endereço</dt><dd>Av. Juruá, 253</dd><dt>Horário</dt><dd class="incerto">24 h segundo a academia; não conferido no local</dd><dt>Agregadores</dt><dd>Wellhub</dd></dl>
+        <p class="selo pendente"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.2v4.6M8 11v1" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Horário aguardando conferência <span>· endereço conferido em 13 nov 2026</span></p>
+      </article>
+
+      <article class="cartao">
+        <span class="rotulo regiao">Alphaville Industrial</span>
+        <h3><a href="#">Templo SA</a></h3>
+        <ul class="tags"><li>CrossFit</li></ul>
+        <dl class="fatos"><dt>Endereço</dt><dd>Alameda Araguaia, 122</dd><dt>Mensalidade</dt><dd class="incerto">não confirmada</dd><dt>Agregadores</dt><dd>Wellhub, TotalPass</dd></dl>
+        <p class="selo"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.6 8.2l2.3 2.3 4.5-4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Endereço e modalidade conferidos em 13 nov 2026 <span>· fontes: Wellhub e TotalPass</span></p>
+      </article>
+
+      <article class="cartao">
+        <span class="rotulo regiao">Alphaville Industrial</span>
+        <h3><a href="#">SkyFit Alphaville</a></h3>
+        <ul class="tags"><li>Musculação</li><li>Cross training</li><li>Muay thai</li></ul>
+        <dl class="fatos"><dt>Endereço</dt><dd>Av. Juruá, 307</dd><dt>Mensalidade</dt><dd class="incerto">não confirmada</dd><dt>Agregadores</dt><dd>Wellhub</dd></dl>
+        <p class="selo"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.6 8.2l2.3 2.3 4.5-4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Endereço e modalidades conferidos em 13 nov 2026 <span>· fonte: página da unidade no Wellhub</span></p>
+      </article>
+
+      <article class="cartao">
+        <span class="rotulo regiao">Tamboré</span>
+        <h3><a href="#">NitroGym Tamboré</a></h3>
+        <ul class="tags"><li>Musculação</li></ul>
+        <dl class="fatos"><dt>Local</dt><dd>Shopping Tamboré</dd><dt>Área</dt><dd>3 mil m², segundo a imprensa</dd><dt>Mensalidade</dt><dd class="incerto">não confirmada</dd></dl>
+        <p class="selo pendente"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.2v4.6M8 11v1" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Dados de fonte secundária <span>· Mercado &amp; Consumo, jul 2026</span></p>
+      </article>
+
+      <article class="cartao">
+        <span class="rotulo regiao">Alphaville · 18 do Forte</span>
+        <h3><a href="#">Six Alphaville</a></h3>
+        <ul class="tags"><li>Premium</li><li>Tudo incluído</li></ul>
+        <dl class="fatos"><dt>Local</dt><dd>Empresarial 18 do Forte</dd><dt>Mensalidade</dt><dd class="incerto">faixa divulgada em entrevista; a confirmar com a academia</dd></dl>
+        <p class="selo pendente"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.2v4.6M8 11v1" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Preço aguardando conferência direta</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="bloco ferr">
+  <div class="wrap">
+    <div class="cab">
+      <div><span class="rotulo">Ferramentas</span><h2>Decida com os dados na mão</h2></div>
+      <a class="mais" href="#">Todas as ferramentas</a>
+    </div>
+    <div class="ferramentas">
+      <a class="ferramenta" href="#">
+        <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect x="3" y="6" width="12" height="24" fill="none" stroke="#F5F1E8" stroke-width="2"/><rect x="21" y="6" width="12" height="24" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M6 13h6M6 18h6M24 13h6M24 18h6" stroke="#E2502A" stroke-width="2"/></svg>
+        <h3>Comparador</h3><p>Coloque até três academias lado a lado: local, estrutura, horários e preço.</p><span class="rotulo">Sem cadastro</span>
+      </a>
+      <a class="ferramenta" href="#">
+        <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M13.5 14.5a4.5 4.5 0 1 1 6.6 4c-1.3.7-2.1 1.5-2.1 3" fill="none" stroke="#E2502A" stroke-width="2.2"/><circle cx="18" cy="25.6" r="1.4" fill="#E2502A"/></svg>
+        <h3>Qual academia combina com você</h3><p>Seis perguntas. O resultado mostra, critério por critério, por que cada academia apareceu.</p><span class="rotulo">2 minutos</span>
+      </a>
+      <a class="ferramenta" href="#">
+        <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect x="7" y="4" width="22" height="28" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M11.5 12l2 2 3.5-4M11.5 20l2 2 3.5-4" fill="none" stroke="#E2502A" stroke-width="2"/><path d="M20.5 13h5M20.5 21h5" stroke="#F5F1E8" stroke-width="2"/></svg>
+        <h3>Checklist de visita</h3><p>O que observar na academia, no horário em que você vai treinar. Para levar no celular.</p><span class="rotulo">Para imprimir ou compartilhar</span>
+      </a>
+      <a class="ferramenta" href="#">
+        <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><path d="M4 9l9-3 10 3 9-3v21l-9 3-10-3-9 3z" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M13 6v21M23 9v21" stroke="#F5F1E8" stroke-width="2"/><circle cx="18" cy="17" r="3" fill="#E2502A"/></svg>
+        <h3>Mapa</h3><p>As academias conferidas no mapa, com os mesmos filtros do guia.</p><span class="rotulo">Carrega só quando você abre</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bloco">
+  <div class="wrap">
+    <div class="cab">
+      <div><span class="rotulo">Guias de decisão</span><h2>Antes de assinar o plano</h2></div>
+      <a class="mais" href="#">Todos os guias</a>
+    </div>
+    <ol class="guias">
+      <li><a href="#"><h3>Quanto custa treinar em Alphaville</h3><p>Mensalidade, matrícula e taxas, academia por academia, com a data de cada preço.</p></a></li>
+      <li><a href="#"><h3>Academias abertas 24 horas na região</h3><p>Quais realmente funcionam de madrugada e o que muda no atendimento fora do horário comercial.</p></a></li>
+      <li><a href="#"><h3>Academia, personal ou os dois</h3><p>A conta de cada combinação e os casos em que acompanhamento individual faz diferença.</p></a></li>
+      <li><a href="#"><h3>Treinar na academia do condomínio</h3><p>O que dá para fazer com a estrutura do residencial e quais são as regras para levar um profissional.</p></a></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bloco" style="padding-top:0">
+  <div class="wrap">
+    <div class="mantem">
+      <div>
+        <span class="rotulo" style="color:var(--alameda)">Quem mantém este guia</span>
+        <h2 style="margin-top:10px">Já escolheu onde treinar? Falta decidir como.</h2>
+        <p>O Onde Treinar Alphaville é mantido pelo Montinho Personal Trainer, que atende presencialmente em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Se você quer acompanhamento individual, é com ele que este guia conversa.</p>
+      </div>
+      <div class="acoes">
+        <a class="btn" href="#" rel="nofollow">Conhecer o atendimento presencial <i aria-hidden="true"></i></a>
+        <a class="link" href="#">Como separamos conteúdo e publicidade</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="marca" href="#"><svg width="28" height="35" viewBox="0 0 34 42" aria-hidden="true"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 0 0 2 16C2 25.5 17 41 17 41Z" fill="#12211B"/><circle cx="17" cy="16" r="9.2" fill="none" stroke="#F5F1E8" stroke-width="2.4"/><circle cx="17" cy="16" r="3.4" fill="#E2502A"/></svg><span><span class="nome">onde treinar</span><span class="lugar">ALPHAVILLE</span></span></a>
+        <p class="nota">Guia local de academias e treino. Mantido por Montinho Personal Trainer. As academias citadas não pagam para aparecer. Encontrou um dado errado? <a href="#">Peça a correção</a>.</p>
+      </div>
+      <div><h3>Guia</h3><ul><li><a href="#">Academias</a></li><li><a href="#">Regiões</a></li><li><a href="#">Modalidades</a></li><li><a href="#">Ferramentas</a></li></ul></div>
+      <div><h3>Transparência</h3><ul><li><a href="#">Sobre</a></li><li><a href="#">Metodologia</a></li><li><a href="#">Política editorial</a></li><li><a href="#">Correções</a></li><li><a href="#">Privacidade</a></li></ul></div>
+    </div>
+  </div>
+</footer>
+
+<section class="identidade" aria-label="Quadro de identidade visual">
+  <div class="wrap">
+    <span class="rotulo" style="color:var(--sinal)">Fora da página · material de aprovação</span>
+    <h2>Identidade visual</h2>
+    <p style="max-width:38em;margin:0">Conceito: sinalização urbana. Blocos de cor chapada, tipografia de letreiro e rótulos pequenos em caixa alta, como as placas das alamedas.</p>
+
+    <h3>Logotipo</h3>
+    <div class="logos">
+      <div><span class="marca"><svg width="44" height="54" viewBox="0 0 34 42" aria-hidden="true"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 0 0 2 16C2 25.5 17 41 17 41Z" fill="#12211B"/><circle cx="17" cy="16" r="9.2" fill="none" stroke="#fff" stroke-width="2.4"/><circle cx="17" cy="16" r="3.4" fill="#E2502A"/></svg><span><span class="nome" style="font-size:27px">onde treinar</span><span class="lugar" style="font-size:12px">ALPHAVILLE</span></span></span></div>
+      <div class="escuro"><span class="marca"><svg width="44" height="54" viewBox="0 0 34 42" aria-hidden="true"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 0 0 2 16C2 25.5 17 41 17 41Z" fill="#F5F1E8"/><circle cx="17" cy="16" r="9.2" fill="none" stroke="#12211B" stroke-width="2.4"/><circle cx="17" cy="16" r="3.4" fill="#E2502A"/></svg><span><span class="nome" style="font-size:27px">onde treinar</span><span class="lugar" style="font-size:12px">ALPHAVILLE</span></span></span></div>
+      <div class="verde"><span class="marca"><svg width="44" height="54" viewBox="0 0 34 42" aria-hidden="true"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 0 0 2 16C2 25.5 17 41 17 41Z" fill="#fff"/><circle cx="17" cy="16" r="9.2" fill="none" stroke="#1F6B4A" stroke-width="2.4"/><circle cx="17" cy="16" r="3.4" fill="#1F6B4A"/></svg><span><span class="nome" style="font-size:27px">onde treinar</span><span class="lugar" style="font-size:12px">ALPHAVILLE</span></span></span></div>
+    </div>
+    <p style="font-size:16px;color:var(--cinza);margin:12px 0 0">O símbolo é um alfinete de mapa com uma anilha no centro: lugar e treino. Funciona sozinho como ícone do site.</p>
+
+    <h3>Paleta</h3>
+    <div class="cores">
+      <div class="cor"><i style="background:#12211B"></i><b>Tinta</b><span>#12211B · texto</span></div>
+      <div class="cor"><i style="background:#F5F1E8"></i><b>Papel</b><span>#F5F1E8 · fundo</span></div>
+      <div class="cor"><i style="background:#1F6B4A"></i><b>Alameda</b><span>#1F6B4A · marca</span></div>
+      <div class="cor"><i style="background:#E2502A"></i><b>Sinal</b><span>#E2502A · destaque</span></div>
+      <div class="cor"><i style="background:#FFFDF8"></i><b>Cartão</b><span>#FFFDF8 · superfícies</span></div>
+      <div class="cor"><i style="background:#DCE8DF"></i><b>Musgo claro</b><span>#DCE8DF · apoio</span></div>
+      <div class="cor"><i style="background:#D9D2C2"></i><b>Linha</b><span>#D9D2C2 · divisórias</span></div>
+      <div class="cor"><i style="background:#8A4B12"></i><b>Atenção</b><span>#8A4B12 · dado pendente</span></div>
+    </div>
+
+    <h3>Tipografia</h3>
+    <div class="tipos">
+      <div><div class="a">Onde treinar, com fonte e data.</div><small>Bricolage Grotesque · títulos e interface · pesos 500 a 800</small></div>
+      <div><div class="b">A melhor academia é a que fica no seu caminho e abre no seu horário. O resto se compara com calma, dado por dado.</div><small>Newsreader · texto corrido · pesos 400 e 600</small></div>
+    </div>
+
+    <h3>Componentes</h3>
+    <div class="comps">
+      <a class="btn" href="#">Ação principal <i aria-hidden="true"></i></a>
+      <ul class="tags"><li>Musculação</li><li class="forte">24 horas</li></ul>
+      <p class="selo"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.6 8.2l2.3 2.3 4.5-4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Conferido em 13 nov 2026</p>
+      <p class="selo pendente"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.2v4.6M8 11v1" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Aguardando conferência</p>
+    </div>
+  </div>
+</section>
+</body>
+</html>

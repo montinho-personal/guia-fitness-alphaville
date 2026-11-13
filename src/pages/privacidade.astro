@@ -1,0 +1,48 @@
+---
+import Institucional from '../components/Institucional.astro';
+import Contato from '../components/Contato.astro';
+import { MOSTRAR_EM_REVISAO } from '../lib/dados';
+---
+<Institucional titulo="Política de privacidade" descricao="Quais dados o Onde Treinar Alphaville trata, para quê, com que base legal e como você exerce os direitos previstos na Lei Geral de Proteção de Dados." h1="Política de privacidade" fina="O que o guia coleta, o que não coleta e como você controla isso." url="/privacidade/" nome="Privacidade">
+  {MOSTRAR_EM_REVISAO && <div class="caixa alerta" style="margin-bottom:24px"><h2>Pendência antes do lançamento</h2><p>Este texto descreve o funcionamento técnico atual do site. Pendências: incluir CPF ou CNPJ do controlador e um e-mail de contato, e submeter o texto a revisão jurídica.</p></div>}
+
+  <h2>Quem é o responsável</h2>
+  <p>O Onde Treinar Alphaville é mantido pelo Montinho Personal Trainer, de Renato Montinho, responsável pelo tratamento dos dados descritos aqui (controlador, nos termos da Lei Geral de Proteção de Dados). O canal para assuntos de privacidade está no fim desta página.</p>
+
+  <h2>O que o site não faz</h2>
+  <ul>
+    <li>Não tem cadastro, login nem área de usuário.</li>
+    <li>Não tem formulário que colete nome, e-mail ou telefone.</li>
+    <li>Não vende nem compartilha dados com academias.</li>
+    <li>Não exibe publicidade de terceiros.</li>
+  </ul>
+
+  <h2>Dados guardados no seu aparelho</h2>
+  <p>O site grava duas informações no armazenamento local do seu navegador. Elas não são enviadas a nós:</p>
+  <ul>
+    <li>a sua escolha sobre cookies de medição;</li>
+    <li>os itens que você marcou no checklist de visita.</li>
+  </ul>
+  <p>As respostas do teste "qual academia combina com você" e as escolhas do comparador são processadas no seu navegador. No comparador, as academias escolhidas aparecem no endereço da página, para que você possa compartilhar o link.</p>
+
+  <h2>Medição de audiência</h2>
+  <p>Se você aceitar, o site carrega o Google Tag Manager e o Google Analytics 4 para medir quais páginas e ferramentas são usadas. Sem o seu aceite, esses serviços não são carregados. A base legal é o consentimento, que você pode retirar a qualquer momento em "Preferências de cookies", no rodapé.</p>
+  <p>Medimos visitas a páginas e eventos como cliques em fichas de academias, uso do comparador, conclusão do teste e cliques nos links para o site e o WhatsApp do Montinho Personal Trainer.</p>
+
+  <h2>Registros de acesso</h2>
+  <p>O site é hospedado na Vercel, que registra dados técnicos de acesso, como endereço IP, data e hora, para operação e segurança do serviço.</p>
+
+  <h2>Serviços de terceiros acionados por você</h2>
+  <ul>
+    <li><strong>Mapa.</strong> Ao clicar em "Carregar o mapa", seu navegador busca imagens nos servidores do OpenStreetMap, que recebem o seu endereço IP.</li>
+    <li><strong>WhatsApp.</strong> Ao clicar em um link de WhatsApp, você é levado ao aplicativo com uma mensagem pré-preenchida que indica a página de origem. A conversa passa a ser regida pelas regras do WhatsApp e do Montinho Personal Trainer.</li>
+    <li><strong>Links externos.</strong> Sites de academias, agregadores e Google Maps têm políticas próprias.</li>
+  </ul>
+
+  <h2>Seus direitos</h2>
+  <p>A Lei Geral de Proteção de Dados (Lei nº 13.709/2018) garante, entre outros, o direito de confirmar a existência de tratamento, acessar, corrigir e pedir a eliminação de dados, e de revogar o consentimento. Para exercê-los:</p>
+  <Contato assunto="Privacidade" />
+
+  <h2>Alterações</h2>
+  <p>Esta política muda quando o funcionamento do site muda. A data no topo indica a última alteração.</p>
+</Institucional>

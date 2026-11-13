@@ -1,0 +1,75 @@
+nome: Tecfit Alphaville
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: estudio
+rede: Tecfit
+resumo: Estúdio na Alameda Araguaia que combina musculação e funcional com eletroestimulação.
+endereco: Alameda Araguaia, 762 - Alphaville Industrial, Barueri - SP, 06428-110
+geo:
+  lat: -23.499219
+  lng: -46.853709
+horario:
+  seg:
+  - 06:00-22:00
+  ter:
+  - 06:00-22:00
+  qua:
+  - 06:00-22:00
+  qui:
+  - 06:00-22:00
+  sex:
+  - 06:00-22:00
+  sab:
+  - 08:00-14:00
+  dom: []
+modalidades:
+- musculacao
+- funcional
+- eletroestimulacao
+atividades_listadas:
+- Eletroestimulação
+- Funcional
+- Musculação
+- Treino funcional
+comodidades:
+- Ar condicionado
+- Armários
+- Chuveiro
+- Espaço adaptado para cadeira de rodas
+- Estacionamento
+- Itens de higiene pessoal
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold+
+  preco_plano: R$ 439,99
+  url: https://wellhub.com/pt-br/search/partners/tecfit-alphaville-alphaville-industrial-barueri/
+mensalidade: null
+site: https://www.tecfitbrasil.com/unidades/alphaville
+telefone: (11) 4191-0832
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/tecfit-alphaville-alphaville-industrial-barueri/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Formato e duração das sessões
+- Valor do plano direto
+analise:
+- 'A proposta é diferente da de uma academia convencional: o treino usa eletroestimulação muscular. Funciona das 6h às 22h em dias úteis e das 8h às 14h no sábado; não há horário listado para domingo.'
+- A página informa estacionamento, vestiário com chuveiro e itens de higiene. No Wellhub, o acesso exige o plano Gold+.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

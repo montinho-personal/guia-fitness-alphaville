@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import { academias, paraFerramentas, REGIOES } from '../lib/dados';
+const todas = await academias();
+const dados = paraFerramentas(todas).map(({ id, nome, url, geo, bairro, horario, tipo }) => ({ id, nome, url, geo, bairro, horario, tipo }));
+---
+<Base titulo="Mapa de academias de Alphaville e região" descricao="Mapa das academias, boxes e estúdios com ficha no guia, em Alphaville, Tamboré, Barueri e Santana de Parnaíba, com a lista de endereços por região." migalhas={[{ nome: 'Mapa', url: '/mapa/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Ferramenta</span>
+      <h1>Mapa de academias</h1>
+      <p class="linha-fina">As {todas.length} academias com ficha, no mapa. A lista de endereços abaixo tem as mesmas informações, para quem prefere texto.</p>
+    </header>
+    <div id="mapa" class="nao-imprime">
+      <div>
+        <p style="margin:0 0 14px;max-width:26em">O mapa usa imagens do OpenStreetMap, carregadas de um servidor externo. Ele só é carregado quando você pede.</p>
+        <button class="btn" type="button" id="abrir-mapa">Carregar o mapa <i aria-hidden="true"></i></button>
+        <noscript><p>O mapa precisa de JavaScript. A lista de endereços está logo abaixo.</p></noscript>
+      </div>
+    </div>
+    <p style="font-size:14px;color:var(--cinza)">As posições vêm das coordenadas publicadas pelos agregadores para cada unidade e podem ter alguns metros de erro.</p>
+
+    {Object.entries(REGIOES).map(([id, r]) => (
+      <section class="bloco fino" aria-labelledby={`r-${id}`}>
+        <div class="cab"><h2 id={`r-${id}`}>{r.titulo}</h2><a class="link-forte" href={`/regioes/${id}/`}>Sobre a região</a></div>
+        <div class="rolagem" tabindex="0" role="region" aria-labelledby={`r-${id}`}>
+          <table class="dados">
+            <thead><tr><th scope="col">Academia</th><th scope="col">Bairro</th><th scope="col">Endereço</th></tr></thead>
+            <tbody>{todas.filter((a) => a.data.regiao === id).map((a) => <tr><th scope="row"><a href={`/academias/${a.id}/`}>{a.data.nome}</a></th><td>{a.data.bairro}</td><td>{a.data.endereco}</td></tr>)}</tbody>
+          </table>
+        </div>
+      </section>
+    ))}
+  </div>
+  <script type="application/json" id="dados" set:html={JSON.stringify(dados)}></script>
+  <script>
+    const botao = document.getElementById('abrir-mapa');
+    botao?.addEventListener('click', async () => {
+      botao.setAttribute('disabled', '');
+      botao.textContent = 'Carregando…';
+      const [{ default: L }] = await Promise.all([import('leaflet'), import('leaflet/dist/leaflet.css')]);
+      const dados = JSON.parse(document.getElementById('dados')!.textContent!);
+      const el = document.getElementById('mapa')!;
+      el.innerHTML = '';
+      el.style.display = 'block';
+      el.style.padding = '0';
+      const mapa = L.map(el, { scrollWheelZoom: false });
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(mapa);
+      const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+      const pontos = dados.map((d: any) => {
+        const m = L.circleMarker([d.geo.lat, d.geo.lng], { radius: 9, color: '#101B2D', weight: 2, fillColor: d.tipo === 'box' ? '#E2502A' : '#1B4F9C', fillOpacity: 1 }).addTo(mapa);
+        m.bindPopup(`<strong>${esc(d.nome)}</strong><br>${esc(d.bairro)}<br>${esc(d.horario)}<br><a href="${d.url}">Ver ficha</a>`);
+        return [d.geo.lat, d.geo.lng] as [number, number];
+      });
+      mapa.fitBounds(pontos, { padding: [30, 30] });
+      (window as any).otaEvento?.('mapa_carregado');
+    });
+  </script>
+</Base>

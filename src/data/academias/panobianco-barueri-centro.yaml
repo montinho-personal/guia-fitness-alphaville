@@ -1,0 +1,132 @@
+nome: Panobianco Barueri Centro
+regiao: barueri
+bairro: Centro
+tipo: academia
+rede: Panobianco
+resumo: Unidade da rede Panobianco no centro de Barueri, com musculação, aulas coletivas e uma das entradas mais baratas via Wellhub deste guia.
+endereco: R. Jose Maria Balieiro, 267 - Centro, Barueri - SP, 06401-126
+geo:
+  lat: -23.509366
+  lng: -46.869601
+horario:
+  seg:
+  - 05:00-23:59
+  ter:
+  - 05:00-23:59
+  qua:
+  - 05:00-23:59
+  qui:
+  - 05:00-23:59
+  sex:
+  - 05:00-23:00
+  sab:
+  - 08:00-17:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+- lutas
+- danca
+- bike
+- corrida
+atividades_listadas:
+- Abdômen e braço
+- Aeróbica de baixo impacto (LIA)
+- Aeropower
+- Barre Training
+- Body Jam
+- Bounce training
+- Condicionamento corporal
+- Corrida na esteira
+- Fisiculturismo
+- Fitness dance
+- Glúteos
+- abdômen e pernas
+- Jiu-jitsu infantil
+- Muay Thai
+- Musculação
+- Power Bike
+- Pular corda
+- Queima de gordura
+- Speed Mix
+- Treinamento cardio
+- Treino de core
+comodidades:
+- Ar condicionado
+- Área de alongamento
+- Área de cardio
+- Área de musculação
+- Área de pesos livres
+- Área de treino funcional
+- Área infantil
+- Armários
+- Assistência a pessoas com deficiência
+- Balança de bioimpedância
+- Banheiro acessível
+- Bebedouro
+- Cadeira de massagem
+- Chuveiro
+- Chuveiro acessível
+- Elevador
+- Espaço adaptado para cadeira de rodas
+- Espaços de coworking
+- Estacionamento
+- Estacionamento acessível
+- Nutricionista
+- Personal trainer
+- Portas adaptadas para cadeiras de rodas
+- Secador de cabelo
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic
+  preco_plano: R$ 69,99
+  url: https://wellhub.com/pt-br/search/partners/panobianco-barueri-centro-centro/
+mensalidade:
+  valor: a partir de R$ 119,90 (preço da rede)
+  resumo: Plano Orange a R$ 119,90 por mês, com fidelidade de 12 meses, no preço anunciado pela rede.
+  planos:
+  - nome: Plano Orange
+    preco: R$ 119,90/mês
+    condicoes: Fidelidade de 12 meses, cobrança recorrente no cartão, sem taxa de adesão. Até 4 acessos mensais a outras unidades.
+  - nome: Plano Platinum
+    preco: R$ 139,90/mês
+    condicoes: Sem fidelidade, sem adesão e sem taxa de cancelamento. Acesso a todas as unidades da rede, exceto Select e CT.
+  abrangencia: rede
+  fonte: Site oficial da Panobianco (página inicial)
+  url: https://www.panobiancoacademia.com.br/
+  conferido_em: '2026-11-13'
+  aviso: A rede pede que se verifique a disponibilidade dos planos em cada unidade. O valor praticado na unidade Barueri Centro não foi confirmado.
+site: https://www.panobiancoacademia.com.br/barueri-centro
+telefone: (11) 91775-7019
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/panobianco-barueri-centro-centro/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+- campos:
+  - mensalidade
+  fonte: Site oficial da Panobianco (página inicial)
+  url: https://www.panobiancoacademia.com.br/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Confirmar se a unidade Barueri Centro pratica os preços anunciados pela rede
+analise:
+- Abre das 5h às 23h59 de segunda a quinta e até 23h na sexta. Funciona também no sábado, das 8h às 17h, e no domingo, das 8h às 14h.
+- A lista de estrutura da página é a mais longa entre as academias de Barueri reunidas aqui, com área infantil, elevador, itens de acessibilidade e nutricionista. No Wellhub, o acesso começa no plano Basic, ao menos dois níveis abaixo do exigido pelas unidades de rede de Alphaville. No site, a rede anuncia o Plano Orange a R$ 119,90 por mês, com fidelidade de 12 meses, e o Platinum a R$ 139,90, sem fidelidade.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

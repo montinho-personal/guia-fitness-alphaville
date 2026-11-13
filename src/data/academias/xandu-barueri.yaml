@@ -1,0 +1,73 @@
+nome: Academia Xandu
+regiao: barueri
+bairro: Jardim Florida
+tipo: academia
+resumo: Academia de bairro no Jardim Florida, perto da Prefeitura de Barueri, com musculação, dança e bike, e o plano de entrada mais barato do Wellhub.
+endereco: R. Copo de Leite, 119 - Jardim Florida, Barueri - SP, 06407-260
+geo:
+  lat: -23.497723
+  lng: -46.891437
+horario:
+  seg:
+  - 06:00-22:00
+  ter:
+  - 06:00-22:00
+  qua:
+  - 06:00-22:00
+  qui:
+  - 06:00-22:00
+  sex:
+  - 06:00-22:00
+  sab:
+  - 08:00-13:00
+  dom: []
+modalidades:
+- musculacao
+- danca
+- bike
+atividades_listadas:
+- Bike
+- Condicionamento corporal
+- Dança sertaneja
+- Fisiculturismo
+- Jump
+- Musculação
+- Treino localizado
+- Zumba
+comodidades:
+- Armários
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Starter
+  preco_plano: R$ 39,99
+  url: https://wellhub.com/pt-br/search/partners/academia-xandu/
+mensalidade: null
+site: https://instagram.com/academiaxandu
+telefone: (11) 97490-1500
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/academia-xandu/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade
+- 'Estacionamento: não consta na fonte'
+analise:
+- Fica na Rua Copo de Leite, no Jardim Florida, a poucas quadras da Prefeitura de Barueri. Funciona das 6h às 22h de segunda a sexta e das 8h às 13h no sábado; não há horário listado para domingo.
+- Além da musculação, a grade tem jump, zumba, dança sertaneja e bike. É a única academia do guia que entra no plano Starter do Wellhub, o mais barato do agregador, a R$ 39,99 por mês.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'
