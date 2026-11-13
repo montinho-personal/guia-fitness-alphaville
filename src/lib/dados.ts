@@ -4,7 +4,8 @@ export type Academia = CollectionEntry<'academias'>;
 export type Guia = CollectionEntry<'guias'>;
 
 export const INDEXAVEL = import.meta.env.PUBLIC_INDEXAVEL === 'true';
-export const MOSTRAR_EM_REVISAO = import.meta.env.MOSTRAR_EM_REVISAO === 'true';
+// Variável sem prefixo PUBLIC_: vem do .env em desenvolvimento e do ambiente do sistema na Vercel.
+export const MOSTRAR_EM_REVISAO = (import.meta.env.MOSTRAR_EM_REVISAO ?? process.env.MOSTRAR_EM_REVISAO) === 'true';
 export const WHATSAPP = import.meta.env.PUBLIC_WHATSAPP || '';
 export const GTM_ID = import.meta.env.PUBLIC_GTM_ID || '';
 
