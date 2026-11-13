@@ -70,6 +70,41 @@ A confirmar antes de qualquer coisa, porque podem ser de outra cidade: Live Acad
 
 Fora do tema (feriados, Diário Oficial, bairros de Barueri): ignoradas.
 
+## Segunda remessa: "musculação" e "crossfit alphaville"
+
+Matriz em [`matriz-musculacao-crossfit.csv`](matriz-musculacao-crossfit.csv), com 2.817 termos.
+
+### Musculação
+
+O termo é nacional e quase todo informacional. Dos 2.610 termos do Google:
+
+| Grupo | Volume somado | Termos | Onde tratar |
+|---|---:|---:|---|
+| Treino e saúde, alcance nacional | 342.860 | 1.955 | Site do Montinho |
+| Produtos (aparelhos, tênis, barras, luvas) | 177.290 | 563 | Fora do tema |
+| Saúde e medicamentos | 12.910 | 67 | Não tratar |
+| Local: "perto de mim" | 5.810 | 25 | Portal |
+
+Leitura:
+
+1. **O grosso do volume não é do portal.** "Emagrecer musculação" (8.100), "musculação emagrece" (5.400), "musculação benefícios" (4.400) e "cardio antes ou depois da musculação" (2.400) são temas de treino, sem relação com lugar. O site do Montinho já tem 77 URLs com "musculação" no endereço, incluindo uma sobre cardio antes ou depois. Tratar esses temas no portal seria competir com ele e sair do foco local.
+2. **O que é do portal é o "perto de mim".** "Academia de musculação perto de mim" (1.600), "academias musculação perto de mim" (1.000), "academia musculação perto de mim" (880), "musculação perto de mim" (590) e "studio de musculação perto de mim" (590). É a intenção que a página de musculação e o guia atendem. O Google costuma responder com o mapa, então o ganho depende de o portal ter dado que o mapa não tem.
+3. **Há um recorte local possível:** "musculação para idosos perto de mim" (70), que se soma à pergunta "existem academias para idosos?" da primeira remessa.
+4. **Medicamentos ficam de fora.** Peptídeos, anastrozol, tadalafila, analgésicos: são temas de saúde que exigem autoria médica e não têm relação com o guia.
+
+### CrossFit Alphaville
+
+"Crossfit alphaville" tem 170 buscas, em parte de outras cidades (Goiânia, Campinas, Nova Lima aparecem nas variações). As variações locais têm 10 cada. Apareceu um box que o portal não tem: **High Pulse**. O Templo SA e o BlackSheep aparecem pelo nome, com volume 10 e zero.
+
+As perguntas do Google são boas para a página de CrossFit do portal:
+
+- O que é mais caro, academia ou CrossFit? Quanto custa o CrossFit por mês?
+- Qual é a melhor opção: CrossFit ou academia? Pode fazer academia e CrossFit?
+- Para quem é indicado o CrossFit? Para que não é indicado?
+- Quantas vezes por semana é indicado fazer CrossFit?
+
+As de tênis e de emagrecimento são nacionais e ficam fora.
+
 ## O que ainda falta pesquisar
 
-Só três termos-semente chegaram. Faltam, da lista combinada: "crossfit alphaville", "musculação", "academia 24 horas", os blocos de preço, de modalidades e de decisão ("como escolher academia", "academia ou personal trainer").
+Chegaram cinco termos-semente. Faltam, da lista combinada: "academia 24 horas", os blocos de preço e de decisão ("quanto custa academia", "como escolher academia", "academia ou personal trainer") e as regiões restantes ("academia tamboré", "academia santana de parnaíba").
