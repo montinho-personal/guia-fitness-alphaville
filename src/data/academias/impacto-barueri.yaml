@@ -1,0 +1,75 @@
+nome: Academia Impacto
+regiao: barueri
+bairro: Vila Engenho Novo
+tipo: academia
+resumo: Academia de bairro na Vila Engenho Novo com musculação, lutas e cross training, que abre às 5h em dias úteis.
+endereco: R. Bélgica, 32 - Vila Engenho Novo, Barueri - SP
+geo:
+  lat: -23.486356
+  lng: -46.893269
+horario:
+  seg:
+  - 05:00-22:00
+  ter:
+  - 05:00-22:00
+  qua:
+  - 05:00-22:00
+  qui:
+  - 05:00-22:00
+  sex:
+  - 05:00-22:00
+  sab:
+  - 08:00-14:00
+  dom: []
+modalidades:
+- musculacao
+- lutas
+- cross-training
+- danca
+atividades_listadas:
+- Artes marciais
+- Boxe
+- Cross training
+- Fisiculturismo
+- Funcional infantil
+- Muay Thai
+- Musculação
+- Personal trainer - Dança
+comodidades:
+- Armários
+- Loja de artigos esportivos
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic+
+  preco_plano: R$ 99,99
+  url: https://wellhub.com/pt-br/search/partners/academia-impacto-barueri/
+mensalidade: null
+site: https://instagram.com/academia_i
+telefone: (11) 98470-5464
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/academia-impacto-barueri/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade
+- 'Estacionamento: não consta na fonte'
+analise:
+- Fica na Rua Bélgica, na Vila Engenho Novo, perto do limite com Santana de Parnaíba. Abre às 5h e fecha às 22h de segunda a sexta; no sábado funciona das 8h às 14h, e não há horário listado para domingo.
+- A grade mistura musculação com boxe, muay thai, artes marciais e cross training. A lista de estrutura é curta — armários, vestiário, loja e Wi-Fi. No Wellhub, entra a partir do plano Basic+, um dos níveis de entrada mais baixos entre as academias do guia.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

@@ -29,7 +29,7 @@ const attrs = (a: (typeof todas)[number]) => ({
 
     <div class="resposta">
       <span class="rotulo">Em resumo</span>
-      <p>Este guia reúne {todas.length} lugares para treinar: {todas.filter((a) => a.data.regiao === 'alphaville').length} em Alphaville e Tamboré, {todas.filter((a) => a.data.regiao === 'barueri').length} em Barueri e {todas.filter((a) => a.data.regiao === 'santana-de-parnaiba').length} em Santana de Parnaíba. {n24 === 1 ? 'Uma tem' : `${n24} têm`} horário publicado de 24 horas e {nDom} abrem aos domingos. Nenhuma mensalidade foi confirmada diretamente com as academias ainda; por isso o campo aparece como "não confirmada".</p>
+      <p>Este guia reúne {todas.length} lugares para treinar: {todas.filter((a) => a.data.regiao === 'alphaville').length} em Alphaville e Tamboré, {todas.filter((a) => a.data.regiao === 'barueri').length} em Barueri e {todas.filter((a) => a.data.regiao === 'santana-de-parnaiba').length} em Santana de Parnaíba. {n24 === 1 ? 'Uma tem' : `${n24} têm`} horário publicado de 24 horas e {nDom} abrem aos domingos. {todas.filter((a) => a.data.mensalidade).length} publicam preço no site oficial; nas demais, a mensalidade aparece como "não confirmada".</p>
     </div>
 
     <section class="bloco fino" aria-labelledby="filtros-t">
@@ -78,7 +78,7 @@ const attrs = (a: (typeof todas)[number]) => ({
 
     <section class="bloco fino prosa">
       <h2>Como ler este guia</h2>
-      <p>Os dados de cada ficha vêm, por enquanto, das páginas públicas das unidades no Wellhub e no TotalPass, conferidas uma a uma. Isso garante endereço, horário e lista de atividades com data, mas tem limites: agregadores às vezes mostram só a janela de horário válida para os usuários deles, e não trazem a mensalidade cobrada pela academia.</p>
+      <p>Os dados de cada ficha vêm das páginas públicas das unidades no Wellhub e no TotalPass e, quando existem, dos sites oficiais das academias, conferidos um a um. Isso garante endereço, horário e lista de atividades com data, mas tem limites: agregadores às vezes mostram só a janela de horário válida para os usuários deles, e não trazem a mensalidade cobrada pela academia.</p>
       <p>Por isso cada ficha tem uma seção "O que ainda não confirmamos". Quando um dado for confirmado com a academia ou em visita, o selo da ficha muda e a data é atualizada. A <a href="/metodologia/">metodologia</a> explica cada nível de verificação.</p>
       <h2>Academias que ainda não têm ficha</h2>
       <p>Estas academias são conhecidas na região, mas não têm página pública que pudéssemos conferir. Elas entram quando os dados forem levantados diretamente:</p>
@@ -86,6 +86,8 @@ const attrs = (a: (typeof todas)[number]) => ({
       <p>Trabalha em uma delas, ou em outra que não está aqui? <a href="/correcoes/">Envie os dados</a>.</p>
       <h2>Recortes do guia</h2>
       <ul>
+        <li><a href="/academias/precos/">Quanto custa academia em Alphaville e Barueri</a></li>
+        <li><a href="/guias/smart-fit-ou-gavioes/">Smart Fit ou Gaviões em Alphaville</a></li>
         <li><a href="/academias/24-horas/">Academias 24 horas e de horário estendido</a></li>
         <li><a href="/academias/wellhub-totalpass/">Academias que aceitam Wellhub e TotalPass</a></li>
         <li><a href="/modalidades/musculacao/">Musculação: onde treinar e o que observar</a></li>

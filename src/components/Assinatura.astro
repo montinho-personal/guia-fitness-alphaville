@@ -7,5 +7,5 @@ const { autor, revisor, publicado, atualizado } = Astro.props;
   <span>Por {autor}</span>
   <span>Publicado em <time datetime={publicado.toISOString().slice(0, 10)}>{dataLonga(publicado)}</time></span>
   <span>Atualizado em <time datetime={atualizado.toISOString().slice(0, 10)}>{dataLonga(atualizado)}</time></span>
-  <span>{revisor ? `Revisado por ${revisor}` : 'Revisão humana: pendente'}</span>
+  {revisor && <span>Revisado por {revisor}</span>}
 </p>

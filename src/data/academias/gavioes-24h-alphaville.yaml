@@ -28,6 +28,8 @@ modalidades:
 - funcional
 - lutas
 - danca
+- bike
+- pilates
 atividades_listadas:
 - Caiaque
 - Fight
@@ -40,6 +42,7 @@ comodidades:
 - Banheiro acessível
 - Estacionamento acessível
 - Portas adaptadas para cadeiras de rodas
+- Rooftop com máquinas
 agregadores:
 - nome: Wellhub
   plano_minimo: Silver+
@@ -49,6 +52,13 @@ mensalidade: null
 site: https://academiagavioes.com.br
 telefone: (11) 94074-7584
 proveniencia:
+- campos:
+  - modalidades
+  - comodidades
+  fonte: Site oficial da Academia Gaviões (página da unidade)
+  url: https://www.academiagavioes.com.br/unidades/item/spalphaville
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
 - campos:
   - endereco
   - geo
@@ -61,13 +71,14 @@ proveniencia:
   conferido_em: '2026-11-13'
   nivel: fonte-publica
 pendencias:
-- Mensalidade direta da academia
+- Mensalidade e diária
 - Confirmar se o funcionamento 24 horas vale para feriados
 - Equipe disponível de madrugada
 analise:
 - 'É a única academia deste guia cujo horário publicado cobre as 24 horas do dia, de segunda a domingo. Para quem trabalha em turnos ou só consegue treinar de madrugada, é o dado que mais importa. Vale confirmar com a unidade como funciona o atendimento fora do horário comercial: em academias 24 horas, é comum a madrugada ter equipe reduzida.'
-- O foco é musculação. A lista de atividades inclui também aulas de luta e dança. No Wellhub, o acesso começa no plano Silver+.
-status: aguardando-verificacao
+- O foco é musculação. A página da unidade no site da rede lista também artes marciais, dança, sala de bike, pilates, aulas aeróbicas e um rooftop com máquinas. No Wellhub, o acesso começa no plano Silver+.
+- 'A Gaviões não publica preço no site: a página da unidade leva a uma plataforma de matrícula, e a mensalidade e a diária, as dúvidas mais frequentes nas buscas sobre a academia, ainda não foram confirmadas por este guia.'
+status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville

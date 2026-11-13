@@ -4,6 +4,8 @@ import { guias } from '../../lib/dados';
 const gs = (await guias()).filter((g) => g.data.secao === 'guias');
 const itens = [
   ...gs.map((g) => ({ url: `/guias/${g.id}/`, t: g.data.h1, p: g.data.descricao })),
+  { url: '/guias/smart-fit-ou-gavioes/', t: 'Smart Fit ou Gaviões em Alphaville: qual escolher', p: 'Horário, preço, modalidades e agregadores das duas academias lado a lado.' },
+  { url: '/academias/precos/', t: 'Quanto custa academia em Alphaville e Barueri', p: 'As mensalidades publicadas pelas academias, com fonte e data, e o plano de agregador que cada uma exige.' },
   { url: '/academias/24-horas/', t: 'Academias 24 horas em Alphaville e região', p: 'Quais têm horário publicado de 24 horas, quais só parecem ter, e as que abrem mais cedo e fecham mais tarde.' },
   { url: '/academias/wellhub-totalpass/', t: 'Academias com Wellhub e TotalPass', p: 'O plano mínimo que cada academia exige em cada agregador, e quanto esse plano custa.' },
 ];
@@ -16,6 +18,6 @@ const itens = [
       <p class="linha-fina">Textos curtos para decidir onde e como treinar, apoiados nos dados das fichas.</p>
     </header>
     <ol class="guias">{itens.map((g) => <li><a href={g.url}><h2 style="font-size:23px;font-weight:700">{g.t}</h2><p>{g.p}</p></a></li>)}</ol>
-    <div class="prosa" style="margin-top:28px"><p>Dois guias previstos ainda não foram publicados porque dependem de levantamento direto: os preços de mensalidade, academia por academia, e as regras de cada condomínio para treinar com personal. Eles entram quando os dados existirem.</p></div>
+    <div class="prosa" style="margin-top:28px"><p>Um guia previsto ainda não foi publicado porque depende de levantamento direto: as regras de cada condomínio para treinar com personal. Ele entra quando os dados existirem.</p></div>
   </div>
 </Base>

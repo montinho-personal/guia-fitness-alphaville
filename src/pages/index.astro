@@ -7,7 +7,7 @@ import { academias, guias, REGIOES, MODALIDADES, urlRegiao } from '../lib/dados'
 
 const todas = await academias();
 const gs = await guias();
-const destaque = ['gavioes-24h-alphaville', 'bodytech-iguatemi-alphaville', 'templo-sa-alphaville', 'bluefit-tambore', 'panobianco-barueri-centro', 'forth-academia-jardim-sao-luis'];
+const destaque = ['gavioes-24h-alphaville', 'smart-fit-sodimac-alphaville', 'bluefit-alphaville', 'smart-fit-barueri-av-zelia', 'panobianco-barueri-centro', 'boa-forma-barueri'];
 const cartoes = destaque.map((id) => todas.find((a) => a.id === id)).filter(Boolean);
 const porRegiao = (r: string) => todas.filter((a) => a.data.regiao === r).length;
 const mods = [...new Set(todas.flatMap((a) => a.data.modalidades))];
@@ -17,6 +17,8 @@ const schema = [
   { '@type': 'Organization', '@id': abs('/#org'), name: 'Onde Treinar Alphaville', url: abs('/'), logo: abs('/favicon.svg'), description: 'Guia local de academias e treino em Alphaville, Barueri e Santana de Parnaíba. Mantido por Montinho Personal Trainer.', parentOrganization: { '@type': 'Organization', name: 'Montinho Personal Trainer', url: 'https://www.montinhopersonal.com.br' } },
 ];
 const lista = [
+  { url: '/academias/precos/', t: 'Quanto custa academia em Alphaville e Barueri', p: 'As mensalidades que as academias publicam, com fonte e data, e o plano de agregador das que não publicam.' },
+  { url: '/guias/smart-fit-ou-gavioes/', t: 'Smart Fit ou Gaviões em Alphaville', p: 'Horário, preço, modalidades e agregadores das duas lado a lado, e qual combina com cada rotina.' },
   { url: '/academias/24-horas/', t: 'Academias 24 horas em Alphaville e região', p: 'Quais têm horário publicado de 24 horas, quais só parecem ter, e as que abrem mais cedo e fecham mais tarde.' },
   { url: '/academias/wellhub-totalpass/', t: 'Academias com Wellhub e TotalPass', p: 'O plano mínimo que cada academia exige em cada agregador, e quanto esse plano custa.' },
   ...gs.filter((g) => g.data.secao === 'guias').map((g) => ({ url: `/guias/${g.id}/`, t: g.data.h1, p: g.data.descricao })),

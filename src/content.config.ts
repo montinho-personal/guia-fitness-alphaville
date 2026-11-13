@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 
 export const STATUS = ['rascunho', 'em-pesquisa', 'em-revisao', 'aguardando-verificacao', 'aprovado', 'publicado', 'atualizacao-necessaria'] as const;
 export const REGIOES = ['alphaville', 'barueri', 'santana-de-parnaiba'] as const;
-export const MODALIDADES = ['musculacao', 'crossfit', 'cross-training', 'funcional', 'lutas', 'danca', 'bike', 'pilates', 'hiit', 'hyrox', 'eletroestimulacao', 'yoga', 'corrida'] as const;
+export const MODALIDADES = ['musculacao', 'crossfit', 'cross-training', 'funcional', 'lutas', 'danca', 'bike', 'pilates', 'hiit', 'hyrox', 'eletroestimulacao', 'yoga', 'corrida', 'natacao'] as const;
 const DIAS = ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'] as const;
 const data = z.coerce.date();
 const faixa = z.string().regex(/^\d\d:\d\d-\d\d:\d\d$/);
@@ -36,7 +36,17 @@ const academias = defineCollection({
     comodidades: z.array(z.string()).default([]),
     agregadores: z.array(z.object({ nome: z.enum(['Wellhub', 'TotalPass']), plano_minimo: z.string(), preco_plano: z.string(), url: z.string().url(), nota: z.string().optional() })).default([]),
     // Só preencher com valor confirmado. null = não confirmada.
-    mensalidade: z.object({ valor: z.string(), fonte: z.string(), conferido_em: data }).nullable(),
+    // valor: o menor preço mensal publicado para um plano regular da unidade.
+    mensalidade: z.object({
+      valor: z.string(),
+      resumo: z.string(),
+      planos: z.array(z.object({ nome: z.string(), preco: z.string(), condicoes: z.string() })).min(1),
+      abrangencia: z.enum(['unidade', 'rede']),
+      fonte: z.string(),
+      url: z.string().url(),
+      conferido_em: data,
+      aviso: z.string().optional(),
+    }).nullable(),
     site: z.string().url().optional(),
     telefone: z.string().optional(),
     // Todo dado local precisa de origem e data. Ver scripts/auditoria.mjs.

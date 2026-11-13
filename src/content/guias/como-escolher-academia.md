@@ -12,7 +12,7 @@ fontes:
     url: "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm"
   - titulo: "Dados de horário, endereço e estrutura das fichas deste guia"
     url: "https://wellhub.com/pt-br/"
-status: aguardando-verificacao
+status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
@@ -51,7 +51,7 @@ Pergunte quantos professores ficam na sala no seu horário e se a academia permi
 
 Compare o custo total do primeiro ano: mensalidade, matrícula, taxas e, se for o caso, estacionamento. Se a sua empresa oferece Wellhub ou TotalPass, veja [qual plano cada academia exige](/academias/wellhub-totalpass/) antes de decidir.
 
-Este guia ainda não publica a mensalidade direta das academias, porque nenhum valor foi confirmado com elas. Peça na recepção.
+Poucas academias da região publicam preço. As que publicam estão em [quanto custa academia em Alphaville e Barueri](/academias/precos/); para as demais, peça o valor na recepção.
 
 ## Leve o checklist
 

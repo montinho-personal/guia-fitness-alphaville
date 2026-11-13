@@ -1,0 +1,90 @@
+---
+import Base from '../../layouts/Base.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import CartaoAcademia from '../../components/CartaoAcademia.astro';
+import { academias, MODALIDADES, agregador, urlAcademia, dataLonga, dataIso, temComodidade, horasSemana } from '../../lib/dados';
+
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
+const todas = await academias();
+const sf = todas.find((a) => a.id === 'smart-fit-sodimac-alphaville')!;
+const gv = todas.find((a) => a.id === 'gavioes-24h-alphaville')!;
+const sfBarueri = todas.filter((a) => a.data.rede === 'Smart Fit' && a.data.regiao === 'barueri');
+const km = (() => { const R = 6371, rad = (x: number) => (x * Math.PI) / 180, a = sf.data.geo, b = gv.data.geo; const dLa = rad(b.lat - a.lat), dLo = rad(b.lng - a.lng); const h = Math.sin(dLa / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLo / 2) ** 2; return (2 * R * Math.asin(Math.sqrt(h))).toFixed(1).replace('.', ','); })();
+const so = (x: string[], y: string[]) => x.filter((m) => !y.includes(m)).map((m) => MODALIDADES[m]);
+const ag = (a: typeof sf, n: 'Wellhub' | 'TotalPass') => agregador(a, n) ? `a partir do ${agregador(a, n)!.plano_minimo}` : 'não consta';
+const linhas: [string, string, string][] = [
+  ['Onde fica', sf.data.endereco.split(' - ')[0], gv.data.endereco.split(' - ')[0]],
+  ['Horário', 'Seg a sex, 6h às 23h · sáb e feriados, 8h às 17h · dom, 8h às 14h', '24 horas, todos os dias'],
+  ['Horas abertas por semana', String(horasSemana(sf.data.horario)), String(horasSemana(gv.data.horario))],
+  ['Mensalidade', sf.data.mensalidade ? `${sf.data.mensalidade.valor} (site oficial)` : 'não confirmada', gv.data.mensalidade ? gv.data.mensalidade.valor : 'não publicada'],
+  ['Modalidades', sf.data.modalidades.map((m) => MODALIDADES[m]).join(', '), gv.data.modalidades.map((m) => MODALIDADES[m]).join(', ')],
+  ['Estacionamento', temComodidade(sf, 'estacionamento') ? 'Informado' : 'Não informado', temComodidade(gv, 'estacionamento') ? 'Estacionamento acessível informado' : 'Não informado'],
+  ['Wellhub', ag(sf, 'Wellhub'), ag(gv, 'Wellhub')],
+  ['TotalPass', ag(sf, 'TotalPass'), ag(gv, 'TotalPass')],
+];
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = 'Smart Fit ou Gaviões em Alphaville: qual escolher';
+const descricao = 'Smart Fit Sodimac ou Gaviões 24h em Alphaville: horário, preço, modalidades, estacionamento e agregadores lado a lado, para escolher conforme a sua rotina.';
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Smart Fit ou Gaviões', url: '/guias/smart-fit-ou-gavioes/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Guias de decisão · comparativo</span>
+      <h1>Smart Fit ou Gaviões em Alphaville: qual escolher</h1>
+      <p class="linha-fina">Esta é uma das perguntas que o Google mais mostra sobre academias em Alphaville. As duas unidades ficam em Alphaville Industrial, a cerca de {km} km uma da outra em linha reta. A escolha depende menos de qual é "melhor" e mais de quando e como você treina.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Se você precisa treinar de madrugada ou quer aulas variadas, como lutas, dança, bike e pilates, a Gaviões 24h atende melhor. Se o preço conhecido e o acesso a outras unidades da rede pesam mais, a Smart Fit é a escolha mais previsível: publica a mensalidade, a partir de R$ 149,90 por mês nesta unidade. A Gaviões não publica preço.</p>
+    </div>
+
+    <div class="rolagem" tabindex="0" role="region" aria-label="Smart Fit e Gaviões lado a lado" style="margin:24px 0">
+      <table class="dados">
+        <caption>Dados das fichas do guia, conferidos em {dataLonga(gv.data.atualizado_em)}. Abra cada ficha para ver as fontes.</caption>
+        <thead><tr><th scope="col">Critério</th><th scope="col"><a href={urlAcademia(sf)} style="color:inherit">{sf.data.nome}</a></th><th scope="col"><a href={urlAcademia(gv)} style="color:inherit">{gv.data.nome}</a></th></tr></thead>
+        <tbody>{linhas.map(([c, a, b]) => <tr><th scope="row">{c}</th><td>{a}</td><td>{b}</td></tr>)}</tbody>
+      </table>
+    </div>
+
+    <div class="prosa">
+      <h2>Horário: a maior diferença</h2>
+      <p>A Gaviões tem horário publicado de 24 horas, todos os dias, o que dá {horasSemana(gv.data.horario)} horas abertas por semana. A Smart Fit da Sodimac abre {horasSemana(sf.data.horario)} horas e fecha às 23h nos dias úteis. Para quem trabalha em turnos, chega tarde de viagem ou só consegue treinar antes das 6h, a Gaviões é a única das duas que resolve.</p>
+      <p>Um cuidado: o guia ainda não confirmou como a Gaviões funciona de madrugada. Em academias 24 horas é comum a equipe ser reduzida nesse período.</p>
+
+      <h2>Preço: um lado conhecido, outro não</h2>
+      <p>A Smart Fit publica os preços no site. Nesta unidade, o Plano Smart custa R$ 149,90 por mês com fidelidade e o Black, que dá acesso a toda a rede, R$ 159,90. As unidades da Smart Fit em Barueri têm ainda o Plano Fit, a R$ 139,90.</p>
+      <p>A Gaviões não publica mensalidade nem diária; a página da unidade leva a uma plataforma de matrícula. Para comparar de verdade, peça o valor na recepção e coloque ao lado dos números acima.</p>
+      <p>Se você usa agregador, a conta é outra: a Gaviões entra no Wellhub a partir do plano {agregador(gv, 'Wellhub')?.plano_minimo}, e a Smart Fit, no TotalPass a partir do {agregador(sf, 'TotalPass')?.plano_minimo}. Veja o que cada plano custa em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
+
+      <h2>O que dá para fazer em cada uma</h2>
+      <p>A Gaviões tem a grade mais ampla: além da musculação, lista {so(gv.data.modalidades, sf.data.modalidades).join(', ').toLowerCase().replace(/, ([^,]*)$/, ' e $1')}, e o site da rede menciona um rooftop com máquinas. A Smart Fit é mais enxuta, centrada em musculação e aulas curtas de alta intensidade.</p>
+
+      <h2>Chegar e estacionar</h2>
+      <p>A Smart Fit fica no 2º pavimento do estacionamento da Sodimac, e o site da unidade informa estacionamento. A Gaviões fica na Av. Juruá, no mesmo número do Fast Treino e perto da SkyFit, e a página do Wellhub informa estacionamento acessível. Nenhuma das duas fontes diz se o estacionamento é gratuito para alunos.</p>
+
+      <h2>Resumo por perfil</h2>
+      <ul>
+        <li><strong>Treina de madrugada ou em horários irregulares:</strong> Gaviões.</li>
+        <li><strong>Quer saber exatamente quanto vai pagar antes de ir:</strong> Smart Fit.</li>
+        <li><strong>Quer treinar também em Barueri ou em outras cidades:</strong> Smart Fit, no Plano Black. A região tem {sfBarueri.length + 1} unidades da rede.</li>
+        <li><strong>Quer lutas, dança, bike ou pilates no mesmo lugar:</strong> Gaviões.</li>
+        <li><strong>Tem Wellhub:</strong> Gaviões. <strong>Tem TotalPass:</strong> Smart Fit.</li>
+      </ul>
+      <p>Antes de decidir, visite as duas no horário em que você vai treinar. O <a href="/ferramentas/checklist/">checklist de visita</a> ajuda, e o <a href={`/ferramentas/comparador/?a=${sf.id}&b=${gv.id}`}>comparador</a> mostra os dados completos lado a lado.</p>
+    </div>
+
+    <section class="bloco fino" aria-labelledby="fichas-t">
+      <div class="cab"><h2 id="fichas-t">As duas fichas</h2><a class="link-forte" href="/academias/?regiao=alphaville">Outras academias de Alphaville</a></div>
+      <div class="cartoes">{[sf, gv].map((a) => <CartaoAcademia a={a} />)}</div>
+    </section>
+
+    <div style="margin-top:28px"><Fontes fontes={[
+      ...sf.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${sf.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
+      ...gv.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${gv.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
+    ]} /></div>
+  </div>
+</Base>

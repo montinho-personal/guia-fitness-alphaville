@@ -13,7 +13,7 @@ fontes:
     url: "https://www.crossfit.com/"
   - titulo: "Páginas das unidades no Wellhub e no TotalPass, listadas em cada ficha"
     url: "https://wellhub.com/pt-br/"
-status: aguardando-verificacao
+status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville

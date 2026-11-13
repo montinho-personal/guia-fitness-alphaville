@@ -8,7 +8,7 @@ import Selo from '../components/Selo.astro';
 
   <h2>Os três níveis de conferência</h2>
   <p><Selo texto="Conferido em fonte pública" /></p>
-  <p>O dado foi lido em uma página pública — a da unidade em um agregador como Wellhub ou TotalPass, ou o site da própria academia — na data indicada. É o nível de todas as fichas neste momento. Limite: agregadores às vezes mostram só o horário válido para os usuários deles, e não trazem a mensalidade direta.</p>
+  <p>O dado foi lido em uma página pública — a da unidade em um agregador como Wellhub ou TotalPass, ou o site da própria academia — na data indicada. É o nível de todas as fichas neste momento. Limite: agregadores às vezes mostram só o horário válido para os usuários deles, e não trazem a mensalidade direta. Quando o preço vem do site da academia, a ficha indica se ele vale para a unidade ou se é o preço anunciado pela rede.</p>
   <p><Selo texto="Confirmado com a academia" /></p>
   <p>O dado foi confirmado por telefone, mensagem ou e-mail com a própria academia, na data indicada.</p>
   <p><Selo texto="Verificado em visita" /></p>
@@ -18,7 +18,7 @@ import Selo from '../components/Selo.astro';
 
   <h2>O que ainda não temos</h2>
   <ul>
-    <li><strong>Mensalidade direta.</strong> Nenhuma foi confirmada com as academias. O campo aparece como "não confirmada" em todas as fichas. Os valores exibidos são os dos planos dos agregadores, identificados como tal.</li>
+    <li><strong>Mensalidade da maioria das academias.</strong> Só algumas publicam preço no site oficial; para elas, a ficha mostra os planos com fonte e data. Nas demais, o campo aparece como "não confirmada", e os valores exibidos são os dos planos dos agregadores, identificados como tal.</li>
     <li><strong>Lotação por horário.</strong> Depende de observação no local.</li>
     <li><strong>Regras para personal de fora.</strong> Dependem de confirmação com cada academia.</li>
   </ul>

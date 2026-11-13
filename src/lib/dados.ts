@@ -34,7 +34,7 @@ export const REGIOES = {
   barueri: {
     nome: 'Barueri',
     titulo: 'Barueri',
-    descricao: 'Centro de Barueri e Bethaville, fora dos bairros de Alphaville.',
+    descricao: 'Centro, Bethaville, Jardim Alberto, Parque dos Camargos e outros bairros fora de Alphaville.',
   },
   'santana-de-parnaiba': {
     nome: 'Santana de Parnaíba',
@@ -58,6 +58,7 @@ export const MODALIDADES: Record<string, string> = {
   eletroestimulacao: 'Eletroestimulação',
   yoga: 'Yoga',
   corrida: 'Corrida',
+  natacao: 'Natação',
 };
 export const TIPOS: Record<string, string> = { academia: 'Academia', box: 'Box', estudio: 'Estúdio' };
 
@@ -95,10 +96,11 @@ export function horarioResumo(h: Horario): string {
     if (ultimo && ultimo.texto === texto) ultimo.dias.push(d);
     else grupos.push({ dias: [d], texto });
   }
-  const rot = (ds: string[]) => (ds.length === 1 ? cap(ds[0]) : ds.length === 2 ? `${cap(ds[0])} e ${ds[1]}` : `${cap(ds[0])} a ${ds[ds.length - 1]}`);
+  const rot = (ds: string[]) => (ds.length === 1 ? cap(ds[0]) : ds.length === 2 ? `${cap(ds[0])} e ${ABREV[ds[1]]}` : `${cap(ds[0])} a ${ABREV[ds[ds.length - 1]]}`);
   return grupos.map((g) => `${rot(g.dias)}, ${g.texto}`).join(' · ');
 }
-const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const ABREV: Record<string, string> = { seg: 'seg', ter: 'ter', qua: 'qua', qui: 'qui', sex: 'sex', sab: 'sáb', dom: 'dom' };
+const cap = (s: string) => { const t = ABREV[s] ?? s; return t.charAt(0).toUpperCase() + t.slice(1); };
 
 const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
 const MESES_LONGOS = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];

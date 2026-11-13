@@ -91,7 +91,7 @@ pendencias:
 analise:
 - De segunda a quinta funciona das 5h até 23h59. Na sexta fecha às 22h, e no fim de semana abre das 7h às 19h, inclusive no domingo.
 - A página da unidade lista áreas separadas de musculação, pesos livres, cardio e funcional, além de bike e aulas como body pump e zumba. Informa também estacionamento e balança de bioimpedância. No Wellhub, o acesso começa no plano Silver+.
-status: aguardando-verificacao
+status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville

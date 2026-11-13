@@ -69,7 +69,7 @@ pendencias:
 analise:
 - 'O horário tem uma particularidade: de segunda a sexta a academia funciona das 6h às 12h e das 14h às 22h, com intervalo de duas horas no início da tarde. No sábado abre das 8h às 12h. Quem treina no horário de almoço precisa considerar essa pausa.'
 - A oferta é enxuta, com musculação e treino funcional. A página informa estacionamento, ar-condicionado e adaptações para pessoas autistas, item raro nas listagens da região. No Wellhub, o acesso começa no plano Basic.
-status: aguardando-verificacao
+status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville

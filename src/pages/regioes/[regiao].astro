@@ -29,7 +29,7 @@ const redes = xs.filter((a) => a.data.rede);
 
 const META: Record<RegiaoId, { titulo: string; descricao: string; h1: string; fina: string }> = {
   alphaville: { titulo: 'Academias em Alphaville e Tamboré: onde treinar', descricao: `Onde treinar em Alphaville, Tamboré e 18 do Forte: ${xs.length} academias, boxes e estúdios por bairro, com endereço, horários e o que observar em cada um.`, h1: 'Onde treinar em Alphaville e Tamboré', fina: 'Alphaville Industrial, Empresarial 18 do Forte, o entorno do Iguatemi e o Tamboré, bairro a bairro.' },
-  barueri: { titulo: 'Academias em Barueri: centro e Bethaville', descricao: `Onde treinar em Barueri fora de Alphaville: ${xs.length} academias de rede no centro e em Bethaville, com horários, endereço e plano mínimo nos agregadores.`, h1: 'Onde treinar em Barueri', fina: 'O centro de Barueri e Bethaville, para quem mora ou trabalha fora dos bairros de Alphaville.' },
+  barueri: { titulo: 'Academias em Barueri: onde treinar e quanto custa', descricao: `Onde treinar em Barueri fora de Alphaville: ${xs.length} academias no centro, em Bethaville, no sul e na Vila Engenho Novo, com horários, endereço e preços.`, h1: 'Onde treinar em Barueri', fina: 'Centro, Bethaville, Parque Shopping, sul de Barueri e Vila Engenho Novo, para quem mora ou trabalha fora dos bairros de Alphaville.' },
   'santana-de-parnaiba': { titulo: 'Academias em Santana de Parnaíba: onde treinar', descricao: `Onde treinar em Santana de Parnaíba: ${xs.length} academias na Fazendinha, no Polvilho e no Jardim São Luís, com endereço, horários e o que observar.`, h1: 'Onde treinar em Santana de Parnaíba', fina: 'Fazendinha, Polvilho e Jardim São Luís: três academias de bairro, em pontos distantes do município.' },
 };
 const m = META[regiao];
@@ -82,17 +82,21 @@ const schema = [
     {regiao === 'barueri' && (
       <>
         <div class="resposta"><span class="rotulo">Em resumo</span>
-          <p>As {xs.length} academias de Barueri com ficha são todas de rede: {nomes(xs)}. As três abrem aos domingos e fecham perto da meia-noite em dias úteis. No Wellhub e no TotalPass, pedem planos mais baratos que as unidades de Alphaville das mesmas redes.</p>
+          <p>Barueri tem {xs.length} academias com ficha, espalhadas por {bairros.length} bairros fora de Alphaville. {n((a) => a.data.rede === 'Smart Fit')} são unidades da Smart Fit, todas com preço publicado a partir de R$ 139,90 por mês. {n((a) => abreDomingo(a.data.horario))} abrem aos domingos, e só uma tem piscina: a Boa Forma, no Jardim Alberto.</p>
         </div>
         <div class="prosa">
           <h2>Centro de Barueri</h2>
-          <p>Duas academias ficam no centro. A <a href="/academias/smart-fit-barueri-centro/">Smart Fit Barueri Centro</a> está na Av. Vinte e Seis de Março, e a <a href="/academias/panobianco-barueri-centro/">Panobianco Barueri Centro</a>, na Rua José Maria Balieiro. Em linha reta, estão a cerca de {fmt(km(xs.find((a) => a.id.startsWith('smart'))!, xs.find((a) => a.id.startsWith('pano'))!))} km uma da outra.</p>
-          <p>As duas têm horário parecido: abrem às 5h e fecham à meia-noite de segunda a quinta, com funcionamento também no sábado e no domingo. A diferença aparece na estrutura informada. A página da Panobianco lista área infantil, elevador e vários itens de acessibilidade; a da Smart Fit traz só a grade de atividades.</p>
-          <h2>Bethaville</h2>
-          <p>A <a href="/academias/bluefit-barueri/">Bluefit Barueri</a> fica na Av. Trindade, em Bethaville. Além da musculação, lista muay thai e jiu-jitsu, que as outras duas unidades da Bluefit com ficha no guia não listam.</p>
+          <p>Quatro opções ficam no centro ou a poucas quadras dele. A <a href="/academias/smart-fit-barueri-centro/">Smart Fit Barueri Centro</a>, na Av. Vinte e Seis de Março, e a <a href="/academias/panobianco-barueri-centro/">Panobianco Barueri Centro</a>, na Rua José Maria Balieiro, abrem às 5h, fecham perto da meia-noite e funcionam também no fim de semana. A Smart Fit cobra R$ 139,90 no Plano Fit; a Panobianco anuncia R$ 119,90 no plano anual da rede, mas o valor da unidade não foi confirmado.</p>
+          <p>Perto da Prefeitura, a <a href="/academias/xandu-barueri/">Academia Xandu</a> é uma academia de bairro com dança, jump e bike, e a única do guia que entra no plano mais barato do Wellhub. Para lutas, o <a href="/academias/ct-don-combat-barueri/">CT Don Combat</a>, no endereço da antiga Killer Bees, oferece boxe e muay thai.</p>
+          <h2>Bethaville e Parque Shopping</h2>
+          <p>No caminho entre o centro e Alphaville estão a <a href="/academias/bluefit-barueri/">Bluefit Barueri</a>, na Av. Trindade, em Bethaville, que lista muay thai e jiu-jitsu além da musculação, e a <a href="/academias/smart-fit-parque-shopping-barueri/">Smart Fit do Parque Shopping Barueri</a>, aberta até a meia-noite em dias úteis. Ficam a cerca de {fmt(km(xs.find((a) => a.id === 'bluefit-barueri')!, xs.find((a) => a.id === 'smart-fit-parque-shopping-barueri')!))} km uma da outra, em linha reta.</p>
+          <h2>Sul de Barueri</h2>
+          <p>A <a href="/academias/smart-fit-barueri-av-zelia/">Smart Fit da Av. Zélia</a>, no Parque dos Camargos, é uma das unidades da rede mais procuradas da região. Abre às 5h e fecha às 23h em dias úteis. No Jardim Alberto, a <a href="/academias/boa-forma-barueri/">Academia Boa Forma</a> tem piscina, natação e hidroginástica, e não lista horário aos domingos.</p>
+          <h2>Vila Engenho Novo</h2>
+          <p>Ao norte, perto do limite com Santana de Parnaíba, a <a href="/academias/impacto-barueri/">Academia Impacto</a> combina musculação, lutas e cross training e abre às 5h em dias úteis.</p>
           <h2>Barueri ou Alphaville?</h2>
-          <p>Para quem mora no centro e trabalha em Alphaville, a comparação é direta, porque as mesmas redes estão nos dois lugares. Nos agregadores, as unidades de Barueri saem mais em conta: a Smart Fit do centro entra no TotalPass a partir do plano TP 1+, e a de Alphaville, do TP 2. A Panobianco do centro entra no Wellhub pelo plano Basic, enquanto as redes de <a href="/regioes/alphaville/">Alphaville</a> pedem Silver ou Silver+. A mensalidade direta de cada unidade ainda não foi confirmada.</p>
-          <p>Os dois boxes de CrossFit mais próximos ficam em Alphaville Industrial. Um deles se chama CrossFit Barueri, mas o endereço é na Av. Juruá. Veja em <a href="/modalidades/crossfit/">CrossFit e cross training</a>.</p>
+          <p>Para quem mora em Barueri e trabalha em Alphaville, as mesmas redes estão nos dois lugares. Na Smart Fit, o Plano Fit, de R$ 139,90, só existe nas unidades de Barueri; na de Alphaville, o plano de entrada é o Smart, a R$ 149,90. Nos agregadores, as academias de Barueri também tendem a pedir planos mais baratos: a Panobianco entra no Wellhub pelo Basic, a Xandu pelo Starter, enquanto as redes de <a href="/regioes/alphaville/">Alphaville</a> pedem Silver ou Silver+. Compare tudo em <a href="/academias/precos/">quanto custa academia</a>.</p>
+          <p>Os boxes de CrossFit mais próximos ficam em Alphaville Industrial. Um deles se chama CrossFit Barueri, mas o endereço é na Av. Juruá. Veja em <a href="/modalidades/crossfit/">CrossFit e cross training</a>.</p>
         </div>
       </>
     )}

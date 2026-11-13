@@ -60,6 +60,22 @@ const eSite = d.site && !/instagram\.com/.test(d.site);
           )}
 
           <i data-dado="i" hidden></i>
+          {d.mensalidade && (
+            <>
+              <h2>Quanto custa</h2>
+              <p>{d.mensalidade.resumo} {d.mensalidade.abrangencia === 'rede' ? 'É o preço anunciado pela rede, não necessariamente o da unidade.' : ''}</p>
+              <div class="rolagem" tabindex="0" role="region" aria-label={`Planos de ${d.nome}`} style="margin-bottom:12px">
+                <table class="dados" style="min-width:0">
+                  <caption>Fonte: <a href={d.mensalidade.url} rel="noopener nofollow">{d.mensalidade.fonte}</a>, consultada em {dataLonga(d.mensalidade.conferido_em)}.</caption>
+                  <thead><tr><th scope="col">Plano</th><th scope="col">Preço</th><th scope="col">Condições</th></tr></thead>
+                  <tbody>{d.mensalidade.planos.map((p) => <tr><th scope="row">{p.nome}</th><td style="white-space:nowrap">{p.preco}</td><td>{p.condicoes}</td></tr>)}</tbody>
+                </table>
+              </div>
+              {d.mensalidade.aviso && <p style="font-size:16px;color:var(--cinza)">{d.mensalidade.aviso}</p>}
+              <p style="font-size:16px"><a href="/academias/precos/">Comparar com os preços de outras academias</a></p>
+            </>
+          )}
+
           <h2>Modalidades</h2>
           <ul class="tags" style="margin-bottom:14px">{d.modalidades.map((m) => <li>{MODALIDADES[m]}</li>)}</ul>
           {d.atividades_listadas.length > 0 && <p style="font-size:16px;color:var(--cinza)">Atividades listadas pela fonte: {d.atividades_listadas.join(', ')}.</p>}

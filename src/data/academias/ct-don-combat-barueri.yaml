@@ -1,0 +1,75 @@
+nome: CT Don Combat
+regiao: barueri
+bairro: Vila Sargento José de Paula
+tipo: estudio
+resumo: Centro de treinamento de lutas perto do centro de Barueri, com boxe e muay thai, listado no Wellhub no endereço da antiga Killer Bees Barueri.
+endereco: R. Damião Fernandes, 105 - Vila Srg. Jose de Paula, Barueri - SP, 06404-000
+geo:
+  lat: -23.50977
+  lng: -46.872646
+horario:
+  seg:
+  - 06:00-22:00
+  ter:
+  - 06:00-22:00
+  qua:
+  - 06:00-22:00
+  qui:
+  - 06:00-22:00
+  sex:
+  - 06:00-22:00
+  sab:
+  - 07:00-12:00
+  dom: []
+modalidades:
+- lutas
+atividades_listadas:
+- Boxe
+- Muay Thai
+comodidades:
+- Armários
+- Bebedouro
+- Cafeteria
+- Chuveiro
+- Itens de higiene pessoal
+- Loja de artigos esportivos
+- Personal trainer
+- Secador de cabelo
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver
+  preco_plano: R$ 149,99
+  url: https://wellhub.com/pt-br/search/partners/killer-bees-barueri/
+mensalidade: null
+site: https://www.instagram.com/ctdoncombat
+telefone: (11) 94574-0700
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/killer-bees-barueri/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
+divergencias:
+- 'Nome: a página do Wellhub exibe "CT Don Combat", mas o endereço da página e o título nos buscadores ainda dizem "Killer Bees Barueri".'
+pendencias:
+- Nome comercial em uso
+- Grade de aulas
+- Mensalidade
+analise:
+- 'É um centro de lutas, não uma academia de musculação: a grade listada tem boxe e muay thai, e o texto da página cita também jiu-jitsu e aulas para crianças. Fica na Rua Damião Fernandes, no 2º andar, perto do centro de Barueri.'
+- 'Quem procura "Killer Bees Barueri" deve chegar a este endereço: a página do Wellhub mantém esse nome no link, mas apresenta o espaço como CT Don Combat. Funciona das 6h às 22h de segunda a sexta e das 7h às 12h no sábado. No Wellhub, entra a partir do plano Silver.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-13'
+atualizado_em: '2026-11-13'

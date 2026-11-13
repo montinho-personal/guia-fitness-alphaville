@@ -47,7 +47,27 @@ agregadores:
   plano_minimo: Gold+
   preco_plano: R$ 439,99
   url: https://wellhub.com/pt-br/search/partners/blacksheep-alphaville-alphaville-industrial-barueri/
-mensalidade: null
+mensalidade:
+  valor: R$ 480/mês (plano ilimitado)
+  resumo: Plano ilimitado a R$ 480 por mês, em contrato trimestral, semestral ou anual.
+  planos:
+  - nome: Ilimitado
+    preco: R$ 480/mês
+    condicoes: Contrato trimestral, semestral ou anual. Vale em todas as unidades da rede.
+  - nome: Mês teste
+    preco: R$ 400
+    condicoes: Só para novos alunos.
+  - nome: Pacote de 10 aulas
+    preco: R$ 500
+    condicoes: R$ 50 por aula.
+  - nome: Aula avulsa (drop in)
+    preco: R$ 75
+    condicoes: Uma aula.
+  abrangencia: rede
+  fonte: Site oficial da Crosslift Blacksheep (tabela de planos)
+  url: https://www.crossliftblacksheep.com.br/
+  conferido_em: '2026-11-13'
+  aviso: A tabela é da rede, que tem seis unidades em São Paulo; não há preço específico da unidade Alphaville.
 site: https://www.crossliftblacksheep.com.br
 telefone: (11) 97642-8929
 proveniencia:
@@ -62,13 +82,19 @@ proveniencia:
   url: https://wellhub.com/pt-br/search/partners/blacksheep-alphaville-alphaville-industrial-barueri/
   conferido_em: '2026-11-13'
   nivel: fonte-publica
+- campos:
+  - mensalidade
+  fonte: Site oficial da Crosslift Blacksheep
+  url: https://www.crossliftblacksheep.com.br/
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
 pendencias:
-- Grade de aulas atual
-- Valor da mensalidade
+- Grade de aulas atual da unidade Alphaville
 analise:
 - Fica no mesmo conjunto de galpões do Templo SA, na Alameda Araguaia, 122. Funciona das 6h às 20h30 de segunda a quinta e até 19h30 na sexta; no fim de semana há uma janela das 9h às 10h30.
 - É a única unidade deste guia que lista Hyrox entre as atividades, ao lado de cross training e treino funcional. A página informa estacionamento, área de pesos livres e personal trainer. No Wellhub, o acesso exige o plano Gold+.
-status: aguardando-verificacao
+- 'A rede publica a tabela de planos no site: o ilimitado custa R$ 480 por mês em contrato trimestral ou mais longo, a aula avulsa sai por R$ 75 e há um mês de teste a R$ 400 para novos alunos. Em Alphaville, a unidade oferece o Hybrid, treino voltado a provas de Hyrox; a rede informa que o Hyrox Training Club oficial fica na unidade Moema.'
+status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville

@@ -11,14 +11,14 @@ panobianco academia barueri centro,1300,0.19,Google,academia barueri,marca com f
 academia bluefit alphaville,1000,0.17,Google,academia alphaville,marca com ficha,/academias/bluefit-alphaville/,Reforçar a ficha
 academia bluefit alphaville,1000,0.17,Bing,academia alphaville,marca com ficha,/academias/bluefit-alphaville/,Reforçar a ficha
 academia smart fit barueri centro,1000,2.24,Google,academia barueri,marca com ficha,/academias/smart-fit-barueri-centro/,Reforçar a ficha
-academia smart fit barueri av zélia,880,,Google,academia barueri,marca sem ficha,—,Unidade Smart Fit Av. Zélia: criar ficha
+academia smart fit barueri av zélia,880,,Google,academia barueri,marca com ficha,/academias/smart-fit-barueri-av-zelia/,Reforçar a ficha
 live academia alphaville premium diamante,880,,Google,academia alphaville,marca a verificar,—,Confirmar se é da região antes de criar ficha
 voi fit academia alphaville,590,0.04,Google,academia alphaville,marca com ficha,/academias/voifit-alphaville/,Reforçar a ficha
 voi fit academia alphaville,590,0.04,Bing,academia alphaville,marca com ficha,/academias/voifit-alphaville/,Reforçar a ficha
-academia boa forma barueri,480,1.2,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
-academia boa forma barueri,480,1.2,Bing,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
+academia boa forma barueri,480,1.2,Google,academia barueri,marca com ficha,/academias/boa-forma-barueri/,Reforçar a ficha
+academia boa forma barueri,480,1.2,Bing,academia barueri,marca com ficha,/academias/boa-forma-barueri/,Reforçar a ficha
 academia strong alphaville,480,0.7,Google,academia alphaville,marca a verificar,—,Confirmar se é da região antes de criar ficha
-boa forma academia barueri,480,0.43,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
+boa forma academia barueri,480,0.43,Google,academia barueri,marca com ficha,/academias/boa-forma-barueri/,Reforçar a ficha
 scelta academia alphaville,480,0.04,Google,academia alphaville,marca com ficha,/academias/scelta-alphaville/,Reforçar a ficha
 academia 24 wellness unidade alphaville,390,0.78,Google,academia alphaville,marca sem ficha,—,Criar ficha após levantar dados
 gaviões academia alphaville,320,0.62,Google,academia alphaville,marca com ficha,/academias/gavioes-24h-alphaville/,Reforçar a ficha
@@ -32,9 +32,9 @@ academia alphaville barueri,170,0.39,Google,academia alphaville,genérica local,
 academia da face alphaville,170,0.57,Bing,academia alphaville,fora do tema,—,"Estética facial, não é academia de ginástica"
 academia do alphaville campinas clube,170,,Google,academia alphaville,outra cidade,—,Alphaville ou bairro de outra cidade
 academia em alphaville barueri,170,0.21,Bing,academia barueri,genérica local,/academias/,Termo-pilar
-academia gavioes barueri,170,0.26,Google,academia barueri,marca sem ficha,—,Gaviões Barueri: confirmar unidade e criar ficha
-academia gaviões barueri,170,0.26,Bing,academia barueri,marca sem ficha,—,Gaviões Barueri: confirmar unidade e criar ficha
-academia killer bees barueri,170,,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
+academia gavioes barueri,170,0.26,Google,academia barueri,marca com ficha,/academias/gavioes-24h-alphaville/,A unidade de Alphaville fica em Barueri
+academia gaviões barueri,170,0.26,Bing,academia barueri,marca com ficha,/academias/gavioes-24h-alphaville/,A unidade de Alphaville fica em Barueri
+academia killer bees barueri,170,,Google,academia barueri,marca com ficha,/academias/ct-don-combat-barueri/,Reforçar a ficha
 change academia unidade alphaville office campinas,170,,Google,academia alphaville,outra cidade,—,Alphaville ou bairro de outra cidade
 flex academia alphaville residencial alphaville flamboyant goiânia go,170,,Google,academia alphaville,outra cidade,—,Alphaville ou bairro de outra cidade
 gavioes academia alphaville,170,1.06,Google,academia alphaville,marca com ficha,/academias/gavioes-24h-alphaville/,Reforçar a ficha
@@ -54,11 +54,11 @@ academia barueri sp,70,0.46,Google,academia barueri,genérica local,/regioes/bar
 academia centro de barueri,70,0.36,Google,academia barueri,genérica local,/regioes/barueri/,Região
 academia em barueri centro,70,0.78,Google,academia barueri,genérica local,/regioes/barueri/,Região
 academia em barueri sp,70,0.46,Google,academia barueri,genérica local,/regioes/barueri/,Termo-pilar
-academia impacto barueri,70,0.32,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
-academia impacto barueri,70,0.32,Bing,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
+academia impacto barueri,70,0.32,Google,academia barueri,marca com ficha,/academias/impacto-barueri/,Reforçar a ficha
+academia impacto barueri,70,0.32,Bing,academia barueri,marca com ficha,/academias/impacto-barueri/,Reforçar a ficha
 academia live alphaville,70,,Google,academia alphaville,marca a verificar,—,Confirmar se é da região antes de criar ficha
 academia no centro de barueri,70,0.36,Bing,academia barueri,genérica local,/regioes/barueri/,Região
-academia xandu barueri,70,,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
+academia xandu barueri,70,,Google,academia barueri,marca com ficha,/academias/xandu-barueri/,Reforçar a ficha
 ironberg academia alphaville,70,0.16,Google,academia alphaville,marca sem ficha,—,Criar ficha após levantar dados
 panobianco academia barueri,70,0.425,Google,academia barueri,marca com ficha,/academias/panobianco-barueri-centro/,Reforçar a ficha
 academia alphaville campinas,50,0.36,Google,academia alphaville,outra cidade,—,Alphaville ou bairro de outra cidade
@@ -85,7 +85,7 @@ academia bluefit alphaville alphaville centro industrial,30,0.38,Google,academia
 academia engenho novo barueri,30,0.29,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
 academia evolution barueri,30,,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
 academia panobianco barueri centro,30,0.34,Google,academia barueri,marca com ficha,/academias/panobianco-barueri-centro/,Reforçar a ficha
-academia parque shopping barueri,30,0.67,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
+academia parque shopping barueri,30,0.67,Google,academia barueri,marca com ficha,/academias/smart-fit-parque-shopping-barueri/,Reforçar a ficha
 academia primax barueri,30,,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
 personal trainer em alphaville,30,0.57,Google,personal trainer alphaville,personal trainer,montinhopersonal.com.br,"Fica no site do Montinho, não no portal"
 academia 24 alphaville,20,,Google,academia alphaville,outros,—,Sem volume ou intenção pouco clara
@@ -113,7 +113,7 @@ academia jiu jitsu barueri,20,,Google,academia barueri,outros,—,Sem volume ou 
 academia panobianco em barueri,20,,Google,academia barueri,marca com ficha,/academias/panobianco-barueri-centro/,Reforçar a ficha
 academia parque imperial barueri,20,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 academia skyfit alphaville,20,,Google,academia alphaville,marca com ficha,/academias/skyfit-alphaville/,Reforçar a ficha
-academia smart fit barueri av zélia fotos,20,1.69,Google,academia barueri,marca sem ficha,—,Unidade Smart Fit Av. Zélia: criar ficha
+academia smart fit barueri av zélia fotos,20,1.69,Google,academia barueri,marca com ficha,/academias/smart-fit-barueri-av-zelia/,Reforçar a ficha
 flex academia alphaville mensalidade,20,,Google,academia alphaville,marca a verificar,—,Confirmar se é da região antes de criar ficha
 academia 24 horas alphaville endereço,10,,Google,academia alphaville,atributo: 24 horas,/academias/24-horas/,Página existe
 academia 24 horas alphaville preço,10,,Google,academia alphaville,atributo: 24 horas,/academias/24-horas/,Página existe
@@ -137,7 +137,7 @@ academia barueri rua da prata,10,,Google,academia barueri,outros,—,Sem volume 
 academia bethaville barueri,10,0.39,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 academia bio ritmo alphaville,10,,Google,academia alphaville,marca sem ficha,—,Criar ficha após levantar dados
 academia bio ritmo barueri,10,,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
-academia boa forma barueri telefone,10,,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
+academia boa forma barueri telefone,10,,Google,academia barueri,marca com ficha,/academias/boa-forma-barueri/,Reforçar a ficha
 academia body up barueri,10,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 academia change alphaville campinas,10,,Google,academia alphaville,outra cidade,—,Alphaville ou bairro de outra cidade
 academia chute boxe barueri,10,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
@@ -158,7 +158,7 @@ academia gaviões 24h alphaville avaliações,10,,Google,academia alphaville,mar
 academia gaviões 24h alphaville barueri,10,,Google,academia alphaville,marca com ficha,/academias/gavioes-24h-alphaville/,Reforçar a ficha
 academia gaviões alphaville mensalidade,10,,Google,academia alphaville,marca com ficha,/academias/gavioes-24h-alphaville/,Pergunta de preço: a ficha ainda não responde
 academia gaviões alphaville valores,10,,Google,academia alphaville,marca com ficha,/academias/gavioes-24h-alphaville/,Pergunta de preço: a ficha ainda não responde
-academia gaviões em barueri,10,,Google,academia barueri,marca sem ficha,—,Gaviões Barueri: confirmar unidade e criar ficha
+academia gaviões em barueri,10,,Google,academia barueri,marca com ficha,/academias/gavioes-24h-alphaville/,A unidade de Alphaville fica em Barueri
 academia ginastica artistica barueri,10,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 academia gratuita barueri,10,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 academia gratuita em barueri,10,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
@@ -182,7 +182,7 @@ academia shopping tambore alphaville,10,,Google,academia alphaville,genérica lo
 academia silveira barueri,10,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 academia sky fit barueri,10,,Google,academia barueri,marca com ficha,/academias/skyfit-alphaville/,Reforçar a ficha
 academia skyfit barueri,10,,Google,academia barueri,marca com ficha,/academias/skyfit-alphaville/,Reforçar a ficha
-academia smart fit barueri av zélia parque dos camargos,10,,Google,academia barueri,marca sem ficha,—,Unidade Smart Fit Av. Zélia: criar ficha
+academia smart fit barueri av zélia parque dos camargos,10,,Google,academia barueri,marca com ficha,/academias/smart-fit-barueri-av-zelia/,Reforçar a ficha
 academia smart fit barueri centro fotos,10,,Google,academia barueri,marca com ficha,/academias/smart-fit-barueri-centro/,Reforçar a ficha
 academia spirit barueri,10,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 academia strong alphaville londrina,10,,Google,academia alphaville,outra cidade,—,Alphaville ou bairro de outra cidade
@@ -193,9 +193,9 @@ academia unip alphaville,10,,Google,academia alphaville,outros,—,Sem volume ou
 academia velocity alphaville,10,,Google,academia alphaville,outros,—,Sem volume ou intenção pouco clara
 academia z3 barueri,10,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 avaliações sobre academia 24h alphaville,10,,Google,academia alphaville,atributo: 24 horas,/academias/24-horas/,Página existe
-avaliações sobre academia impacto barueri,10,,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
+avaliações sobre academia impacto barueri,10,,Google,academia barueri,marca com ficha,/academias/impacto-barueri/,Reforçar a ficha
 bluefit academia barueri,10,,Google,academia barueri,marca com ficha,/academias/bluefit-barueri/,Reforçar a ficha
-boa forma academia barueri sp,10,,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
+boa forma academia barueri sp,10,,Google,academia barueri,marca com ficha,/academias/boa-forma-barueri/,Reforçar a ficha
 dexter academia barueri,10,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 flex academia alphaville valor,10,,Google,academia alphaville,marca a verificar,—,Confirmar se é da região antes de criar ficha
 live academia alphaville premium diamante fotos,10,,Google,academia alphaville,marca a verificar,—,Confirmar se é da região antes de criar ficha
@@ -262,7 +262,7 @@ academia alphaville ribeirão preto,0,,Google,academia alphaville,outra cidade,�
 academia alphaville rio das ostras,0,,Google,academia alphaville,outra cidade,—,Alphaville ou bairro de outra cidade
 academia alphaville santana de parnaíba,0,,Google,academia alphaville,outros,—,Sem volume ou intenção pouco clara
 academia alphaville sjc,0,,Google,academia alphaville,outros,—,Sem volume ou intenção pouco clara
-academia alphaville smart fit,0,,Google,academia alphaville,marca com ficha,/academias/smart-fit-alphaville-ii/,Reforçar a ficha
+academia alphaville smart fit,0,,Google,academia alphaville,marca com ficha,/academias/smart-fit-barueri-centro/,Reforçar a ficha
 academia alphaville sorocaba,0,,Google,academia alphaville,outra cidade,—,Alphaville ou bairro de outra cidade
 academia alphaville tenis clube,0,,Google,academia alphaville,outros,—,Sem volume ou intenção pouco clara
 academia alphaville teresina,0,,Google,academia alphaville,outra cidade,—,Alphaville ou bairro de outra cidade
@@ -343,9 +343,9 @@ academia gavioes alphaville tem estacionamento,0,,Google,academia alphaville,mar
 academia gavioes alphaville totalpass,0,,Google,academia alphaville,marca com ficha,/academias/gavioes-24h-alphaville/,Pergunta de preço: a ficha ainda não responde
 academia gavioes alphaville valor mensalidade,0,,Google,academia alphaville,marca com ficha,/academias/gavioes-24h-alphaville/,Pergunta de preço: a ficha ainda não responde
 academia gavioes alphaville wellhub,0,,Google,academia alphaville,marca com ficha,/academias/gavioes-24h-alphaville/,Pergunta de preço: a ficha ainda não responde
-academia gavioes barueri sp,0,,Google,academia barueri,marca sem ficha,—,Gaviões Barueri: confirmar unidade e criar ficha
+academia gavioes barueri sp,0,,Google,academia barueri,marca com ficha,/academias/gavioes-24h-alphaville/,A unidade de Alphaville fica em Barueri
 academia gaviões 24 horas alphaville,0,,Google,academia alphaville,marca com ficha,/academias/gavioes-24h-alphaville/,Reforçar a ficha
-academia gaviões 24hs barueri,0,,Google,academia barueri,marca sem ficha,—,Gaviões Barueri: confirmar unidade e criar ficha
+academia gaviões 24hs barueri,0,,Google,academia barueri,marca com ficha,/academias/gavioes-24h-alphaville/,A unidade de Alphaville fica em Barueri
 academia gaviões alphaville aceita gympass,0,,Google,academia alphaville,marca com ficha,/academias/gavioes-24h-alphaville/,Pergunta de preço: a ficha ainda não responde
 academia gaviões no alphaville,0,,Google,academia alphaville,marca com ficha,/academias/gavioes-24h-alphaville/,Reforçar a ficha
 academia gospel barueri,0,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
@@ -371,7 +371,7 @@ academia jardim julio barueri,0,,Google,academia barueri,outros,—,Sem volume o
 academia jardim maria helena barueri,0,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 academia jardim tupanci barueri,0,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 academia jiu jitsu alphaville,0,,Google,academia alphaville,outros,—,Sem volume ou intenção pouco clara
-academia killer bees barueri fotos,0,,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
+academia killer bees barueri fotos,0,,Google,academia barueri,marca com ficha,/academias/ct-don-combat-barueri/,Reforçar a ficha
 academia lagoinha alphaville,0,,Google,academia alphaville,outros,—,Sem volume ou intenção pouco clara
 academia life alphaville,0,,Google,academia alphaville,outros,—,Sem volume ou intenção pouco clara
 academia luta alphaville,0,,Google,academia alphaville,outros,—,Sem volume ou intenção pouco clara
@@ -420,7 +420,7 @@ academia sky barueri,0,,Google,academia barueri,outros,—,Sem volume ou intenç
 academia slice alphaville,0,,Google,academia alphaville,outros,—,Sem volume ou intenção pouco clara
 academia smart alphaville,0,,Google,academia alphaville,outros,—,Sem volume ou intenção pouco clara
 academia smart barueri,0,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
-academia smart fit barueri av zélia avaliações,0,,Google,academia barueri,marca sem ficha,—,Unidade Smart Fit Av. Zélia: criar ficha
+academia smart fit barueri av zélia avaliações,0,,Google,academia barueri,marca com ficha,/academias/smart-fit-barueri-av-zelia/,Reforçar a ficha
 academia sodimac alphaville,0,,Google,academia alphaville,outros,—,Sem volume ou intenção pouco clara
 academia stone barueri,0,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 academia strong alphaville fotos,0,,Google,academia alphaville,marca a verificar,—,Confirmar se é da região antes de criar ficha
@@ -441,7 +441,7 @@ evoque academia barueri,0,,Google,academia barueri,outros,—,Sem volume ou inte
 flash point academia barueri sp,0,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 horario academia alphaville campinas,0,,Google,academia alphaville,outra cidade,—,Alphaville ou bairro de outra cidade
 imagens de academia 24h alphaville,0,,Google,academia alphaville,atributo: 24 horas,/academias/24-horas/,Página existe
-imagens de academia impacto barueri,0,,Google,academia barueri,marca sem ficha,—,Criar ficha após levantar dados
+imagens de academia impacto barueri,0,,Google,academia barueri,marca com ficha,/academias/impacto-barueri/,Reforçar a ficha
 imagens de perfil academia barueri,0,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 inscrição academia barueri,0,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara
 maior academia de barueri,0,,Google,academia barueri,outros,—,Sem volume ou intenção pouco clara

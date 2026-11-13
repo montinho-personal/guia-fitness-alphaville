@@ -31,14 +31,46 @@ atividades_listadas:
 - indoor bike
 - Ginástica
 - Smart Box
-comodidades: []
+comodidades:
+- Ar-condicionado
+- Armário rotativo
+- Ducha aquecida
+- Professores formados
+- Smart Fit Energy
 agregadores:
 - nome: TotalPass
   plano_minimo: TP 1+
   preco_plano: R$ 89,90
   url: https://totalpass.com/br/academias/smart-fit-barrueri-centro/
-mensalidade: null
+mensalidade:
+  valor: a partir de R$ 139,90
+  resumo: Plano Fit a R$ 139,90 por mês com fidelidade, sem taxa de adesão.
+  planos:
+  - nome: Plano Fit
+    preco: R$ 139,90/mês
+    condicoes: Com fidelidade; sem fidelidade, mais R$ 20 por mês. Adesão grátis. Acesso só a esta unidade.
+  - nome: Plano Smart
+    preco: R$ 159,90/mês
+    condicoes: Com fidelidade; sem fidelidade, mais R$ 20 por mês. Adesão grátis.
+  - nome: Plano Black
+    preco: R$ 159,90/mês
+    condicoes: Com fidelidade. Adesão de R$ 29,90. Primeiro mês gratuito, segundo o site. Acesso a todas as unidades da rede.
+  abrangencia: unidade
+  fonte: Site oficial da Smart Fit (página da unidade)
+  url: https://www.smartfit.com.br/academias/barueri-centro
+  conferido_em: '2026-11-13'
+  aviso: O site informa que os valores exibidos são promocionais e remete às condições no próprio site.
 proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - comodidades
+  - mensalidade
+  fonte: Site oficial da Smart Fit (página da unidade)
+  url: https://www.smartfit.com.br/academias/barueri-centro
+  conferido_em: '2026-11-13'
+  nivel: fonte-publica
 - campos:
   - endereco
   - geo
@@ -50,11 +82,11 @@ proveniencia:
   conferido_em: '2026-11-13'
   nivel: fonte-publica
 pendencias:
-- Mensalidade dos planos diretos da rede
+- 'Estacionamento: não consta na fonte'
 analise:
-- Funciona das 5h às 23h59 de segunda a sexta, das 8h às 17h no sábado e das 8h às 14h no domingo. Abre uma hora mais cedo e fecha uma hora mais tarde que a unidade Alphaville II da mesma rede.
-- A grade inclui musculação, bike e ginástica. Pelo TotalPass, o acesso começa no plano TP 1+, o nível de entrada mais baixo entre as academias deste guia listadas nesse agregador.
-status: aguardando-verificacao
+- Funciona das 5h à meia-noite de segunda a sexta, das 8h às 17h no sábado e das 8h às 14h no domingo e em feriados. Abre uma hora mais cedo e fecha uma hora mais tarde que a unidade da Sodimac, em Alphaville.
+- O Plano Fit, o mais barato da rede, custa R$ 139,90 por mês com fidelidade e dá acesso só a esta unidade. Quem quer treinar também em outras Smart Fit precisa do Plano Black, a R$ 159,90. A grade inclui musculação, bike e ginástica, e o site oferece um indicador de ocupação da unidade em tempo real.
+status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville

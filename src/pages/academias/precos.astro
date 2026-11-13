@@ -1,0 +1,115 @@
+---
+import Base from '../../layouts/Base.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import Mantem from '../../components/Mantem.astro';
+import planos from '../../data/planos-agregadores.json';
+import { academias, agregador, ORDEM_WELLHUB, urlAcademia, REGIOES, TIPOS, dataLonga, dataCurta, dataIso, type Academia } from '../../lib/dados';
+
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
+const todas = await academias();
+const reais = (s: string) => Number(s.replace(/[^\d,]/g, '').replace(',', '.'));
+// Menor preço mensal recorrente: ignora aula avulsa, pacotes de aulas e mês de teste.
+const mensais = (a: Academia) => a.data.mensalidade!.planos.filter((p) => !/aula|teste|drop|pacote/i.test(p.nome));
+const menor = (a: Academia) => Math.min(...mensais(a).map((p) => reais(p.preco)));
+const comPreco = todas.filter((a) => a.data.mensalidade).sort((x, y) => menor(x) - menor(y) || x.data.nome.localeCompare(y.data.nome));
+const semPreco = todas.filter((a) => !a.data.mensalidade).sort((x, y) => {
+  const wx = agregador(x, 'Wellhub'), wy = agregador(y, 'Wellhub');
+  return (wx ? ORDEM_WELLHUB.indexOf(wx.plano_minimo) : 99) - (wy ? ORDEM_WELLHUB.indexOf(wy.plano_minimo) : 99) || x.data.nome.localeCompare(y.data.nome);
+});
+const sf = comPreco.filter((a) => a.data.rede === 'Smart Fit');
+const academiasComPreco = comPreco.filter((a) => a.data.tipo === 'academia');
+const box = comPreco.find((a) => a.data.tipo === 'box');
+const brl = (v: number) => `R$ ${v.toFixed(2).replace('.', ',')}`;
+const precoPlano = (p: string) => planos.wellhub.planos.find(([n]) => n === p)?.[1];
+const gold = todas.filter((a) => { const w = agregador(a, 'Wellhub'); return w && ['Gold', 'Gold+'].includes(w.plano_minimo); });
+const conf = new Date(planos.conferido_em);
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = 'Quanto custa academia em Alphaville e Barueri';
+const descricao = 'Mensalidades publicadas pelas academias de Alphaville e Barueri, com fonte e data, e o plano de Wellhub ou TotalPass que cada uma exige.';
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Preços', url: '/academias/precos/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Guia de academias · preços</span>
+      <h1>Quanto custa academia em Alphaville e Barueri</h1>
+      <p class="linha-fina">Os preços que as próprias academias publicam, com a fonte e a data de cada um. Onde não há preço publicado, o plano do agregador serve de referência.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>
+        Das {todas.length} academias do guia, {comPreco.length} publicam preço no site oficial. Entre as academias de musculação, a mensalidade de entrada vai de {brl(menor(academiasComPreco[0]))} a {brl(menor(academiasComPreco[academiasComPreco.length - 1]))} por mês, em planos com fidelidade.
+        {box && <> O box de CrossFit e cross training com preço publicado cobra {brl(menor(box))} pelo plano ilimitado.</>}
+        As demais academias não divulgam valores; nelas, o plano mínimo do Wellhub vai de R$ 39,99 a R$ 439,99 por mês.
+      </p>
+    </div>
+
+    <div class="prosa">
+      <h2>Academias com preço publicado</h2>
+      <p>Ordenadas pelo plano mais barato. "Rede" quer dizer que o preço é o anunciado pela marca para todas as unidades, e que a unidade da região pode cobrar outro valor.</p>
+    </div>
+    <div class="rolagem" tabindex="0" role="region" aria-label="Academias com preço publicado" style="margin:8px 0 28px">
+      <table class="dados">
+        <caption>Preços como publicados nos sites oficiais. Clique na academia para ver todos os planos e condições.</caption>
+        <thead><tr><th scope="col">Academia</th><th scope="col">Região</th><th scope="col">Plano de entrada</th><th scope="col">Preço</th><th scope="col">Vale para</th><th scope="col">Conferido</th></tr></thead>
+        <tbody>{comPreco.map((a) => { const p = mensais(a).find((x) => reais(x.preco) === menor(a))!; return (
+          <tr><th scope="row"><a href={urlAcademia(a)}>{a.data.nome}</a></th><td>{a.data.bairro}, {REGIOES[a.data.regiao].nome}</td><td>{p.nome}</td><td style="white-space:nowrap">{p.preco}</td><td>{a.data.mensalidade!.abrangencia === 'rede' ? 'Rede' : 'Esta unidade'}</td><td>{dataCurta(a.data.mensalidade!.conferido_em)}</td></tr>
+        ); })}</tbody>
+      </table>
+    </div>
+
+    <div class="prosa">
+      <h2>Smart Fit: quanto custa um mês na região</h2>
+      <p>As {sf.length} unidades da Smart Fit da região publicam preço. Nas três de Barueri, o Plano Fit custa R$ 139,90 por mês com fidelidade e vale só para a unidade escolhida. Na <a href="/academias/smart-fit-sodimac-alphaville/">unidade da Sodimac, em Alphaville</a>, não há Plano Fit: o de entrada é o Smart, a R$ 149,90.</p>
+      <p>Em todas, o Plano Black custa R$ 159,90 e dá acesso a qualquer Smart Fit. Sem fidelidade, os planos Fit e Smart ficam R$ 20 mais caros. O site da rede avisa que os valores exibidos são promocionais.</p>
+
+      <h2>Academia ou CrossFit: qual custa mais</h2>
+      {box && <p>Com os preços publicados, o box custa bem mais. O plano ilimitado do <a href={urlAcademia(box)}>{box.data.nome}</a> sai por {brl(menor(box))} por mês, mais de três vezes o plano mais barato de uma Smart Fit da região. A diferença tem explicação: no box, toda sessão é uma aula conduzida por um coach, com turma limitada; na academia, o acompanhamento na sala é eventual.</p>}
+      <p>Quem quer as duas coisas costuma combinar uma academia barata para a musculação com um pacote de aulas no box. A tabela da rede BlackSheep, por exemplo, tem pacote de 10 aulas por R$ 500 e aula avulsa por R$ 75.</p>
+
+      <h2>Academias sem preço publicado</h2>
+      <p>A maioria das academias da região não publica mensalidade. Para elas, o plano mínimo que cada uma exige no Wellhub dá uma ideia da faixa: academias que pedem Gold ou Gold+ costumam cobrar mais caro do que as que entram no Basic ou no Silver. É um indício, não um preço.</p>
+    </div>
+    <div class="rolagem" tabindex="0" role="region" aria-label="Academias sem preço publicado" style="margin:8px 0 28px">
+      <table class="dados">
+        <caption>Plano mínimo e preço do plano conforme as páginas do Wellhub e do TotalPass em {dataLonga(conf)}. O preço é o do agregador, não o da academia.</caption>
+        <thead><tr><th scope="col">Academia</th><th scope="col">Tipo</th><th scope="col">Região</th><th scope="col">Wellhub a partir de</th><th scope="col">TotalPass a partir de</th></tr></thead>
+        <tbody>{semPreco.map((a) => { const w = agregador(a, 'Wellhub'), t = agregador(a, 'TotalPass'); return (
+          <tr><th scope="row"><a href={urlAcademia(a)}>{a.data.nome}</a></th><td>{TIPOS[a.data.tipo]}</td><td>{REGIOES[a.data.regiao].nome}</td><td>{w ? `${w.plano_minimo} (${w.preco_plano})` : <span class="nao">—</span>}</td><td>{t ? `${t.plano_minimo} (${t.preco_plano})` : <span class="nao">—</span>}</td></tr>
+        ); })}</tbody>
+      </table>
+    </div>
+
+    <div class="prosa">
+      <h2>Qual a academia mais cara de Alphaville?</h2>
+      <p>Não dá para responder com preço, porque as academias de padrão mais alto da região não publicam mensalidade. O que os dados mostram é quem exige os planos mais caros do Wellhub: {gold.map((a) => a.data.nome).join(', ').replace(/, ([^,]*)$/, ' e $1')} só entram a partir do Gold (R$ {precoPlano('Gold')}) ou do Gold+ (R$ {precoPlano('Gold+')}). A Six Alphaville, citada com frequência nessa pergunta, ainda não tem ficha neste guia.</p>
+
+      <h2>O que entra no custo de verdade</h2>
+      <ul>
+        <li><strong>Fidelidade.</strong> Quase todo preço anunciado pressupõe contrato de 12 meses. Sem fidelidade, a mensalidade sobe; na Smart Fit, R$ 20.</li>
+        <li><strong>Adesão e anuidade.</strong> Algumas cobram adesão, outras não. Na Smart Fit, o Plano Black tem adesão de R$ 29,90 em Barueri e de R$ 9,90 na unidade da Sodimac.</li>
+        <li><strong>Acesso a outras unidades.</strong> Planos de uma unidade só são mais baratos. Se você treina perto de casa e perto do trabalho, o plano de rede pode compensar.</li>
+        <li><strong>Estacionamento.</strong> Em Alphaville, pode custar mais do que a diferença entre duas academias. Pergunte antes.</li>
+        <li><strong>Promoções.</strong> Primeiro mês grátis e descontos mudam com frequência. Confira a data de cada preço.</li>
+      </ul>
+
+      <h2>Wellhub, TotalPass ou plano direto?</h2>
+      <p>Se a sua empresa oferece Wellhub ou TotalPass, o desconto em folha costuma sair mais barato do que a mensalidade direta, e ainda dá acesso a outros lugares. A conta muda quando a academia que você quer exige um plano alto do agregador. Veja <a href="/academias/wellhub-totalpass/">o plano que cada academia exige</a>.</p>
+      <p>Para colocar duas ou três academias lado a lado, com preço, horário e estrutura, use o <a href="/ferramentas/comparador/">comparador</a>.</p>
+
+      <h2>Os preços estão desatualizados?</h2>
+      <p>Preços de academia mudam com frequência. Cada valor desta página tem a data em que foi conferido. Se você viu um preço diferente na recepção ou no site, <a href="/correcoes/">avise</a>.</p>
+    </div>
+
+    <section class="bloco fino"><Mantem pagina="precos" compacta titulo="Quer comparar com o custo de um personal?" texto="Se você está pesando academia e acompanhamento individual, o Montinho Personal Trainer, que mantém este guia, atende presencialmente em academias e condomínios da região." /></section>
+
+    <div style="margin-top:28px"><Fontes fontes={[
+      ...comPreco.map((a) => ({ titulo: `${a.data.mensalidade!.fonte} — ${a.data.nome}`, url: a.data.mensalidade!.url, data: dataLonga(a.data.mensalidade!.conferido_em) })),
+      { titulo: planos.wellhub.fonte, url: planos.wellhub.url, data: dataLonga(conf) },
+      { titulo: planos.totalpass.fonte, url: planos.totalpass.url, data: dataLonga(conf) },
+    ]} /></div>
+  </div>
+</Base>

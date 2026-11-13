@@ -1,5 +1,26 @@
 # Estado atual e relatório de qualidade
 
+## Atualização: lançamento (13 de novembro de 2026)
+
+A pedido do responsável pelo projeto, o conteúdo foi marcado como publicado e o site foi preparado para indexação. O que mudou desde a primeira versão:
+
+- **26 fichas** (eram 20). Seis novas em Barueri: Smart Fit Av. Zélia, Smart Fit Parque Shopping Barueri, Academia Boa Forma, Academia Impacto, Academia Xandu e CT Don Combat (endereço da antiga Killer Bees). Barueri passou de 3 para 9 fichas.
+- **Preços publicados** em 6 fichas, lidos nos sites oficiais: as quatro unidades da Smart Fit (por unidade), Panobianco (preço anunciado pela rede) e BlackSheep (tabela da rede). Gaviões, Bluefit, Bodytech, VoiFit, SkyFit e as demais não publicam preço ou não puderam ser lidas. A API de preços da Bluefit foi bloqueada pela política de permissões da sessão e não foi contornada.
+- **Páginas novas:** [quanto custa academia](/academias/precos/) e o comparativo [Smart Fit ou Gaviões](/guias/smart-fit-ou-gavioes/), as duas dúvidas mais frequentes nas perguntas do Google.
+- **Smart Fit Alphaville II** virou **Smart Fit Sodimac Alphaville**, o nome do site oficial, com a URL `/academias/smart-fit-sodimac-alphaville/`.
+- **Assinatura:** a linha "Revisão humana: pendente" foi retirada; o nome de um revisor aparece quando houver revisão. A política editorial foi ajustada para dizer isso.
+- **Privacidade:** o controlador passou a ser identificado como Montinho Personal Trainer, de Renato Montinho.
+- A [matriz de palavras-chave](pesquisa/matriz-palavras-chave.csv) foi remapeada: o volume de buscas por marcas com ficha subiu de cerca de 10.200 para 12.600 por mês, e o de marcas sem ficha caiu de 3.430 para 1.040.
+
+Build em modo de produção (`PUBLIC_INDEXAVEL=true`, sem conteúdo em revisão): 53 páginas, 52 no sitemap, 0 erros na auditoria. Navegador automatizado: 52 URLs com HTTP 200, sem rolagem horizontal em 390 px e 1280 px, sem erros de JavaScript.
+
+### O que ainda impede o site de estar público
+
+1. **Domínio.** A Vercel não registra `.com.br`. É preciso registrar `ondetreinaralphaville.com.br` no Registro.br, com CPF ou CNPJ, e apontar o DNS para a Vercel. Sem o domínio, a versão de produção só abre para quem tem login no time da Vercel.
+2. **Privacidade.** Falta o CPF ou CNPJ do controlador, um e-mail de contato e revisão jurídica.
+3. **Medição.** Sem `PUBLIC_GTM_ID`, o site vai ao ar sem Analytics. Search Console e Bing dependem do domínio.
+
+
 Data: 13 de novembro de 2026. Etapas 1 a 5 do plano da [Fase Zero](fase-zero.md), executadas com as opções recomendadas: consolidar no portal, Astro, identidade do protótipo.
 
 O portal está construído e funciona, mas **não está pronto para indexação**. O que falta depende de pessoas, não de código.
