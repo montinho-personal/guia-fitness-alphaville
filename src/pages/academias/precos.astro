@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import Mantem from '../../components/Mantem.astro';
 import planos from '../../data/planos-agregadores.json';
 import { academias, agregador, ORDEM_WELLHUB, urlAcademia, REGIOES, TIPOS, dataLonga, dataCurta, dataIso, type Academia } from '../../lib/dados';
@@ -116,6 +117,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
 
     <section class="bloco fino"><Mantem pagina="precos" compacta titulo="Quer comparar com o custo de um personal?" texto="Se você está pesando academia e acompanhamento individual, o Montinho Personal Trainer, que mantém este guia, atende presencialmente em academias e condomínios da região." /></section>
 
+    <VideoMontinho id="yndKE1GrnUQ" titulo="Toda pessoa com shape tem uma coisa em comum" pagina="precos" />
     <div style="margin-top:28px"><Fontes fontes={[
       ...comPreco.map((a) => ({ titulo: `${a.data.mensalidade!.fonte} — ${a.data.nome}`, url: a.data.mensalidade!.url, data: dataLonga(a.data.mensalidade!.conferido_em) })),
       { titulo: 'Exame — Como é treinar na academia mais cara do Brasil (17 de agosto de 2026), sobre os preços da SIX', url: EXAME },

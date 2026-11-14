@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import CartaoAcademia from '../../components/CartaoAcademia.astro';
 import { academias, MODALIDADES, agregador, urlAcademia, dataLonga, dataIso, temComodidade, horasSemana } from '../../lib/dados';
 
@@ -82,6 +83,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <div class="cartoes">{[sf, gv].map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
 
+    <VideoMontinho id="yqPAYRVTe0E" titulo="Não existe o treino perfeito" pagina="smart-fit-ou-gavioes" />
     <div style="margin-top:28px"><Fontes fontes={[
       ...sf.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${sf.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
       ...gv.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${gv.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),

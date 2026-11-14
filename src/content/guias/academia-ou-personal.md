@@ -11,6 +11,9 @@ cta: montinho-contextual
 fontes:
   - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
     url: "https://www.who.int/publications/i/item/9789240015128"
+video:
+  id: DiH1OzIR6Yk
+  titulo: "É impossível isso dar errado"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

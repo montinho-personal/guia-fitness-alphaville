@@ -12,6 +12,9 @@ fontes:
     url: "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm"
   - titulo: "Dados de horário, endereço e estrutura das fichas deste guia"
     url: "https://wellhub.com/pt-br/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

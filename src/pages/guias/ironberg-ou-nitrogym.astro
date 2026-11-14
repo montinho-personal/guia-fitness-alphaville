@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import CartaoAcademia from '../../components/CartaoAcademia.astro';
 import { academias, agregador, urlAcademia, dataLonga, dataIso, horasSemana } from '../../lib/dados';
 
@@ -99,6 +100,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <div class="cartoes">{[ib, ng].map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
 
+    <VideoMontinho id="izMrrSoJGBw" titulo="Raiva e sangue no olho" pagina="ironberg-ou-nitrogym" />
     <div style="margin-top:28px"><Fontes fontes={[
       ...ib.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${ib.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
       ...ng.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${ng.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),

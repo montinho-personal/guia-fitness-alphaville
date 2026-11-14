@@ -13,6 +13,9 @@ fontes:
     url: "https://www.crossfit.com/"
   - titulo: "Páginas das unidades no Wellhub e no TotalPass, listadas em cada ficha"
     url: "https://wellhub.com/pt-br/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
