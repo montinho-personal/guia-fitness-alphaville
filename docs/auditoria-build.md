@@ -1,17 +1,17 @@
 # Auditoria do build
 
-Gerada em 2026-11-13T22:48:36.178Z
+Gerada em 2026-11-14T09:13:15.615Z
 
 **Resultado:** sem erros bloqueantes · 18 aviso(s)
 
 ## Verificações executadas
-- 53 páginas HTML analisadas
-- 2086 links internos verificados; 65 destinos externos distintos
-- sitemap com 52 URLs
-- site INDEXÁVEL
+- 56 páginas HTML analisadas
+- 2231 links internos verificados; 72 destinos externos distintos
+- sitemap com 55 URLs
+- site em pré-lançamento: robots bloqueia e 56 páginas têm noindex
 - JSON-LD de todas as páginas é válido e aponta para URLs existentes
-- 26 fichas com fonte e data para endereço, horário e modalidades
-- similaridade interna calculada para 49 páginas (1176 pares)
+- 29 fichas com fonte e data para endereço, horário e modalidades
+- similaridade interna calculada para 52 páginas (1326 pares)
 - similaridade com o ecossistema calculada contra 116 textos do corpus
 
 ## Erros
@@ -41,19 +41,24 @@ Nenhum.
 - /academias/smart-fit-sodimac-alphaville/ × www_montinhopersonal_com_br_blog_academia_24_horas_barueri.txt: 5% das sequências
 
 ## Pendências editoriais (não bloqueiam o build)
-26 item(ns). Ver auditoria.json.
+29 item(ns). Ver auditoria.json.
 
 ## Links externos
 - https://academiagavioes.com.br
 - https://bodytech.com.br/academias/iguatemi-alphaville
 - https://crossfitbarueri.com.br
+- https://exame.com/negocios/como-e-treinar-na-academia-mais-cara-do-brasil-onde-a-mensalidade-chega-a-r-5-400/
 - https://instagram.com/academia_i
 - https://instagram.com/academia_mattos/
 - https://instagram.com/academiaxandu
 - https://instagram.com/boaformaacademiabarueri
 - https://instagram.com/espaco_olympia
+- https://nitrogymacademia.com.br/unidades/unidade-tambore
+- https://sixwellnessclub.com/units/alphaville
 - https://skyfitacademia.com
 - https://totalpass.com/br/
+- https://totalpass.com/br/academias/ironberg-alphaville/
+- https://totalpass.com/br/academias/nitrogym-tambore/
 - https://totalpass.com/br/academias/smart-fit-alphaville-ii/
 - https://totalpass.com/br/academias/smart-fit-barrueri-centro/
 - https://totalpass.com/br/academias/templo-sa-crossfit/
@@ -96,6 +101,8 @@ Nenhum.
 - https://www.instagram.com/forthacademia/
 - https://www.instagram.com/sceltaacademia/
 - https://www.instagram.com/templosa/
+- https://www.ironberg.com.br/alphaville.html
+- https://www.ironberg.com.br/planos.html
 - https://www.montinhopersonal.com.br
 - https://www.montinhopersonal.com.br/blog/hyrox-alphaville-onde-treinar
 - https://www.montinhopersonal.com.br/personal-trainer-alphaville

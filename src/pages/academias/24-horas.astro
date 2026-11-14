@@ -32,8 +32,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
     </div>
 
     <div class="prosa">
-      <h2>A que funciona 24 horas</h2>
-      {h24.map((a) => <p>A <a href={urlAcademia(a)}>{a.data.nome}</a> fica em {a.data.endereco.split(' - ')[0]}, {a.data.bairro}. O horário publicado na página da unidade cobre as 24 horas do dia, de segunda a domingo. Não confirmamos no local como é o atendimento de madrugada nem o que acontece em feriados; os dois pontos estão na lista de pendências da ficha.</p>)}
+      <h2>{h24.length === 1 ? 'A que funciona 24 horas' : 'As que funcionam 24 horas'}</h2>
+      {h24.map((a) => <p>A <a href={urlAcademia(a)}>{a.data.nome}</a> fica em {a.data.endereco.split(' - ')[0]}, {a.data.bairro}. O horário publicado cobre as 24 horas do dia, de segunda a domingo. Não confirmamos no local como é o atendimento de madrugada.</p>)}
 
       {nome24.length > 0 && <>
         <h2>Cuidado com o nome</h2>

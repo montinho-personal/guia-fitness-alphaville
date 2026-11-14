@@ -1,0 +1,97 @@
+nome: NitroGym Tamboré
+regiao: alphaville
+bairro: Tamboré
+tipo: academia
+rede: NitroGym
+resumo: Academia premium de musculação no Shopping Tamboré, aberta das 5h à meia-noite em dias úteis, com estacionamento incluso por 3 horas e preço publicado.
+endereco: Avenida Piracema, 669 - Tamboré, Barueri - SP, 06460-030
+geo:
+  lat: -23.50485
+  lng: -46.835607
+horario:
+  seg:
+  - 05:00-23:59
+  ter:
+  - 05:00-23:59
+  qua:
+  - 05:00-23:59
+  qui:
+  - 05:00-23:59
+  sex:
+  - 05:00-23:59
+  sab:
+  - 06:00-22:00
+  dom:
+  - 06:00-22:00
+modalidades:
+- musculacao
+atividades_listadas:
+- Musculação
+- Cardio
+comodidades:
+- Climatização
+- Estacionamento incluso por até 3 horas
+- Professores na sala
+agregadores:
+- nome: TotalPass
+  plano_minimo: TP 5
+  preco_plano: R$ 399,90
+  url: https://totalpass.com/br/academias/nitrogym-tambore/
+mensalidade:
+  valor: a partir de R$ 389
+  resumo: Plano anual a R$ 389 por mês, com acesso a duas unidades da rede e estacionamento incluso.
+  planos:
+  - nome: Anual (duas unidades)
+    preco: R$ 389,00/mês
+    condicoes: Cobrança recorrente; acesso a duas unidades; estacionamento incluso por até 3 horas.
+  - nome: Semestral
+    preco: R$ 489,00/mês
+    condicoes: Cobrança recorrente; estacionamento incluso por até 3 horas.
+  - nome: Mensal
+    preco: R$ 589,00/mês
+    condicoes: Cobrança recorrente mês a mês; estacionamento incluso por até 3 horas.
+  - nome: Fim de semana
+    preco: R$ 289,00/mês
+    condicoes: Treino só aos sábados e domingos.
+  - nome: Day use (diária)
+    preco: R$ 90,00
+    condicoes: Pagamento no local; acesso a todas as áreas.
+  abrangencia: unidade
+  fonte: Site oficial da NitroGym (página da unidade)
+  url: https://nitrogymacademia.com.br/unidades/unidade-tambore
+  conferido_em: '2026-11-14'
+telefone: (11) 98643-0468
+site: https://nitrogymacademia.com.br/unidades/unidade-tambore
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  - mensalidade
+  fonte: Site oficial da NitroGym (página da unidade)
+  url: https://nitrogymacademia.com.br/unidades/unidade-tambore
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+- campos:
+  - geo
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/nitrogym-tambore/
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+divergencias:
+- 'Horário de segunda a sexta: das 5h à meia-noite no site oficial; das 6h às 23h40 no TotalPass, que pode mostrar só a janela válida para usuários do agregador.'
+pendencias:
+- Qual é a segunda unidade incluída no plano anual
+- Regras para personal trainer externo
+analise:
+- Fica dentro do Shopping Tamboré. Abre às 5h e fecha à meia-noite de segunda a sexta; nos fins de semana e feriados, das 6h às 22h. O estacionamento do shopping está incluso por até 3 horas em todos os planos.
+- 'A tabela publicada é das mais completas da região: R$ 389 por mês no plano anual, R$ 489 no semestral, R$ 589 no mensal, R$ 289 num plano só de fim de semana e diária de R$ 90. É a única academia de musculação do guia com diária de preço publicado. Pelo TotalPass, o acesso começa no plano TP 5.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-14'
+atualizado_em: '2026-11-14'

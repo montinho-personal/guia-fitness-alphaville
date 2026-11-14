@@ -14,9 +14,13 @@ A pedido do responsável pelo projeto, o conteúdo foi marcado como publicado e 
 
 Build em modo de produção (`PUBLIC_INDEXAVEL=true`, sem conteúdo em revisão): 53 páginas, 52 no sitemap, 0 erros na auditoria. Navegador automatizado: 52 URLs com HTTP 200, sem rolagem horizontal em 390 px e 1280 px, sem erros de JavaScript.
 
+### 14 de novembro de 2026
+
+Três fichas novas, a pedido do responsável: **Ironberg Alphaville**, **NitroGym Tamboré** e **SIX Alphaville**, com dados dos sites oficiais. Ironberg e NitroGym publicam preço; a SIX não, e os valores citados na ficha vêm de reportagem da Exame, identificada como tal. A posição da SIX no mapa é a do conjunto Empresarial 18 do Forte, não a do prédio exato. A Bio Ritmo do Shopping Tamboré saiu da fila de pendências porque, segundo um guia de academias da região consultado em pesquisa, ela fechou e a NitroGym abriu no mesmo shopping; isso não foi confirmado com a Bio Ritmo. Agora são 29 fichas.
+
 ### O que ainda impede o site de estar público
 
-1. **Domínio.** O portal usa `guiafitnessalphaville.com.br`, registrado na HostGator. Falta apontar o DNS para a Vercel; até lá, a versão de produção só abre para quem tem login no time da Vercel. O nome do site continua "Onde Treinar Alphaville".
+1. ~~**Domínio.**~~ Resolvido em 13/11/2026: o site está no ar em https://guiafitnessalphaville.com.br. O DNS fica na HostGator, com registro A `76.76.21.21` e CNAME `www` → `cname.vercel-dns.com`, a mesma configuração do montinhopersonal.com.br. Os endereços mais novos da Vercel (`216.150.1.1` e `216.150.16.1`) não abriram na rede do responsável e foram trocados. O nome do site continua "Onde Treinar Alphaville".
 2. **Privacidade.** Falta o CPF ou CNPJ do controlador, um e-mail de contato e revisão jurídica.
 3. **Medição.** Sem `PUBLIC_GTM_ID`, o site vai ao ar sem Analytics. Search Console e Bing dependem do domínio.
 
@@ -132,7 +136,7 @@ Em ordem de dependência.
 2. **Confirmar dados com as academias.** Mensalidade, regras para personal de fora e os itens de "O que ainda não confirmamos" de cada ficha. É o que transforma o guia em algo que os agregadores não têm.
 3. **Levantar as academias sem ficha**, começando pelas de maior procura observada: Six, Ironberg, Fábrica Premium.
 4. **Privacidade.** Incluir identificação do controlador (nome ou razão social, CPF ou CNPJ) e e-mail do encarregado, e submeter a revisão jurídica. A página mostra esse aviso na pré-visualização.
-5. **Domínio.** `guiafitnessalphaville.com.br`, registrado na HostGator. Apontar o DNS para a Vercel.
+5. ~~**Domínio.**~~ Feito: `guiafitnessalphaville.com.br`, DNS na HostGator apontando para a Vercel.
 6. **Medição.** Criar a propriedade GA4 e o contêiner GTM, preencher `PUBLIC_GTM_ID`, marcar `clique_whatsapp` e `clique_montinho` como conversões, e verificar o domínio no Search Console e no Bing Webmaster Tools.
 7. **E-mail de contato** em `PUBLIC_EMAIL_CONTATO`.
 8. **Ligar a indexação:** `PUBLIC_INDEXAVEL=true` e `PUBLIC_MOSTRAR_EM_REVISAO=false`, depois dos itens 1 e 4.
