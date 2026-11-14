@@ -11,7 +11,7 @@ export const GET: APIRoute = async ({ site }) => {
   const ultAcad = maisRecente(as.map((a) => a.data.atualizado_em));
   const ultGuia = gs.length ? maisRecente(gs.map((g) => g.data.atualizado_em)) : FIXAS;
   const urls: [string, string][] = [
-    ['/', ultAcad], ['/academias/', ultAcad], ['/academias/24-horas/', ultAcad], ['/academias/precos/', ultAcad], ['/academias/wellhub-totalpass/', ultAcad],
+    ['/', ultAcad], ['/academias/', ultAcad], ['/academias/24-horas/', ultAcad], ['/academias/domingo/', ultAcad], ['/academias/precos/', ultAcad], ['/academias/wellhub-totalpass/', ultAcad],
     ...as.map((a) => [`/academias/${a.id}/`, dataIso(a.data.atualizado_em)] as [string, string]),
     ['/regioes/', ultAcad],
     ...Object.keys(REGIOES).filter((r) => as.filter((a) => a.data.regiao === r).length >= 3).map((r) => [`/regioes/${r}/`, maisRecente(as.filter((a) => a.data.regiao === r).map((a) => a.data.atualizado_em))] as [string, string]),
