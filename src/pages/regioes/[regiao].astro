@@ -143,6 +143,14 @@ const schema = [
       <h2>Outras regiões</h2>
       <ul>{outras.map((o) => <li><a href={urlRegiao(o)}>Onde treinar em {REGIOES[o].titulo}</a></li>)}</ul>
     </section>
+    <section class="bloco fino prosa">
+      <h2>Treinar com personal trainer</h2>
+      <ul>
+        {regiao === 'alphaville' && <><li><a href="/guias/personal-trainer-alphaville/">Personal trainer em Alphaville</a></li><li><a href="/guias/personal-trainer-tambore/">Personal trainer no Tamboré</a></li></>}
+        {regiao === 'barueri' && <li><a href="/guias/personal-trainer-barueri/">Personal trainer em Barueri</a></li>}
+        {regiao === 'santana-de-parnaiba' && <><li><a href="/guias/personal-trainer-santana-de-parnaiba/">Personal trainer em Santana de Parnaíba</a></li><li><a href="/guias/personal-trainer-aldeia-da-serra/">Personal trainer na Aldeia da Serra</a></li></>}
+      </ul>
+    </section>
     {regiao === 'alphaville' && <section class="bloco fino"><Mantem pagina={`regiao-${regiao}`} compacta titulo="Converse com um personal em Alphaville" texto="O Montinho Personal Trainer, que mantém este guia, atende presencialmente em academias e condomínios de Alphaville e Tamboré." /></section>}
   </div>
 </Base>

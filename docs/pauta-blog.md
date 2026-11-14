@@ -17,7 +17,7 @@ Cada página precisa de conteúdo próprio da região. Trocar só o nome da cida
 
 | # | Página | Ângulo único do guia | Dado a levantar |
 |---|---|---|---|
-| 1 | Personal trainer em Alphaville | Onde o treino acontece: academias que aceitam personal externo, academia de condomínio, domicílio. Como checar o CREF. | Regra de personal externo em cada academia do guia |
+| 1 | Personal trainer em Alphaville | Onde o treino acontece: academias que aceitam personal externo, academia de condomínio, domicílio. | Regra de personal externo em cada academia do guia |
 | 2 | Personal trainer no Tamboré | Condomínios residenciais do Tamboré com academia própria; academias do bairro (NitroGym, Bluefit) | Regras dos condomínios (só o que for público) |
 | 3 | Personal trainer em Barueri | Barueri centro e bairros: academias de preço baixo com personal autorizado; acesso por trem | Taxa de personal nas academias de Barueri |
 | 4 | Personal trainer em Santana de Parnaíba | Residenciais de Alphaville do lado de Santana, centro histórico, deslocamento pela Estrada da Aldeinha | Academias do lado de Santana (fila de verificação) |
@@ -26,7 +26,7 @@ Cada página precisa de conteúdo próprio da região. Trocar só o nome da cida
 Apoio:
 
 6. **Academias que aceitam personal externo em Alphaville e Barueri.** Tabela com regra e taxa por academia. O guia é o único que pode fazer isso com fonte; Ironberg e NitroGym já têm a informação parcial.
-7. **Como conferir o registro (CREF) de um personal trainer.** Passo a passo no site do CREF4/SP.
+7. ~~Registro profissional~~: removido. Regra: o site não cita CREF nem CONFEF.
 8. **Personal na academia, no condomínio ou em casa: o que muda.** Custo, equipamento, regras e deslocamento.
 9. **Quanto custa personal trainer na região.** Só com preços públicos e com a fonte de cada um. Sem fonte, o texto não sai.
 

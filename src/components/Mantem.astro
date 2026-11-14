@@ -1,8 +1,8 @@
 ---
 // Chamada do Montinho. Aparece no máximo uma vez por página, sempre rotulada.
 import { linkMontinho, linkWhatsapp } from '../lib/dados';
-interface Props { pagina: string; titulo?: string; texto?: string; compacta?: boolean }
-const { pagina, compacta = false,
+interface Props { pagina: string; titulo?: string; texto?: string; compacta?: boolean; destino?: string }
+const { pagina, compacta = false, destino = '/personal-trainer-alphaville',
   titulo = 'Já escolheu onde treinar? Falta decidir como.',
   texto = 'O Onde Treinar Alphaville é mantido pelo Montinho Personal Trainer, que atende presencialmente em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Se você quer acompanhamento individual, é com ele que este guia conversa.' } = Astro.props;
 ---
@@ -13,7 +13,7 @@ const { pagina, compacta = false,
     <p>{texto}</p>
   </div>
   <div class="acoes">
-    <a class="btn" href={linkMontinho('/personal-trainer-alphaville', 'bloco', pagina)} rel="nofollow" data-evento="clique_montinho" data-ref={pagina}>Conhecer o atendimento presencial <i aria-hidden="true"></i></a>
+    <a class="btn" href={linkMontinho(destino, 'bloco', pagina)} rel="nofollow" data-evento="clique_montinho" data-ref={pagina}>Conhecer o atendimento presencial <i aria-hidden="true"></i></a>
     <a class="link-forte" href={linkWhatsapp(pagina)} rel="nofollow noopener" data-evento="clique_whatsapp" data-ref={pagina}>Conversar no WhatsApp</a>
   </div>
 </aside>

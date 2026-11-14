@@ -1,6 +1,6 @@
 ---
 titulo: "Academia ou personal trainer: como decidir"
-descricao: "Quando a academia sozinha resolve, quando vale contratar personal trainer e o que conferir antes: registro no CREF, regras da academia e do condomínio."
+descricao: "Quando a academia sozinha resolve, quando vale contratar personal trainer e o que conferir antes: formação, regras da academia e do condomínio."
 h1: "Academia, personal ou os dois: como decidir"
 resposta: "Academia e personal não são alternativas: a academia é o lugar, o personal é o acompanhamento. Quem já treina com segurança e constância costuma se resolver só com a academia. Acompanhamento individual tende a fazer diferença para quem está começando, voltando de lesão, com pouco tempo ou sem evoluir há meses."
 cluster: D
@@ -9,8 +9,6 @@ palavra_chave: academia ou personal trainer
 intencao: Informacional com decisão comercial. Quem busca está avaliando se vale pagar por acompanhamento.
 cta: montinho-contextual
 fontes:
-  - titulo: "Lei nº 9.696/1998 — regulamenta a profissão de Educação Física e cria os Conselhos Federal e Regionais"
-    url: "https://www.planalto.gov.br/ccivil_03/leis/l9696.htm"
   - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
     url: "https://www.who.int/publications/i/item/9789240015128"
 status: publicado
@@ -44,7 +42,7 @@ Nada disso é para sempre. Um período de alguns meses com acompanhamento, segui
 
 ## O que conferir antes de contratar
 
-**Registro no CREF.** A profissão de Educação Física é regulamentada por lei, e o exercício depende de registro no Conselho Regional. Peça o número e consulte no site do conselho do seu estado.
+**Formação e experiência.** Pergunte onde o profissional se formou, há quanto tempo atende e se já trabalhou com alguém com o seu objetivo ou a sua limitação. Peça para conversar com um aluno atual, se for possível.
 
 **Regras da academia.** Nem toda academia aceita personal de fora, e as que aceitam costumam cobrar uma taxa do profissional ou do aluno. Pergunte antes de fechar com os dois. Algumas fichas deste guia registram "personal trainer" entre os serviços informados, o que indica que há profissionais atuando no local, mas não esclarece a regra para quem vem de fora.
 
