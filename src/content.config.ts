@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 
 export const STATUS = ['rascunho', 'em-pesquisa', 'em-revisao', 'aguardando-verificacao', 'aprovado', 'publicado', 'atualizacao-necessaria'] as const;
 export const REGIOES = ['alphaville', 'barueri', 'santana-de-parnaiba'] as const;
-export const MODALIDADES = ['musculacao', 'crossfit', 'cross-training', 'funcional', 'lutas', 'danca', 'bike', 'pilates', 'hiit', 'hyrox', 'eletroestimulacao', 'yoga', 'corrida', 'natacao'] as const;
+export const MODALIDADES = ['musculacao', 'crossfit', 'cross-training', 'funcional', 'lutas', 'danca', 'bike', 'pilates', 'hiit', 'hyrox', 'eletroestimulacao', 'yoga', 'corrida', 'natacao', 'esportes-de-areia'] as const;
 const DIAS = ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'] as const;
 const data = z.coerce.date();
 const faixa = z.string().regex(/^\d\d:\d\d-\d\d:\d\d$/);
@@ -57,6 +57,8 @@ const academias = defineCollection({
       conferido_em: data,
       nivel: z.enum(['fonte-publica', 'confirmado-com-a-academia', 'visita']),
     })).min(1),
+    // true quando o Montinho Personal Trainer, que mantém o guia, atende alunos no local. Exibido como aviso na ficha.
+    montinho_atende: z.boolean().default(false),
     divergencias: z.array(z.string()).default([]),
     pendencias: z.array(z.string()).default([]),
     analise: z.array(z.string()).min(1),

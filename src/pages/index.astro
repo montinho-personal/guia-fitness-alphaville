@@ -7,7 +7,7 @@ import { academias, guias, REGIOES, MODALIDADES, urlRegiao } from '../lib/dados'
 
 const todas = await academias();
 const gs = await guias();
-const destaque = ['gavioes-24h-alphaville', 'smart-fit-sodimac-alphaville', 'bluefit-alphaville', 'smart-fit-barueri-av-zelia', 'panobianco-barueri-centro', 'boa-forma-barueri'];
+const destaque = ['arena-18-alphaville', 'gavioes-24h-alphaville', 'ironberg-alphaville', 'nitrogym-tambore', 'smart-fit-barueri-av-zelia', 'six-alphaville'];
 const cartoes = destaque.map((id) => todas.find((a) => a.id === id)).filter(Boolean);
 const porRegiao = (r: string) => todas.filter((a) => a.data.regiao === r).length;
 const mods = [...new Set(todas.flatMap((a) => a.data.modalidades))];
