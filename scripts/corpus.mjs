@@ -3,7 +3,7 @@
 // O corpus fica em relatorios/corpus (fora do Git). Só lê páginas públicas listadas nos sitemaps.
 import { mkdirSync, writeFileSync } from 'node:fs';
 const FONTES = [
-  { sitemap: 'https://www.montinhopersonal.com.br/sitemap.xml', filtro: /academia|smart-fit|bluefit|bodytech|gavioes|skyfit|voi-fit|scelta|panobianco|crossfit|personal-trainer-(alphaville|barueri|tambore|santana)$|quanto-custa-personal-trainer-alphaville|academia-ou-personal/ },
+  { sitemap: 'https://www.montinhopersonal.com.br/sitemap.xml', filtro: /academia|smart-fit|bluefit|bodytech|gavioes|skyfit|voi-fit|scelta|panobianco|crossfit|personal-trainer|treinador-particular|professor-de-musculacao|condominios-aldeia-da-serra|academia-ou-personal/ },
   { sitemap: 'https://www.personalporperto.com.br/sitemap-0.xml', filtro: /alphaville|barueri-sp|tambore-sp|santana-de-parnaiba-sp|personal-trainer-em-academia|personal-trainer-em-condominio|como-escolher-personal|coach-de-academia|hyrox-vs-crossfit/ },
 ];
 const texto = (h) => (h.match(/<main[^>]*>([\s\S]*?)<\/main>/)?.[1] ?? h).replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&[a-z#0-9]+;/g, ' ').replace(/\s+/g, ' ').trim();

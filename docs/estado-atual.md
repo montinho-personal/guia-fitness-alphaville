@@ -166,3 +166,8 @@ Ficam na `dataLayer` e só saem do navegador com consentimento e com o GTM confi
 | `checklist_compartilhado`, `mapa_carregado` | Uso das outras ferramentas |
 
 Cada evento leva `ref` (posição ou ficha) e `pagina`. Os links para o Montinho levam UTM, e a mensagem do WhatsApp leva a página de origem no texto.
+
+## Regra editorial fixa (14/11/2026)
+
+- **O site não cita CREF nem CONFEF**, nem os conselhos de Educação Física por extenso. Pedido do responsável pelo guia. A auditoria (`scripts/auditoria.mjs`) falha o build se algum desses termos aparecer em qualquer página.
+- Publicadas as páginas de personal trainer por região: Alphaville, Tamboré, Barueri, Santana de Parnaíba e Aldeia da Serra (`src/content/guias/personal-trainer-*.md`). O corpus antiplágio passou a incluir todas as páginas de personal trainer do site do Montinho.

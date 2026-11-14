@@ -149,6 +149,12 @@ if (existsSync(DIR_CORPUS) && readdirSync(DIR_CORPUS).length) {
 
 // Relatório
 mkdirSync('relatorios', { recursive: true });
+// Regra do responsável pelo guia: o site não cita os conselhos profissionais (CREF/CONFEF).
+const TERMOS_PROIBIDOS = /\b(cref\d*|confef|conselho (federal|regional) de educa)/i;
+const comTermo = paginas.filter((p) => TERMOS_PROIBIDOS.test(tirar(p.h)) || TERMOS_PROIBIDOS.test(p.h));
+for (const p of comTermo) erro('termo proibido', `${p.url} cita CREF/CONFEF`);
+if (!comTermo.length) ok.push('nenhuma página cita CREF ou CONFEF');
+
 const rel = { gerado_em: new Date().toISOString(), aprovado: erros.length === 0, verificacoes: ok, erros, avisos, pendencias_editoriais: pendencias, similaridade_interna: pares, similaridade_externa: extern, links_externos: [...externos].sort() };
 writeFileSync('relatorios/auditoria.json', JSON.stringify(rel, null, 2));
 const agrupa = (xs) => Object.entries(xs.reduce((m, x) => ((m[x.teste] ||= []).push(x.detalhe), m), {}));
