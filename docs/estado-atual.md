@@ -16,7 +16,7 @@ Build em modo de produção (`PUBLIC_INDEXAVEL=true`, sem conteúdo em revisão)
 
 ### 14 de novembro de 2026
 
-Três fichas novas, a pedido do responsável: **Ironberg Alphaville**, **NitroGym Tamboré** e **SIX Alphaville**, com dados dos sites oficiais. Ironberg e NitroGym publicam preço; a SIX não, e os valores citados na ficha vêm de reportagem da Exame, identificada como tal. A posição da SIX no mapa é a do conjunto Empresarial 18 do Forte, não a do prédio exato. A Bio Ritmo do Shopping Tamboré saiu da fila de pendências: a NitroGym ocupa o mesmo shopping, e a unidade da Bio Ritmo não foi encontrada ativa. Agora são 29 fichas.
+Três fichas novas, a pedido do responsável: **Ironberg Alphaville**, **NitroGym Tamboré** e **SIX Alphaville**, com dados dos sites oficiais. Ironberg e NitroGym publicam preço; a SIX não, e os valores citados na ficha vêm de reportagem da Exame, identificada como tal. A posição da SIX no mapa é a do conjunto Empresarial 18 do Forte, não a do prédio exato. A Bio Ritmo do Shopping Tamboré saiu da fila de pendências porque, segundo um guia de academias da região consultado em pesquisa, ela fechou e a NitroGym abriu no mesmo shopping; isso não foi confirmado com a Bio Ritmo. Agora são 29 fichas.
 
 ### O que ainda impede o site de estar público
 
