@@ -1,0 +1,100 @@
+nome: Ironberg Alphaville
+regiao: alphaville
+bairro: Aldeinha
+tipo: academia
+rede: Ironberg
+resumo: Centro de treinamento de musculação com 32 mil m² na Estrada da Aldeinha, aberto 24 horas, com estacionamento gratuito e preço publicado.
+endereco: Estr. Aldeinha, 181 - Jardim Santa Cecília, Barueri - SP, 06465-100
+geo:
+  lat: -23.508584
+  lng: -46.847782
+horario:
+  seg:
+  - 00:00-23:59
+  ter:
+  - 00:00-23:59
+  qua:
+  - 00:00-23:59
+  qui:
+  - 00:00-23:59
+  sex:
+  - 00:00-23:59
+  sab:
+  - 00:00-23:59
+  dom:
+  - 00:00-23:59
+modalidades:
+- musculacao
+atividades_listadas:
+- Musculação
+comodidades:
+- Estacionamento gratuito (mais de 1.000 vagas)
+- Climatização
+- Vestiários
+- Lounge
+- Acessibilidade
+- Heliponto
+agregadores:
+- nome: TotalPass
+  plano_minimo: TP 6
+  preco_plano: R$ 599,90
+  url: https://totalpass.com/br/academias/ironberg-alphaville/
+mensalidade:
+  valor: a partir de R$ 399
+  resumo: Plano de fidelidade de 12 meses a R$ 399 por mês, com matrícula de R$ 120.
+  planos:
+  - nome: Fidelidade 12 meses
+    preco: R$ 399,00/mês
+    condicoes: Matrícula única de R$ 120.
+  - nome: Fidelidade 6 meses
+    preco: R$ 499,00/mês
+    condicoes: Matrícula única de R$ 120.
+  - nome: Recorrência 12 meses
+    preco: R$ 599,00/mês
+    condicoes: Matrícula única de R$ 120.
+  abrangencia: rede
+  fonte: Site oficial da Ironberg (página de planos)
+  url: https://www.ironberg.com.br/planos.html
+  conferido_em: '2026-11-14'
+  aviso: O site informa que os valores valem para todas as unidades da rede. A aula avulsa é vendida só na recepção, com valor a consultar.
+site: https://www.ironberg.com.br/alphaville.html
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  fonte: Site oficial da Ironberg (página da unidade e página inicial)
+  url: https://www.ironberg.com.br/alphaville.html
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+- campos:
+  - mensalidade
+  fonte: Site oficial da Ironberg (página de planos)
+  url: https://www.ironberg.com.br/planos.html
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+- campos:
+  - geo
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/ironberg-alphaville/
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+divergencias:
+- 'Endereço: o site oficial informa Estrada da Aldeinha, 181, no Jardim Santa Cecília; o TotalPass usa o mesmo número, mas indica o bairro Alphaville Empresarial.'
+- 'Horário: o site oficial diz 24 horas, inclusive em feriados; o TotalPass mostra uma janela das 0h às 0h30, que parece erro de cadastro.'
+pendencias:
+- Valor da aula avulsa
+- Valor cobrado de personal trainer externo
+analise:
+- 'É, de longe, a maior academia do guia em área declarada: o site da rede fala em 32 mil m², com estacionamento gratuito para mais de mil carros, e a apresenta como o maior centro de treinamento de musculação do mundo. Fica na Estrada da Aldeinha, já fora dos bairros residenciais de Alphaville, com acesso pela rodovia.'
+- 'Funciona 24 horas, inclusive em feriados, segundo o site oficial. O foco é só musculação, sem grade de aulas coletivas. Os preços são os mesmos em todas as unidades da rede: R$ 399 por mês no plano de 12 meses, R$ 499 no de 6 meses e R$ 599 no recorrente, sempre com matrícula de R$ 120.'
+- 'Para quem treina com personal, a Ironberg é uma das poucas da região que publica a regra: personal externo pode atender no espaço pagando um valor fixo à academia, e não por aula ou por aluno. O valor é informado só na unidade.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-14'
+atualizado_em: '2026-11-14'

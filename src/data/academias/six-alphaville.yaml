@@ -1,0 +1,93 @@
+nome: SIX Alphaville
+regiao: alphaville
+bairro: 18 do Forte
+tipo: academia
+rede: SIX
+resumo: Wellness club de alto padrão no rooftop do 23º andar do Empresarial 18 do Forte, com musculação, aulas, spa e valet, inaugurado em outubro de 2026.
+endereco: Av. Copacabana, 325, 23º andar - Empresarial 18 do Forte, Barueri - SP, 06472-001
+geo:
+  lat: -23.486614
+  lng: -46.856577
+horario:
+  seg:
+  - 06:00-22:00
+  ter:
+  - 06:00-22:00
+  qua:
+  - 06:00-22:00
+  qui:
+  - 06:00-22:00
+  sex:
+  - 06:00-22:00
+  sab:
+  - 08:00-15:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+- danca
+- lutas
+- bike
+- pilates
+- yoga
+atividades_listadas:
+- Musculação
+- Personal trainer
+- Avaliação física
+- Ballet Fitness
+- Boxe
+- Spinning
+- Dança
+- Pilates
+- Hot Yoga
+- Spa
+- Recovery
+- Beleza (unha e cabelo)
+- Bar pré e pós-treino
+comodidades:
+- Valet gratuito para membros
+- Wi-Fi
+- Vestiário
+- Acessível
+- Spa e recovery
+- Salão de beleza
+- Bar
+agregadores: []
+mensalidade: null
+telefone: (11) 94025-9427
+site: https://sixwellnessclub.com/units/alphaville
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  fonte: Site oficial da SIX (página da unidade Alphaville)
+  url: https://sixwellnessclub.com/units/alphaville
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+- campos:
+  - geo
+  fonte: 'Localização aproximada: coordenadas do Empresarial 18 do Forte, tiradas da página da VoiFit, no mesmo conjunto, no Wellhub'
+  url: https://wellhub.com/pt-br/search/partners/voifit-academia-alphaville-empresarial-18-do-forte-barueri/
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+- campos:
+  - analise
+  fonte: Reportagem da Exame sobre a rede SIX, publicada em 17 de agosto de 2026
+  url: https://exame.com/negocios/como-e-treinar-na-academia-mais-cara-do-brasil-onde-a-mensalidade-chega-a-r-5-400/
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade atual, que a SIX não publica no site
+- 'Posição exata no mapa: a usada é a do conjunto Empresarial 18 do Forte'
+analise:
+- 'A SIX abriu em outubro de 2026 no rooftop do 23º andar do Empresarial 18 do Forte, com 1.500 m² e vista para Alphaville. Não é uma academia comum: além da musculação e das aulas de ballet fitness, boxe, spinning, dança, pilates e hot yoga, tem spa, recovery, salão de beleza, bar e valet gratuito para membros. Funciona das 6h às 22h em dias úteis, das 8h às 15h no sábado e das 8h às 14h no domingo.'
+- A rede não publica preço no site; a matrícula começa por uma visita agendada. Em reportagem da Exame de agosto de 2026, antes da inauguração, o cofundador citou o plano semestral de Alphaville em seis parcelas de R$ 3.900, mais adesão de R$ 600, e contratos de 15 meses vendidos na pré-venda a partir de R$ 2.200, com expectativa de cerca de R$ 2.700 na abertura. São valores informados à imprensa, não uma tabela oficial, e podem ter mudado. Mesmo assim, colocam a SIX muito acima de qualquer outra academia do guia.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-14'
+atualizado_em: '2026-11-14'

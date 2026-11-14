@@ -14,6 +14,10 @@ A pedido do responsável pelo projeto, o conteúdo foi marcado como publicado e 
 
 Build em modo de produção (`PUBLIC_INDEXAVEL=true`, sem conteúdo em revisão): 53 páginas, 52 no sitemap, 0 erros na auditoria. Navegador automatizado: 52 URLs com HTTP 200, sem rolagem horizontal em 390 px e 1280 px, sem erros de JavaScript.
 
+### 14 de novembro de 2026
+
+Três fichas novas, a pedido do responsável: **Ironberg Alphaville**, **NitroGym Tamboré** e **SIX Alphaville**, com dados dos sites oficiais. Ironberg e NitroGym publicam preço; a SIX não, e os valores citados na ficha vêm de reportagem da Exame, identificada como tal. A posição da SIX no mapa é a do conjunto Empresarial 18 do Forte, não a do prédio exato. A Bio Ritmo do Shopping Tamboré saiu da fila de pendências: a NitroGym ocupa o mesmo shopping, e a unidade da Bio Ritmo não foi encontrada ativa. Agora são 29 fichas.
+
 ### O que ainda impede o site de estar público
 
 1. ~~**Domínio.**~~ Resolvido em 13/11/2026: o site está no ar em https://guiafitnessalphaville.com.br. O DNS fica na HostGator, com registro A `76.76.21.21` e CNAME `www` → `cname.vercel-dns.com`, a mesma configuração do montinhopersonal.com.br. Os endereços mais novos da Vercel (`216.150.1.1` e `216.150.16.1`) não abriram na rede do responsável e foram trocados. O nome do site continua "Onde Treinar Alphaville".
