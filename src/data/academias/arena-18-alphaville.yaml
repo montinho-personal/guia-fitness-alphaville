@@ -1,0 +1,119 @@
+nome: Arena 18
+regiao: alphaville
+bairro: Melville Empresarial
+tipo: academia
+resumo: Academia e arena de esportes de areia na Rua Mario Quintana, com musculação, funcional, HIIT, beach tennis, futevôlei e vôlei no mesmo lugar.
+endereco: R. Mario Quintana, 144 - Melville Empresarial II, Barueri - SP, 06485-350
+geo:
+  lat: -23.483368
+  lng: -46.848814
+horario:
+  seg:
+  - 05:00-23:00
+  ter:
+  - 05:00-23:00
+  qua:
+  - 05:00-23:00
+  qui:
+  - 05:00-23:00
+  sex:
+  - 05:00-23:00
+  sab:
+  - 08:00-23:00
+  dom:
+  - 08:00-18:00
+modalidades:
+- musculacao
+- funcional
+- hiit
+- esportes-de-areia
+- lutas
+- bike
+- danca
+atividades_listadas:
+- Musculação
+- Método Five (Five Konzept)
+- HIIT Burn
+- Circuitos funcionais
+- Mobilidade
+- Bike
+- Power Bike
+- Fitness dance
+- Samba
+- Artes marciais
+- Beach tennis
+- Futevôlei
+- Vôlei
+comodidades:
+- Quadras de areia
+- Estacionamento
+- Estacionamento acessível
+- Sauna
+- Banho de gelo
+- Spa e massagem
+- Fisioterapeuta
+- Nutricionista
+- Personal trainer
+- Cafeteria
+- Área infantil
+- Espaço de coworking
+- Ar-condicionado
+- Vestiário com chuveiro
+- Toalhas de banho
+- Balança de bioimpedância
+- Itens de acessibilidade
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold
+  preco_plano: R$ 319,99
+  url: https://wellhub.com/pt-br/search/partners/arena18-academia-barueri/
+- nome: TotalPass
+  plano_minimo: TP 4
+  preco_plano: R$ 299,90
+  url: https://totalpass.com/br/academias/arena18-academia/
+mensalidade: null
+site: https://arena18.com.br/
+telefone: (11) 93419-1818
+montinho_atende: true
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  fonte: Site oficial da Arena 18
+  url: https://arena18.com.br/
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+- campos:
+  - geo
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/arena18-academia-barueri/
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+- campos:
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/arena18-academia/
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+divergencias:
+- 'Horário de sábado: até 23h no site oficial; até 18h no Wellhub e no TotalPass, que podem mostrar só a janela dos agregadores.'
+- 'Endereço: o TotalPass cita "Rua Mario Quintana, 144 ou 138, Melville Empresarial I e II"; o site oficial e o Wellhub, o número 144.'
+pendencias:
+- Mensalidade, que não é publicada
+- Valores e regras para reservar quadras de areia
+- Se as aulas exigem agendamento
+analise:
+- É a única academia deste guia que junta treino e esportes de areia no mesmo endereço. Além da sala de musculação e de um estúdio de funcional com HIIT, mobilidade e o método Five, a Arena 18 tem quadras de areia para beach tennis, futevôlei e vôlei.
+- 'A lista de estrutura informada ao Wellhub é das mais longas do guia: sauna, banho de gelo, spa e massagem, fisioterapeuta, nutricionista, cafeteria, área infantil e espaço de coworking, além de estacionamento. Funciona das 5h às 23h em dias úteis; no fim de semana o site oficial informa 8h às 23h no sábado e 8h às 18h no domingo, e os agregadores mostram o sábado só até as 18h.'
+- Fica na Rua Mario Quintana, no Melville Empresarial, ao norte de Alphaville. A academia não publica mensalidade. Pelos agregadores, entra a partir do plano Gold do Wellhub e do TP 4 do TotalPass, faixa das academias de padrão mais alto da região.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-14'
+atualizado_em: '2026-11-14'

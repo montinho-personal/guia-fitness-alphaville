@@ -59,6 +59,7 @@ export const MODALIDADES: Record<string, string> = {
   yoga: 'Yoga',
   corrida: 'Corrida',
   natacao: 'Natação',
+  'esportes-de-areia': 'Beach tennis e futevôlei',
 };
 export const TIPOS: Record<string, string> = { academia: 'Academia', box: 'Box', estudio: 'Estúdio' };
 

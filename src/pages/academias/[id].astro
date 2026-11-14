@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Selo from '../../components/Selo.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
+import Mantem from '../../components/Mantem.astro';
 import { academias, REGIOES, MODALIDADES, TIPOS, DIAS, DIAS_NOME, faixasDia, horarioResumo, e24h, conferidoEm, dataCurta, dataLonga, dataIso, nivelVerificacao, urlAcademia, urlRegiao, type Academia } from '../../lib/dados';
 
 export async function getStaticPaths() {
@@ -125,6 +126,7 @@ const eSite = d.site && !/instagram\.com/.test(d.site);
         )}
         <div class="caixa">
           <Selo texto={`${NIVEL[nivel]} em ${dataCurta(conf)}`} />
+          {d.montinho_atende && <p style="font-size:15px;margin-top:10px"><strong>Relação comercial:</strong> o Montinho Personal Trainer, que mantém este guia, atende alunos nesta academia.</p>}
           <p style="font-size:15px;margin-top:10px"><a href="/metodologia/">O que este selo significa</a></p>
         </div>
         <a class="btn sec" href={`/ferramentas/comparador/?a=${a.id}`}>Comparar com outra academia <i aria-hidden="true"></i></a>
@@ -133,6 +135,9 @@ const eSite = d.site && !/instagram\.com/.test(d.site);
     </div>
 
     <i data-dado="i" hidden></i>
+    {d.montinho_atende && (
+      <section class="bloco fino"><Mantem pagina={`ficha-${a.id}`} compacta titulo={`Treine na ${d.nome} com acompanhamento`} texto={`O Montinho Personal Trainer, que mantém este guia, atende alunos presencialmente na ${d.nome}. Este bloco é publicidade da casa; a ficha acima segue os mesmos critérios das demais.`} /></section>
+    )}
     <section class="bloco fino prosa" aria-labelledby="perto-t">
       <h2 id="perto-t">Outras opções em {regiao.titulo}</h2>
       <ul>{vizinhas.map((o) => <li><a href={urlAcademia(o)}>{o.data.nome}</a> — {o.data.bairro}</li>)}</ul>
