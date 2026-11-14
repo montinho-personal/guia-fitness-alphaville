@@ -1,0 +1,91 @@
+---
+import Base from '../../layouts/Base.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import { academias, e24h, abreDomingo, faixasDia, urlAcademia, REGIOES, dataLonga, dataIso, type Academia } from '../../lib/dados';
+
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-14'), atualizado: new Date('2026-11-14') };
+const todas = await academias();
+const min = (s: string) => { const [h, m] = s.split(':').map(Number); return h * 60 + m; };
+const ini = (a: Academia) => min(a.data.horario.dom[0].split('-')[0]);
+const fim = (a: Academia) => min(a.data.horario.dom[a.data.horario.dom.length - 1].split('-')[1]);
+const horasDom = (a: Academia) => a.data.horario.dom.reduce((t, f) => { const [x, y] = f.split('-'); return t + min(y) + (y === '23:59' ? 1 : 0) - min(x); }, 0) / 60;
+const fmtH = (n: number) => (Number.isInteger(n) ? `${n}h` : `${Math.floor(n)}h${String(Math.round((n % 1) * 60)).padStart(2, '0')}`);
+const abrem = todas.filter((a) => abreDomingo(a.data.horario)).sort((x, y) => horasDom(y) - horasDom(x) || x.data.nome.localeCompare(y.data.nome));
+const fechadas = todas.filter((a) => !abreDomingo(a.data.horario)).sort((x, y) => x.data.nome.localeCompare(y.data.nome));
+const diaTodo = abrem.filter((a) => e24h(a.data.horario));
+const academiasDom = abrem.filter((a) => a.data.tipo === 'academia' && !e24h(a.data.horario));
+const tarde = academiasDom.filter((a) => fim(a) > 14 * 60);
+const ate14 = academiasDom.filter((a) => fim(a) <= 14 * 60);
+const padrao = ate14.filter((a) => a.data.horario.dom.join() === '08:00-14:00');
+const cedo = academiasDom.filter((a) => ini(a) < 8 * 60);
+const boxes = abrem.filter((a) => a.data.tipo === 'box');
+const porRegiao = (Object.keys(REGIOES) as (keyof typeof REGIOES)[]).map((r) => ({ r, total: todas.filter((a) => a.data.regiao === r).length, dom: abrem.filter((a) => a.data.regiao === r).length }));
+const lista = (xs: Academia[]) => xs.map((a) => a.data.nome).join(', ').replace(/, ([^,]*)$/, ' e $1');
+const sep = (i: number, n: number) => (i === 0 ? '' : i === n - 1 ? ' e ' : ', ');
+const nitro = todas.find((a) => a.id === 'nitrogym-tambore');
+const fds = nitro?.data.mensalidade?.planos.find((p) => /fim de semana/i.test(p.nome));
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = 'Academia aberta domingo em Alphaville e Barueri';
+const descricao = 'Quais academias de Alphaville, Tamboré, Barueri e Santana de Parnaíba abrem aos domingos, em que horário, e quais ficam abertas depois das 14h.';
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Abertas no domingo', url: '/academias/domingo/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Guia de academias · horário</span>
+      <h1>Academias abertas no domingo em Alphaville e região</h1>
+      <p class="linha-fina">Domingo é o dia em que o horário das academias mais muda. Esta página mostra quem abre, até que horas, e onde treinar depois do almoço.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Das {todas.length} academias com ficha no guia, {abrem.length} têm horário publicado para domingo. {diaTodo.length > 0 && <>{diaTodo.length === 1 ? 'Uma funciona' : diaTodo.length === 2 ? 'Duas funcionam' : `Ao todo, ${diaTodo.length} funcionam`} o dia inteiro ({lista(diaTodo)}). </>}A maioria das demais abre só de manhã, e o horário mais comum é das 8h às 14h. Depois das 14h, além das 24 horas, só {tarde.length === 1 ? 'uma academia continua' : `${tarde.length} academias continuam`} aberta{tarde.length === 1 ? '' : 's'}: {lista(tarde)}.</p>
+    </div>
+
+    <div class="prosa">
+      {diaTodo.length > 0 && <>
+        <h2>Abertas o domingo inteiro</h2>
+        <p>{diaTodo.map((a, i) => <>{sep(i, diaTodo.length)}<a href={urlAcademia(a)}>{a.data.nome}</a></>)} {diaTodo.length === 1 ? 'tem' : 'têm'} horário publicado de 24 horas também no domingo. É a única opção para quem quer treinar no domingo à noite ou de madrugada. Mais detalhes em <a href="/academias/24-horas/">academias 24 horas</a>.</p>
+      </>}
+
+      <h2>Para treinar no domingo à tarde</h2>
+      <p>Fora as 24 horas, estas são as academias que seguem abertas depois das 14h:</p>
+      <ul>{tarde.map((a) => <li><a href={urlAcademia(a)}>{a.data.nome}</a> ({a.data.bairro}): {faixasDia(a.data.horario.dom)}.</li>)}</ul>
+      {fds && nitro && <p>A <a href={urlAcademia(nitro)}>{nitro.data.nome}</a> é a única do guia com um plano só para sábado e domingo, a {fds.preco.replace('/mês', '')} por mês, segundo o site oficial.</p>}
+
+      <h2>O padrão: das 8h às 14h</h2>
+      <p>Ao todo, {padrao.length} academias abrem exatamente das 8h às 14h no domingo, entre elas todas as unidades da Smart Fit da região. Quem treina no domingo depois do almoço precisa escolher outra academia ou trocar o dia.</p>
+      {cedo.length > 0 && <p>Para começar antes das 8h, além das 24 horas: {cedo.map((a, i) => <>{sep(i, cedo.length)}<a href={urlAcademia(a)}>{a.data.nome}</a></>)}.</p>}
+
+      {boxes.length > 0 && <>
+        <h2>Boxes de cross training</h2>
+        <p>{boxes.map((a, i) => <>{sep(i, boxes.length)}<a href={urlAcademia(a)}>{a.data.nome}</a></>)} {boxes.length === 1 ? 'lista' : 'listam'} só uma aula no domingo, das 9h às 10h30. Em box, o horário é de aula com turma, e não de salão aberto: chegue no início.</p>
+      </>}
+
+      <h2>Por região</h2>
+      <ul>{porRegiao.map(({ r, total, dom }) => <li><strong>{REGIOES[r].titulo}:</strong> {dom === 0 ? `nenhuma das ${total} academias com ficha tem horário de domingo publicado.` : `${dom} de ${total} academias abrem no domingo.`}</li>)}</ul>
+      <p>Quem mora em Santana de Parnaíba e quer treinar no domingo tende a ir para o lado de Alphaville ou do Tamboré. Veja as opções no <a href="/mapa/">mapa</a>.</p>
+
+      <h2>E nos feriados?</h2>
+      <p>As fontes consultadas raramente detalham o horário de feriado. A Ironberg informa que abre 24 horas inclusive em feriados, e a NitroGym informa para feriados o mesmo horário do fim de semana. Nas demais, confirme com a academia na véspera.</p>
+    </div>
+
+    <div class="rolagem" tabindex="0" role="region" aria-label="Horário de domingo de cada academia" style="margin:24px 0">
+      <table class="dados">
+        <caption>Horário de domingo publicado nas fontes de cada ficha. Ordenado pelo tempo de abertura no domingo.</caption>
+        <thead><tr><th scope="col">Academia</th><th scope="col">Região</th><th scope="col">Sábado</th><th scope="col">Domingo</th><th scope="col">Horas no domingo</th></tr></thead>
+        <tbody>{abrem.map((a) => <tr><th scope="row"><a href={urlAcademia(a)}>{a.data.nome}</a></th><td>{REGIOES[a.data.regiao].nome}</td><td>{faixasDia(a.data.horario.sab)}</td><td>{faixasDia(a.data.horario.dom)}</td><td>{fmtH(horasDom(a))}</td></tr>)}</tbody>
+      </table>
+    </div>
+
+    <div class="prosa">
+      <h2>Sem horário de domingo na fonte</h2>
+      <p>Estas {fechadas.length} academias não têm horário de domingo nas fontes consultadas, o que em geral significa que fecham: {fechadas.map((a, i) => <>{sep(i, fechadas.length)}<a href={urlAcademia(a)}>{a.data.nome}</a></>)}. Se alguma delas abrir, <a href="/correcoes/">avise o guia</a>.</p>
+      <p>Para cruzar o domingo com outros critérios, use o filtro "Aberta aos domingos" no <a href="/academias/">guia de academias</a>.</p>
+    </div>
+
+    <div style="margin-top:28px"><Fontes fontes={abrem.flatMap((a) => a.data.proveniencia.filter((p) => p.campos.includes('horario')).map((p) => ({ titulo: `${p.fonte} — ${a.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })))} /></div>
+  </div>
+</Base>

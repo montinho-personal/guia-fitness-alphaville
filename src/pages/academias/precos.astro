@@ -20,6 +20,9 @@ const semPreco = todas.filter((a) => !a.data.mensalidade).sort((x, y) => {
 const sf = comPreco.filter((a) => a.data.rede === 'Smart Fit');
 const academiasComPreco = comPreco.filter((a) => a.data.tipo === 'academia');
 const box = comPreco.find((a) => a.data.tipo === 'box');
+const maisBarata = academiasComPreco[0];
+const maisBarataUnidade = academiasComPreco.find((a) => a.data.mensalidade!.abrangencia === 'unidade');
+const empatadas = maisBarataUnidade ? academiasComPreco.filter((a) => a.data.mensalidade!.abrangencia === 'unidade' && menor(a) === menor(maisBarataUnidade)) : [];
 const EXAME = 'https://exame.com/negocios/como-e-treinar-na-academia-mais-cara-do-brasil-onde-a-mensalidade-chega-a-r-5-400/';
 const brl = (v: number) => `R$ ${v.toFixed(2).replace('.', ',')}`;
 const precoPlano = (p: string) => planos.wellhub.planos.find(([n]) => n === p)?.[1];
@@ -85,6 +88,11 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
     </div>
 
     <div class="prosa">
+      <h2>Qual a academia mais barata de Alphaville e Barueri?</h2>
+      <p>Pelos preços publicados, a mensalidade de entrada mais baixa é a da <a href={urlAcademia(maisBarata)}>{maisBarata.data.nome}</a>: {brl(menor(maisBarata))} por mês, com fidelidade.{maisBarata.data.mensalidade!.abrangencia === 'rede' && <> É o preço anunciado pela rede para todas as unidades; o guia ainda não confirmou se esta unidade cobra o mesmo.</>}</p>
+      {maisBarataUnidade && maisBarataUnidade.id !== maisBarata.id && <p>Com preço publicado especificamente para a unidade, {empatadas.length > 1 ? <>as mais baratas são {empatadas.map((a, i) => <>{i > 0 && (i === empatadas.length - 1 ? ' e ' : ', ')}<a href={urlAcademia(a)}>{a.data.nome}</a></>)}, todas</> : <>a mais barata é a <a href={urlAcademia(maisBarataUnidade)}>{maisBarataUnidade.data.nome}</a>,</>} a {brl(menor(maisBarataUnidade))} por mês.</p>}
+      <p>Em Alphaville, nenhuma academia publica preço abaixo da Smart Fit. Muitas academias de bairro de Barueri e Santana de Parnaíba não divulgam valores e podem cobrar menos; nelas, o plano mínimo do agregador, na tabela acima, é a melhor pista.</p>
+
       <h2>Qual a academia mais cara de Alphaville?</h2>
       <p>Pelos valores conhecidos, é a <a href="/academias/six-alphaville/">SIX Alphaville</a>, no 23º andar do Empresarial 18 do Forte. Ela não publica preço no site, mas, em reportagem da Exame de agosto de 2026, o cofundador citou o plano semestral de Alphaville em seis parcelas de R$ 3.900, mais adesão de R$ 600. É um valor dado à imprensa antes da inauguração, e não uma tabela oficial, mas é cerca de dez vezes o preço das academias mais caras que publicam tabela.</p>
       <p>Entre as que publicam preço, as mais caras são a <a href="/academias/nitrogym-tambore/">NitroGym Tamboré</a> (R$ 589 no plano mensal, R$ 389 no anual) e a <a href="/academias/ironberg-alphaville/">Ironberg Alphaville</a> (R$ 599 no recorrente, R$ 399 no de 12 meses). Para as academias sem preço publicado, o plano exigido pelo Wellhub dá uma pista: {gold.map((a) => a.data.nome).join(', ').replace(/, ([^,]*)$/, ' e $1')} só entram a partir do Gold (R$ {precoPlano('Gold')}) ou do Gold+ (R$ {precoPlano('Gold+')}).</p>
