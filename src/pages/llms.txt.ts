@@ -12,6 +12,7 @@ export const GET: APIRoute = async ({ site }) => {
 - [Academias, com filtros](${u('/academias/')}): ${as.length} fichas
 - [Quanto custa academia em Alphaville e Barueri](${u('/academias/precos/')})
 - [Smart Fit ou Gaviões em Alphaville](${u('/guias/smart-fit-ou-gavioes/')})
+- [Ironberg ou NitroGym em Alphaville](${u('/guias/ironberg-ou-nitrogym/')})
 - [Academias 24 horas e de horário estendido](${u('/academias/24-horas/')})
 - [Academias com Wellhub e TotalPass](${u('/academias/wellhub-totalpass/')})
 ${Object.entries(REGIOES).map(([id, r]) => `- [Onde treinar em ${r.titulo}](${u(`/regioes/${id}/`)})`).join('\n')}

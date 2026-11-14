@@ -74,7 +74,7 @@ export function hora(hhmm: string): string {
   const [h, m] = hhmm.split(':').map(Number);
   return m ? `${h}h${String(m).padStart(2, '0')}` : `${h}h`;
 }
-export const faixa = (f: string) => { const [a, b] = f.split('-'); return a === '00:00' && b === '23:59' ? '24 horas' : `${hora(a)} às ${hora(b)}`; };
+export const faixa = (f: string) => { const [a, b] = f.split('-'); return a === '00:00' && b === '23:59' ? '24 horas' : `${hora(a)} ${b === '23:59' ? 'à' : 'às'} ${hora(b)}`; };
 export const faixasDia = (fs: string[]) => (fs.length ? fs.map(faixa).join(' e ') : 'sem horário listado');
 
 /** Aberta 24 horas nos sete dias, segundo o horário publicado. */
