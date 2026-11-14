@@ -5,6 +5,7 @@ import Assinatura from './Assinatura.astro';
 import Fontes from './Fontes.astro';
 import Mantem from './Mantem.astro';
 import CartaoAcademia from './CartaoAcademia.astro';
+import VideoMontinho from './VideoMontinho.astro';
 import { academias, dataIso, dataLonga, type Guia } from '../lib/dados';
 interface Props { g: Guia }
 const { g } = Astro.props;
@@ -15,7 +16,8 @@ const url = `${SECAO.url}${g.id}/`;
 const todas = await academias();
 const lista = d.lista_ids.length ? d.lista_ids.map((id) => { const a = todas.find((x) => x.id === id); if (!a) throw new Error(`lista_ids: ficha ${id} não existe`); return a; }) : todas.filter((a) => (d.lista_modalidades.length && d.lista_modalidades.some((m) => a.data.modalidades.includes(m))) || (d.lista_tipos.length && d.lista_tipos.includes(a.data.tipo)));
 const abs = (u: string) => new URL(u, Astro.site).href;
-const schema = [{ '@type': 'Article', headline: d.h1, description: d.descricao, inLanguage: 'pt-BR', datePublished: dataIso(d.publicado_em), dateModified: dataIso(d.atualizado_em), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') }, mainEntityOfPage: { '@id': `${abs(url)}#pagina` } }];
+const video = d.video ? [{ '@type': 'VideoObject', name: d.video.titulo, description: `${d.video.titulo} — vídeo do Montinho Personal Trainer.`, uploadDate: dataIso(d.video.publicado_em), thumbnailUrl: `https://i.ytimg.com/vi/${d.video.id}/hqdefault.jpg`, embedUrl: `https://www.youtube-nocookie.com/embed/${d.video.id}`, contentUrl: `https://www.youtube.com/shorts/${d.video.id}` }] : [];
+const schema = [...video, { '@type': 'Article', headline: d.h1, description: d.descricao, inLanguage: 'pt-BR', datePublished: dataIso(d.publicado_em), dateModified: dataIso(d.atualizado_em), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') }, mainEntityOfPage: { '@id': `${abs(url)}#pagina` } }];
 ---
 <Base titulo={d.titulo} descricao={d.descricao} tipo="article" schema={schema} migalhas={[SECAO, { nome: d.h1.split(':')[0], url }]}>
   <div class="wrap">
@@ -34,6 +36,7 @@ const schema = [{ '@type': 'Article', headline: d.h1, description: d.descricao, 
       </section>
     )}
 
+    {d.video && <VideoMontinho id={d.video.id} titulo={d.video.titulo} pagina={`guia-${g.id}`} />}
     {d.cta === 'montinho-contextual' && (
       <section class="bloco fino"><Mantem pagina={`guia-${g.id}`} compacta destino={d.cta_destino} titulo={d.cta_titulo ?? 'Como funciona o acompanhamento presencial do Montinho'} texto={d.cta_texto ?? 'Se você concluiu que quer treinar com acompanhamento, o Montinho Personal Trainer atende em academias e condomínios de Alphaville, Tamboré, Barueri e Santana de Parnaíba. A primeira conversa serve para entender sua rotina e seu objetivo.'} /></section>
     )}

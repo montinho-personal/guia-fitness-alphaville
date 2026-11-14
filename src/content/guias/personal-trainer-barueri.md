@@ -8,6 +8,10 @@ secao: guias
 palavra_chave: personal trainer barueri
 intencao: Comercial local. Morador ou trabalhador de Barueri procurando acompanhamento com custo controlado.
 cta: montinho-contextual
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
+  publicado_em: 2026-09-25
 cta_titulo: "Treinar com o Montinho em Barueri"
 cta_texto: "O Montinho Personal Trainer, que mantém este guia, atende em Barueri em casa, no espaço fitness do condomínio, na Arena 18 e, quando a regra do local permite, em outras academias."
 cta_destino: /personal-trainer-barueri
