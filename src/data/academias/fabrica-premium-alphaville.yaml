@@ -1,0 +1,87 @@
+nome: Fábrica Premium Alphaville
+regiao: santana-de-parnaiba
+bairro: Alphaville (Estrada da Bela Vista)
+tipo: academia
+resumo: Academia premium na Estrada da Bela Vista, do lado de Santana de Parnaíba, com musculação, funcional, bike indoor, rooftop com pista de corrida, crioterapia e valet.
+endereco: Estrada da Bela Vista, 1332 - Alphaville, Santana de Parnaíba - SP
+geo:
+  lat: -23.454826
+  lng: -46.893463
+horario:
+  seg:
+  - 06:00-23:00
+  ter:
+  - 06:00-23:00
+  qua:
+  - 06:00-23:00
+  qui:
+  - 06:00-23:00
+  sex:
+  - 06:00-23:00
+  sab:
+  - 08:00-16:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+- funcional
+- bike
+- corrida
+atividades_listadas:
+- Musculação orientada
+- Treinamento funcional
+- Bike (spinning) gamificada
+- Pista de corrida no rooftop
+- Crioterapia
+- Medicina integrativa
+comodidades:
+- Valet
+- Carregador para carro elétrico
+- Concierge
+- Rooftop com pista de corrida
+- Banheira de gelo (crioterapia)
+- Nutricionista e nutrólogo
+- Massagem e estética corporal
+- Salão de beleza
+- Toalhas geladas
+- Estação para carregar celular
+- Produtos Keune nos vestiários
+- Loja de suplementos e acessórios
+- Café no rooftop
+agregadores: []
+mensalidade: null
+site: https://fabricapremiumalphaville.com.br/
+telefone: (11) 99179-5668
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  fonte: Site oficial da Fábrica Premium Alphaville
+  url: https://fabricapremiumalphaville.com.br/
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+- campos:
+  - geo
+  fonte: OpenStreetMap, trecho da Estrada Municipal Bela Vista em frente ao Residencial Burle Marx (posição aproximada; o site informa que a academia fica quase em frente ao condomínio)
+  url: https://www.openstreetmap.org/#map=17/-23.45483/-46.89346
+  conferido_em: '2026-11-14'
+  nivel: fonte-publica
+divergencias: []
+pendencias:
+- Mensalidade (o site direciona os planos para o WhatsApp)
+- Se aceita Wellhub ou TotalPass (não encontrada nas buscas do guia)
+- Regras para personal trainer externo
+- Posição exata no mapa e CEP
+analise:
+- 'Fica na Estrada da Bela Vista, no lado de Alphaville que pertence a Santana de Parnaíba, quase em frente ao Condomínio Burle Marx. É a primeira academia deste guia nesse trecho, onde até agora quem morava nos residenciais precisava atravessar para o lado de Barueri para treinar. Sites locais a associam à rede Fábrica de Monstros, mas o site da unidade não cita a marca.'
+- 'A proposta é de academia de alto padrão: o site fala em valet, carregador para carro elétrico, concierge, banheira de gelo, nutricionista e nutrólogo, salão de beleza e café no rooftop, onde fica também uma pista de corrida. Na parte de treino, lista musculação orientada com aparelhos Real Leader, treinamento funcional e uma sala de bike indoor gamificada.'
+- 'Abre das 6h às 23h nos dias úteis, das 8h às 16h no sábado e das 8h às 14h aos domingos e feriados. Não publica mensalidade: o botão de planos leva ao WhatsApp. Também não a encontramos no Wellhub nem no TotalPass. Para saber o custo, é preciso pedir à academia.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-14'
+atualizado_em: '2026-11-14'

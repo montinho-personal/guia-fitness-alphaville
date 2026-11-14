@@ -39,7 +39,7 @@ export const REGIOES = {
   'santana-de-parnaiba': {
     nome: 'Santana de Parnaíba',
     titulo: 'Santana de Parnaíba',
-    descricao: 'Fazendinha, Polvilho e Jardim São Luís.',
+    descricao: 'Fazendinha, Polvilho, Jardim São Luís e o lado de Alphaville na Estrada da Bela Vista.',
   },
 } as const;
 export type RegiaoId = keyof typeof REGIOES;

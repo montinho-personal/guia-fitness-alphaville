@@ -65,8 +65,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       </>}
 
       <h2>Por região</h2>
-      <ul>{porRegiao.map(({ r, total, dom }) => <li><strong>{REGIOES[r].titulo}:</strong> {dom === 0 ? `nenhuma das ${total} academias com ficha tem horário de domingo publicado.` : `${dom} de ${total} academias abrem no domingo.`}</li>)}</ul>
-      <p>Quem mora em Santana de Parnaíba e quer treinar no domingo tende a ir para o lado de Alphaville ou do Tamboré. Veja as opções no <a href="/mapa/">mapa</a>.</p>
+      <ul>{porRegiao.map(({ r, total, dom }) => <li><strong>{REGIOES[r].titulo}:</strong> {dom === 0 ? `nenhuma das ${total} academias com ficha tem horário de domingo publicado.` : `${dom} de ${total} academias ${dom === 1 ? 'abre' : 'abrem'} no domingo.`}</li>)}</ul>
+      <p>Em Santana de Parnaíba, as academias de bairro fecham no domingo; quem mora lá costuma treinar do lado de Alphaville ou do Tamboré. Veja as opções no <a href="/mapa/">mapa</a>.</p>
 
       <h2>E nos feriados?</h2>
       <p>As fontes consultadas raramente detalham o horário de feriado. A Ironberg informa que abre 24 horas inclusive em feriados, e a NitroGym informa para feriados o mesmo horário do fim de semana. Nas demais, confirme com a academia na véspera.</p>

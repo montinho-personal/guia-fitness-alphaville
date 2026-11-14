@@ -111,21 +111,22 @@ const schema = [
     {regiao === 'santana-de-parnaiba' && (
       <>
         <div class="resposta"><span class="rotulo">Em resumo</span>
-          <p>Santana de Parnaíba tem {xs.length} academias com ficha, todas independentes e em bairros diferentes: {bairros.map((b) => b.b).join(', ').replace(/, ([^,]*)$/, ' e $1')}. Nenhuma lista horário aos domingos. Em linha reta, a distância entre elas vai de {fmt(distMin)} a {fmt(distMax)} km, então a escolha aqui é, antes de tudo, pelo bairro.</p>
+          <p>Santana de Parnaíba tem {xs.length} academias com ficha, cada uma em um bairro: {bairros.map((b) => b.b).join(', ').replace(/, ([^,]*)$/, ' e $1')}. Só a Fábrica Premium, do lado de Alphaville, abre aos domingos. Em linha reta, a distância entre elas vai de {fmt(distMin)} a {fmt(distMax)} km, então a escolha aqui é, antes de tudo, pelo bairro.</p>
         </div>
         <div class="prosa">
           <h2>Uma academia por bairro</h2>
           <p>Diferente de Alphaville, onde várias academias dividem a mesma avenida, as opções de Santana de Parnaíba estão espalhadas pelo município.</p>
           <ul>
+            <li><strong>Lado de Alphaville:</strong> a <a href="/academias/fabrica-premium-alphaville/">Fábrica Premium Alphaville</a>, na Estrada da Bela Vista, quase em frente ao Condomínio Burle Marx, é a opção de alto padrão do município, com valet, rooftop com pista de corrida e crioterapia. Não publica preço.</li>
             <li><strong>Fazendinha:</strong> a <a href="/academias/mattos-fitness-fazendinha/">Academia Mattos Fitness</a>, na Estrada Tenente Marques, abre às 4h em dias úteis e tem lutas além da musculação.</li>
             <li><strong>Polvilho:</strong> a <a href="/academias/olympia-fitness-polvilho/">Olympia Fitness</a>, na Rua Tocantins, fecha das 12h às 14h. Quem treina no almoço precisa saber disso antes.</li>
             <li><strong>Jardim São Luís:</strong> a <a href="/academias/forth-academia-jardim-sao-luis/">Forth Academia</a> fica aberta até a meia-noite de segunda a sexta e lista pilates e funcional.</li>
           </ul>
           <h2>Domingo e agregadores</h2>
-          <p>Nenhuma das três tem horário listado para domingo, e no sábado todas fecham até as 15h. Quem só consegue treinar no fim de semana encontra mais opções nas redes de <a href="/regioes/barueri/">Barueri</a> e de <a href="/regioes/alphaville/">Alphaville</a>, que abrem nos dois dias.</p>
-          <p>As três estão no Wellhub em planos de entrada: Basic para a Mattos e a Olympia, Basic+ para a Forth. É a faixa de entrada mais baixa do guia, a mesma da Panobianco de Barueri. O que cada plano custa está em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
+          <p>A Fábrica Premium abre das 8h às 14h aos domingos e feriados. As academias da Fazendinha, do Polvilho e do Jardim São Luís não têm horário listado para domingo, e no sábado fecham até as 15h. Quem treina no fim de semana encontra mais opções nas redes de <a href="/regioes/barueri/">Barueri</a> e de <a href="/regioes/alphaville/">Alphaville</a>. Veja todas em <a href="/academias/domingo/">academias abertas no domingo</a>.</p>
+          <p>As três academias de bairro estão no Wellhub em planos de entrada: Basic para a Mattos e a Olympia, Basic+ para a Forth. É a faixa de entrada mais baixa do guia, a mesma da Panobianco de Barueri. O que cada plano custa está em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
           <h2>O que falta aqui</h2>
-          <p>Este recorte é pequeno. Faltam o centro histórico, os residenciais do lado de Alphaville e a Aldeia da Serra. Se você conhece uma academia desses bairros, <a href="/correcoes/">envie os dados</a> para que ela entre no guia.</p>
+          <p>Este recorte é pequeno. Faltam o centro histórico, outros trechos do lado de Alphaville e a Aldeia da Serra. Se você conhece uma academia desses bairros, <a href="/correcoes/">envie os dados</a> para que ela entre no guia.</p>
         </div>
       </>
     )}
