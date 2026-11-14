@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import planos from '../../data/planos-agregadores.json';
 import { academias, agregador, ORDEM_WELLHUB, urlAcademia, REGIOES, dataLonga, dataIso } from '../../lib/dados';
 
@@ -60,6 +61,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <p>Depende de quanto custa a mensalidade direta, que a maioria das academias da região não publica. A conta só fecha com os dois números na mão: o que o agregador desconta do seu salário e o que a academia cobraria de você. Peça o valor do plano direto na recepção e compare. Se você pretende frequentar mais de um lugar — musculação em uma academia e CrossFit em um <a href="/modalidades/crossfit/">box</a>, por exemplo —, o agregador tende a compensar mais.</p>
       <p>Para filtrar o guia por agregador, use <a href="/academias/?filtro=wellhub">academias no Wellhub</a> ou <a href="/academias/?filtro=totalpass">academias no TotalPass</a>.</p>
     </div>
+    <VideoMontinho id="yndKE1GrnUQ" titulo="Toda pessoa com shape tem uma coisa em comum" pagina="wellhub-totalpass" />
     <div style="margin-top:28px"><Fontes fontes={[{ titulo: planos.wellhub.fonte, url: planos.wellhub.url, data: dataLonga(conf) }, { titulo: planos.totalpass.fonte, url: planos.totalpass.url, data: dataLonga(conf) }, { titulo: 'Página de cada unidade nos dois agregadores, listada na respectiva ficha' }]} /></div>
   </div>
 </Base>

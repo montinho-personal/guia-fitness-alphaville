@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import { academias, e24h, abreDomingo, faixasDia, urlAcademia, REGIOES, dataLonga, dataIso, type Academia } from '../../lib/dados';
 
 const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-14'), atualizado: new Date('2026-11-14') };
@@ -86,6 +87,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <p>Para cruzar o domingo com outros critérios, use o filtro "Aberta aos domingos" no <a href="/academias/">guia de academias</a>.</p>
     </div>
 
+    <VideoMontinho id="DiH1OzIR6Yk" titulo="É impossível isso dar errado" pagina="domingo" />
     <div style="margin-top:28px"><Fontes fontes={abrem.flatMap((a) => a.data.proveniencia.filter((p) => p.campos.includes('horario')).map((p) => ({ titulo: `${p.fonte} — ${a.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })))} /></div>
   </div>
 </Base>

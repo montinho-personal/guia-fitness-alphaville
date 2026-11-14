@@ -13,6 +13,9 @@ fontes:
     url: "https://www.who.int/publications/i/item/9789240015128"
   - titulo: "Páginas das unidades no Wellhub e no TotalPass, listadas em cada ficha"
     url: "https://wellhub.com/pt-br/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
