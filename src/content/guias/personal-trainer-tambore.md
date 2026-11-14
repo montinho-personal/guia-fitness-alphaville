@@ -8,6 +8,10 @@ secao: guias
 palavra_chave: personal trainer tamboré
 intencao: Comercial local. Morador do Tamboré procurando acompanhamento perto de casa.
 cta: montinho-contextual
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
+  publicado_em: 2026-09-25
 cta_titulo: "Treinar com o Montinho no Tamboré"
 cta_texto: "O Montinho Personal Trainer, que mantém este guia, atende moradores do Tamboré em casa e no espaço fitness do condomínio, além da Arena 18."
 cta_destino: /personal-trainer-tambore

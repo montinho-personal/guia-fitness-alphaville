@@ -1,0 +1,43 @@
+---
+// Vídeo do Montinho (YouTube). Só carrega o player depois do clique: antes disso,
+// nenhuma requisição vai ao YouTube. Usa o domínio youtube-nocookie.
+interface Props { id: string; titulo: string; pagina: string }
+const { id, titulo, pagina } = Astro.props;
+---
+<aside class="video-montinho" aria-label="Vídeo do Montinho">
+  <span class="rotulo cor-marca">Vídeo do Montinho · publicidade da casa</span>
+  <h2>{titulo}</h2>
+  <div class="video-caixa" data-video={id}>
+    <button type="button" class="video-play" data-evento="video_montinho" data-ref={pagina} aria-label={`Assistir: ${titulo}`}>
+      <span class="video-icone" aria-hidden="true">▶</span>
+      <span>Assistir ao vídeo</span>
+      <small>Ao clicar, o vídeo é carregado do YouTube.</small>
+    </button>
+  </div>
+  <p class="video-link"><a href={`https://www.youtube.com/shorts/${id}`} rel="nofollow noopener" target="_blank">Ver no YouTube</a></p>
+</aside>
+<style>
+  .video-montinho { margin-top: 28px; padding: 22px; border: 1px solid var(--linha, #d8dee8); border-radius: 14px; }
+  .video-montinho h2 { font-size: 21px; margin: 6px 0 14px; }
+  .video-caixa { width: 100%; max-width: 340px; aspect-ratio: 9 / 16; border-radius: 12px; overflow: hidden; background: #101B2D; }
+  .video-caixa iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .video-play { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(160deg, #1B4F9C, #101B2D); color: #fff; border: 0; cursor: pointer; font: inherit; font-weight: 700; padding: 20px; text-align: center; }
+  .video-play small { font-weight: 400; opacity: .8; font-size: 13px; }
+  .video-icone { width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,.15); display: grid; place-items: center; font-size: 26px; padding-left: 4px; }
+  .video-link { margin-top: 10px; font-size: 15px; }
+</style>
+<script is:inline>
+  document.querySelectorAll('.video-caixa[data-video]').forEach((c) => {
+    const b = c.querySelector('.video-play');
+    if (!b || b.dataset.ligado) return;
+    b.dataset.ligado = '1';
+    b.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = `https://www.youtube-nocookie.com/embed/${c.dataset.video}?autoplay=1&playsinline=1&rel=0`;
+      f.title = b.getAttribute('aria-label') || 'Vídeo';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      c.replaceChildren(f);
+    });
+  });
+</script>

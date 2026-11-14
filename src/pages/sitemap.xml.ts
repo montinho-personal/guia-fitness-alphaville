@@ -18,6 +18,7 @@ export const GET: APIRoute = async ({ site }) => {
     ['/modalidades/', ultAcad], ['/guias/', ultGuia],
     ...gs.map((g) => [`/${g.data.secao}/${g.id}/`, dataIso(g.data.atualizado_em)] as [string, string]),
     ['/guias/smart-fit-ou-gavioes/', ultAcad],
+    ['/guias/ironberg-ou-nitrogym/', ultAcad],
     ['/ferramentas/', FIXAS], ['/ferramentas/comparador/', ultAcad], ['/ferramentas/qual-academia/', ultAcad], ['/ferramentas/checklist/', FIXAS], ['/mapa/', ultAcad],
     ['/sobre/', FIXAS], ['/metodologia/', FIXAS], ['/politica-editorial/', FIXAS], ['/correcoes/', FIXAS], ['/privacidade/', FIXAS],
   ];

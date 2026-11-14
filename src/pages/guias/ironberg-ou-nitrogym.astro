@@ -1,0 +1,107 @@
+---
+import Base from '../../layouts/Base.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import CartaoAcademia from '../../components/CartaoAcademia.astro';
+import { academias, agregador, urlAcademia, dataLonga, dataIso, horasSemana } from '../../lib/dados';
+
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-14'), atualizado: new Date('2026-11-14') };
+const todas = await academias();
+const ib = todas.find((a) => a.id === 'ironberg-alphaville')!;
+const ng = todas.find((a) => a.id === 'nitrogym-tambore')!;
+const km = (() => { const R = 6371, rad = (x: number) => (x * Math.PI) / 180, a = ib.data.geo, b = ng.data.geo; const dLa = rad(b.lat - a.lat), dLo = rad(b.lng - a.lng); const h = Math.sin(dLa / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLo / 2) ** 2; return (2 * R * Math.asin(Math.sqrt(h))).toFixed(1).replace('.', ','); })();
+const brl = (n: number) => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 0 });
+// Custo do primeiro ano e do primeiro semestre, com os preços publicados (matrícula da Ironberg incluída)
+const ano = { ib: 399 * 12 + 120, ng: 389 * 12 };
+const sem = { ib: 499 * 6 + 120, ng: 489 * 6 };
+const tpIb = agregador(ib, 'TotalPass')!, tpNg = agregador(ng, 'TotalPass')!;
+const linhas: [string, string, string][] = [
+  ['Onde fica', 'Estrada da Aldeinha, 181 (Jardim Santa Cecília)', 'Avenida Piracema, 669, no Shopping Tamboré'],
+  ['Horário', '24 horas, todos os dias, inclusive feriados', 'Seg a sex, 5h à meia-noite · sáb, dom e feriados, 6h às 22h'],
+  ['Horas abertas por semana', String(horasSemana(ib.data.horario)), String(horasSemana(ng.data.horario))],
+  ['Plano de 12 meses', 'R$ 399/mês + matrícula de R$ 120', 'R$ 389/mês, com acesso a duas unidades'],
+  ['Plano de 6 meses', 'R$ 499/mês + matrícula de R$ 120', 'R$ 489/mês'],
+  ['Sem fidelidade', 'R$ 599/mês (recorrência) + matrícula de R$ 120', 'R$ 589/mês'],
+  ['Diária', 'Vendida na recepção, valor não publicado', 'R$ 90'],
+  ['Só fim de semana', 'Não há plano publicado', 'R$ 289/mês'],
+  ['Estacionamento', 'Gratuito, mais de 1.000 vagas', 'Do shopping, incluso por até 3 horas'],
+  ['TotalPass', `a partir do ${tpIb.plano_minimo} (${tpIb.preco_plano})`, `a partir do ${tpNg.plano_minimo} (${tpNg.preco_plano})`],
+  ['Wellhub', 'Não consta', 'Não consta'],
+  ['Personal de fora', 'Aceito, com valor fixo pago à academia (valor só na unidade)', 'Regra não publicada'],
+];
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = 'Ironberg ou NitroGym em Alphaville: qual escolher';
+const descricao = 'Ironberg Alphaville ou NitroGym Tamboré: preço publicado, custo do primeiro ano, horário, estacionamento, TotalPass e regra para personal, lado a lado.';
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Ironberg ou NitroGym', url: '/guias/ironberg-ou-nitrogym/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Guias de decisão · comparativo</span>
+      <h1>Ironberg ou NitroGym em Alphaville: qual escolher</h1>
+      <p class="linha-fina">São duas academias premium de musculação que publicam preço no site oficial, e ficam a cerca de {km} km uma da outra em linha reta. Nenhuma das duas lista aulas coletivas: a escolha é entre dois salões de musculação com propostas diferentes de espaço, horário e acesso.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>No preço mensal, as duas quase empatam: R$ 399 na Ironberg e R$ 389 na NitroGym no plano de 12 meses. A Ironberg ganha em horário (24 horas, todos os dias), em espaço e em estacionamento gratuito sem limite de tempo, e publica a regra para personal de fora. A NitroGym ganha em flexibilidade: tem diária de R$ 90, plano só de fim de semana fica dentro do Shopping Tamboré e não menciona matrícula na tabela publicada.</p>
+    </div>
+
+    <div class="rolagem" tabindex="0" role="region" aria-label="Ironberg e NitroGym lado a lado" style="margin:24px 0">
+      <table class="dados">
+        <caption>Dados das fichas do guia, conferidos nos sites oficiais e no TotalPass em {dataLonga(ng.data.atualizado_em)}. Abra cada ficha para ver as fontes.</caption>
+        <thead><tr><th scope="col">Critério</th><th scope="col"><a href={urlAcademia(ib)} style="color:inherit">{ib.data.nome}</a></th><th scope="col"><a href={urlAcademia(ng)} style="color:inherit">{ng.data.nome}</a></th></tr></thead>
+        <tbody>{linhas.map(([c, a, b]) => <tr><th scope="row">{c}</th><td>{a}</td><td>{b}</td></tr>)}</tbody>
+      </table>
+    </div>
+
+    <div class="prosa">
+      <h2>Quanto custa o primeiro ano</h2>
+      <p>Comparar só a mensalidade esconde a matrícula. Somando tudo com os preços publicados:</p>
+      <ul>
+        <li><strong>12 meses:</strong> {brl(ano.ib)} na Ironberg (12 × R$ 399 + R$ 120) contra {brl(ano.ng)} na NitroGym (12 × R$ 389). Diferença de {brl(ano.ib - ano.ng)} no ano, ou cerca de R$ 20 por mês.</li>
+        <li><strong>6 meses:</strong> {brl(sem.ib)} na Ironberg contra {brl(sem.ng)} na NitroGym.</li>
+      </ul>
+      <p>A página da NitroGym não menciona taxa de matrícula. Confirme na recepção antes de assinar: se houver, a diferença diminui ou some.</p>
+
+      <h2>Horário: 24 horas contra 5h à meia-noite</h2>
+      <p>A Ironberg não fecha, nem em feriado, segundo o site da rede. São {horasSemana(ib.data.horario)} horas por semana. A NitroGym abre às 5h e fecha à meia-noite nos dias úteis, e funciona das 6h às 22h no fim de semana, o que soma {horasSemana(ng.data.horario)} horas. Para quase todo mundo, as duas cobrem a rotina. A diferença só pesa para quem treina de madrugada ou depois das 22h no sábado e no domingo.</p>
+
+      <h2>Espaço e estacionamento</h2>
+      <p>A Ironberg declara 32 mil m² e mais de mil vagas gratuitas. É um centro de treinamento isolado, com acesso pela Estrada da Aldeinha: você vai até lá de propósito. A NitroGym fica dentro do Shopping Tamboré, com o estacionamento do shopping incluído por até 3 horas em todos os planos. Dá para treinar e resolver outra coisa no shopping na mesma ida. Passou das 3 horas, vale a tarifa do shopping.</p>
+
+      <h2>Flexibilidade: aqui a NitroGym sai na frente</h2>
+      <p>A NitroGym publica uma diária de R$ 90 e um plano só para sábado e domingo, a R$ 289 por mês. Serve para quem quer conhecer o espaço antes de assinar, para quem treina em outro lugar durante a semana ou para visitantes. O plano anual ainda dá acesso a uma segunda unidade da rede, que a página não identifica.</p>
+      <p>A Ironberg vende aula avulsa só na recepção, sem valor publicado, e não tem plano de fim de semana. Em compensação, a tabela de preços vale para todas as unidades da rede.</p>
+
+      <h2>Quem usa TotalPass</h2>
+      <p>Nenhuma das duas aparece no Wellhub. No TotalPass, a NitroGym entra a partir do {tpNg.plano_minimo}, de {tpNg.preco_plano}, e a Ironberg só a partir do {tpIb.plano_minimo}, de {tpIb.preco_plano}. Se o seu plano for o {tpNg.plano_minimo}, só a NitroGym está liberada. Veja todos os planos em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
+
+      <h2>Quem treina com personal</h2>
+      <p>A Ironberg informa que personal de fora pode atender lá pagando um valor fixo à academia, e não por aula ou por aluno. O valor é passado na unidade. A NitroGym não publica regra; pergunte antes de combinar o local com o profissional. Mais sobre o assunto em <a href="/guias/personal-trainer-alphaville/">personal trainer em Alphaville</a> e <a href="/guias/personal-trainer-tambore/">no Tamboré</a>.</p>
+
+      <h2>Resumo por perfil</h2>
+      <ul>
+        <li><strong>Treina de madrugada ou tarde da noite no fim de semana:</strong> Ironberg.</li>
+        <li><strong>Quer o menor custo no plano anual:</strong> NitroGym, por cerca de R$ 20 por mês, se não houver matrícula.</li>
+        <li><strong>Quer testar antes ou treinar só no fim de semana:</strong> NitroGym.</li>
+        <li><strong>Mora ou trabalha no Tamboré e já passa pelo shopping:</strong> NitroGym.</li>
+        <li><strong>Quer espaço de sobra e estacionamento sem limite de tempo:</strong> Ironberg.</li>
+        <li><strong>Treina com personal de fora:</strong> Ironberg, que publica a regra.</li>
+        <li><strong>Tem TotalPass {tpNg.plano_minimo}:</strong> NitroGym.</li>
+      </ul>
+      <p>Visite as duas no horário em que você vai treinar. O <a href="/ferramentas/checklist/">checklist de visita</a> ajuda, e o <a href={`/ferramentas/comparador/?a=${ib.id}&b=${ng.id}`}>comparador</a> mostra as duas fichas completas lado a lado. Para outras opções de padrão parecido, veja a <a href="/academias/precos/">tabela de preços</a>.</p>
+    </div>
+
+    <section class="bloco fino" aria-labelledby="fichas-t">
+      <div class="cab"><h2 id="fichas-t">As duas fichas</h2><a class="link-forte" href="/academias/?regiao=alphaville">Outras academias de Alphaville</a></div>
+      <div class="cartoes">{[ib, ng].map((a) => <CartaoAcademia a={a} />)}</div>
+    </section>
+
+    <div style="margin-top:28px"><Fontes fontes={[
+      ...ib.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${ib.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
+      ...ng.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${ng.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
+    ]} /></div>
+  </div>
+</Base>

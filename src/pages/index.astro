@@ -19,6 +19,7 @@ const schema = [
 const lista = [
   { url: '/academias/precos/', t: 'Quanto custa academia em Alphaville e Barueri', p: 'As mensalidades que as academias publicam, com fonte e data, e o plano de agregador das que não publicam.' },
   { url: '/guias/smart-fit-ou-gavioes/', t: 'Smart Fit ou Gaviões em Alphaville', p: 'Horário, preço, modalidades e agregadores das duas lado a lado, e qual combina com cada rotina.' },
+  { url: '/guias/ironberg-ou-nitrogym/', t: 'Ironberg ou NitroGym', p: 'As duas academias de musculação de padrão mais alto com preço publicado: quanto custa o primeiro ano em cada uma.' },
   { url: '/academias/24-horas/', t: 'Academias 24 horas em Alphaville e região', p: 'Quais têm horário publicado de 24 horas, quais só parecem ter, e as que abrem mais cedo e fecham mais tarde.' },
   { url: '/academias/wellhub-totalpass/', t: 'Academias com Wellhub e TotalPass', p: 'O plano mínimo que cada academia exige em cada agregador, e quanto esse plano custa.' },
   ...gs.filter((g) => g.data.secao === 'guias' && !g.id.startsWith('personal-trainer-')).map((g) => ({ url: `/guias/${g.id}/`, t: g.data.h1, p: g.data.descricao })),

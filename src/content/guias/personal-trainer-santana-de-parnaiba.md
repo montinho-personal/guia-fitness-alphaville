@@ -8,6 +8,10 @@ secao: guias
 palavra_chave: personal trainer santana de parnaíba
 intencao: Comercial local. Morador de Santana de Parnaíba procurando acompanhamento.
 cta: montinho-contextual
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
+  publicado_em: 2026-09-25
 cta_titulo: "Treinar com o Montinho em Santana de Parnaíba"
 cta_texto: "O Montinho Personal Trainer, que mantém este guia, atende em Santana de Parnaíba em casa, no espaço fitness do condomínio e na Arena 18."
 cta_destino: /personal-trainer-santana-de-parnaiba
