@@ -1,7 +1,7 @@
 ---
 import Selo from './Selo.astro';
 import { REGIOES, MODALIDADES, TIPOS, horarioResumo, e24h, conferidoEm, dataCurta, fontesNomes, urlAcademia, agregador, type Academia } from '../lib/dados';
-interface Props { a: Academia; nivel?: 'h2' | 'h3' }
+interface Props { a: Academia; nivel?: 'h2' | 'h3' | 'h4' }
 const { a, nivel = 'h3' } = Astro.props;
 const d = a.data;
 const T = nivel;

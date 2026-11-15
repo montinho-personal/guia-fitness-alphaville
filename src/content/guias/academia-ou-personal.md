@@ -14,6 +14,9 @@ fontes:
 video:
   id: DiH1OzIR6Yk
   titulo: "É impossível isso dar errado"
+vitrine:
+  destaque: bruna-rodrigues
+  intro: "Se você está decidindo se vale contratar acompanhamento, os casos abaixo mostram o que aconteceu com alunos do Montinho. Não são média nem garantia: são histórias individuais, todas de emagrecimento."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

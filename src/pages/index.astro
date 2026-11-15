@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import CartaoAcademia from '../components/CartaoAcademia.astro';
 import Ferramentas from '../components/Ferramentas.astro';
 import Mantem from '../components/Mantem.astro';
+import Vitrine from '../components/Vitrine.astro';
 import { academias, guias, REGIOES, MODALIDADES, urlRegiao } from '../lib/dados';
 
 const todas = await academias();
@@ -94,5 +95,6 @@ const lista = [
     </div>
   </section>
 
+  <div class="wrap"><Vitrine pagina="home" intro="Este guia é mantido pelo Montinho Personal Trainer. A vitrine abaixo fica separada da avaliação das academias e mostra resultados de alunos dele, todos de emagrecimento." /></div>
   <section class="bloco" style="padding-top:0"><div class="wrap"><Mantem pagina="home" /></div></section>
 </Base>

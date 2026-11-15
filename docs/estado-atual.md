@@ -171,3 +171,11 @@ Cada evento leva `ref` (posição ou ficha) e `pagina`. Os links para o Montinho
 
 - **O site não cita CREF nem CONFEF**, nem os conselhos de Educação Física por extenso. Pedido do responsável pelo guia. A auditoria (`scripts/auditoria.mjs`) falha o build se algum desses termos aparecer em qualquer página.
 - Publicadas as páginas de personal trainer por região: Alphaville, Tamboré, Barueri, Santana de Parnaíba e Aldeia da Serra (`src/content/guias/personal-trainer-*.md`). O corpus antiplágio passou a incluir todas as páginas de personal trainer do site do Montinho.
+
+## Vitrine de transformações (15/11/2026)
+
+- Componente `src/components/Vitrine.astro` + `Comparador.astro`; dados lidos no build de `https://www.montinhopersonal.com.br/api/vitrine` (`src/lib/vitrine.ts`). Sem dado de reserva: se o feed falhar, vier vazio ou fora do formato, a seção não aparece. Para testar a falha: `VITRINE_URL=https://www.montinhopersonal.com.br/api/nao-existe npm run build`.
+- Fotos servidas pelas URLs do feed (CSP `img-src` libera www.montinhopersonal.com.br). Nada baixado para o repositório.
+- Páginas: início, academia ou personal, 5 páginas de personal por região, musculação e a ficha da Arena 18 (campo `vitrine` no frontmatter dos guias; `montinho_atende` na ficha).
+- Atualização de hora em hora: `.github/workflows/vitrine-atualizar.yml` chama um Deploy Hook da Vercel. Falta criar o hook na Vercel e salvar a URL no secret `VERCEL_DEPLOY_HOOK_VITRINE` do GitHub. Até lá, a vitrine se atualiza a cada deploy.
+- Eventos na dataLayer: `vitrine_view`, `vitrine_comparador` (aluno, como), `vitrine_cta_click`, `vitrine_resultados_click`, todos com `pagina`.

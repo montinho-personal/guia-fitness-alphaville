@@ -83,6 +83,7 @@ const guias = defineCollection({
     cta_texto: z.string().optional(),
     cta_destino: z.string().startsWith('/').optional(),
     lista_ids: z.array(z.string()).default([]),
+    vitrine: z.object({ intro: z.string().min(40), destaque: z.string().optional() }).optional(),
     video: z.object({ id: z.string().regex(/^[\w-]{11}$/), titulo: z.string(), publicado_em: data.optional() }).optional(),
     lista_titulo: z.string().optional(),
     lista_modalidades: z.array(z.enum(MODALIDADES)).default([]),

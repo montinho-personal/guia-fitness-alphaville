@@ -25,7 +25,7 @@ const paginas = htmls.map((f) => {
   const main = um(h, /<main[^>]*>([\s\S]*?)<\/main>/) || '';
   // texto principal sem os blocos repetidos de propósito (cartões, chamada da casa, tabelas de dados)
   // e sem os blocos de dados estruturados das fichas, delimitados por marcadores data-dado
-  const corpo = main.replace(/<i data-dado="i"[^>]*><\/i>[\s\S]*?<i data-dado="f"[^>]*><\/i>/g, ' ').replace(/<article class="cartao[\s\S]*?<\/article>/g, ' ').replace(/<aside class="mantem[\s\S]*?<\/aside>/g, ' ').replace(/<table[\s\S]*?<\/table>/g, ' ').replace(/<form[\s\S]*?<\/form>/g, ' ');
+  const corpo = main.replace(/<i data-dado="i"[^>]*><\/i>[\s\S]*?<i data-dado="f"[^>]*><\/i>/g, ' ').replace(/<article class="cartao[\s\S]*?<\/article>/g, ' ').replace(/<aside class="mantem[\s\S]*?<\/aside>/g, ' ').replace(/<section class="vitrine[\s\S]*?<\/section>/g, ' ').replace(/<table[\s\S]*?<\/table>/g, ' ').replace(/<form[\s\S]*?<\/form>/g, ' ');
   return {
     f, url, h,
     titulo: um(h, /<title>([\s\S]*?)<\/title>/), nTitulos: (h.match(/<title>/g) || []).length,
