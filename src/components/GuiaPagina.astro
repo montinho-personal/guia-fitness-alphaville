@@ -21,7 +21,7 @@ const todas = await academias();
 const idsGuias = new Set((await guias()).map((x) => x.id));
 const acad = d.academia ? todas.find((x) => x.id === d.academia) : undefined;
 if (d.academia && !acad) throw new Error(`academia: ficha ${d.academia} não existe`);
-const vizinhasPersonal = acad ? todas.filter((x) => x.id !== acad.id && x.data.regiao === acad.data.regiao && idsGuias.has(`personal-trainer-${x.id}`)).sort((x, y) => Number(y.data.bairro === acad.data.bairro) - Number(x.data.bairro === acad.data.bairro)).slice(0, 6) : [];
+const vizinhasPersonal = acad ? todas.filter((x) => x.id !== acad.id && x.data.regiao === acad.data.regiao && idsGuias.has(`personal-trainer-${x.id}`)).sort((x, y) => Number(y.data.bairro === acad.data.bairro) - Number(x.data.bairro === acad.data.bairro)).slice(0, 8) : [];
 const leiaAcad = acad ? [personalDaRegiao(acad.data.regiao, acad.data.bairro), COMPARATIVOS[acad.id], '/guias/academia-ou-personal/', '/academias/precos/'].filter((u): u is string => !!u) : undefined;
 const cidadeMae = Object.keys(CIDADES_PT).find((c) => g.id === `personal-trainer-${c}`);
 const temasCidade = cidadeMae ? Object.keys(TEMAS_PT).filter((t) => idsGuias.has(`personal-trainer-${t}-${cidadeMae}`)) : [];
