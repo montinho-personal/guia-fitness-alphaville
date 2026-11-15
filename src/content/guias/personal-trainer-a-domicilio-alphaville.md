@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/arena-18-alphaville/"
   - titulo: "Ficha da Ironberg Alphaville no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/ironberg-alphaville/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -35,6 +38,10 @@ Quem mora em casa dentro de um residencial fechado de Alphaville tem, no treino 
 
 Alguns critérios ajudam na escolha. O chão não pode ter desnível nem escorregar quando molha. O teto precisa permitir braços estendidos acima da cabeça. E o lugar deve ter sombra no horário marcado, porque a varanda agradável às 7h pode virar estufa às 10h.
 
+![Antes e depois do Montinho, personal trainer a domicílio em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
+
 ## Quem leva o quê
 
 Cada profissional trabalha de um jeito, então a pergunta deve ser feita antes da primeira aula. Em geral, o personal carrega material portátil: elásticos de resistência, halteres de peso moderado, colchonete, cones ou outro acessório para coordenação. Equipamento pesado não entra no porta-malas de ninguém.
@@ -49,6 +56,10 @@ Se, com o passar dos meses, o programa pedir mais carga, você decide se compra 
 Nos residenciais de Alphaville, o prestador de serviço costuma passar por cadastro na portaria. Pergunte à administração do seu condomínio como funciona: se o nome fica fixo na lista, se há horário restrito para entrada e se o carro do profissional pode estacionar dentro. Isso evita que os primeiros minutos da aula fiquem presos no portão.
 
 Combine também o que acontece com atrasos e remarcações, dos dois lados. Uma regra clara desde o começo poupa conversa chata depois.
+
+![Montinho, personal trainer a domicílio em Alphaville, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que atende em Alphaville.*
 
 ## Uma academia como segunda base
 

@@ -14,6 +14,9 @@ cta_destino: /blog/personal-trainer-a-domicilio-aldeia-da-serra
 fontes:
   - titulo: "Mapa das academias do Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/mapa/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -30,6 +33,10 @@ atualizado_em: 2026-11-15
 Os residenciais da Aldeia da Serra, cercados de mata, ficam espalhados pela divisa de Barueri com Santana de Parnaíba. Até agora, o guia não cataloga nenhuma academia ali dentro. Quem quer acompanhamento sem pegar o carro acaba recebendo o profissional em casa.
 
 Para entender o que esperar, vale acompanhar uma aula típica do começo ao fim.
+
+![Antes e depois do Montinho, personal trainer a domicílio na Aldeia da Serra: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
 
 ## Antes de o personal chegar
 
@@ -54,6 +61,10 @@ As ruas internas também entram no roteiro em dias de tempo bom. Nesse caso, pre
 ## O fim da aula e o que fica para a semana
 
 Os minutos finais costumam ser de volta à calma e alongamento. É também a hora de alinhar o que você faz sozinho até o próximo encontro, se fizer sentido para o seu objetivo.
+
+![Montinho, personal trainer a domicílio na Aldeia da Serra, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que atende na Aldeia da Serra.*
 
 ## Distância e agenda: a conversa honesta
 

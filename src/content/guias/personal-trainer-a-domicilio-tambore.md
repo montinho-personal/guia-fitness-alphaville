@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/nitrogym-tambore/"
   - titulo: "Ficha da Bluefit Tamboré no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-tambore/"
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -39,6 +42,10 @@ Antes de fechar com qualquer profissional, descubra com a administração:
 - se há janela de horário para prestadores, especialmente cedo e no fim de semana;
 - se a aula pode usar áreas comuns, como gramados e quadras, ou só o terreno da casa.
 
+![Antes e depois do Montinho, personal trainer a domicílio no Tamboré: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do personal que mantém este guia. Nenhum resultado é garantido.*
+
 ## Onde, dentro da casa?
 
 Casas em condomínio costumam ter mais de uma opção. A sala de TV com o tapete enrolado serve para mobilidade e exercícios no chão. A garagem tem piso resistente, aceita halteres no chão sem medo de marcar madeira e fica fácil de limpar. O quintal dá ar livre, mas depende do clima.
@@ -52,6 +59,10 @@ Escolha um lugar principal e um reserva. Assim a aula não cai quando o carro pr
 ## Material: combinado por escrito
 
 Deixe registrado, nem que seja numa mensagem, quais itens o profissional traz a cada visita. Peças leves e fáceis de carregar são o mais comum. Se você quiser ter algo em casa para se exercitar sozinho entre um encontro e outro, peça uma lista curta e pensada para você. Comprar por impulso costuma terminar com aparelho esquecido num canto.
+
+![Montinho, personal trainer a domicílio no Tamboré, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que atende no Tamboré.*
 
 ## Academia para os dias de carga
 

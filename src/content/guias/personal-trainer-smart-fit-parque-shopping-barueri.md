@@ -17,6 +17,9 @@ lista_ids: [smart-fit-parque-shopping-barueri]
 fontes:
   - titulo: "Site oficial da Smart Fit (página da unidade)"
     url: "https://www.smartfit.com.br/academias/parque-shopping-barueri"
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -31,6 +34,10 @@ atualizado_em: 2026-11-15
 ## Onde a unidade fica, exatamente?
 
 A [Smart Fit Parque Shopping Barueri](/academias/smart-fit-parque-shopping-barueri/) funciona dentro do Parque Shopping Barueri, na R. Gen. de Divisão de Pedro Rodrigues da Silva, 400, bairro Nova Aldeinha. A posição é intermediária: fica entre o centro de Barueri e Alphaville. Para quem circula entre os dois lados, pode ser um ponto de encontro conveniente com o personal.
+
+![Antes e depois do Montinho, personal trainer em Barueri: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do personal que mantém este guia. Nenhum resultado é garantido.*
 
 ## O shopping resolve o estacionamento?
 
@@ -49,6 +56,10 @@ A fonte lista só musculação e não traz horários de turmas. Para sessões ac
 Nos dias úteis, a unidade abre às 5h e só fecha à meia-noite, o que abre espaço para sessões tarde da noite. Sábado tem funcionamento das 8h às 17h; domingo e feriados, das 8h às 14h.
 
 No site, a mensalidade do Fit é R$ 139,90 no regime de fidelidade, sem adesão, e só dá acesso a este endereço. O Smart está em R$ 159,90. O Black, com o mesmo valor mensal, pede R$ 29,90 na adesão, abre toda a rede e, segundo a página, tem o primeiro mês grátis. Sem fidelidade, Fit e Smart custam R$ 20 a mais. Os valores são promocionais, avisa a rede. A ficha não confirma Wellhub nem TotalPass aqui. No orçamento, inclua o profissional e uma possível taxa de acesso dele. Veja a [tabela de preços](/academias/precos/).
+
+![Montinho, personal trainer em Barueri, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Barueri.*
 
 ## Quais são as alternativas por perto?
 

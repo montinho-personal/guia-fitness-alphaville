@@ -21,6 +21,9 @@ fontes:
     url: "https://www.ironberg.com.br/planos.html"
   - titulo: "Página da unidade no TotalPass"
     url: "https://totalpass.com/br/academias/ironberg-alphaville/"
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -37,6 +40,10 @@ atualizado_em: 2026-11-15
 Das academias cadastradas aqui, só a Ironberg diz em público como funciona o personal externo. O profissional pode atender no espaço desde que pague um valor fixo à academia. A cobrança não é feita por aula nem por aluno atendido.
 
 O que falta é o número. O valor é informado só na unidade, e o guia ainda não conseguiu confirmá-lo. Para entender como o assunto funciona nas outras academias da região, veja a página de [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).
+
+![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
 ## Leve estas dúvidas para a recepção
 
@@ -66,6 +73,10 @@ Os preços valem para todas as unidades da rede e sempre têm matrícula única 
 - recorrência de 12 meses: R$ 599 por mês.
 
 Quem usa TotalPass precisa do TP 6, de R$ 599,90. A aula avulsa só é vendida na recepção, com valor a consultar. Ao orçamento somam-se o valor do profissional e a taxa fixa que ele paga à Ironberg; pergunte se ela já está embutida no preço dele. O estacionamento não pesa: é gratuito, com mais de mil vagas. Fica na Estrada da Aldeinha, fora dos bairros residenciais, com acesso pela rodovia. Compare em [preços das academias](/academias/precos/) e [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer em Alphaville, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Se a Ironberg não encaixar
 

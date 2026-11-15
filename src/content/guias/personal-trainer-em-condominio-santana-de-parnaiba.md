@@ -16,6 +16,9 @@ lista_ids: [fabrica-premium-alphaville, forth-academia-jardim-sao-luis, mattos-f
 fontes:
   - titulo: "Ficha da Fábrica Premium Alphaville no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/fabrica-premium-alphaville/"
+video:
+  id: DiH1OzIR6Yk
+  titulo: "É impossível isso dar errado"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -30,6 +33,10 @@ atualizado_em: 2026-11-15
 ## Endereço em Santana, rotina de Alphaville
 
 Nem todo Alphaville e nem todo Tamboré ficam em Barueri: trechos dos dois estão em Santana de Parnaíba. Quem mora num desses residenciais vive o ritmo dos bairros vizinhos, embora a cidade no endereço seja outra. Para o treino acompanhado dentro do condomínio, o município não altera nada: a conversa é com a administração do residencial, que diz se o profissional entra, como se cadastra e em que horários.
+
+![Antes e depois do Montinho, personal trainer em condomínio em Santana de Parnaíba: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
 ## Por que o condomínio pesa mais aqui
 
@@ -59,6 +66,10 @@ Longe de Alphaville, as fichas do guia mostram três academias de bairro, cada u
 - [Olympia Fitness](/academias/olympia-fitness-polvilho/), no Polvilho: para das 12h às 14h e tem adaptações para pessoas autistas.
 
 Nenhuma das três funciona no domingo. Para quem mora nesses bairros e quer treinar acompanhado no fim de semana, a sala do condomínio, se houver, acaba sendo a alternativa mais próxima. Nenhuma divulga regra para profissional externo.
+
+![Montinho, personal trainer em condomínio em Santana de Parnaíba, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que atende em Santana de Parnaíba.*
 
 ## Próximos passos
 

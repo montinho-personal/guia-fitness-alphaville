@@ -17,6 +17,9 @@ lista_ids: [24h-premium-alphaville]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/academia-24h-premium-alphaville-industrial-barueri/"
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -40,6 +43,10 @@ Antes de montar uma agenda de treino com personal, vale olhar o horário que a p
 
 Ou seja: não há madrugada listada. O guia registra isso como divergência e deixou pendente a confirmação de um possível funcionamento 24 horas para quem é aluno direto. Se a sua sessão ideal é às 3h, pergunte à academia antes de fechar qualquer pacote. A boa notícia é o domingo aberto até as 14h; compare na lista de [academias que abrem no domingo](/academias/domingo/).
 
+![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
+
 ## E o personal que vem de fora?
 
 A ficha cita "Personal trainer" na lista de comodidades, sinal de profissionais ligados à própria academia. Não diz nada sobre quem chega com o seu treinador particular. Regra publicada, o guia não encontrou. Leve estas perguntas ao telefone (11) 4191-3515 ou à recepção:
@@ -57,6 +64,10 @@ Para quem treina acompanhado, a lista de espaços ajuda: áreas de musculação,
 ## Quanto entra na conta
 
 Valor de mensalidade direta: não divulgado. Pelo Wellhub, a entrada exige o Gold+ (R$ 439,99), o nível mais alto do Wellhub exigido no guia, o mesmo da BlackSheep e da Tecfit. Em cima disso vêm os honorários de quem acompanha você e, se existir, a cobrança da academia pelo acesso de personal externo. Compare com outras opções em [preços das academias](/academias/precos/) e em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer em Alphaville, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Se a madrugada for indispensável
 

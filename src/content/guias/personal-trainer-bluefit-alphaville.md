@@ -17,6 +17,9 @@ lista_ids: [bluefit-alphaville]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/bluefit-alphaville-alphaville-industrial/"
+video:
+  id: DiH1OzIR6Yk
+  titulo: "É impossível isso dar errado"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -41,6 +44,10 @@ Antes de fechar com um personal, leve estas perguntas à recepção da [Bluefit 
 
 Peça a resposta por escrito, por mensagem, para não depender de lembrança.
 
+![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
+
 ## O que a sala oferece para uma sessão individual
 
 A ficha separa quatro zonas de treino (máquinas de musculação, pesos livres, cardio e funcional), além de um espaço de alongamento. Para quem treina com acompanhamento, essa divisão facilita alternar máquinas, halteres e exercícios no chão na mesma sessão. A unidade também lista balança de bioimpedância, útil para registrar medidas ao longo do tempo.
@@ -56,6 +63,10 @@ O horário tem um detalhe que pesa na agenda. De segunda a quinta, a academia va
 A unidade não publica mensalidade direta. No Wellhub, a Bluefit da Alameda Amazonas exige no mínimo o Silver+ (R$ 199,99). A esse valor somam-se o pagamento ao personal e, se a recepção confirmar, uma eventual taxa para profissional externo. A [tabela de preços do guia](/academias/precos/) ajuda a comparar com outras academias.
 
 A ficha registra estacionamento, mas as regras e o custo ainda não foram confirmados. Pergunte junto com o resto.
+
+![Montinho, personal trainer em Alphaville, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Outras opções no Alphaville Industrial
 

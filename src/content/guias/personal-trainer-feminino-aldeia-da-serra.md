@@ -11,6 +11,9 @@ cta: montinho-contextual
 cta_titulo: "Treinar com o Montinho na Aldeia da Serra"
 cta_texto: "O Montinho, personal homem, dá aulas para mulheres da Aldeia da Serra no lar delas, na academia coletiva do condomínio e pelas vias internas. Para quem prefere uma treinadora, o caminho certo é buscar uma mulher."
 cta_destino: /blog/personal-trainer-aldeia-da-serra
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -27,6 +30,10 @@ atualizado_em: 2026-11-15
 Cercado de mata, esse conjunto de condomínios se divide entre dois municípios vizinhos: Santana de Parnaíba e Barueri. Nenhuma academia do bairro aparece nas fichas deste site. Resta, então, optar pelo próprio lar, a academia do residencial e o asfalto das vias internas.
 
 Isso torna a pergunta "personal feminino" bem concreta. Se o profissional vai entrar na sua casa, quem ele é importa tanto quanto o que ele sabe.
+
+![Antes e depois do Montinho, personal trainer feminino na Aldeia da Serra: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O próprio Montinho, em dois momentos da vida. O que mudou foi a constância, ano após ano.*
 
 ## Duas formas de entender o pedido
 
@@ -49,6 +56,10 @@ Algumas mulheres querem ser treinadas por outra mulher, ponto. Outras querem um 
 - Se eu preferir uma profissional mulher, você conhece alguém para indicar?
 
 Um bom profissional responde a todas sem desconforto, inclusive à última. Respostas vagas sobre material e plano B costumam indicar improviso.
+
+![Montinho, personal trainer feminino na Aldeia da Serra, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que atende na Aldeia da Serra.*
 
 ## E se eu quiser uma academia?
 

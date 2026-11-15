@@ -17,6 +17,9 @@ lista_ids: [fast-treino-alphaville]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/fast-treino-alphaville-alphaville-industrial/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -34,6 +37,10 @@ A Fast Treino fica na Av. Juruá, 253, no Alphaville Industrial, no mesmo endere
 
 Isso pesa na pergunta sobre personal. Numa academia de livre uso, o aluno escolhe os aparelhos e o personal monta a sessão. Num estúdio de circuito, o roteiro é conduzido pelo próprio estúdio. Ser guiado num circuito é uma experiência diferente de ter um profissional acompanhando só você, do aquecimento ao último exercício, com o plano ajustado à sua evolução. Os dois formatos não competem entre si e podem até se somar.
 
+![Antes e depois do Montinho, personal trainer em Alphaville: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do Montinho. Serve de inspiração, não de garantia para quem contrata.*
+
 ## Dá para entrar com um treinador particular?
 
 A fonte não diz. Não há regra publicada sobre profissional externo, e "Personal trainer" não aparece nas comodidades. Também está pendente a duração das sessões. Antes de pensar em levar alguém, fale com o estúdio pelo (11) 98877-1847 e pergunte:
@@ -50,6 +57,10 @@ O Wellhub mostra a Fast Treino aberta das 16h às 20h, de segunda a sexta, e nad
 ## Custo: só o agregador está publicado
 
 O valor do plano direto não aparece na fonte. Pelo Wellhub, basta o plano Silver (R$ 149,99) para entrar. Se o estúdio aceitar personal externo, a conta inclui o profissional e uma eventual taxa. Os números das demais ficam na [tabela de preços](/academias/precos/) e as [academias no Wellhub e no TotalPass](/academias/wellhub-totalpass/). A estrutura informada é simples: ar condicionado, armários, vestiário com chuveiro e Wi-Fi.
+
+![Montinho, personal trainer em Alphaville, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Vizinhos de Av. Juruá para o treino um a um
 

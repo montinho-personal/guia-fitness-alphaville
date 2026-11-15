@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/nitrogym-tambore/"
   - titulo: "Ficha da Bluefit Tamboré no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-tambore/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -34,6 +37,10 @@ atualizado_em: 2026-11-15
 O Tamboré é feito quase todo de condomínios residenciais. Para quem sai cedo e volta tarde, isso tem uma vantagem clara: o lugar de treino pode estar a poucos passos da porta de casa. Sem carro, sem estacionamento, sem fila de catraca.
 
 A aula no salão fitness do condomínio pode começar no horário que o regulamento interno permitir. Quem define se o personal entra, e em que faixa do dia, é a administração. Pergunte antes de fechar qualquer pacote.
+
+![Antes e depois do Montinho, personal trainer para executivos no Tamboré: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
 
 ## Se a academia do condomínio for pequena
 
@@ -52,6 +59,10 @@ Se o seu empregador oferece agregador, cada academia do bairro aceita um diferen
 ## Fim de semana como reserva
 
 Para executivos, o sábado e o domingo muitas vezes são o único espaço livre de verdade. A NitroGym mantém o horário longo também no fim de semana, das 6h às 22h. Se a terça foi engolida por uma reunião, dá para repor ali. Para comparar com outras casas que funcionam no domingo, use o [levantamento de domingo](/academias/domingo/).
+
+![Montinho, personal trainer para executivos no Tamboré, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que atende no Tamboré.*
 
 ## Para não abandonar em março
 

@@ -19,6 +19,9 @@ fontes:
     url: "https://nitrogymacademia.com.br/unidades/unidade-tambore"
   - titulo: "Página da unidade no TotalPass"
     url: "https://totalpass.com/br/academias/nitrogym-tambore/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -33,6 +36,10 @@ atualizado_em: 2026-11-15
 ## Academia de shopping, com estacionamento junto
 
 A NitroGym fica na Avenida Piracema, dentro do Shopping Tamboré. Para quem treina com hora marcada, o detalhe prático é o estacionamento: todos os planos incluem até 3 horas no estacionamento do shopping. Se o seu personal vem de fora, pergunte se ele tem algum benefício parecido ou se paga a vaga à parte.
+
+![Antes e depois do Montinho, personal trainer no Tamboré: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
 
 ## Professores na sala não respondem a dúvida
 
@@ -59,6 +66,10 @@ A segunda unidade do plano anual ainda não foi identificada pelo guia. Pelo Tot
 ## Cedo, tarde e no fim de semana
 
 Pelo site oficial, a academia funciona das 5h até a meia-noite nos dias úteis. Nos fins de semana e feriados, funciona das 6h às 22h. O TotalPass mostra outra janela nos dias úteis, das 6h às 23h40, talvez só a válida para quem entra pelo agregador. Para as sessões no limite do horário, confirme qual vale no seu caso. O plano de fim de semana pode fazer sentido para quem só treina acompanhado no sábado e no domingo; veja também as [academias abertas no domingo](/academias/domingo/).
+
+![Montinho, personal trainer no Tamboré, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende no Tamboré.*
 
 ## Comparando com a vizinhança
 

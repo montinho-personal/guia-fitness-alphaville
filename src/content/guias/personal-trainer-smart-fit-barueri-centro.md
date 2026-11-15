@@ -19,6 +19,9 @@ fontes:
     url: "https://www.smartfit.com.br/academias/barueri-centro"
   - titulo: "Página da unidade no TotalPass"
     url: "https://totalpass.com/br/academias/smart-fit-barrueri-centro/"
+video:
+  id: yndKE1GrnUQ
+  titulo: "Toda pessoa com shape tem uma coisa em comum"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -45,6 +48,10 @@ A [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/) fica na Av. V
 | TotalPass | a partir do TP 1+, R$ 89,90 |
 | Estacionamento | não consta na fonte |
 
+![Antes e depois do Montinho, personal trainer em Barueri: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O próprio Montinho, em dois momentos da vida. O que mudou foi a constância, ano após ano.*
+
 ## O que perguntar antes da primeira sessão
 
 Nem o site da Smart Fit nem a página do TotalPass trazem regra para personal externo. Os professores formados citados nas comodidades são da casa. Para treinar com um profissional seu, a conversa na recepção precisa cobrir quatro pontos: se a unidade aceita personal de fora, quanto custa uma eventual taxa e quem a paga, se o profissional precisa de cadastro e em quais horários isso é permitido. Sem essas respostas, evite fechar pacote de aulas.
@@ -62,6 +69,10 @@ O site oferece um medidor de ocupação da unidade em tempo real. Para quem vai 
 O caminho mais barato registrado na ficha é o TotalPass, a partir de R$ 89,90 no TP 1+. Pela própria Smart Fit, o Fit sai a R$ 139,90 mensais com fidelidade e prende você a esta academia; sem fidelidade, são R$ 20 a mais. Quem quer circular por outras unidades precisa do Black. A rede informa que os preços exibidos são promocionais.
 
 Sobre essa base, some o pagamento do seu personal e a taxa de acesso que a academia talvez cobre dele. Para comparar, use a [tabela de preços](/academias/precos/), o resumo sobre [Wellhub e TotalPass](/academias/wellhub-totalpass/) e o comparativo [Smart Fit ou Gaviões](/guias/smart-fit-ou-gavioes/).
+
+![Montinho, personal trainer em Barueri, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Barueri.*
 
 ## Outras academias no centro e arredores
 

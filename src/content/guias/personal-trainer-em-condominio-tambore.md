@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/nitrogym-tambore/"
   - titulo: "Ficha da Bluefit Tamboré no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-tambore/"
+video:
+  id: yndKE1GrnUQ
+  titulo: "Toda pessoa com shape tem uma coisa em comum"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -32,6 +35,10 @@ atualizado_em: 2026-11-15
 ## Barueri de um lado, Santana do outro
 
 Os residenciais do Tamboré se espalham por dois municípios vizinhos, Barueri e Santana de Parnaíba. Para quem quer personal dentro do condomínio, essa divisão quase não aparece no dia a dia: a permissão para o profissional entrar vem do regulamento e da administração do seu residencial. O que muda de um residencial para outro é a regra interna, não o município.
+
+![Antes e depois do Montinho, personal trainer em condomínio no Tamboré: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
 
 ## O pacote de informações da primeira aula
 
@@ -62,6 +69,10 @@ Treinar com acompanhamento num lugar compartilhado pede alguns acordos silencios
 | Mensalidade | Nenhuma à parte | Plano anual publicado a R$ 389 por mês | Não publicada |
 
 A [NitroGym](/academias/nitrogym-tambore/) é só musculação e mantém horário longo no fim de semana, bom para uma sessão mais pesada no sábado ou no domingo. A [Bluefit Tamboré](/academias/bluefit-tambore/) acrescenta funcional e HIIT e anuncia o serviço de personal da casa, o que não esclarece se um profissional externo pode entrar com você.
+
+![Montinho, personal trainer em condomínio no Tamboré, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que atende no Tamboré.*
 
 ## Um arranjo que junta os dois
 

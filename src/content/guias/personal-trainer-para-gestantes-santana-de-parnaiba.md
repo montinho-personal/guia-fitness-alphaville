@@ -20,6 +20,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/forth-academia-jardim-sao-luis/"
   - titulo: "Ficha da Olympia Fitness Academia no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/olympia-fitness-polvilho/"
+video:
+  id: DiH1OzIR6Yk
+  titulo: "É impossível isso dar errado"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -36,6 +39,10 @@ atualizado_em: 2026-11-15
 Santana de Parnaíba é extensa: o município abriga parte de Alphaville e parte do Tamboré, e há grande distância entre os bairros. Na gravidez, cada percurso de carro pesa. Por isso a pergunta prática vem antes da técnica: onde é mais fácil chegar sem cansaço extra?
 
 Para muitas gestantes, a resposta é a própria sala de estar ou a academia do condomínio. Mas isso só entra na conversa depois que o obstetra autorizou o exercício e explicou o que observar no seu caso.
+
+![Antes e depois do Montinho, personal trainer para gestantes em Santana de Parnaíba: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
 ## Academia por região da cidade
 
@@ -61,6 +68,10 @@ Dois detalhes do município podem atrapalhar a agenda. De segunda a sexta, a Oly
 5. Pergunte se ele atende em casa, já que as distâncias da cidade contam.
 
 As diretrizes da OMS publicadas em 2020 tratam também da gravidez e do pós-parto. São orientação de saúde pública, não um plano pessoal.
+
+![Montinho, personal trainer para gestantes em Santana de Parnaíba, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que atende em Santana de Parnaíba.*
 
 ## Quando o bebê chegar
 

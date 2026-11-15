@@ -17,6 +17,9 @@ lista_ids: [bluefit-barueri]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/academia-bluefit-barueri/"
+video:
+  id: yndKE1GrnUQ
+  titulo: "Toda pessoa com shape tem uma coisa em comum"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -39,6 +42,10 @@ Então a conversa com a recepção precisa cobrir:
 3. se o profissional precisa se cadastrar antes da primeira sessão;
 4. se há restrição de horário para esse tipo de atendimento.
 
+![Antes e depois do Montinho, personal trainer em Barueri: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do Montinho. Serve de inspiração, não de garantia para quem contrata.*
+
 ## Três pontos fortes para um treino acompanhado
 
 **Musculação com espaço livre.** Há setor próprio para pesos livres, separado da musculação, além de cardio, funcional e alongamento.
@@ -54,6 +61,10 @@ De segunda a sexta, sem exceção, a unidade funciona das 5h às 23h59. No sába
 ## Quanto separar por mês
 
 Não há mensalidade direta publicada. O caminho com preço conhecido é o Wellhub, cujo plano de entrada é o Silver+, a R$ 199,99, o mesmo patamar da unidade de Alphaville. Por cima disso vêm os honorários do profissional e uma eventual cobrança da academia por atendimento externo. Para pôr lado a lado com o centro de Barueri, use os [preços reunidos pelo guia](/academias/precos/) e o comparativo de [agregadores](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer em Barueri, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Barueri.*
 
 ## Se a Bluefit não fechar a conta
 

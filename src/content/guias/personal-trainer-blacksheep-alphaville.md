@@ -19,6 +19,9 @@ fontes:
     url: "https://wellhub.com/pt-br/search/partners/blacksheep-alphaville-alphaville-industrial-barueri/"
   - titulo: "Site oficial da Crosslift Blacksheep"
     url: "https://www.crossliftblacksheep.com.br/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -41,6 +44,10 @@ Antes de marcar a primeira sessão, pergunte ao box por telefone ou na visita:
 - se o espaço fica disponível fora das aulas em grupo;
 - se é preciso cadastro do profissional.
 
+![Antes e depois do Montinho, personal trainer em Alphaville: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
+
 ## Aula do box ou sessão individual: o que muda
 
 Numa aula de cross training, um coach conduz todo o grupo pelo mesmo treino, no horário da grade. Ele corrige e adapta, mas divide a atenção entre várias pessoas. No acompanhamento individual, o plano é feito para você, a atenção é toda sua e o horário é combinado entre os dois.
@@ -58,6 +65,10 @@ Nos quatro primeiros dias úteis, o box opera das 6h às 20h30; na sexta, termin
 ## A tabela da rede e o Wellhub
 
 O BlackSheep é dos poucos locais do guia com preço publicado, e a tabela vale para a rede inteira, que tem seis unidades em São Paulo. O plano ilimitado sai por R$ 480 por mês em contrato trimestral, semestral ou anual. Novos alunos podem fazer um mês de teste por R$ 400. Existe ainda o pacote de 10 aulas, a R$ 500, e o drop in, uma aula só, por R$ 75. No Wellhub, a entrada exige o plano Gold+, de R$ 439,99. Com personal, a conta cresce com o honorário dele e com qualquer taxa que o box cobre de quem vem de fora. A [tabela de preços](/academias/precos/) ajuda a comparar.
+
+![Montinho, personal trainer em Alphaville, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Outras portas na mesma região
 

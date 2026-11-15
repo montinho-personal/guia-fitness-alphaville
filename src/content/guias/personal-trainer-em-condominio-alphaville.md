@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/ironberg-alphaville/"
   - titulo: "Ficha da Arena 18 no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/arena-18-alphaville/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -32,6 +35,10 @@ atualizado_em: 2026-11-15
 ## A academia que já está no seu endereço
 
 Muitos residenciais de Alphaville têm academia própria. Para quem trabalha no Alphaville Empresarial ou em outro polo de escritórios, isso vale muito: o treino começa minutos depois de chegar em casa, sem trânsito e sem mensalidade extra. É o personal quem se desloca. O resto do trabalho é organizar o encontro dentro das normas do lugar.
+
+![Antes e depois do Montinho, personal trainer em condomínio em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O próprio Montinho, em dois momentos da vida. O que mudou foi a constância, ano após ano.*
 
 ## O que perguntar à administração
 
@@ -63,6 +70,10 @@ Se o seu objetivo pede cargas que a sala do condomínio não oferece, dá para c
 - [Arena 18](/academias/arena-18-alphaville/), no Melville Empresarial: abre até as 18h no domingo. **Relação comercial:** o Montinho atende alunos lá.
 
 Na Gaviões e na Arena 18, confirme a política para profissional externo antes de fechar qualquer combinado. A lista completa de [academias 24 horas](/academias/24-horas/) mostra outras alternativas.
+
+![Montinho, personal trainer em condomínio em Alphaville, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que atende em Alphaville.*
 
 ## Para fechar a decisão
 

@@ -17,6 +17,9 @@ lista_ids: [skyfit-alphaville]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/skyfit-academia-alphaville-alphaville-industrial/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -31,6 +34,10 @@ atualizado_em: 2026-11-15
 ## Av. Juruá, 307: endereço compartilhado
 
 A [SkyFit Alphaville](/academias/skyfit-alphaville/) está na Av. Juruá, 307, em Alphaville Industrial. É o mesmo número que o guia registra para o box CrossFit Barueri. Ao combinar o primeiro encontro com o seu personal, diga o nome da academia, não só o endereço, para ninguém entrar no lugar errado.
+
+![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
 
 ## Muitas modalidades: onde o personal entra
 
@@ -53,6 +60,10 @@ De segunda a quinta, a SkyFit funciona das 5h às 23h. Na sexta, fecha às 22h. 
 ## Mensalidade sob consulta, Wellhub com preço
 
 A ficha não tem mensalidade direta: o valor não foi publicado nas fontes, e a saída é consultar pelo site skyfitacademia.com ou pelo telefone. O que está registrado é a entrada pelo Wellhub, no plano Silver, de R$ 149,99. Acrescente o valor combinado com o profissional e qualquer cobrança que a SkyFit faça para liberar a entrada dele. As comodidades listadas são poucas, armários, chuveiro e vestiário, e o estacionamento não aparece. Pergunte sobre a vaga. Compare opções em [Wellhub e TotalPass](/academias/wellhub-totalpass/) e na [tabela de preços](/academias/precos/).
+
+![Montinho, personal trainer em Alphaville, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Perto dali, na mesma avenida
 

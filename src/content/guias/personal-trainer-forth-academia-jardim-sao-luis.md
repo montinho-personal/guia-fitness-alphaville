@@ -17,6 +17,9 @@ lista_ids: [forth-academia-jardim-sao-luis]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/forth-academia-jardim-sao-luis/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -33,6 +36,10 @@ atualizado_em: 2026-11-15
 O traço mais forte da [Forth Academia](/academias/forth-academia-jardim-sao-luis/) é o relógio. De segunda a sexta, a porta abre às 5h e fecha só às 23h59. Nenhuma outra academia de Santana de Parnaíba reunida no guia fica aberta até tão tarde.
 
 Para o treino acompanhado, isso amplia as opções. A sessão pode ficar na madrugada, no meio do dia ou depois de um jantar tardio. No sábado, o horário encurta: das 9h às 15h. Domingo não tem horário listado, então quem depende desse dia deve procurar [outra opção dominical](/academias/domingo/).
+
+![Antes e depois do Montinho, personal trainer em Santana de Parnaíba: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do Montinho. Serve de inspiração, não de garantia para quem contrata.*
 
 ## O que existe no salão
 
@@ -52,6 +59,10 @@ Há ainda cafeteria, loja de artigos esportivos, bebedouro, secador de cabelo, a
 - **Wellhub:** plano mínimo Basic+, R$ 99,99 mensais. Veja a [comparação de agregadores](/academias/wellhub-totalpass/).
 - **Personal de fora:** sem regra publicada. Pode haver taxa, e você precisa saber quem paga.
 - **Profissional:** o valor das sessões é combinado com ele, à parte.
+
+![Montinho, personal trainer em Santana de Parnaíba, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Santana de Parnaíba.*
 
 ## Três perguntas para a recepção
 

@@ -11,6 +11,9 @@ cta: montinho-contextual
 cta_titulo: "Começar a treinar com o Montinho na Aldeia da Serra"
 cta_texto: "Na Aldeia da Serra, o Montinho atende iniciantes em casa e no espaço fitness do condomínio. Antes de tudo, ele quer saber da sua rotina, do seu histórico e do espaço disponível."
 cta_destino: /blog/personal-trainer-aldeia-da-serra
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -27,6 +30,10 @@ atualizado_em: 2026-11-15
 Cercada de mata, a Aldeia da Serra reúne residenciais, e o território se reparte entre Santana de Parnaíba e Barueri. Nenhuma academia com ficha neste guia está ali dentro. Atenção para não confundir: o endereço da Ironberg é a Estrada da Aldeinha, no bairro Aldeinha, em Barueri, fora da Aldeia da Serra.
 
 Para um iniciante, a falta de academia nem sempre atrapalha. Sem salão cheio e sem fila de aparelho, os primeiros treinos acontecem num ambiente conhecido. A timidez de quem nunca pisou numa academia pesa menos.
+
+![Antes e depois do Montinho, personal trainer para iniciantes na Aldeia da Serra: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
 
 ## O que dá para aprender sem aparelhos
 
@@ -45,6 +52,10 @@ Treinar ao ar livre nas ruas internas é outra porta de entrada. Caminhadas em r
 ## Quando faz sentido ir para uma academia
 
 Com o tempo, alguns iniciantes querem cargas maiores ou máquinas grandes demais para a sala de casa. Aí vale procurar uma academia fora da Aldeia da Serra, no trajeto de trabalho ou de compras. O [mapa](/mapa/) mostra as opções da região, e a página de [mensalidades](/academias/precos/) junta os preços anunciados. Antes de levar o personal, confirme se a academia escolhida autoriza profissional externo.
+
+![Montinho, personal trainer para iniciantes na Aldeia da Serra, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que atende na Aldeia da Serra.*
 
 ## Começo acompanhado, depois autonomia
 

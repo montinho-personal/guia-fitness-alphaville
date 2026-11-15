@@ -21,6 +21,9 @@ fontes:
 vitrine:
   destaque: bruna-rodrigues
   intro: "Na sequência, alguns alunos do Montinho que perderam peso com acompanhamento. Mostramos como histórias individuais: o caminho de um não define o resultado de outro."
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -35,6 +38,10 @@ atualizado_em: 2026-11-15
 ## Primeiro a logística, depois o treino
 
 Emagrecer pede meses de regularidade. Em um município extenso como Santana de Parnaíba, o maior inimigo dessa regularidade costuma ser o deslocamento. Se a academia fica longe do seu trajeto diário, qualquer imprevisto vira motivo para faltar. Por isso, antes de discutir exercícios, vale olhar o mapa: onde você mora, onde trabalha e por onde passa todo dia. O [mapa do guia](/mapa/) ajuda nessa conta.
+
+![Antes e depois do Montinho, personal trainer para emagrecer em Santana de Parnaíba: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
 
 ## Na porção de Alphaville
 
@@ -53,6 +60,10 @@ As três aceitam Wellhub em planos de entrada, o que barateia a parte da academi
 ## Domingo sem academia de bairro
 
 Nenhuma das três abre aos domingos. Para quem usa o fim de semana como dia de treino, há duas saídas: uma sessão na sala de casa ou na academia do residencial, planejada com o personal para o equipamento disponível, ou uma academia aberta no domingo do lado de Alphaville. Quem abre no domingo aparece na [página de domingo](/academias/domingo/).
+
+![Montinho, personal trainer para emagrecer em Santana de Parnaíba, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que atende em Santana de Parnaíba.*
 
 ## O que esperar do personal
 

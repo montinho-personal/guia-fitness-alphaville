@@ -16,6 +16,9 @@ lista_ids: [panobianco-barueri-centro, smart-fit-barueri-centro, bluefit-barueri
 fontes:
   - titulo: "Tabela de preços de academias do Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/precos/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -30,6 +33,10 @@ atualizado_em: 2026-11-15
 ## O treino que sobe de elevador
 
 Na cidade, é comum o edifício reservar um cômodo para aparelhos de ginástica. Em prédio, a sala de treino em geral é menor que uma academia comercial e atende moradores de vários andares. Isso não impede um bom acompanhamento, mas muda o planejamento: menos aparelhos, mais atenção ao barulho e ao revezamento.
+
+![Antes e depois do Montinho, personal trainer em condomínio em Barueri: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do personal que mantém este guia. Nenhum resultado é garantido.*
 
 ## Perguntas para levar ao síndico
 
@@ -48,6 +55,10 @@ Se a sala do seu prédio é compacta, a sessão se adapta. Entram exercícios qu
 ## A rotina de quem vai de trem
 
 Quatro estações da Linha 8-Diamante da CPTM ficam na cidade: Barueri, Antônio João, Jardim Belval e Jardim Silveira. Quem usa o trem para trabalhar já passa um bom tempo em trânsito. Treinar no próprio prédio tira mais uma viagem da rotina: a aula acontece logo ao chegar ou antes de sair, sem desvio até outra academia. Combine com o personal um horário fixo que respeite o funcionamento da sala.
+
+![Montinho, personal trainer em condomínio em Barueri, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que atende em Barueri.*
 
 ## Quando a sala do prédio não basta
 

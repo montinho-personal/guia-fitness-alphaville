@@ -18,6 +18,9 @@ fontes:
     url: "https://www.who.int/publications/i/item/9789240015128"
   - titulo: "Ficha da Panobianco Barueri Centro no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/panobianco-barueri-centro/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -32,6 +35,10 @@ atualizado_em: 2026-11-15
 ## Quem decide é o obstetra
 
 Exercício na gravidez é assunto para levar à consulta. O obstetra conhece os seus exames e diz se a atividade está liberada e com quais cuidados. Sem essa conversa, nenhum plano de treino deveria sair do papel.
+
+![Antes e depois do Montinho, personal trainer para gestantes em Barueri: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do personal que mantém este guia. Nenhum resultado é garantido.*
 
 ## A ginástica a alguns andares de distância
 
@@ -56,6 +63,10 @@ Os trens da CPTM cortam a cidade pela Linha 8-Diamante, com paradas nas estaçõ
 ## Experiência com grávidas não é detalhe
 
 Pergunte diretamente ao profissional quantas gestantes já acompanhou e como ajustou o trabalho ao longo da gravidez. Ele deve deixar claro que o plano muda a cada trimestre, conforme a orientação médica, e que não toma decisões no lugar do obstetra. O material da OMS lançado em 2020 inclui recomendações para gestantes e mulheres no pós-parto, mas elas são gerais. Quem individualiza é o seu médico.
+
+![Montinho, personal trainer para gestantes em Barueri, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que atende em Barueri.*
 
 ## Depois que o bebê nasce
 

@@ -17,6 +17,9 @@ lista_ids: [bodytech-iguatemi-alphaville]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/bodytech-iguatemi-alphaville/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -33,6 +36,10 @@ atualizado_em: 2026-11-15
 A unidade fica na Alameda Rio Negro, 111, junto ao Iguatemi Alphaville. O que define a ficha é a grade: a lista publicada passa de trinta atividades, a mais ampla do guia. Tem musculação, corrida, indoor bike, boxe, muay thai, mat pilates, balé, step, zumba, circuitos funcionais, treino de core, HIIT e até duatlo.
 
 Para quem pensa em personal, isso muda a pergunta. Com tanta aula disponível, o acompanhamento individual pode ficar concentrado em poucos dias, por exemplo na musculação, e o resto da semana sai da grade coletiva. A divisão certa depende do objetivo de cada pessoa.
+
+![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
 ## O que a ficha não informa sobre personal
 
@@ -56,6 +63,10 @@ O funcionamento aos domingos está entre as pendências da ficha. Quem quer sess
 ## O detalhe do plano Silver
 
 Não há mensalidade direta divulgada. No Wellhub, o piso é o Silver, de R$ 149,99, mas a própria página avisa que nesse plano o acesso vale só em horários específicos, que o guia ainda não conseguiu confirmar. Se a ideia é marcar o personal num horário de entrada ou saída do trabalho, cheque se ele está coberto antes de pagar. Na conta final, some o que o profissional cobra e a eventual cobrança da Bodytech pelo acesso de quem vem de fora. Os comparativos ficam em [preços](/academias/precos/) e na página de [agregadores](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer em Alphaville, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Quando o domingo pesa na escolha
 

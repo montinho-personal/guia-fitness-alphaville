@@ -19,6 +19,9 @@ fontes:
     url: "https://www.smartfit.com.br/academias/sodimac-alphaville"
   - titulo: "Página da unidade no TotalPass"
     url: "https://totalpass.com/br/academias/smart-fit-alphaville-ii/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -35,6 +38,10 @@ atualizado_em: 2026-11-15
 A [Smart Fit Sodimac Alphaville](/academias/smart-fit-sodimac-alphaville/) tem um endereço que confunde quem chega pela primeira vez: o 2º pavimento do estacionamento da Sodimac, na Alameda Araguaia, 1801, em Alphaville Industrial. No TotalPass, a mesma unidade aparece como Smart Fit Alphaville II. Se o seu personal vai encontrar você lá, passe os dois nomes e o andar.
 
 O estacionamento consta na lista de comodidades do site oficial, coisa que as três unidades da rede em Barueri não informam. O guia ainda não apurou custo nem regras da vaga para alunos, então confirme antes de contar com ela.
+
+![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
 ## Personal de fora: o que a unidade não publica
 
@@ -60,6 +67,10 @@ Entre segunda e sexta, as portas ficam abertas das 6h às 23h. No sábado e em f
 Aqui não existe o Plano Fit, o mais barato da rede. O degrau inicial é o Plano Smart: R$ 149,90 por mês com fidelidade, R$ 20 a mais sem ela, adesão grátis. O Plano Black sai por R$ 159,90 com fidelidade, tem adesão de R$ 9,90 e libera todas as unidades da marca; o site fala em primeiro mês gratuito. Pelo TotalPass, o plano mínimo é o TP 2, de R$ 119,90. A Smart Fit avisa que os valores exibidos são promocionais.
 
 Na conta do mês, entram a mensalidade, o que você paga ao personal e uma eventual taxa de profissional externo, se a unidade cobrar. Os números lado a lado estão na [tabela de preços](/academias/precos/); para os agregadores, veja [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer em Alphaville, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Vizinhas em Alphaville Industrial
 

@@ -19,6 +19,9 @@ fontes:
     url: "https://www.academiagavioes.com.br/unidades/item/spalphaville"
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/academia-gavioes-24h-alphaville-alphaville-industrial/"
+video:
+  id: DiH1OzIR6Yk
+  titulo: "É impossível isso dar errado"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -35,6 +38,10 @@ atualizado_em: 2026-11-15
 A Gaviões 24h aparece no Wellhub aberta 24 horas, de segunda a domingo. No guia, só ela e a Ironberg Alphaville têm esse horário publicado. Para quem trabalha em turno, viaja muito ou só consegue treinar antes de amanhecer, isso pesa mais do que qualquer outra característica.
 
 Duas coisas, porém, continuam sem confirmação: se as 24 horas valem também nos feriados e como fica a equipe de madrugada. Em academias desse formato, é comum o período noturno ter menos gente trabalhando. Se a ideia é marcar sessões às 5h ou às 23h, confirme as duas antes. A lista de [academias 24 horas](/academias/24-horas/) mostra as opções da região.
+
+![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O próprio Montinho, em dois momentos da vida. O que mudou foi a constância, ano após ano.*
 
 ## Nada publicado sobre profissional externo
 
@@ -55,6 +62,10 @@ O foco é musculação, e a página da unidade cita um rooftop com máquinas. A 
 ## Preço: a lacuna principal
 
 A Gaviões não divulga mensalidade nem diária: a página da unidade leva a uma plataforma de matrícula. No Wellhub, a unidade exige no mínimo o Silver+, de R$ 199,99. O orçamento real soma três parcelas: o acesso à academia, o preço cobrado pelo profissional e a taxa para personal externo, caso a Gaviões cobre alguma. Compare com [os preços publicados na região](/academias/precos/) e com [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer em Alphaville, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Vizinhos no Alphaville Industrial
 

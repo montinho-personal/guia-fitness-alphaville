@@ -21,6 +21,9 @@ fontes:
     url: "https://wellhub.com/pt-br/search/partners/arena18-academia-barueri/"
   - titulo: "Página da unidade no TotalPass"
     url: "https://totalpass.com/br/academias/arena18-academia/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -35,6 +38,10 @@ atualizado_em: 2026-11-15
 ## O vínculo, antes de tudo
 
 **Relação comercial:** a Arena 18 é o lugar onde o Montinho, dono deste site, recebe os próprios alunos. Nenhuma outra academia cadastrada aqui tem essa ligação com ele. O texto a seguir tenta tratar a Arena 18 como qualquer outra academia, com os mesmos critérios, mas você tem o direito de saber da ligação antes de decidir.
+
+![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
 ## E se o seu personal for outro?
 
@@ -62,6 +69,10 @@ De segunda a sexta, das 5h às 23h. No domingo, das 8h às 18h. O sábado tem di
 ## O que entra no orçamento
 
 A mensalidade não é publicada. Pelos agregadores, a porta de entrada é o Gold do Wellhub (R$ 319,99) ou o TP 4 do TotalPass (R$ 299,90). Compare em [Wellhub e TotalPass](/academias/wellhub-totalpass/). O preço do personal fica fora dessa conta e precisa ser acrescentado. A ficha registra estacionamento, inclusive vagas acessíveis. A academia fica na Rua Mario Quintana, no Melville Empresarial.
+
+![Montinho, personal trainer em Alphaville, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Outras academias com serviço de apoio
 

@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/arena-18-alphaville/"
   - titulo: "Ficha da SIX Alphaville no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/six-alphaville/"
+video:
+  id: DiH1OzIR6Yk
+  titulo: "É impossível isso dar errado"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -34,6 +37,10 @@ atualizado_em: 2026-11-15
 "Personal trainer feminino" pode significar uma coisa ou outra. Há quem queira ser orientada por uma mulher. E há quem só queira um acompanhamento montado para o próprio corpo, a própria agenda e os próprios objetivos, sem se importar com quem conduz. As duas vontades são válidas, e a resposta muda conforme a sua.
 
 Se a prioridade é ter uma profissional mulher, diga isso já no primeiro contato. Peça indicação na recepção da academia que você pretende usar e confira se ela pode atender no local que você escolheu.
+
+![Antes e depois do Montinho, personal trainer feminino em Alphaville: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do personal que mantém este guia. Nenhum resultado é garantido.*
 
 ## O treino entre a casa e o escritório
 
@@ -59,6 +66,10 @@ Visite a academia exatamente na hora em que planeja ir. Iluminação, movimento 
 Para mães que não têm com quem deixar as crianças, a [Arena 18](/academias/arena-18-alphaville/) é a única academia de Alphaville com área infantil listada nas fichas do guia. Pergunte na unidade a faixa de idade aceita e se há alguém cuidando do espaço enquanto você treina.
 
 Outra saída é levar a aula para casa ou para a academia do prédio. Vários residenciais de Alphaville contam com sala de musculação própria, e aí é o treinador que faz o trajeto.
+
+![Montinho, personal trainer feminino em Alphaville, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que atende em Alphaville.*
 
 ## Quatro perguntas para a entrevista
 

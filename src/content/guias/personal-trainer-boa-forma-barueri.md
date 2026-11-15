@@ -17,6 +17,9 @@ lista_ids: [boa-forma-barueri]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/boa-forma-jardim-alberto-barueri/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -33,6 +36,10 @@ atualizado_em: 2026-11-15
 Quase todo pedido de personal em academia gira em torno de musculação. Na [Academia Boa Forma](/academias/boa-forma-barueri/), no Jardim Alberto, existe outra possibilidade: o cadastro da unidade no Wellhub menciona piscina, natação para adultos, hidroginástica e hidroterapia. Entre todas as fichas reunidas aqui, é a única com piscina.
 
 Para quem pensa em treino acompanhado dentro da água, isso abre perguntas que não aparecem em outros lugares. A piscina tem horário livre ou só funciona em aula? Um personal de fora pode usá-la com o aluno? Os horários das aulas de natação e hidroginástica não estão publicados, então essas respostas só vêm da própria academia.
+
+![Antes e depois do Montinho, personal trainer em Barueri: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do personal que mantém este guia. Nenhum resultado é garantido.*
 
 ## Fora da água: o que a grade lista
 
@@ -64,6 +71,10 @@ Se a sua agenda livre é o sábado, sobra só a manhã. Domingo exige outra acad
 Não há mensalidade própria divulgada. No Wellhub, o plano de entrada para esta unidade é o Silver+, a R$ 199,99 por mês. Dá para comparar agregadores [nesta página](/academias/wellhub-totalpass/) e valores de outras academias em [preços](/academias/precos/). Ao total, acrescente o preço das sessões combinado com o treinador e uma eventual cobrança da casa pela entrada dele.
 
 Constam ainda estacionamento e um espaço preparado para cadeirantes. Atenção ao endereço: a mesma página mostra a Rua Dr. Francis D Hornet com número 73 nos dados de localização e 120 no texto. Confirme por telefone antes de ir.
+
+![Montinho, personal trainer em Barueri, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Barueri.*
 
 ## Outras academias de Barueri com ficha
 

@@ -13,6 +13,9 @@ cta_texto: "O Montinho pode conduzir o treino na sala de musculação do seu res
 cta_destino: /blog/personal-trainer-aldeia-da-serra
 lista_titulo: "Academia citada nesta página (fica fora da Aldeia da Serra)"
 lista_ids: [ironberg-alphaville]
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -27,6 +30,10 @@ atualizado_em: 2026-11-15
 ## Sem academia no bairro, a sala do residencial ganha peso
 
 Residenciais rodeados de mata, divididos entre Barueri e Santana de Parnaíba: esse é o desenho da Aldeia da Serra. Até agora, nenhuma academia comercial do bairro entrou nas fichas do guia. Assim, o espaço de musculação do seu condomínio, onde houver, é o único ponto com aparelhos perto de casa. Quem não quer pegar estrada para treinar começa por ele.
+
+![Antes e depois do Montinho, personal trainer em condomínio na Aldeia da Serra: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do Montinho. Serve de inspiração, não de garantia para quem contrata.*
 
 ## Liberação: perguntas para a administração
 
@@ -54,6 +61,10 @@ Ter três opções protege a constância: se a sala está cheia ou chove forte, 
 ## Pouco equipamento, ou nenhum
 
 Nem todo residencial tem uma academia completa. Quando o equipamento é curto, o profissional complementa com elásticos, halteres leves e acessórios que traz consigo, e ajusta a dificuldade pelo número de repetições e pela velocidade do movimento. Se o seu condomínio não tem sala de treino, a casa e as ruas internas assumem o papel inteiro.
+
+![Montinho, personal trainer em condomínio na Aldeia da Serra, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que atende na Aldeia da Serra.*
 
 ## O nome engana: a Ironberg fica na Aldeinha
 

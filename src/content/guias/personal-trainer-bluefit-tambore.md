@@ -17,6 +17,9 @@ lista_ids: [bluefit-tambore]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/academia-bluefit-tambore-granja-viana-cotia/"
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -34,6 +37,10 @@ A [Bluefit Tamboré](/academias/bluefit-tambore/) tem um perfil mais enxuto que 
 
 Para quem contrata personal justamente para a musculação, esse foco é o que interessa. Vale notar que, entre as comodidades, não aparece uma área de funcional separada, embora o treino funcional esteja na lista de atividades. Se isso for central no seu plano, veja o espaço antes.
 
+![Antes e depois do Montinho, personal trainer no Tamboré: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O próprio Montinho, em dois momentos da vida. O que mudou foi a constância, ano após ano.*
+
 ## "Personal trainer no local": o que isso cobre
 
 O Wellhub registra, para esta unidade, personal trainer no local. Ou seja, há profissionais ligados à academia. A regra para quem já tem o próprio personal, porém, não foi publicada. Leve à recepção:
@@ -50,6 +57,10 @@ Segunda a sexta: 5h às 23h59. Sábado: 8h às 17h. Domingo: 8h às 14h. A janel
 ## Custo: Wellhub mais barato que na Alphaville
 
 Sem mensalidade direta publicada, o preço conhecido é o do Wellhub: plano Silver, R$ 149,99. A [Bluefit Alphaville](/academias/bluefit-alphaville/) exige o Silver+, de R$ 199,99, então quem já usa o Silver chega a esta unidade sem trocar de plano. Ao valor do agregador some o personal e a taxa de profissional externo, caso a academia cobre. A ficha cita estacionamento, sem detalhar regras.
+
+![Montinho, personal trainer no Tamboré, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende no Tamboré.*
 
 ## Vizinha no Tamboré e o treino em casa
 

@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/fabrica-premium-alphaville/"
   - titulo: "Ficha da Olympia Fitness Academia no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/olympia-fitness-polvilho/"
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -32,6 +35,10 @@ atualizado_em: 2026-11-15
 ## Personal mulher ou treino para mulheres?
 
 A expressão serve para dois pedidos. Um é ter uma mulher como treinadora. O outro é ter um plano que leve em conta a sua vida: turnos de trabalho, filhos, o tempo que sobra no dia, o que você quer sentir no corpo. Os dois se resolvem de jeitos diferentes, e esta página trata de ambos.
+
+![Antes e depois do Montinho, personal trainer feminino em Santana de Parnaíba: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
 
 ## Num município espalhado, o trajeto vem primeiro
 
@@ -52,6 +59,10 @@ Longe de Alphaville, as três unidades catalogadas seguem lógicas diferentes:
 - **Olympia Fitness** (Polvilho): vagas acessíveis, produtos de higiene e adaptações voltadas a pessoas autistas. Atenção ao intervalo: no meio do dia útil, a academia faz uma pausa de duas horas a partir do meio-dia.
 
 Aos domingos, as três ficam fechadas. Quem só tem esse dia livre encontra alternativas em [academias que funcionam no domingo](/academias/domingo/).
+
+![Montinho, personal trainer feminino em Santana de Parnaíba, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que atende em Santana de Parnaíba.*
 
 ## Como chegar a uma profissional mulher
 

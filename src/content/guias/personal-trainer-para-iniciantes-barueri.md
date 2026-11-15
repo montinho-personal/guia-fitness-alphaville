@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/panobianco-barueri-centro/"
   - titulo: "Ficha da Smart Fit Barueri Centro no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/smart-fit-barueri-centro/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -36,6 +39,10 @@ Quem vai estrear na academia em Barueri costuma fazer duas perguntas juntas: qua
 Começando pelo Centro: a **Panobianco** anuncia o Plano Orange por R$ 119,90 mensais, num contrato de um ano. As três unidades da **Smart Fit** da cidade, no Centro, na Avenida Zélia e no Parque Shopping, cobram R$ 139,90 no Plano Fit, também com fidelidade e sem taxa de adesão. Com uma base tão barata, sobra espaço no orçamento para pagar acompanhamento por um tempo.
 
 Some também qualquer taxa que a academia cobre quando o aluno traz o próprio personal. Este guia não divulga preço de personal; peça propostas e compare o que cada uma inclui. Os valores de mensalidade estão lado a lado na [tabela de preços](/academias/precos/).
+
+![Antes e depois do Montinho, personal trainer para iniciantes em Barueri: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do Montinho. Serve de inspiração, não de garantia para quem contrata.*
 
 ## O que o professor de sala resolve
 
@@ -58,6 +65,10 @@ Em Barueri não faltam prédios em condomínio que contam com sala de treino pr�
 ## Treino no caminho
 
 A cidade é cortada pela Linha 8-Diamante da CPTM, que para em quatro estações dentro de Barueri: Jardim Silveira, Jardim Belval, Antônio João e a estação Barueri. Se o seu dia gira em torno do trem, a academia certa é a que fica entre a plataforma e a sua porta. Confira a localização no [mapa](/mapa/) antes de decidir só pelo preço.
+
+![Montinho, personal trainer para iniciantes em Barueri, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que atende em Barueri.*
 
 ## Por quanto tempo pagar personal
 

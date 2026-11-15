@@ -13,6 +13,9 @@ cta_texto: "Mantenedor deste guia, o Montinho atende em residências de Santana 
 cta_destino: /blog/personal-trainer-a-domicilio-santana-de-parnaiba
 lista_titulo: "Academias de Santana de Parnaíba citadas"
 lista_ids: [fabrica-premium-alphaville, forth-academia-jardim-sao-luis, mattos-fitness-fazendinha, olympia-fitness-polvilho]
+video:
+  id: yndKE1GrnUQ
+  titulo: "Toda pessoa com shape tem uma coisa em comum"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -29,6 +32,10 @@ atualizado_em: 2026-11-15
 Santana de Parnaíba reúne realidades bem diferentes. O município abriga partes do Tamboré e de Alphaville e também bairros próprios, entre eles o Jardim São Luís, a Fazendinha e o Polvilho. Ir de um ponto a outro pode levar bastante tempo. Para o treino a domicílio, isso significa que a logística precisa ser conversada antes dos exercícios.
 
 Um profissional com vários alunos no mesmo dia tem de encaixar trajetos. Se a sua casa fica longe do restante da agenda dele, alguns horários podem simplesmente não fechar.
+
+![Antes e depois do Montinho, personal trainer a domicílio em Santana de Parnaíba: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O próprio Montinho, em dois momentos da vida. O que mudou foi a constância, ano após ano.*
 
 ## Cinco dúvidas para tirar logo de cara
 
@@ -56,6 +63,10 @@ Se a ideia é alternar casa e academia, o guia cataloga estas opções no munic�
 - **[Olympia](/academias/olympia-fitness-polvilho/)**, no Polvilho, com adaptações para pessoas autistas.
 
 O guia não encontrou, em nenhuma delas, regra publicada sobre profissional externo. Ligue para a unidade antes de marcar com o seu.
+
+![Montinho, personal trainer a domicílio em Santana de Parnaíba, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que atende em Santana de Parnaíba.*
 
 ## Para continuar
 

@@ -20,6 +20,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/olympia-fitness-polvilho/"
   - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
     url: "https://www.who.int/publications/i/item/9789240015128"
+video:
+  id: DiH1OzIR6Yk
+  titulo: "É impossível isso dar errado"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -34,6 +37,10 @@ atualizado_em: 2026-11-15
 ## Começa no consultório
 
 Ninguém com mais de 60 deveria iniciar um programa de exercícios sem conversar antes com o médico. A recomendação geral da OMS é manter o corpo ativo em qualquer idade, com atenção à força muscular nas pessoas mais velhas. A tradução disso para o seu caso, com o que pode e o que não pode, fica com quem acompanha a sua saúde. O personal recebe essas orientações e trabalha dentro delas.
+
+![Antes e depois do Montinho, personal trainer para idosos em Santana de Parnaíba: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do personal que mantém este guia. Nenhum resultado é garantido.*
 
 ## As academias de bairro, lado a lado
 
@@ -54,6 +61,10 @@ Dentro do município, os trajetos são longos. Uma academia boa do outro lado da
 ## Do lado de Alphaville
 
 Alguns trechos de Alphaville pertencem ao município. Por lá, a [Fábrica Premium](/academias/fabrica-premium-alphaville/) (Estrada da Bela Vista, 1332) oferece valet e concierge, o que encurta o trecho a pé até a entrada. No domingo, funciona de 8h a 14h.
+
+![Montinho, personal trainer para idosos em Santana de Parnaíba, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que atende em Santana de Parnaíba.*
 
 ## O que esperar da primeira aula
 

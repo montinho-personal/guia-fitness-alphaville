@@ -17,6 +17,9 @@ lista_ids: [scelta-alphaville]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/academia-scelta/"
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -31,6 +34,10 @@ atualizado_em: 2026-11-15
 ## Resposta curta: depende de uma conversa na recepção
 
 A Scelta fica na Av. Andrômeda, 885, no Alphaville Empresarial. Na lista de serviços da unidade aparece "Personal trainer". Isso significa que há profissionais oferecidos pela casa. Para quem já tem um treinador e quer levá-lo, a situação é outra: nenhuma regra publicada apareceu na pesquisa do guia. Antes de combinar a primeira sessão, pergunte se a casa libera personal externo, se há cobrança, de quem ela é, se existe restrição de horário e que tipo de cadastro é exigido do treinador. O contato publicado é (11) 97500-6370.
+
+![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
 ## Serviços de apoio que fazem diferença
 
@@ -55,6 +62,10 @@ Nos dias úteis, a Scelta abre às 5h30 e fecha às 23h. Aos sábados, 8h às 16
 ## Plano Gold e mensalidade em aberto
 
 A mensalidade direta não aparece publicada. Quem usa Wellhub precisa ao menos do Gold (R$ 319,99). Some o honorário do profissional e, se houver, a taxa da academia para personal de fora. Veja a comparação na página de [preços](/academias/precos/) e na de [agregadores](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer em Alphaville, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Outras portas no lado empresarial
 

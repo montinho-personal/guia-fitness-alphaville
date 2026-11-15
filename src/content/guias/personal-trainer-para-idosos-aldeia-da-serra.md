@@ -11,6 +11,9 @@ cta: montinho-contextual
 cta_titulo: "Montinho na Aldeia da Serra para a terceira idade"
 cta_texto: "Na Aldeia da Serra, o Montinho atende em domicílio e no espaço de treino do residencial, respeitando o que o médico de cada aluno orientou. Fora do bairro, também dá aulas na Arena 18."
 cta_destino: /blog/personal-trainer-aldeia-da-serra
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -25,6 +28,10 @@ atualizado_em: 2026-11-15
 ## Aqui, o treino vai até a pessoa
 
 Cercados de verde, os residenciais desse pedaço da região se espalham por Barueri e por Santana de Parnaíba. Nenhuma ficha de academia do guia cai ali. Para quem tem mais de 60, há uma vantagem nisso: o treino acontece onde a pessoa já está, sem carro, sem estacionamento e sem ambiente estranho. Os três cenários possíveis são a casa, o espaço de treino comum do condomínio e as ruas internas.
+
+![Antes e depois do Montinho, personal trainer para idosos na Aldeia da Serra: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
 
 ## O médico dá o sinal verde
 
@@ -45,6 +52,10 @@ Um começo cuidadoso não tem pressa. O profissional precisa saber de quedas, ci
 ## Família por perto, mesmo de longe
 
 Nem sempre os filhos estão na mesma casa. Mesmo assim, dá para participar: ajudar a marcar a consulta, estar na primeira sessão por chamada de vídeo, combinar com o personal um contato em caso de imprevisto. Isso dá tranquilidade a todos.
+
+![Montinho, personal trainer para idosos na Aldeia da Serra, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que atende na Aldeia da Serra.*
 
 ## E se um dia quiser academia?
 
