@@ -57,6 +57,6 @@ Para objetivos que pedem mais carga ou variedade, uma mensalidade baixa no centr
 - [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/): Plano Fit a R$ 139,90 por mês com fidelidade, sem taxa de adesão.
 - [Bluefit Barueri](/academias/bluefit-barueri/), no Bethaville: preço não publicado, serviço de personal trainer anunciado e domingo das 10h às 16h.
 
-No centro, as duas unidades recebem alunos a partir das 5h, até 23h59, nos dias úteis e, aos domingos, entre 8h e 14h. Nenhuma delas publica as condições para personal externo. Antes de levar o seu profissional, tire a dúvida na recepção. Compare valores na [tabela de preços](/academias/precos/) e os horários de domingo na seleção [academias que abrem no domingo](/academias/domingo/).
+No centro, as duas unidades abrem às 5h nos dias úteis (a Smart Fit fecha às 23h59; a Panobianco, às 23h59 de segunda a quinta e às 23h na sexta) e, aos domingos, funcionam entre 8h e 14h. Nenhuma delas publica as condições para personal externo. Antes de levar o seu profissional, tire a dúvida na recepção. Compare valores na [tabela de preços](/academias/precos/) e os horários de domingo na seleção [academias que abrem no domingo](/academias/domingo/).
 
 Treino em casa e em academia comercial estão reunidos na página [personal trainer em Barueri](/guias/personal-trainer-barueri/), e a comparação entre treinar sozinho e com alguém fica no artigo [academia ou personal trainer](/guias/academia-ou-personal/).

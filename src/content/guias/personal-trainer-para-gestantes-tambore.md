@@ -9,7 +9,7 @@ palavra_chave: personal trainer para gestantes tamboré
 intencao: "Gestante moradora do Tamboré que procura o melhor lugar e formato para treinar com personal durante a gravidez."
 cta: montinho-contextual
 cta_titulo: "Acompanhamento do Montinho no Tamboré para gestantes"
-cta_texto: "No Tamboré, o Montinho atende na residência da aluna ou à academia do condomínio, e dá aulas ainda na Arena 18. O plano dele segue o que o obstetra liberou e muda a cada consulta."
+cta_texto: "No Tamboré, o Montinho atende na residência da aluna ou na academia do condomínio, e dá aulas ainda na Arena 18. O plano dele segue o que o obstetra liberou e muda a cada consulta."
 cta_destino: /blog/personal-trainer-para-gestantes-alphaville-tambore
 lista_titulo: "Academias do Tamboré citadas"
 lista_ids: [nitrogym-tambore, bluefit-tambore]

@@ -38,7 +38,7 @@ Emagrecer pede meses de regularidade. Em um município extenso como Santana de P
 
 ## Na porção de Alphaville
 
-Nem todo Alphaville é Barueri: no trecho que cabe a Santana de Parnaíba funciona a [Fábrica Premium](/academias/fabrica-premium-alphaville/), na Estrada da Bela Vista. A ficha cita valet, pista de corrida no rooftop e, entre os serviços, nutricionista e nutrólogo. É a opção para quem quer resolver treino e consulta alimentar no mesmo endereço. Pela ficha, não trabalha com agregadores e não publica preço. O horário vai de 6h a 23h de segunda a sexta; no domingo, de 8h a 14h.
+Nem todo Alphaville é Barueri: no trecho que cabe a Santana de Parnaíba funciona a [Fábrica Premium](/academias/fabrica-premium-alphaville/), na Estrada da Bela Vista. A ficha cita valet, pista de corrida no rooftop e, entre os serviços, nutricionista e nutrólogo. É a opção para quem quer resolver treino e consulta alimentar no mesmo endereço. Pela ficha, não publica preço e não aparece no Wellhub nem no TotalPass. O horário vai de 6h a 23h de segunda a sexta; no domingo, de 8h a 14h.
 
 ## Nos bairros: atenção ao relógio
 

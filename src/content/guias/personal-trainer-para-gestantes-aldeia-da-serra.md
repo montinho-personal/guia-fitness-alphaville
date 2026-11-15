@@ -41,7 +41,7 @@ Para a gestante, a falta de academia por perto não chega a ser um problema. O a
 
 ## O obstetra antes de qualquer plano
 
-Nada disso começa sem a consulta. Quem acompanha o seu pré-natal avalia se pode haver exercício, aponta os cuidados do seu caso e diz quando rever. O documento de 2020 da Organização Mundial da Saúde sobre atividade física têm uma parte para gestantes e para quem acabou de ter bebê, mas funcionam como referência ampla. O seu plano é individual.
+Nada disso começa sem a consulta. Quem acompanha o seu pré-natal avalia se pode haver exercício, aponta os cuidados do seu caso e diz quando rever. O documento de 2020 da Organização Mundial da Saúde sobre atividade física tem uma parte para gestantes e para quem acabou de ter bebê, mas ela funciona como referência ampla. O seu plano é individual.
 
 Um personal sério deixa isso claro desde o primeiro contato. Ele não define sozinho o que pode ou não pode: aplica o que o médico orientou e reorganiza o treino de um trimestre para o seguinte.
 

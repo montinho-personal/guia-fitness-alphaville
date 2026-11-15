@@ -2,7 +2,7 @@
 titulo: "Personal trainer a domicílio na Aldeia da Serra: como é a aula"
 descricao: "Na Aldeia da Serra o personal a domicílio é o formato principal de treino acompanhado. Veja como é uma aula em casa, do portão ao alongamento final."
 h1: "Personal trainer a domicílio na Aldeia da Serra"
-resposta: "Como nenhuma academia da Aldeia da Serra consta no guia, receber o personal em casa é o jeito mais direto de ter acompanhamento sem pegar a estrada. A aula pode circular por três cenários: a própria casa, a academia interna do residencial e as ruas do condomínio. Como o profissional vem de fora do bairro, pergunte sobre deslocamento e horários disponíveis."
+resposta: "Como nenhuma academia da Aldeia da Serra consta no guia, receber o personal em casa é o jeito mais direto de ter acompanhamento sem pegar a estrada. A aula pode circular por três cenários: a própria casa, a academia interna do residencial e as ruas do condomínio. Se o profissional vier de fora do bairro, pergunte sobre deslocamento e horários disponíveis."
 cluster: D
 secao: guias
 palavra_chave: personal trainer a domicilio aldeia da serra
@@ -49,7 +49,7 @@ Aqui entram os acessórios que o personal leva, em geral elásticos, pesos leves
 
 Havendo sala de ginástica no condomínio, dá para alternar. Em alguns dias, o encontro muda para lá para usar aparelhos. Pergunte antes à administração se profissional de fora tem acesso e em quais horários.
 
-As ruas internas também entram no roteiro em dias de tempo bom. Nesse caso, prefira horários com luz natural e lembre que o relevo pode cansar mais do que o previsto.
+As ruas internas também entram no roteiro em dias de tempo bom. Nesse caso, prefira horários com luz natural.
 
 ## O fim da aula e o que fica para a semana
 
@@ -57,6 +57,6 @@ Os minutos finais costumam ser de volta à calma e alongamento. É também a hor
 
 ## Distância e agenda: a conversa honesta
 
-Das academias que o guia cataloga, nenhuma fica dentro do bairro, e o profissional também chega de fora. Para ele, isso significa tempo de estrada entre um aluno e outro. Pergunte com franqueza se o trajeto entra no preço e quais horários ele consegue manter com regularidade. Uma agenda fixa vale mais do que um horário ideal que cai toda semana.
+Das academias que o guia cataloga, nenhuma fica dentro do bairro, e o profissional muitas vezes chega de fora. Para ele, isso significa tempo de estrada entre um aluno e outro. Pergunte com franqueza se o trajeto entra no preço e quais horários ele consegue manter com regularidade. Uma agenda fixa vale mais do que um horário ideal que cai toda semana.
 
 Se um dia bater vontade de academia, use o [mapa](/mapa/) a partir do seu endereço. Cuidado com a semelhança de nomes: a Ironberg fica na Estrada da Aldeinha, bairro diferente, fora da Aldeia. Mais contexto na [visão geral do personal no bairro](/guias/personal-trainer-aldeia-da-serra/) e, para quem ainda hesita, também em [academia ou personal trainer](/guias/academia-ou-personal/), que coloca os dois formatos lado a lado.

@@ -55,7 +55,7 @@ Apartamento tem pouco lugar para guardar coisa. O profissional normalmente traz 
 
 ## Centro de Barueri como reforço
 
-Dá para somar uma academia às aulas no apartamento sem estourar o orçamento. Segundo o levantamento de [preços](/academias/precos/) do guia, nos planos com fidelidade anunciados no centro a mensalidade mais baixa é R$ 119,90 e a mais alta, R$ 139,90:
+Dá para somar uma academia às aulas no apartamento sem estourar o orçamento. Segundo o levantamento de [preços](/academias/precos/) do guia, os planos de entrada com fidelidade anunciados no centro vão de R$ 119,90 a R$ 139,90 por mês:
 
 - **[Panobianco Barueri Centro](/academias/panobianco-barueri-centro/)**, que cita personal trainer na própria ficha;
 - **[Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/)**, que em dias úteis fecha só às 23h59;

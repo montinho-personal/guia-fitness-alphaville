@@ -49,7 +49,7 @@ Cada condomínio tem sua própria regra para prestadores de serviço, então nã
 
 O guia tem duas fichas no bairro. Dentro do Shopping Tamboré, que fica na Av. Piracema, está a [NitroGym Tamboré](/academias/nitrogym-tambore/). Quem treina ali tem até três horas de vaga no shopping já cobertas, salão climatizado e professores circulando. Funciona os sete dias; aos domingos, de 6h a 22h.
 
-A [Bluefit Tamboré], endereço na Av. Tucunaré,(/academias/bluefit-tambore/) oferece área de alongamento e estacionamento, e menciona a presença de personal trainers. Aos domingos, abre de 8h a 14h.
+A [Bluefit Tamboré](/academias/bluefit-tambore/), com endereço na Av. Tucunaré, oferece área de alongamento e estacionamento, e menciona a presença de personal trainers. Aos domingos, abre de 8h a 14h.
 
 Um ponto de atenção: nenhuma das duas fichas lista itens específicos de acessibilidade, como banheiro adaptado ou elevador. Isso não quer dizer que não existam. Quer dizer que vale visitar antes, de preferência com quem vai treinar, e perguntar se aceitam um treinador externo.
 

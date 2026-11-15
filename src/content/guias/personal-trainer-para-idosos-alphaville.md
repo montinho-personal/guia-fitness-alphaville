@@ -35,7 +35,7 @@ atualizado_em: 2026-11-15
 
 Antes de qualquer agachamento, marque uma consulta. É o médico quem diz se a pessoa está liberada, quais movimentos merecem cuidado e se há exames a fazer. Pressão, coração, articulações, remédios de uso contínuo: tudo isso muda o que é seguro. Um bom personal pede esse aval e segue as orientações recebidas. Se ele não perguntar nada sobre saúde, desconfie.
 
-As diretrizes de 2020 da OMS recomendam movimento regular também para quem já passou dos 60, com lugar para o fortalecimento muscular. Ajustar isso a cada pessoa é tarefa do médico, não de uma tabela genérica.
+As diretrizes de 2020 da OMS recomendam movimento regular também para as pessoas mais velhas, com lugar para o fortalecimento muscular. Ajustar isso a cada pessoa é tarefa do médico, não de uma tabela genérica.
 
 ## Estrutura que faz diferença depois dos 60
 

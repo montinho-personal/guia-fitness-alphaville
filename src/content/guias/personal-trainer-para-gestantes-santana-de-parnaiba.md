@@ -44,7 +44,7 @@ Se a ideia for treinar fora, estas são as fichas do guia no município, com o q
 - **Jardim São Luís, [Forth Academia](/academias/forth-academia-jardim-sao-luis/)**: estrutura de acessibilidade, com banheiro e estacionamento adaptados.
 - **Polvilho, [Olympia Fitness](/academias/olympia-fitness-polvilho/)**: ar-condicionado, vaga acessível, banheiro acessível e adaptações para pessoas autistas.
 - **Fazendinha, [Mattos Fitness](/academias/mattos-fitness-fazendinha/)**: recebe alunos a partir das 4h em dia útil, alternativa para quem só tem a primeira hora do dia livre.
-- **Perto de Alphaville, [Fábrica Premium](/academias/fabrica-premium-alphaville/)**: endereço na Estrada da Bela Vista; oferece valet e toalhas geladas, dois itens que ajudam em dias de calor.
+- **Lado de Alphaville, [Fábrica Premium](/academias/fabrica-premium-alphaville/)**: endereço na Estrada da Bela Vista; oferece valet e toalhas geladas, dois itens que ajudam em dias de calor.
 
 Se o profissional não for da casa, telefone antes: as fichas não dizem se a entrada dele é permitida.
 

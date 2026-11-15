@@ -47,7 +47,7 @@ Na Aldeia da Serra, o treino acompanhado costuma se espalhar por três cenários
 |---|---|---|
 | Sala do condomínio | Halteres, aparelhos e carga para força | Equipamento que varia de um residencial para outro; horários definidos pela administração |
 | Sua casa | Privacidade e treino mesmo em dia de chuva | Limitada aos acessórios trazidos e à área disponível |
-| Ruas internas | Caminhada, corrida leve e exercícios funcionais com ar fresco | Luz do dia, clima e subidas que cansam mais do que parece |
+| Ruas internas | Caminhada, corrida leve e exercícios funcionais com ar fresco | Luz do dia e clima |
 
 Ter três opções protege a constância: se a sala está cheia ou chove forte, a aula muda de lugar em vez de ser cancelada.
 

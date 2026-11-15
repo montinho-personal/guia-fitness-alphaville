@@ -37,7 +37,7 @@ Por isso, antes de escolher academia, desenhe o seu dia: onde dorme, onde trabal
 
 Na Estrada da Bela Vista, a [Fábrica Premium](/academias/fabrica-premium-alphaville/) ocupa um ponto praticamente defronte ao Condomínio Burle Marx. No calendário de segunda a sexta, a porta abre às 6h e fecha às 23h. A ficha lista valet, carregador para carro elétrico, estação para carregar celular e café no rooftop. Para quem emenda a última série com uma reunião, são detalhes que ajudam a ganhar tempo.
 
-Nenhum dos dois agregadores corporativos é aceito ali, então o benefício da empresa não ajuda nessa conta. Vale ainda checar se um profissional trazido por você tem entrada liberada.
+O guia não encontrou a academia no Wellhub nem no TotalPass, então confirme com ela antes de contar com o benefício da empresa. Vale ainda checar se um profissional trazido por você tem entrada liberada.
 
 ## Nos bairros: o relógio de cada academia
 

@@ -29,7 +29,7 @@ atualizado_em: 2026-11-15
 
 Entre a mata e os portões dos residenciais, num território repartido por dois municípios, o cadastro deste guia não traz academia comercial alguma. Para quem trabalha muito, isso parece um problema e acaba sendo uma solução. Se não existe academia para ir, também não existe trajeto até ela. O personal chega, a sessão acontece, e você toma banho no seu próprio banheiro antes da primeira call.
 
-O horário mais protegido de uma agenda executiva costuma ser o que vem antes de todo mundo acordar. Ninguém marca reunião às 6h. Reservar essa faixa e treinar ali mesmo, na sala, é a forma mais direta de garantir que ele aconteça.
+O horário mais protegido de uma agenda executiva costuma ser o que vem antes de todo mundo acordar. Reunião às 6h é rara. Reservar essa faixa e treinar ali mesmo, na sala, é a forma mais direta de garantir que ele aconteça.
 
 ## O que a casa precisa ter
 

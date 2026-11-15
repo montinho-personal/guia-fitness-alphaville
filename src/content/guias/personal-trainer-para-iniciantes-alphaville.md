@@ -39,7 +39,7 @@ O outro aprendizado é a constância. No começo, a vontade é grande e a técni
 
 Em Alphaville há muita opção, e o erro comum é fechar um plano anual na primeira visita. Dá para experimentar antes.
 
-A **BlackSheep**, na Alameda Araguaia, deixa os valores à vista: aula avulsa a R$ 75 e um mês de teste a R$ 400 para novos alunos. É um box de cross-training, com aulas em grupo, o que muda bastante a experiência de quem está começando. Faça uma avulsa para sentir o ritmo antes de pagar o mês inteiro.
+A **BlackSheep**, na Alameda Araguaia, faz parte de uma rede que deixa a tabela à vista: aula avulsa a R$ 75 e um mês de teste a R$ 400 para novos alunos. É um box de cross-training, com aulas em grupo, o que muda bastante a experiência de quem está começando. Faça uma avulsa para sentir o ritmo antes de pagar o mês inteiro.
 
 Nas demais, pergunte na recepção se existe aula experimental, diária ou passe de visitante. Marque a visita para o mesmo período do dia reservado ao seu treino. Um salão tranquilo à tarde pode estar disputado no começo da noite.
 
@@ -55,7 +55,7 @@ Se a academia já está escolhida, confirme se ela deixa um personal de fora tra
 
 **Relação comercial:** o Montinho dá aulas na Arena 18, localizada no Melville Empresarial.
 
-Para quem trabalha nos polos empresariais, há também um formato curto. A **Fast Treino**, na Avenida Juruá, abre de segunda a sexta das 16h às 20h, só com musculação. É uma janela estreita, boa para quem sai do escritório nesse horário.
+Para quem trabalha nos polos empresariais, há também um formato curto. A **Fast Treino**, na Avenida Juruá, aparece no Wellhub com treino de musculação de segunda a sexta, das 16h às 20h. Essa janela pode valer só para quem usa o agregador, então confirme o horário completo com o estúdio.
 
 ## Quanto tempo com personal
 

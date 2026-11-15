@@ -36,7 +36,7 @@ Antes de combinar horário com qualquer personal, marque uma consulta e conte qu
 
 **Na academia coletiva do residencial.** Pergunte à administração se é permitido trazer um profissional de fora, como é o cadastro e em que horários o local fica vazio. Treinar sem plateia deixa muita gente mais à vontade no começo.
 
-**Nas ruas internas.** Caminhar ao ar livre no meio do verde é agradável, mas depende do terreno. Subidas, descidas e calçadas irregulares entram na avaliação do personal. Em dias muito quentes ou chuvosos, vale ter um plano dentro de casa.
+**Nas ruas internas.** Caminhar ao ar livre no meio do verde é agradável, mas depende do terreno. Se houver subidas, descidas ou piso irregular, isso entra na avaliação do personal. Em dias muito quentes ou chuvosos, vale ter um plano dentro de casa.
 
 ## A avaliação antes do primeiro exercício
 

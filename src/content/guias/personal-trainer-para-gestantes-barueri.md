@@ -9,7 +9,7 @@ palavra_chave: personal trainer para gestantes barueri
 intencao: "Gestante de Barueri que quer treinar acompanhada perto de casa, com conforto e orientação do médico."
 cta: montinho-contextual
 cta_titulo: "Montinho em Barueri: treino na gestação com aval médico"
-cta_texto: "Em Barueri, as sessões do Montinho vão ao apartamento ou à academia do prédio, e recebe alunos também na Arena 18. Com grávidas, nada começa antes do aval do obstetra."
+cta_texto: "Em Barueri, as sessões do Montinho vão ao apartamento ou à academia do prédio, e ele recebe alunos também na Arena 18. Com grávidas, nada começa antes do aval do obstetra."
 cta_destino: /personal-trainer-barueri
 lista_titulo: "Academias de Barueri com itens de acessibilidade na ficha"
 lista_ids: [panobianco-barueri-centro, bluefit-barueri, boa-forma-barueri]

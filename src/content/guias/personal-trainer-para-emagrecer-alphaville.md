@@ -42,14 +42,14 @@ Em Alphaville, onde boa parte das pessoas divide o dia entre o residencial e os 
 
 O personal planeja a progressão, corrige a execução, ajusta o volume quando a semana aperta e cobra a presença. Esse último ponto pesa mais do que parece: ter um horário marcado com alguém reduz as faltas.
 
-O que ele não faz é montar dieta. Cardápio, quantidades e suplementação são assunto de nutricionista. Em Alphaville, duas fichas do guia listam esse profissional entre os serviços: a [Arena 18](/academias/arena-18-alphaville/), situada no Melville, e a [Bodytech Iguatemi](/academias/bodytech-iguatemi-alphaville/), no Centro Comercial. Ter os dois no mesmo endereço facilita, mas não é obrigatório.
+O que ele não faz é montar dieta. Cardápio, quantidades e suplementação são assunto de nutricionista. Em Alphaville, entre as fichas do guia que listam esse profissional nos serviços estão a [Arena 18](/academias/arena-18-alphaville/), situada no Melville, e a [Bodytech Iguatemi](/academias/bodytech-iguatemi-alphaville/), no Centro Comercial. Ter os dois no mesmo endereço facilita, mas não é obrigatório.
 
 ## Perto do escritório ou perto de casa
 
 Para quem trabalha no Industrial ou no Empresarial, treinar antes ou depois do expediente costuma funcionar melhor do que voltar para casa e sair de novo. Alguns exemplos das fichas:
 
 - **Smart Fit Sodimac**, na Alameda Araguaia, abre às 6h nos dias úteis e tem plano publicado de R$ 149,90 com fidelidade;
-- **Bluefit Alphaville**, na Alameda Amazonas, abre às 5h, fecha às 23h59 de segunda a sexta e funciona também aos domingos;
+- **Bluefit Alphaville**, na Alameda Amazonas, abre às 5h, fecha às 23h59 de segunda a quinta (às 22h na sexta) e funciona também aos domingos;
 - **Academia Scelta**, no Empresarial, abre às 5h30 e lista estacionamento e fisioterapeuta;
 - **Academia Gaviões 24h** não fecha em nenhum dia da semana.
 

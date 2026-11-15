@@ -27,7 +27,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Este guia é obra do Montinho, personal do sexo masculino com clientes em Santana de Parnaíba. O bloco promocional dele, ao pé do texto, é conteúdo publicitário.
+> **Transparência.** Este guia é obra do Montinho, personal do sexo masculino que atende em Santana de Parnaíba. O bloco promocional dele, ao pé do texto, é conteúdo publicitário.
 
 ## Personal mulher ou treino para mulheres?
 

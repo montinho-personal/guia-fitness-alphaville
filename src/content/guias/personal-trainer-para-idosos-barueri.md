@@ -2,7 +2,7 @@
 titulo: "Personal trainer para idosos em Barueri: segurança e acesso"
 descricao: "Guia para treinar com acompanhamento depois dos 60 em Barueri: liberação médica, academias com elevador e banheiro acessível, trem e prédio."
 h1: "Personal trainer para idosos em Barueri: o que conferir antes"
-resposta: "Em Barueri, a Panobianco Barueri Centro é a academia com a lista de acessibilidade mais completa nas fichas do guia, com elevador, banheiro e chuveiro acessíveis e assistência a pessoas com deficiência. A Bluefit Barueri, no Bethaville, também tem itens acessíveis. Antes de escolher o local, a pessoa idosa precisa da liberação do médico."
+resposta: "Em Barueri, a Panobianco Barueri Centro é a academia com a lista de acessibilidade mais completa entre as fichas de Barueri no guia, com elevador, banheiro e chuveiro acessíveis e assistência a pessoas com deficiência. A Bluefit Barueri, no Bethaville, também tem itens acessíveis. Antes de escolher o local, a pessoa idosa precisa da liberação do médico."
 cluster: D
 secao: guias
 palavra_chave: personal trainer para idosos barueri
@@ -57,6 +57,6 @@ Barueri tem muitos edifícios residenciais equipados com academia na área comum
 
 ## Quanto custa a academia
 
-Se a escolha for academia, no centro há planos anunciados entre R$ 119,90 (Panobianco) a R$ 139,90 (Smart Fit), com fidelidade, conforme a [tabela do guia](/academias/precos/). Some o valor do personal e, se existir, a taxa cobrada pela academia ao profissional externo.
+Se a escolha for academia, a mensalidade de entrada publicada no centro fica entre R$ 119,90 (Panobianco) e R$ 139,90 (Smart Fit), com fidelidade, conforme a [tabela do guia](/academias/precos/). Some o valor do personal e, se existir, a taxa cobrada pela academia ao profissional externo.
 
 A oferta da cidade inteira está resumida na [página de Barueri](/guias/personal-trainer-barueri/). Se contratar alguém ainda parece exagero, vale ler o comparativo [treinar sozinho ou acompanhado](/guias/academia-ou-personal/).
