@@ -3,6 +3,7 @@ import '@fontsource-variable/bricolage-grotesque';
 import '@fontsource-variable/newsreader';
 import '../styles/global.css';
 import Instagram from '../components/Instagram.astro';
+import BarraWhatsapp from '../components/BarraWhatsapp.astro';
 import Marca from '../components/Marca.astro';
 import { INDEXAVEL, MOSTRAR_EM_REVISAO, GTM_ID } from '../lib/dados';
 
@@ -103,6 +104,7 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
     </div>
   </footer>
 
+  <BarraWhatsapp pagina={Astro.url.pathname.replace(/^\/|\/$/g, '').replace(/\//g, '-') || 'inicio'} />
   <div class="consent" id="consent" role="dialog" aria-labelledby="consent-t" hidden>
     <p id="consent-t"><strong>Medição de audiência.</strong> Usamos cookies de análise para saber quais páginas ajudam mais. Nada é carregado sem o seu aceite. <a href="/privacidade/">Privacidade</a>.</p>
     <div class="acoes">
