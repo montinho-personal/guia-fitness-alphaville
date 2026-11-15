@@ -161,3 +161,6 @@ export function paraFerramentas(lista: Academia[]) {
     conferido: dataCurta(conferidoEm(a)),
   }));
 }
+
+/** Instagram do Montinho (sem parâmetros de rastreio na URL). */
+export const INSTAGRAM = { usuario: '@montinho_personal', url: 'https://www.instagram.com/montinho_personal/' } as const;

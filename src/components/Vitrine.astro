@@ -2,6 +2,7 @@
 // Vitrine de transformações dos alunos do Montinho, lida do feed público do site dele.
 // Se o feed falhar ou vier vazio, nada é renderizado.
 import Comparador from './Comparador.astro';
+import Instagram from './Instagram.astro';
 import { carregarVitrine } from '../lib/vitrine';
 interface Props { intro: string; pagina: string; destaque?: string }
 const { intro, pagina, destaque } = Astro.props;
@@ -56,6 +57,7 @@ const outras = v && principal ? v.transformacoes.filter((t) => t !== principal) 
         <a class="btn" href={v.links.cta} target="_blank" rel="noopener" data-evento="vitrine_cta_click" data-ref={pagina}>Quero começar minha transformação</a>
         <a class="link-forte" href={v.links.todas} target="_blank" rel="noopener" data-evento="vitrine_resultados_click" data-ref={pagina}>Ver todas as transformações</a>
         <p class="vit-aviso">{v.aviso}</p>
+        <Instagram pagina={pagina} texto="Novas transformações no @montinho_personal" />
       </div>
     </div>
   </section>
