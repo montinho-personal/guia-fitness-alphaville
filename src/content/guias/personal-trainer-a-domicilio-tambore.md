@@ -2,14 +2,14 @@
 titulo: "Personal trainer a domicílio no Tamboré: aulas em casa no condomínio"
 descricao: "Personal trainer a domicílio no Tamboré: dúvidas a tirar antes de começar, como usar a casa no residencial e quando NitroGym ou Bluefit Tamboré completam o treino."
 h1: "Personal trainer a domicílio no Tamboré"
-resposta: "No Tamboré, onde predominam os condomínios residenciais, a aula a domicílio acontece dentro do condomínio, na casa do aluno. Antes de começar, descubra como o prestador entra e qual cômodo vira abrigo em dia de chuva. Para variar o estímulo, NitroGym e Bluefit Tamboré são as duas academias do bairro catalogadas pelo guia."
+resposta: "No Tamboré, onde predominam os condomínios residenciais, a aula a domicílio acontece dentro do condomínio, na casa do aluno. Antes de começar, descubra como o prestador entra e qual cômodo vira abrigo em dia de chuva. Para variar o estímulo, NitroGym e Bluefit Tamboré são as duas fichas de academia que o guia mantém no bairro."
 cluster: D
 secao: guias
 palavra_chave: personal trainer a domicilio tambore
 intencao: "Dono de casa em condomínio do Tamboré que busca um personal disposto a atender ali mesmo."
 cta: montinho-contextual
 cta_titulo: "Montinho: aulas em residências do Tamboré"
-cta_texto: "Responsável pelo guia, o Montinho vai até residências do Tamboré, usa o espaço fitness do condomínio quando liberado e recebe alunos na Arena 18."
+cta_texto: "Responsável pelo guia, o Montinho vai até residências do Tamboré, usa a academia do condomínio quando liberado e recebe alunos na Arena 18."
 cta_destino: /personal-trainer-a-domicilio-tambore
 lista_titulo: "Academias do Tamboré para alternar com o treino em casa"
 lista_ids: [nitrogym-tambore, bluefit-tambore]
@@ -27,7 +27,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Este guia tem dono: o Montinho, personal chamado para treinar gente do Tamboré dentro de casa. A caixa com o nome dele, no rodapé, é anúncio pago por ele mesmo.
+> **Transparência.** O dono deste guia é o Montinho, personal chamado para treinar gente do Tamboré dentro de casa. A caixa com o nome dele, no rodapé, é propaganda que ele mesmo publica.
 
 ## Primeiro, olhe para o seu condomínio
 
@@ -62,4 +62,4 @@ A rotina em casa garante constância. Para quem também gosta de máquinas e ani
 
 O guia não tem registro de como nenhuma das duas trata profissionais de fora. Consulte a unidade antes de aparecer com o seu.
 
-Indeciso sobre contratar alguém ou seguir por conta própria? O texto [academia ou personal trainer](/guias/academia-ou-personal/) organiza os prós e contras. O panorama do bairro fica no [guia geral de personal do Tamboré](/guias/personal-trainer-tambore/).
+Indeciso sobre contratar alguém ou seguir por conta própria? Os prós e contras aparecem lado a lado na página [academia ou personal trainer](/guias/academia-ou-personal/). O panorama do bairro fica na [visão geral sobre personal no Tamboré](/guias/personal-trainer-tambore/).

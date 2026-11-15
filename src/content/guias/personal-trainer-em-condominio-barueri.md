@@ -9,7 +9,7 @@ palavra_chave: personal trainer em condomínio barueri
 intencao: "Comercial local. Morador de prédio em Barueri que quer treinar com personal no espaço fitness do condomínio."
 cta: montinho-contextual
 cta_titulo: "Treinar com o Montinho no seu prédio em Barueri"
-cta_texto: "Em Barueri, o Montinho dá aulas na academia de prédios residenciais, quando a administração permite, e também atende em domicílio e na Arena 18."
+cta_texto: "O Montinho acompanha treinos na academia de prédios residenciais de Barueri, quando a administração permite, e também atende em domicílio e na Arena 18."
 cta_destino: /personal-trainer-barueri
 lista_titulo: "Academias de Barueri para quando a sala do prédio não basta"
 lista_ids: [panobianco-barueri-centro, smart-fit-barueri-centro, bluefit-barueri]
@@ -57,6 +57,6 @@ Para objetivos que pedem mais carga ou variedade, uma mensalidade baixa no centr
 - [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/): Plano Fit a R$ 139,90 por mês com fidelidade, sem taxa de adesão.
 - [Bluefit Barueri](/academias/bluefit-barueri/), no Bethaville: preço não publicado, serviço de personal trainer anunciado e domingo das 10h às 16h.
 
-No centro, as duas unidades ficam abertas de 5h a 23h59 em dia útil e, aos domingos, entre 8h e 14h. Nenhuma delas publica política para personal de fora, então confirme na recepção se o seu profissional pode acompanhar você ali. Compare valores na [tabela de preços](/academias/precos/) e o fim de semana na lista de [academias abertas no domingo](/academias/domingo/).
+No centro, as duas unidades recebem alunos a partir das 5h, até 23h59, nos dias úteis e, aos domingos, entre 8h e 14h. Nenhuma delas publica as condições para personal externo. Antes de levar o seu profissional, tire a dúvida na recepção. Compare valores na [tabela de preços](/academias/precos/) e os horários de domingo na seleção [academias que abrem no domingo](/academias/domingo/).
 
-Treino em casa e em academia comercial aparecem no panorama [personal trainer em Barueri](/guias/personal-trainer-barueri/), e a comparação entre treinar sozinho e com alguém fica no artigo [academia ou personal trainer](/guias/academia-ou-personal/).
+Treino em casa e em academia comercial estão reunidos na página [personal trainer em Barueri](/guias/personal-trainer-barueri/), e a comparação entre treinar sozinho e com alguém fica no artigo [academia ou personal trainer](/guias/academia-ou-personal/).

@@ -26,7 +26,7 @@ atualizado_em: 2026-11-15
 
 ## Município grande, agenda apertada
 
-Santana de Parnaíba reúne realidades bem diferentes. O município abriga trechos de Alphaville e do Tamboré e também bairros próprios, entre eles o Jardim São Luís, a Fazendinha e o Polvilho. Ir de um ponto a outro pode levar bastante tempo. Para o treino a domicílio, isso significa que a logística precisa ser conversada antes dos exercícios.
+Santana de Parnaíba reúne realidades bem diferentes. O município abriga partes do Tamboré e de Alphaville e também bairros próprios, entre eles o Jardim São Luís, a Fazendinha e o Polvilho. Ir de um ponto a outro pode levar bastante tempo. Para o treino a domicílio, isso significa que a logística precisa ser conversada antes dos exercícios.
 
 Um profissional com vários alunos no mesmo dia tem de encaixar trajetos. Se a sua casa fica longe do restante da agenda dele, alguns horários podem simplesmente não fechar.
 
@@ -46,11 +46,11 @@ Em condomínio, o atraso muitas vezes nasce na guarita. Deixe o cadastro do prof
 
 ## Domingo e outros buracos da semana
 
-Nenhuma das academias de bairro do município com ficha no guia funciona aos domingos. A Olympia, no Polvilho, ainda fecha no intervalo do almoço, entre 12h e 14h, nos dias úteis. Para quem quer se exercitar nesses horários, a sessão em casa preenche a lacuna.
+As academias de bairro do município catalogadas aqui ficam de portas fechadas aos domingos. Nos dias úteis, a Olympia, no Polvilho, ainda fica fechada entre meio-dia e 14h. Para quem quer se exercitar nesses horários, a sessão em casa preenche a lacuna.
 
 Se a ideia é alternar casa e academia, o guia cataloga estas opções no município:
 
-- **[Fábrica Premium](/academias/fabrica-premium-alphaville/)**, endereço na Estrada da Bela Vista (lado de Alphaville), que abre também na manhã de domingo;
+- **[Fábrica Premium](/academias/fabrica-premium-alphaville/)**, no lado de Alphaville, junto à Estrada da Bela Vista, que abre também na manhã de domingo;
 - **[Forth](/academias/forth-academia-jardim-sao-luis/)**, bairro Jardim São Luís, com estrutura de acessibilidade;
 - **[Mattos Fitness](/academias/mattos-fitness-fazendinha/)**, na Fazendinha, que de segunda a sexta começa a receber alunos às 4h;
 - **[Olympia](/academias/olympia-fitness-polvilho/)**, no Polvilho, com adaptações para pessoas autistas.
@@ -59,4 +59,4 @@ O guia não encontrou, em nenhuma delas, regra publicada sobre profissional exte
 
 ## Para continuar
 
-O quadro geral está na [página sobre personal no município](/guias/personal-trainer-santana-de-parnaiba/). Procura onde treinar no domingo? Veja a lista de [academias abertas no domingo](/academias/domingo/). Contratar ou não? A análise [academia ou personal trainer](/guias/academia-ou-personal/) lista os dois caminhos.
+O quadro geral está na [página sobre personal no município](/guias/personal-trainer-santana-de-parnaiba/). Procura onde treinar no domingo? Consulte [academias abertas no domingo](/academias/domingo/). Contratar ou não? A análise [academia ou personal trainer](/guias/academia-ou-personal/) lista os dois caminhos.

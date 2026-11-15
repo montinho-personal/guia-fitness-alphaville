@@ -9,7 +9,7 @@ palavra_chave: personal trainer em condomínio aldeia da serra
 intencao: "Comercial local. Morador da Aldeia da Serra que quer treinar com personal dentro do próprio residencial."
 cta: montinho-contextual
 cta_titulo: "Treinar com o Montinho na Aldeia da Serra"
-cta_texto: "Dentro dos residenciais da Aldeia da Serra, o Montinho pode dar a aula na sala de aparelhos, na sua casa ou em áreas abertas, desde que a administração concorde."
+cta_texto: "O Montinho pode conduzir o treino na sala de musculação do seu residencial na Aldeia da Serra, na sua casa ou em áreas abertas, desde que a administração concorde."
 cta_destino: /blog/personal-trainer-aldeia-da-serra
 lista_titulo: "Academia citada nesta página (fica fora da Aldeia da Serra)"
 lista_ids: [ironberg-alphaville]
@@ -22,11 +22,11 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** O Montinho, personal que atende dentro da Aldeia da Serra, mantém este guia. A apresentação dele no rodapé é anúncio.
+> **Transparência.** Responsável por este guia, o Montinho trabalha como personal na Aldeia da Serra. A apresentação do serviço dele, no rodapé, tem fim publicitário.
 
 ## Sem academia no bairro, a sala do residencial ganha peso
 
-Residenciais rodeados de mata, com trechos em Barueri e trechos em Santana de Parnaíba: esse é o desenho da Aldeia da Serra. Até agora, nenhuma academia comercial do bairro entrou nas fichas do guia. Assim, a academia interna do condomínio, onde houver, é o único ponto com aparelhos perto de casa. Quem não quer pegar estrada para treinar começa por ela.
+Residenciais rodeados de mata, divididos entre Barueri e Santana de Parnaíba: esse é o desenho da Aldeia da Serra. Até agora, nenhuma academia comercial do bairro entrou nas fichas do guia. Assim, o espaço de musculação do seu condomínio, onde houver, é o único ponto com aparelhos perto de casa. Quem não quer pegar estrada para treinar começa por ele.
 
 ## Liberação: perguntas para a administração
 
@@ -57,6 +57,6 @@ Nem todo residencial tem uma academia completa. Quando o equipamento é curto, o
 
 ## O nome engana: a Ironberg fica na Aldeinha
 
-Quem procura academia perto da Aldeia da Serra costuma esbarrar na [Ironberg](/academias/ironberg-alphaville/), na Estrada da Aldeinha. Ela está no bairro da Aldeinha, em Barueri, perto de Alphaville, fora dos limites da Aldeia da Serra. Abre 24 horas, oferece estacionamento sem custo, com mais de 1.000 vagas, e deixa pública a política para personal externo: o profissional paga uma quantia fixa à academia, e o valor só a unidade informa. Pode servir para quem quer somar alguns treinos de musculação mais pesados à rotina do condomínio. O [mapa](/mapa/) mostra quanto ela fica longe do seu portão.
+Quem procura academia perto da Aldeia da Serra costuma esbarrar na [Ironberg](/academias/ironberg-alphaville/), na Estrada da Aldeinha. Ela está no bairro da Aldeinha, em Barueri, perto de Alphaville. Não pertence à Aldeia da Serra. Abre 24 horas, oferece estacionamento sem custo, com mais de 1.000 vagas, e deixa pública a política para personal externo: exige do profissional um pagamento fixo; quanto, só a unidade responde. Pode servir para quem quer somar alguns treinos de musculação mais pesados à rotina do condomínio. O [mapa](/mapa/) mostra quanto ela fica longe do seu portão.
 
 Todos os formatos de atendimento no bairro estão reunidos em [personal trainer na Aldeia da Serra](/guias/personal-trainer-aldeia-da-serra/). Antes de contratar, vale passar por [academia ou personal trainer](/guias/academia-ou-personal/).

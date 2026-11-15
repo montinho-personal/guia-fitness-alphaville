@@ -41,7 +41,7 @@ Saltos, polichinelos e halteres soltos no chão fazem o som atravessar a laje. U
 - o peso desce com calma até o chão, nunca é largado;
 - um tapete de borracha ou um colchonete grosso abafa parte do ruído e protege o piso.
 
-Também vale olhar o relógio. Sessão muito cedo ou tarde da noite pede ainda mais cuidado. Se o regulamento do edifício fixa horário de silêncio, respeite e encaixe as sessões em outro horário.
+Também vale olhar o relógio. Sessão muito cedo ou tarde da noite pede ainda mais cuidado. Se o regulamento do edifício fixa horário de silêncio, respeite e mova as sessões para outra faixa do dia.
 
 ## Elevador, portaria e regra do prédio
 
@@ -63,4 +63,4 @@ Dá para somar uma academia às aulas no apartamento sem estourar o orçamento. 
 
 Os trens da CPTM, pela Linha 8-Diamante, atravessam Barueri, o que ajuda quem prefere deixar o carro na garagem. Quer levar o seu próprio personal? Confirme com a academia se ela permite.
 
-Visão geral da cidade: [página de personal em Barueri](/guias/personal-trainer-barueri/). Na dúvida sobre contratar, vale ler [academia ou personal trainer](/guias/academia-ou-personal/) antes.
+Visão geral da cidade: [página de personal em Barueri](/guias/personal-trainer-barueri/). Na dúvida sobre contratar, o comparativo [academia ou personal trainer](/guias/academia-ou-personal/) mostra os dois lados com calma.
