@@ -179,3 +179,9 @@ Cada evento leva `ref` (posição ou ficha) e `pagina`. Os links para o Montinho
 - Páginas: início, academia ou personal, 5 páginas de personal por região, musculação e a ficha da Arena 18 (campo `vitrine` no frontmatter dos guias; `montinho_atende` na ficha).
 - Atualização de hora em hora: `.github/workflows/vitrine-atualizar.yml` chama um Deploy Hook da Vercel. Falta criar o hook na Vercel e salvar a URL no secret `VERCEL_DEPLOY_HOOK_VITRINE` do GitHub. Até lá, a vitrine se atualiza a cada deploy.
 - Eventos na dataLayer: `vitrine_view`, `vitrine_comparador` (aluno, como), `vitrine_cta_click`, `vitrine_resultados_click`, todos com `pagina`.
+
+## Personal trainer por tema e cidade (15/11/2026)
+
+- 40 guias `personal-trainer-<tema>-<cidade>` (8 temas × 5 cidades): feminino, em condomínio, a domicílio, para idosos, para iniciantes, para emagrecer (com vitrine), para gestantes e para executivos.
+- Escolha do responsável pelo guia (tema × todas as cidades), ciente do risco de página porta e de concorrência com o site do Montinho. Mitigação: cada página usa dados próprios da cidade; auditoria sem nenhum par acima de 15% de similaridade interna nem 5% com o corpus do Montinho.
+- Redação em paralelo a partir de `docs/pesquisa/brief-personal-temas.md` e `docs/pesquisa/dados-por-cidade.md`, com revisão de fatos contra as fichas YAML.
