@@ -1,13 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
+import CampoBusca from '../components/CampoBusca.astro';
 ---
 <Base titulo="Página não encontrada" descricao="O endereço que você abriu não existe no Onde Treinar Alphaville. Veja o guia de academias, as regiões ou as ferramentas." noindex>
   <div class="wrap">
     <header class="cab-pag">
       <span class="rotulo cor-marca">Erro 404</span>
       <h1>Essa página não existe</h1>
-      <p class="linha-fina">O endereço pode ter mudado ou ter sido digitado errado. Estes caminhos funcionam:</p>
+      <p class="linha-fina">O endereço pode ter mudado ou ter sido digitado errado. Busque o que você procurava ou use um dos caminhos abaixo.</p>
     </header>
+    <div style="margin-bottom:24px"><CampoBusca id="busca-404" /></div>
     <div class="prosa"><ul><li><a href="/academias/">Guia de academias</a></li><li><a href="/regioes/">Academias por região</a></li><li><a href="/ferramentas/">Ferramentas</a></li><li><a href="/">Página inicial</a></li></ul></div>
   </div>
 </Base>

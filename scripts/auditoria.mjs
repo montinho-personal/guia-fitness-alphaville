@@ -32,7 +32,7 @@ const paginas = htmls.map((f) => {
     desc: um(h, /<meta name="description" content="([^"]*)"/),
     canonical: um(h, /<link rel="canonical" href="([^"]*)"/),
     h1s: [...h.matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/g)].map((m) => tirar(m[1])),
-    noindexProprio: url === '/404.html',
+    noindexProprio: url === '/404.html' || url === '/busca/',
     links: [...h.replace(/<script[\s\S]*?<\/script>/g, '').matchAll(/<a\s[^>]*href="([^"]+)"/g)].map((m) => m[1]),
     jsonld: [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => m[1]),
     texto: tirar(corpo), imgsSemAlt: (h.match(/<img(?![^>]*\salt=)[^>]*>/g) || []).length,

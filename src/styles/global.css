@@ -242,3 +242,6 @@ footer .nota{color:var(--cinza);max-width:34em;font-size:15px;margin-top:12px}
 .prosa p:has(> img) { margin: 26px 0 6px; }
 .prosa img { display: block; max-width: 100%; width: auto; max-height: 620px; height: auto; border-radius: 12px; margin: 0 auto; }
 .prosa p:has(> img) + p > em:only-child { display: block; text-align: center; font-size: 15px; opacity: .8; }
+
+.topo-acoes{display:flex;align-items:center;gap:10px;margin-left:auto}
+@media(min-width:900px){.topo-acoes{margin-left:0}}

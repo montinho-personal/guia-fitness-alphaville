@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import CampoBusca from '../components/CampoBusca.astro';
+---
+<Base titulo="Buscar no guia" descricao="Busque academias, bairros, personal trainer, Hyrox, preços e guias do Onde Treinar Alphaville." noindex migalhas={[{ nome: 'Busca', url: '/busca/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Busca</span>
+      <h1 id="busca-titulo">Buscar no guia</h1>
+    </header>
+    <CampoBusca grande id="busca-pagina" />
+    <p class="busca-pg-status" aria-live="polite" style="margin:18px 0 8px;color:var(--cinza)"></p>
+    <ol class="busca-pg-lista guias"></ol>
+    <noscript><p class="prosa">A busca precisa de JavaScript. Você pode navegar pelo <a href="/academias/">guia de academias</a>, pelas <a href="/regioes/">regiões</a> ou pelos <a href="/guias/">guias</a>.</p></noscript>
+    <div class="prosa busca-pg-vazio" style="margin-top:24px">
+      <h2>Comece por aqui</h2>
+      <ul>
+        <li><a href="/academias/">Todas as academias, com filtros</a></li>
+        <li><a href="/guias/personal-trainer-alphaville/">Personal trainer em Alphaville</a></li>
+        <li><a href="/academias/24-horas/">Academias 24 horas</a> · <a href="/academias/domingo/">abertas no domingo</a> · <a href="/academias/precos/">preços</a></li>
+        <li><a href="/modalidades/hyrox/">Hyrox</a> · <a href="/academias/perto-de/">academia perto de você</a> · <a href="/mapa/">mapa</a></li>
+      </ul>
+    </div>
+  </div>
+</Base>
+<script>
+  import { carregar, buscar, destacar, escapar, registrar } from '../scripts/busca';
+  const q = new URLSearchParams(location.search).get('q')?.trim() ?? '';
+  const campo = document.getElementById('busca-pagina') as HTMLInputElement | null;
+  const lista = document.querySelector<HTMLOListElement>('.busca-pg-lista')!;
+  const status = document.querySelector<HTMLParagraphElement>('.busca-pg-status')!;
+  if (campo) { campo.value = q; if (!q) campo.focus(); }
+  if (q) {
+    document.title = `“${q}” — busca · Onde Treinar Alphaville`;
+    document.getElementById('busca-titulo')!.textContent = `Resultados para “${q}”`;
+    carregar().then((itens) => {
+      const res = buscar(itens, q, 50);
+      status.textContent = res.length ? `${res.length} resultado${res.length === 1 ? '' : 's'}` : `Nada encontrado para “${q}”. Tente o nome da academia, o bairro, a cidade ou a modalidade.`;
+      lista.innerHTML = res.map((r) => `<li><a href="${r.u}"><h2 style="font-size:21px;font-weight:700">${destacar(r.t, q)}</h2><p><span class="rotulo">${escapar(r.c)}</span> ${destacar(r.d, q)}</p></a></li>`).join('');
+      registrar('busca', { termo: q, resultados: String(res.length), origem: 'pagina' });
+      lista.addEventListener('click', (e) => { const a = (e.target as HTMLElement).closest('a'); if (a) registrar('busca_clique', { termo: q, destino: a.pathname }); });
+    });
+  }
+</script>

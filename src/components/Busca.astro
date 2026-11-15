@@ -1,0 +1,104 @@
+---
+// Lupa do cabeçalho: abre um painel de busca com resultados instantâneos.
+// Atalhos: "/" ou Ctrl/Cmd+K abrem; Esc fecha; setas navegam; Enter abre.
+// Sem JavaScript, o botão é um link para a página /busca/.
+---
+<a class="busca-gatilho" href="/busca/" aria-label="Buscar no guia" data-busca-abrir>
+  <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  <span class="busca-gatilho-txt">Buscar</span>
+  <kbd class="busca-atalho" aria-hidden="true">/</kbd>
+</a>
+
+<dialog class="busca-painel" id="busca-painel" aria-label="Buscar no guia">
+  <form class="busca-form" role="search" action="/busca/" method="get">
+    <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    <label class="sr" for="busca-q">Buscar academias, bairros, personal trainer, Hyrox…</label>
+    <input id="busca-q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Academia, bairro, personal, Hyrox…" role="combobox" aria-expanded="false" aria-controls="busca-lista" aria-autocomplete="list" />
+    <button type="button" class="busca-fechar" data-busca-fechar aria-label="Fechar a busca">Esc</button>
+  </form>
+  <div class="busca-corpo">
+    <p class="busca-status" aria-live="polite"></p>
+    <ul id="busca-lista" class="busca-lista" role="listbox" aria-label="Resultados"></ul>
+    <div class="busca-sugestoes"><p>Buscas comuns</p><div class="busca-chips"></div></div>
+  </div>
+  <p class="busca-rodape"><span><kbd>↑</kbd><kbd>↓</kbd> navegar</span><span><kbd>Enter</kbd> abrir</span><span><kbd>Esc</kbd> fechar</span></p>
+</dialog>
+
+<style is:global>
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .busca-gatilho { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1.5px solid var(--linha); border-radius: 999px; color: var(--tinta); text-decoration: none; font: 600 14px/1 var(--display); background: var(--cartao); }
+  .busca-gatilho:hover, .busca-gatilho:focus-visible { border-color: var(--tinta); }
+  .busca-atalho { font: 600 12px/1 var(--display); padding: 3px 6px; border: 1px solid var(--linha); border-radius: 4px; color: var(--cinza); }
+  @media (max-width: 899px) { .busca-gatilho { padding: 9px; border-color: var(--tinta); } .busca-gatilho-txt, .busca-atalho { display: none; } }
+  .busca-painel { width: min(680px, calc(100% - 24px)); max-height: min(80vh, 640px); margin: 8vh auto auto; padding: 0; border: 1.5px solid var(--tinta); border-radius: 14px; background: var(--cartao); color: var(--tinta); box-shadow: 0 24px 60px rgba(16, 27, 45, .35); overflow: hidden; }
+  .busca-painel[open] { display: flex; flex-direction: column; }
+  .busca-painel::backdrop { background: rgba(16, 27, 45, .55); }
+  @media (max-width: 640px) { .busca-painel { width: 100%; max-width: 100%; height: 100%; max-height: 100%; margin: 0; border-radius: 0; border: 0; } }
+  .busca-form { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--linha); }
+  .busca-form input { flex: 1; min-width: 0; border: 0; background: transparent; font: 500 18px/1.3 var(--display); color: var(--tinta); outline: none; }
+  .busca-form input::-webkit-search-cancel-button { -webkit-appearance: none; }
+  .busca-fechar { border: 1px solid var(--linha); background: var(--papel); border-radius: 6px; padding: 5px 9px; font: 600 12px/1 var(--display); cursor: pointer; color: var(--cinza); }
+  .busca-corpo { overflow-y: auto; padding: 8px 8px 12px; flex: 1; }
+  .busca-status { margin: 6px 10px; font-size: 14px; color: var(--cinza); }
+  .busca-status:empty { display: none; }
+  .busca-lista { list-style: none; margin: 0; padding: 0; }
+  .busca-lista a { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; padding: 10px 12px; border-radius: 10px; color: inherit; text-decoration: none; }
+  .busca-lista a[aria-selected="true"], .busca-lista a:hover { background: var(--musgo); }
+  .busca-lista strong { font: 700 16px/1.3 var(--display); }
+  .busca-lista .cat { grid-row: span 2; align-self: start; font: 700 11px/1 var(--display); letter-spacing: .05em; text-transform: uppercase; padding: 4px 7px; border-radius: 4px; background: var(--papel); color: var(--cinza); }
+  .busca-lista span.desc { font-size: 14px; color: var(--texto2); }
+  .busca-lista mark { background: #FFE08A; color: inherit; border-radius: 2px; }
+  .busca-sugestoes p { margin: 10px 10px 6px; font: 700 12px/1 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--cinza); }
+  .busca-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 10px; }
+  .busca-chips button { border: 1px solid var(--linha); background: var(--papel); border-radius: 999px; padding: 7px 12px; font: 600 14px/1 var(--display); cursor: pointer; color: var(--tinta); }
+  .busca-chips button:hover { border-color: var(--tinta); }
+  .busca-rodape { display: flex; gap: 16px; margin: 0; padding: 10px 16px; border-top: 1px solid var(--linha); font-size: 13px; color: var(--cinza); }
+  .busca-rodape kbd { font: 600 11px/1 var(--display); padding: 2px 5px; border: 1px solid var(--linha); border-radius: 4px; margin-right: 3px; }
+  @media (max-width: 640px) { .busca-rodape { display: none; } }
+</style>
+
+<script>
+  import { carregar, buscar, SUGESTOES, destacar, escapar, registrar } from '../scripts/busca';
+  const painel = document.getElementById('busca-painel') as HTMLDialogElement | null;
+  const input = document.getElementById('busca-q') as HTMLInputElement | null;
+  if (painel && input && typeof painel.showModal === 'function') {
+    const lista = painel.querySelector<HTMLUListElement>('.busca-lista')!;
+    const status = painel.querySelector<HTMLParagraphElement>('.busca-status')!;
+    const sug = painel.querySelector<HTMLDivElement>('.busca-sugestoes')!;
+    const chips = painel.querySelector<HTMLDivElement>('.busca-chips')!;
+    chips.innerHTML = SUGESTOES.map((s) => `<button type="button">${escapar(s)}</button>`).join('');
+    let sel = -1, timer = 0, ultimaRegistrada = '';
+    const links = () => [...lista.querySelectorAll<HTMLAnchorElement>('a')];
+    const marcar = (i: number) => { const ls = links(); ls.forEach((a, j) => a.setAttribute('aria-selected', String(j === i))); sel = i; if (ls[i]) { input.setAttribute('aria-activedescendant', ls[i].id); ls[i].scrollIntoView({ block: 'nearest' }); } };
+    const render = async () => {
+      const q = input.value.trim();
+      sug.hidden = q.length > 0;
+      if (!q) { lista.innerHTML = ''; status.textContent = ''; input.setAttribute('aria-expanded', 'false'); return; }
+      const res = buscar(await carregar(), q, 12);
+      lista.innerHTML = res.map((r, i) => `<li role="none"><a role="option" id="busca-op-${i}" href="${r.u}" aria-selected="false"><strong>${destacar(r.t, q)}</strong><span class="cat">${escapar(r.c)}</span><span class="desc">${destacar(r.d, q)}</span></a></li>`).join('');
+      status.textContent = res.length ? `${res.length === 12 ? 'Mais de 12' : res.length} resultado${res.length === 1 ? '' : 's'}` : `Nada encontrado para "${q}". Tente o nome da academia, o bairro ou a modalidade.`;
+      input.setAttribute('aria-expanded', String(res.length > 0));
+      marcar(res.length ? 0 : -1);
+      clearTimeout(timer);
+      timer = window.setTimeout(() => { if (q !== ultimaRegistrada) { ultimaRegistrada = q; registrar('busca', { termo: q, resultados: String(res.length) }); } }, 1200);
+    };
+    const abrir = () => { if (!painel.open) { painel.showModal(); carregar(); input.select(); registrar('busca_aberta', {}); } };
+    document.querySelectorAll<HTMLElement>('[data-busca-abrir]').forEach((el) => el.addEventListener('click', (e) => { e.preventDefault(); abrir(); }));
+    painel.querySelector('[data-busca-fechar]')!.addEventListener('click', () => painel.close());
+    painel.addEventListener('click', (e) => { if (e.target === painel) painel.close(); });
+    input.addEventListener('input', render);
+    chips.addEventListener('click', (e) => { const b = (e.target as HTMLElement).closest('button'); if (b) { input.value = b.textContent || ''; render(); input.focus(); } });
+    input.addEventListener('keydown', (e) => {
+      const ls = links();
+      if (e.key === 'ArrowDown' && ls.length) { e.preventDefault(); marcar((sel + 1) % ls.length); }
+      else if (e.key === 'ArrowUp' && ls.length) { e.preventDefault(); marcar((sel - 1 + ls.length) % ls.length); }
+      else if (e.key === 'Enter' && ls[sel]) { e.preventDefault(); registrar('busca_clique', { termo: input.value.trim(), destino: ls[sel].pathname }); location.href = ls[sel].href; }
+    });
+    lista.addEventListener('click', (e) => { const a = (e.target as HTMLElement).closest('a'); if (a) registrar('busca_clique', { termo: input.value.trim(), destino: a.pathname }); });
+    document.addEventListener('keydown', (e) => {
+      const alvo = e.target as HTMLElement;
+      const digitando = alvo && (alvo.tagName === 'INPUT' || alvo.tagName === 'TEXTAREA' || alvo.isContentEditable);
+      if ((e.key === 'k' && (e.ctrlKey || e.metaKey)) || (e.key === '/' && !digitando)) { e.preventDefault(); abrir(); }
+    });
+  }
+</script>

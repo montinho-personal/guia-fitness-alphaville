@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import CartaoAcademia from '../components/CartaoAcademia.astro';
 import Ferramentas from '../components/Ferramentas.astro';
 import Mantem from '../components/Mantem.astro';
+import CampoBusca from '../components/CampoBusca.astro';
 import Vitrine from '../components/Vitrine.astro';
 import { academias, guias, REGIOES, MODALIDADES, urlRegiao } from '../lib/dados';
 
@@ -14,7 +15,7 @@ const porRegiao = (r: string) => todas.filter((a) => a.data.regiao === r).length
 const mods = [...new Set(todas.flatMap((a) => a.data.modalidades))];
 const abs = (u: string) => new URL(u, Astro.site).href;
 const schema = [
-  { '@type': 'WebSite', '@id': abs('/#site'), url: abs('/'), name: 'Onde Treinar Alphaville', inLanguage: 'pt-BR', publisher: { '@id': abs('/#org') } },
+  { '@type': 'WebSite', '@id': abs('/#site'), url: abs('/'), name: 'Onde Treinar Alphaville', inLanguage: 'pt-BR', publisher: { '@id': abs('/#org') }, potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: `${abs('/busca/')}?q={search_term_string}` }, 'query-input': 'required name=search_term_string' } },
   { '@type': 'Organization', '@id': abs('/#org'), name: 'Onde Treinar Alphaville', url: abs('/'), logo: abs('/favicon.svg'), description: 'Guia local de academias e treino em Alphaville, Barueri e Santana de Parnaíba. Mantido por Montinho Personal Trainer.', parentOrganization: { '@type': 'Organization', name: 'Montinho Personal Trainer', url: 'https://www.montinhopersonal.com.br', sameAs: ['https://www.instagram.com/montinho_personal/'] } },
 ];
 const lista = [
@@ -34,6 +35,7 @@ const lista = [
       <div>
         <h1 style="font-size:clamp(44px,11vw,78px);font-weight:800;letter-spacing:-.045em;line-height:.92">Onde treinar em Alphaville, <span class="cor-marca" style="display:block">com fonte e data.</span></h1>
         <p style="max-width:34em;margin:22px 0 28px;font-size:20px;color:var(--texto2)">Academias, boxes e estúdios em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Cada endereço, horário e plano mostra de onde veio e quando foi conferido.</p>
+        <div style="margin:0 0 18px"><CampoBusca id="busca-home" placeholder="Busque: Gaviões, personal no Tamboré, Hyrox, 24 horas…" /></div>
         <form class="painel" action="/academias/" method="get" aria-label="Encontrar academias">
           <div class="campos c3">
             <label class="campo"><span class="rotulo">Região</span>
