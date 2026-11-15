@@ -70,9 +70,9 @@ De segunda a sexta, das 5h às 23h. No domingo, das 8h às 18h. O sábado tem di
 
 A mensalidade não é publicada. Pelos agregadores, a porta de entrada é o Gold do Wellhub (R$ 319,99) ou o TP 4 do TotalPass (R$ 299,90). Compare em [Wellhub e TotalPass](/academias/wellhub-totalpass/). O preço do personal fica fora dessa conta e precisa ser acrescentado. A ficha registra estacionamento, inclusive vagas acessíveis. A academia fica na Rua Mario Quintana, no Melville Empresarial.
 
-![Montinho, personal trainer em Alphaville, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+![Montinho, personal trainer que atende na Arena 18, em selfie no espelho da sala de musculação da Arena 18, em Alphaville](../../assets/montinho/montinho-personal-trainer-arena-18.jpg)
 
-*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
+*O Montinho na sala de musculação da Arena 18, onde atende alunos. Uma pessoa ao fundo foi desfocada.*
 
 ## Outras academias com serviço de apoio
 
