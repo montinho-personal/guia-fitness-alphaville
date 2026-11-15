@@ -2,6 +2,7 @@
 import '@fontsource-variable/bricolage-grotesque';
 import '@fontsource-variable/newsreader';
 import '../styles/global.css';
+import Instagram from '../components/Instagram.astro';
 import Marca from '../components/Marca.astro';
 import { INDEXAVEL, MOSTRAR_EM_REVISAO, GTM_ID } from '../lib/dados';
 
@@ -91,6 +92,7 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
         <div>
           <a class="marca" href="/"><Marca tamanho={28} /></a>
           <p class="nota">Guia local de academias e treino. Mantido por Montinho Personal Trainer, que atende presencialmente na região. As academias citadas não pagam para aparecer. Encontrou um dado errado? <a href="/correcoes/">Peça a correção</a>.</p>
+          <p style="margin-top:12px"><Instagram pagina="rodape" texto="Siga o Montinho: @montinho_personal" /></p>
         </div>
         <div><h2>Guia</h2><ul>{nav.map((n) => <li><a href={n.url}>{n.nome}</a></li>)}<li><a href="/mapa/">Mapa</a></li></ul></div>
         <div><h2>Transparência</h2><ul>
