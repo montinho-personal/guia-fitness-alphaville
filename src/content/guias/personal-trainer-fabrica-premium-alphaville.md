@@ -38,14 +38,14 @@ O site não informa CEP, e a posição no mapa do guia é aproximada. Sites loca
 
 ## Estrutura para variar a sessão
 
-O site descreve um espaço de alto padrão. Para quem treina com personal, interessam principalmente:
+O site descreve um espaço de alto padrão. No treino acompanhado, os itens mais úteis são:
 
 - musculação orientada, com aparelhos Real Leader;
 - treinamento funcional;
 - sala de bike indoor gamificada;
 - rooftop com pista de corrida.
 
-Um profissional pode usar a pista do rooftop para o trabalho de corrida e voltar ao salão para a parte de força. A expressão "musculação orientada" indica acompanhamento da própria equipe, mas não esclarece se um personal contratado por fora pode atuar ali.
+Dá para alternar: corrida na pista do terraço e, em seguida, exercícios de força no salão. A expressão "musculação orientada" indica acompanhamento da própria equipe, mas não esclarece se um personal contratado por fora pode atuar ali.
 
 Fora do treino, a lista inclui banheira de gelo (crioterapia), nutricionista e nutrólogo, medicina integrativa, massagem e estética corporal, salão de beleza e café no rooftop.
 
@@ -75,4 +75,4 @@ O site cita valet e carregador para carro elétrico, além de concierge. Para qu
 
 ## Se não for a Fábrica
 
-Nos bairros do município, a [Forth](/academias/forth-academia-jardim-sao-luis/), do Jardim São Luís, funciona até 23h59 nos dias úteis e entra no Wellhub ([personal na Forth](/guias/personal-trainer-forth-academia-jardim-sao-luis/)). Do outro lado da divisa, as opções estão no guia de [personal trainer em Alphaville](/guias/personal-trainer-alphaville/). Um resumo de toda a cidade está [nesta página](/guias/personal-trainer-santana-de-parnaiba/).
+Nos bairros do município, a [Forth](/academias/forth-academia-jardim-sao-luis/), do Jardim São Luís, funciona até 23h59 nos dias úteis e entra no Wellhub ([personal na Forth](/guias/personal-trainer-forth-academia-jardim-sao-luis/)). Do outro lado da divisa, no território de Barueri, as alternativas aparecem no [texto sobre Alphaville](/guias/personal-trainer-alphaville/). Um resumo de toda a cidade está [nesta página](/guias/personal-trainer-santana-de-parnaiba/).

@@ -26,7 +26,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** O Montinho, que trabalha com treino individual em Santana de Parnaíba, é o dono deste guia. O anúncio dele fica no final e está marcado como tal.
+> **Transparência.** Este guia é do Montinho, personal que acompanha alunos em Santana de Parnaíba. Lá embaixo, um bloco publicitário dele aparece com a devida marcação.
 
 ## O intervalo que define a agenda
 
@@ -54,7 +54,7 @@ A ficha não detalha quais são essas adaptações. Se esse ponto importa para v
 
 ## Dinheiro e permissões
 
-A mensalidade direta não aparece em fonte pública. Pelo Wellhub, basta o Basic, que sai por R$ 69,99 ao mês ([comparar agregadores](/academias/wellhub-totalpass/)).
+Valor de mensalidade própria? Nenhuma fonte pública traz. Pelo Wellhub, basta o Basic, que sai por R$ 69,99 ao mês ([comparar agregadores](/academias/wellhub-totalpass/)).
 
 Nenhuma norma para profissional de fora foi localizada. Leve à recepção estas dúvidas:
 

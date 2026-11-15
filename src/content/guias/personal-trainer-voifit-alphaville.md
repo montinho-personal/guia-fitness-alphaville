@@ -43,6 +43,8 @@ A página da unidade no Wellhub não menciona personal trainer, nem da casa nem 
 - O profissional precisa se registrar na academia?
 - Existe limite de horário ou de número de alunos por profissional?
 
+Com as respostas em mãos, dá para comparar o custo real com o de treinar em casa ou no condomínio, formatos que dispensam mensalidade de academia.
+
 ## Musculação, luta e pilates no mesmo lugar
 
 Além da musculação, a grade listada tem funcional, muay thai, jiu-jitsu, bike, mat pilates, localizado e ritmos. Isso permite um formato misto: sessões com personal para a parte de força e aulas da grade nos outros dias.

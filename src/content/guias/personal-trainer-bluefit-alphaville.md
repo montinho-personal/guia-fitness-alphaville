@@ -26,24 +26,24 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Por trás deste guia está o Montinho, que trabalha como personal em Alphaville. No fim do texto há um anúncio dele, identificado como tal.
+> **Transparência.** O Montinho, personal trainer da região de Alphaville, edita este guia. Ao pé da página, o serviço dele aparece em formato de anúncio, e é isso que ele é.
 
 ## Personal de fora: uma pergunta em aberto
 
-Entre as três Bluefit que o guia cobre, só esta não traz personal trainer na lista de serviços da página do Wellhub. Isso não quer dizer que seja proibido. Quer dizer apenas que não há nenhuma informação pública sobre o assunto, nem regra para profissional externo.
+Entre as três Bluefit que o guia cobre, só esta deixa de fora o item personal trainer na página do Wellhub. Isso não quer dizer que seja proibido. Quer dizer apenas que não há nenhuma informação pública sobre o assunto, nem regra para profissional externo.
 
 Antes de fechar com um personal, leve estas perguntas à recepção da [Bluefit Alphaville](/academias/bluefit-alphaville/):
 
 - A unidade aceita personal que não faz parte da equipe?
 - Existe taxa? Ela é cobrada do profissional ou do aluno?
 - O personal precisa de cadastro prévio ou de matrícula própria?
-- Algum período do dia fica fechado para quem não é da equipe?
+- Em que turnos o profissional de fora fica impedido de atender, se houver algum?
 
 Peça a resposta por escrito, por mensagem, para não depender de lembrança.
 
 ## O que a sala oferece para uma sessão individual
 
-A ficha separa quatro áreas: musculação, pesos livres, cardio e treino funcional, além de um espaço de alongamento. Para quem treina com acompanhamento, essa divisão facilita alternar máquinas, halteres e exercícios no chão na mesma sessão. A unidade também lista balança de bioimpedância, útil para registrar medidas ao longo do tempo.
+A ficha separa quatro zonas de treino (máquinas de musculação, pesos livres, cardio e funcional), além de um espaço de alongamento. Para quem treina com acompanhamento, essa divisão facilita alternar máquinas, halteres e exercícios no chão na mesma sessão. A unidade também lista balança de bioimpedância, útil para registrar medidas ao longo do tempo.
 
 Entre as atividades listadas há aulas como Body Pump, RPM, Power Bike, Body Jam e Zumba. Dá para combinar dias com personal e dias de aula coletiva.
 

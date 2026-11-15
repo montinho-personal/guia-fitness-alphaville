@@ -26,7 +26,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Este guia é um projeto do Montinho, personal com alunos em Barueri. A oferta dele aparece no último bloco da página e deve ser lida como propaganda.
+> **Transparência.** Quem banca este guia é o Montinho, personal que tem atendimento em Barueri. O bloco final, com a oferta dele, é propaganda.
 
 ## Equipe da casa não resolve a dúvida de quem vem de fora
 
@@ -41,7 +41,7 @@ Então a conversa com a recepção precisa cobrir:
 
 ## Três pontos fortes para um treino acompanhado
 
-**Musculação com espaço livre.** A ficha separa áreas de musculação, pesos livres, cardio, funcional e alongamento.
+**Musculação com espaço livre.** Há setor próprio para pesos livres, separado da musculação, além de cardio, funcional e alongamento.
 
 **Lutas e intensidade.** A grade inclui muay thai, jiu-jitsu, GRIT, cross training e treino em Power Plate. Quem quer misturar sessões com personal e aulas de luta encontra as duas coisas no mesmo endereço.
 
@@ -53,7 +53,7 @@ De segunda a sexta, sem exceção, a unidade funciona das 5h às 23h59. No sába
 
 ## Quanto separar por mês
 
-Não há mensalidade direta publicada. O caminho com preço conhecido é o Wellhub, que pede no mínimo o Silver+ (R$ 199,99), o mesmo patamar da unidade de Alphaville. Por cima disso vêm os honorários do profissional e uma eventual cobrança da academia por atendimento externo. Para pôr lado a lado com o centro de Barueri, use os [preços reunidos pelo guia](/academias/precos/) e o comparativo de [agregadores](/academias/wellhub-totalpass/).
+Não há mensalidade direta publicada. O caminho com preço conhecido é o Wellhub, cujo plano de entrada é o Silver+, a R$ 199,99, o mesmo patamar da unidade de Alphaville. Por cima disso vêm os honorários do profissional e uma eventual cobrança da academia por atendimento externo. Para pôr lado a lado com o centro de Barueri, use os [preços reunidos pelo guia](/academias/precos/) e o comparativo de [agregadores](/academias/wellhub-totalpass/).
 
 ## Se a Bluefit não fechar a conta
 

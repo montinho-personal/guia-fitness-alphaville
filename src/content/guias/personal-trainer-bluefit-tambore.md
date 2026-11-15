@@ -30,7 +30,7 @@ atualizado_em: 2026-11-15
 
 ## Uma academia para quem vai direto aos pesos
 
-A [Bluefit Tamboré](/academias/bluefit-tambore/) tem um perfil mais enxuto que outras unidades da rede. A lista de atividades gira em torno de musculação, pesos livres, cardio, HIIT e treino funcional, sem a grade longa de aulas coletivas. A ficha registra áreas de musculação, pesos livres, cardio e alongamento.
+A [Bluefit Tamboré](/academias/bluefit-tambore/) tem um perfil mais enxuto que outras unidades da rede. A lista de atividades gira em torno de musculação, pesos livres, cardio, HIIT e treino funcional, sem a grade longa de aulas coletivas. Na lista de estrutura constam setores para musculação, pesos livres, cardio e alongamento.
 
 Para quem contrata personal justamente para a musculação, esse foco é o que interessa. Vale notar que, entre as comodidades, não aparece uma área de funcional separada, embora o treino funcional esteja na lista de atividades. Se isso for central no seu plano, veja o espaço antes.
 

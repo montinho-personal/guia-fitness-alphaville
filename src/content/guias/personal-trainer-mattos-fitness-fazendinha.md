@@ -26,7 +26,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Por trás deste site está o Montinho, profissional que acompanha treinos em Santana de Parnaíba. No fim da página há um bloco pago por ele, com identificação de publicidade.
+> **Transparência.** Este guia tem como responsável o Montinho, profissional que acompanha treinos em Santana de Parnaíba. No fim da página há um bloco pago por ele, com identificação de publicidade.
 
 ## Por que alguém escolheria a Mattos para treinar com personal?
 
@@ -40,11 +40,11 @@ No Wellhub, a estrutura aparece em três espaços: musculação, cardio e alonga
 
 Com esse conjunto, um treino acompanhado tende a ficar centrado na sala de pesos, com cardio e alongamento como apoio. As lutas são modalidades com professor próprio. Fazer muay thai com a turma e musculação com personal são coisas diferentes; se quiser as duas, pergunte como a academia organiza isso.
 
-## Um personal de fora pode entrar?
+## E o profissional contratado por você, entra?
 
-O guia não encontrou nenhuma regra publicada. Antes de fechar com um profissional, confirme na recepção:
+Nada a respeito foi publicado, até onde o guia apurou. Antes de assinar com o treinador, confirme na recepção:
 
-- se a entrada de personal externo é permitida;
+- se treinador de fora pode atuar no salão;
 - se há cobrança, e se ela recai sobre você ou sobre o profissional;
 - se o horário das 4h às 6h vale também para o profissional;
 - qual cadastro é exigido.

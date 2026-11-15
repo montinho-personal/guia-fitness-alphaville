@@ -30,7 +30,7 @@ atualizado_em: 2026-11-15
 
 ## A piscina muda a conversa
 
-Quase todo pedido de personal em academia gira em torno de musculação. Na [Academia Boa Forma](/academias/boa-forma-barueri/), no Jardim Alberto, existe outra possibilidade: o cadastro da unidade no Wellhub menciona piscina, natação para adultos, hidroginástica e hidroterapia. Nenhuma outra academia com ficha no guia lista piscina.
+Quase todo pedido de personal em academia gira em torno de musculação. Na [Academia Boa Forma](/academias/boa-forma-barueri/), no Jardim Alberto, existe outra possibilidade: o cadastro da unidade no Wellhub menciona piscina, natação para adultos, hidroginástica e hidroterapia. Entre todas as fichas reunidas aqui, é a única com piscina.
 
 Para quem pensa em treino acompanhado dentro da água, isso abre perguntas que não aparecem em outros lugares. A piscina tem horário livre ou só funciona em aula? Um personal de fora pode usá-la com o aluno? Os horários das aulas de natação e hidroginástica não estão publicados, então essas respostas só vêm da própria academia.
 
@@ -38,14 +38,14 @@ Para quem pensa em treino acompanhado dentro da água, isso abre perguntas que n
 
 A Boa Forma também lista musculação, funcional, circuitos, bike, corrida, step, jump, zumba, ritmos e Boxing Fit. Ou seja, um treino acompanhado pode juntar sala de pesos e trabalho funcional no mesmo lugar.
 
-Um detalhe chama atenção: "Personal trainer" aparece entre as atividades da página. Isso sugere que o serviço existe de alguma forma na casa. Não diz, porém, se a academia aceita um profissional contratado por você, nem em que condições.
+Um detalhe chama atenção: "Personal trainer" aparece entre as atividades da página. Isso sugere que o serviço existe de alguma forma na casa. Não diz, porém, se a casa recebe um treinador que você mesmo contratou, nem em que termos.
 
 ## Antes de levar seu próprio profissional
 
 Leve esta lista para a recepção:
 
-1. A academia permite personal externo?
-2. Há taxa? Ela é cobrada do aluno ou do profissional?
+1. O personal que vem de fora pode trabalhar ali?
+2. Existe cobrança por isso, e quem arca com ela: aluno ou treinador?
 3. O acesso vale para a piscina ou só para a sala de musculação?
 4. Há períodos do dia vetados para quem vem de fora?
 5. Que cadastro ou documento o personal precisa apresentar?
@@ -61,7 +61,7 @@ Se a sua agenda livre é o sábado, sobra só a manhã. Domingo exige outra acad
 
 ## Custos e um endereço com dois números
 
-Não há mensalidade própria divulgada. No Wellhub, o acesso exige no mínimo o Silver+, que custa R$ 199,99 mensais. Dá para comparar agregadores [nesta página](/academias/wellhub-totalpass/) e valores de outras academias em [preços](/academias/precos/). Ao total, acrescente o que o profissional cobra pelas sessões e qualquer taxa que a casa venha a exigir dele.
+Não há mensalidade própria divulgada. No Wellhub, o plano de entrada para esta unidade é o Silver+, a R$ 199,99 por mês. Dá para comparar agregadores [nesta página](/academias/wellhub-totalpass/) e valores de outras academias em [preços](/academias/precos/). Ao total, acrescente o preço das sessões combinado com o treinador e uma eventual cobrança da casa pela entrada dele.
 
 Constam ainda estacionamento e um espaço preparado para cadeirantes. Atenção ao endereço: a mesma página mostra a Rua Dr. Francis D Hornet com número 73 nos dados de localização e 120 no texto. Confirme por telefone antes de ir.
 

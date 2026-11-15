@@ -28,7 +28,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** O dono deste guia é o Montinho, que também atende como personal em Barueri. A caixa com o serviço dele, embaixo, é conteúdo publicitário.
+> **Transparência.** Este site sai do trabalho do Montinho, personal que atende também na cidade de Barueri. Embaixo, a caixa com o serviço dele é conteúdo publicitário.
 
 ## Mensalidade baixa, mais dinheiro para o personal
 
@@ -37,7 +37,7 @@ Quem paga personal costuma olhar primeiro para o preço da academia, porque as d
 - **Plano Orange**: R$ 119,90 por mês, fidelidade de 12 meses, cobrança recorrente no cartão, sem adesão e com até 4 acessos mensais a outras unidades;
 - **Plano Platinum**: R$ 139,90 por mês, sem fidelidade, sem adesão e sem taxa de cancelamento, com acesso a toda a rede, exceto Select e CT.
 
-A própria rede avisa que os planos dependem de cada unidade, e o guia ainda não confirmou o valor praticado neste endereço. Pelo Wellhub, a entrada é o plano Basic, de R$ 69,99, um dos degraus mais baratos do agregador entre as fichas do guia. Compare na [tabela de preços](/academias/precos/) e em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+A própria rede avisa que os planos dependem de cada unidade, e o guia ainda não confirmou o valor praticado neste endereço. Pelo Wellhub, a entrada é o plano Basic, de R$ 69,99, um dos degraus mais baratos do agregador entre as fichas do guia. Os números de outras academias estão na [página de preços](/academias/precos/), e a comparação de agregadores fica em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
 
 ## Regra para personal externo: o que confirmar
 
@@ -62,7 +62,7 @@ Segunda a quinta, das 5h às 23h59. Sexta, das 5h às 23h. Sábado, das 8h às 1
 
 ## Outras academias no centro e arredores
 
-- [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/) (Av. Vinte e Seis de Março, 701), com Plano Fit a R$ 139,90 e o mesmo horário de domingo. Veja [personal na Smart Fit Barueri Centro](/guias/personal-trainer-smart-fit-barueri-centro/); se a dúvida for entre redes, há ainda [Smart Fit ou Gaviões](/guias/smart-fit-ou-gavioes/).
+- [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/) (Av. Vinte e Seis de Março), com Plano Fit a R$ 139,90 e o mesmo horário de domingo. Veja [personal na Smart Fit Barueri Centro](/guias/personal-trainer-smart-fit-barueri-centro/); se a dúvida for entre redes, há ainda [Smart Fit ou Gaviões](/guias/smart-fit-ou-gavioes/).
 - [Bluefit Barueri](/academias/bluefit-barueri/), no Bethaville, com lutas na grade e Wellhub a partir do Silver+. Leia [personal na Bluefit Barueri](/guias/personal-trainer-bluefit-barueri/).
 
 Mais formatos de treino com acompanhamento na cidade em [personal trainer em Barueri](/guias/personal-trainer-barueri/).
