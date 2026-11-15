@@ -16,6 +16,10 @@ export const ARTIGOS: Record<string, { titulo: string; resumo: string }> = {
   '/academias/wellhub-totalpass/': { titulo: 'Wellhub e TotalPass', resumo: 'O plano mínimo que cada academia exige.' },
   '/modalidades/musculacao/': { titulo: 'Musculação na região', resumo: 'Onde treinar musculação e o que observar no salão.' },
   '/modalidades/crossfit/': { titulo: 'CrossFit e cross training', resumo: 'Boxes da região e como funciona a aula.' },
+  '/guias/gavioes-ou-ironberg/': { titulo: 'Gaviões 24h ou Ironberg', resumo: 'As duas academias 24 horas do guia, lado a lado.' },
+  '/guias/academias-premium-alphaville/': { titulo: 'Academias premium em Alphaville', resumo: 'O que o preço maior compra em cada uma.' },
+  '/guias/beach-tennis-futevolei-alphaville/': { titulo: 'Beach tennis e futevôlei em Alphaville', resumo: 'Onde jogar na areia e treinar no mesmo lugar.' },
+  '/academias/perto-de/': { titulo: 'Academia perto de você', resumo: 'Iguatemi, Shopping Tamboré, 18 do Forte e estações.' },
 };
 
 const A = '/guias/como-escolher-academia/', B = '/guias/academia-ou-personal/';
@@ -36,10 +40,14 @@ export const RELACIONADOS: Record<string, string[]> = {
   [SG]: [IN, PR, H24, WT],
   [IN]: [SG, PT, PR, H24],
   [PR]: [IN, SG, WT, PB],
-  [H24]: [DOM, IN, SG, PA],
+  [H24]: [DOM, '/guias/gavioes-ou-ironberg/', IN, SG],
   [DOM]: [H24, PS, PT, SG],
   [WT]: [PR, SG, CF, A],
   [MU]: [IN, PA, H24, B],
+  '/guias/gavioes-ou-ironberg/': [H24, IN, SG, '/guias/academias-premium-alphaville/'],
+  '/guias/academias-premium-alphaville/': [IN, '/guias/gavioes-ou-ironberg/', '/guias/beach-tennis-futevolei-alphaville/', PR],
+  '/guias/beach-tennis-futevolei-alphaville/': ['/guias/academias-premium-alphaville/', PA, DOM, WT],
+  '/academias/perto-de/': [PR, DOM, H24, A],
   [CF]: [WT, MU, DOM, A],
 };
 
