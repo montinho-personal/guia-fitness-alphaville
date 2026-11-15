@@ -12,6 +12,8 @@ cta_titulo: "Treinar com o Montinho na Aldeia da Serra"
 cta_texto: "O Montinho vai até a Aldeia da Serra para dar aula em casa, na academia do residencial ou ao ar livre, no horário fixo que você reservar antes do expediente."
 cta_destino: /blog/personal-trainer-aldeia-da-serra
 fontes:
+  - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
+    url: "https://www.who.int/publications/i/item/9789240015128"
   - titulo: "Ficha da Ironberg Alphaville no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/ironberg-alphaville/"
 video:

@@ -14,6 +14,9 @@ cta_destino: /blog/personal-trainer-aldeia-da-serra
 video:
   id: izMrrSoJGBw
   titulo: "Raiva e sangue no olho"
+fontes:
+  - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
+    url: "https://www.who.int/publications/i/item/9789240015128"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

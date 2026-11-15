@@ -17,6 +17,9 @@ vitrine:
 video:
   id: Dg8Sbv6_V8w
   titulo: "Meu maior conselho para quem quer emagrecer"
+fontes:
+  - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
+    url: "https://www.who.int/publications/i/item/9789240015128"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
