@@ -20,6 +20,16 @@ export const ARTIGOS: Record<string, { titulo: string; resumo: string }> = {
   '/guias/academias-premium-alphaville/': { titulo: 'Academias premium em Alphaville', resumo: 'O que o preço maior compra em cada uma.' },
   '/guias/beach-tennis-futevolei-alphaville/': { titulo: 'Beach tennis e futevôlei em Alphaville', resumo: 'Onde jogar na areia e treinar no mesmo lugar.' },
   '/academias/perto-de/': { titulo: 'Academia perto de você', resumo: 'Iguatemi, Shopping Tamboré, 18 do Forte e estações.' },
+  '/modalidades/hyrox/': { titulo: 'Hyrox: o que é e como funciona', resumo: 'Formato da prova, estações e onde treinar na região.' },
+  '/guias/estacoes-do-hyrox/': { titulo: 'As 8 estações do Hyrox', resumo: 'O que cada uma exige e como praticar.' },
+  '/guias/hyrox-ou-crossfit/': { titulo: 'Hyrox ou CrossFit', resumo: 'Prova padronizada contra aulas variadas no box.' },
+  '/guias/categorias-do-hyrox/': { titulo: 'Categorias do Hyrox', resumo: 'Open, Pro, dupla e revezamento: qual escolher.' },
+  '/guias/como-treinar-para-o-primeiro-hyrox/': { titulo: 'Como treinar para o primeiro Hyrox', resumo: 'Princípios para chegar bem à primeira prova.' },
+  '/guias/hyrox-alphaville/': { titulo: 'Hyrox em Alphaville', resumo: 'Onde treinar corrida, força e estações.' },
+  '/guias/hyrox-tambore/': { titulo: 'Hyrox no Tamboré', resumo: 'Opções perto dos residenciais.' },
+  '/guias/hyrox-barueri/': { titulo: 'Hyrox em Barueri', resumo: 'Academias da cidade e o que perguntar.' },
+  '/guias/hyrox-santana-de-parnaiba/': { titulo: 'Hyrox em Santana de Parnaíba', resumo: 'Do rooftop com pista às academias de bairro.' },
+  '/guias/hyrox-aldeia-da-serra/': { titulo: 'Hyrox na Aldeia da Serra', resumo: 'Treinar sem academia no bairro.' },
 };
 
 const A = '/guias/como-escolher-academia/', B = '/guias/academia-ou-personal/';
@@ -48,7 +58,17 @@ export const RELACIONADOS: Record<string, string[]> = {
   '/guias/academias-premium-alphaville/': [IN, '/guias/gavioes-ou-ironberg/', '/guias/beach-tennis-futevolei-alphaville/', PR],
   '/guias/beach-tennis-futevolei-alphaville/': ['/guias/academias-premium-alphaville/', PA, DOM, WT],
   '/academias/perto-de/': [PR, DOM, H24, A],
-  [CF]: [WT, MU, DOM, A],
+  '/modalidades/hyrox/': ['/guias/estacoes-do-hyrox/', '/guias/categorias-do-hyrox/', '/guias/como-treinar-para-o-primeiro-hyrox/', '/guias/hyrox-ou-crossfit/'],
+  '/guias/estacoes-do-hyrox/': ['/modalidades/hyrox/', '/guias/como-treinar-para-o-primeiro-hyrox/', '/guias/hyrox-alphaville/', '/guias/categorias-do-hyrox/'],
+  '/guias/hyrox-ou-crossfit/': ['/modalidades/hyrox/', CF, '/guias/estacoes-do-hyrox/', '/guias/hyrox-alphaville/'],
+  '/guias/categorias-do-hyrox/': ['/modalidades/hyrox/', '/guias/como-treinar-para-o-primeiro-hyrox/', '/guias/estacoes-do-hyrox/', '/guias/hyrox-barueri/'],
+  '/guias/como-treinar-para-o-primeiro-hyrox/': ['/guias/estacoes-do-hyrox/', '/guias/categorias-do-hyrox/', '/guias/hyrox-tambore/', '/guias/hyrox-santana-de-parnaiba/'],
+  '/guias/hyrox-alphaville/': ['/modalidades/hyrox/', '/guias/hyrox-tambore/', '/guias/como-treinar-para-o-primeiro-hyrox/', PA],
+  '/guias/hyrox-tambore/': ['/guias/hyrox-alphaville/', '/modalidades/hyrox/', '/guias/estacoes-do-hyrox/', PT],
+  '/guias/hyrox-barueri/': ['/guias/hyrox-alphaville/', '/modalidades/hyrox/', '/guias/categorias-do-hyrox/', PB],
+  '/guias/hyrox-santana-de-parnaiba/': ['/guias/hyrox-aldeia-da-serra/', '/modalidades/hyrox/', '/guias/como-treinar-para-o-primeiro-hyrox/', PS],
+  '/guias/hyrox-aldeia-da-serra/': ['/guias/hyrox-santana-de-parnaiba/', '/modalidades/hyrox/', '/guias/estacoes-do-hyrox/', PD],
+  [CF]: ['/guias/hyrox-ou-crossfit/', '/modalidades/hyrox/', MU, WT],
 };
 
 /** Guia de personal da região de uma academia. */

@@ -12,7 +12,7 @@ const todas = await academias();
 const RAIO = 2.5; // km, em linha reta
 const km = (a: { lat: number; lng: number }, b: { lat: number; lng: number }) => { const R = 6371, r = (x: number) => (x * Math.PI) / 180; const dLa = r(b.lat - a.lat), dLo = r(b.lng - a.lng); const h = Math.sin(dLa / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dLo / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
 const fmt = (n: number) => (n < 1 ? `${Math.round(n * 1000 / 50) * 50} m` : `${n.toFixed(1).replace('.', ',')} km`);
-const pontos = ref.pontos.map((p) => ({ ...p, perto: todas.map((a) => ({ a, d: km(p, a.data.geo) })).filter((x) => x.d <= RAIO).sort((x, y) => x.d - y.d).slice(0, 6) }));
+const pontos = (ref.pontos as { id: string; nome: string; de: string; tipo: string; lat: number; lng: number }[]).map((p) => ({ ...p, perto: todas.map((a) => ({ a, d: km(p, a.data.geo as { lat: number; lng: number }) })).filter((x) => x.d <= RAIO).sort((x, y) => x.d - y.d).slice(0, 6) }));
 const uteis = (a: Academia) => { const H = a.data.horario; const iguais = ['ter', 'qua', 'qui', 'sex'].every((d) => faixasDia(H[d as 'seg']) === faixasDia(H.seg)); if (iguais) return `seg a sex ${faixasDia(H.seg)}`; const qui = ['ter', 'qua', 'qui'].every((d) => faixasDia(H[d as 'seg']) === faixasDia(H.seg)); return qui ? `seg a qui ${faixasDia(H.seg)}, sex ${faixasDia(H.sex)}` : `seg ${faixasDia(H.seg)}`; };
 const resumoAc = (a: Academia) => [e24h(a.data.horario) ? '24 horas' : uteis(a), abreDomingo(a.data.horario) ? 'abre no domingo' : 'sem domingo', a.data.mensalidade ? a.data.mensalidade.valor : null].filter(Boolean).join(' · ');
 const abs = (u: string) => new URL(u, Astro.site).href;
