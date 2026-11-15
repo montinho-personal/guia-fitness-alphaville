@@ -20,8 +20,8 @@ fontes:
   - titulo: "OpenStreetMap, trecho da Estrada Municipal Bela Vista em frente ao Residencial Burle Marx (posição aproximada)"
     url: "https://www.openstreetmap.org/#map=17/-23.45483/-46.89346"
 video:
-  id: Dg8Sbv6_V8w
-  titulo: "Meu maior conselho para quem quer emagrecer"
+  id: CgPDOWBXh8k
+  titulo: "Eu pesava 40 kg a mais e achava que ia ser pra sempre"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
