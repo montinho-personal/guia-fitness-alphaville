@@ -14,6 +14,9 @@ cta_destino: /preparacao-para-hyrox
 fontes:
   - titulo: "HYROX — The Fitness Race (site oficial)"
     url: "https://hyrox.com/the-fitness-race/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -30,6 +33,10 @@ atualizado_em: 2026-11-15
 Entre uma estação e outra há sempre 1 km de corrida. A sequência é a mesma em todas as etapas, como explica a página principal sobre o [Hyrox](/modalidades/hyrox/). Isso significa que cada exercício chega com o cansaço acumulado do que veio antes. Vale treinar cada um sabendo disso.
 
 As cargas variam conforme a categoria. O guia [categorias do Hyrox](/guias/categorias-do-hyrox/) traz o único exemplo de peso que a organização publica, o da bola de Wall Ball.
+
+![Antes e depois do Montinho, personal trainer que prepara para o Hyrox em Alphaville e região: adolescente acima do peso e, anos depois, com o físico de quem treina](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
 
 ## Primeira metade: do SkiErg ao burpee
 
@@ -54,6 +61,10 @@ As cargas variam conforme a categoria. O guia [categorias do Hyrox](/guias/categ
 ## Qual estação costuma assustar?
 
 Depende do seu histórico. Quem vem da corrida tende a estranhar trenó e lunges. Quem vem da musculação às vezes sofre mais com SkiErg e remo, que pedem fôlego prolongado. O ponto é descobrir o seu elo fraco cedo e dar a ele mais tempo de prática.
+
+![Montinho, personal trainer que prepara para o Hyrox em Alphaville e região, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia.*
 
 ## Onde encontrar os aparelhos
 

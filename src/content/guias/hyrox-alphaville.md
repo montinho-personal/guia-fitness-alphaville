@@ -9,7 +9,7 @@ palavra_chave: hyrox alphaville
 intencao: Local. Quem mora ou trabalha em Alphaville e quer saber onde se preparar para uma prova de Hyrox.
 cta: montinho-contextual
 cta_titulo: "Preparar-se para o Hyrox com o Montinho em Alphaville"
-cta_texto: "O Montinho, que mantém este guia, divulga no site dele um serviço de preparação para Hyrox. Em Alphaville, atende em casa, no condomínio, na Arena 18 e em outras academias quando a regra do local permite."
+cta_texto: "O Montinho, que mantém este guia, divulga no site dele uma preparação específica para Hyrox. Em Alphaville, atende em casa, no condomínio, na Arena 18 e, se a regra do local deixar, em outras academias."
 cta_destino: /preparacao-para-hyrox
 lista_titulo: "Academias de Alphaville citadas neste texto"
 lista_ids: [blacksheep-alphaville, templo-sa-alphaville, crossfit-barueri, gavioes-24h-alphaville, bodytech-iguatemi-alphaville, ironberg-alphaville]
@@ -28,6 +28,9 @@ fontes:
     url: "https://www.academiagavioes.com.br/unidades/item/spalphaville"
   - titulo: "Bodytech Iguatemi Alphaville no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/bodytech-iguatemi-alphaville/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -37,11 +40,15 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Quem mantém este guia é o Montinho, personal trainer que atende em Alphaville e oferece preparação para Hyrox. O quadro dele no fim da página é anúncio próprio.
+> **Transparência.** Quem mantém este guia é o Montinho, personal com atendimento em Alphaville e oferece preparação para Hyrox. O quadro dele no fim da página é anúncio próprio.
 
 ## O que a prova cobra
 
-O Hyrox alterna corrida e trabalho funcional: são oito trechos de 1 km, e depois de cada um vem uma estação. A sequência oficial começa no SkiErg (1.000 m), passa por empurrar e puxar o trenó (50 m cada), burpee com salto à frente (80 m), remo (1.000 m), carregamento de kettlebells (200 m) e avanço com sandbag (100 m), e termina em 100 wall balls. Na prática, você precisa de três coisas: fôlego para correr cansado, força para mover carga e técnica nos aparelhos. Mais detalhes na página da [modalidade Hyrox](/modalidades/hyrox/).
+No Hyrox, corrida e exercício funcional se revezam: oito vezes você cobre 1 km e, logo depois, encara uma estação. A sequência oficial começa no SkiErg (1.000 m), segue com o trenó, primeiro empurrado e depois puxado (50 m cada), burpee broad jump (80 m), remo (1.000 m), carregamento de kettlebells (200 m) e avanço com sandbag (100 m), e termina em 100 wall balls. Na prática, você precisa de três coisas: fôlego para correr cansado, força para mover carga e técnica nos aparelhos. Mais detalhes na página da [modalidade Hyrox](/modalidades/hyrox/).
+
+![Antes e depois do Montinho, personal trainer que prepara para o Hyrox em Alphaville: adolescente acima do peso e, anos depois, com o físico de quem treina](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
 
 ## BlackSheep: a única ficha que cita Hyrox
 
@@ -65,6 +72,10 @@ Nenhuma ficha de Alphaville lista SkiErg, trenó, remo ergômetro ou bolas para 
 - O trenó pode ser empurrado e puxado numa raia livre?
 - Tem bola de wall ball e alvo na parede?
 - Um personal externo pode acompanhar o treino?
+
+![Montinho, personal trainer que prepara para o Hyrox em Alphaville, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Academia oficial ou não?
 

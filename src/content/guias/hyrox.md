@@ -17,6 +17,9 @@ fontes:
     url: "https://hyrox.com/the-fitness-race/"
   - titulo: "HYROX — busca de Training Clubs (site oficial)"
     url: "https://hyrox-training-finder.hyrox.com/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -33,6 +36,10 @@ atualizado_em: 2026-11-15
 O Hyrox junta corrida e exercícios funcionais numa sequência que não muda. Segundo o site oficial, o participante corre 1 km e em seguida cumpre uma estação de treino. Esse par se repete oito vezes. Somando os trechos, são 8 km de corrida e oito estações no total.
 
 Como a ordem e as distâncias são as mesmas em toda etapa, dá para treinar exatamente para o que vai acontecer no dia. Essa previsibilidade é o que mais diferencia o Hyrox de outras propostas de treino em grupo.
+
+![Antes e depois do Montinho, personal trainer que prepara para o Hyrox em Alphaville e região: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
 ## As oito estações, na ordem
 
@@ -58,6 +65,10 @@ As cargas mudam de uma categoria para outra. No exemplo publicado pela organiza�
 A organização diz que a prova atende desde atletas profissionais até gente comum que treina por conta própria. No site oficial existe o Find my Level, um teste curto que aponta a categoria mais indicada. A sugestão não é obrigatória: cada pessoa escolhe onde se inscrever.
 
 Quem já faz aulas em box costuma se perguntar se vale migrar. A comparação [Hyrox ou CrossFit](/guias/hyrox-ou-crossfit/) mostra o que muda no formato e no treino. Para quem nunca correu uma prova assim, o texto [como treinar para o primeiro Hyrox](/guias/como-treinar-para-o-primeiro-hyrox/) reúne os princípios gerais.
+
+![Montinho, personal trainer que prepara para o Hyrox em Alphaville e região, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que mantém este guia.*
 
 ## Onde treinar na região
 

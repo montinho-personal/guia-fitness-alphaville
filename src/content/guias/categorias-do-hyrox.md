@@ -14,6 +14,9 @@ cta_destino: /preparacao-para-hyrox
 fontes:
   - titulo: "HYROX — The Fitness Race (site oficial)"
     url: "https://hyrox.com/the-fitness-race/"
+video:
+  id: DiH1OzIR6Yk
+  titulo: "É impossível isso dar errado"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -28,6 +31,10 @@ atualizado_em: 2026-11-15
 ## Mesma prova, quatro formas de correr
 
 Em todas as categorias o percurso é idêntico: oito corridas de 1 km intercaladas com as oito [estações do Hyrox](/guias/estacoes-do-hyrox/). O que muda é quem faz o quê e com quanto peso. Entender isso ajuda a escolher sem medo.
+
+![Antes e depois do Montinho, personal trainer que prepara para o Hyrox em Alphaville e região: adolescente acima do peso e, anos depois, com o físico de quem treina](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
 ## Open
 
@@ -48,6 +55,10 @@ Esse formato atrai quem quer dividir a experiência com um amigo, parceiro ou co
 ## Relay
 
 Aqui a equipe tem quatro integrantes, que se revezam. Cada um assume duas das corridas e uma das estações. É o formato com menos volume individual, o que pode facilitar a estreia de quem ainda está ganhando condicionamento, e costuma ser uma boa opção para grupos de academia ou de empresa.
+
+![Montinho, personal trainer que prepara para o Hyrox em Alphaville e região, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que mantém este guia.*
 
 ## Variantes e como escolher
 

@@ -14,6 +14,9 @@ cta_destino: /preparacao-para-hyrox
 fontes:
   - titulo: "HYROX — The Fitness Race (site oficial)"
     url: "https://hyrox.com/the-fitness-race/"
+video:
+  id: yndKE1GrnUQ
+  titulo: "Toda pessoa com shape tem uma coisa em comum"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -30,6 +33,10 @@ Não há aqui planilha, ritmo de corrida nem peso sugerido. Isso depende do seu 
 ## 1. Treine a prova como ela é: corrida e estação juntas
 
 O Hyrox alterna corrida, sempre em blocos de 1 km, com oito estações, sempre na mesma ordem (o resumo está na [página do Hyrox](/modalidades/hyrox/)). Treinar corrida num dia e exercícios funcionais em outro ajuda, mas não basta. Em algum momento da preparação, os dois precisam aparecer na mesma sessão.
+
+![Antes e depois do Montinho, personal trainer que prepara para o Hyrox em Alphaville e região: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
 
 ## 2. Aprenda a correr com as pernas pesadas
 
@@ -50,6 +57,10 @@ Aumentar tudo de uma vez é o caminho mais curto para a lesão e para o desânim
 O corpo se adapta nos intervalos entre as sessões. Sono, alimentação e dias mais leves fazem parte da preparação. Dor que não passa, cansaço que se arrasta por dias e queda de rendimento são sinais para reduzir o ritmo e conversar com um profissional.
 
 Quem convive com alguma questão de saúde, como problema cardíaco, pressão alta, diabetes ou lesão anterior, deve procurar o médico antes de começar. A liberação e as restrições vêm dele.
+
+![Montinho, personal trainer que prepara para o Hyrox em Alphaville e região, na sala de musculação da Arena 18, em Alphaville](../../assets/montinho/montinho-personal-trainer-arena-18.jpg)
+
+*Montinho, personal trainer que mantém este guia.*
 
 ## 6. Quando um coach ou personal faz diferença
 

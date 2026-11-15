@@ -14,6 +14,9 @@ cta_destino: /preparacao-para-hyrox
 fontes:
   - titulo: "HYROX — The Fitness Race (site oficial)"
     url: "https://hyrox.com/the-fitness-race/"
+video:
+  id: CgPDOWBXh8k
+  titulo: "Eu pesava 40 kg a mais e achava que ia ser pra sempre"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -28,6 +31,10 @@ atualizado_em: 2026-11-15
 ## A pergunta certa não é qual é melhor
 
 Hyrox e CrossFit aparecem juntos nas buscas porque os dois misturam força e condicionamento. Mas um é uma competição e o outro é uma forma de treinar no dia a dia. Comparar os dois é como comparar uma corrida de rua com uma assessoria esportiva: um é o destino, o outro pode ser o caminho.
+
+![Antes e depois do Montinho, personal trainer que prepara para o Hyrox em Alphaville e região: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
 
 ## Lado a lado
 
@@ -59,6 +66,10 @@ Há pontos em comum. Wall Ball, burpee e remo aparecem nos dois mundos. Quem já
 - **Prefere treinar acompanhado de colegas?** Os dois funcionam em grupo; no Hyrox há até categorias em dupla e equipe.
 
 Nenhum desses perfis é regra. São só pontos de partida para a conversa com quem vai orientar o seu treino.
+
+![Montinho, personal trainer que prepara para o Hyrox em Alphaville e região, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia.*
 
 ## Onde praticar cada um na região
 

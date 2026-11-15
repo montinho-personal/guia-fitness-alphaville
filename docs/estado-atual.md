@@ -191,3 +191,7 @@ Cada evento leva `ref` (posição ou ficha) e `pagina`. Os links para o Montinho
 - 31 guias `personal-trainer-<id-da-academia>` (um por ficha), com campo `academia` no frontmatter. A ficha linka para o guia; o guia lista outras academias da região; a página de guias tem a seção "Personal trainer por academia".
 - Fatos conferidos contra os YAMLs; só a Ironberg aparece com regra publicada para personal externo; o Montinho só é citado como atendendo na Arena 18.
 - Correções em fichas encontradas no processo: telefone fictício removido da Bluefit Barueri; comparação de feriado corrigida na Smart Fit Av. Zélia.
+
+## Hyrox (15/11/2026)
+
+- 10 artigos: `/modalidades/hyrox/` (hub), estações, Hyrox ou CrossFit, categorias, como treinar para o primeiro, e "Hyrox em" Alphaville, Tamboré, Barueri, Santana de Parnaíba e Aldeia da Serra. Fatos da prova só de `docs/pesquisa/hyrox-fatos.md` (site oficial). CTA para `/preparacao-para-hyrox` do Montinho. Corpus antiplágio passou a incluir as páginas de Hyrox do site do Montinho.
