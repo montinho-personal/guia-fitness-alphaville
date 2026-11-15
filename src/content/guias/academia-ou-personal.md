@@ -53,6 +53,18 @@ Nada disso é para sempre. Um período de alguns meses com acompanhamento, segui
 
 **Como é a avaliação inicial.** Um bom profissional pergunta sobre histórico de saúde, rotina e objetivo antes de prescrever qualquer treino.
 
+## Onde treinar com personal na região
+
+Cada parte da região tem uma realidade diferente para o treino acompanhado: em umas, a academia do condomínio resolve; em outras, a escolha da academia pesa mais. Veja o guia da sua região:
+
+- [Personal trainer em Alphaville](/guias/personal-trainer-alphaville/)
+- [Personal trainer no Tamboré](/guias/personal-trainer-tambore/)
+- [Personal trainer em Barueri](/guias/personal-trainer-barueri/)
+- [Personal trainer em Santana de Parnaíba](/guias/personal-trainer-santana-de-parnaiba/)
+- [Personal trainer na Aldeia da Serra](/guias/personal-trainer-aldeia-da-serra/)
+
+Se você já treina em uma academia e quer saber se ela aceita personal de fora, a [Ironberg ou NitroGym](/guias/ironberg-ou-nitrogym/) mostra como as regras podem ser diferentes entre duas academias vizinhas.
+
 ## E o custo?
 
 O valor varia com a frequência semanal, o local do atendimento e a experiência do profissional. Este guia não publica faixas de preço de personal, porque não tem como verificá-las. Peça propostas a mais de um profissional e compare o que está incluído: avaliação, planilha, suporte fora da sessão.

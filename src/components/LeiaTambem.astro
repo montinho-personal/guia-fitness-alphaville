@@ -1,0 +1,21 @@
+---
+import { ARTIGOS, RELACIONADOS } from '../lib/artigos';
+interface Props { url: string }
+const { url } = Astro.props;
+const itens = (RELACIONADOS[url] ?? []).filter((u) => ARTIGOS[u]);
+---
+{itens.length > 0 && (
+  <nav class="leia-tambem" aria-labelledby="leia-t">
+    <h2 id="leia-t">Leia também</h2>
+    <ul>{itens.map((u) => <li><a href={u}><strong>{ARTIGOS[u].titulo}</strong><span>{ARTIGOS[u].resumo}</span></a></li>)}</ul>
+  </nav>
+)}
+<style>
+  .leia-tambem { margin-top: 28px; }
+  .leia-tambem h2 { font-size: 21px; margin-bottom: 12px; }
+  .leia-tambem ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .leia-tambem a { display: block; padding: 14px 16px; border: 1px solid var(--linha, #d8dee8); border-radius: 12px; text-decoration: none; color: inherit; height: 100%; }
+  .leia-tambem a:hover { border-color: currentColor; }
+  .leia-tambem strong { display: block; margin-bottom: 4px; }
+  .leia-tambem span { font-size: 15px; opacity: .8; }
+</style>
