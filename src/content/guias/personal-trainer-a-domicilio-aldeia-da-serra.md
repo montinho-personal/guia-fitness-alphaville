@@ -2,14 +2,14 @@
 titulo: "Personal trainer a domicílio na Aldeia da Serra: como é a aula"
 descricao: "Na Aldeia da Serra o personal a domicílio é o formato principal de treino acompanhado. Veja como é uma aula em casa, do portão ao alongamento final."
 h1: "Personal trainer a domicílio na Aldeia da Serra"
-resposta: "Como nenhuma academia da Aldeia da Serra consta no guia, receber o personal em casa é o jeito mais direto de treinar com acompanhamento sem sair do residencial. A aula pode usar a casa, a sala de ginástica do condomínio e as ruas internas. Como o profissional vem de fora do bairro, pergunte sobre deslocamento e horários disponíveis."
+resposta: "Como nenhuma academia da Aldeia da Serra consta no guia, receber o personal em casa é o jeito mais direto de treinar com acompanhamento sem sair do residencial. A aula pode circular por três cenários: a própria casa, a academia interna do residencial e as ruas do condomínio. Como o profissional vem de fora do bairro, pergunte sobre deslocamento e horários disponíveis."
 cluster: D
 secao: guias
 palavra_chave: personal trainer a domicilio aldeia da serra
 intencao: "Quem vive num residencial da Aldeia da Serra e quer saber como funciona, na prática, a aula com personal em casa."
 cta: montinho-contextual
 cta_titulo: "Montinho em domicílio na Aldeia da Serra"
-cta_texto: "O Montinho escreve este guia e atravessa a portaria de residenciais da Aldeia da Serra para dar aula em casa ou na academia do condomínio."
+cta_texto: "Mantido pelo Montinho, este guia também divulga o trabalho dele: aulas em residências da Aldeia da Serra e nos espaços fitness dos condomínios de lá."
 cta_destino: /blog/personal-trainer-a-domicilio-aldeia-da-serra
 fontes:
   - titulo: "Mapa das academias do Onde Treinar Alphaville"
@@ -23,11 +23,11 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Quem assina a manutenção deste guia é o Montinho, que dá aulas em domicílio na Aldeia da Serra. O convite dele, na última parte da página, é publicidade.
+> **Transparência.** A manutenção deste guia é assinada pelo Montinho, personal com aulas em domicílio na Aldeia da Serra. O convite dele, na última parte da página, é publicidade.
 
 ## Por que aqui o domicílio é a regra
 
-A Aldeia da Serra reúne residenciais cercados de mata, com uma parte em Barueri e outra em Santana de Parnaíba. O guia ainda não cataloga nenhuma academia dentro dela. Quem quer acompanhamento sem pegar o carro acaba recebendo o profissional em casa.
+A Aldeia da Serra reúne residenciais cercados de mata, espalhados pela divisa de Barueri com Santana de Parnaíba. Até agora, o guia não cataloga nenhuma academia ali dentro. Quem quer acompanhamento sem pegar o carro acaba recebendo o profissional em casa.
 
 Para entender o que esperar, vale acompanhar uma aula típica do começo ao fim.
 
@@ -57,6 +57,6 @@ Os minutos finais costumam ser de volta à calma e alongamento. É também a hor
 
 ## Distância e agenda: a conversa honesta
 
-As academias que o guia cataloga estão todas fora da Aldeia da Serra, e o profissional também chega de fora. Para ele, isso significa tempo de estrada entre um aluno e outro. Pergunte com franqueza se o trajeto entra no preço e quais horários ele consegue manter com regularidade. Uma agenda fixa vale mais do que um horário ideal que cai toda semana.
+Das academias que o guia cataloga, nenhuma fica dentro do bairro, e o profissional também chega de fora. Para ele, isso significa tempo de estrada entre um aluno e outro. Pergunte com franqueza se o trajeto entra no preço e quais horários ele consegue manter com regularidade. Uma agenda fixa vale mais do que um horário ideal que cai toda semana.
 
-Se em algum momento você quiser academia, use o [mapa](/mapa/) a partir do seu endereço. Atenção ao nome: a Ironberg está na Estrada da Aldeinha, em outro bairro, e não dentro da Aldeia da Serra. Para mais contexto, veja a página-mãe [personal trainer na Aldeia da Serra](/guias/personal-trainer-aldeia-da-serra/) e o comparativo [academia ou personal trainer](/guias/academia-ou-personal/).
+Se um dia bater vontade de academia, use o [mapa](/mapa/) a partir do seu endereço. Cuidado com a semelhança de nomes: a Ironberg fica na Estrada da Aldeinha, bairro diferente, fora da Aldeia. Mais contexto na [visão geral do personal no bairro](/guias/personal-trainer-aldeia-da-serra/) e em [academia ou personal trainer](/guias/academia-ou-personal/), que coloca os dois formatos lado a lado.

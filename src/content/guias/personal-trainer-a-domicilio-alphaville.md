@@ -9,7 +9,7 @@ palavra_chave: personal trainer a domicilio alphaville
 intencao: "Quem vive em casa de condomínio em Alphaville e prefere receber o personal sem sair dela."
 cta: montinho-contextual
 cta_titulo: "Montinho a domicílio em Alphaville"
-cta_texto: "O Montinho, editor deste guia, dá aulas na casa de quem mora em Alphaville. Também acompanha alunos na academia do residencial e na Arena 18."
+cta_texto: "O Montinho, editor deste guia, dá aulas na casa de quem mora em Alphaville. Fora das casas, ele acompanha alunos no espaço de treino do condomínio e também na Arena 18."
 cta_destino: /blog/personal-trainer-a-domicilio-alphaville
 lista_titulo: "Academias de Alphaville que podem complementar o treino em casa"
 lista_ids: [arena-18-alphaville, ironberg-alphaville, gavioes-24h-alphaville]
@@ -27,7 +27,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Quem edita o Onde Treinar Alphaville é o Montinho, profissional que leva o treino até casas de Alphaville. O quadro com o contato dele, ao final, é um anúncio.
+> **Transparência.** O Onde Treinar Alphaville tem um editor só: o Montinho, que leva o treino até casas de Alphaville. Ao final, o quadro com o contato dele é um anúncio.
 
 ## Casa em residencial muda a conversa
 
@@ -56,8 +56,8 @@ O treino em casa resolve rotina e privacidade, mas esbarra no limite de equipame
 
 Três endereços do guia funcionam bem nesse papel:
 
-- **[Arena 18](/academias/arena-18-alphaville/)**, que fica no Melville Empresarial e onde o Montinho também atende. Funciona de segunda a domingo; no domingo, das 8h às 18h.
+- **[Arena 18](/academias/arena-18-alphaville/)**, que fica no Melville Empresarial, local em que o próprio Montinho dá aulas. Funciona de segunda a domingo; no domingo, das 8h às 18h.
 - **[Ironberg](/academias/ironberg-alphaville/)**, instalada na Estrada da Aldeinha e aberta 24 horas. É rara na região por deixar claro como recebe personal de fora: o profissional paga à casa uma quantia fixa, e esse valor só é revelado no balcão.
 - **[Gaviões 24h](/academias/gavioes-24h-alphaville/)**, com endereço na Av. Juruá, também sem hora para fechar. Se quiser levar o seu personal, confirme antes o que a unidade exige.
 
-Para comparar endereços com a sua casa, abra o [mapa](/mapa/). Ainda pesando se o acompanhamento vale o investimento? O texto [academia ou personal trainer](/guias/academia-ou-personal/) ajuda nessa conta. Um retrato mais amplo da cidade aparece em [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).
+Para comparar endereços com a sua casa, abra o [mapa](/mapa/). Ainda pesando se o acompanhamento vale o investimento? A comparação entre [academia ou personal trainer](/guias/academia-ou-personal/) ajuda nessa conta. Para um retrato mais amplo, abra [a página geral sobre personal em Alphaville](/guias/personal-trainer-alphaville/).

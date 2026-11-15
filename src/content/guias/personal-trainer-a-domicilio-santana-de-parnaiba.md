@@ -6,10 +6,10 @@ resposta: "Os trajetos dentro de Santana de Parnaíba são longos, e isso pesa n
 cluster: D
 secao: guias
 palavra_chave: personal trainer a domicilio santana de parnaiba
-intencao: "Morador de Santana de Parnaíba avaliando um personal que atenda em casa, considerando deslocamento e agenda."
+intencao: "Pessoa que mora em Santana de Parnaíba e está avaliando um personal que atenda em casa, considerando deslocamento e agenda."
 cta: montinho-contextual
-cta_titulo: "Treino em domicílio com o Montinho em Santana de Parnaíba"
-cta_texto: "Autor deste guia, o Montinho vai até casas em Santana de Parnaíba. Pergunte a ele se o seu endereço entra na rota de atendimento."
+cta_titulo: "Montinho: treino em domicílio em Santana de Parnaíba"
+cta_texto: "Mantenedor deste guia, o Montinho atende em residências de Santana de Parnaíba. Confirme com ele se a sua rua entra na rota."
 cta_destino: /blog/personal-trainer-a-domicilio-santana-de-parnaiba
 lista_titulo: "Academias de Santana de Parnaíba citadas"
 lista_ids: [fabrica-premium-alphaville, forth-academia-jardim-sao-luis, mattos-fitness-fazendinha, olympia-fitness-polvilho]
@@ -26,11 +26,11 @@ atualizado_em: 2026-11-15
 
 ## Município grande, agenda apertada
 
-Santana de Parnaíba reúne realidades bem diferentes. Pedaços de Alphaville e do Tamboré pertencem ao município, ao lado de bairros como Jardim São Luís, Fazendinha e Polvilho. Ir de um ponto a outro pode levar bastante tempo. Para o treino a domicílio, isso significa que a logística precisa ser conversada antes dos exercícios.
+Santana de Parnaíba reúne realidades bem diferentes. O município abriga trechos de Alphaville e do Tamboré e também bairros próprios, entre eles o Jardim São Luís, a Fazendinha e o Polvilho. Ir de um ponto a outro pode levar bastante tempo. Para o treino a domicílio, isso significa que a logística precisa ser conversada antes dos exercícios.
 
 Um profissional com vários alunos no mesmo dia tem de encaixar trajetos. Se a sua casa fica longe do restante da agenda dele, alguns horários podem simplesmente não fechar.
 
-## Cinco perguntas para a primeira conversa
+## Cinco dúvidas para tirar logo de cara
 
 As respostas variam muito de um profissional para outro, e nenhuma está errada, desde que fique clara:
 
@@ -50,8 +50,8 @@ Nenhuma das academias de bairro do município com ficha no guia funciona aos dom
 
 Se a ideia é alternar casa e academia, o guia cataloga estas opções no município:
 
-- **[Fábrica Premium](/academias/fabrica-premium-alphaville/)**, do lado de Alphaville, na Estrada da Bela Vista, com portas abertas também na manhã de domingo;
-- **[Forth](/academias/forth-academia-jardim-sao-luis/)**, no Jardim São Luís, com estrutura de acessibilidade;
+- **[Fábrica Premium](/academias/fabrica-premium-alphaville/)**, endereço na Estrada da Bela Vista (lado de Alphaville), que abre também na manhã de domingo;
+- **[Forth](/academias/forth-academia-jardim-sao-luis/)**, bairro Jardim São Luís, com estrutura de acessibilidade;
 - **[Mattos Fitness](/academias/mattos-fitness-fazendinha/)**, na Fazendinha, que de segunda a sexta começa a receber alunos às 4h;
 - **[Olympia](/academias/olympia-fitness-polvilho/)**, no Polvilho, com adaptações para pessoas autistas.
 
@@ -59,4 +59,4 @@ O guia não encontrou, em nenhuma delas, regra publicada sobre profissional exte
 
 ## Para continuar
 
-O quadro geral do município está em [personal trainer em Santana de Parnaíba](/guias/personal-trainer-santana-de-parnaiba/). Procura onde treinar no domingo? Veja a lista de [academias abertas no domingo](/academias/domingo/). E, se a dúvida é contratar ou não alguém, o comparativo [academia ou personal trainer](/guias/academia-ou-personal/) pode ajudar.
+O quadro geral está na [página sobre personal no município](/guias/personal-trainer-santana-de-parnaiba/). Procura onde treinar no domingo? Veja a lista de [academias abertas no domingo](/academias/domingo/). Contratar ou não? A análise [academia ou personal trainer](/guias/academia-ou-personal/) lista os dois caminhos.
