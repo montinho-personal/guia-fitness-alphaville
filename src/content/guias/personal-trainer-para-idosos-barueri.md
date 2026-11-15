@@ -53,7 +53,7 @@ Nem todo mundo depois dos 60 quer ou pode pegar o carro. O trem da CPTM, Linha 8
 
 ## O prédio como sala de treino
 
-Barueri tem muitos edifícios residenciais equipados com academia na área comum. Para quem tem receio de sair, treinar no próprio prédio resolve boa parte da logística: elevador conhecido, nenhum trajeto, horário flexível. Pergunte ao síndico se existe cadastro para treinadores externos e em que horários eles podem usar o espaço.
+Barueri tem muitos edifícios residenciais equipados com academia na área comum. Para quem tem receio de sair, treinar no próprio prédio resolve boa parte da logística: elevador conhecido, nenhum trajeto, horário flexível. E, se bater o cansaço, o apartamento fica a poucos andares de distância. Pergunte ao síndico se existe cadastro para treinadores externos e em que horários eles podem usar o espaço.
 
 ## Quanto custa a academia
 

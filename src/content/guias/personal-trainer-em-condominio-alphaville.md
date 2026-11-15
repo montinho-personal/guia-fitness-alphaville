@@ -9,7 +9,7 @@ palavra_chave: personal trainer em condomínio alphaville
 intencao: "Comercial local. Morador de residencial em Alphaville que quer treinar com personal sem sair do condomínio."
 cta: montinho-contextual
 cta_titulo: "Treinar com o Montinho no seu residencial em Alphaville"
-cta_texto: "Em Alphaville, o Montinho dá aula na academia do residencial, depois que a administração libera a entrada dele, e também em casa e na Arena 18."
+cta_texto: "O Montinho dá aula na academia do seu residencial em Alphaville, depois que a administração libera a entrada dele. Também atende em casa e na Arena 18."
 cta_destino: /blog/personal-trainer-em-condominio-alphaville
 lista_titulo: "Academias de Alphaville para complementar o treino do condomínio"
 lista_ids: [ironberg-alphaville, gavioes-24h-alphaville, arena-18-alphaville]
@@ -27,7 +27,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** O Montinho, personal que trabalha em Alphaville, é o responsável por este guia. O quadro com o serviço dele, lá embaixo, é propaganda.
+> **Transparência.** O Montinho, personal que trabalha em Alphaville, edita este guia. O quadro com o serviço dele, lá embaixo, é propaganda.
 
 ## A academia que já está no seu endereço
 
@@ -46,7 +46,7 @@ Guarde a resposta. Ela evita desencontro com a portaria e com o síndico mais ad
 
 ## Cheio de manhã cedo e à noite
 
-O horário em que você quer treinar costuma coincidir com o dos vizinhos: antes do expediente e logo depois dele. Nessas janelas, é comum disputar o único banco ou a única esteira. Há duas saídas práticas. Uma é deslocar a aula para o meio da manhã ou o começo da tarde, se a agenda permite. A outra é montar sessões em circuito, que passam por vários pontos da sala e liberam cada aparelho depressa.
+O horário em que você quer treinar costuma coincidir com o dos vizinhos: antes do expediente e logo depois dele. Nessas janelas, é comum disputar o único banco ou a única esteira. Há duas saídas práticas. Uma é deslocar a aula para o fim da manhã ou o começo da tarde, se a agenda permite. A outra é montar sessões em circuito, que passam por vários pontos da sala e liberam cada aparelho depressa.
 
 Educação conta tanto quanto a técnica. Devolver os halteres ao suporte, secar o banco e ceder a vez entre as séries mantém a boa vontade de quem divide a sala com você.
 
@@ -58,7 +58,7 @@ As academias de residencial variam bastante. Algumas têm só esteira, bicicleta
 
 Se o seu objetivo pede cargas que a sala do condomínio não oferece, dá para combinar os dois formatos: parte da semana em casa, parte numa academia. Três opções com ficha no guia entram nessa conta:
 
-- [Ironberg](/academias/ironberg-alphaville/), na Estrada da Aldeinha: só musculação, aberta 24 horas e com estacionamento gratuito de mais de 1.000 vagas. Publica a regra para personal de fora: um valor fixo pago à academia, informado apenas na unidade.
+- [Ironberg](/academias/ironberg-alphaville/), na Estrada da Aldeinha: só musculação, aberta 24 horas e com estacionamento gratuito de mais de 1.000 vagas. Torna pública a política para personal de fora: o profissional externo paga à academia uma quantia fixa, divulgada apenas na unidade.
 - [Gaviões 24h](/academias/gavioes-24h-alphaville/), na Avenida Juruá: funciona o dia inteiro, domingo incluído.
 - [Arena 18](/academias/arena-18-alphaville/), no Melville Empresarial: abre até as 18h no domingo. **Relação comercial:** o Montinho atende alunos lá.
 
@@ -66,4 +66,4 @@ Na Gaviões e na Arena 18, confirme a política para profissional externo antes 
 
 ## Para fechar a decisão
 
-Se a sala do residencial tem o básico e a administração aceita o profissional, comece por ela. Quem ainda pesa se vale contratar alguém encontra os prós e contras em [academia ou personal trainer](/guias/academia-ou-personal/). As outras formas de treinar acompanhado na região aparecem em [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).
+Se a sala do residencial tem o básico e a administração aceita o profissional, comece por ela. Quem ainda pesa se vale contratar alguém encontra os argumentos dos dois lados no texto [academia ou personal trainer](/guias/academia-ou-personal/). As outras formas de treinar acompanhado na região aparecem no guia geral de [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).

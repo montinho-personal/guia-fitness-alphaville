@@ -1,6 +1,6 @@
 ---
 titulo: "Personal trainer para gestantes no Tamboré: casa ou academia"
-descricao: "Grávida no Tamboré e pensando em personal? Veja as opções de treino na residência, no espaço de ginástica do condomínio ou em unidade climatizada, sempre após o aval do obstetra."
+descricao: "Grávida no Tamboré e pensando em personal? Opções em casa, no condomínio ou em academia climatizada, sempre após o aval do obstetra."
 h1: "Personal trainer para gestantes no Tamboré"
 resposta: "No Tamboré, bairro em que predominam os condomínios residenciais, muitas gestantes preferem treinar em casa ou no espaço fitness do condomínio, sem trânsito. Para academia, há a NitroGym dentro do Shopping Tamboré, com estacionamento incluso, e a Bluefit Tamboré. Em qualquer formato, a primeira etapa é a autorização do médico do pré-natal."
 cluster: D
@@ -64,6 +64,6 @@ Levar um profissional externo depende de autorização da academia, e as fichas 
 
 **E quando o corpo muda?** O plano precisa acompanhar cada trimestre, sempre dentro do que o médico autorizar.
 
-**E se eu preferir uma mulher?** É uma escolha legítima nessa fase. O Montinho, autor deste guia, é homem; se a presença de uma profissional deixa você mais à vontade, busque uma.
+**E se eu preferir uma mulher?** É uma escolha legítima nessa fase. Este guia é feito por um personal homem, o Montinho; se a presença de uma profissional deixa você mais à vontade, busque uma.
 
 **E depois do parto?** A volta ao treino depende de nova liberação médica. Só então o personal remonta o plano. Para pesar se vale contratar, leia [academia ou personal](/guias/academia-ou-personal/).

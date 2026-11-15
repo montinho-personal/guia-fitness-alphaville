@@ -45,11 +45,11 @@ O guia reúne fichas de três academias nos bairros do município. A tabela most
 | [Olympia](/academias/olympia-fitness-polvilho/) | Polvilho | 8h às 12h | fechada | banheiro acessível, vaga acessível |
 | [Mattos Fitness](/academias/mattos-fitness-fazendinha/) | Fazendinha | 8h às 14h | fechada | não informa |
 
-Dois detalhes de horário. Entre meio-dia e 14h, de segunda a sexta, as portas da Olympia ficam fechadas, o que exclui aulas na hora do almoço. A Mattos abre às 4h, o que serve a quem acorda muito cedo, mas fica sem itens de acessibilidade na ficha. Em todas, confirme se a entrada de um treinador externo é aceita.
+Dois detalhes de horário. Entre meio-dia e 14h, de segunda a sexta, as portas da Olympia ficam fechadas, o que exclui aulas na hora do almoço. A Mattos abre às 4h, o que serve a quem acorda muito cedo, mas a ficha dela não cita recursos de acessibilidade. Em todas, confirme se a entrada de um treinador externo é aceita.
 
 ## A distância conta
 
-Dentro do município, os trajetos são longos. Uma academia boa do outro lado da cidade pode virar motivo para faltar. Para quem já não gosta de dirigir, ou depende de carona, a melhor academia costuma ser a mais próxima, ou nenhuma. Treinar em casa elimina o trajeto, e o personal pode adaptar o treino ao espaço disponível, com o que o médico liberou.
+Dentro do município, os trajetos são longos. Uma academia boa do outro lado da cidade pode virar motivo para faltar. Para quem já não gosta de dirigir, ou depende de carona, a melhor academia costuma ser a mais próxima, ou nenhuma. Treinar em casa elimina o trajeto, e o personal pode adaptar o treino ao espaço disponível, com o que o médico liberou. Se algum parente cuida do transporte, encaixe as sessões na agenda de quem dirige, para que a aula não dependa de improviso a cada semana.
 
 ## Do lado de Alphaville
 

@@ -44,7 +44,7 @@ Alphaville concentra muitas academias, e nem todas foram pensadas para quem anda
 - [Academia 24h Premium](/academias/24h-premium-alphaville/) (Alphaville Industrial): elevador, banheiro e chuveiro acessíveis, área adaptada a cadeirantes e vaga acessível.
 - [Arena 18](/academias/arena-18-alphaville/) (Melville Empresarial): vagas acessíveis, itens de acessibilidade e atendimento de fisioterapeuta e nutricionista.
 - [Academia Scelta](/academias/scelta-alphaville/) (Alphaville Empresarial): fisioterapeuta e um ambiente pensado para cadeirantes.
-- [Ironberg](/academias/ironberg-alphaville/) (Estrada da Aldeinha): vaga gratuita e acessibilidade. Ao contrário da maioria, divulga como funciona para treinadores de fora: eles pagam à academia uma quantia fixa, revelada apenas presencialmente.
+- [Ironberg](/academias/ironberg-alphaville/) (Estrada da Aldeinha): vaga gratuita e acessibilidade. Ao contrário da maioria, divulga como funciona para treinadores de fora: eles repassam um valor fixo ao estabelecimento, revelado apenas presencialmente.
 
 Nas outras, antes de matricular, confirme se o seu personal tem permissão para dar aula no local.
 

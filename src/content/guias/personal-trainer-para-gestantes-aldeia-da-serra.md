@@ -1,6 +1,6 @@
 ---
 titulo: "Personal trainer para gestantes na Aldeia da Serra"
-descricao: "Grávida na Aldeia da Serra: sem academia no bairro, o treino com personal acontece em casa, na área fitness do residencial ou ao ar livre, com aval do obstetra."
+descricao: "Grávida na Aldeia da Serra: como não há academia no bairro, as aulas de personal vão para casa, para o condomínio ou para a rua, com aval do obstetra."
 h1: "Treino acompanhado na gravidez, na Aldeia da Serra"
 resposta: "Como o guia não lista academias na Aldeia da Serra, a gestante que contrata personal treina na própria casa, na área fitness do condomínio ou, com aval médico, pelas ruas internas. Antes de começar, a consulta com o obstetra define se pode e como, e o plano é revisto conforme a gravidez avança."
 cluster: D
@@ -9,7 +9,7 @@ palavra_chave: personal trainer para gestantes aldeia da serra
 intencao: "Grávida que vive na Aldeia da Serra e busca acompanhamento sem sair do residencial."
 cta: montinho-contextual
 cta_titulo: "Gravidez e treino com o Montinho, na Aldeia da Serra"
-cta_texto: "No bairro, as aulas do Montinho acontecem na residência da aluna ou na área de ginástica do condomínio. Na gravidez, ele só trabalha com o aval do obstetra e dentro do que foi orientado."
+cta_texto: "No bairro, as aulas do Montinho são dadas no lar da gestante ou na área de ginástica do condomínio. Na gravidez, ele só trabalha com o aval do obstetra e dentro do que foi orientado."
 cta_destino: /blog/personal-trainer-aldeia-da-serra
 fontes:
   - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
@@ -27,7 +27,7 @@ atualizado_em: 2026-11-15
 
 ## Nenhuma academia no bairro, e isso pesa pouco
 
-Formada por residenciais em meio à mata, a Aldeia da Serra tem um pedaço em Barueri e outro em Santana de Parnaíba. Dentro dela, não há academia com ficha publicada aqui. Vale um esclarecimento: a Ironberg, que tem endereço na Estrada da Aldeinha, pertence a outro bairro.
+Formada por residenciais em meio à mata, a Aldeia da Serra tem um pedaço em Barueri e outro em Santana de Parnaíba. Não existe, no seu interior, academia com ficha publicada aqui. Vale um esclarecimento: a Ironberg, que tem endereço na Estrada da Aldeinha, pertence a outro bairro.
 
 Para a gestante, a falta de academia por perto não chega a ser um problema. O acompanhamento chega até ela, e o trajeto de carro sai da rotina justamente na fase em que ele cansa mais.
 

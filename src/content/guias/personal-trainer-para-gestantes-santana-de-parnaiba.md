@@ -43,14 +43,14 @@ Se a ideia for treinar fora, estas são as fichas do guia no município, com o q
 
 - **Jardim São Luís, [Forth Academia](/academias/forth-academia-jardim-sao-luis/)**: estrutura de acessibilidade, com banheiro e estacionamento adaptados.
 - **Polvilho, [Olympia Fitness](/academias/olympia-fitness-polvilho/)**: ar-condicionado, vaga acessível, banheiro acessível e adaptações para pessoas autistas.
-- **Fazendinha, [Mattos Fitness](/academias/mattos-fitness-fazendinha/)**: abre às 4h nos dias de semana, alternativa para quem só tem a primeira hora do dia livre.
+- **Fazendinha, [Mattos Fitness](/academias/mattos-fitness-fazendinha/)**: recebe alunos a partir das 4h em dia útil, alternativa para quem só tem a primeira hora do dia livre.
 - **Perto de Alphaville, [Fábrica Premium](/academias/fabrica-premium-alphaville/)**: endereço na Estrada da Bela Vista; oferece valet e toalhas geladas, dois itens que ajudam em dias de calor.
 
 Se o profissional não for da casa, telefone antes: as fichas não dizem se a entrada dele é permitida.
 
 ## Atenção aos horários
 
-Dois detalhes do município podem atrapalhar a agenda. Nos dias úteis, a Olympia interrompe o atendimento no horário do almoço, das 12h às 14h. Além disso, nenhuma das academias de bairro funciona aos domingos. Se a sua rotina só tem espaço no fim de semana, o treino em casa evita esse problema. Para o restante da semana, pergunte na recepção quais horários enchem e marque as aulas fora do pico.
+Dois detalhes do município podem atrapalhar a agenda. De segunda a sexta, a Olympia para de atender no almoço, entre 12h e 14h. Além disso, nenhuma das academias de bairro funciona aos domingos. Se a sua rotina só tem espaço no fim de semana, o treino em casa evita esse problema. Para o restante da semana, pergunte na recepção quais horários enchem e agende longe do pico.
 
 ## Roteiro de conversa com o personal
 

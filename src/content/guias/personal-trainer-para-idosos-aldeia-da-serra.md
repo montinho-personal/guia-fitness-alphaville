@@ -20,7 +20,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** O responsável editorial aqui é o Montinho, um treinador particular que vai até casas e condomínios desta parte da região. O destaque assinado por ele, no fim, é anúncio.
+> **Transparência.** O responsável editorial aqui é o Montinho, que leva as aulas até casas e condomínios da Aldeia da Serra. O destaque assinado por ele, no fim, é anúncio.
 
 ## Aqui, o treino vai até a pessoa
 
