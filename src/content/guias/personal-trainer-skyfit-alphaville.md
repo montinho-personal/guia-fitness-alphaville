@@ -52,7 +52,7 @@ De segunda a quinta, a SkyFit funciona das 5h às 23h. Na sexta, fecha às 22h. 
 
 ## Mensalidade sob consulta, Wellhub com preço
 
-A ficha não tem mensalidade direta: o valor não foi publicado nas fontes, e a forma de obter é pelo site skyfitacademia.com ou pelo telefone. O que está registrado é a entrada pelo Wellhub, no plano Silver, de R$ 149,99. Acrescente o valor combinado com o profissional e qualquer cobrança que a SkyFit faça para liberar a entrada dele. As comodidades listadas são poucas, armários, chuveiro e vestiário, e o estacionamento não aparece. Pergunte sobre a vaga. Compare opções em [Wellhub e TotalPass](/academias/wellhub-totalpass/) e na [tabela de preços](/academias/precos/).
+A ficha não tem mensalidade direta: o valor não foi publicado nas fontes, e a saída é consultar pelo site skyfitacademia.com ou pelo telefone. O que está registrado é a entrada pelo Wellhub, no plano Silver, de R$ 149,99. Acrescente o valor combinado com o profissional e qualquer cobrança que a SkyFit faça para liberar a entrada dele. As comodidades listadas são poucas, armários, chuveiro e vestiário, e o estacionamento não aparece. Pergunte sobre a vaga. Compare opções em [Wellhub e TotalPass](/academias/wellhub-totalpass/) e na [tabela de preços](/academias/precos/).
 
 ## Perto dali, na mesma avenida
 

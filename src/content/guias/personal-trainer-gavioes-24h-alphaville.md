@@ -56,7 +56,7 @@ O foco é musculação, e a página da unidade cita um rooftop com máquinas. A 
 
 A Gaviões não divulga mensalidade nem diária: a página da unidade leva a uma plataforma de matrícula. No Wellhub, a unidade exige no mínimo o Silver+, de R$ 199,99. O orçamento real soma três parcelas: o acesso à academia, o preço cobrado pelo profissional e a taxa para personal externo, caso a Gaviões cobre alguma. Compare com [os preços publicados na região](/academias/precos/) e com [Wellhub e TotalPass](/academias/wellhub-totalpass/).
 
-## Vizinhos na Av. Juruá
+## Vizinhos no Alphaville Industrial
 
 - [Fast Treino Alphaville](/academias/fast-treino-alphaville/): estúdio de treino em circuito no mesmo número 253 da avenida, com horário listado só das 16h às 20h em dias úteis.
 - [SkyFit Alphaville](/academias/skyfit-alphaville/): no número 307, com musculação, cross training e lutas. Veja [personal trainer na SkyFit](/guias/personal-trainer-skyfit-alphaville/).

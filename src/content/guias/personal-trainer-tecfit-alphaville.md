@@ -34,7 +34,7 @@ Na Alameda Araguaia, 762, no Alphaville Industrial, a Tecfit lista três modalid
 
 ## Onde fica o personal nesse modelo
 
-Num estúdio, o formato da casa tende a definir a sessão, e o equipamento de eletroestimulação é do próprio estúdio. Por isso, ter um personal particular ali levanta perguntas que não aparecem numa academia aberta, onde o aluno circula livremente entre os aparelhos: o profissional de fora pode usar a área de musculação e funcional com você? Pode acompanhar a parte com eletroestimulação, ou ela fica só com a equipe do estúdio? A fonte não responde a nenhuma delas, e nenhuma norma sobre treinador externo foi divulgada.
+Num estúdio, o formato da casa tende a definir a sessão. Por isso, ter um personal particular ali levanta perguntas que não aparecem numa academia aberta, onde o aluno circula livremente entre os aparelhos: o profissional de fora pode usar a área de musculação e funcional com você? Pode acompanhar a parte com eletroestimulação, ou ela fica só com a equipe do estúdio? A fonte não responde a nenhuma delas, e nenhuma norma sobre treinador externo foi divulgada.
 
 Um caminho possível é dividir: algumas sessões no estúdio, no formato dele, e o acompanhamento individual em outro lugar. Só faz sentido depois de saber o que a Tecfit permite. Ligue para (11) 4191-0832 e pergunte se aceita personal externo, em quais áreas, com que custo, quem paga e se há cadastro.
 
@@ -50,7 +50,7 @@ A página informa estacionamento, área adaptada a cadeirantes, vestiário com c
 
 ## Valores conhecidos e desconhecidos
 
-O plano direto não tem valor publicado. Pelo Wellhub, o estúdio cobra o Gold+, plano de R$ 439,99, igual ao exigido pela [Academia 24h Premium](/academias/24h-premium-alphaville/). Se houver personal externo, entram também o honorário dele e uma eventual taxa do estúdio. Os valores das outras academias estão em [preços](/academias/precos/); os planos de agregador, em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+O plano direto não tem valor publicado. Pelo Wellhub, o estúdio exige o Gold+, plano de R$ 439,99, igual ao exigido pela [Academia 24h Premium](/academias/24h-premium-alphaville/). Se houver personal externo, entram também o honorário dele e uma eventual taxa do estúdio. Os valores das outras academias estão em [preços](/academias/precos/); os planos de agregador, em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
 
 ## Para treino individual na mesma região
 

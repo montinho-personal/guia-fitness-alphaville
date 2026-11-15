@@ -34,7 +34,7 @@ atualizado_em: 2026-11-15
 
 A [Fábrica Premium Alphaville](/academias/fabrica-premium-alphaville/) está na Estrada da Bela Vista, 1332, praticamente diante do Condomínio Burle Marx, conforme o próprio site. É a primeira academia do guia nesse trecho de Alphaville que fica em Santana de Parnaíba. Até então, quem morava nos residenciais dali e queria academia precisava ir para o lado de Barueri.
 
-O site não informa CEP, e a posição no mapa do guia é aproximada. Sites locais associam a unidade à rede Fábrica de Monstros, mas o site dela não cita essa marca.
+O site não informa CEP, e a posição no mapa do guia é aproximada. Sites locais associam a unidade à rede Fábrica de Monstros, mas o site dela não cita essa marca, e o guia não confirmou essa ligação.
 
 ## Estrutura para variar a sessão
 

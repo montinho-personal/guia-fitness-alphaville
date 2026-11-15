@@ -10,7 +10,7 @@ intencao: "Comercial local. Quem treina ou pensa em treinar no BlackSheep quer s
 academia: blacksheep-alphaville
 cta: montinho-contextual
 cta_titulo: "Acompanhamento individual com o Montinho em Alphaville"
-cta_texto: "O Montinho, personal que mantém este guia, atende em Alphaville na casa do aluno, no espaço fitness do condomínio, na Arena 18 e em outras academias quando a regra do local permite. Se o seu foco é o Hyrox, a conversa pode começar por aí."
+cta_texto: "O Montinho, personal que mantém este guia, atende em Alphaville na casa do aluno, no espaço fitness do condomínio, na Arena 18 e em outras academias quando a regra do local permite."
 cta_destino: /personal-trainer-alphaville
 lista_titulo: "A ficha do BlackSheep Alphaville no guia"
 lista_ids: [blacksheep-alphaville]

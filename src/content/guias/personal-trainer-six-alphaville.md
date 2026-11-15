@@ -2,7 +2,7 @@
 titulo: "Personal trainer na SIX Alphaville: serviço da casa e regras"
 descricao: "A SIX Alphaville, no 23º andar do Empresarial 18 do Forte, oferece personal trainer como serviço. Veja horários, preço citado na imprensa e o que perguntar."
 h1: "Personal trainer na SIX Alphaville"
-resposta: "A SIX Alphaville lista personal trainer e avaliação física entre os serviços do clube, no 23º andar do Empresarial 18 do Forte. Não há regra publicada para profissional de fora, nem preço no site, e a unidade não aceita Wellhub nem TotalPass. A matrícula começa por uma visita agendada."
+resposta: "A SIX Alphaville lista personal trainer e avaliação física entre os serviços do clube, no 23º andar do Empresarial 18 do Forte. Não há regra publicada para profissional de fora, nem preço no site, e a unidade não aparece no Wellhub nem no TotalPass. A matrícula começa por uma visita agendada."
 cluster: D
 secao: guias
 palavra_chave: personal trainer six alphaville
@@ -17,7 +17,7 @@ lista_ids: [six-alphaville]
 fontes:
   - titulo: "Site oficial da SIX (página da unidade Alphaville)"
     url: "https://sixwellnessclub.com/units/alphaville"
-  - titulo: "Localização aproximada: coordenadas do Empresarial 18 do Forte, tiradas da página da VoiFit no Wellhub"
+  - titulo: "Localização aproximada: coordenadas do Empresarial 18 do Forte, tiradas da página da VoiFit, no mesmo conjunto, no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/voifit-academia-alphaville-empresarial-18-do-forte-barueri/"
   - titulo: "Reportagem da Exame sobre a rede SIX, publicada em 17 de agosto de 2026"
     url: "https://exame.com/negocios/como-e-treinar-na-academia-mais-cara-do-brasil-onde-a-mensalidade-chega-a-r-5-400/"
@@ -64,7 +64,7 @@ O fim de semana é curto, então quem quer duas ou três sessões semanais tende
 
 ## Preço: só o que saiu na imprensa
 
-A SIX não publica valores no site. Numa reportagem da Exame de agosto de 2026, antes da inauguração, o cofundador citou para Alphaville um plano semestral em seis parcelas de R$ 3.900, mais adesão de R$ 600, e contratos de 15 meses vendidos na pré-venda a partir de R$ 2.200, com expectativa de cerca de R$ 2.700 na abertura. São números dados a jornalistas, não tabela oficial, e podem ter mudado. Não há entrada por Wellhub nem TotalPass. O valor do personal, da casa ou de fora, vem por cima. Veja [os preços publicados na região](/academias/precos/).
+A SIX não publica valores no site. Numa reportagem da Exame de agosto de 2026, antes da inauguração, o cofundador citou para Alphaville um plano semestral em seis parcelas de R$ 3.900, mais adesão de R$ 600, e contratos de 15 meses vendidos na pré-venda a partir de R$ 2.200, com expectativa de cerca de R$ 2.700 na abertura. São números dados a jornalistas, não tabela oficial, e podem ter mudado. A ficha não registra entrada por Wellhub nem TotalPass. O valor do personal, da casa ou de fora, vem por cima. Veja [os preços publicados na região](/academias/precos/).
 
 ## Alternativas no mesmo eixo
 

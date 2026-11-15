@@ -26,7 +26,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Este guia é feito pela equipe do Montinho, personal com alunos em Barueri. O destaque dele no fim do texto é publicidade.
+> **Transparência.** Este guia é feito pelo Montinho, personal com alunos em Barueri. O destaque dele no fim do texto é publicidade.
 
 ## Onde a unidade fica, exatamente?
 
@@ -52,7 +52,7 @@ No site, a mensalidade do Fit é R$ 139,90 no regime de fidelidade, sem adesão,
 
 ## Quais são as alternativas por perto?
 
-- [Ironberg Alphaville](/academias/ironberg-alphaville/), na Estrada da Aldeinha, aberta 24 horas e com estacionamento gratuito. É uma das poucas que publica regra: personal externo paga um valor fixo à academia, informado só na unidade ([personal na Ironberg](/guias/personal-trainer-ironberg-alphaville/)).
+- [Ironberg Alphaville](/academias/ironberg-alphaville/), na Estrada da Aldeinha, aberta 24 horas e com estacionamento gratuito. É a única academia do guia que publica regra: personal externo paga um valor fixo à academia, informado só na unidade ([personal na Ironberg](/guias/personal-trainer-ironberg-alphaville/)).
 - [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/), a outra unidade da rede aberta até meia-noite, com TotalPass confirmado ([o artigo de personal dela](/guias/personal-trainer-smart-fit-barueri-centro/)).
 
 Para Barueri como um todo, veja o [panorama de personal na cidade](/guias/personal-trainer-barueri/). Entre os grandes nomes da região, veja ainda [Ironberg ou NitroGym](/guias/ironberg-ou-nitrogym/).

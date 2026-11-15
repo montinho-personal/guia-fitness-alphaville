@@ -6,7 +6,7 @@ resposta: "O CT Don Combat é um centro de treinamento de lutas na Rua Damião F
 cluster: D
 secao: guias
 palavra_chave: personal trainer ct don combat barueri
-intencao: "Comercial local. Quem conhece o CT Don Combat (ou a antiga Killer Bees Barueri) quer saber se dá para treinar com personal ali."
+intencao: "Comercial local. Quem conhece o CT Don Combat (ou que buscou pelo nome Killer Bees Barueri, que ainda aparece no link do Wellhub) quer saber se dá para treinar com personal ali."
 academia: ct-don-combat-barueri
 cta: montinho-contextual
 cta_titulo: "Musculação com o Montinho em Barueri"

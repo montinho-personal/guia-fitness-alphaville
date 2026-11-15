@@ -38,7 +38,7 @@ Antes de montar uma agenda de treino com personal, vale olhar o horário que a p
 | Sábado | 7h às 15h |
 | Domingo (manhã e começo da tarde) | 8h às 14h |
 
-Ou seja: não há madrugada listada. O guia registra isso como divergência e deixou pendente a confirmação de um possível funcionamento 24 horas para quem é aluno direto. Se a sua sessão ideal é às 3h, pergunte à academia antes de fechar qualquer pacote. A boa notícia é o domingo aberto até as 14h, raro na região, como mostra a lista de [academias que abrem no domingo](/academias/domingo/).
+Ou seja: não há madrugada listada. O guia registra isso como divergência e deixou pendente a confirmação de um possível funcionamento 24 horas para quem é aluno direto. Se a sua sessão ideal é às 3h, pergunte à academia antes de fechar qualquer pacote. A boa notícia é o domingo aberto até as 14h; compare na lista de [academias que abrem no domingo](/academias/domingo/).
 
 ## E o personal que vem de fora?
 
@@ -56,7 +56,7 @@ Para quem treina acompanhado, a lista de espaços ajuda: áreas de musculação,
 
 ## Quanto entra na conta
 
-Valor de mensalidade direta: não divulgado. Pelo Wellhub, a entrada exige o Gold+ (R$ 439,99), o nível mais alto entre as academias do guia. Em cima disso vêm os honorários de quem acompanha você e, se existir, a cobrança da academia pelo acesso de personal externo. Compare com outras opções em [preços das academias](/academias/precos/) e em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+Valor de mensalidade direta: não divulgado. Pelo Wellhub, a entrada exige o Gold+ (R$ 439,99), o nível mais alto do Wellhub exigido no guia, o mesmo da BlackSheep e da Tecfit. Em cima disso vêm os honorários de quem acompanha você e, se existir, a cobrança da academia pelo acesso de personal externo. Compare com outras opções em [preços das academias](/academias/precos/) e em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
 
 ## Se a madrugada for indispensável
 

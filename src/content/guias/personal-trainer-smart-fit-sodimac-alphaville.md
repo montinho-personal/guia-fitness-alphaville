@@ -63,7 +63,7 @@ Na conta do mês, entram a mensalidade, o que você paga ao personal e uma event
 
 ## Vizinhas em Alphaville Industrial
 
-- [Bluefit Alphaville](/academias/bluefit-alphaville/), unidade da Alameda Amazonas que funciona até meia-noite nos dias de semana ([personal na Bluefit Alphaville](/guias/personal-trainer-bluefit-alphaville/)).
+- [Bluefit Alphaville](/academias/bluefit-alphaville/), unidade da Alameda Amazonas que funciona até meia-noite de segunda a quinta ([personal na Bluefit Alphaville](/guias/personal-trainer-bluefit-alphaville/)).
 - [Tecfit Alphaville](/academias/tecfit-alphaville/), estúdio na própria Alameda Araguaia que combina musculação e funcional com eletroestimulação ([personal na Tecfit](/guias/personal-trainer-tecfit-alphaville/)).
 
 O panorama da região está em [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).

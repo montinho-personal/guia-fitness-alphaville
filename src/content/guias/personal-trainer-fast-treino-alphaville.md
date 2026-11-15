@@ -32,7 +32,7 @@ atualizado_em: 2026-11-15
 
 A Fast Treino fica na Av. Juruá, 253, no Alphaville Industrial, no mesmo endereço da Gaviões 24h. A ficha descreve o formato como treino guiado em circuito, com sessões curtas, e lista apenas musculação como modalidade.
 
-Isso pesa na pergunta sobre personal. Numa academia de livre uso, o aluno escolhe os aparelhos e o personal monta a sessão. Num estúdio de circuito, o roteiro é conduzido pelo próprio estúdio. Ser guiado num circuito, junto com outras pessoas, é uma experiência diferente de ter um profissional acompanhando só você, do aquecimento ao último exercício, com o plano ajustado à sua evolução. Os dois formatos não competem entre si e podem até se somar.
+Isso pesa na pergunta sobre personal. Numa academia de livre uso, o aluno escolhe os aparelhos e o personal monta a sessão. Num estúdio de circuito, o roteiro é conduzido pelo próprio estúdio. Ser guiado num circuito é uma experiência diferente de ter um profissional acompanhando só você, do aquecimento ao último exercício, com o plano ajustado à sua evolução. Os dois formatos não competem entre si e podem até se somar.
 
 ## Dá para entrar com um treinador particular?
 

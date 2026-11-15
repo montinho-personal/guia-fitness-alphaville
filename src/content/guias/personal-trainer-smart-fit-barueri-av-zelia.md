@@ -60,7 +60,7 @@ Duas dúvidas ficam para a visita: se Wellhub e TotalPass são aceitos e se há 
 
 ## Se a Av. Zélia não servir
 
-- [Academia Boa Forma](/academias/boa-forma-barueri/), que fica no Jardim Alberto, cuja ficha inclui personal trainer nas comodidades e que tem piscina, natação e hidroginástica ([personal na Boa Forma](/guias/personal-trainer-boa-forma-barueri/)).
+- [Academia Boa Forma](/academias/boa-forma-barueri/), que fica no Jardim Alberto, cuja ficha lista personal trainer entre as atividades e que tem piscina, natação e hidroginástica ([personal na Boa Forma](/guias/personal-trainer-boa-forma-barueri/)).
 - [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/), com indoor bike e ginástica na grade ([personal na unidade do centro](/guias/personal-trainer-smart-fit-barueri-centro/)).
 
 Mais sobre a cidade no [guia de personal de Barueri](/guias/personal-trainer-barueri/).

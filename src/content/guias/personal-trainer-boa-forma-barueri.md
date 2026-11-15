@@ -26,7 +26,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Este guia é editado pelo time do Montinho, um personal com clientes em Barueri. O quadro de contato que fecha a página é propaganda dele.
+> **Transparência.** Este guia é editado pelo Montinho, um personal com clientes em Barueri. O quadro de contato que fecha a página é propaganda dele.
 
 ## A piscina muda a conversa
 
