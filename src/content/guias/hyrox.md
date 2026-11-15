@@ -26,7 +26,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Este guia é mantido pelo Montinho, personal trainer que atende em Alphaville e cidades vizinhas e que também prepara alunos para o Hyrox. O quadro dele no fim da página é publicidade; o resto do texto segue só a fonte oficial da prova.
+> **Transparência.** O Montinho, personal da região que também prepara pessoas para o Hyrox, cuida deste guia. O bloco com o serviço dele, embaixo, é publicidade; as informações sobre a prova vêm apenas do site oficial.
 
 ## A prova em uma frase
 
@@ -36,32 +36,32 @@ Como a ordem e as distâncias são as mesmas em toda etapa, dá para treinar exa
 
 ## As oito estações, na ordem
 
-1. SkiErg, 1000 m
-2. Sled Push (empurrar o trenó), 50 m
-3. Sled Pull (puxar o trenó), 50 m
-4. Burpee Broad Jump, 80 m
-5. Remo, 1000 m
-6. Farmers Carry com kettlebells, 200 m
-7. Sandbag Lunges, 100 m
-8. Wall Balls, 100 repetições
+1. 1000 m de SkiErg
+2. 50 m de Sled Push, empurrando o trenó
+3. 50 m de Sled Pull, puxando o trenó
+4. 80 m de Burpee Broad Jump
+5. 1000 m de remo
+6. 200 m de Farmers Carry, com kettlebells
+7. 100 m de Sandbag Lunges
+8. 100 repetições de Wall Ball
 
 Cada uma tem a sua exigência. O guia [estações do Hyrox](/guias/estacoes-do-hyrox/) descreve uma por uma e sugere como praticar quando a academia não tem o aparelho.
 
 ## Categorias, em resumo
 
-A Open é a prova padrão. A Pro é pensada para atletas experientes e usa cargas mais pesadas. Na Doubles, a dupla corre junta e divide as estações como preferir. Na Relay, uma equipe de quatro se reveza, e cada integrante faz duas corridas e uma estação. Existem versões feminina, masculina e mista.
+A Open é a prova padrão. A Pro mira quem já tem experiência de competição e traz pesos maiores. Na Doubles, duas pessoas fazem juntas todos os trechos e repartem as estações do jeito que combinarem. Na Relay, uma equipe de quatro se reveza, e cada integrante faz duas corridas e uma estação. Existem divisões só de mulheres, só de homens e mistas.
 
-As cargas mudam de uma categoria para outra. O exemplo publicado pela organização é o da bola do Wall Ball: 4 kg para mulheres, 6 kg para homens e 9 kg na Pro masculina. Os detalhes estão em [categorias do Hyrox](/guias/categorias-do-hyrox/).
+As cargas mudam de uma categoria para outra. No exemplo publicado pela organização, o do Wall Ball, a bola tem 4 kg na divisão das mulheres, 6 kg na dos homens e chega a 9 kg na Pro deles. Os detalhes estão em [categorias do Hyrox](/guias/categorias-do-hyrox/).
 
 ## Para quem é
 
-A organização diz que a prova atende desde atletas profissionais até gente comum que treina por conta própria. O site oferece um questionário, o Find my Level, que sugere uma categoria. A sugestão não é obrigatória: cada pessoa escolhe onde se inscrever.
+A organização diz que a prova atende desde atletas profissionais até gente comum que treina por conta própria. No site oficial existe o Find my Level, um teste curto que aponta a categoria mais indicada. A sugestão não é obrigatória: cada pessoa escolhe onde se inscrever.
 
 Quem já faz aulas em box costuma se perguntar se vale migrar. A comparação [Hyrox ou CrossFit](/guias/hyrox-ou-crossfit/) mostra o que muda no formato e no treino. Para quem nunca correu uma prova assim, o texto [como treinar para o primeiro Hyrox](/guias/como-treinar-para-o-primeiro-hyrox/) reúne os princípios gerais.
 
 ## Onde treinar na região
 
-Entre as academias com ficha no guia, o [BlackSheep Alphaville](/academias/blacksheep-alphaville/) é a única que lista Hyrox nas atividades. A própria rede informa que o Training Club oficial dela fica na unidade de Moema, e não em Alphaville. A [Gaviões 24h Alphaville](/academias/gavioes-24h-alphaville/) lista "Treino Híbrido" entre as atividades; pergunte o que a aula inclui.
+Entre as academias com ficha no guia, o [BlackSheep Alphaville](/academias/blacksheep-alphaville/) é a única que lista Hyrox nas atividades. Segundo a rede, o clube de treino oficial da marca fica na unidade de Moema, e não em Alphaville. A [Gaviões 24h Alphaville](/academias/gavioes-24h-alphaville/) lista "Treino Híbrido" entre as atividades; pergunte o que a aula inclui.
 
 O site oficial tem uma busca de Training Clubs. O guia não conferiu quais endereços da região aparecem nela, então vale consultar antes de escolher. Nenhuma ficha do guia menciona SkiErg, trenó ou remo: pergunte na academia se esses aparelhos existem.
 
@@ -73,4 +73,4 @@ Para um recorte por bairro e cidade, veja:
 - [Hyrox em Santana de Parnaíba](/guias/hyrox-santana-de-parnaiba/)
 - [Hyrox na Aldeia da Serra](/guias/hyrox-aldeia-da-serra/)
 
-Se você vem do box, a página de [CrossFit em Alphaville e Barueri](/modalidades/crossfit/) lista os espaços de cross training da região.
+Para quem vem do box, a página sobre [boxes de CrossFit](/modalidades/crossfit/) lista os espaços de cross training da região.
