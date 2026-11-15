@@ -37,6 +37,10 @@ Muita gente escolhe o personal e só depois descobre que a academia onde já pag
 
 Por isso, a pergunta que abre a conversa com qualquer personal é: **onde você pode me atender?**
 
+![Antes e depois do Montinho, personal trainer que atende em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a história dele, e não uma promessa de resultado para quem contrata.*
+
 ## Na academia: a regra muda de uma para outra
 
 Das academias com ficha neste guia, a **Ironberg**, na Estrada da Aldeinha, é a que deixa a regra mais clara em público: o profissional externo paga um valor fixo à academia para atender lá. O valor não está no site; é informado na unidade.
@@ -59,6 +63,10 @@ Boa parte dos residenciais de Alphaville tem academia própria. Treinar ali poup
 
 - **Cadastro do prestador.** Cada condomínio decide como o profissional entra: lista na portaria, documento, horário permitido. A administração informa.
 - **Equipamento.** Costuma ser mais enxuto que o de uma academia comercial. Um bom planejamento resolve, mas cargas muito altas podem não ter onde acontecer.
+
+![Montinho, personal trainer em Alphaville, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que atende em Alphaville.*
 
 ## Em casa
 

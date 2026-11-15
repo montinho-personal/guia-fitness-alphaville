@@ -35,6 +35,10 @@ A Aldeia da Serra é um conjunto de residenciais cercados de mata, dividido entr
 
 Na prática, isso inverte a lógica: em vez de procurar uma academia e depois um personal, o morador procura um profissional que vá até a casa ou até o condomínio.
 
+![Antes e depois do Montinho, personal trainer que atende na Aldeia da Serra: acima do peso na juventude e definido pela musculação hoje](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do Montinho, responsável por este guia. O resultado é dele, fruto de anos de treino e alimentação.*
+
 ## Preparando a casa
 
 Não é preciso montar uma academia. Um treino completo cabe em um espaço de cerca de 2 por 3 metros, livre e com piso firme. Ajuda ter:
@@ -48,6 +52,10 @@ O profissional costuma levar elásticos, halteres leves e outros acessórios. Pe
 ## Na academia do condomínio
 
 Se o seu residencial tem espaço fitness, ele resolve a falta de carga que às vezes limita o treino em casa. Combine com a administração como o profissional será cadastrado e em que horários pode usar o espaço.
+
+![Montinho, personal trainer que atende na Aldeia da Serra, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que atende na Aldeia da Serra.*
 
 ## Ao ar livre
 
