@@ -37,6 +37,10 @@ Boa parte dos residenciais de Alphaville e do Tamboré fica dentro do município
 
 O restante da cidade, com centro histórico, Fazendinha, Polvilho e bairros ao longo das estradas, tem academias de bairro e uma rotina diferente.
 
+![Antes e depois do Montinho, personal trainer que atende em Santana de Parnaíba: adolescente acima do peso e, hoje, com o corpo definido](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O próprio Montinho, antes e depois de anos de treino. É a trajetória dele, não uma garantia de resultado.*
+
 ## As academias de bairro com ficha no guia
 
 - **Forth Academia**, no Jardim São Luís: musculação, funcional, pilates e HIIT, aberta das 5h às 23h59 nos dias úteis e das 9h às 15h no sábado. Tem estrutura de acessibilidade informada.
@@ -51,6 +55,10 @@ As distâncias dentro do município são grandes, e o trânsito nas estradas que
 
 - se o profissional vem até você, pergunte se há cobrança de deslocamento e qual a tolerância para atraso;
 - se você vai até a academia, escolha uma no caminho que já faz todo dia, não a que parece melhor no mapa.
+
+![Montinho, personal trainer em Santana de Parnaíba, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que atende em Santana de Parnaíba.*
 
 ## Em casa ou no condomínio
 

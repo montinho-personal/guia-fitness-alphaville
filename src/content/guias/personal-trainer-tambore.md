@@ -37,6 +37,10 @@ atualizado_em: 2026-11-14
 
 O Tamboré é formado sobretudo por condomínios residenciais, divididos entre os municípios de Barueri e Santana de Parnaíba. Isso muda a lógica do personal: em vez de levar o aluno até uma academia, o profissional costuma ir até ele.
 
+![Antes e depois do Montinho, personal trainer que atende no Tamboré: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*A transformação do próprio Montinho, responsável por este guia. Cada corpo responde de um jeito; o que vale é a constância.*
+
 ## Na academia do condomínio
 
 É o formato mais comum no bairro. Três pontos para acertar antes da primeira aula:
@@ -48,6 +52,10 @@ O Tamboré é formado sobretudo por condomínios residenciais, divididos entre o
 ## Em casa
 
 Para quem tem área livre na varanda, na garagem ou num cômodo, o treino em casa elimina até a caminhada até a academia do condomínio. O profissional adapta exercícios ao material que leva e ao que você já tem.
+
+![Montinho, personal trainer no Tamboré, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que atende moradores do Tamboré.*
 
 ## Nas academias do bairro
 

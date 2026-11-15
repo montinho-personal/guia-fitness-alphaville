@@ -39,6 +39,10 @@ Quem contrata personal para treinar em academia paga duas coisas: a mensalidade 
 
 Na [tabela de preços](/academias/precos/) do guia, as mensalidades publicadas no centro de Barueri ficam na faixa de R$ 120 a R$ 140 com fidelidade: Panobianco Barueri Centro a partir de R$ 119,90 e Smart Fit Barueri Centro a R$ 139,90, segundo os sites das redes.
 
+![Antes e depois do Montinho, personal trainer que atende em Barueri: sem treino e acima do peso à esquerda, definido pela musculação à direita](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O antes e depois do Montinho, que mantém este guia. Resultado individual, mostrado como história pessoal.*
+
 ## Quais academias informam personal
 
 Nas fichas de Barueri, três unidades listam personal trainer entre os serviços:
@@ -52,6 +56,10 @@ Nas fichas de Barueri, três unidades listam personal trainer entre os serviços
 ## Horário de treino e horário da academia
 
 A maioria das unidades do centro abre às 5h nos dias úteis e funciona até perto da meia-noite. No domingo, o horário encurta: Smart Fit e Panobianco Barueri Centro abrem das 8h às 14h, segundo as fichas. Se a sua aula com personal vai ser no fim de semana, confira esse detalhe antes de matricular.
+
+![Montinho, personal trainer em Barueri, de costas fazendo pose de duplo bíceps em frente ao espelho da academia](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que atende em Barueri.*
 
 ## Em casa ou no condomínio
 

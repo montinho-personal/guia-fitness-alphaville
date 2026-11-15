@@ -33,6 +33,10 @@ atualizado_em: 2026-11-13
 
 Nesse caso, o dinheiro rende mais em uma academia melhor localizada ou em um plano que você realmente vá usar. Veja [como escolher uma academia](/guias/como-escolher-academia/).
 
+![Antes e depois do Montinho, personal trainer em Alphaville e região: adolescente acima do peso e, hoje, com o corpo de quem treina há anos](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*A transformação do próprio Montinho, que mantém este guia. Serve como história, e não como promessa.*
+
 ## Quando o acompanhamento individual costuma valer
 
 - **Você está começando.** Aprender a execução correta no início evita vícios de movimento e reduz o risco de lesão.
@@ -64,6 +68,10 @@ Cada parte da região tem uma realidade diferente para o treino acompanhado: em 
 - [Personal trainer na Aldeia da Serra](/guias/personal-trainer-aldeia-da-serra/)
 
 Se você já treina em uma academia e quer saber se ela aceita personal de fora, a [Ironberg ou NitroGym](/guias/ironberg-ou-nitrogym/) mostra como as regras podem ser diferentes entre duas academias vizinhas.
+
+![Montinho, personal trainer em Alphaville e região, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que atende em Alphaville, Tamboré, Barueri e Santana de Parnaíba.*
 
 ## E o custo?
 
