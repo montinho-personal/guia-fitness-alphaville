@@ -1,8 +1,8 @@
 ---
 // Link para o Instagram do Montinho. variante "linha": link curto com ícone; "cartao": bloco com chamada.
 import { INSTAGRAM } from '../lib/dados';
-interface Props { pagina: string; variante?: 'linha' | 'cartao'; texto?: string }
-const { pagina, variante = 'linha', texto } = Astro.props;
+interface Props { pagina: string; variante?: 'linha' | 'cartao'; titulo?: string; texto?: string }
+const { pagina, variante = 'linha', titulo, texto } = Astro.props;
 ---
 {variante === 'linha' ? (
   <a class="ig-linha" href={INSTAGRAM.url} target="_blank" rel="noopener" data-evento="clique_instagram" data-ref={pagina}>
@@ -11,21 +11,30 @@ const { pagina, variante = 'linha', texto } = Astro.props;
   </a>
 ) : (
   <div class="ig-cartao">
-    <svg aria-hidden="true" viewBox="0 0 24 24" width="34" height="34"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>
-    <div>
-      <strong>{INSTAGRAM.usuario}</strong>
-      <span>{texto ?? 'Dicas de treino, bastidores e transformações de alunos do Montinho.'}</span>
-    </div>
-    <a class="btn peq sec" href={INSTAGRAM.url} target="_blank" rel="noopener" data-evento="clique_instagram" data-ref={pagina}>Seguir no Instagram</a>
+    <p class="ig-topo">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>
+      <strong>{titulo ?? 'Gostou? No Instagram tem muito mais.'}</strong>
+    </p>
+    <p class="ig-texto">{texto ?? 'No @montinho_personal eu mostro o treino como ele é de verdade: dicas que cabem na sua rotina, o que funciona (e o que não funciona) para emagrecer, bastidores dos atendimentos e memes que todo mundo que treina vai reconhecer.'}</p>
+    <ul class="ig-temas" aria-label="O que tem no perfil">
+      <li>Dicas de treino</li><li>Emagrecimento</li><li>Memes de academia</li><li>Bastidores</li>
+    </ul>
+    <a class="btn ig-btn" href={INSTAGRAM.url} target="_blank" rel="noopener" data-evento="clique_instagram" data-ref={pagina}>Seguir @montinho_personal</a>
+    <p class="ig-nota">É gratuito e leva um toque. O conteúdo novo aparece direto no seu feed.</p>
   </div>
 )}
 <style>
   .ig-linha { display: inline-flex; align-items: center; gap: 7px; font-weight: 600; }
   .ig-linha svg { flex: none; }
-  .ig-cartao { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; align-items: center; margin-top: 14px; padding: 14px 16px; border: 1px solid var(--linha); border-radius: 12px; background: var(--cartao); }
-  .ig-cartao svg { color: var(--sinal); grid-row: span 2; }
-  .ig-cartao strong { display: block; font-family: var(--display); }
-  .ig-cartao span { font-size: 15px; color: var(--texto2); }
-  .ig-cartao .btn { grid-column: 1 / -1; justify-self: start; }
-  @media (min-width: 640px) { .ig-cartao { grid-template-columns: auto 1fr auto; } .ig-cartao svg { grid-row: auto; } .ig-cartao .btn { grid-column: auto; } }
+  .ig-cartao { margin-top: 16px; padding: 18px; border: 1px solid var(--linha); border-radius: 12px; background: var(--cartao); }
+  .ig-topo { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; }
+  .ig-topo svg { flex: none; color: var(--sinal); }
+  .ig-topo strong { font: 700 19px/1.25 var(--display); }
+  .ig-texto { margin: 0 0 12px; font-size: 16px; line-height: 1.5; color: var(--texto2); }
+  .ig-temas { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; padding: 0; }
+  .ig-temas li { padding: 4px 10px; border-radius: 999px; background: var(--musgo); font: 600 13px/1.4 var(--display); }
+  .ig-btn { width: 100%; background: var(--sinal); }
+  .ig-btn:hover { background: #c4421f; }
+  .ig-nota { margin: 8px 0 0; font-size: 13px; color: var(--cinza); text-align: center; }
+  @media (min-width: 640px) { .ig-btn { width: auto; } .ig-nota { text-align: left; } }
 </style>
