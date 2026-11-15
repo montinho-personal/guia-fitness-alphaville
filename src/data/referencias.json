@@ -1,0 +1,71 @@
+{
+  "fonte": "OpenStreetMap (Nominatim)",
+  "url": "https://www.openstreetmap.org/",
+  "conferido_em": "2026-11-15",
+  "pontos": [
+    {
+      "id": "iguatemi-alphaville",
+      "nome": "Shopping Iguatemi Alphaville",
+      "tipo": "shopping",
+      "lat": -23.5045688,
+      "lng": -46.8482315,
+      "de": "do Shopping Iguatemi Alphaville"
+    },
+    {
+      "id": "centro-comercial-alphaville",
+      "nome": "Centro Comercial Alphaville (calçadas)",
+      "tipo": "comercio",
+      "lat": -23.4961041,
+      "lng": -46.8500647,
+      "de": "do Centro Comercial Alphaville (calçadas)"
+    },
+    {
+      "id": "shopping-tambore",
+      "nome": "Shopping Tamboré",
+      "tipo": "shopping",
+      "lat": -23.5046936,
+      "lng": -46.8344923,
+      "de": "do Shopping Tamboré"
+    },
+    {
+      "id": "18-do-forte",
+      "nome": "Empresarial 18 do Forte",
+      "tipo": "trabalho",
+      "lat": -23.4840328,
+      "lng": -46.8566565,
+      "de": "do Empresarial 18 do Forte"
+    },
+    {
+      "id": "parque-shopping-barueri",
+      "nome": "Parque Shopping Barueri",
+      "tipo": "shopping",
+      "lat": -23.5161747,
+      "lng": -46.8554231,
+      "de": "do Parque Shopping Barueri"
+    },
+    {
+      "id": "estacao-antonio-joao",
+      "nome": "Estação Antônio João (CPTM)",
+      "tipo": "trem",
+      "lat": -23.5170734,
+      "lng": -46.8583297,
+      "de": "da Estação Antônio João (CPTM)"
+    },
+    {
+      "id": "estacao-barueri",
+      "nome": "Estação Barueri (CPTM)",
+      "tipo": "trem",
+      "lat": -23.5126077,
+      "lng": -46.875075,
+      "de": "da Estação Barueri (CPTM)"
+    },
+    {
+      "id": "estacao-jardim-belval",
+      "nome": "Estação Jardim Belval (CPTM)",
+      "tipo": "trem",
+      "lat": -23.5142111,
+      "lng": -46.8893192,
+      "de": "da Estação Jardim Belval (CPTM)"
+    }
+  ]
+}

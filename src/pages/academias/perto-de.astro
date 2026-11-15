@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import ref from '../../data/referencias.json';
+import { academias, urlAcademia, faixasDia, abreDomingo, e24h, dataLonga, dataIso, type Academia } from '../../lib/dados';
+
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-15'), atualizado: new Date('2026-11-15') };
+const todas = await academias();
+const RAIO = 2.5; // km, em linha reta
+const km = (a: { lat: number; lng: number }, b: { lat: number; lng: number }) => { const R = 6371, r = (x: number) => (x * Math.PI) / 180; const dLa = r(b.lat - a.lat), dLo = r(b.lng - a.lng); const h = Math.sin(dLa / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dLo / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
+const fmt = (n: number) => (n < 1 ? `${Math.round(n * 1000 / 50) * 50} m` : `${n.toFixed(1).replace('.', ',')} km`);
+const pontos = ref.pontos.map((p) => ({ ...p, perto: todas.map((a) => ({ a, d: km(p, a.data.geo) })).filter((x) => x.d <= RAIO).sort((x, y) => x.d - y.d).slice(0, 6) }));
+const uteis = (a: Academia) => { const H = a.data.horario; const iguais = ['ter', 'qua', 'qui', 'sex'].every((d) => faixasDia(H[d as 'seg']) === faixasDia(H.seg)); if (iguais) return `seg a sex ${faixasDia(H.seg)}`; const qui = ['ter', 'qua', 'qui'].every((d) => faixasDia(H[d as 'seg']) === faixasDia(H.seg)); return qui ? `seg a qui ${faixasDia(H.seg)}, sex ${faixasDia(H.sex)}` : `seg ${faixasDia(H.seg)}`; };
+const resumoAc = (a: Academia) => [e24h(a.data.horario) ? '24 horas' : uteis(a), abreDomingo(a.data.horario) ? 'abre no domingo' : 'sem domingo', a.data.mensalidade ? a.data.mensalidade.valor : null].filter(Boolean).join(' · ');
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = 'Academia perto do Iguatemi, Shopping Tamboré e estações';
+const descricao = 'Academias perto do Iguatemi Alphaville, Shopping Tamboré, 18 do Forte, Parque Shopping Barueri e estações da CPTM, com distância em linha reta e horário.';
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Perto de você', url: '/academias/perto-de/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Guia de academias · localização</span>
+      <h1>Academia perto de onde você trabalha, compra ou pega o trem</h1>
+      <p class="linha-fina">Os pontos de referência mais usados da região e as academias com ficha no guia num raio de {RAIO.toString().replace('.', ',')} km de cada um.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>A maior concentração de academias fica entre o Iguatemi Alphaville, o Centro Comercial e o Alphaville Industrial, na Av. Juruá e na Alameda Araguaia. O Shopping Tamboré tem a NitroGym dentro do próprio prédio. Em Barueri, a Smart Fit fica dentro do Parque Shopping, a cerca de 300 metros em linha reta da estação Antônio João da CPTM. As distâncias abaixo são em linha reta: o trajeto real a pé ou de carro é maior.</p>
+    </div>
+
+    <nav class="prosa" aria-label="Pontos de referência">
+      <p><strong>Ir para:</strong> {pontos.map((p, i) => <>{i > 0 && ' · '}<a href={`#${p.id}`}>{p.nome}</a></>)}</p>
+    </nav>
+
+    {pontos.map((p) => (
+      <section class="bloco fino prosa" id={p.id} aria-labelledby={`${p.id}-t`}>
+        <h2 id={`${p.id}-t`}>Academia perto {p.de}</h2>
+        {p.perto.length === 0 ? <p>Nenhuma academia com ficha no guia num raio de {RAIO.toString().replace('.', ',')} km.</p> : (
+          <ol>{p.perto.map(({ a, d }) => <li><a href={urlAcademia(a)}>{a.data.nome}</a> — {fmt(d)} em linha reta. {resumoAc(a)}.</li>)}</ol>
+        )}
+      </section>
+    ))}
+
+    <div class="prosa" style="margin-top:24px">
+      <h2>Como usar esta lista</h2>
+      <p>Perto nem sempre é prático. Uma academia a 800 metros do outro lado de uma avenida movimentada pode tomar mais tempo que outra a 2 km no seu caminho de casa. Antes de assinar, faça o trajeto no horário em que você vai treinar e confira estacionamento e horário de domingo na ficha. Para ver tudo no mapa, use o <a href="/mapa/">mapa do guia</a>; para comparar preços, a <a href="/academias/precos/">tabela de preços</a>.</p>
+      <p>Algumas posições no mapa são aproximadas, como a da Fábrica Premium, informada na ficha. As coordenadas dos pontos de referência vêm do OpenStreetMap.</p>
+    </div>
+
+    <VideoMontinho id="DiH1OzIR6Yk" titulo="É impossível isso dar errado" pagina="perto-de" />
+    <LeiaTambem url="/academias/perto-de/" />
+    <div style="margin-top:28px"><Fontes fontes={[{ titulo: `${ref.fonte}: coordenadas dos pontos de referência`, url: ref.url, data: dataLonga(new Date(ref.conferido_em)) }, { titulo: 'Fichas das academias do guia, com endereço e fonte de cada informação', url: 'https://guiafitnessalphaville.com.br/academias/', data: dataLonga(gov.atualizado) }]} /></div>
+  </div>
+</Base>

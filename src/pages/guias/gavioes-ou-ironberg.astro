@@ -1,0 +1,96 @@
+---
+import Base from '../../layouts/Base.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import CartaoAcademia from '../../components/CartaoAcademia.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import { academias, MODALIDADES, agregador, urlAcademia, dataLonga, dataIso } from '../../lib/dados';
+
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-15'), atualizado: new Date('2026-11-15') };
+const todas = await academias();
+const gv = todas.find((a) => a.id === 'gavioes-24h-alphaville')!;
+const ib = todas.find((a) => a.id === 'ironberg-alphaville')!;
+const km = (() => { const R = 6371, rad = (x: number) => (x * Math.PI) / 180, a = gv.data.geo, b = ib.data.geo; const dLa = rad(b.lat - a.lat), dLo = rad(b.lng - a.lng); const h = Math.sin(dLa / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLo / 2) ** 2; return (2 * R * Math.asin(Math.sqrt(h))).toFixed(1).replace('.', ','); })();
+const wGv = agregador(gv, 'Wellhub'), tIb = agregador(ib, 'TotalPass');
+const mods = (xs: string[]) => xs.map((m) => MODALIDADES[m as keyof typeof MODALIDADES]).join(', ');
+const linhas: [string, string, string][] = [
+  ['Onde fica', 'Av. Juruá, 253, Alphaville Industrial', 'Estrada da Aldeinha, 181, Jardim Santa Cecília'],
+  ['Horário', '24 horas, todos os dias', '24 horas, todos os dias, inclusive feriados (site da rede)'],
+  ['Mensalidade', 'Não publicada', 'A partir de R$ 399/mês no plano de 12 meses + matrícula de R$ 120'],
+  ['Wellhub', wGv ? `a partir do ${wGv.plano_minimo} (${wGv.preco_plano})` : 'Não consta', 'Não consta'],
+  ['TotalPass', 'Não consta', tIb ? `a partir do ${tIb.plano_minimo} (${tIb.preco_plano})` : 'Não consta'],
+  ['Modalidades', mods(gv.data.modalidades), mods(ib.data.modalidades)],
+  ['Estrutura destacada', 'Rooftop com máquinas; acessibilidade (banheiro, vaga e portas adaptadas)', '32 mil m² declarados; lounge; acessibilidade; heliponto'],
+  ['Estacionamento', 'Vaga acessível informada; gratuidade não informada', 'Gratuito, mais de 1.000 vagas'],
+  ['Personal de fora', 'Regra não publicada', 'Aceito, com valor fixo pago à academia (valor só na unidade)'],
+];
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = 'Gaviões 24h ou Ironberg: qual academia 24 horas escolher';
+const descricao = 'Gaviões 24h Alphaville ou Ironberg Alphaville: as duas academias 24 horas do guia comparadas em preço, aulas, estrutura, estacionamento e regra para personal.';
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Gaviões ou Ironberg', url: '/guias/gavioes-ou-ironberg/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Guias de decisão · comparativo</span>
+      <h1>Gaviões 24h ou Ironberg: qual academia 24 horas escolher em Alphaville</h1>
+      <p class="linha-fina">São as duas únicas academias do guia com horário publicado de 24 horas, todos os dias, e ficam a cerca de {km} km uma da outra em linha reta. O horário empata; o resto, não.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Se você quer variedade de aulas (lutas, dança, bike, pilates) e usa Wellhub, a Gaviões 24h tende a servir melhor. Se o foco é só musculação, com muito espaço, estacionamento gratuito e preço conhecido antes de ir, a Ironberg é a escolha mais previsível. Para quem treina com personal de fora, a Ironberg é a única das duas que publica a regra.</p>
+    </div>
+
+    <div class="rolagem" tabindex="0" role="region" aria-label="Gaviões 24h e Ironberg lado a lado" style="margin:24px 0">
+      <table class="dados">
+        <caption>Dados das fichas do guia. Abra cada ficha para ver as fontes e as datas de conferência.</caption>
+        <thead><tr><th scope="col">Critério</th><th scope="col"><a href={urlAcademia(gv)} style="color:inherit">{gv.data.nome}</a></th><th scope="col"><a href={urlAcademia(ib)} style="color:inherit">{ib.data.nome}</a></th></tr></thead>
+        <tbody>{linhas.map(([c, a, b]) => <tr><th scope="row">{c}</th><td>{a}</td><td>{b}</td></tr>)}</tbody>
+      </table>
+    </div>
+
+    <div class="prosa">
+      <h2>O que as duas têm em comum: a madrugada</h2>
+      <p>Quem trabalha em turno, volta tarde de viagem ou só consegue treinar antes das 5h tem, no guia, só estas duas opções. Nenhuma das fontes diz como é o atendimento de madrugada; em academias 24 horas é comum a equipe ser menor nesse período. Se você vai treinar nesse horário, pergunte quem fica na sala e como funciona a entrada. Mais detalhes em <a href="/academias/24-horas/">academias 24 horas</a>.</p>
+
+      <h2>Preço: um lado publicado, outro não</h2>
+      <p>A Ironberg publica a tabela da rede: R$ 399 por mês no plano de 12 meses, R$ 499 no de 6 meses e R$ 599 no recorrente, sempre com matrícula de R$ 120. A Gaviões não publica mensalidade nem diária; a página da unidade leva a uma plataforma de matrícula. Para comparar de verdade, peça o valor na recepção da Gaviões.</p>
+      <p>Com agregador, a lógica muda: a Gaviões aparece no Wellhub a partir do {wGv?.plano_minimo}, e a Ironberg aparece no TotalPass a partir do {tIb?.plano_minimo}. Cada uma está em um agregador diferente, então o benefício da sua empresa pode decidir a escolha. Veja os planos em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
+
+      <h2>Aulas contra espaço</h2>
+      <p>A Gaviões tem a grade mais variada das duas: além da musculação, lista funcional, lutas, dança, bike e pilates, e o site da rede menciona um rooftop com máquinas. A Ironberg é só musculação, mas em escala: o site da rede fala em 32 mil m². Quem gosta de alternar aulas na semana tende a preferir a primeira; quem quer salão grande e equipamento sem fila, a segunda.</p>
+
+      <h2>Chegar e estacionar</h2>
+      <p>A Gaviões fica na Av. Juruá, no Alphaville Industrial, no mesmo número do Fast Treino e perto da SkyFit. A Ironberg fica na Estrada da Aldeinha, fora dos bairros residenciais, com estacionamento gratuito para mais de mil carros. Na Gaviões, a fonte informa vaga acessível, mas não diz se o estacionamento é gratuito para alunos.</p>
+
+      <h2>Quem treina com personal</h2>
+      <p>A Ironberg informa que personal de fora pode atender lá pagando um valor fixo à academia; o valor é passado na unidade. A Gaviões não publica regra. Os guias <a href="/guias/personal-trainer-ironberg-alphaville/">personal trainer na Ironberg</a> e <a href="/guias/personal-trainer-gavioes-24h-alphaville/">personal trainer na Gaviões</a> listam o que perguntar.</p>
+
+      <h2>Resumo por perfil</h2>
+      <ul>
+        <li><strong>Quer aulas variadas além da musculação:</strong> Gaviões 24h.</li>
+        <li><strong>Quer saber o preço antes de ir:</strong> Ironberg.</li>
+        <li><strong>Tem Wellhub:</strong> Gaviões. <strong>Tem TotalPass:</strong> Ironberg.</li>
+        <li><strong>Vai de carro e não quer pagar estacionamento:</strong> Ironberg.</li>
+        <li><strong>Treina com personal de fora:</strong> Ironberg, que publica a regra.</li>
+        <li><strong>Trabalha no Alphaville Industrial:</strong> Gaviões, na Av. Juruá.</li>
+      </ul>
+      <p>Compare também com <a href="/guias/ironberg-ou-nitrogym/">Ironberg ou NitroGym</a> e <a href="/guias/smart-fit-ou-gavioes/">Smart Fit ou Gaviões</a>. O <a href={`/ferramentas/comparador/?a=${gv.id}&b=${ib.id}`}>comparador</a> mostra as duas fichas completas lado a lado.</p>
+    </div>
+
+    <section class="bloco fino" aria-labelledby="fichas-t">
+      <div class="cab"><h2 id="fichas-t">As duas fichas</h2><a class="link-forte" href="/academias/24-horas/">Academias 24 horas</a></div>
+      <div class="cartoes">{[gv, ib].map((a) => <CartaoAcademia a={a} />)}</div>
+    </section>
+
+    <VideoMontinho id="izMrrSoJGBw" titulo="Raiva e sangue no olho" pagina="gavioes-ou-ironberg" />
+    <LeiaTambem url="/guias/gavioes-ou-ironberg/" />
+    <div style="margin-top:28px"><Fontes fontes={[
+      ...gv.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${gv.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
+      ...ib.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${ib.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
+    ]} /></div>
+  </div>
+</Base>
