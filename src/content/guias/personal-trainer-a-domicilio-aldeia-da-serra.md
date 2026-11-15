@@ -12,6 +12,8 @@ cta_titulo: "Montinho em domicílio na Aldeia da Serra"
 cta_texto: "Mantido pelo Montinho, este guia também divulga o trabalho dele: aulas em residências da Aldeia da Serra e nos espaços fitness dos condomínios de lá."
 cta_destino: /blog/personal-trainer-a-domicilio-aldeia-da-serra
 fontes:
+  - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
+    url: "https://www.who.int/publications/i/item/9789240015128"
   - titulo: "Mapa das academias do Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/mapa/"
 video:
