@@ -1,12 +1,14 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { guias } from '../../lib/dados';
+import { guias, academias, REGIOES } from '../../lib/dados';
 import { CIDADES_PT, TEMAS_PT, temaCidade, urlTema } from '../../lib/artigos';
 const todos = (await guias()).filter((g) => g.data.secao === 'guias');
 const gs = todos.filter((g) => !g.id.startsWith('personal-trainer-'));
 const ORDEM = ['alphaville', 'tambore', 'barueri', 'santana-de-parnaiba', 'aldeia-da-serra'];
 const personal = todos.filter((g) => ORDEM.includes(g.id.slice(17))).sort((a, b) => ORDEM.indexOf(a.id.slice(17)) - ORDEM.indexOf(b.id.slice(17)));
 const publicados = new Set(todos.map((g) => temaCidade(g.id)).filter(Boolean).map((x) => `${x!.tema}|${x!.cidade}`));
+const todasAc = await academias();
+const porAcademia = (Object.keys(REGIOES) as (keyof typeof REGIOES)[]).map((r) => ({ r, xs: todasAc.filter((a) => a.data.regiao === r && todos.some((g) => g.id === `personal-trainer-${a.id}`)).sort((x, y) => x.data.nome.localeCompare(y.data.nome)) })).filter((x) => x.xs.length);
 const temas = Object.keys(TEMAS_PT).filter((t) => ORDEM.some((c) => publicados.has(`${t}|${c}`)));
 const itens = [
   ...gs.map((g) => ({ url: `/guias/${g.id}/`, t: g.data.h1, p: g.data.descricao })),
@@ -39,6 +41,12 @@ const itens = [
               <tbody>{temas.map((t) => <tr><th scope="row">{TEMAS_PT[t].nome}</th>{ORDEM.map((c) => <td>{publicados.has(`${t}|${c}`) ? <a href={urlTema(t, c)}>{CIDADES_PT[c].nome}</a> : '—'}</td>)}</tr>)}</tbody>
             </table>
           </div>
+        </>
+      )}
+      {porAcademia.length > 0 && (
+        <>
+          <h3>Personal trainer por academia</h3>
+          {porAcademia.map(({ r, xs }) => <p><strong>{REGIOES[r].titulo}:</strong> {xs.map((a, i) => <>{i > 0 && ' · '}<a href={`/guias/personal-trainer-${a.id}/`}>{a.data.nome}</a></>)}</p>)}
         </>
       )}
     </section>

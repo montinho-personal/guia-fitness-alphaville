@@ -8,7 +8,8 @@ import CartaoAcademia from './CartaoAcademia.astro';
 import VideoMontinho from './VideoMontinho.astro';
 import LeiaTambem from './LeiaTambem.astro';
 import Vitrine from './Vitrine.astro';
-import { CIDADES_PT, TEMAS_PT, urlTema } from '../lib/artigos';
+import { CIDADES_PT, TEMAS_PT, urlTema, COMPARATIVOS, personalDaRegiao } from '../lib/artigos';
+import { REGIOES } from '../lib/dados';
 import { academias, guias, dataIso, dataLonga, type Guia } from '../lib/dados';
 interface Props { g: Guia }
 const { g } = Astro.props;
@@ -18,6 +19,10 @@ const SECAO = { modalidades: { nome: 'Modalidades', url: '/modalidades/' }, guia
 const url = `${SECAO.url}${g.id}/`;
 const todas = await academias();
 const idsGuias = new Set((await guias()).map((x) => x.id));
+const acad = d.academia ? todas.find((x) => x.id === d.academia) : undefined;
+if (d.academia && !acad) throw new Error(`academia: ficha ${d.academia} não existe`);
+const vizinhasPersonal = acad ? todas.filter((x) => x.id !== acad.id && x.data.regiao === acad.data.regiao && idsGuias.has(`personal-trainer-${x.id}`)).sort((x, y) => Number(y.data.bairro === acad.data.bairro) - Number(x.data.bairro === acad.data.bairro)).slice(0, 6) : [];
+const leiaAcad = acad ? [personalDaRegiao(acad.data.regiao, acad.data.bairro), COMPARATIVOS[acad.id], '/guias/academia-ou-personal/', '/academias/precos/'].filter((u): u is string => !!u) : undefined;
 const cidadeMae = Object.keys(CIDADES_PT).find((c) => g.id === `personal-trainer-${c}`);
 const temasCidade = cidadeMae ? Object.keys(TEMAS_PT).filter((t) => idsGuias.has(`personal-trainer-${t}-${cidadeMae}`)) : [];
 const lista = d.lista_ids.length ? d.lista_ids.map((id) => { const a = todas.find((x) => x.id === id); if (!a) throw new Error(`lista_ids: ficha ${id} não existe`); return a; }) : todas.filter((a) => (d.lista_modalidades.length && d.lista_modalidades.some((m) => a.data.modalidades.includes(m))) || (d.lista_tipos.length && d.lista_tipos.includes(a.data.tipo)));
@@ -53,7 +58,13 @@ const schema = [...video, { '@type': 'Article', headline: d.h1, description: d.d
         <ul>{temasCidade.map((t) => <li><a href={urlTema(t, cidadeMae)}>{TEMAS_PT[t].nome} {CIDADES_PT[cidadeMae].em}</a>: {TEMAS_PT[t].resumo}</li>)}</ul>
       </section>
     )}
-    <LeiaTambem url={url} />
+    {acad && vizinhasPersonal.length > 0 && (
+      <section class="bloco fino prosa" aria-labelledby="viz-t">
+        <h2 id="viz-t">Personal trainer em outras academias de {REGIOES[acad.data.regiao].titulo}</h2>
+        <ul>{vizinhasPersonal.map((x) => <li><a href={`/guias/personal-trainer-${x.id}/`}>Personal trainer na {x.data.nome}</a> — {x.data.bairro}</li>)}</ul>
+      </section>
+    )}
+    <LeiaTambem url={url} itens={leiaAcad} />
     <div style="margin-top:28px"><Fontes fontes={[...d.fontes.map((f) => ({ titulo: f.titulo, url: f.url, data: dataLonga(d.atualizado_em) })), ...(d.lista_ids.length ? lista.flatMap((a) => a.data.proveniencia.filter((p) => p.campos.includes('horario')).map((p) => ({ titulo: `${p.fonte} — ${a.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) }))) : [])]} /></div>
   </div>
 </Base>
