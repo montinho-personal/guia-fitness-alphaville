@@ -48,6 +48,9 @@ export function ctaDaPagina(caminho: string, academias: Record<string, string>):
     'modalidades/crossfit': { titulo: 'Quer força para render mais no box?', sub: 'Converse com o Montinho sobre treino complementar', botao, assunto: 'treino complementar ao CrossFit' },
   };
   if (fixos[p]) return fixos[p];
+  if (p === 'modalidades/hyrox' || /^guias\/(estacoes-do-hyrox|hyrox-ou-crossfit|categorias-do-hyrox|como-treinar-para-o-primeiro-hyrox)$/.test(p)) return { titulo: 'Vai encarar o Hyrox?', sub: 'O Montinho prepara você para a prova: corrida, força e estações', botao, assunto: 'preparação para o Hyrox' };
+  const mHy = p.match(/^guias\/hyrox-([a-z-]+)$/);
+  if (mHy && CIDADES_PT[mHy[1]]) return { titulo: `Treinando para o Hyrox ${CIDADES_PT[mHy[1]].em}?`, sub: 'Converse com o Montinho sobre preparação para a prova', botao, assunto: `preparação para o Hyrox ${CIDADES_PT[mHy[1]].em}` };
   const mReg = p.match(/^regioes\/([a-z-]+)$/);
   if (mReg) { const em = { alphaville: 'em Alphaville', barueri: 'em Barueri', 'santana-de-parnaiba': 'em Santana de Parnaíba' }[mReg[1]]; if (em) return { titulo: `Procurando onde treinar ${em}?`, sub: 'E quem te acompanhe: converse com o Montinho', botao, assunto: `treinar ${em}` }; }
   return { ...PADRAO, botao };

@@ -3,7 +3,8 @@ import Base from '../../layouts/Base.astro';
 import { guias, academias, REGIOES } from '../../lib/dados';
 import { CIDADES_PT, TEMAS_PT, temaCidade, urlTema } from '../../lib/artigos';
 const todos = (await guias()).filter((g) => g.data.secao === 'guias');
-const gs = todos.filter((g) => !g.id.startsWith('personal-trainer-'));
+const gs = todos.filter((g) => !g.id.startsWith('personal-trainer-') && !/hyrox/.test(g.id));
+const hyrox = todos.filter((g) => /hyrox/.test(g.id));
 const ORDEM = ['alphaville', 'tambore', 'barueri', 'santana-de-parnaiba', 'aldeia-da-serra'];
 const personal = todos.filter((g) => ORDEM.includes(g.id.slice(17))).sort((a, b) => ORDEM.indexOf(a.id.slice(17)) - ORDEM.indexOf(b.id.slice(17)));
 const publicados = new Set(todos.map((g) => temaCidade(g.id)).filter(Boolean).map((x) => `${x!.tema}|${x!.cidade}`));
@@ -43,6 +44,15 @@ const itens = [
               <tbody>{temas.map((t) => <tr><th scope="row">{TEMAS_PT[t].nome}</th>{ORDEM.map((c) => <td>{publicados.has(`${t}|${c}`) ? <a href={urlTema(t, c)}>{CIDADES_PT[c].nome}</a> : '—'}</td>)}</tr>)}</tbody>
             </table>
           </div>
+        </>
+      )}
+      {hyrox.length > 0 && (
+        <>
+          <h3>Hyrox</h3>
+          <ul>
+            <li><a href="/modalidades/hyrox/">Hyrox: o que é e como funciona a prova</a></li>
+            {hyrox.map((g) => <li><a href={`/guias/${g.id}/`}>{g.data.h1}</a></li>)}
+          </ul>
         </>
       )}
       {porAcademia.length > 0 && (
