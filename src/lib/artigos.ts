@@ -51,3 +51,36 @@ export const COMPARATIVOS: Record<string, string> = {
   'smart-fit-sodimac-alphaville': SG, 'gavioes-24h-alphaville': SG,
   'ironberg-alphaville': IN, 'nitrogym-tambore': IN,
 };
+
+// Artigos de personal por tema e cidade (personal-trainer-<tema>-<cidade>).
+export const CIDADES_PT: Record<string, { nome: string; em: string }> = {
+  alphaville: { nome: 'Alphaville', em: 'em Alphaville' },
+  tambore: { nome: 'Tamboré', em: 'no Tamboré' },
+  barueri: { nome: 'Barueri', em: 'em Barueri' },
+  'santana-de-parnaiba': { nome: 'Santana de Parnaíba', em: 'em Santana de Parnaíba' },
+  'aldeia-da-serra': { nome: 'Aldeia da Serra', em: 'na Aldeia da Serra' },
+};
+export const TEMAS_PT: Record<string, { nome: string; resumo: string }> = {
+  feminino: { nome: 'Personal trainer feminino', resumo: 'Treino pensado para mulheres e como achar uma profissional.' },
+  'em-condominio': { nome: 'Personal no condomínio', resumo: 'Treino no espaço fitness do residencial: regras e limites.' },
+  'a-domicilio': { nome: 'Personal a domicílio', resumo: 'Treino em casa: espaço, material e combinados.' },
+  'para-idosos': { nome: 'Personal para idosos', resumo: 'Segurança, liberação médica e lugares acessíveis.' },
+  'para-iniciantes': { nome: 'Personal para iniciantes', resumo: 'Os primeiros meses de treino com acompanhamento.' },
+  'para-emagrecer': { nome: 'Personal para emagrecer', resumo: 'O que o acompanhamento ajuda e o que depende de você.' },
+  'para-gestantes': { nome: 'Personal para gestantes', resumo: 'Treino na gravidez sempre com orientação do obstetra.' },
+  'para-executivos': { nome: 'Personal para executivos', resumo: 'Horários fixos, treino curto e perto do trabalho.' },
+};
+export const urlTema = (tema: string, cidade: string) => `/guias/personal-trainer-${tema}-${cidade}/`;
+export const urlCidade = (cidade: string) => `/guias/personal-trainer-${cidade}/`;
+/** Decompõe o id de um guia de personal por tema; null se não for um. */
+export function temaCidade(id: string): { tema: string; cidade: string } | null {
+  for (const t of Object.keys(TEMAS_PT)) for (const c of Object.keys(CIDADES_PT)) if (id === `personal-trainer-${t}-${c}`) return { tema: t, cidade: c };
+  return null;
+}
+for (const [t, tt] of Object.entries(TEMAS_PT)) for (const [c, cc] of Object.entries(CIDADES_PT)) {
+  ARTIGOS[urlTema(t, c)] = { titulo: `${tt.nome} ${cc.em}`, resumo: tt.resumo };
+  const outras = Object.keys(CIDADES_PT).filter((x) => x !== c);
+  const i = outras.length ? Object.keys(CIDADES_PT).indexOf(c) % outras.length : 0;
+  const temas = Object.keys(TEMAS_PT), j = temas.indexOf(t);
+  RELACIONADOS[urlTema(t, c)] = [urlCidade(c), urlTema(temas[(j + 1) % temas.length], c), urlTema(t, outras[i]), urlTema(t, outras[(i + 1) % outras.length])];
+}

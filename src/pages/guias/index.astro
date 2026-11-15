@@ -1,10 +1,13 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { guias } from '../../lib/dados';
+import { CIDADES_PT, TEMAS_PT, temaCidade, urlTema } from '../../lib/artigos';
 const todos = (await guias()).filter((g) => g.data.secao === 'guias');
 const gs = todos.filter((g) => !g.id.startsWith('personal-trainer-'));
 const ORDEM = ['alphaville', 'tambore', 'barueri', 'santana-de-parnaiba', 'aldeia-da-serra'];
-const personal = todos.filter((g) => g.id.startsWith('personal-trainer-')).sort((a, b) => ORDEM.indexOf(a.id.slice(17)) - ORDEM.indexOf(b.id.slice(17)));
+const personal = todos.filter((g) => ORDEM.includes(g.id.slice(17))).sort((a, b) => ORDEM.indexOf(a.id.slice(17)) - ORDEM.indexOf(b.id.slice(17)));
+const publicados = new Set(todos.map((g) => temaCidade(g.id)).filter(Boolean).map((x) => `${x!.tema}|${x!.cidade}`));
+const temas = Object.keys(TEMAS_PT).filter((t) => ORDEM.some((c) => publicados.has(`${t}|${c}`)));
 const itens = [
   ...gs.map((g) => ({ url: `/guias/${g.id}/`, t: g.data.h1, p: g.data.descricao })),
   { url: '/guias/smart-fit-ou-gavioes/', t: 'Smart Fit ou Gaviões em Alphaville: qual escolher', p: 'Horário, preço, modalidades e agregadores das duas academias lado a lado.' },
@@ -27,6 +30,17 @@ const itens = [
       <h2 id="pt-t">Personal trainer por região</h2>
       <p>Onde o treino acompanhado pode acontecer em cada parte da região: academia, condomínio ou casa.</p>
       <ul class="lista-links">{personal.map((g) => <li><a href={`/guias/${g.id}/`}>{g.data.h1}</a></li>)}</ul>
+      {temas.length > 0 && (
+        <>
+          <h3>Personal trainer por tema e cidade</h3>
+          <div class="rolagem" tabindex="0" role="region" aria-label="Guias de personal por tema e cidade">
+            <table class="dados">
+              <thead><tr><th scope="col">Tema</th>{ORDEM.map((c) => <th scope="col">{CIDADES_PT[c].nome}</th>)}</tr></thead>
+              <tbody>{temas.map((t) => <tr><th scope="row">{TEMAS_PT[t].nome}</th>{ORDEM.map((c) => <td>{publicados.has(`${t}|${c}`) ? <a href={urlTema(t, c)}>{CIDADES_PT[c].nome}</a> : '—'}</td>)}</tr>)}</tbody>
+            </table>
+          </div>
+        </>
+      )}
     </section>
     <div class="prosa" style="margin-top:28px"><p>Um guia previsto ainda não foi publicado porque depende de levantamento direto: as regras de cada condomínio para treinar com personal. Ele entra quando os dados existirem.</p></div>
   </div>
