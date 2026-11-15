@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
 import VideoMontinho from '../../components/VideoMontinho.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
 import { academias, hora, e24h, abertura, fechamento, abreDomingo, faixasDia, horasSemana, urlAcademia, REGIOES, dataLonga, dataIso } from '../../lib/dados';
 
 const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
@@ -70,6 +71,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <p>O <a href="/ferramentas/checklist/">checklist de visita</a> reúne essas e outras perguntas. Para comparar horários de duas ou três academias, use o <a href="/ferramentas/comparador/">comparador</a>.</p>
     </div>
     <VideoMontinho id="izMrrSoJGBw" titulo="Raiva e sangue no olho" pagina="24-horas" />
-    <div style="margin-top:28px"><Fontes fontes={[{ titulo: 'Páginas das unidades no Wellhub e no TotalPass, listadas em cada ficha', data: dataLonga(gov.atualizado) }]} /></div>
+    <LeiaTambem url="/academias/24-horas/" />
+    <div style="margin-top:28px"><Fontes fontes={[...h24, ...cedo, ...tarde].filter((a, i, xs) => xs.indexOf(a) === i).flatMap((a) => a.data.proveniencia.filter((p) => p.campos.includes('horario')).map((p) => ({ titulo: `${p.fonte} — ${a.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })))} /></div>
   </div>
 </Base>

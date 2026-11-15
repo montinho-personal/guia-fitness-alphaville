@@ -4,6 +4,8 @@ import Selo from '../../components/Selo.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
 import Mantem from '../../components/Mantem.astro';
+import { ARTIGOS, COMPARATIVOS, personalDaRegiao } from '../../lib/artigos';
+import { abreDomingo } from '../../lib/dados';
 import { academias, REGIOES, MODALIDADES, TIPOS, DIAS, DIAS_NOME, faixasDia, horarioResumo, e24h, conferidoEm, dataCurta, dataLonga, dataIso, nivelVerificacao, urlAcademia, urlRegiao, type Academia } from '../../lib/dados';
 
 export async function getStaticPaths() {
@@ -13,6 +15,7 @@ export async function getStaticPaths() {
 const { a, todas } = Astro.props as { a: Academia; todas: Academia[] };
 const d = a.data;
 const regiao = REGIOES[d.regiao];
+const guiasRel = [COMPARATIVOS[a.id] ?? (d.tipo === 'box' ? '/modalidades/crossfit/' : d.modalidades.includes('musculacao') ? '/modalidades/musculacao/' : null), personalDaRegiao(d.regiao, d.bairro), e24h(d.horario) ? '/academias/24-horas/' : null, abreDomingo(d.horario) ? '/academias/domingo/' : null, d.mensalidade ? '/academias/precos/' : null, d.agregadores.length ? '/academias/wellhub-totalpass/' : null].filter((u): u is string => !!u && !!ARTIGOS[u]).slice(0, 4);
 const vizinhas = todas.filter((o) => o.id !== a.id && o.data.regiao === d.regiao).sort((x, y) => Number(y.data.bairro === d.bairro) - Number(x.data.bairro === d.bairro)).slice(0, 5);
 const conf = conferidoEm(a);
 const nivel = nivelVerificacao(a);
@@ -142,6 +145,10 @@ const eSite = d.site && !/instagram\.com/.test(d.site);
       <h2 id="perto-t">Outras opções em {regiao.titulo}</h2>
       <ul>{vizinhas.map((o) => <li><a href={urlAcademia(o)}>{o.data.nome}</a> — {o.data.bairro}</li>)}</ul>
       <p><a href={urlRegiao(d.regiao)}>Todas as academias de {regiao.titulo}</a> · <a href="/guias/como-escolher-academia/">Como escolher uma academia</a></p>
+    </section>
+    <section class="bloco fino prosa" aria-labelledby="guias-t">
+      <h2 id="guias-t">Guias relacionados</h2>
+      <ul>{guiasRel.map((u) => <li><a href={u}>{ARTIGOS[u].titulo}</a>: {ARTIGOS[u].resumo}</li>)}</ul>
     </section>
     <i data-dado="f" hidden></i>
   </div>
