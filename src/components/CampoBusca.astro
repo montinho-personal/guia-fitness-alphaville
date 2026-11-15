@@ -1,0 +1,18 @@
+---
+// Campo de busca embutido (página inicial, 404, página de busca). Funciona sem JS: envia para /busca/?q=.
+interface Props { valor?: string; placeholder?: string; grande?: boolean; id?: string }
+const { valor = '', placeholder = 'Busque academia, bairro, personal trainer, Hyrox…', grande = false, id = 'campo-busca' } = Astro.props;
+---
+<form class:list={['campo-busca', { grande }]} role="search" action="/busca/" method="get">
+  <label class="sr" for={id}>Buscar no guia</label>
+  <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+  <input id={id} name="q" type="search" value={valor} placeholder={placeholder} autocomplete="off" />
+  <button class="btn peq" type="submit">Buscar</button>
+</form>
+<style>
+  .campo-busca { display: flex; align-items: center; gap: 10px; padding: 6px 6px 6px 14px; border: 1.5px solid var(--tinta); border-radius: 12px; background: var(--cartao); max-width: 620px; }
+  .campo-busca svg { flex: none; color: var(--cinza); }
+  .campo-busca input { flex: 1; min-width: 0; border: 0; background: transparent; font: 500 16px/1.3 var(--display); color: var(--tinta); outline: none; padding: 8px 0; }
+  .campo-busca:focus-within { box-shadow: 0 0 0 3px var(--musgo); }
+  .grande input { font-size: 18px; padding: 10px 0; }
+</style>

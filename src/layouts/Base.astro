@@ -4,6 +4,7 @@ import '@fontsource-variable/newsreader';
 import '../styles/global.css';
 import Instagram from '../components/Instagram.astro';
 import BarraWhatsapp from '../components/BarraWhatsapp.astro';
+import Busca from '../components/Busca.astro';
 import Marca from '../components/Marca.astro';
 import { INDEXAVEL, MOSTRAR_EM_REVISAO, GTM_ID } from '../lib/dados';
 
@@ -70,12 +71,15 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
       <nav class="principal so-desktop" aria-label="Principal">
         <ul>{nav.map((n) => <li><a href={n.url} aria-current={atual(n.url)}>{n.nome}</a></li>)}</ul>
       </nav>
+      <div class="topo-acoes">
+      <Busca />
       <details class="menu-m so-movel">
         <summary>Menu</summary>
         <nav class="principal" aria-label="Principal (celular)">
           <ul>{nav.map((n) => <li><a href={n.url} aria-current={atual(n.url)}>{n.nome}</a></li>)}</ul>
         </nav>
       </details>
+      </div>
     </div>
   </header>
 
