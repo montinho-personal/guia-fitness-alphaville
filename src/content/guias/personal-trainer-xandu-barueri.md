@@ -26,17 +26,17 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Montinho, personal trainer que atende em Barueri, é o responsável por este guia. O anúncio dele vem no final, identificado como tal.
+> **Transparência.** O guia é escrito sob responsabilidade do Montinho, personal de Barueri. O bloco final traz um anúncio dele, marcado como publicidade.
 
 ## A entrada mais barata do Wellhub no guia
 
-Quem contrata personal paga dois boletos: o do lugar e o do profissional. Na Xandu, o primeiro pode ser pequeno. Pelo Wellhub, o acesso começa no plano Starter, de R$ 39,99 por mês, o mais barato do agregador. Nenhuma outra academia com ficha no guia aceita esse plano. A mensalidade direta, sem agregador, não foi divulgada.
+Quem contrata personal paga dois boletos: o do lugar e o do profissional. Na Xandu, o primeiro pode ser pequeno. No Wellhub, ela entra já no Starter, de R$ 39,99 por mês, o plano mais barato do agregador. Nenhuma outra ficha do guia tem esse plano. A mensalidade direta, sem agregador, não foi divulgada.
 
-O outro lado da conta não aparece em nenhuma fonte: se a academia cobra algo de um personal externo, quanto e de quem. Esse valor pode mudar a comparação com outras academias, por isso pergunte antes de decidir. O panorama de preços está na [tabela de preços](/academias/precos/) e em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+O outro lado da conta não aparece em nenhuma fonte: se a academia cobra algo de um personal externo, quanto e de quem. Esse valor pode mudar a comparação com outras academias, por isso pergunte antes de decidir. Valores publicados por outras academias ficam na [tabela de preços](/academias/precos/) e na página sobre [Wellhub e TotalPass](/academias/wellhub-totalpass/).
 
 ## Musculação, dança e bike
 
-A [ficha da Academia Xandu](/academias/xandu-barueri/) lista musculação, fisiculturismo, treino localizado, condicionamento corporal, bike, jump, zumba e dança sertaneja. Para quem treina com personal, a musculação é o ponto de partida. As aulas de dança e de bike podem entrar nos dias sem sessão, como atividade extra.
+A [ficha da Academia Xandu](/academias/xandu-barueri/) lista musculação, fisiculturismo, treino localizado, condicionamento corporal, bike, jump, zumba e dança sertaneja. Num programa com personal, a musculação tende a ser o centro. As aulas de dança e de bike podem entrar nos dias sem sessão, como atividade extra.
 
 A estrutura publicada se resume a armários, vestiário e Wi-Fi. A página não menciona áreas específicas nem chuveiro. Conhecer o salão antes ajuda a saber se o equipamento atende ao plano de treino.
 
@@ -46,12 +46,12 @@ A estrutura publicada se resume a armários, vestiário e Wi-Fi. A página não 
 
 ## Janela de treino
 
-De segunda a sexta, a academia funciona das 6h às 22h. No sábado, das 8h às 13h. Não há horário listado para domingo. Para quem trabalha perto da Prefeitura, a hora do almoço e o fim da tarde ficam dentro do expediente da academia.
+Nos dias úteis, dá para treinar entre 6h e 22h. Aos sábados, o expediente vai das 8h às 13h. Para o domingo, a fonte não traz horário. Para quem trabalha perto da Prefeitura, o intervalo do meio-dia e o começo da noite cabem nesse horário.
 
 ## Como chegar
 
-O endereço é Rua Copo de Leite, 119, no Jardim Florida. A fonte não informa estacionamento; confirme antes de ir de carro.
+O endereço é Rua Copo de Leite, 119, no Jardim Florida. Sobre estacionamento, a página do Wellhub não diz nada; vale confirmar antes de ir de carro.
 
 ## Se quiser comparar
 
-A [Academia Impacto](/academias/impacto-barueri/), na Vila Engenho Novo, abre às 5h e tem lutas e cross training ([personal na Impacto](/guias/personal-trainer-impacto-barueri/)). No centro, a [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/) publica mensalidade e abre também no domingo ([personal na Smart Fit Centro](/guias/personal-trainer-smart-fit-barueri-centro/)). Mais caminhos estão em [personal trainer em Barueri](/guias/personal-trainer-barueri/).
+Quem precisa começar mais cedo tem a [Academia Impacto](/academias/impacto-barueri/), que já funciona às 5h e soma lutas e cross training ([personal na Impacto](/guias/personal-trainer-impacto-barueri/)). A [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/) tem preço publicado e funciona aos domingos ([personal na Smart Fit Centro](/guias/personal-trainer-smart-fit-barueri-centro/)). Outros formatos aparecem no [guia de personal em Barueri](/guias/personal-trainer-barueri/).

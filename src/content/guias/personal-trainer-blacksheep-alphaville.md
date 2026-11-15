@@ -28,36 +28,36 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Quem escreve e mantém este guia é o Montinho, personal trainer com atendimento em Alphaville. O quadro com o nome dele, ao final, é um anúncio.
+> **Transparência.** A edição deste guia fica a cargo do Montinho, que trabalha com treino individual em Alphaville. O quadro que promove o trabalho dele, lá embaixo, é publicidade.
 
 ## O que a ficha diz sobre personal
 
-Na [ficha do BlackSheep Alphaville](/academias/blacksheep-alphaville/), a página do Wellhub coloca "Personal trainer" ao lado de estacionamento, vestiário e área de pesos livres. Isso indica que o box tem gente da casa fazendo esse trabalho. Não esclarece se um profissional contratado por você, de fora, pode entrar para dar a sessão. O guia não achou nenhuma regra publicada sobre isso.
+Na [ficha do BlackSheep Alphaville](/academias/blacksheep-alphaville/), a página do Wellhub coloca "Personal trainer" ao lado de estacionamento, vestiário e área de pesos livres. Isso indica que o box tem gente da casa fazendo esse trabalho. Sobre trazer o seu próprio treinador, a página fica em silêncio, e o guia não achou norma escrita sobre o assunto.
 
-Antes de combinar qualquer coisa, peça ao box por telefone ou na visita:
+Antes de marcar a primeira sessão, pergunte ao box por telefone ou na visita:
 
-- se aceita personal externo e em quais horários;
-- se existe taxa, de quanto e quem paga;
+- se recebe profissional de fora e em que faixas do dia;
+- se há cobrança extra, qual o valor e de quem;
 - se o espaço fica disponível fora das aulas em grupo;
 - se é preciso cadastro do profissional.
 
 ## Aula do box ou sessão individual: o que muda
 
-Numa aula de cross training, um coach conduz a turma inteira no mesmo treino, no horário da grade. Ele corrige e adapta, mas divide a atenção entre várias pessoas. No acompanhamento individual, o plano é feito para você, a atenção é toda sua e o horário é combinado entre os dois.
+Numa aula de cross training, um coach conduz todo o grupo pelo mesmo treino, no horário da grade. Ele corrige e adapta, mas divide a atenção entre várias pessoas. No acompanhamento individual, o plano é feito para você, a atenção é toda sua e o horário é combinado entre os dois.
 
-Uma coisa não substitui a outra. Há quem use as aulas como base e marque sessões individuais para técnica de levantamento ou para recuperar uma lesão já liberada pelo médico.
+Os dois formatos convivem bem. Há quem use as aulas como base e marque sessões individuais para técnica de levantamento ou para voltar a treinar depois de uma lesão, com liberação médica.
 
 ## Hyrox com acompanhamento
 
-O BlackSheep lista cross training, treino funcional, treino híbrido e Hyrox. Segundo a rede, a unidade de Alphaville oferece o Hybrid, voltado a provas de Hyrox, e o Hyrox Training Club oficial fica na unidade Moema. Quem se prepara para uma prova e quer um olhar individual sobre corrida e estações deve perguntar se o box tem esse serviço ou se aceita alguém de fora.
+Na lista de atividades do BlackSheep estão cross training, treino funcional, treino híbrido e Hyrox. Segundo a rede, a unidade de Alphaville oferece o Hybrid, voltado a provas de Hyrox, e o Hyrox Training Club oficial fica na unidade Moema. Quem se prepara para uma prova e quer um olhar individual sobre corrida e estações deve perguntar se o box tem esse serviço ou se aceita alguém de fora.
 
 ## Das 6h às 20h30, com janela curta no fim de semana
 
-De segunda a quinta, o box funciona das 6h às 20h30; na sexta, fecha às 19h30. Sábado e domingo têm só uma janela das 9h às 10h30, o que o coloca na lista de [academias abertas no domingo](/academias/domingo/), mas com pouco espaço para marcar sessão. A grade atual de aulas da unidade ainda é pendência na ficha.
+Nos quatro primeiros dias úteis, o box opera das 6h às 20h30; na sexta, termina às 19h30. Aos sábados e domingos, só entre 9h e 10h30. Por isso aparece entre as [academias com horário no domingo](/academias/domingo/), mas sobra pouco espaço para encaixar uma sessão. A programação de turmas da unidade ainda não foi conferida pelo guia.
 
 ## A tabela da rede e o Wellhub
 
-O BlackSheep é dos poucos locais do guia com preço publicado, e a tabela vale para a rede inteira, que tem seis unidades em São Paulo. O plano ilimitado sai por R$ 480 por mês em contrato trimestral, semestral ou anual. Há mês de teste a R$ 400 para novos alunos, pacote de 10 aulas por R$ 500 e aula avulsa a R$ 75. No Wellhub, a entrada exige o plano Gold+, de R$ 439,99. Some a isso o valor do profissional e uma eventual taxa de personal externo. Compare na [tabela de preços](/academias/precos/).
+O BlackSheep é dos poucos locais do guia com preço publicado, e a tabela vale para a rede inteira, que tem seis unidades em São Paulo. O plano ilimitado sai por R$ 480 por mês em contrato trimestral, semestral ou anual. Novos alunos podem fazer um mês de teste por R$ 400. Existe ainda o pacote de 10 aulas, a R$ 500, e o drop in, uma aula só, por R$ 75. No Wellhub, a entrada exige o plano Gold+, de R$ 439,99. Com personal, a conta cresce com o honorário dele e com qualquer taxa que o box cobre de quem vem de fora. A [tabela de preços](/academias/precos/) ajuda a comparar.
 
 ## Outras portas na mesma região
 

@@ -1,16 +1,16 @@
 ---
 titulo: "Personal trainer na SkyFit Alphaville: estrutura e custos"
-descricao: "SkyFit da Av. Juruá, em Alphaville Industrial: musculação, cross training, muay thai e pilates, Wellhub a partir do Silver e o que perguntar sobre personal."
+descricao: "SkyFit da Av. Juruá, em Alphaville Industrial: musculação, cross training, muay thai e pilates, Wellhub a partir do Silver e dúvidas sobre personal externo."
 h1: "Personal trainer na SkyFit Alphaville"
-resposta: "A SkyFit Alphaville não publica regra para personal externo; é preciso perguntar na unidade se ele pode entrar e se paga taxa. A academia fica na Av. Juruá, 307, tem grade variada com cross training, muay thai e pilates, e entra no Wellhub a partir do plano Silver, de R$ 149,99."
+resposta: "A SkyFit Alphaville não informa em suas fontes se aceita profissional de fora; consulte a recepção sobre entrada e taxa. A academia fica na Av. Juruá, 307, tem grade variada com cross training, muay thai e pilates, e entra no Wellhub a partir do plano Silver, de R$ 149,99."
 cluster: D
 secao: guias
 palavra_chave: personal trainer skyfit alphaville
-intencao: "Quem treina em Alphaville Industrial quer saber se pode levar personal à SkyFit da Av. Juruá e quanto custa treinar ali."
+intencao: "Frequentador de Alphaville Industrial que considera a SkyFit da Av. Juruá para treinar com um personal contratado por fora."
 academia: skyfit-alphaville
 cta: montinho-contextual
 cta_titulo: "Montinho em Alphaville"
-cta_texto: "Em Alphaville, o Montinho trabalha na residência do aluno, no condomínio, na Arena 18 e em academias que admitem personal de fora. Dar aula na SkyFit dependeria da regra da própria unidade."
+cta_texto: "Em Alphaville, o Montinho atende em casas, em condomínios e na Arena 18. Academias como a SkyFit só entram se aceitarem personal externo, regra que ela não publica."
 cta_destino: /personal-trainer-alphaville
 lista_titulo: "A ficha da SkyFit Alphaville no guia"
 lista_ids: [skyfit-alphaville]
@@ -48,15 +48,15 @@ Nenhuma fonte consultada traz regra sobre personal de fora na SkyFit. Antes de f
 
 ## Sexta fecha mais cedo
 
-De segunda a quinta, a SkyFit funciona das 5h às 23h. Na sexta, fecha às 22h. No sábado, abre às 7h e vai até 17h; no domingo, das 8h às 14h. Quem marca a última sessão da semana na sexta à noite precisa considerar essa hora a menos.
+De segunda a quinta, a SkyFit funciona das 5h às 23h. Na sexta, fecha às 22h. No sábado, abre às 7h e vai até 17h, e aos domingos funciona das 8h às 14h. Quem marca a última sessão da semana na sexta à noite precisa considerar essa hora a menos.
 
 ## Mensalidade sob consulta, Wellhub com preço
 
-A ficha não tem mensalidade direta: o valor não foi publicado nas fontes, e a forma de obter é pelo site skyfitacademia.com ou pelo telefone. O que está registrado é a entrada pelo Wellhub, no plano Silver, de R$ 149,99. Some a isso o valor do personal e a taxa de acesso que a academia porventura cobre do profissional. As comodidades listadas são poucas, armários, chuveiro e vestiário, e o estacionamento não aparece. Pergunte sobre a vaga. Compare opções em [Wellhub e TotalPass](/academias/wellhub-totalpass/) e na [tabela de preços](/academias/precos/).
+A ficha não tem mensalidade direta: o valor não foi publicado nas fontes, e a forma de obter é pelo site skyfitacademia.com ou pelo telefone. O que está registrado é a entrada pelo Wellhub, no plano Silver, de R$ 149,99. Acrescente o valor combinado com o profissional e qualquer cobrança que a SkyFit faça para liberar a entrada dele. As comodidades listadas são poucas, armários, chuveiro e vestiário, e o estacionamento não aparece. Pergunte sobre a vaga. Compare opções em [Wellhub e TotalPass](/academias/wellhub-totalpass/) e na [tabela de preços](/academias/precos/).
 
 ## Perto dali, na mesma avenida
 
 - [Academia Gaviões 24h Alphaville](/academias/gavioes-24h-alphaville/), na Av. Juruá, 253, listada com funcionamento 24 horas todos os dias ([personal na Gaviões](/guias/personal-trainer-gavioes-24h-alphaville/)).
 - [CrossFit Barueri](/academias/crossfit-barueri/), o box do mesmo número, com aulas de segunda a sábado ([personal no CrossFit Barueri](/guias/personal-trainer-crossfit-barueri/)).
 
-Visão geral da região em [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).
+Para a região inteira, veja a [visão geral de personal em Alphaville](/guias/personal-trainer-alphaville/).

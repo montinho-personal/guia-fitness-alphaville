@@ -2,15 +2,15 @@
 titulo: "Personal trainer na Smart Fit Sodimac Alphaville: o que saber"
 descricao: "Treino com personal na Smart Fit do estacionamento da Sodimac, em Alphaville Industrial: o que perguntar, horários, Plano Smart, Black e TotalPass."
 h1: "Personal trainer na Smart Fit Sodimac Alphaville"
-resposta: "A Smart Fit Sodimac Alphaville não publica regra para personal externo, então a aceitação e uma eventual taxa precisam ser confirmadas na recepção. A unidade fica no 2º pavimento do estacionamento da Sodimac, na Alameda Araguaia, e não vende o Plano Fit: a entrada é o Plano Smart, a R$ 149,90 por mês com fidelidade."
+resposta: "Não há regra publicada sobre personal externo na Smart Fit Sodimac Alphaville, então aceitação e cobrança dependem do que a recepção disser. A unidade fica no 2º pavimento do estacionamento da Sodimac, na Alameda Araguaia, e não vende o Plano Fit: o plano mais barato ali é o Smart, a R$ 149,90 por mês com fidelidade."
 cluster: D
 secao: guias
 palavra_chave: personal trainer smart fit sodimac alphaville
-intencao: "Quem treina ou quer treinar na Smart Fit da Sodimac quer saber se pode levar um personal e quanto vai gastar no total."
+intencao: "Aluno ou futuro aluno da Smart Fit da Sodimac avaliando se consegue levar personal próprio e quanto isso custa no total."
 academia: smart-fit-sodimac-alphaville
 cta: montinho-contextual
 cta_titulo: "Treinar com o Montinho em Alphaville"
-cta_texto: "O Montinho atende em Alphaville na casa do aluno, no espaço fitness do condomínio, na Arena 18 e em outras academias quando a regra delas permite. A presença dele nesta Smart Fit depende do que a unidade autorizar."
+cta_texto: "Em Alphaville, o Montinho dá aulas em residências e espaços fitness de condomínios, além da Arena 18; em outras academias, só onde a regra deixa. Nada indica, por ora, que ele atenda nesta Smart Fit."
 cta_destino: /personal-trainer-alphaville
 lista_titulo: "A ficha da Smart Fit Sodimac Alphaville no guia"
 lista_ids: [smart-fit-sodimac-alphaville]
@@ -28,7 +28,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Quem mantém o guia é o Montinho, personal trainer com atendimento em Alphaville. O quadro dele no rodapé desta página é anúncio.
+> **Transparência.** Quem responde por este guia é o Montinho; ele trabalha como personal em Alphaville. O quadro com o nome dele, no rodapé, é anúncio.
 
 ## Uma academia no estacionamento da Sodimac
 
@@ -51,19 +51,19 @@ Anote a resposta e o nome de quem atendeu.
 
 A lista de atividades traz musculação, alongamento, abdominais, HIIT, Smart Box e Smart Shape. Numa sessão individual, o centro costuma ser a sala de pesos; os blocos curtos de alta intensidade podem entrar como complemento, se combinarem com o seu objetivo. A balança de bioimpedância serve para registrar medidas ao longo dos meses, e a ducha aquecida ajuda quem segue direto para o trabalho.
 
-## Das 6h às 23h nos dias úteis
+## Janela de treino: 6h às 23h
 
-De segunda a sexta, a unidade funciona das 6h às 23h. No sábado e em feriados, das 8h às 17h. No domingo, das 8h às 14h. Quem precisa treinar antes das 6h terá de olhar outra unidade, porque esta abre uma hora depois das Smart Fit de Barueri. Para o fim de semana, veja também as [academias abertas no domingo](/academias/domingo/).
+Entre segunda e sexta, as portas ficam abertas das 6h às 23h. No sábado e em feriados, das 8h às 17h. No domingo, das 8h às 14h. Quem precisa treinar antes das 6h terá de olhar outra unidade, porque esta abre uma hora depois das Smart Fit de Barueri. Para o fim de semana, confira a lista de [academias que abrem aos domingos](/academias/domingo/).
 
 ## Plano Smart, Plano Black ou TotalPass
 
-Aqui não existe o Plano Fit, o mais barato da rede. A entrada é o Plano Smart: R$ 149,90 por mês com fidelidade, R$ 20 a mais sem ela, adesão grátis. O Plano Black sai por R$ 159,90 com fidelidade, tem adesão de R$ 9,90 e libera todas as unidades da marca; o site fala em primeiro mês gratuito. Pelo TotalPass, o plano mínimo é o TP 2, de R$ 119,90. A Smart Fit avisa que os valores exibidos são promocionais.
+Aqui não existe o Plano Fit, o mais barato da rede. O degrau inicial é o Plano Smart: R$ 149,90 por mês com fidelidade, R$ 20 a mais sem ela, adesão grátis. O Plano Black sai por R$ 159,90 com fidelidade, tem adesão de R$ 9,90 e libera todas as unidades da marca; o site fala em primeiro mês gratuito. Pelo TotalPass, o plano mínimo é o TP 2, de R$ 119,90. A Smart Fit avisa que os valores exibidos são promocionais.
 
-Na conta do mês, entram a mensalidade, o valor do profissional e uma eventual taxa de personal externo, se a unidade cobrar. Compare na [tabela de preços](/academias/precos/) e na página de [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+Na conta do mês, entram a mensalidade, o que você paga ao personal e uma eventual taxa de profissional externo, se a unidade cobrar. Os números lado a lado estão na [tabela de preços](/academias/precos/); para os agregadores, veja [Wellhub e TotalPass](/academias/wellhub-totalpass/).
 
 ## Vizinhas em Alphaville Industrial
 
-- [Bluefit Alphaville](/academias/bluefit-alphaville/), na Alameda Amazonas, aberta até meia-noite em dias úteis ([personal na Bluefit Alphaville](/guias/personal-trainer-bluefit-alphaville/)).
+- [Bluefit Alphaville](/academias/bluefit-alphaville/), unidade da Alameda Amazonas que funciona até meia-noite nos dias de semana ([personal na Bluefit Alphaville](/guias/personal-trainer-bluefit-alphaville/)).
 - [Tecfit Alphaville](/academias/tecfit-alphaville/), estúdio na própria Alameda Araguaia que combina musculação e funcional com eletroestimulação ([personal na Tecfit](/guias/personal-trainer-tecfit-alphaville/)).
 
 O panorama da região está em [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).

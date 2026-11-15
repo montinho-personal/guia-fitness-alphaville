@@ -2,15 +2,15 @@
 titulo: "Personal trainer na Smart Fit Parque Shopping Barueri"
 descricao: "Smart Fit dentro do Parque Shopping Barueri, na Nova Aldeinha: estacionamento, regra de personal externo a confirmar, horário até meia-noite e preços."
 h1: "Personal trainer na Smart Fit Parque Shopping Barueri"
-resposta: "A Smart Fit do Parque Shopping Barueri não divulga regra para personal externo, então vale perguntar na unidade se ele é aceito e se há taxa. Ela fica na Nova Aldeinha, entre o centro de Barueri e Alphaville, abre das 5h à meia-noite nos dias úteis e tem Plano Fit a R$ 139,90 com fidelidade."
+resposta: "Na Smart Fit do Parque Shopping Barueri, o guia não achou norma sobre personal trazido pelo aluno, então vale perguntar na unidade se ele é aceito e se há taxa. Ela fica na Nova Aldeinha, entre o centro de Barueri e Alphaville, abre às 5h e fecha à meia-noite de segunda a sexta, e cobra R$ 139,90 por mês no Plano Fit com fidelidade."
 cluster: D
 secao: guias
 palavra_chave: personal trainer smart fit parque shopping barueri
-intencao: "Quem pensa em treinar na Smart Fit do Parque Shopping Barueri quer saber se pode levar um personal, onde estacionar e quanto vai pagar."
+intencao: "Pessoa que circula entre Barueri e Alphaville e avalia a Smart Fit do Parque Shopping como base para treinar com personal, incluindo vaga e preço."
 academia: smart-fit-parque-shopping-barueri
 cta: montinho-contextual
 cta_titulo: "Personal com o Montinho em Barueri"
-cta_texto: "O Montinho atende alunos em Barueri no domicílio, na área fitness do condomínio, na Arena 18 e nas academias que liberam profissional externo. Na unidade do shopping, só se a Smart Fit autorizar."
+cta_texto: "Para quem mora em Barueri, o Montinho leva o treino até a casa ou o condomínio do aluno e também atende na Arena 18. Outras academias só entram quando a regra delas abre espaço para personal externo, o que não está confirmado neste shopping."
 cta_destino: /personal-trainer-barueri
 lista_titulo: "A ficha da Smart Fit Parque Shopping Barueri no guia"
 lista_ids: [smart-fit-parque-shopping-barueri]
@@ -42,17 +42,17 @@ O guia não encontrou nenhuma regra publicada sobre isso. A página oficial menc
 
 ## A estrutura dá conta de um treino individual?
 
-A fonte lista só musculação, e a grade de aulas coletivas não aparece. Para sessões acompanhadas, a sala de pesos é o que interessa na maior parte dos casos. Entre as comodidades estão balança de bioimpedância, útil para acompanhar a composição corporal ao longo do tempo, além de ar-condicionado, armário rotativo, ducha aquecida e Smart Fit Energy.
+A fonte lista só musculação e não traz horários de turmas. Para sessões acompanhadas, a sala de pesos é o que interessa na maior parte dos casos. Entre as comodidades estão balança de bioimpedância, útil para acompanhar a composição corporal ao longo do tempo, e os itens de praxe da marca: climatização, armário rotativo, chuveiro com água quente e o Smart Fit Energy.
 
 ## Quando dá para treinar e quanto custa?
 
-De segunda a sexta, a unidade abre às 5h e só fecha à meia-noite, o que abre espaço para sessões tarde da noite. Sábado tem funcionamento das 8h às 17h; domingo e feriados, das 8h às 14h.
+Nos dias úteis, a unidade abre às 5h e só fecha à meia-noite, o que abre espaço para sessões tarde da noite. Sábado tem funcionamento das 8h às 17h; domingo e feriados, das 8h às 14h.
 
-No site, o Plano Fit custa R$ 139,90 mensais com fidelidade, sem adesão, e só dá acesso a este endereço. O Smart está em R$ 159,90. O Black, com o mesmo valor mensal, cobra adesão de R$ 29,90, abre toda a rede e, segundo a página, tem o primeiro mês grátis. Sem fidelidade, Fit e Smart custam R$ 20 a mais. Os valores são promocionais, avisa a rede. A ficha não confirma Wellhub nem TotalPass aqui. No orçamento, inclua o profissional e uma possível taxa de acesso dele. Veja a [tabela de preços](/academias/precos/).
+No site, a mensalidade do Fit é R$ 139,90 no regime de fidelidade, sem adesão, e só dá acesso a este endereço. O Smart está em R$ 159,90. O Black, com o mesmo valor mensal, pede R$ 29,90 na adesão, abre toda a rede e, segundo a página, tem o primeiro mês grátis. Sem fidelidade, Fit e Smart custam R$ 20 a mais. Os valores são promocionais, avisa a rede. A ficha não confirma Wellhub nem TotalPass aqui. No orçamento, inclua o profissional e uma possível taxa de acesso dele. Veja a [tabela de preços](/academias/precos/).
 
 ## Quais são as alternativas por perto?
 
 - [Ironberg Alphaville](/academias/ironberg-alphaville/), na Estrada da Aldeinha, aberta 24 horas e com estacionamento gratuito. É uma das poucas que publica regra: personal externo paga um valor fixo à academia, informado só na unidade ([personal na Ironberg](/guias/personal-trainer-ironberg-alphaville/)).
-- [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/), com indoor bike na grade e TotalPass confirmado ([personal na unidade do centro](/guias/personal-trainer-smart-fit-barueri-centro/)).
+- [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/), a outra unidade da rede aberta até meia-noite, com TotalPass confirmado ([o artigo de personal dela](/guias/personal-trainer-smart-fit-barueri-centro/)).
 
-Panorama da cidade em [personal trainer em Barueri](/guias/personal-trainer-barueri/). Entre os grandes nomes da região, veja ainda [Ironberg ou NitroGym](/guias/ironberg-ou-nitrogym/).
+Para Barueri como um todo, veja o [panorama de personal na cidade](/guias/personal-trainer-barueri/). Entre os grandes nomes da região, veja ainda [Ironberg ou NitroGym](/guias/ironberg-ou-nitrogym/).

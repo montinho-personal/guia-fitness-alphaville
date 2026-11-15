@@ -2,7 +2,7 @@
 titulo: "Personal trainer na Smart Fit Av. Zélia, em Barueri"
 descricao: "Smart Fit da Avenida Zélia, no Parque dos Camargos: perguntas para levar um personal de fora, horário das 5h, Plano Fit restrito à unidade e vizinhas."
 h1: "Personal trainer na Smart Fit Barueri Av. Zélia"
-resposta: "A unidade da Avenida Zélia, no Parque dos Camargos, não divulga regra para personal externo; a liberação e o custo dependem da resposta da recepção. Ela abre às 5h nos dias úteis, lista só musculação e tem o Plano Fit a R$ 139,90 com fidelidade, válido apenas ali."
+resposta: "A unidade da Avenida Zélia, no Parque dos Camargos, não traz regra escrita para personal de fora; liberação e custo ficam a cargo da recepção. Ela abre às 5h de segunda a sexta, lista só musculação, e o Plano Fit, de R$ 139,90 mensais na fidelidade, vale apenas ali."
 cluster: D
 secao: guias
 palavra_chave: personal trainer smart fit av zelia barueri
@@ -10,7 +10,7 @@ intencao: "Morador do sul de Barueri quer saber se consegue treinar com personal
 academia: smart-fit-barueri-av-zelia
 cta: montinho-contextual
 cta_titulo: "Treinar com o Montinho em Barueri"
-cta_texto: "Em Barueri, o Montinho dá aulas na casa do aluno, no espaço fitness do prédio, na Arena 18 e em academias cuja regra aceita personal de fora. Nesta Smart Fit, isso só vale se a unidade liberar."
+cta_texto: "O Montinho acompanha alunos de Barueri dentro de casa, na academia do prédio, na Arena 18 e também em academias de terceiros, desde que a regra local permita. Nesta Smart Fit, depende da liberação da unidade."
 cta_destino: /personal-trainer-barueri
 lista_titulo: "A ficha da Smart Fit Barueri Av. Zélia no guia"
 lista_ids: [smart-fit-barueri-av-zelia]
@@ -50,17 +50,17 @@ Nenhuma regra para personal externo foi encontrada nas fontes desta unidade. Vá
 
 ## Começar às 5h, antes do expediente
 
-De segunda a sexta, as portas abrem às 5h e fecham às 23h. Dá para marcar a sessão bem cedo e ainda chegar ao trabalho no horário. No sábado e em feriados, o funcionamento vai das 8h às 17h. No domingo, das 8h às 14h. Combine a frequência semanal com o personal pensando nesses limites.
+De segunda a sexta, as portas abrem às 5h e fecham às 23h. Dá para marcar a sessão bem cedo e ainda chegar ao trabalho no horário. Sábado e feriados seguem das 8h às 17h; aos domingos, o expediente vai das 8h às 14h. Combine a frequência semanal com o personal pensando nesses limites.
 
 ## Plano Fit: mais barato, mas só aqui
 
-O Plano Fit custa R$ 139,90 ao mês com fidelidade, sem adesão, e vale somente nesta academia. Sem fidelidade, soma R$ 20. O Plano Smart sai por R$ 159,90 nas mesmas condições. O Black tem a mesma mensalidade do Smart, cobra R$ 29,90 de adesão, promete o primeiro mês sem custo segundo o site e funciona em qualquer unidade da marca. Se o seu personal atende em outra Smart Fit e você quer alternar, o Fit não resolve.
+Pelo Plano Fit, a mensalidade é de R$ 139,90 com fidelidade, sem adesão, e o acesso se limita a esta academia. Sem fidelidade, soma R$ 20. O Smart fica em R$ 159,90 nas mesmas condições. O Black tem a mesma mensalidade do Smart, cobra R$ 29,90 de adesão, promete o primeiro mês sem custo segundo o site e funciona em qualquer unidade da marca. Se o seu personal atende em outra Smart Fit e você quer alternar, o Fit não resolve.
 
-Duas dúvidas ficam para a visita: se Wellhub e TotalPass são aceitos e se há estacionamento, porque nenhuma das duas informações consta na fonte. Os valores são promocionais, segundo a própria rede. Compare na [tabela de preços](/academias/precos/), sem esquecer o pagamento do profissional e qualquer taxa que a unidade venha a cobrar dele.
+Duas dúvidas ficam para a visita: se Wellhub e TotalPass são aceitos e se há estacionamento, porque nenhuma das duas informações consta na fonte. Os valores são promocionais, segundo a própria rede. Faça as contas com a [tabela de preços](/academias/precos/), sem esquecer o pagamento do profissional e qualquer taxa que a unidade venha a cobrar dele.
 
 ## Se a Av. Zélia não servir
 
-- [Academia Boa Forma](/academias/boa-forma-barueri/), no Jardim Alberto, que lista personal trainer entre as comodidades e tem piscina, natação e hidroginástica ([personal na Boa Forma](/guias/personal-trainer-boa-forma-barueri/)).
+- [Academia Boa Forma](/academias/boa-forma-barueri/), que fica no Jardim Alberto, cuja ficha inclui personal trainer nas comodidades e que tem piscina, natação e hidroginástica ([personal na Boa Forma](/guias/personal-trainer-boa-forma-barueri/)).
 - [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/), com indoor bike e ginástica na grade ([personal na unidade do centro](/guias/personal-trainer-smart-fit-barueri-centro/)).
 
-Mais sobre a cidade em [personal trainer em Barueri](/guias/personal-trainer-barueri/).
+Mais sobre a cidade no [guia de personal de Barueri](/guias/personal-trainer-barueri/).

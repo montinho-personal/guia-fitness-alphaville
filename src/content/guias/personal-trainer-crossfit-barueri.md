@@ -26,7 +26,7 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Este site é um projeto do Montinho, personal trainer que atende em Alphaville. A caixa com o contato dele, embaixo, é publicidade.
+> **Transparência.** Este site é mantido pelo Montinho, que atende como personal na região de Alphaville. Embaixo, o espaço reservado ao contato dele é publicidade.
 
 ## Fica em Alphaville, não no centro
 
@@ -34,7 +34,7 @@ Quem busca "CrossFit Barueri" pensando no centro da cidade pode se confundir. O 
 
 ## Nenhum serviço de personal listado
 
-Diferente dos dois boxes da Alameda Araguaia, a página do CrossFit Barueri no Wellhub não coloca "Personal trainer" na lista de comodidades. Ela informa armários, estacionamento, loja de artigos esportivos, vestiário e Wi-Fi. Ausência na lista não quer dizer proibição; só quer dizer que não há informação. Ligue ou pergunte na visita se o box faz aula individual com os próprios coaches, se aceita profissional externo, se cobra taxa e em que horário isso cabe.
+Diferente dos dois boxes da Alameda Araguaia, a página do CrossFit Barueri no Wellhub não traz o item "Personal trainer". Ela informa armários, estacionamento, loja de artigos esportivos, vestiário e Wi-Fi. Ausência na lista não quer dizer proibição; só quer dizer que não há informação. Ligue ou pergunte na visita se o box faz aula individual com os próprios coaches, se aceita profissional externo, se cobra taxa e em que horário isso cabe.
 
 ## Turma, coach e treino sob medida
 
@@ -42,12 +42,12 @@ O box trabalha com CrossFit e HIIT, em aulas. Nesse formato, o treino do dia é 
 
 ## Até 22h30 nos dias úteis
 
-De segunda a quinta, o box abre das 6h às 22h30. Na sexta, fecha às 21h30. No sábado, funciona das 7h ao meio-dia. Não há horário listado para domingo. A grade de aulas atual não foi publicada, e é ela que define quando o espaço está livre para algo fora da turma.
+Segunda, terça, quarta e quinta: das 6h às 22h30. Sexta: até 21h30. Sábado: das 7h ao meio-dia. Domingo não consta. Também falta a grade atual de aulas, e é ela que define quando o espaço está livre para algo fora da turma.
 
 ## Custo: só o Wellhub tem preço público
 
-A mensalidade direta não foi divulgada. No Wellhub, o acesso começa no plano Gold, de R$ 319,99 por mês. Se o box aceitar um personal de fora, entram ainda o valor do profissional e uma possível taxa. Veja o quadro geral em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+O box não publicou mensalidade. Pelo Wellhub, a entrada pede o plano Gold, que custa R$ 319,99 mensais. Se o box aceitar um personal de fora, a fatura cresce com o profissional e com o que o box eventualmente cobrar dele. Os planos de agregador da região estão lado a lado em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
 
 ## Musculação ao lado e outros boxes
 
-O endereço listado tem o mesmo número da [SkyFit Alphaville](/academias/skyfit-alphaville/), academia de rede com musculação, que abre às 5h e funciona também no domingo ([personal na SkyFit](/guias/personal-trainer-skyfit-alphaville/)). Na Alameda Araguaia estão o [Templo SA](/academias/templo-sa-alphaville/) e o [BlackSheep Alphaville](/academias/blacksheep-alphaville/) ([personal no BlackSheep](/guias/personal-trainer-blacksheep-alphaville/)). O contexto da região está em [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).
+O endereço listado tem o mesmo número da [SkyFit Alphaville](/academias/skyfit-alphaville/), academia de rede com musculação, que abre às 5h e funciona também no domingo ([personal na SkyFit](/guias/personal-trainer-skyfit-alphaville/)). Na Alameda Araguaia, dois boxes dividem o mesmo conjunto: [BlackSheep Alphaville](/academias/blacksheep-alphaville/) ([personal no BlackSheep](/guias/personal-trainer-blacksheep-alphaville/)) e [Templo SA](/academias/templo-sa-alphaville/) ([personal no Templo SA](/guias/personal-trainer-templo-sa-alphaville/)). Outras formas de treinar com acompanhamento por ali estão no [panorama de personal em Alphaville](/guias/personal-trainer-alphaville/).

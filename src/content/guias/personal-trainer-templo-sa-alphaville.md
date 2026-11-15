@@ -28,21 +28,21 @@ publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** O Onde Treinar Alphaville é do Montinho, que trabalha como personal em Alphaville. No rodapé há um bloco dele, e esse bloco é propaganda.
+> **Transparência.** Por trás deste guia está o Montinho, personal trainer de Alphaville. O trecho que fecha a página divulga o trabalho dele e é publicidade.
 
 ## Um box, dois nomes
 
-No Wellhub, a unidade aparece como "Hybrid Fitness". No TotalPass, como "Templo SA – CrossFit". O endereço é o mesmo: Alameda Araguaia, 122, em Alphaville Industrial. Se você for procurar o box num aplicativo, tente os dois nomes. A [ficha do Templo SA](/academias/templo-sa-alphaville/) registra o nome comercial em uso como pendência.
+No Wellhub, a unidade aparece como "Hybrid Fitness". No TotalPass, como "Templo SA – CrossFit". O endereço é o mesmo: Alameda Araguaia, 122, em Alphaville Industrial. Se você for procurar o box num aplicativo, tente os dois nomes. Qual dos dois o box usa hoje ainda está em aberto na [ficha do Templo SA](/academias/templo-sa-alphaville/).
 
 ## Coach de turma não é personal
 
 O CrossFit acontece em aulas com hora marcada. O coach explica o treino do dia, demonstra os movimentos e acompanha um grupo. Ele ajusta cargas e variações, só que olhando para todos ao mesmo tempo.
 
-O personal trabalha com uma pessoa. Monta o programa a partir do seu histórico, acompanha cada série e muda o plano conforme você responde. Para quem nunca levantou peso, algumas sessões individuais antes de entrar na turma podem tornar a aula mais segura. Para quem já treina, servem para destravar um movimento específico.
+O personal trabalha com uma pessoa. Monta o programa a partir do seu histórico, acompanha cada série e faz ajustes à medida que você evolui. Para quem nunca levantou peso, algumas sessões individuais antes de entrar na turma podem tornar a aula mais segura. Para quem já treina, servem para destravar um movimento específico.
 
 ## Perguntas para levar ao box
 
-A página do Wellhub lista "Personal trainer" entre as comodidades. Isso aponta para profissionais que atuam ali, mas não explica o que vale para alguém de fora. Leve estas perguntas:
+Na página do Wellhub, "Personal trainer" aparece na relação de comodidades. Isso aponta para profissionais que atuam ali, mas não explica o que vale para alguém de fora. Leve estas perguntas:
 
 1. O box oferece sessões individuais com os próprios coaches?
 2. Aceita um personal externo? Com taxa? Paga por quem?
@@ -55,8 +55,8 @@ Segundo o Wellhub, de segunda a quarta o box funciona das 6h às 13h e das 17h15
 
 ## Agregadores no lugar da mensalidade
 
-O valor da mensalidade e o da aula avulsa não foram publicados. O que existe é o preço dos agregadores: no Wellhub, a partir do plano Gold, de R$ 319,99; no TotalPass, a partir do TP 4, de R$ 299,90. O comparativo está em [Wellhub e TotalPass](/academias/wellhub-totalpass/). O custo do profissional e uma possível taxa ficam por fora. A ficha informa estacionamento, inclusive vaga acessível, além de ar condicionado e vestiário.
+O valor da mensalidade e o da aula avulsa não foram publicados. O que existe é o preço dos agregadores: no Wellhub, o nível mínimo é o Gold, de R$ 319,99; no TotalPass, o TP 4, de R$ 299,90. Os dois agregadores são comparados em [Wellhub e TotalPass](/academias/wellhub-totalpass/). Honorário do personal e eventual cobrança do box sobre profissional externo ficam fora dessa conta. A ficha informa estacionamento, inclusive vaga acessível, além de ar condicionado e vestiário.
 
 ## Vizinhos de galpão e de avenida
 
-No mesmo conjunto fica o [BlackSheep Alphaville](/academias/blacksheep-alphaville/), que lista Hyrox ([personal no BlackSheep](/guias/personal-trainer-blacksheep-alphaville/)). Na Av. Juruá está o [CrossFit Barueri](/academias/crossfit-barueri/) ([personal no CrossFit Barueri](/guias/personal-trainer-crossfit-barueri/)). Outros formatos de treino acompanhado na região aparecem em [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).
+No mesmo conjunto fica o [BlackSheep Alphaville](/academias/blacksheep-alphaville/), que lista Hyrox ([personal no BlackSheep](/guias/personal-trainer-blacksheep-alphaville/)). Na Av. Juruá está o [CrossFit Barueri](/academias/crossfit-barueri/) ([personal no CrossFit Barueri](/guias/personal-trainer-crossfit-barueri/)). Outros formatos de treino acompanhado na região aparecem na [visão geral de personal em Alphaville](/guias/personal-trainer-alphaville/).
