@@ -5,6 +5,9 @@ import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
 import Mantem from '../../components/Mantem.astro';
 import Vitrine from '../../components/Vitrine.astro';
+import { Image } from 'astro:assets';
+import fotoArena18 from '../../assets/montinho/montinho-personal-trainer-arena-18.jpg';
+const FOTO_MONTINHO: Record<string, { src: typeof fotoArena18; alt: string }> = { 'arena-18-alphaville': { src: fotoArena18, alt: 'Montinho, personal trainer, em selfie no espelho da sala de musculação da Arena 18, em Alphaville' } };
 import { ARTIGOS, COMPARATIVOS, personalDaRegiao } from '../../lib/artigos';
 import { abreDomingo, guias } from '../../lib/dados';
 import { academias, REGIOES, MODALIDADES, TIPOS, DIAS, DIAS_NOME, faixasDia, horarioResumo, e24h, conferidoEm, dataCurta, dataLonga, dataIso, nivelVerificacao, urlAcademia, urlRegiao, type Academia } from '../../lib/dados';
@@ -143,6 +146,7 @@ const eSite = d.site && !/instagram\.com/.test(d.site);
     {d.montinho_atende && (
       <section class="bloco fino"><Mantem pagina={`ficha-${a.id}`} compacta titulo={`Treine na ${d.nome} com acompanhamento`} texto={`O Montinho Personal Trainer, que mantém este guia, atende alunos presencialmente na ${d.nome}. Este bloco é publicidade da casa; a ficha acima segue os mesmos critérios das demais.`} /></section>
     )}
+    {FOTO_MONTINHO[a.id] && <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={FOTO_MONTINHO[a.id].src} alt={FOTO_MONTINHO[a.id].alt} widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">O Montinho na Arena 18, onde atende alunos. Publicidade da casa.</figcaption></figure>}
     {d.montinho_atende && <Vitrine pagina={`ficha-${a.id}`} destaque="natalia-nascimento" intro={`O Montinho atende alunos na ${d.nome}, mas a vitrine abaixo não informa onde cada pessoa treinou. São resultados de emagrecimento de alunos dele, publicados no site montinhopersonal.com.br.`} />}
     <section class="bloco fino prosa" aria-labelledby="perto-t">
       <h2 id="perto-t">Outras opções em {regiao.titulo}</h2>
