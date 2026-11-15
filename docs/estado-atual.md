@@ -185,3 +185,9 @@ Cada evento leva `ref` (posição ou ficha) e `pagina`. Os links para o Montinho
 - 40 guias `personal-trainer-<tema>-<cidade>` (8 temas × 5 cidades): feminino, em condomínio, a domicílio, para idosos, para iniciantes, para emagrecer (com vitrine), para gestantes e para executivos.
 - Escolha do responsável pelo guia (tema × todas as cidades), ciente do risco de página porta e de concorrência com o site do Montinho. Mitigação: cada página usa dados próprios da cidade; auditoria sem nenhum par acima de 15% de similaridade interna nem 5% com o corpus do Montinho.
 - Redação em paralelo a partir de `docs/pesquisa/brief-personal-temas.md` e `docs/pesquisa/dados-por-cidade.md`, com revisão de fatos contra as fichas YAML.
+
+## Personal trainer por academia (15/11/2026)
+
+- 31 guias `personal-trainer-<id-da-academia>` (um por ficha), com campo `academia` no frontmatter. A ficha linka para o guia; o guia lista outras academias da região; a página de guias tem a seção "Personal trainer por academia".
+- Fatos conferidos contra os YAMLs; só a Ironberg aparece com regra publicada para personal externo; o Montinho só é citado como atendendo na Arena 18.
+- Correções em fichas encontradas no processo: telefone fictício removido da Bluefit Barueri; comparação de feriado corrigida na Smart Fit Av. Zélia.
