@@ -4,6 +4,7 @@ import Selo from '../../components/Selo.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
 import Mantem from '../../components/Mantem.astro';
+import Vitrine from '../../components/Vitrine.astro';
 import { ARTIGOS, COMPARATIVOS, personalDaRegiao } from '../../lib/artigos';
 import { abreDomingo } from '../../lib/dados';
 import { academias, REGIOES, MODALIDADES, TIPOS, DIAS, DIAS_NOME, faixasDia, horarioResumo, e24h, conferidoEm, dataCurta, dataLonga, dataIso, nivelVerificacao, urlAcademia, urlRegiao, type Academia } from '../../lib/dados';
@@ -141,6 +142,7 @@ const eSite = d.site && !/instagram\.com/.test(d.site);
     {d.montinho_atende && (
       <section class="bloco fino"><Mantem pagina={`ficha-${a.id}`} compacta titulo={`Treine na ${d.nome} com acompanhamento`} texto={`O Montinho Personal Trainer, que mantém este guia, atende alunos presencialmente na ${d.nome}. Este bloco é publicidade da casa; a ficha acima segue os mesmos critérios das demais.`} /></section>
     )}
+    {d.montinho_atende && <Vitrine pagina={`ficha-${a.id}`} destaque="natalia-nascimento" intro={`O Montinho atende alunos na ${d.nome}, mas a vitrine abaixo não informa onde cada pessoa treinou. São resultados de emagrecimento de alunos dele, publicados no site montinhopersonal.com.br.`} />}
     <section class="bloco fino prosa" aria-labelledby="perto-t">
       <h2 id="perto-t">Outras opções em {regiao.titulo}</h2>
       <ul>{vizinhas.map((o) => <li><a href={urlAcademia(o)}>{o.data.nome}</a> — {o.data.bairro}</li>)}</ul>

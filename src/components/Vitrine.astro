@@ -1,0 +1,106 @@
+---
+// Vitrine de transformações dos alunos do Montinho, lida do feed público do site dele.
+// Se o feed falhar ou vier vazio, nada é renderizado.
+import Comparador from './Comparador.astro';
+import { carregarVitrine } from '../lib/vitrine';
+interface Props { intro: string; pagina: string; destaque?: string }
+const { intro, pagina, destaque } = Astro.props;
+const v = await carregarVitrine();
+const principal = v ? (v.transformacoes.find((t) => t.slug === destaque) ?? v.transformacoes[0]) : undefined;
+const outras = v && principal ? v.transformacoes.filter((t) => t !== principal) : [];
+---
+{v && principal && (
+  <section class="vitrine bloco fino" aria-labelledby="vitrine-t" data-vitrine data-ref={pagina}>
+    <span class="rotulo cor-marca">Alunos do Montinho Personal Trainer · publicidade da casa</span>
+    <h2 id="vitrine-t">Resultados reais. Transformações de verdade.</h2>
+    <p class="vit-sub">Antes e depois de alunos acompanhados pelo personal Montinho, que mantém este guia. Os dados e as fotos vêm do site dele, <a href="https://www.montinhopersonal.com.br/" rel="noopener" target="_blank">montinhopersonal.com.br</a>.</p>
+    <p class="vit-intro">{intro}</p>
+
+    <div class="vit-destaque">
+      <Comparador t={principal} alturaMax="70svh" destaque />
+      <div class="vit-texto">
+        <h3>{principal.nome}</h3>
+        <p class="vit-meta">{principal.idade} · {principal.modalidade}</p>
+        <dl class="vit-dados">
+          <div><dt>Resultado</dt><dd>{principal.resultado}</dd></div>
+          {principal.acompanhamento && <div><dt>Acompanhamento</dt><dd>{principal.acompanhamento}</dd></div>}
+        </dl>
+        <p>{principal.historia}</p>
+        <blockquote><p>“{principal.depoimento}”</p></blockquote>
+      </div>
+    </div>
+
+    {outras.length > 0 && (
+      <>
+        <h3 class="vit-outras-t">Outras transformações</h3>
+        <ul class="vit-cards">
+          {outras.map((t) => (
+            <li class="vit-card">
+              <Comparador t={t} alturaMax="55svh" />
+              <h4>{t.nome}</h4>
+              <p class="vit-meta"><strong>{t.resultado}</strong> · {t.idade}</p>
+              <p class="vit-historia">{t.historia}</p>
+              <blockquote><p>“{t.depoimento}”</p></blockquote>
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+
+    <div class="vit-rodape">
+      <aside class="vit-nao">
+        <h3>{v.nao_se_compare.titulo}</h3>
+        <p>{v.nao_se_compare.texto}</p>
+      </aside>
+      <div class="vit-cta">
+        <a class="btn" href={v.links.cta} target="_blank" rel="noopener" data-evento="vitrine_cta_click" data-ref={pagina}>Quero começar minha transformação</a>
+        <a class="link-forte" href={v.links.todas} target="_blank" rel="noopener" data-evento="vitrine_resultados_click" data-ref={pagina}>Ver todas as transformações</a>
+        <p class="vit-aviso">{v.aviso}</p>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .vitrine { margin-top: 32px; padding: 28px 22px; border: 1px solid var(--linha); border-radius: 14px; background: var(--cartao); }
+  .vitrine h2 { margin: 6px 0 8px; }
+  .vit-sub { color: var(--texto2); margin: 0 0 6px; }
+  .vit-intro { margin: 0 0 22px; }
+  .vit-destaque { display: grid; gap: 22px; align-items: start; }
+  @media (min-width: 820px) { .vit-destaque { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+  .vit-texto h3 { margin: 0; font-size: 24px; }
+  .vit-meta { margin: 4px 0 10px; color: var(--cinza); font-size: 15px; }
+  .vit-dados { display: flex; flex-wrap: wrap; gap: 10px 26px; margin: 0 0 12px; }
+  .vit-dados dt { font: 700 12px/1.3 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--cinza); }
+  .vit-dados dd { margin: 2px 0 0; font: 700 22px/1.2 var(--display); }
+  .vitrine blockquote { margin: 12px 0 0; padding: 4px 0 4px 14px; border-left: 3px solid var(--alameda); font-style: italic; }
+  .vitrine blockquote p { margin: 0; }
+  .vit-outras-t { margin: 34px 0 14px; font-size: 21px; }
+  .vit-cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+  .vit-card h4 { margin: 12px 0 0; font-size: 19px; }
+  .vit-historia { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; margin: 0; font-size: 16px; }
+  .vit-card blockquote { font-size: 15px; }
+  .vit-rodape { display: grid; gap: 20px; margin-top: 30px; align-items: start; }
+  @media (min-width: 820px) { .vit-rodape { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); } }
+  .vit-nao { padding: 18px; border-radius: 10px; background: var(--musgo); }
+  .vit-nao h3 { margin: 0 0 6px; font-size: 19px; }
+  .vit-nao p { margin: 0; font-size: 16px; }
+  .vit-cta { display: grid; gap: 12px; justify-items: start; }
+  .vit-aviso { margin: 0; font-size: 14px; color: var(--cinza); }
+</style>
+
+<script>
+  // vitrine_view: uma vez por página, quando a seção entra na tela.
+  const secao = document.querySelector<HTMLElement>('[data-vitrine]');
+  if (secao && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((itens) => {
+      if (!itens.some((i) => i.isIntersecting)) return;
+      obs.disconnect();
+      const w = window as any;
+      if (typeof w.otaEvento === 'function') w.otaEvento('vitrine_view', { ref: secao.dataset.ref || '' });
+      else (w.dataLayer = w.dataLayer || []).push({ event: 'vitrine_view', pagina: location.pathname, ref: secao.dataset.ref || '' });
+    }, { threshold: 0.3 });
+    // Observa o comparador em destaque: a seção inteira é mais alta que a tela do celular.
+    obs.observe(secao.querySelector('[data-cmp]') || secao);
+  }
+</script>

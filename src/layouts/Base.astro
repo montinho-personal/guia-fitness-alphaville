@@ -34,7 +34,7 @@ const nav = [
   { nome: 'Guias', url: '/guias/' },
   { nome: 'Ferramentas', url: '/ferramentas/' },
 ];
-const atual = (u: string) => (Astro.url.pathname.startsWith(u) ? 'page' : undefined);
+const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(u) ? 'page' : undefined);
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">

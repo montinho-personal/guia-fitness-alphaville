@@ -16,6 +16,9 @@ fontes:
 video:
   id: yqPAYRVTe0E
   titulo: "Não existe o treino perfeito"
+vitrine:
+  destaque: adriana-nascimento
+  intro: "Esta página trata de musculação, mas atenção: todos os antes e depois com foto abaixo são de emagrecimento, e não de ganho de massa muscular. São alunos do Montinho, publicados no site dele."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

@@ -1,0 +1,83 @@
+---
+// Comparador antes/depois arrastável. Sem JavaScript, fica parado em 50%.
+// A foto "depois" fica inteira embaixo; a "antes" por cima, recortada por clip-path.
+import type { Transformacao } from '../lib/vitrine';
+interface Props { t: Transformacao; alturaMax: string; destaque?: boolean }
+const { t, alturaMax, destaque = false } = Astro.props;
+const { largura: w, altura: h } = t.fotos;
+const altAntes = `Antes: ${t.nome} no início do acompanhamento com o Montinho`;
+const altDepois = t.acompanhamento
+  ? `Depois: ${t.nome} após ${t.acompanhamento} de acompanhamento (${t.resultado})`
+  : `Depois: ${t.nome} após o acompanhamento com o Montinho (${t.resultado})`;
+---
+<figure class:list={['cmp-fig', { destaque }]}>
+  <div class="cmp" data-cmp data-aluno={t.slug} style={`--pos:50%;aspect-ratio:${w} / ${h};max-width:min(100%, calc(${alturaMax} * ${w} / ${h}))`}>
+    <img class="cmp-depois" src={t.fotos.depois} alt={altDepois} width={w} height={h} loading="lazy" decoding="async" />
+    <img class="cmp-antes" src={t.fotos.antes} alt={altAntes} width={w} height={h} loading="lazy" decoding="async" />
+    <span class="cmp-linha" aria-hidden="true"><span class="cmp-puxador"></span></span>
+    <span class="cmp-et cmp-et-antes" aria-hidden="true">Antes</span>
+    <span class="cmp-et cmp-et-depois" aria-hidden="true">Depois</span>
+    <span class="cmp-dica" aria-hidden="true">Arraste para comparar</span>
+    <input class="cmp-range" type="range" min="0" max="100" step="1" value="50" aria-label={`Comparar antes e depois de ${t.nome}`} />
+  </div>
+  <figcaption>Fotos reais de {t.nome}, sem retoque.</figcaption>
+</figure>
+
+<style>
+  .cmp-fig { margin: 0; }
+  .cmp { position: relative; width: 100%; margin: 0 auto; overflow: hidden; border-radius: 10px; background: var(--tinta); touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: ew-resize; }
+  .cmp img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; -webkit-user-drag: none; }
+  .cmp-antes { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+  .cmp-linha { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: #fff; box-shadow: 0 0 0 1px rgba(16, 27, 45, .25); pointer-events: none; }
+  .cmp-puxador { position: absolute; top: 50%; left: 50%; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: #fff; box-shadow: 0 2px 10px rgba(16, 27, 45, .35); }
+  .cmp-puxador::before, .cmp-puxador::after { content: ""; position: absolute; top: 50%; width: 0; height: 0; margin-top: -6px; border: 6px solid transparent; }
+  .cmp-puxador::before { left: 7px; border-right-color: var(--tinta); }
+  .cmp-puxador::after { right: 7px; border-left-color: var(--tinta); }
+  .cmp-et { position: absolute; top: 10px; padding: 3px 8px; border-radius: 3px; background: rgba(16, 27, 45, .72); color: #fff; font: 700 11px/1.4 var(--display); letter-spacing: .08em; text-transform: uppercase; pointer-events: none; }
+  .cmp-et-antes { left: 10px; }
+  .cmp-et-depois { right: 10px; }
+  .cmp-dica { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); padding: 4px 10px; border-radius: 999px; background: rgba(16, 27, 45, .72); color: #fff; font: 600 13px/1.4 var(--display); white-space: nowrap; pointer-events: none; }
+  .cmp.usado .cmp-dica { display: none; }
+  .cmp-range { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; pointer-events: none; }
+  .cmp:has(.cmp-range:focus-visible) .cmp-puxador { outline: 3px solid var(--sinal); outline-offset: 3px; }
+  figcaption { margin-top: 8px; font-size: 14px; color: var(--cinza); text-align: center; }
+</style>
+
+<script>
+  function iniciar(cmp: HTMLElement) {
+    if (cmp.dataset.pronto) return;
+    cmp.dataset.pronto = '1';
+    const range = cmp.querySelector<HTMLInputElement>('.cmp-range')!;
+    let usado = false;
+    const posicionar = (p: number) => {
+      const v = Math.round(Math.max(0, Math.min(100, p)) * 10) / 10;
+      cmp.style.setProperty('--pos', `${v}%`);
+      range.value = String(Math.round(v));
+    };
+    const primeiroUso = (como: string) => {
+      if (usado) return;
+      usado = true;
+      cmp.classList.add('usado');
+      const dados = { aluno: cmp.dataset.aluno || '', como };
+      const w = window as any;
+      if (typeof w.otaEvento === 'function') w.otaEvento('vitrine_comparador', dados);
+      else (w.dataLayer = w.dataLayer || []).push({ event: 'vitrine_comparador', pagina: location.pathname, ...dados });
+    };
+    const peloPonteiro = (e: PointerEvent) => {
+      const r = cmp.getBoundingClientRect();
+      posicionar(((e.clientX - r.left) / r.width) * 100);
+    };
+    cmp.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0) return;
+      cmp.setPointerCapture(e.pointerId);
+      peloPonteiro(e);
+      primeiroUso(e.pointerType === 'mouse' ? 'mouse' : 'toque');
+    });
+    cmp.addEventListener('pointermove', (e) => { if (cmp.hasPointerCapture(e.pointerId)) peloPonteiro(e); });
+    const soltar = (e: PointerEvent) => { if (cmp.hasPointerCapture(e.pointerId)) cmp.releasePointerCapture(e.pointerId); };
+    cmp.addEventListener('pointerup', soltar);
+    cmp.addEventListener('pointercancel', soltar);
+    range.addEventListener('input', () => { posicionar(Number(range.value)); primeiroUso('teclado'); });
+  }
+  document.querySelectorAll<HTMLElement>('[data-cmp]').forEach(iniciar);
+</script>

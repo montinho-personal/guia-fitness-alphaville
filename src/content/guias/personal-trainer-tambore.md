@@ -22,6 +22,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/nitrogym-tambore/"
   - titulo: "Ficha da Bluefit Tamboré no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-tambore/"
+vitrine:
+  destaque: bruna-rodrigues
+  intro: "Se a dúvida é se treinar com acompanhamento dá resultado, aqui estão alunos reais do Montinho. Todos os casos com foto são de emagrecimento, e o formato de acompanhamento de cada um aparece ao lado do nome."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

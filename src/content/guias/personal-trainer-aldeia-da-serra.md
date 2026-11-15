@@ -18,6 +18,9 @@ cta_destino: /blog/personal-trainer-aldeia-da-serra
 fontes:
   - titulo: "Mapa das academias do Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/mapa/"
+vitrine:
+  destaque: elisa-cruz
+  intro: "Na Aldeia da Serra o treino acompanhado costuma acontecer em casa ou no condomínio. Os alunos do Montinho abaixo mostram resultados de emagrecimento; o formato de cada caso aparece ao lado do nome."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

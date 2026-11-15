@@ -1,0 +1,20 @@
+# Atualiza a Vitrine de transformações de hora em hora.
+# O site é estático: o feed https://www.montinhopersonal.com.br/api/vitrine é lido no build.
+# Este agendamento dispara um novo build de produção na Vercel por um Deploy Hook.
+# Configuração (uma vez): Vercel > projeto > Settings > Git > Deploy Hooks > criar para a branch main,
+# e salvar a URL no GitHub como secret VERCEL_DEPLOY_HOOK_VITRINE. Sem o secret, o job só avisa e sai.
+name: Atualizar vitrine
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Disparar build de produção
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_VITRINE }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "::notice::Secret VERCEL_DEPLOY_HOOK_VITRINE não configurado; nada a fazer."; exit 0; fi
+          curl -fsS -X POST "$HOOK" > /dev/null && echo "Build disparado."

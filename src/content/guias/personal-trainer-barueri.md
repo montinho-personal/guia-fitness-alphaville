@@ -22,6 +22,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/precos/"
   - titulo: "Fichas das academias de Barueri no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/regioes/barueri/"
+vitrine:
+  destaque: elisa-cruz
+  intro: "Antes de somar mensalidade e personal na conta, vale ver o que esse acompanhamento produziu em alunos do Montinho. São casos de emagrecimento, cada um com o próprio ponto de partida."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

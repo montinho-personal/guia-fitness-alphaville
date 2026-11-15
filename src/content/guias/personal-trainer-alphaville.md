@@ -20,6 +20,9 @@ lista_ids: [arena-18-alphaville, ironberg-alphaville, scelta-alphaville, 24h-pre
 fontes:
   - titulo: "Fichas das academias do Onde Treinar Alphaville, com fonte e data de cada informação"
     url: "https://guiafitnessalphaville.com.br/academias/"
+vitrine:
+  destaque: natalia-nascimento
+  intro: "Para quem está avaliando um personal em Alphaville, estes são resultados de alunos do Montinho, publicados no site dele. Mostram o que o acompanhamento fez por essas pessoas; não indicam onde elas moram nem garantem que o resultado se repita."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

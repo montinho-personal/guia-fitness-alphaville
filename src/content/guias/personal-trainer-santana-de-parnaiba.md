@@ -20,6 +20,9 @@ lista_ids: [fabrica-premium-alphaville, forth-academia-jardim-sao-luis, mattos-f
 fontes:
   - titulo: "Academias de Santana de Parnaíba no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/regioes/santana-de-parnaiba/"
+vitrine:
+  destaque: adriana-nascimento
+  intro: "O Montinho também atende em Santana de Parnaíba, e abaixo estão antes e depois de alunos dele. Os resultados são individuais e de emagrecimento; a vitrine não informa onde cada pessoa mora."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
