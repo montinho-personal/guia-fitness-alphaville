@@ -18,8 +18,8 @@ fontes:
   - titulo: "Site oficial da Smart Fit (página da unidade)"
     url: "https://www.smartfit.com.br/academias/parque-shopping-barueri"
 video:
-  id: Dg8Sbv6_V8w
-  titulo: "Meu maior conselho para quem quer emagrecer"
+  id: CgPDOWBXh8k
+  titulo: "Eu pesava 40 kg a mais e achava que ia ser pra sempre"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

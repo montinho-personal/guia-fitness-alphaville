@@ -9,8 +9,8 @@ palavra_chave: personal trainer aldeia da serra
 intencao: Comercial local. Morador da Aldeia da Serra procurando acompanhamento sem precisar se deslocar.
 cta: montinho-contextual
 video:
-  id: Dg8Sbv6_V8w
-  titulo: "Meu maior conselho para quem quer emagrecer"
+  id: CgPDOWBXh8k
+  titulo: "Eu pesava 40 kg a mais e achava que ia ser pra sempre"
   publicado_em: 2026-09-25
 cta_titulo: "Treinar com o Montinho na Aldeia da Serra"
 cta_texto: "O Montinho Personal Trainer, que mantém este guia, atende moradores da Aldeia da Serra em casa e no espaço fitness do condomínio."
