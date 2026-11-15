@@ -1,5 +1,5 @@
 ---
-titulo: "Personal trainer para iniciantes em Barueri: academia e acompanhamento"
+titulo: "Personal trainer para iniciantes em Barueri: por onde começar"
 descricao: "Começar a treinar em Barueri gastando pouco: academias de preço publicado baixo, o papel do professor de sala e quando somar um personal ao plano."
 h1: "Personal trainer para iniciantes em Barueri: como montar o começo"
 resposta: "Em Barueri, o iniciante encontra academias de rede no Centro com mensalidade publicada entre R$ 119,90 e R$ 139,90 com fidelidade. Uma combinação comum é usar uma delas como base e contratar personal por um período curto, para aprender a técnica e ganhar autonomia."

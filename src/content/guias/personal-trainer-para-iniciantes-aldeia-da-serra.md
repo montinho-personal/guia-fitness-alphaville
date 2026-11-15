@@ -1,5 +1,5 @@
 ---
-titulo: "Personal trainer para iniciantes na Aldeia da Serra: começar em casa"
+titulo: "Personal trainer para iniciantes na Aldeia da Serra"
 descricao: "Começar a treinar na Aldeia da Serra, onde não há academia com ficha no guia: treino em casa, no condomínio ou ao ar livre, e o papel do personal."
 h1: "Personal trainer para iniciantes na Aldeia da Serra"
 resposta: "A Aldeia da Serra não tem academia com ficha neste guia, então o iniciante costuma começar em casa, no espaço fitness do residencial ou ao ar livre nas ruas internas. Para esse começo sem academia, o personal leva o planejamento e parte do material e ensina os movimentos básicos."

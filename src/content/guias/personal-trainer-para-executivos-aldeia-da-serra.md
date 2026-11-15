@@ -1,5 +1,5 @@
 ---
-titulo: "Personal trainer para executivos na Aldeia da Serra: treino em casa"
+titulo: "Personal trainer para executivos na Aldeia da Serra"
 descricao: "Sem academia com ficha na Aldeia da Serra, quem tem agenda cheia treina com personal em casa antes do trabalho, no condomínio ou nas ruas internas."
 h1: "Personal trainer para executivos na Aldeia da Serra: a sessão antes de sair de casa"
 resposta: "A Aldeia da Serra não tem academia com ficha no guia, então o treino de quem tem pouco tempo acontece em casa, no espaço fitness do residencial ou ao ar livre nas ruas internas. A vantagem é começar cedo, sem deslocamento, e já sair pronto para o trabalho."

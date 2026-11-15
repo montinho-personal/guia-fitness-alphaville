@@ -1,5 +1,5 @@
 ---
-titulo: "Personal trainer a domicílio no Tamboré: aulas em casa no condomínio"
+titulo: "Personal trainer a domicílio no Tamboré: aulas em casa"
 descricao: "Personal trainer a domicílio no Tamboré: dúvidas a tirar antes de começar, como usar a casa no residencial e quando NitroGym ou Bluefit Tamboré completam o treino."
 h1: "Personal trainer a domicílio no Tamboré"
 resposta: "No Tamboré, onde predominam os condomínios residenciais, a aula a domicílio acontece dentro do condomínio, na casa do aluno. Antes de começar, descubra como o prestador entra e qual cômodo vira abrigo em dia de chuva. Para variar o estímulo, NitroGym e Bluefit Tamboré são as duas fichas de academia que o guia mantém no bairro."

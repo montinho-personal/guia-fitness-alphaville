@@ -1,5 +1,5 @@
 ---
-titulo: "Personal trainer a domicílio em Santana de Parnaíba: o que combinar"
+titulo: "Personal trainer a domicílio em Santana de Parnaíba"
 descricao: "Em Santana de Parnaíba os trajetos são longos. Veja o que combinar com o personal a domicílio: deslocamento, pontualidade, remarcação e academias de apoio."
 h1: "Personal trainer a domicílio em Santana de Parnaíba"
 resposta: "Os trajetos dentro de Santana de Parnaíba são longos, e isso pesa no treino a domicílio. Antes de começar, pergunte se existe cobrança extra pela viagem, qual a tolerância de atraso e como funciona a remarcação. Como as academias de bairro ficam fechadas no domingo, a aula em casa também resolve esse dia."
