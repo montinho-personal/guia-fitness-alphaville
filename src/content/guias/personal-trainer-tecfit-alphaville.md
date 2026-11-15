@@ -17,6 +17,9 @@ lista_ids: [tecfit-alphaville]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/tecfit-alphaville-alphaville-industrial-barueri/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -31,6 +34,10 @@ atualizado_em: 2026-11-15
 ## Três ferramentas num endereço só
 
 Na Alameda Araguaia, 762, no Alphaville Industrial, a Tecfit lista três modalidades: musculação, treino funcional e eletroestimulação. A proposta foge da academia convencional justamente por esse terceiro item, que usa estímulo elétrico nos músculos durante o treino. O guia ainda não tem a confirmação de como as sessões são organizadas nem de quanto tempo duram; os dois pontos constam como pendentes.
+
+![Antes e depois do Montinho, personal trainer em Alphaville: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
 
 ## Onde fica o personal nesse modelo
 
@@ -51,6 +58,10 @@ A página informa estacionamento, área adaptada a cadeirantes, vestiário com c
 ## Valores conhecidos e desconhecidos
 
 O plano direto não tem valor publicado. Pelo Wellhub, o estúdio exige o Gold+, plano de R$ 439,99, igual ao exigido pela [Academia 24h Premium](/academias/24h-premium-alphaville/). Se houver personal externo, entram também o honorário dele e uma eventual taxa do estúdio. Os valores das outras academias estão em [preços](/academias/precos/); os planos de agregador, em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer em Alphaville, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Para treino individual na mesma região
 

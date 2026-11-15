@@ -16,6 +16,9 @@ lista_ids: [fabrica-premium-alphaville, mattos-fitness-fazendinha, forth-academi
 fontes:
   - titulo: "Fichas das academias de Santana de Parnaíba no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -32,6 +35,10 @@ atualizado_em: 2026-11-15
 Santana de Parnaíba é um município extenso. Trechos de Alphaville e do Tamboré estão dentro dele, e os demais bairros ficam espalhados longe desse eixo. Para quem trabalha muitas horas, isso muda a pergunta. Não basta achar um horário livre; é preciso que o lugar do treino esteja onde você já passa.
 
 Por isso, antes de escolher academia, desenhe o seu dia: onde dorme, onde trabalha, por onde volta. O treino entra no ponto em que esse trajeto já cruza uma academia, ou então acontece em casa.
+
+![Antes e depois do Montinho, personal trainer para executivos em Santana de Parnaíba: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
 
 ## Do lado de Alphaville: estrutura para quem chega de carro
 
@@ -54,6 +61,10 @@ A Olympia merece atenção: quem pensava em treinar no intervalo do meio-dia vai
 ## O agregador nos bairros
 
 Nos bairros, níveis básicos do Wellhub já dão acesso. Mattos Fitness e Olympia entram no Wellhub desde o Basic; a Forth, desde o Basic+. Confira o seu plano em [Wellhub e TotalPass na região](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer para executivos em Santana de Parnaíba, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que atende em Santana de Parnaíba.*
 
 ## Quando nenhuma academia cabe no trajeto
 

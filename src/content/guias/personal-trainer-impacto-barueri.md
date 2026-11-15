@@ -17,6 +17,9 @@ lista_ids: [impacto-barueri]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/academia-impacto-barueri/"
+video:
+  id: yndKE1GrnUQ
+  titulo: "Toda pessoa com shape tem uma coisa em comum"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -31,6 +34,10 @@ atualizado_em: 2026-11-15
 ## Abre às 5h: dá para treinar antes do expediente?
 
 Dá. Nos dias úteis, a Impacto abre das 5h às 22h. Uma sessão bem cedo deixa a manhã livre para o trabalho, e o fim do dia também está coberto. No sábado, o horário vai das 8h às 14h. A [ficha da Academia Impacto](/academias/impacto-barueri/) não traz horário de domingo; quem só treina nesse dia pode consultar a [relação de academias com domingo](/academias/domingo/).
+
+![Antes e depois do Montinho, personal trainer em Barueri: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do personal que mantém este guia. Nenhum resultado é garantido.*
 
 ## Tem estrutura para um treino acompanhado?
 
@@ -54,6 +61,10 @@ A academia não divulgou mensalidade. No Wellhub, ela aparece desde o Basic+, de
 ## Chegando de carro
 
 Estacionamento não aparece na fonte. A academia fica perto do limite com Santana de Parnaíba, no número 32 da Rua Bélgica. Pergunte onde parar antes do primeiro treino.
+
+![Montinho, personal trainer em Barueri, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Barueri.*
 
 ## Outras academias de bairro em Barueri
 

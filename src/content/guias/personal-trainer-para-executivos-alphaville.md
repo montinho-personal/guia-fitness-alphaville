@@ -16,6 +16,9 @@ lista_ids: [arena-18-alphaville, scelta-alphaville, 24h-premium-alphaville, gavi
 fontes:
   - titulo: "Fichas das academias do Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -32,6 +35,10 @@ atualizado_em: 2026-11-15
 Quando o dia é uma sequência de reuniões, o maior inimigo do treino não é a preguiça. É a agenda que muda. Por isso, a primeira decisão não é qual exercício fazer, e sim qual horário ninguém vai tirar de você. Em Alphaville, três janelas costumam sobreviver a uma semana corrida: o começo da manhã, o intervalo do almoço e o fim da noite.
 
 Escolha uma, bloqueie no calendário como se fosse reunião com cliente e combine o mesmo horário com o personal. Sessão marcada com outra pessoa é mais difícil de cancelar do que treino solto.
+
+![Antes e depois do Montinho, personal trainer para executivos em Alphaville: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do personal que mantém este guia. Nenhum resultado é garantido.*
 
 ## Antes das 7h: quem já está de portas abertas
 
@@ -52,6 +59,10 @@ Há semanas em que nada cabe antes das 21h. Para elas, existem duas academias de
 ## O benefício que talvez a empresa já pague
 
 Se o pacote de benefícios do seu emprego inclui Wellhub ou TotalPass, confira o nível do plano antes de assinar mensalidade por fora. Na Arena 18, o Wellhub começa no Gold e o TotalPass no TP 4; na Scelta, só o Wellhub Gold ou superior dá acesso. Veja os níveis de cada academia em [Wellhub e TotalPass](/academias/wellhub-totalpass/). O agregador cobre o acesso à academia; o personal é contratado à parte.
+
+![Montinho, personal trainer para executivos em Alphaville, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que atende em Alphaville.*
 
 ## Semana de viagem não precisa zerar tudo
 

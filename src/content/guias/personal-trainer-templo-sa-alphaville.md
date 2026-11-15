@@ -19,6 +19,9 @@ fontes:
     url: "https://wellhub.com/pt-br/search/partners/templo-sa-alphaville-alphaville-industrial-barueri/"
   - titulo: "Página da unidade no TotalPass"
     url: "https://totalpass.com/br/academias/templo-sa-crossfit/"
+video:
+  id: DiH1OzIR6Yk
+  titulo: "É impossível isso dar errado"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -33,6 +36,10 @@ atualizado_em: 2026-11-15
 ## Um box, dois nomes
 
 No Wellhub, a unidade aparece como "Hybrid Fitness". No TotalPass, como "Templo SA – CrossFit". O endereço é o mesmo: Alameda Araguaia, 122, em Alphaville Industrial. Se você for procurar o box num aplicativo, tente os dois nomes. Qual dos dois o box usa hoje ainda está em aberto na [ficha do Templo SA](/academias/templo-sa-alphaville/).
+
+![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
 
 ## Coach de turma não é personal
 
@@ -56,6 +63,10 @@ Segundo o Wellhub, de segunda a quarta o box funciona das 6h às 13h e das 17h15
 ## Agregadores no lugar da mensalidade
 
 O valor da mensalidade e o da aula avulsa não foram publicados. O que existe é o preço dos agregadores: no Wellhub, o nível mínimo é o Gold, de R$ 319,99; no TotalPass, o TP 4, de R$ 299,90. Os dois agregadores são comparados em [Wellhub e TotalPass](/academias/wellhub-totalpass/). Honorário do personal e eventual cobrança do box sobre profissional externo ficam fora dessa conta. A ficha informa estacionamento, inclusive vaga acessível, além de ar condicionado e vestiário.
+
+![Montinho, personal trainer em Alphaville, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Vizinhos de galpão e de avenida
 

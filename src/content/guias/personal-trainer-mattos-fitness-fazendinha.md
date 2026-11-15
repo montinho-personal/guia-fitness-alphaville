@@ -17,6 +17,9 @@ lista_ids: [mattos-fitness-fazendinha]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/academia-mattos-fitness/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -33,6 +36,10 @@ atualizado_em: 2026-11-15
 Por causa do horário de abertura. A [Academia Mattos Fitness](/academias/mattos-fitness-fazendinha/), na Estrada Tenente Marques, número 5516, abre às 4h de segunda a sexta. Entre as academias do guia que não funcionam 24 horas, nenhuma começa tão cedo. Fecha às 22h.
 
 Para quem sai de casa muito cedo, dá para cumprir a sessão inteira com o profissional antes de começar o dia de serviço. No sábado, a academia funciona das 8h às 14h. Domingo aparece sem horário.
+
+![Antes e depois do Montinho, personal trainer em Santana de Parnaíba: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
 
 ## Que tipo de treino cabe ali?
 
@@ -54,6 +61,10 @@ Nada a respeito foi publicado, até onde o guia apurou. Antes de assinar com o t
 A Mattos não divulga mensalidade própria. No agregador Wellhub, o plano mais barato que dá entrada é o Basic, de R$ 69,99. O TotalPass mostra uma unidade Mattos Fitness no mesmo número da Tenente Marques, mas o guia não confirmou se o cadastro é da mesma academia. Confira os planos em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
 
 No orçamento, inclua ainda o preço acertado com o personal e uma cobrança de acesso, caso exista. A página não menciona estacionamento, então vale perguntar onde deixar o carro.
+
+![Montinho, personal trainer em Santana de Parnaíba, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Santana de Parnaíba.*
 
 ## E se a Mattos não der certo?
 

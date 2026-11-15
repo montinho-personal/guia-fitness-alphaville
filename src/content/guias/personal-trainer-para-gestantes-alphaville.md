@@ -20,6 +20,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/arena-18-alphaville/"
   - titulo: "Ficha da Academia Scelta no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/scelta-alphaville/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -38,6 +41,10 @@ Gravidez não é hora de montar treino por conta própria nem de seguir o plano 
 A Organização Mundial da Saúde, nas diretrizes de atividade física publicadas em 2020, traz recomendações próprias para gestantes e para o período pós-parto. Esse documento é uma referência geral. Ele não substitui o acompanhamento de quem conhece o seu histórico.
 
 Com a liberação em mãos, o papel do personal é transformar as orientações médicas em sessões possíveis, e mudar o plano a cada trimestre conforme o médico indicar.
+
+![Antes e depois do Montinho, personal trainer para gestantes em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O próprio Montinho, em dois momentos da vida. O que mudou foi a constância, ano após ano.*
 
 ## Cinco dúvidas para levar ao primeiro contato
 
@@ -65,6 +72,10 @@ Se o seu personal é externo, pergunte à academia se ele pode entrar e em que c
 Três detalhes práticos fazem diferença na rotina de quem está grávida em Alphaville. O primeiro é o ambiente climatizado, que a maioria das unidades citadas informa. O segundo é deixar o carro perto da porta: estacionamento acessível ou valet reduzem o trajeto a pé. O terceiro é o horário. Vale perguntar à equipe da unidade em que períodos o salão enche, para escolher os mais vazios, com menos espera por aparelho.
 
 Muita gente da região trabalha nos polos empresariais. Treinar perto do escritório pode encaixar na agenda, mas a sala de casa, ou a de ginástica do residencial, também resolve, sem trânsito nem fila.
+
+![Montinho, personal trainer para gestantes em Alphaville, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que atende em Alphaville.*
 
 ## Voltar a treinar depois do parto
 

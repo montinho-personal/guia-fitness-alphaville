@@ -17,6 +17,9 @@ lista_ids: [voifit-alphaville]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/voifit-academia-alphaville-empresarial-18-do-forte-barueri/"
+video:
+  id: yndKE1GrnUQ
+  titulo: "Toda pessoa com shape tem uma coisa em comum"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -33,6 +36,10 @@ atualizado_em: 2026-11-15
 A [VoiFit](/academias/voifit-alphaville/) fica na Av. Alphaville, 779, dentro do Empresarial 18 do Forte, um dos polos de escritórios da região. Quem trabalha no conjunto pode treinar antes de subir para a mesa, na hora do almoço ou no fim do dia. De segunda a sexta, o horário vai das 6h às 23h.
 
 No fim de semana o horário encolhe, mas não some: sábado das 9h às 17h e domingo das 10h às 14h. Quem quer sessão cedo no sábado precisa marcar a partir das 9h.
+
+![Antes e depois do Montinho, personal trainer em Alphaville: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do Montinho. Serve de inspiração, não de garantia para quem contrata.*
 
 ## Sobre levar o seu próprio personal
 
@@ -54,6 +61,10 @@ A lista de comodidades é curta: ar-condicionado, armários, vestiário, Wi-Fi, 
 ## O que entra no orçamento
 
 Não há mensalidade direta publicada. No Wellhub, basta o Silver (R$ 149,99) para entrar na VoiFit. O estacionamento consta na ficha, mas regras e custo ainda estão pendentes. Some ainda o personal e a possível taxa da academia. Para comparar, veja a [tabela de preços](/academias/precos/).
+
+![Montinho, personal trainer em Alphaville, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Duas vizinhas para comparar
 

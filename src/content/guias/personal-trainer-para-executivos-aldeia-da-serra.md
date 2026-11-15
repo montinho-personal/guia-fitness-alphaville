@@ -14,6 +14,9 @@ cta_destino: /blog/personal-trainer-aldeia-da-serra
 fontes:
   - titulo: "Ficha da Ironberg Alphaville no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/ironberg-alphaville/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -30,6 +33,10 @@ atualizado_em: 2026-11-15
 Entre a mata e os portões dos residenciais, num território repartido por dois municípios, o cadastro deste guia não traz academia comercial alguma. Para quem trabalha muito, isso parece um problema e acaba sendo uma solução. Se não existe academia para ir, também não existe trajeto até ela. O personal chega, a sessão acontece, e você toma banho no seu próprio banheiro antes da primeira call.
 
 O horário mais protegido de uma agenda executiva costuma ser o que vem antes de todo mundo acordar. Reunião às 6h é rara. Reservar essa faixa e treinar ali mesmo, na sala, é a forma mais direta de garantir que ele aconteça.
+
+![Antes e depois do Montinho, personal trainer para executivos na Aldeia da Serra: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O próprio Montinho, em dois momentos da vida. O que mudou foi a constância, ano após ano.*
 
 ## O que a casa precisa ter
 
@@ -50,6 +57,10 @@ As ruas internas permitem caminhada, corrida leve e circuitos com elástico ou p
 ## Quando a semana pede academia
 
 Às vezes você quer mais estrutura, ou vai treinar no fim do dia, já fora de casa. Cuidado com a semelhança dos nomes: a [Ironberg](/academias/ironberg-alphaville/), endereço da Estrada da Aldeinha, pertence a outro bairro de Barueri e não se confunde com a Aldeia da Serra. Abre sem interrupção, sete dias por semana, e é a única academia com ficha no guia que divulga como funciona o atendimento por profissional externo: ele deixa com a academia uma quantia fixa, cujo valor só se descobre lá. Quem tem TotalPass corporativo precisa do TP 6 ou acima. Outras opções com horário estendido estão em [academias abertas 24 horas](/academias/24-horas/), e os níveis de cada agregador em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer para executivos na Aldeia da Serra, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que atende na Aldeia da Serra.*
 
 ## Antes de assinar
 

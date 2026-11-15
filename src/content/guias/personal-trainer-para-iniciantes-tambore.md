@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/nitrogym-tambore/"
   - titulo: "Ficha da Bluefit Tamboré no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-tambore/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -34,6 +37,10 @@ atualizado_em: 2026-11-15
 Boa parte do Tamboré é ocupada por condomínios residenciais. Se o seu tiver sala de ginástica, começar ali tem vantagens claras para quem nunca treinou: zero deslocamento, pouca gente olhando e a chance de errar sem constrangimento.
 
 O limite é o equipamento, quase sempre mais simples. Nas primeiras semanas isso pesa pouco, porque o foco é aprender o movimento com cargas leves. Mais adiante, quando o corpo pede mais estímulo, a academia comercial passa a fazer sentido. Antes de levar um personal para dentro do condomínio, peça à administração as regras de acesso de prestadores.
+
+![Antes e depois do Montinho, personal trainer para iniciantes no Tamboré: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do personal que mantém este guia. Nenhum resultado é garantido.*
 
 ## As duas academias do bairro, vistas por quem é novo
 
@@ -52,6 +59,10 @@ Observe três coisas: se os aparelhos que você usaria estão livres, se o profe
 ## Sábado e domingo contam
 
 Para quem trabalha a semana toda, o fim de semana costuma ser o momento mais calmo para aprender. A NitroGym funciona nos dois dias do fim de semana entre 6h e 22h. Na Bluefit Tamboré, o sábado vai das 8h às 17h e o domingo termina às 14h, com início às 8h. Há outras alternativas na página de [treino aos domingos](/academias/domingo/).
+
+![Montinho, personal trainer para iniciantes no Tamboré, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que atende no Tamboré.*
 
 ## Do acompanhamento à autonomia
 

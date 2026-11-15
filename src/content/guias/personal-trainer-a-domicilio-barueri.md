@@ -16,6 +16,9 @@ lista_ids: [panobianco-barueri-centro, smart-fit-barueri-centro, bluefit-barueri
 fontes:
   - titulo: "Tabela de preços de academias do Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/precos/"
+video:
+  id: DiH1OzIR6Yk
+  titulo: "É impossível isso dar errado"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -32,6 +35,10 @@ atualizado_em: 2026-11-15
 Com tantos prédios em condomínio na cidade, receber o personal no próprio apartamento é uma opção real. Não precisa de quarto vazio. Uma sala com o sofá encostado e a mesa de centro afastada já resolve boa parte das aulas.
 
 O ponto de atenção não é o tamanho. É o vizinho de baixo.
+
+![Antes e depois do Montinho, personal trainer a domicílio em Barueri: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do Montinho. Serve de inspiração, não de garantia para quem contrata.*
 
 ## Barulho: o que evitar e o que trocar
 
@@ -52,6 +59,10 @@ Caso o edifício tenha sala de ginástica, descubra se ela aceita profissional d
 ## Equipamento: pouco e que caiba no armário
 
 Apartamento tem pouco lugar para guardar coisa. O profissional normalmente traz o material portátil. Se decidir comprar algo, peça a ele uma indicação específica e escolha peças compactas. Um par de elásticos ocupa uma gaveta. Um banco grande vira cabideiro em poucas semanas.
+
+![Montinho, personal trainer a domicílio em Barueri, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que atende em Barueri.*
 
 ## Centro de Barueri como reforço
 

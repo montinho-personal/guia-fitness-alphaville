@@ -17,6 +17,9 @@ lista_ids: [ct-don-combat-barueri]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/killer-bees-barueri/"
+video:
+  id: yndKE1GrnUQ
+  titulo: "Toda pessoa com shape tem uma coisa em comum"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -31,6 +34,10 @@ atualizado_em: 2026-11-15
 ## Primeiro, o que é o CT Don Combat
 
 É um centro de lutas, não uma academia de musculação. A grade listada no Wellhub tem boxe e muay thai, e o texto da página cita ainda jiu-jitsu e aulas para crianças. O espaço fica no 2º andar da Rua Damião Fernandes, 105, na Vila Sargento José de Paula. Quem procura "Killer Bees Barueri" chega ao mesmo lugar: o link do Wellhub ainda usa esse nome, mas a página apresenta o CT Don Combat. Na [ficha do CT Don Combat](/academias/ct-don-combat-barueri/), o nome em uso ainda está marcado para confirmar.
+
+![Antes e depois do Montinho, personal trainer em Barueri: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
 
 ## Personal de luta e personal de academia
 
@@ -52,6 +59,10 @@ O CT recebe alunos das 6h às 22h em dias úteis; no sábado, o expediente come�
 ## Plano Silver e mensalidade em aberto
 
 O Wellhub dá acesso ao CT a partir do Silver, que custa R$ 149,99 mensais. Já o valor cobrado direto pelo CT não foi publicado. O plano do agregador dá entrada nas aulas; nada indica que inclua sessão individual.
+
+![Montinho, personal trainer em Barueri, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Barueri.*
 
 ## Para musculação com personal em Barueri
 

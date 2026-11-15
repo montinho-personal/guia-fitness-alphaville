@@ -16,6 +16,9 @@ lista_ids: [panobianco-barueri-centro, smart-fit-barueri-centro, bluefit-barueri
 fontes:
   - titulo: "Fichas das academias de Barueri no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -32,6 +35,10 @@ atualizado_em: 2026-11-15
 Prédio com espaço fitness é comum em Barueri, cidade com muitos condomínios verticais. Para quem chega em casa sem energia para pegar o carro de novo, descer até a academia do próprio prédio é a forma mais simples de não faltar. A sala costuma ser menor que a de uma academia comercial, então vale mostrar o espaço ao personal antes da primeira aula. Quem libera o personal na portaria é o condomínio, conforme o regulamento, e quem informa é a síndica, o síndico ou a administradora.
 
 Se o prédio não tem estrutura, ou se você prefere separar casa e treino, passe para o próximo passo.
+
+![Antes e depois do Montinho, personal trainer para executivos em Barueri: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
 ## Passo 2: escolha a academia pelo trajeto, não pelo preço
 
@@ -52,6 +59,10 @@ Um detalhe útil para quem precisa responder mensagens entre uma série e outra:
 ## Passo 4: confira o benefício da empresa
 
 O agregador pode cobrir a academia e deixar só o personal na sua conta. Os níveis variam bastante em Barueri. A Panobianco entra no Wellhub desde o nível Basic, e a Impacto desde o Basic+. Na Smart Fit do Centro, o TotalPass vale do TP 1+ para cima. Já as fichas das unidades Smart Fit da Avenida Zélia e do Parque Shopping não listam nenhum dos dois. Compare na página de [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer para executivos em Barueri, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que atende em Barueri.*
 
 ## E nas semanas que fogem do plano
 

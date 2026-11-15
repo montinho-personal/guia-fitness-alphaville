@@ -20,6 +20,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/panobianco-barueri-centro/"
   - titulo: "Ficha da Bluefit Barueri no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-barueri/"
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -34,6 +37,10 @@ atualizado_em: 2026-11-15
 ## Sem papel do médico, nada de treino
 
 Pessoas idosas que querem começar a se exercitar devem passar por uma consulta antes. A OMS, nas diretrizes publicadas em 2020, defende atividade física regular em todas as idades, incluindo exercícios de força para quem é mais velho. Só que o quanto, o como e o que evitar são decisões do médico, que conhece o histórico do paciente. O personal entra depois, para colocar essas orientações em prática com segurança.
+
+![Antes e depois do Montinho, personal trainer para idosos em Barueri: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O próprio Montinho, em dois momentos da vida. O que mudou foi a constância, ano após ano.*
 
 ## Uma lista curta para visitar a academia
 
@@ -54,6 +61,10 @@ Nem todo mundo depois dos 60 quer ou pode pegar o carro. O trem da CPTM, Linha 8
 ## O prédio como sala de treino
 
 Barueri tem muitos edifícios residenciais equipados com academia na área comum. Para quem tem receio de sair, treinar no próprio prédio resolve boa parte da logística: elevador conhecido, nenhum trajeto, horário flexível. E, se bater o cansaço, o apartamento fica a poucos andares de distância. Pergunte ao síndico se existe cadastro para treinadores externos e em que horários eles podem usar o espaço.
+
+![Montinho, personal trainer para idosos em Barueri, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que atende em Barueri.*
 
 ## Quanto custa a academia
 

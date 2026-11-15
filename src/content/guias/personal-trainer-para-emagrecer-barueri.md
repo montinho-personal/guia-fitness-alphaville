@@ -21,6 +21,9 @@ fontes:
 vitrine:
   destaque: elisa-cruz
   intro: "Quer ver como fica na prática? Aqui estão as fotos de comparação de quem treinou com o Montinho para emagrecer. Os resultados são individuais e dependeram da rotina de cada um."
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -37,6 +40,10 @@ atualizado_em: 2026-11-15
 1. **"Preciso de um treino diferente."** Em geral, o problema não é o treino, é a frequência. Um plano básico cumprido toda semana rende mais que um plano sofisticado interrompido.
 2. **"Se eu treinar bastante, posso comer de tudo."** A alimentação tem peso enorme no emagrecimento, e treino nenhum compensa sozinho uma rotina alimentar desorganizada.
 3. **"A balança vai mostrar tudo."** O peso varia de um dia para o outro por motivos que não têm a ver com gordura. Observe a tendência ao longo de semanas.
+
+![Antes e depois do Montinho, personal trainer para emagrecer em Barueri: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
 
 ## Onde o personal entra
 
@@ -57,6 +64,10 @@ Economizar na academia deixa mais verba para o acompanhamento e para a consulta 
 ## Indo de trem
 
 Os trens da Linha 8-Diamante, da CPTM, param em quatro estações barueirenses: Jardim Silveira, Jardim Belval, Antônio João e a própria estação Barueri. Para quem usa o trem, escolher uma academia no trajeto entre a estação e o trabalho ou a casa elimina um deslocamento extra. Treino que exige um desvio grande tende a ser o primeiro a ser cortado.
+
+![Montinho, personal trainer para emagrecer em Barueri, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que atende em Barueri.*
 
 ## No próprio prédio
 

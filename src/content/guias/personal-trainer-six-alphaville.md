@@ -21,6 +21,9 @@ fontes:
     url: "https://wellhub.com/pt-br/search/partners/voifit-academia-alphaville-empresarial-18-do-forte-barueri/"
   - titulo: "Reportagem da Exame sobre a rede SIX, publicada em 17 de agosto de 2026"
     url: "https://exame.com/negocios/como-e-treinar-na-academia-mais-cara-do-brasil-onde-a-mensalidade-chega-a-r-5-400/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -35,6 +38,10 @@ atualizado_em: 2026-11-15
 ## O personal já vem no pacote de serviços
 
 Diferente da maioria das academias da região, a SIX coloca personal trainer e avaliação física na própria lista de atividades da unidade. Ou seja: o clube oferece acompanhamento individual com a equipe dele. Quem chega sem profissional tem esse caminho à disposição, e vale perguntar na visita como ele é contratado e cobrado.
+
+![Antes e depois do Montinho, personal trainer em Alphaville: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
 
 ## Levar o seu profissional: pergunta em aberto
 
@@ -65,6 +72,10 @@ O fim de semana é curto, então quem quer duas ou três sessões semanais tende
 ## Preço: só o que saiu na imprensa
 
 A SIX não publica valores no site. Numa reportagem da Exame de agosto de 2026, antes da inauguração, o cofundador citou para Alphaville um plano semestral em seis parcelas de R$ 3.900, mais adesão de R$ 600, e contratos de 15 meses vendidos na pré-venda a partir de R$ 2.200, com expectativa de cerca de R$ 2.700 na abertura. São números dados a jornalistas, não tabela oficial, e podem ter mudado. A ficha não registra entrada por Wellhub nem TotalPass. O valor do personal, da casa ou de fora, vem por cima. Veja [os preços publicados na região](/academias/precos/).
+
+![Montinho, personal trainer em Alphaville, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
 
 ## Alternativas no mesmo eixo
 

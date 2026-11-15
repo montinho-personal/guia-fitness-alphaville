@@ -20,6 +20,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/nitrogym-tambore/"
   - titulo: "Ficha da Bluefit Tamboré no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-tambore/"
+video:
+  id: yndKE1GrnUQ
+  titulo: "Toda pessoa com shape tem uma coisa em comum"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -36,6 +39,10 @@ atualizado_em: 2026-11-15
 Antes de pensar em local, horário ou profissional, a gestante precisa ouvir quem conduz o pré-natal. Esse médico avalia o seu quadro, autoriza ou não a atividade e diz o que observar. Nenhum personal deveria começar sem isso.
 
 As diretrizes da OMS de 2020 dedicam um trecho a gestantes e puérperas. Servem como pano de fundo. O plano de cada mulher, porém, nasce do diálogo com o obstetra e precisa ser revisto quando a gravidez avança de um trimestre para outro.
+
+![Antes e depois do Montinho, personal trainer para gestantes no Tamboré: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*O Montinho antes e depois de anos de treino. Resultado individual, contado como história pessoal.*
 
 ## Portão para dentro
 
@@ -55,6 +62,10 @@ O guia tem ficha de duas academias no bairro:
 - Já a **[Bluefit Tamboré](/academias/bluefit-tambore/)**, na Tucunaré, lista ar-condicionado, área de alongamento, vagas para carro e profissionais de personal na própria unidade.
 
 Levar um profissional externo depende de autorização da academia, e as fichas não trazem esse dado. Pergunte. Aproveite a visita para saber quais horários enchem mais e escolha os mais tranquilos.
+
+![Montinho, personal trainer para gestantes no Tamboré, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que atende no Tamboré.*
 
 ## Conversa franca com o candidato
 

@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/panobianco-barueri-centro/"
   - titulo: "Ficha da Bluefit Barueri no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-barueri/"
+video:
+  id: yndKE1GrnUQ
+  titulo: "Toda pessoa com shape tem uma coisa em comum"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -32,6 +35,10 @@ atualizado_em: 2026-11-15
 ## Uma busca, dois desejos
 
 Há mulheres que procuram uma personal mulher por conforto, por preferência pessoal ou por já ter vivido situações desagradáveis em academia. Outras querem um treino feito sob medida para a fase da vida em que estão, e tanto faz quem conduz. Saber qual é o seu caso define onde procurar e o que perguntar.
+
+![Antes e depois do Montinho, personal trainer feminino em Barueri: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
 ## Comparativo das academias que mais interessam
 
@@ -57,6 +64,10 @@ Se o treino for cedo ou à noite, teste o caminho entre a estação ou a sua cas
 Prédios com academia coletiva são numerosos na cidade. Treinar ali com personal evita deslocamento e a exposição de um salão cheio. É também uma boa opção para quem está voltando a se exercitar e ainda não se sente à vontade numa academia grande.
 
 Dois pontos a combinar: os períodos de menor uso e o procedimento do síndico para liberar prestador de serviço. O apartamento também serve, se houver um canto livre no chão.
+
+![Montinho, personal trainer feminino em Barueri, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que atende em Barueri.*
 
 ## Para encontrar uma personal mulher
 

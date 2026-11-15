@@ -19,6 +19,9 @@ fontes:
     url: "https://fabricapremiumalphaville.com.br/"
   - titulo: "OpenStreetMap, trecho da Estrada Municipal Bela Vista em frente ao Residencial Burle Marx (posição aproximada)"
     url: "https://www.openstreetmap.org/#map=17/-23.45483/-46.89346"
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -35,6 +38,10 @@ atualizado_em: 2026-11-15
 A [Fábrica Premium Alphaville](/academias/fabrica-premium-alphaville/) está na Estrada da Bela Vista, 1332, praticamente diante do Condomínio Burle Marx, conforme o próprio site. É a primeira academia do guia nesse trecho de Alphaville que fica em Santana de Parnaíba. Até então, quem morava nos residenciais dali e queria academia precisava ir para o lado de Barueri.
 
 O site não informa CEP, e a posição no mapa do guia é aproximada. Sites locais associam a unidade à rede Fábrica de Monstros, mas o site dela não cita essa marca, e o guia não confirmou essa ligação.
+
+![Antes e depois do Montinho, personal trainer em Santana de Parnaíba: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
 
 ## Estrutura para variar a sessão
 
@@ -72,6 +79,10 @@ Depois, some o valor combinado com o profissional. Para ter uma referência de f
 ## Carro e chegada
 
 O site cita valet e carregador para carro elétrico, além de concierge. Para quem vem de carro dos residenciais vizinhos, esses itens simplificam a chegada.
+
+![Montinho, personal trainer em Santana de Parnaíba, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Santana de Parnaíba.*
 
 ## Se não for a Fábrica
 

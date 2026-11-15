@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/nitrogym-tambore/"
   - titulo: "Ficha da Bluefit Tamboré no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-tambore/"
+video:
+  id: yndKE1GrnUQ
+  titulo: "Toda pessoa com shape tem uma coisa em comum"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -32,6 +35,10 @@ atualizado_em: 2026-11-15
 ## Quem decide se pode treinar?
 
 O médico. Parece óbvio, mas é tentador pular essa etapa quando a pessoa se sente bem. Depois dos 60, uma consulta antes de começar ajuda a descobrir limites que não doem: arritmia, pressão alta sem sintomas, perda de massa óssea. Mostre ao profissional, logo no início, as recomendações recebidas, por escrito se possível. O profissional não substitui essa avaliação e não deve inventar restrições nem liberar o que o médico vetou.
+
+![Antes e depois do Montinho, personal trainer para idosos no Tamboré: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
 ## Dá para treinar bem sem sair do condomínio?
 
@@ -56,6 +63,10 @@ Um ponto de atenção: nenhuma das duas fichas lista itens específicos de acess
 ## O que acontece na avaliação inicial
 
 O profissional precisa conhecer a pessoa antes de propor qualquer exercício. Espere perguntas sobre histórico de quedas, cirurgias, medicamentos, sono e rotina. Espere também alguns testes simples de mobilidade e equilíbrio, feitos sem pressa e com apoio por perto. Se a primeira sessão já começa com peso, algo está errado.
+
+![Montinho, personal trainer para idosos no Tamboré, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que atende no Tamboré.*
 
 ## Onde entra a família
 

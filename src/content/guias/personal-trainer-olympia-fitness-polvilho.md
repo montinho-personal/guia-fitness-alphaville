@@ -17,6 +17,9 @@ lista_ids: [olympia-fitness-polvilho]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/olympia-fitness-academia/"
+video:
+  id: DiH1OzIR6Yk
+  titulo: "É impossível isso dar errado"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -39,6 +42,10 @@ A [Olympia Fitness Academia](/academias/olympia-fitness-polvilho/) tem um horár
 | Domingo | sem horário listado | sem horário listado |
 
 Quem pensava em usar a hora do almoço para treinar com personal precisa mudar o plano. Uma sessão que começa às 11h30, por exemplo, termina com a academia fechando. As saídas são a manhã cedo ou a tarde e a noite, depois das 14h.
+
+![Antes e depois do Montinho, personal trainer em Santana de Parnaíba: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do Montinho. Serve de inspiração, não de garantia para quem contrata.*
 
 ## Estrutura pequena, foco claro
 
@@ -64,6 +71,10 @@ Nenhuma norma para profissional de fora foi localizada. Leve à recepção estas
 - que cadastro é necessário.
 
 O custo final reúne o acesso à academia, a eventual taxa e o valor das sessões.
+
+![Montinho, personal trainer em Santana de Parnaíba, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Santana de Parnaíba.*
 
 ## Opções na mesma cidade
 

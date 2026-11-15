@@ -20,6 +20,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/24h-premium-alphaville/"
   - titulo: "Ficha da Arena 18 no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/arena-18-alphaville/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -36,6 +39,10 @@ atualizado_em: 2026-11-15
 Antes de qualquer agachamento, marque uma consulta. É o médico quem diz se a pessoa está liberada, quais movimentos merecem cuidado e se há exames a fazer. Pressão, coração, articulações, remédios de uso contínuo: tudo isso muda o que é seguro. Um bom personal pede esse aval e segue as orientações recebidas. Se ele não perguntar nada sobre saúde, desconfie.
 
 As diretrizes de 2020 da OMS recomendam movimento regular também para as pessoas mais velhas, com lugar para o fortalecimento muscular. Ajustar isso a cada pessoa é tarefa do médico, não de uma tabela genérica.
+
+![Antes e depois do Montinho, personal trainer para idosos em Alphaville: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do Montinho. Serve de inspiração, não de garantia para quem contrata.*
 
 ## Estrutura que faz diferença depois dos 60
 
@@ -61,6 +68,10 @@ Os polos empresariais de Alphaville reúnem muitos trabalhadores, e academias pe
 ## Sem sair de casa
 
 Boa parte dos residenciais conta com academia interna. Usá-la poupa o carro e a procura por vaga. Os aparelhos ali tendem a ser básicos, o que raramente atrapalha quem está começando. Em casa, a vantagem é ainda maior: o ambiente é conhecido e a família pode estar por perto.
+
+![Montinho, personal trainer para idosos em Alphaville, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que atende em Alphaville.*
 
 ## A família pode ajudar
 

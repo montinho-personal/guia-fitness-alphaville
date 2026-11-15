@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/nitrogym-tambore/"
   - titulo: "Ficha da Bluefit Tamboré no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-tambore/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -32,6 +35,10 @@ atualizado_em: 2026-11-15
 ## O que a pessoa procura de fato
 
 Quem digita "personal feminino" pode estar atrás de uma mulher para conduzir as aulas. Pode também querer alguém, de qualquer gênero, que monte o treino a partir da sua história: rotina com filhos, horários quebrados, uma lesão antiga, a vontade de ganhar força. Descubra qual das duas é a sua antes de sair pedindo orçamento. Isso poupa conversas que não vão a lugar nenhum.
+
+![Antes e depois do Montinho, personal trainer feminino no Tamboré: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
 
 ## Treinar sem plateia
 
@@ -62,6 +69,10 @@ Se alguma resposta deixar você desconfortável, isso já é informação sufici
 Instalada no Shopping Tamboré, Av. Piracema, a [NitroGym Tamboré](/academias/nitrogym-tambore/) oferece até três horas de estacionamento do shopping incluídas. Sábados e domingos, funciona de 6h a 22h. Para quem só consegue treinar no fim de semana, esse horário largo ajuda.
 
 Na Av. Tucunaré, a [Bluefit Tamboré](/academias/bluefit-tambore/) informa vagas para carro, secador de cabelo e personal na unidade. No domingo, porém, fecha às 14h. O guia não sabe como cada uma trata o profissional de fora; esclareça isso no balcão antes do primeiro encontro.
+
+![Montinho, personal trainer feminino no Tamboré, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que atende no Tamboré.*
 
 ## Se você quer ser treinada por uma mulher
 

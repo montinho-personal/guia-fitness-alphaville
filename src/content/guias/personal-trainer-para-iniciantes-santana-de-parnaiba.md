@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/olympia-fitness-polvilho/"
   - titulo: "Ficha da Forth Academia no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/forth-academia-jardim-sao-luis/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -34,6 +37,10 @@ atualizado_em: 2026-11-15
 Para quem está começando, a melhor academia é a que você consegue frequentar sem esforço extra. Em Santana de Parnaíba isso conta em dobro, porque as distâncias internas são longas e atravessar bairros para treinar desanima rápido. Antes de comparar aparelhos, abra o [mapa](/mapa/) e veja o que fica no seu trajeto diário.
 
 Quem mora em condomínio com sala de ginástica tem uma opção ainda mais próxima. Para as primeiras semanas, ela costuma dar conta do básico. Pergunte à gestão do residencial o que um personal precisa para entrar.
+
+![Antes e depois do Montinho, personal trainer para iniciantes em Santana de Parnaíba: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O próprio Montinho, em dois momentos da vida. O que mudou foi a constância, ano após ano.*
 
 ## Um horário que caiba na semana
 
@@ -54,6 +61,10 @@ Conheça o lugar antes da matrícula, na hora em que você terá tempo de treina
 ## O lado de Alphaville que fica no município
 
 Um pedaço de Alphaville pertence a Santana de Parnaíba. Nele está a **Fábrica Premium**, com estrutura de alto padrão: valet, pista de corrida no rooftop e nutricionista. Para um iniciante, tanta estrutura não é necessária, mas pode servir de motivação. Combine direto com a academia se o seu personal pode acompanhar você lá.
+
+![Montinho, personal trainer para iniciantes em Santana de Parnaíba, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que atende em Santana de Parnaíba.*
 
 ## O papel do personal nos primeiros meses
 

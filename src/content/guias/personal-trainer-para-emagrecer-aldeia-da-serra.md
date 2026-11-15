@@ -14,6 +14,9 @@ cta_destino: /blog/personal-trainer-aldeia-da-serra
 vitrine:
   destaque: adriana-nascimento
   intro: "Para quem quer referências concretas: a seguir, registros de alunos do Montinho com objetivo de emagrecimento. Resultados pessoais, que não servem como previsão para ninguém."
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -28,6 +31,10 @@ atualizado_em: 2026-11-15
 ## Nenhuma academia por perto? Ponto a favor
 
 Cercada de verde e com território tanto em Barueri quanto em Santana de Parnaíba, a Aldeia da Serra é feita de residenciais e não tem academia catalogada pelo guia. Para quem quer emagrecer, isso pode ser vantagem: sem trânsito até o treino, sobra menos espaço para desculpa. O que decide o resultado é a repetição ao longo dos meses e a forma de comer, não o tamanho da sala de musculação.
+
+![Antes e depois do Montinho, personal trainer para emagrecer na Aldeia da Serra: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do personal que mantém este guia. Nenhum resultado é garantido.*
 
 ## Três cenários possíveis
 
@@ -44,6 +51,10 @@ Quando não há uma academia esperando por você, o horário marcado com o perso
 ## Comida não é com o personal
 
 Plano alimentar, porções e suplementos são atribuição da nutricionista. O personal pode reforçar hábitos combinados com ela, mas não deve montar dieta. Quem prefere reunir treino e consulta alimentar num endereço só encontra nutricionista na ficha da [Arena 18](/academias/arena-18-alphaville/), local em que o Montinho também dá aulas.
+
+![Montinho, personal trainer para emagrecer na Aldeia da Serra, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que atende na Aldeia da Serra.*
 
 ## Quando sair da Aldeia
 

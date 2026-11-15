@@ -14,6 +14,9 @@ cta_destino: /blog/personal-trainer-aldeia-da-serra
 fontes:
   - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
     url: "https://www.who.int/publications/i/item/9789240015128"
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -30,6 +33,10 @@ atualizado_em: 2026-11-15
 Formada por residenciais em meio à mata, a Aldeia da Serra tem um pedaço em Barueri e outro em Santana de Parnaíba. Não existe, no seu interior, academia com ficha publicada aqui. Vale um esclarecimento: a Ironberg, que tem endereço na Estrada da Aldeinha, pertence a outro bairro.
 
 Para a gestante, a falta de academia por perto não chega a ser um problema. O acompanhamento chega até ela, e o trajeto de carro sai da rotina justamente na fase em que ele cansa mais.
+
+![Antes e depois do Montinho, personal trainer para gestantes na Aldeia da Serra: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do Montinho. Serve de inspiração, não de garantia para quem contrata.*
 
 ## Três lugares possíveis dentro do residencial
 
@@ -50,6 +57,10 @@ Um personal sério deixa isso claro desde o primeiro contato. Ele não define so
 Faça perguntas simples. Já trabalhou com grávidas? Como registra as orientações médicas? Atende dentro do condomínio ou só em academia? Como lida com dias em que você não está disposta? Quem responde com segurança e sem promessas costuma ser um bom começo.
 
 Caso prefira, numa fase ou outra, treinar fora do bairro, existe a opção da Arena 18, academia do Melville onde o Montinho dá aulas. A [ficha da unidade](/academias/arena-18-alphaville/) lista vaga acessível e ambiente com ar-condicionado.
+
+![Montinho, personal trainer para gestantes na Aldeia da Serra, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que atende na Aldeia da Serra.*
 
 ## Pós-parto, no tempo do médico
 

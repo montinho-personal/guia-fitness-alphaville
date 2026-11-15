@@ -21,6 +21,9 @@ fontes:
 vitrine:
   destaque: natalia-nascimento
   intro: "Abaixo, transformações de pessoas treinadas pelo Montinho que tinham o emagrecimento como objetivo. São percursos pessoais, com ritmos próprios, e nenhum deles serve de garantia."
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -35,6 +38,10 @@ atualizado_em: 2026-11-15
 ## Por que tanta gente para no meio do caminho?
 
 Raramente é falta de informação. A maioria sabe que precisa se mexer mais e comer melhor. O que derruba o plano é a semana real: reunião que atrasa, filho doente, viagem, cansaço. Quem emagrece e mantém costuma ser quem encontrou um formato que sobrevive a essas semanas ruins, não quem achou o exercício perfeito.
+
+![Antes e depois do Montinho, personal trainer para emagrecer no Tamboré: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
+
+*Antes e depois do Montinho. Serve de inspiração, não de garantia para quem contrata.*
 
 ## Onde o personal ajuda de fato
 
@@ -58,6 +65,10 @@ Fica com a nutricionista. Um bom personal pode falar de hábitos gerais, como be
 | Preço publicado | R$ 389 mensais no plano anual | Não publicado |
 
 O domingo longo da [NitroGym](/academias/nitrogym-tambore/) ajuda quem tem o fim de semana mais livre. A [Bluefit Tamboré](/academias/bluefit-tambore/) cita personal na lista de serviços; isso não autoriza automaticamente quem vem de fora, então confirme na unidade. Para comparar planos de agregador, veja [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer para emagrecer no Tamboré, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que atende no Tamboré.*
 
 ## Dá para treinar no próprio residencial?
 

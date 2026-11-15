@@ -17,6 +17,9 @@ lista_ids: [xandu-barueri]
 fontes:
   - titulo: "Página da unidade no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/academia-xandu/"
+video:
+  id: Dg8Sbv6_V8w
+  titulo: "Meu maior conselho para quem quer emagrecer"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -33,6 +36,10 @@ atualizado_em: 2026-11-15
 Quem contrata personal paga dois boletos: o do lugar e o do profissional. Na Xandu, o primeiro pode ser pequeno. No Wellhub, ela entra já no Starter, de R$ 39,99 por mês, o plano mais barato do agregador. Nenhuma outra ficha do guia tem esse plano. A mensalidade direta, sem agregador, não foi divulgada.
 
 O outro lado da conta não aparece em nenhuma fonte: se a academia cobra algo de um personal externo, quanto e de quem. Esse valor pode mudar a comparação com outras academias, por isso pergunte antes de decidir. Valores publicados por outras academias ficam na [tabela de preços](/academias/precos/) e na página sobre [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+
+![Antes e depois do Montinho, personal trainer em Barueri: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O próprio Montinho, em dois momentos da vida. O que mudou foi a constância, ano após ano.*
 
 ## Musculação, dança e bike
 
@@ -51,6 +58,10 @@ Nos dias úteis, dá para treinar entre 6h e 22h. Aos sábados, o expediente vai
 ## Como chegar
 
 O endereço é Rua Copo de Leite, 119, no Jardim Florida. Sobre estacionamento, a página do Wellhub não diz nada; vale confirmar antes de ir de carro.
+
+![Montinho, personal trainer em Barueri, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Barueri.*
 
 ## Se quiser comparar
 

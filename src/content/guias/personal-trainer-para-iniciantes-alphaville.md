@@ -18,6 +18,9 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/blacksheep-alphaville/"
   - titulo: "Ficha da Ironberg Alphaville no Onde Treinar Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/ironberg-alphaville/"
+video:
+  id: yqPAYRVTe0E
+  titulo: "Não existe o treino perfeito"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -34,6 +37,10 @@ atualizado_em: 2026-11-15
 Quem nunca treinou não precisa de um treino sofisticado. Precisa aprender a agachar, remar e empurrar uma carga sem forçar a lombar ou o ombro. Precisa também descobrir quanto peso é desafiador e quanto é demais. Essa leitura do próprio corpo leva semanas.
 
 O outro aprendizado é a constância. No começo, a vontade é grande e a técnica é fraca. Passadas algumas semanas, a técnica melhora e a vontade cai. O personal atua nas duas pontas: corrige o movimento e vira um compromisso fixo na agenda.
+
+![Antes e depois do Montinho, personal trainer para iniciantes em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
 
 ## Testar antes de assinar
 
@@ -56,6 +63,10 @@ Se a academia já está escolhida, confirme se ela deixa um personal de fora tra
 **Relação comercial:** o Montinho dá aulas na Arena 18, localizada no Melville Empresarial.
 
 Para quem trabalha nos polos empresariais, há também um formato curto. A **Fast Treino**, na Avenida Juruá, aparece no Wellhub com treino de musculação de segunda a sexta, das 16h às 20h. Essa janela pode valer só para quem usa o agregador, então confirme o horário completo com o estúdio.
+
+![Montinho, personal trainer para iniciantes em Alphaville, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que atende em Alphaville.*
 
 ## Quanto tempo com personal
 

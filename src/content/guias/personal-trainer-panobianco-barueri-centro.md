@@ -19,6 +19,9 @@ fontes:
     url: "https://wellhub.com/pt-br/search/partners/panobianco-barueri-centro-centro/"
   - titulo: "Site oficial da Panobianco (página inicial)"
     url: "https://www.panobiancoacademia.com.br/"
+video:
+  id: yndKE1GrnUQ
+  titulo: "Toda pessoa com shape tem uma coisa em comum"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -38,6 +41,10 @@ Quem paga personal costuma olhar primeiro para o preço da academia, porque as d
 - **Plano Platinum**: R$ 139,90 por mês, sem fidelidade, sem adesão e sem taxa de cancelamento, com acesso a toda a rede, exceto Select e CT.
 
 A própria rede avisa que os planos dependem de cada unidade, e o guia ainda não confirmou o valor praticado neste endereço. Pelo Wellhub, a entrada é o plano Basic, de R$ 69,99, um dos degraus mais baratos do agregador entre as fichas do guia. Os números de outras academias estão na [página de preços](/academias/precos/), e a comparação de agregadores fica em [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+
+![Antes e depois do Montinho, personal trainer em Barueri: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
+
+*O próprio Montinho, em dois momentos da vida. O que mudou foi a constância, ano após ano.*
 
 ## Regra para personal externo: o que confirmar
 
@@ -59,6 +66,10 @@ A acessibilidade também está bem documentada: elevador, espaço e portas adapt
 ## Quando marcar as sessões
 
 Segunda a quinta, das 5h às 23h59. Sexta, das 5h às 23h. Sábado, das 8h às 17h. Domingo, das 8h às 14h. Dá para encaixar sessões antes do trabalho e no fim de semana pela manhã.
+
+![Montinho, personal trainer em Barueri, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia e atende em Barueri.*
 
 ## Outras academias no centro e arredores
 
