@@ -1,11 +1,11 @@
 ---
 import { ARTIGOS, RELACIONADOS } from '../lib/artigos';
 import { guias } from '../lib/dados';
-interface Props { url: string }
-const { url } = Astro.props;
+interface Props { url: string; itens?: string[] }
+const { url, itens: explicitos } = Astro.props;
 const existentes = new Set((await guias()).map((g) => `/${g.data.secao}/${g.id}/`));
 const existe = (u: string) => !/^\/(guias|modalidades)\//.test(u) || existentes.has(u);
-const itens = (RELACIONADOS[url] ?? []).filter((u) => ARTIGOS[u] && existe(u));
+const itens = (explicitos ?? RELACIONADOS[url] ?? []).filter((u) => ARTIGOS[u] && existe(u));
 ---
 {itens.length > 0 && (
   <nav class="leia-tambem" aria-labelledby="leia-t">
