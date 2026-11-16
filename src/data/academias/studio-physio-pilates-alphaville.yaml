@@ -1,0 +1,76 @@
+nome: Studio Physio Pilates
+regiao: alphaville
+bairro: Alphaville Comercial
+tipo: estudio
+resumo: 'Estúdio na Calçada das Violetas com pilates reformer, aeropilates, power pilates e pilates para bebês, aberto também no sábado de manhã.'
+endereco: 'Calçada das Violetas, 187, loja 270 - Alphaville Comercial, Barueri - SP, 06453-031'
+geo:
+  lat: -23.4964899
+  lng: -46.8517862
+horario:
+  seg:
+  - 07:00-20:00
+  ter:
+  - 07:00-20:00
+  qua:
+  - 07:00-20:00
+  qui:
+  - 07:00-20:00
+  sex:
+  - 07:00-20:00
+  sab:
+  - 08:00-12:00
+  dom: []
+modalidades:
+- pilates
+atividades_listadas:
+- Pilates
+- Pilates reformer
+- Aeropilates
+- Power Pilates
+- Pilates com bola
+- Pilates para bebês
+comodidades:
+- Aquecedor
+- Ar-condicionado
+- Área de alongamento
+- Área infantil
+- Bebedouro
+- Cafeteria
+- Estacionamento
+- Fisioterapeuta
+- Itens de higiene pessoal
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver+
+  preco_plano: R$ 199,99
+  url: https://wellhub.com/pt-br/search/partners/studio-physio-pilates/
+mensalidade: null
+telefone: '(11) 98121-5646'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página do estúdio no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/studio-physio-pilates/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta
+- Tamanho das turmas
+analise:
+- 'É o estúdio de pilates com a grade mais variada entre os conferidos pelo guia: reformer, aeropilates, power pilates, pilates com bola e até pilates para bebês. Também é o único deles que abre no sábado, das 8h ao meio-dia.'
+- 'Fica na Calçada das Violetas, a poucos metros do Studio Vitalle, com área infantil e cafeteria. No Wellhub, entra pelo Silver+, bem abaixo do Platinum pedido por outros estúdios da região.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

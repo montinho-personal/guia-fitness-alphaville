@@ -5,7 +5,7 @@ const todas = await academias();
 const gs = (await guias()).filter((g) => g.data.secao === 'modalidades');
 const cont = Object.keys(MODALIDADES).map((m) => ({ m, n: todas.filter((a) => a.data.modalidades.includes(m as never)).length })).filter((x) => x.n > 0).sort((a, b) => b.n - a.n);
 ---
-<Base titulo="Modalidades de treino em Alphaville e região" descricao="Quais modalidades as academias de Alphaville, Barueri e Santana de Parnaíba oferecem, quantas têm cada uma e os guias de musculação, CrossFit, Hyrox e lutas." migalhas={[{ nome: 'Modalidades', url: '/modalidades/' }]}>
+<Base titulo="Modalidades de treino em Alphaville e região" descricao="Quais modalidades as academias de Alphaville, Barueri e Santana de Parnaíba oferecem, quantas têm cada uma e os guias de musculação, CrossFit, Hyrox, lutas e pilates." migalhas={[{ nome: 'Modalidades', url: '/modalidades/' }]}>
   <div class="wrap">
     <header class="cab-pag">
       <span class="rotulo cor-marca">Modalidades</span>
@@ -22,7 +22,7 @@ const cont = Object.keys(MODALIDADES).map((m) => ({ m, n: todas.filter((a) => a.
           <tbody>{cont.map(({ m, n }) => <tr><th scope="row">{MODALIDADES[m]}</th><td>{n} de {todas.length}</td><td><a href={`/academias/?modalidade=${m}`}>Filtrar no guia</a></td></tr>)}</tbody>
         </table>
       </div>
-      <div class="prosa" style="margin-top:24px"><p>Musculação, CrossFit, Hyrox e lutas têm página própria, porque são as modalidades com procura local que conseguimos observar. Para jiu-jitsu, veja também as páginas de <a href="/guias/jiu-jitsu-alphaville/">Alphaville</a> e <a href="/guias/jiu-jitsu-barueri/">Barueri</a>. As demais modalidades aparecem como filtro no <a href="/academias/">guia de academias</a>.</p></div>
+      <div class="prosa" style="margin-top:24px"><p>Musculação, CrossFit, Hyrox, lutas e pilates têm página própria, porque são as modalidades com procura local que conseguimos observar. Para jiu-jitsu, veja também as páginas de <a href="/guias/jiu-jitsu-alphaville/">Alphaville</a> e <a href="/guias/jiu-jitsu-barueri/">Barueri</a>. As demais modalidades aparecem como filtro no <a href="/academias/">guia de academias</a>.</p></div>
     </section>
   </div>
 </Base>
