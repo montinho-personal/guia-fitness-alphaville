@@ -31,6 +31,10 @@ perguntas:
     r: "Quase todas as escolas de luta do guia aceitam ao menos um dos dois. As entradas mais baratas são o Basic do Wellhub (CT Guerreiros, Mattos Fitness) e o TP 1+ do TotalPass (Team Cruz). A Templo pede Gold no Wellhub e TP 4 no TotalPass."
   - p: "Tem aula de luta no domingo?"
     r: "Nenhuma escola de luta com ficha no guia abre no domingo. As academias completas que abrem no domingo listam lutas na grade, mas o guia não sabe se há aula de luta nesse dia; confirme a grade."
+  - p: "Onde treinar muay thai em Alphaville?"
+    r: "No lado de Alphaville e do Tamboré, listam muay thai: Templo Jiu Jitsu Culture (com turma feminina), VoiFit, 24h Premium, Gaviões 24h, SkyFit, Bodytech Iguatemi e Scelta (pelo TotalPass). Em Barueri, há ainda CT Don Combat, Double Dragon, CT Fuinha, Team Cruz, Studio Cathéo Fight, Impacto, Bluefit e Panobianco."
+  - p: "Onde treinar MMA em Alphaville e Barueri?"
+    r: "Entre os lugares com ficha no guia, só o Studio Cathéo Fight, no Engenho Novo, em Barueri, lista MMA. No lado de Alphaville, o guia não encontrou MMA conferido."
   - p: "Onde tem judô e krav magá na região?"
     r: "Judô, só no Studio Cathéo Fight, no Engenho Novo, em Barueri. Krav magá e hapkido, só no CT Guerreiros Fight Team, no Jardim Belval."
 ---
