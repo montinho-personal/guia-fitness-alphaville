@@ -1,0 +1,93 @@
+nome: Ravenna Beach Tennis
+regiao: santana-de-parnaiba
+bairro: Colinas da Anhanguera
+tipo: estudio
+resumo: 'Arena de beach tennis e futevôlei na Alameda Europa, 1321, do lado de Santana de Parnaíba, aberta todos os dias.'
+endereco: 'Alameda Europa, 1321 - Colinas da Anhanguera, Santana de Parnaíba - SP, 06543-325'
+geo:
+  lat: -23.4676364
+  lng: -46.827688
+horario:
+  seg:
+  - 07:00-23:00
+  ter:
+  - 07:00-23:00
+  qua:
+  - 07:00-23:00
+  qui:
+  - 07:00-23:00
+  sex:
+  - 07:00-23:00
+  sab:
+  - 08:00-20:00
+  dom:
+  - 08:00-18:00
+modalidades:
+- esportes-de-areia
+- funcional
+atividades_listadas:
+- Beach tennis
+- Futevôlei
+- Vôlei de praia
+- Funcional
+comodidades:
+- Quadras de areia
+- Cafeteria
+- Mini bar
+- Loja
+- Vestiário
+- Chuveiro
+- Estacionamento
+- Fisioterapeuta
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold
+  preco_plano: R$ 319,99
+  url: https://wellhub.com/pt-br/search/partners/ravenna-beach-tennis-alpha/
+- nome: TotalPass
+  plano_minimo: TP 4
+  preco_plano: R$ 299,90
+  url: https://totalpass.com/br/academias/ravenna-beach-tennis/
+mensalidade: null
+site: https://instagram.com/ravennabeachtennis
+telefone: '(11) 96349-2378'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da arena no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/ravenna-beach-tennis-alpha/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da arena no TotalPass
+  url: https://totalpass.com/br/academias/ravenna-beach-tennis/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Município: o Wellhub registra Santana de Parnaíba (Colinas da Anhanguera); o TotalPass, Tamboré, Barueri. O CEP 06543 é de Santana de Parnaíba.'
+- 'Horário: o Wellhub abre uma hora antes (6h nos dias úteis, 7h no fim de semana). A ficha usa o TotalPass.'
+- 'Telefone: o TotalPass mostra (11) 99599-4002.'
+pendencias:
+- Mensalidade e preço de aula ou quadra
+analise:
+- 'Fica na Alameda Europa, do lado de Santana de Parnaíba, perto do Tamboré. Abre todos os dias, até as 23h nos dias úteis. Além de beach tennis e futevôlei, o TotalPass lista vôlei de praia e funcional.'
+- 'Entra pelo Gold no Wellhub e pelo TP 4 no TotalPass. O número de quadras não aparece nas fontes conferidas.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

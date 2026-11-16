@@ -1,0 +1,98 @@
+nome: Jacó Fight Club Alphaville
+regiao: alphaville
+bairro: Tamboré
+tipo: estudio
+resumo: 'Centro de lutas na Av. Tucunaré, 955, com muay thai, boxe, jiu-jitsu, MMA, turmas infantis e treino funcional.'
+endereco: 'Av. Tucunaré, 955 - Tamboré, Barueri - SP, 06460-020'
+geo:
+  lat: -23.4930362
+  lng: -46.8355469
+horario:
+  seg:
+  - 07:00-21:00
+  ter:
+  - 07:00-21:00
+  qua:
+  - 07:00-21:00
+  qui:
+  - 07:00-21:00
+  sex:
+  - 07:00-21:00
+  sab:
+  - 09:00-12:00
+  dom: []
+modalidades:
+- lutas
+- funcional
+atividades_listadas:
+- Muay Thai
+- Muay Thai infantil
+- Boxe
+- Jiu-jitsu
+- Jiu-jitsu infantil
+- MMA
+- Cross Fight
+- Funcional
+- HIIT
+- Personal de luta
+comodidades:
+- Ar-condicionado
+- Armários
+- Bebedouro
+- Espaço kids
+- Estacionamento (grátis e pago, segundo o TotalPass)
+- Lanchonete
+- Loja
+- Sauna
+- Secador de cabelo
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Platinum
+  preco_plano: R$ 599,99
+  url: https://wellhub.com/pt-br/search/partners/jaco-fight-club-alphaville-alphaville/
+- nome: TotalPass
+  plano_minimo: TP 4
+  preco_plano: R$ 299,90
+  url: https://totalpass.com/br/academias/jaco-fight-club-247c5b0a-7e8d-4444-83b7-6156d40e2081/
+mensalidade: null
+site: https://www.instagram.com/jacofightclub
+telefone: '(11) 92153-3002'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/jaco-fight-club-alphaville-alphaville/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/jaco-fight-club-247c5b0a-7e8d-4444-83b7-6156d40e2081/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Horário: o Wellhub informa 7h às 21h de segunda a sexta, sábado das 9h ao meio-dia e domingo fechado; o TotalPass informa sexta até 20h e sábado e domingo das 7h às 15h. A ficha usa o Wellhub.'
+- 'Comodidades: o TotalPass lista sauna, espaço kids e estacionamento; o Wellhub lista só bebedouro, secador e Wi-Fi.'
+pendencias:
+- Mensalidade e preço de aula ou quadra
+analise:
+- 'É o centro de lutas com a grade mais ampla do lado de Alphaville e do Tamboré: muay thai, boxe, jiu-jitsu e MMA, com turmas infantis de muay thai e jiu-jitsu. Fica na Av. Tucunaré, 955, a mesma avenida da Templo e da Bluefit Tamboré.'
+- 'Nos agregadores, é uma entrada alta: Platinum no Wellhub e TP 4 no TotalPass. As duas fontes divergem sobre o horário do fim de semana; confirme antes de ir.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

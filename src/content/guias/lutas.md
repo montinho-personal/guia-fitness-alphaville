@@ -2,7 +2,7 @@
 titulo: "Lutas em Alphaville e Barueri: jiu-jitsu, muay thai e boxe"
 descricao: "Onde treinar jiu-jitsu, muay thai, boxe, judô e krav magá em Alphaville, Tamboré, Barueri e Santana de Parnaíba, com horário e plano de Wellhub e TotalPass."
 h1: "Lutas em Alphaville e região: onde treinar"
-resposta: "O guia tem 20 lugares com aula de luta na região. O jiu-jitsu aparece em escolas próprias, como a Templo no Tamboré e a Team Cruz no Parque Viana, e em academias completas, como VoiFit, Bluefit Barueri e Mattos Fitness. Muay thai e boxe estão em quase todas. Para judô, só o Studio Cathéo Fight lista; krav magá e hapkido, só o CT Guerreiros."
+resposta: "O guia tem 21 lugares com aula de luta na região. O jiu-jitsu aparece em escolas próprias, como a Templo e o Jacó Fight Club no Tamboré e a Team Cruz no Parque Viana, e em academias completas, como VoiFit, Bluefit Barueri e Mattos Fitness. Muay thai e boxe estão em quase todas. Para judô, só o Studio Cathéo Fight lista; krav magá e hapkido, só o CT Guerreiros."
 cluster: B
 secao: modalidades
 palavra_chave: lutas alphaville
@@ -24,7 +24,7 @@ publicado_em: 2026-11-16
 atualizado_em: 2026-11-16
 perguntas:
   - p: "Onde treinar jiu-jitsu em Alphaville?"
-    r: "No lado de Alphaville e do Tamboré, as opções com ficha no guia são a Templo Jiu Jitsu Culture, no Mackenzie Mall da Av. Tucunaré; a VoiFit, no Empresarial 18 do Forte; a 24h Premium, no Alphaville Industrial; e a Academia Scelta, na Av. Andrômeda, cujo jiu-jitsu aparece no TotalPass."
+    r: "No lado de Alphaville e do Tamboré, as opções com ficha no guia são a Templo Jiu Jitsu Culture, no Mackenzie Mall da Av. Tucunaré; o Jacó Fight Club, na Av. Tucunaré, 955; a VoiFit, no Empresarial 18 do Forte; a 24h Premium, no Alphaville Industrial; e a Academia Scelta, na Av. Andrômeda, cujo jiu-jitsu aparece no TotalPass."
   - p: "Onde treinar jiu-jitsu em Barueri?"
     r: "Na cidade de Barueri: Team Cruz (Parque Viana), CT Guerreiros (Jardim Belval), CT Fuinha (Parque dos Camargos), Studio Cathéo Fight (Engenho Novo) e Bluefit Barueri (Bethaville). A Panobianco do centro e o Double Dragon citam jiu-jitsu só para crianças."
   - p: "Academia de luta aceita Wellhub ou TotalPass?"
@@ -32,9 +32,9 @@ perguntas:
   - p: "Tem aula de luta no domingo?"
     r: "Nenhuma escola de luta com ficha no guia abre no domingo. As academias completas que abrem no domingo listam lutas na grade, mas o guia não sabe se há aula de luta nesse dia; confirme a grade."
   - p: "Onde treinar muay thai em Alphaville?"
-    r: "No lado de Alphaville e do Tamboré, listam muay thai: Templo Jiu Jitsu Culture (com turma feminina), VoiFit, 24h Premium, Gaviões 24h, SkyFit, Bodytech Iguatemi e Scelta (pelo TotalPass). Em Barueri, há ainda CT Don Combat, Double Dragon, CT Fuinha, Team Cruz, Studio Cathéo Fight, Impacto, Bluefit e Panobianco."
+    r: "No lado de Alphaville e do Tamboré, listam muay thai: Jacó Fight Club (com turma infantil), Templo Jiu Jitsu Culture (com turma feminina), VoiFit, 24h Premium, Gaviões 24h, SkyFit, Bodytech Iguatemi e Scelta (pelo TotalPass). Em Barueri, há ainda CT Don Combat, Double Dragon, CT Fuinha, Team Cruz, Studio Cathéo Fight, Impacto, Bluefit e Panobianco."
   - p: "Onde treinar MMA em Alphaville e Barueri?"
-    r: "Entre os lugares com ficha no guia, só o Studio Cathéo Fight, no Engenho Novo, em Barueri, lista MMA. No lado de Alphaville, o guia não encontrou MMA conferido."
+    r: "Entre os lugares com ficha no guia, o Studio Cathéo Fight, no Engenho Novo, em Barueri, e o Jacó Fight Club, na Av. Tucunaré, no Tamboré, listam MMA."
   - p: "Onde tem judô e krav magá na região?"
     r: "Judô, só no Studio Cathéo Fight, no Engenho Novo, em Barueri. Krav magá e hapkido, só no CT Guerreiros Fight Team, no Jardim Belval."
 ---
@@ -49,7 +49,7 @@ Nas escolas, o horário publicado quase sempre é de turma, não de porta aberta
 
 ## Jiu-jitsu
 
-No lado de Alphaville, a escola com o jiu-jitsu no nome é a [Templo Jiu Jitsu Culture](/academias/templo-jiu-jitsu-tambore/), no Tamboré. Entre as academias, [VoiFit](/academias/voifit-alphaville/) e [24h Premium](/academias/24h-premium-alphaville/) listam a modalidade. Em Barueri há mais opções de bairro: [Team Cruz](/academias/team-cruz-parque-viana/), [CT Guerreiros](/academias/ct-guerreiros-jardim-belval/), [CT Fuinha](/academias/ct-fuinha-parque-dos-camargos/) e [Studio Cathéo Fight](/academias/studio-catheo-fight-barueri/). Os detalhes estão em [jiu-jitsu em Alphaville](/guias/jiu-jitsu-alphaville/) e [jiu-jitsu em Barueri](/guias/jiu-jitsu-barueri/).
+No lado de Alphaville, as escolas de luta são a [Templo Jiu Jitsu Culture](/academias/templo-jiu-jitsu-tambore/) e o [Jacó Fight Club](/academias/jaco-fight-club-alphaville/), ambos na Av. Tucunaré, no Tamboré. Entre as academias, [VoiFit](/academias/voifit-alphaville/) e [24h Premium](/academias/24h-premium-alphaville/) listam a modalidade. Em Barueri há mais opções de bairro: [Team Cruz](/academias/team-cruz-parque-viana/), [CT Guerreiros](/academias/ct-guerreiros-jardim-belval/), [CT Fuinha](/academias/ct-fuinha-parque-dos-camargos/) e [Studio Cathéo Fight](/academias/studio-catheo-fight-barueri/). Os detalhes estão em [jiu-jitsu em Alphaville](/guias/jiu-jitsu-alphaville/) e [jiu-jitsu em Barueri](/guias/jiu-jitsu-barueri/).
 
 ## Muay thai e boxe
 
@@ -57,7 +57,7 @@ São as lutas mais espalhadas da região. Aparecem em redes como Gaviões 24h, S
 
 ## Modalidades menos comuns
 
-O [Studio Cathéo Fight](/academias/studio-catheo-fight-barueri/) é o único da lista com judô e MMA juntos. O [CT Guerreiros](/academias/ct-guerreiros-jardim-belval/) oferece krav magá e hapkido, voltados à defesa pessoal. A Team Cruz inclui capoeira, segundo o TotalPass.
+O [Studio Cathéo Fight](/academias/studio-catheo-fight-barueri/) é o único da lista com judô, e divide o MMA com o Jacó Fight Club. O [CT Guerreiros](/academias/ct-guerreiros-jardim-belval/) oferece krav magá e hapkido, voltados à defesa pessoal. A Team Cruz inclui capoeira, segundo o TotalPass.
 
 ## O que o guia ainda não conferiu
 

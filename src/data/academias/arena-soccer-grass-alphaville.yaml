@@ -1,0 +1,76 @@
+nome: Arena Soccer Grass e Beach Tennis
+regiao: alphaville
+bairro: Centro Comercial Jubran
+tipo: estudio
+resumo: 'Arena com beach tennis, futevôlei, vôlei e futebol na Av. Piraíba, 434, aberta só até o fim da tarde nos dias úteis.'
+endereco: 'Av. Piraíba, 434 - Centro Comercial Jubran, Barueri - SP, 06460-121'
+geo:
+  lat: -23.4912046
+  lng: -46.8300353
+horario:
+  seg:
+  - 08:00-18:00
+  ter:
+  - 08:00-18:00
+  qua:
+  - 08:00-18:00
+  qui:
+  - 08:00-18:00
+  sex:
+  - 08:00-13:00
+  sab:
+  - 08:00-12:00
+  dom: []
+modalidades:
+- esportes-de-areia
+- funcional
+atividades_listadas:
+- Beach tennis
+- Futevôlei
+- Vôlei
+- Futebol
+- Treino funcional
+comodidades:
+- Quadras
+- Aluguel de raquete
+- Área de treino funcional
+- Cafeteria
+- Mini bar
+- Vestiário
+- Chuveiro
+- Estacionamento
+- Espaço de coworking
+- Itens de acessibilidade
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold+
+  preco_plano: R$ 439,99
+  url: https://wellhub.com/pt-br/search/partners/arena-soccer-grass-e-beach-tennis-centro-comercial-jubran/
+mensalidade: null
+site: https://www.instagram.com/arenasoccergrassalphaville
+telefone: '(11) 91758-8651'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da arena no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/arena-soccer-grass-e-beach-tennis-centro-comercial-jubran/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade e preço de aula ou quadra
+analise:
+- 'Fica na Av. Piraíba, no Centro Comercial Jubran, perto do Tamboré. Junta areia e grama: beach tennis, futevôlei e vôlei, além de futebol. A página do Wellhub lista muitos itens de acessibilidade, como piso tátil e elevador.'
+- 'O horário publicado é curto: até as 18h de segunda a quinta, até as 13h na sexta e só a manhã de sábado. No Wellhub, entra pelo Gold+.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'
