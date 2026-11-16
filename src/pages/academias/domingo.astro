@@ -4,9 +4,10 @@ import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
 import VideoMontinho from '../../components/VideoMontinho.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
+import Perguntas from '../../components/Perguntas.astro';
 import { academias, e24h, abreDomingo, faixasDia, urlAcademia, REGIOES, dataLonga, dataIso, type Academia } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-14'), atualizado: new Date('2026-11-14') };
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-14'), atualizado: new Date('2026-11-16') };
 const todas = await academias();
 const min = (s: string) => { const [h, m] = s.split(':').map(Number); return h * 60 + m; };
 const ini = (a: Academia) => min(a.data.horario.dom[0].split('-')[0]);
@@ -28,8 +29,21 @@ const sep = (i: number, n: number) => (i === 0 ? '' : i === n - 1 ? ' e ' : ', '
 const nitro = todas.find((a) => a.id === 'nitrogym-tambore');
 const fds = nitro?.data.mensalidade?.planos.find((p) => /fim de semana/i.test(p.nome));
 const abs = (u: string) => new URL(u, Astro.site).href;
-const titulo = 'Academia aberta domingo em Alphaville e Barueri';
-const descricao = 'Quais academias de Alphaville, Tamboré, Barueri e Santana de Parnaíba abrem aos domingos, em que horário, e quais ficam abertas depois das 14h.';
+const barDom = abrem.filter((a) => a.data.regiao === 'barueri');
+const barFecha = fechadas.filter((a) => a.data.regiao === 'barueri');
+const alphaDom = abrem.filter((a) => a.data.regiao === 'alphaville');
+const linhaDom = (xs: Academia[]) => xs.map((a) => `${a.data.nome} (${a.data.bairro}, ${faixasDia(a.data.horario.dom)})`).join('; ');
+const perguntas = [
+  { p: 'Quais academias abrem domingo em Barueri?', r: barDom.length ? `Na cidade de Barueri, fora Alphaville, ${barDom.length} academias com ficha no guia têm horário de domingo: ${linhaDom(barDom)}.${barFecha.length ? ` Não têm horário de domingo nas fontes: ${lista(barFecha)}.` : ''}` : 'Nenhuma academia de Barueri com ficha no guia tem horário de domingo publicado.' },
+  { p: 'Tem academia 24h aberta domingo em Barueri?', r: diaTodo.length ? `Sim, no lado de Alphaville, que pertence a Barueri: ${lista(diaTodo)} ${diaTodo.length === 1 ? 'tem' : 'têm'} horário de 24 horas publicado. No domingo, as fontes da Gaviões divergem: o Wellhub mostra 24 horas e o TotalPass diz que ela não abre. A Ironberg informa 24 horas todos os dias, inclusive feriados.` : 'Nenhuma academia do guia tem horário de 24 horas publicado.' },
+  { p: 'Até que horas a academia abre no domingo?', r: `O horário mais comum é das 8h às 14h, seguido por ${padrao.length} academias do guia, entre elas todas as unidades da Smart Fit. Depois das 14h, além das 24 horas, ficam abertas: ${lista(tarde)}.` },
+  { p: 'A Smart Fit de Barueri abre domingo?', r: 'Sim. As quatro unidades da região (Centro, Parque Shopping, Av. Zélia e Sodimac Alphaville) abrem no domingo das 8h às 14h, segundo o site oficial.' },
+  { p: 'A Panobianco Barueri Centro abre domingo?', r: (() => { const pb = todas.find((a) => a.id === 'panobianco-barueri-centro'); return pb && abreDomingo(pb.data.horario) ? `Sim, das ${faixasDia(pb.data.horario.dom)}, segundo a fonte da ficha do guia. Confirme feriados com a unidade.` : 'A fonte consultada não traz horário de domingo para a unidade.'; })() },
+  { p: 'Quais academias abrem domingo em Alphaville?', r: alphaDom.length ? `No lado de Alphaville, ${alphaDom.length} academias com ficha abrem no domingo: ${linhaDom(alphaDom)}.` : 'Nenhuma academia de Alphaville com ficha tem horário de domingo.' },
+  { p: 'Academia abre em feriado?', r: 'As fontes raramente detalham feriados. A Ironberg informa 24 horas inclusive em feriados; a NitroGym, o mesmo horário do fim de semana; na Smart Fit, Centro e Parque Shopping abrem das 8h às 14h e Av. Zélia e Sodimac, das 8h às 17h. Nas demais, confirme na véspera.' },
+];
+const titulo = 'Academia aberta domingo em Barueri e Alphaville: horários';
+const descricao = 'Academias abertas no domingo em Barueri, Alphaville, Tamboré e Santana de Parnaíba: horário de cada uma, quem fica aberta depois das 14h e as 24 horas.';
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Abertas no domingo', url: '/academias/domingo/' }]}>
@@ -68,6 +82,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
 
       <h2>Por região</h2>
       <ul>{porRegiao.map(({ r, total, dom }) => <li><strong>{REGIOES[r].titulo}:</strong> {dom === 0 ? `nenhuma das ${total} academias com ficha tem horário de domingo publicado.` : `${dom} de ${total} academias ${dom === 1 ? 'abre' : 'abrem'} no domingo.`}</li>)}</ul>
+      <p>Na cidade de Barueri, quem treina no domingo tem a Bluefit Barueri, em Bethaville, aberta até as 16h, e as três unidades da Smart Fit e a Panobianco do centro, até as 14h. Compare as quatro Smart Fit em <a href="/academias/smart-fit-barueri/">Smart Fit em Barueri</a>.</p>
       <p>Em Santana de Parnaíba, as academias de bairro fecham no domingo; quem mora lá costuma treinar do lado de Alphaville ou do Tamboré. Veja as opções no <a href="/mapa/">mapa</a>.</p>
 
       <h2>E nos feriados?</h2>
@@ -87,6 +102,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <p>Estas {fechadas.length} academias não têm horário de domingo nas fontes consultadas, o que em geral significa que fecham: {fechadas.map((a, i) => <>{sep(i, fechadas.length)}<a href={urlAcademia(a)}>{a.data.nome}</a></>)}. Se alguma delas abrir, <a href="/correcoes/">avise o guia</a>.</p>
       <p>Para cruzar o domingo com outros critérios, use o filtro "Aberta aos domingos" no <a href="/academias/">guia de academias</a>.</p>
     </div>
+
+    <Perguntas itens={perguntas} titulo="Perguntas sobre academia no domingo" />
 
     <VideoMontinho id="DiH1OzIR6Yk" titulo="É impossível isso dar errado" pagina="domingo" />
     <LeiaTambem url="/academias/domingo/" />

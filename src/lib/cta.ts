@@ -42,6 +42,7 @@ export function ctaDaPagina(caminho: string, academias: Record<string, string>):
     'guias/como-escolher-academia': { titulo: 'Escolheu a academia? Falta o plano de treino.', sub: 'Converse com o Montinho sobre como começar', botao, assunto: 'montar um plano de treino' },
     'academias/precos': { titulo: 'Já viu quanto custa a academia?', sub: 'Pergunte ao Montinho como fica a conta com acompanhamento', botao, assunto: 'o custo de treinar com acompanhamento' },
     'academias/24-horas': { titulo: 'Treina fora do horário comercial?', sub: 'O Montinho combina sessões no horário que cabe na sua rotina', botao, assunto: 'treinar em horários alternativos' },
+    'academias/smart-fit-barueri': { titulo: 'Treina ou vai treinar na Smart Fit?', sub: 'Pergunte ao Montinho como montar o treino e acompanhar a evolução', botao, assunto: 'treinar com acompanhamento em Barueri' },
     'academias/domingo': { titulo: 'Só sobra o fim de semana para treinar?', sub: 'Converse com o Montinho sobre horários', botao, assunto: 'treinar no fim de semana' },
     'academias/wellhub-totalpass': { titulo: 'Usa Wellhub ou TotalPass?', sub: 'Pergunte ao Montinho como encaixar o acompanhamento', botao, assunto: 'treinar com acompanhamento usando agregador' },
     'modalidades/musculacao': { titulo: 'Quer evoluir na musculação?', sub: 'Técnica, carga e progressão com acompanhamento', botao, assunto: 'treino de musculação' },

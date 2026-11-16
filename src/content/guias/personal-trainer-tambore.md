@@ -1,5 +1,5 @@
 ---
-titulo: "Personal trainer no Tamboré: condomínio, casa ou academia"
+titulo: "Personal trainer no Tamboré: preço, condomínio e academias"
 descricao: "Como funciona o treino com personal trainer no Tamboré: academia do residencial, treino em casa e as duas academias do bairro com ficha no guia."
 h1: "Personal trainer no Tamboré"
 resposta: "No Tamboré, quase todo treino com personal começa dentro do residencial: na academia do condomínio ou em casa. Para quem prefere academia comercial, o bairro tem duas com ficha neste guia, a NitroGym na Avenida Piracema e a Bluefit na Avenida Tucunaré, ambas abertas das 5h às 23h59 nos dias úteis."
@@ -25,6 +25,17 @@ fontes:
 vitrine:
   destaque: bruna-rodrigues
   intro: "Se a dúvida é se treinar com acompanhamento dá resultado, aqui estão alunos reais do Montinho. Todos os casos com foto são de emagrecimento, e o formato de acompanhamento de cada um aparece ao lado do nome."
+perguntas:
+  - p: "Quanto custa 1h de personal trainer no Tamboré?"
+    r: "Depende de quem atende, de onde a aula acontece e do que vem junto, como avaliação física e ajuste do treino entre as sessões. O guia não divulga faixa de valores porque não tem como conferir. Peça duas ou três propostas e pergunte se o preço muda quando a aula é no condomínio, em casa ou numa academia do bairro."
+  - p: "Quanto custa um personal trainer 3 vezes por semana no Tamboré?"
+    r: "A maioria dos profissionais trabalha com pacote mensal, e a aula sai mais barata quanto maior a frequência. Para comparar, peça o total do mês com três sessões semanais e confira se inclui avaliação, reposição de falta e deslocamento até o residencial."
+  - p: "Dá para treinar com personal no condomínio do Tamboré?"
+    r: "Em geral sim, mas quem decide é o residencial. A administração pode exigir cadastro do profissional na portaria, limitar horários e regular o uso do espaço fitness. Confirme as regras antes de marcar a primeira aula."
+  - p: "Posso levar personal na NitroGym ou na Bluefit Tamboré?"
+    r: "Nenhuma das duas publica regra para personal de fora. Antes de combinar, pergunte na recepção se aceitam, se há taxa e quem paga, e em que horários o profissional pode atender."
+  - p: "É vantajoso pagar um personal trainer?"
+    r: "Tende a compensar para quem nunca treinou, para quem volta depois de uma pausa longa ou de lesão, e para quem não consegue manter a rotina sozinho. Quem já treina com técnica e regularidade pode precisar só de ajustes de tempos em tempos."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
