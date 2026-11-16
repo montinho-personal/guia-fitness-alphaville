@@ -13,6 +13,7 @@ export async function GET() {
     '/academias/wellhub-totalpass/': 'gympass wellhub totalpass agregador plano empresa',
     '/academias/perto-de/': 'perto de mim próximo próxima perto iguatemi shopping tamboré estação trem cptm 18 do forte',
     '/academias/smart-fit-barueri/': 'smartfit smart fit barueri centro zelia zélia parque shopping sodimac carrefour hiper tamboré alphaville horário endereço telefone preço diária totalpass',
+    '/modalidades/natacao/': 'natação natacao piscina hidroginástica hidroginastica nadar escola de natação infantil bebê',
     '/modalidades/pilates/': 'pilates reformer estudio estúdio studio vitalle physio inspire health body centro comercial',
     '/modalidades/lutas/': 'luta lutas artes marciais muay thai boxe judo judô krav maga magá hapkido mma capoeira kickboxing defesa pessoal',
     '/guias/jiu-jitsu-alphaville/': 'jiu jitsu jiujitsu bjj tatame gracie barra alliance g13 templo tamboré',
