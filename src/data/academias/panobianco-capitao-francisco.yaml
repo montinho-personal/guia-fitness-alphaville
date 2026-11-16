@@ -1,0 +1,85 @@
+nome: Panobianco Capitão Francisco
+regiao: barueri
+bairro: Vila Pindorama
+tipo: academia
+rede: Panobianco
+titulo_seo: 'Panobianco Capitão Francisco (Barueri): horário e Wellhub'
+resumo: Segunda unidade da Panobianco em Barueri, na Av. Capitão Francisco César, 225, com musculação e aulas, aceita no Wellhub a partir do Basic.
+endereco: Av. Capitão Francisco César, 225 - Vila Pindorama, Barueri - SP, 06415-000
+geo:
+  lat: -23.49293
+  lng: -46.882642
+horario:
+  seg:
+  - 05:00-23:59
+  ter:
+  - 05:00-23:59
+  qua:
+  - 05:00-23:59
+  qui:
+  - 05:00-23:59
+  sex:
+  - 07:00-22:00
+  sab:
+  - 08:00-17:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+- bike
+atividades_listadas:
+- Musculação
+- Abdominal
+- Power Bike
+- Aeropower
+- Body Jam
+- Queima de gordura
+comodidades:
+- Armários
+- Chuveiro
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic
+  preco_plano: R$ 69,99
+  url: https://wellhub.com/pt-br/search/partners/panobianco-capitao-francisco/
+mensalidade: null
+telefone: (11) 94596-4791
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/panobianco-capitao-francisco/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Sexta-feira: o Wellhub informa abertura às 7h, e não às 5h como nos outros dias úteis. Confirme na unidade.'
+- 'TotalPass: a página da unidade no TotalPass informa, em 16/11/2026, que ela não faz mais parte da rede parceira.'
+pendencias:
+- Mensalidade praticada na unidade
+- Estacionamento
+perguntas:
+- p: Tem Panobianco em Barueri?
+  r: 'Sim, duas com ficha no guia: a Panobianco Barueri Centro, na Rua José Maria Balieiro, 267, e esta, na Av. Capitão Francisco César, 225, na Vila Pindorama.'
+- p: Qual o horário da Panobianco Capitão Francisco?
+  r: 'Segundo o Wellhub, das 5h à meia-noite de segunda a quinta, das 7h às 22h na sexta, das 8h às 17h no sábado e das 8h às 14h no domingo.'
+- p: A Panobianco Capitão Francisco aceita Gympass (Wellhub)?
+  r: 'Sim, a partir do plano Basic, de R$ 69,99 por mês.'
+- p: A Panobianco Capitão Francisco aceita TotalPass?
+  r: 'A página da unidade no TotalPass informa que ela não faz mais parte da rede parceira (conferido em 16/11/2026).'
+analise:
+- 'Fica na Av. Capitão Francisco César, na Vila Pindorama, a cerca de 2 km em linha reta da unidade do centro. Abre às 5h e fecha à meia-noite de segunda a quinta; na sexta, o Wellhub mostra abertura só às 7h.'
+- 'A grade listada mistura musculação com aulas de bike e coletivas, como Aeropower e Body Jam. No Wellhub, entra pelo Basic, a mesma entrada barata da unidade do centro. A mensalidade praticada aqui não foi publicada nas fontes consultadas.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

@@ -32,6 +32,10 @@ perguntas:
     r: "Depende do que você procura. Para treinar jiu-jitsu como atividade principal, com turma e professor da modalidade, a Templo Jiu Jitsu Culture é a única escola própria com ficha no guia. Para combinar jiu-jitsu e musculação no mesmo plano, VoiFit, 24h Premium e Scelta listam a modalidade."
   - p: "Tem Gracie Barra ou Alliance em Alphaville?"
     r: "As duas aparecem em buscas com endereço em Alphaville, mas o guia não conseguiu conferir endereço, horário e grade em fonte própria ou em agregador. Por isso ainda não têm ficha. Confirme direto com a equipe antes de ir."
+  - p: "A Gracie Barra Alphaville fica em Barueri?"
+    r: "Nem sempre. Nas buscas, Gracie Barra Alphaville também leva a unidades de outros Alphavilles, como a de Votorantim, no interior de São Paulo, e a de Nova Lima, em Minas Gerais. Para Alphaville, em Barueri, o guia ainda não conferiu os dados de uma unidade; confirme o endereço antes de ir."
+  - p: "Tem jiu-jitsu infantil em Alphaville?"
+    r: "Nas fontes conferidas pelo guia, as turmas infantis aparecem em Barueri: a Panobianco Barueri Centro e o Centro de Lutas Double Dragon citam jiu-jitsu para crianças. No lado de Alphaville, pergunte direto à Templo e às academias com jiu-jitsu se há turma kids."
   - p: "Dá para treinar jiu-jitsu pelo Wellhub em Alphaville?"
     r: "Sim. A VoiFit entra a partir do Silver, a Templo e a Scelta a partir do Gold, e a 24h Premium a partir do Gold+. Confira se a aula de jiu-jitsu exige agendamento no aplicativo."
   - p: "Dá para treinar jiu-jitsu pelo TotalPass em Alphaville?"
@@ -60,7 +64,7 @@ Nessas academias, a luta é uma aula entre muitas. A vantagem é usar a mesma me
 
 ## Equipes que ainda não têm ficha
 
-Gracie Barra, Alliance e G13 aparecem nas buscas com endereço em Alphaville ou no lado de Santana de Parnaíba. O guia não conseguiu conferir os dados delas e prefere não publicar o que não verificou. Quem treina numa delas pode [enviar a informação com a fonte](/correcoes/).
+Gracie Barra, Alliance, G13 e o Jacó Fight Club aparecem nas buscas com endereço em Alphaville ou no lado de Santana de Parnaíba. Atenção: parte dos resultados de Gracie Barra Alphaville é de outras cidades com bairro Alphaville, como Votorantim (SP) e Nova Lima (MG). O guia não conseguiu conferir os dados delas e prefere não publicar o que não verificou. Quem treina numa delas pode [enviar a informação com a fonte](/correcoes/).
 
 ## Como escolher
 
