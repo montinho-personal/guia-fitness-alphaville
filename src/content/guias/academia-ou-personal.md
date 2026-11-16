@@ -17,13 +17,24 @@ video:
 vitrine:
   destaque: bruna-rodrigues
   intro: "Se você está decidindo se vale contratar acompanhamento, os casos abaixo mostram o que aconteceu com alunos do Montinho. Não são média nem garantia: são histórias individuais, todas de emagrecimento."
+perguntas:
+  - p: "Qual a diferença entre instrutor de academia e personal trainer?"
+    r: "O instrutor, ou professor de sala, é da academia e atende todos os alunos que estão treinando naquele horário: tira dúvidas, corrige a execução e passa o treino padrão. O personal acompanha uma pessoa só durante a sessão, com treino montado para o objetivo, a rotina e as limitações dela, e cobra à parte."
+  - p: "Toda academia tem instrutor?"
+    r: "Nem toda academia informa isso nas fontes públicas. Na região, as unidades da Smart Fit listam professores formados entre os serviços; em outras, a informação não aparece. Pergunte na visita quantos professores ficam na sala no horário em que você vai treinar."
+  - p: "É melhor treinar com personal ou sem?"
+    r: "Depende do momento. Para quem está começando, voltando de lesão, sem tempo ou sem evoluir há meses, o acompanhamento costuma fazer diferença. Para quem já treina com técnica e constância, a academia com o professor de sala pode bastar, com revisões do treino de tempos em tempos."
+  - p: "Quanto custa 1 mês de personal trainer?"
+    r: "Não há tabela oficial, e este guia não publica faixas de preço que não consegue verificar. O valor muda com a frequência semanal, o local e a experiência do profissional. Compare o total do mês, somando a mensalidade da academia e a eventual taxa que ela cobra do personal de fora."
+  - p: "Dá para usar a academia e contratar personal só no começo?"
+    r: "Sim, é um caminho comum: alguns meses de acompanhamento para aprender a execução e montar a rotina, depois treino por conta própria, com revisões periódicas do plano com o profissional."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: 2026-11-13
-atualizado_em: 2026-11-13
+atualizado_em: 2026-11-16
 ---
 
 > **Transparência.** Este guia é mantido por um personal trainer, o Montinho. Ele tem interesse comercial neste assunto. O texto abaixo procura ser útil também para quem conclui que não precisa de personal.
@@ -39,6 +50,12 @@ Nesse caso, o dinheiro rende mais em uma academia melhor localizada ou em um pla
 ![Antes e depois do Montinho, personal trainer em Alphaville e região: adolescente acima do peso e, hoje, com o corpo de quem treina há anos](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
 
 *A transformação do próprio Montinho, que mantém este guia. Serve como história, e não como promessa.*
+
+## Instrutor de academia ou personal: qual a diferença
+
+Quem pesquisa "academia ou personal" muitas vezes está comparando o professor de sala com o personal. São papéis diferentes. O **instrutor** é da academia e divide a atenção entre todos os alunos do horário: tira dúvidas, corrige a execução quando vê e passa o treino padrão. O **personal** acompanha uma pessoa só durante a sessão, monta o treino para o objetivo, a rotina e as limitações dela, ajusta a carga a cada série e é contratado à parte.
+
+Nem toda academia informa quantos professores ficam na sala. Nas fichas deste guia, as unidades da Smart Fit da região listam professores formados entre os serviços; em várias outras, o dado não aparece nas fontes. Na visita, pergunte quantos professores ficam na sala no horário em que você vai treinar.
 
 ## Quando o acompanhamento individual costuma valer
 

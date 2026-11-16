@@ -1,0 +1,158 @@
+[
+  {
+    "busca": "academia ou personal trainer",
+    "data": "2026-11-16",
+    "aparelho": "mobile",
+    "local": "Sao Paulo,State of Sao Paulo,Brazil",
+    "autocompletar": [
+      "instrutor de academia ou personal trainer",
+      "academia ou personal",
+      "ou personal trainer",
+      "personal trainer ou professor de academia"
+    ],
+    "pessoas_tambem_perguntam": [
+      "É melhor treinar com personal ou sem?",
+      "Porque o anatoly tem tanta força?",
+      "Toda academia tem instrutor?",
+      "Quanto custa 1 mês de personal trainer?"
+    ],
+    "outras_pesquisas": [
+      "Personal trainer perto de mim",
+      "Personal trainer são paulo",
+      "Superprof"
+    ],
+    "visao_ia": {
+      "texto": [
+        "A escolha entre academia (com o suporte dos instrutores do local) e um personal trainer depende do seu orçamento, autonomia e objetivos.",
+        "A comparação detalhada baseia-se nas principais características de cada opção:",
+        "Academia (Treino Autônomo com Instrutor de Sala)",
+        "Como funciona: Você paga uma mensalidade (como planos livres em locais como a Body Fit Gym) e utiliza a estrutura de aparelhos e pesos livres. O professor da sala orienta de forma geral, tira dúvidas e ajuda na execução .",
+        "Vantagens:",
+        "Custo significativamente mais baixo .",
+        "Liberdade total de horários para ir quando quiser.",
+        "Ideal para quem já tem disciplina, sabe treinar ou busca uma rotina mais flexível.",
+        "Desvantagens:",
+        "O atendimento é dividido com vários alunos.",
+        "O treino pode ser padronizado ou menos focado nas suas individualidades e lesões específicas.",
+        "Personal Trainer (Acompanhamento Individualizado)",
+        "Como funciona: Você contrata um profissional (presencialmente ou via consultoria, como no Instituto Huertas) que desenha um planejamento exclusivo para a sua biomecânica, histórico médico e metas.",
+        "Vantagens:",
+        "Correção constante de postura e técnica, diminuindo o risco de lesões.",
+        "Maior motivação, constância e potencialização de resultados (força e massa magra).",
+        "Adaptação rápida do treino se você estiver cansado, com dores ou com objetivos novos.",
+        "Desvantagens:",
+        "Custo bem mais alto.",
+        "Exige agendamento prévio e horários fixos com o profissional.",
+        "Qual escolher?",
+        "Vá de Academia se você busca economia, tem boa autonomia para executar os exercícios e consegue se motivar sozinho.",
+        "Vá de Personal Trainer se você está começando do zero, tem limitações físicas/lesões, precisa de alguém cobrando sua presença ou quer acelerar resultados específicos.",
+        "Alternativa intermediária: Muitas pessoas usam a academia e contratam um personal apenas para montar a periodização inicial ou fazem consultorias online/esportivas periódicas para baratear o custo.",
+        "Para te ajudar a decidir melhor, me conte:",
+        "Qual é o seu principal objetivo (emagrecer, ganhar massa muscular, reabilitação)?",
+        "Qual é a sua experiência atual com musculação?"
+      ],
+      "fontes": [
+        {
+          "titulo": "Treinar.me — Encontre o personal trainer certo pra você",
+          "endereco": "https://www.treinar.me/"
+        },
+        {
+          "titulo": "Personal Trainer ou Treinador Fitness? : r/beginnerfitness - Reddit",
+          "endereco": "https://www.reddit.com/r/beginnerfitness/comments/1ww95pr/personal_trainer_or_fitness_coach/?tl=pt-br"
+        },
+        {
+          "titulo": "Você sabe a diferença entre o instrutor da academia e o personal trainer? O instrutor está ali para orientar os alunos de forma geral, tirar dúvidas sobre os exercícios, ensinar a execução e ajudar n",
+          "endereco": "https://www.instagram.com/reel/Dd9KiZAvYt0/"
+        },
+        {
+          "titulo": "você sabe a diferença? 👀 Na academia, ambos são essenciais! O professor orienta, acompanha e garante a execução correta dos treinos. O personal oferece um acompanhamento mais",
+          "endereco": "https://www.instagram.com/reel/DYSQ8pcuWB-/"
+        },
+        {
+          "titulo": "Personal Trainers - 389 treinadores esportivos e professores - Suas aulas particulares",
+          "endereco": "https://www.suasaulasparticulares.com.br/aulas-esportes/personal-trainer"
+        },
+        {
+          "titulo": "Plano Livre | Semestral",
+          "endereco": "https://sheerme.com/g/body-fit-gym-60855?services=223224"
+        },
+        {
+          "titulo": "Academia ou Personal Trainer? Principais diferenças - Cronoshare",
+          "endereco": "https://www.cronoshare.com.br/comunidade/comparativas/academia-personal-trainer"
+        },
+        {
+          "titulo": "Você é personal trainer ou professor particular? - Revista Empresário Fitness & Health",
+          "endereco": "https://revistaempresariofitness.com.br/voce-e-personal-trainer-ou-professor-particular/"
+        },
+        {
+          "titulo": "Consultoria Esportiva",
+          "endereco": "https://www.fresha.com/book-now/instituto-huertas-omh5duew/services?lid=2600945&oiid=sv:25104603&pId=2519032"
+        },
+        {
+          "titulo": "Treinar com Personal Trainer ou sozinho? 🤔💪 #Fitness #Saúde #Treino",
+          "endereco": "https://www.instagram.com/reel/DcIj5gVjGA4/"
+        },
+        {
+          "titulo": "Treinar sozinho X Treinar com personal: quando vale a pena ...",
+          "endereco": "https://minhasinscricoes.com.br/en-us/noticia/treinar-sozinho-x-treinar-com-personal-quando-vale-a-pena-investir-em-acompanhamento-df36e4d7"
+        }
+      ]
+    },
+    "mapa": [
+      {
+        "titulo": "Studio Tech Trainer- Personal- T Funcional",
+        "endereco": "São Paulo - SP"
+      },
+      {
+        "titulo": "Alê Lopes Personal Trainer",
+        "endereco": "São Paulo - SP"
+      },
+      {
+        "titulo": "Personal Trainer na Academia Gaviões Paulista",
+        "endereco": "São Paulo - SP"
+      }
+    ],
+    "organicos": [
+      {
+        "posicao": 1,
+        "titulo": "Personal Trainers - 389 treinadores esportivos e professores",
+        "endereco": "https://www.suasaulasparticulares.com.br/aulas-esportes/personal-trainer"
+      },
+      {
+        "posicao": 2,
+        "titulo": "The Traits of an Excellent Personal Trainer! And the Flaws of a Bad One",
+        "endereco": "https://www.youtube.com/watch?v=MhONDCzVx9w"
+      },
+      {
+        "posicao": 3,
+        "titulo": "Personal Trainer ou Treinador Fitness? : r/beginnerfitness",
+        "endereco": "https://www.reddit.com/r/beginnerfitness/comments/1ww95pr/personal_trainer_or_fitness_coach/?tl=pt-br"
+      },
+      {
+        "posicao": 4,
+        "titulo": "Você é personal trainer ou professor particular?",
+        "endereco": "https://revistaempresariofitness.com.br/voce-e-personal-trainer-ou-professor-particular/"
+      },
+      {
+        "posicao": 5,
+        "titulo": "Treinar.me — Encontre o personal trainer certo pra você",
+        "endereco": "https://www.treinar.me/"
+      },
+      {
+        "posicao": 6,
+        "titulo": "Academia ou Personal Trainer? Principais diferenças - Cronoshare",
+        "endereco": "https://www.cronoshare.com.br/comunidade/comparativas/academia-personal-trainer"
+      },
+      {
+        "posicao": 7,
+        "titulo": "Devo ir com o Personal Trainer externo ou usar um na nova academia? : r/AskUK",
+        "endereco": "https://www.reddit.com/r/AskUK/comments/1ogsxc6/should_i_go_with_the_external_personal_trainer_or/?tl=pt-br"
+      },
+      {
+        "posicao": 8,
+        "titulo": "Saiba tudo sobre o personal trainer",
+        "endereco": "https://www.superprof.com.br/blog/esporte/personal-trainer/"
+      }
+    ]
+  }
+]
