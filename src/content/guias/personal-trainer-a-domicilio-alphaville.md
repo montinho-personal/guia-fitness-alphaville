@@ -1,5 +1,5 @@
 ---
-titulo: "Personal trainer a domicílio em Alphaville: treino na sua casa"
+titulo: "Personal trainer em casa em Alphaville: preço e como funciona"
 descricao: "Como funciona o personal trainer a domicílio em Alphaville: espaço na casa do residencial, equipamento, portaria e quando somar uma academia ao treino."
 h1: "Personal trainer a domicílio em Alphaville"
 resposta: "Em Alphaville, quem mora em casa dentro de residencial pode transformar garagem, varanda ou quintal no lugar da aula com personal. O cadastro do profissional na portaria vem primeiro. Se faltar carga, Arena 18 e Ironberg servem de reforço às sessões feitas em casa."
@@ -21,13 +21,24 @@ fontes:
 video:
   id: izMrrSoJGBw
   titulo: "Raiva e sangue no olho"
+perguntas:
+  - p: "Quanto custa um personal trainer em casa em Alphaville?"
+    r: "Não há tabela oficial, e o guia não publica valores que não consegue conferir. No atendimento em casa, o preço costuma incluir o deslocamento do profissional e, às vezes, o equipamento que ele leva. Peça o total do mês a mais de um profissional e pergunte o que está incluído."
+  - p: "Quanto custa 1 mês de personal trainer?"
+    r: "Depende do número de aulas por semana, da duração da sessão e do local. Compare propostas pelo valor fechado do mês e pela regra de reposição de faltas, não só pelo preço da aula avulsa."
+  - p: "Qual o valor médio cobrado por um personal trainer?"
+    r: "Médias publicadas por plataformas de anúncio misturam profissionais e formatos muito diferentes, e o guia não usa esses números como referência. O que mais pesa no preço é a experiência, o deslocamento e o que vem junto, como avaliação e ajustes do treino."
+  - p: "Precisa ter equipamento em casa para treinar com personal?"
+    r: "Não necessariamente. Dá para treinar com o peso do corpo, elásticos e halteres leves, que muitos profissionais levam. Combine antes o espaço disponível e o que o personal traz; no condomínio, confirme as regras de uso do espaço fitness."
+  - p: "Dá para treinar em casa com personal no condomínio em Alphaville?"
+    r: "Sim, desde que o residencial permita a entrada do prestador. Cada residencial tem regra própria de cadastro na portaria e de horário. Consulte a administração antes da primeira aula."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: 2026-11-15
-atualizado_em: 2026-11-15
+atualizado_em: 2026-11-16
 ---
 
 > **Transparência.** O Onde Treinar Alphaville tem um editor só: o Montinho, que leva o treino até casas de Alphaville. Ao final, o quadro com os dados dele funciona como anúncio.
