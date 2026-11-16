@@ -1,5 +1,5 @@
 ---
-titulo: "Personal trainer em Alphaville: onde o treino pode acontecer"
+titulo: "Personal trainer em Alphaville: preço e onde treinar"
 descricao: "Academia, condomínio ou casa: o que muda para treinar com personal trainer em Alphaville, quais academias informam o serviço e o que perguntar antes."
 h1: "Personal trainer em Alphaville: academia, condomínio ou casa"
 resposta: "Em Alphaville, o treino com personal costuma acontecer em três lugares: numa academia que autorize profissional de fora, no espaço fitness do residencial ou dentro de casa. A escolha do local vem antes da escolha do profissional, porque cada lugar tem regra, custo extra e estrutura diferentes."
@@ -23,13 +23,28 @@ fontes:
 vitrine:
   destaque: natalia-nascimento
   intro: "Para quem está avaliando um personal em Alphaville, estes são resultados de alunos do Montinho, publicados no site dele. Mostram o que o acompanhamento fez por essas pessoas; não indicam onde elas moram nem garantem que o resultado se repita."
+perguntas:
+  - p: "Quanto custa 1 hora de personal trainer em Alphaville?"
+    r: "Não existe tabela única. O valor muda com a experiência do profissional, o local (casa, condomínio ou academia), a frequência e o que está incluído, como avaliação, planilha e contato entre as aulas. Este guia não publica faixa de preço porque não consegue verificá-la. Peça proposta a mais de um profissional e some a eventual taxa que a academia cobra do personal de fora."
+  - p: "Quanto custa um personal trainer 3 vezes por semana?"
+    r: "Em geral, o profissional cobra por pacote mensal ou por número de sessões por semana, e o valor por aula costuma mudar conforme a frequência. Para comparar propostas, peça o preço total do mês para três sessões semanais e confira o que entra nele: avaliação inicial, reposição de aulas, ajustes de treino e deslocamento."
+  - p: "Vale a pena pagar um personal trainer?"
+    r: "Costuma valer para quem está começando, voltando de lesão, com pouco tempo ou sem evoluir há meses. Para quem já treina com segurança e constância, uma boa academia pode bastar. O guia Academia ou personal trainer detalha os dois casos."
+  - p: "Dá para treinar com personal no condomínio em Alphaville?"
+    r: "Sim, desde que o residencial permita. Cada residencial de Alphaville, como o Zero, o 1 ou o 3, tem regra própria para prestador de serviço: cadastro na portaria, horários e uso do espaço fitness. Consulte a administração antes da primeira aula."
+  - p: "Tem personal trainer mulher em Alphaville?"
+    r: "O guia não mantém lista de profissionais. Se você prefere uma personal mulher, pergunte nas academias que informam personal trainer entre os serviços e peça indicações. O Montinho, que mantém este guia, é homem."
+  - p: "Posso levar personal trainer na Ironberg Alphaville?"
+    r: "Sim. A Ironberg é a única academia do guia que publica a regra: o personal de fora paga um valor fixo à academia para atender no espaço. O valor é informado na unidade."
+  - p: "Qual a academia mais cara de Alphaville?"
+    r: "Pelos valores conhecidos, a SIX, no 23º andar do Empresarial 18 do Forte, com preços citados à imprensa bem acima das demais. Entre as que publicam tabela, Ironberg e NitroGym têm as mensalidades mais altas."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: 2026-11-14
-atualizado_em: 2026-11-14
+atualizado_em: 2026-11-16
 ---
 
 > **Transparência.** Este guia pertence a um personal trainer que atende na região, o Montinho. Ele aparece em um bloco identificado como publicidade no fim da página. O restante do texto vale para qualquer profissional.

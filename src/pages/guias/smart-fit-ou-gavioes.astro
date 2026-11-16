@@ -60,13 +60,13 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <h2>Preço: um lado conhecido, outro não</h2>
       <p>A Smart Fit publica os preços no site. Nesta unidade, o Plano Smart custa R$ 149,90 por mês com fidelidade e o Black, que dá acesso a toda a rede, R$ 159,90. As unidades da Smart Fit em Barueri têm ainda o Plano Fit, a R$ 139,90.</p>
       <p>A Gaviões não publica mensalidade nem diária; a página da unidade leva a uma plataforma de matrícula. Para comparar de verdade, peça o valor na recepção e coloque ao lado dos números acima.</p>
-      <p>Se você usa agregador, a conta é outra: a Gaviões entra no Wellhub a partir do plano {agregador(gv, 'Wellhub')?.plano_minimo}, e a Smart Fit, no TotalPass a partir do {agregador(sf, 'TotalPass')?.plano_minimo}. Veja o que cada plano custa em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
+      <p>Se você usa agregador, a conta é outra: a Gaviões entra no Wellhub a partir do plano {agregador(gv, 'Wellhub')?.plano_minimo} e no TotalPass a partir do {agregador(gv, 'TotalPass')?.plano_minimo}; a Smart Fit, no TotalPass a partir do {agregador(sf, 'TotalPass')?.plano_minimo}. Veja o que cada plano custa em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
 
       <h2>O que dá para fazer em cada uma</h2>
       <p>A Gaviões tem a grade mais ampla: além da musculação, lista {so(gv.data.modalidades, sf.data.modalidades).join(', ').toLowerCase().replace(/, ([^,]*)$/, ' e $1')}, e o site da rede menciona um rooftop com máquinas. A Smart Fit é mais enxuta, centrada em musculação e aulas curtas de alta intensidade.</p>
 
       <h2>Chegar e estacionar</h2>
-      <p>A Smart Fit fica no 2º pavimento do estacionamento da Sodimac, e o site da unidade informa estacionamento. A Gaviões fica na Av. Juruá, no mesmo número do Fast Treino e perto da SkyFit, e a página do Wellhub informa estacionamento acessível. Nenhuma das duas fontes diz se o estacionamento é gratuito para alunos.</p>
+      <p>A Smart Fit fica no 2º pavimento do estacionamento da Sodimac, e o site da unidade informa estacionamento. A Gaviões fica na Av. Juruá, no mesmo número do Fast Treino e perto da SkyFit; a página do TotalPass lista estacionamento grátis e manobrista. Na Smart Fit, a fonte não diz se o estacionamento é gratuito para alunos.</p>
 
       <h2>Resumo por perfil</h2>
       <ul>
@@ -74,7 +74,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
         <li><strong>Quer saber exatamente quanto vai pagar antes de ir:</strong> Smart Fit.</li>
         <li><strong>Quer treinar também em Barueri ou em outras cidades:</strong> Smart Fit, no Plano Black. A região tem {sfBarueri.length + 1} unidades da rede.</li>
         <li><strong>Quer lutas, dança, bike ou pilates no mesmo lugar:</strong> Gaviões.</li>
-        <li><strong>Tem Wellhub:</strong> Gaviões. <strong>Tem TotalPass:</strong> Smart Fit.</li>
+        <li><strong>Tem Wellhub:</strong> Gaviões. <strong>Tem TotalPass:</strong> as duas aparecem; compare o plano mínimo de cada uma.</li>
       </ul>
       <p>Antes de decidir, visite as duas no horário em que você vai treinar. O <a href="/ferramentas/checklist/">checklist de visita</a> ajuda, e o <a href={`/ferramentas/comparador/?a=${sf.id}&b=${gv.id}`}>comparador</a> mostra os dados completos lado a lado.</p>
     </div>

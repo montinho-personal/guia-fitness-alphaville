@@ -1,6 +1,6 @@
 ---
 titulo: "Personal trainer na Gaviões 24h Alphaville: o que saber"
-descricao: "Treinar com personal na Gaviões 24h, na Av. Juruá: horário de 24 horas, estrutura, acesso pelo Wellhub e as perguntas que a academia ainda não respondeu."
+descricao: "Treinar com personal na Gaviões 24h, na Av. Juruá: horário de 24 horas, estrutura, Wellhub, TotalPass e as perguntas que a academia ainda não respondeu."
 h1: "Personal trainer na Gaviões 24h Alphaville"
 resposta: "A Gaviões 24h Alphaville não publica regra para personal de fora, então a resposta vem da própria unidade da Av. Juruá. O ponto forte para quem treina acompanhado é o horário de 24 horas, todos os dias, listado no Wellhub. A mensalidade não é publicada; pelo Wellhub, a entrada é o plano Silver+."
 cluster: D
@@ -35,7 +35,7 @@ atualizado_em: 2026-11-15
 
 ## O relógio é o argumento
 
-A Gaviões 24h aparece no Wellhub aberta 24 horas, de segunda a domingo. No guia, só ela e a Ironberg Alphaville têm esse horário publicado. Para quem trabalha em turno, viaja muito ou só consegue treinar antes de amanhecer, isso pesa mais do que qualquer outra característica.
+A Gaviões 24h aparece no Wellhub aberta 24 horas, de segunda a domingo; no TotalPass, a unidade aparece 24 horas de segunda a sábado e fechada no domingo. Confirme o domingo antes de marcar sessões. No guia, só ela e a Ironberg Alphaville têm esse horário publicado. Para quem trabalha em turno, viaja muito ou só consegue treinar antes de amanhecer, isso pesa mais do que qualquer outra característica.
 
 Duas coisas, porém, continuam sem confirmação: se as 24 horas valem também nos feriados e como fica a equipe de madrugada. Em academias desse formato, é comum o período noturno ter menos gente trabalhando. Se a ideia é marcar sessões às 5h ou às 23h, confirme as duas antes. A lista de [academias 24 horas](/academias/24-horas/) mostra as opções da região.
 
@@ -61,7 +61,7 @@ O foco é musculação, e a página da unidade cita um rooftop com máquinas. A 
 
 ## Preço: a lacuna principal
 
-A Gaviões não divulga mensalidade nem diária: a página da unidade leva a uma plataforma de matrícula. No Wellhub, a unidade exige no mínimo o Silver+, de R$ 199,99. O orçamento real soma três parcelas: o acesso à academia, o preço cobrado pelo profissional e a taxa para personal externo, caso a Gaviões cobre alguma. Compare com [os preços publicados na região](/academias/precos/) e com [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+A Gaviões não divulga mensalidade nem diária: a página da unidade leva a uma plataforma de matrícula. No Wellhub, a unidade exige no mínimo o Silver+, de R$ 199,99; no TotalPass, o TP 3, de R$ 199,90. O orçamento real soma três parcelas: o acesso à academia, o preço cobrado pelo profissional e a taxa para personal externo, caso a Gaviões cobre alguma. Compare com [os preços publicados na região](/academias/precos/) e com [Wellhub e TotalPass](/academias/wellhub-totalpass/).
 
 ![Montinho, personal trainer em Alphaville, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
 

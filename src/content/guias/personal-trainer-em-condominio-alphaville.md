@@ -66,7 +66,7 @@ As academias de residencial variam bastante. Algumas têm só esteira, bicicleta
 Se o seu objetivo pede cargas que a sala do condomínio não oferece, dá para combinar os dois formatos: parte da semana em casa, parte numa academia. Três opções com ficha no guia entram nessa conta:
 
 - [Ironberg](/academias/ironberg-alphaville/), na Estrada da Aldeinha: só musculação, aberta 24 horas e com estacionamento gratuito de mais de 1.000 vagas. É uma das raras academias que explicam em público o acesso do personal externo: a casa cobra dele uma taxa fixa, com valor revelado só na unidade.
-- [Gaviões 24h](/academias/gavioes-24h-alphaville/), na Avenida Juruá: funciona o dia inteiro, domingo incluído.
+- [Gaviões 24h](/academias/gavioes-24h-alphaville/), na Avenida Juruá: funciona 24 horas de segunda a sábado; no domingo, as fontes divergem.
 - [Arena 18](/academias/arena-18-alphaville/), no Melville Empresarial: abre até as 18h no domingo. **Relação comercial:** o Montinho atende alunos lá.
 
 Na Gaviões e na Arena 18, confirme a política para profissional externo antes de fechar qualquer combinado. A lista completa de [academias 24 horas](/academias/24-horas/) mostra outras alternativas.

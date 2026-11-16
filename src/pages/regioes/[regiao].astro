@@ -3,7 +3,8 @@ import Base from '../../layouts/Base.astro';
 import CartaoAcademia from '../../components/CartaoAcademia.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Mantem from '../../components/Mantem.astro';
-import { academias, REGIOES, e24h, abreDomingo, agregador, urlAcademia, urlRegiao, dataIso, type Academia, type RegiaoId } from '../../lib/dados';
+import Perguntas from '../../components/Perguntas.astro';
+import { academias, REGIOES, e24h, abreDomingo, agregador, urlAcademia, urlRegiao, dataIso, faixasDia, type Academia, type RegiaoId } from '../../lib/dados';
 
 export async function getStaticPaths() {
   const todas = await academias();
@@ -27,10 +28,50 @@ const jurua = naVia('Juruá'), araguaia = naVia('Araguaia');
 const boxes = xs.filter((a) => a.data.tipo === 'box');
 const redes = xs.filter((a) => a.data.rede);
 
+const ach = (id: string) => xs.find((a) => a.id === id);
+const end = (a?: Academia) => a ? a.data.endereco.split(' - ').slice(0, 2).join(', ') : '';
+const perguntasAlpha = (() => {
+  if (regiao !== 'alphaville') return [];
+  const out: { p: string; r: string }[] = [];
+  const h24 = xs.filter((a) => e24h(a.data.horario));
+  if (h24.length) out.push({ p: 'Qual academia de Alphaville abre 24 horas?', r: `${h24.map((a) => `${a.data.nome} (${end(a)})`).join(' e ')} ${h24.length > 1 ? 'são as academias' : 'é a academia'} do guia com horário publicado de 24 horas.` });
+  const ib = ach('ironberg-alphaville');
+  if (ib?.data.mensalidade) out.push({ p: 'Quanto custa a mensalidade da Ironberg Alphaville?', r: `${ib.data.mensalidade.resumo} Os planos publicados pela rede são: ${ib.data.mensalidade.planos.map((x) => `${x.nome}, ${x.preco}`).join('; ')}.` });
+  const gv = ach('gavioes-24h-alphaville');
+  if (gv) { const w = agregador(gv, 'Wellhub'), t = agregador(gv, 'TotalPass'); out.push({ p: 'Quanto custa a Academia Gaviões Alphaville?', r: `A Gaviões não publica mensalidade nem diária. Pelos agregadores, entra a partir ${[w && `do ${w.plano_minimo} do Wellhub (${w.preco_plano})`, t && `do ${t.plano_minimo} do TotalPass (${t.preco_plano})`].filter(Boolean).join(' e ')}.` }); }
+  const six = ach('six-alphaville');
+  if (six) out.push({ p: 'Onde fica a SIX academia em Alphaville?', r: `A SIX fica na ${end(six)}, no 23º andar do Empresarial 18 do Forte. Não publica preço no site; valores citados à imprensa a colocam como a academia mais cara da região.` });
+  const sc = ach('scelta-alphaville');
+  if (sc) out.push({ p: 'Qual o horário da Scelta em Alphaville?', r: `A Scelta, na ${end(sc)}, funciona de segunda a sexta ${faixasDia(sc.data.horario.seg)}, no sábado ${faixasDia(sc.data.horario.sab)} e no domingo ${faixasDia(sc.data.horario.dom)}, segundo as fontes da ficha.` });
+  const bf = ach('bluefit-alphaville');
+  if (bf) out.push({ p: 'Onde fica a Bluefit em Alphaville?', r: `Há duas unidades com ficha no guia: a Bluefit Alphaville, na ${end(bf)}, e a Bluefit Tamboré, na Av. Tucunaré. A rede não publica a mensalidade das unidades.` });
+  const vf = ach('voifit-alphaville');
+  if (vf) out.push({ p: 'Onde fica a VoiFit em Alphaville?', r: `A VoiFit fica na ${end(vf)}, no Empresarial 18 do Forte, e funciona de segunda a sexta ${faixasDia(vf.data.horario.seg)}.` });
+  const comPreco = xs.filter((a) => a.data.mensalidade && a.data.tipo === 'academia').map((a) => ({ a, v: Math.min(...a.data.mensalidade!.planos.filter((p) => !/aula|teste|drop|pacote|diária|day use|fim de semana/i.test(p.nome)).map((p) => Number(p.preco.replace(/[^\d,]/g, '').replace(',', '.')))) })).sort((x, y) => x.v - y.v);
+  if (comPreco.length) out.push({ p: 'Qual a academia mais barata de Alphaville?', r: `Entre as academias de Alphaville que publicam preço, a mensalidade de entrada mais baixa é a da ${comPreco[0].a.data.nome}, a partir de R$ ${comPreco[0].v.toFixed(2).replace('.', ',')} por mês. Outras academias não divulgam valores.` });
+  out.push({ p: 'Alphaville fica em Barueri ou em Santana de Parnaíba?', r: 'Nos dois. A parte comercial e boa parte das academias deste guia ficam do lado de Barueri, como o Alphaville Industrial, o Centro Comercial e o 18 do Forte. Muitos residenciais e o trecho da Estrada da Bela Vista ficam em Santana de Parnaíba.' });
+  return out;
+})();
+const perguntasBarueri = (() => {
+  if (regiao !== 'barueri') return [];
+  const out: { p: string; r: string }[] = [];
+  const centro = xs.filter((a) => /centro/i.test(a.data.bairro));
+  if (centro.length) out.push({ p: 'Quais academias ficam no centro de Barueri?', r: `${centro.map((a) => `${a.data.nome} (${end(a)})`).join('; ')}. ${centro.filter((a) => a.data.mensalidade).map((a) => `${a.data.nome}: ${a.data.mensalidade!.valor}`).join('; ')}.` });
+  const sf = xs.filter((a) => a.data.rede === 'Smart Fit');
+  if (sf.length) out.push({ p: 'Onde tem Smart Fit em Barueri?', r: `O guia tem ${sf.length} unidades da Smart Fit na cidade: ${sf.map((a) => `${a.data.nome} (${end(a)})`).join('; ')}. A unidade da Sodimac fica em Alphaville, que também pertence a Barueri.` });
+  const pb = ach('panobianco-barueri-centro');
+  if (pb) out.push({ p: 'Quanto custa a Panobianco Barueri Centro?', r: `${pb.data.mensalidade ? pb.data.mensalidade.resumo + ' ' : ''}O guia ainda não confirmou se a unidade do centro pratica o preço anunciado pela rede. Ela fica na ${end(pb)} e funciona de segunda a quinta ${faixasDia(pb.data.horario.seg)}.` });
+  out.push({ p: 'Tem academia 24 horas em Barueri?', r: 'Fora de Alphaville, nenhuma academia com ficha no guia tem horário de 24 horas. As duas academias 24 horas do guia, Gaviões 24h e Ironberg, ficam em Alphaville, que faz parte do município de Barueri.' });
+  const comPreco = xs.filter((a) => a.data.mensalidade).map((a) => ({ a, v: Math.min(...a.data.mensalidade!.planos.filter((p) => !/aula|teste|drop|pacote|diária|day use|fim de semana/i.test(p.nome)).map((p) => Number(p.preco.replace(/[^\d,]/g, '').replace(',', '.')))) })).sort((x, y) => x.v - y.v);
+  if (comPreco.length) out.push({ p: 'Qual a academia mais barata de Barueri?', r: `Pelos preços publicados, a mensalidade de entrada mais baixa é a da ${comPreco[0].a.data.nome}, a partir de R$ ${comPreco[0].v.toFixed(2).replace('.', ',')} por mês com fidelidade. Algumas academias de bairro não divulgam valores e podem cobrar menos.` });
+  out.push({ p: 'Tem academia perto das estações de trem de Barueri?', r: 'Sim. Pelas coordenadas das fichas, a Smart Fit do Parque Shopping fica a cerca de 300 metros em linha reta da estação Antônio João, o CT Don Combat a cerca de 400 metros da estação Barueri e a Smart Fit Barueri Centro a cerca de 800 metros da estação Jardim Belval. A página Academia perto de você traz a lista completa.' });
+  out.push({ p: 'A SkyFit fica em Barueri?', r: 'Sim. A SkyFit com ficha no guia fica na Av. Juruá, 307, no Alphaville Industrial, que pertence a Barueri. Por isso ela aparece na região de Alphaville e Tamboré.' });
+  return out;
+})();
 const META: Record<RegiaoId, { titulo: string; descricao: string; h1: string; fina: string }> = {
-  alphaville: { titulo: 'Academias em Alphaville e Tamboré: onde treinar', descricao: `Onde treinar em Alphaville, Tamboré e 18 do Forte: ${xs.length} academias, boxes e estúdios por bairro, com endereço, horários e o que observar em cada um.`, h1: 'Onde treinar em Alphaville e Tamboré', fina: 'Alphaville Industrial, Empresarial 18 do Forte, o entorno do Iguatemi e o Tamboré, bairro a bairro.' },
-  barueri: { titulo: 'Academias em Barueri: onde treinar e quanto custa', descricao: `Onde treinar em Barueri fora de Alphaville: ${xs.length} academias no centro, em Bethaville, no sul e na Vila Engenho Novo, com horários, endereço e preços.`, h1: 'Onde treinar em Barueri', fina: 'Centro, Bethaville, Parque Shopping, sul de Barueri e Vila Engenho Novo, para quem mora ou trabalha fora dos bairros de Alphaville.' },
-  'santana-de-parnaiba': { titulo: 'Academias em Santana de Parnaíba: onde treinar', descricao: `Onde treinar em Santana de Parnaíba: ${xs.length} academias na Fazendinha, no Polvilho e no Jardim São Luís, com endereço, horários e o que observar.`, h1: 'Onde treinar em Santana de Parnaíba', fina: 'Fazendinha, Polvilho e Jardim São Luís: três academias de bairro, em pontos distantes do município.' },
+  alphaville: { titulo: 'Academia em Alphaville: opções, preços e horários por bairro', descricao: `Academias em Alphaville, Tamboré e 18 do Forte: ${xs.length} opções por bairro, com endereço, horário, preço publicado, Wellhub e TotalPass. Gaviões, Ironberg, SIX e mais.`, h1: 'Academias em Alphaville e Tamboré: onde treinar', fina: 'Alphaville Industrial, Empresarial 18 do Forte, o entorno do Iguatemi e o Tamboré, bairro a bairro.' },
+  barueri: { titulo: 'Academia em Barueri: centro, preços e perto das estações', descricao: `Academias em Barueri fora de Alphaville: ${xs.length} opções no centro, em Bethaville, no Parque Shopping e no sul, com horários, preços e distância das estações.`, h1: 'Academias em Barueri: onde treinar', fina: 'Centro, Bethaville, Parque Shopping, sul de Barueri e Vila Engenho Novo, para quem mora ou trabalha fora dos bairros de Alphaville.' },
+  'santana-de-parnaiba': { titulo: 'Academias em Santana de Parnaíba: onde treinar', descricao: `Onde treinar em Santana de Parnaíba: ${xs.length} academias na Fazendinha, no Polvilho, no Jardim São Luís e na Estrada da Bela Vista, com horários e endereço.`, h1: 'Onde treinar em Santana de Parnaíba', fina: 'Fazendinha, Polvilho, Jardim São Luís e o lado de Alphaville na Estrada da Bela Vista, em pontos distantes do município.' },
 };
 const m = META[regiao];
 const outras = (Object.keys(REGIOES) as RegiaoId[]).filter((x) => x !== regiao);
@@ -153,6 +194,8 @@ const schema = [
         {regiao === 'santana-de-parnaiba' && <><li><a href="/guias/personal-trainer-santana-de-parnaiba/">Personal trainer em Santana de Parnaíba</a></li><li><a href="/guias/personal-trainer-aldeia-da-serra/">Personal trainer na Aldeia da Serra</a></li></>}
       </ul>
     </section>
+    <Perguntas itens={perguntasAlpha} titulo="Perguntas frequentes sobre academias em Alphaville" />
+    <Perguntas itens={perguntasBarueri} titulo="Perguntas frequentes sobre academias em Barueri" id="perguntas-barueri" />
     {regiao === 'alphaville' && <section class="bloco fino"><Mantem pagina={`regiao-${regiao}`} compacta titulo="Converse com um personal em Alphaville" texto="O Montinho Personal Trainer, que mantém este guia, atende presencialmente em academias e condomínios de Alphaville e Tamboré." /></section>}
   </div>
 </Base>
