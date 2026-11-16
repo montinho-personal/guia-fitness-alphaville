@@ -1,0 +1,84 @@
+nome: Unika CF Barueri
+regiao: barueri
+bairro: Jardim dos Camargos
+tipo: box
+resumo: Box de CrossFit na Rua da Prata, 102, no Jardim dos Camargos, com turma infantil e aula também no domingo de manhã.
+endereco: R. da Prata, 102 - Jardim dos Camargos, Barueri - SP, 06410-000
+geo:
+  lat: -23.5039721
+  lng: -46.8694767
+horario:
+  seg:
+  - 06:00-22:00
+  ter:
+  - 06:00-22:00
+  qua:
+  - 06:00-22:00
+  qui:
+  - 06:00-22:00
+  sex:
+  - 06:00-21:00
+  sab:
+  - 09:00-11:00
+  dom:
+  - 09:00-10:00
+modalidades:
+- crossfit
+atividades_listadas:
+- CrossFit
+- CrossFit infantil
+comodidades:
+- Ar-condicionado
+- Armários
+- Chuveiro
+- Estacionamento
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver
+  preco_plano: R$ 149,99
+  url: https://wellhub.com/pt-br/search/partners/unika-cf-barueri/
+  nota: Na página do Wellhub, as aulas de CrossFit aparecem a partir do plano Gold.
+- nome: TotalPass
+  plano_minimo: TP 3
+  preco_plano: R$ 199,90
+  url: https://totalpass.com/br/academias/unika-cf/
+mensalidade: null
+site: https://crossfitbethastrong.com
+telefone: (11) 93350-7636
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página do box no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/unika-cf-barueri/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - agregadores
+  fonte: Página do box no TotalPass
+  url: https://totalpass.com/br/academias/unika-cf/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Horário: o TotalPass mostra só uma janela, segunda das 12h às 13h. A ficha usa o horário do Wellhub.'
+- 'Plano no Wellhub: a página indica acesso a partir do Silver, mas lista as aulas de CrossFit a partir do Gold. Confirme no aplicativo.'
+pendencias:
+- Mensalidade direta
+- Grade de aulas por horário
+analise:
+- 'É o box por trás das buscas por CrossFit na Rua da Prata, no Jardim dos Camargos, em Barueri. O Wellhub lista CrossFit e CrossFit infantil, com horário das 6h às 22h nos dias úteis e uma janela curta no sábado e no domingo de manhã.'
+- 'Nos agregadores, entra pelo TP 3 no TotalPass; no Wellhub, a página mostra Silver como entrada, mas indica o CrossFit a partir do Gold. Como em todo box, o horário é de aula com turma: confirme a grade antes de ir.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'
