@@ -1,0 +1,70 @@
+nome: Alemão Boxing Club
+regiao: santana-de-parnaiba
+bairro: Fazendinha
+tipo: estudio
+resumo: Clube de boxe na Avenida Tenente Marques, na Fazendinha, em Santana de Parnaíba, com turmas cedo e à noite e agendamento pelo Wellhub.
+endereco: Av. Ten. Marques, 5720 - Vila Poupança (Fazendinha), Santana de Parnaíba - SP, 06525-001
+geo:
+  lat: -23.40581
+  lng: -46.88605
+horario:
+  seg:
+  - 07:00-08:00
+  - 20:00-21:00
+  ter:
+  - 07:00-08:00
+  - 20:00-21:00
+  qua:
+  - 07:00-08:00
+  - 20:00-21:00
+  qui:
+  - 07:00-08:00
+  - 20:00-21:00
+  sex:
+  - 07:00-08:00
+  - 20:00-21:00
+  sab: []
+  dom: []
+modalidades:
+- lutas
+atividades_listadas:
+- Boxe
+comodidades:
+- Armários
+- Vestiário
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic+
+  preco_plano: R$ 99,99
+  url: https://wellhub.com/pt-br/search/partners/alemao-boxing-club-fazendinha/
+mensalidade: null
+site: https://www.instagram.com/alemao_boxing_club
+telefone: (11) 91443-2951
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/alemao-boxing-club-fazendinha/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - geo
+  fonte: 'Localização aproximada: perto da Mattos Fitness, no número 5516 da mesma via, segundo as fichas do guia'
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta
+analise:
+- 'É só boxe, em duas turmas de uma hora por dia útil: às 7h e às 20h. Não abre no fim de semana, e o Wellhub pede agendamento.'
+- 'Fica a poucos números da Mattos Fitness, na mesma via da Fazendinha, que tem jiu-jitsu e muay thai na grade. Quem quer combinar boxe com outra luta encontra as duas opções no mesmo trecho.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

@@ -52,6 +52,10 @@ agregadores:
   plano_minimo: Silver
   preco_plano: R$ 149,99
   url: https://wellhub.com/pt-br/search/partners/voifit-academia-alphaville-empresarial-18-do-forte-barueri/
+- nome: TotalPass
+  plano_minimo: TP 2+
+  preco_plano: R$ 149,90
+  url: https://totalpass.com/br/academias/voi-fit-2bb4b250-04b0-4fac-9d80-14ec73ed615c/
 mensalidade: null
 site: https://voifit.com.br
 telefone: (11) 4193-8418
@@ -67,6 +71,14 @@ proveniencia:
   url: https://wellhub.com/pt-br/search/partners/voifit-academia-alphaville-empresarial-18-do-forte-barueri/
   conferido_em: '2026-11-13'
   nivel: fonte-publica
+- campos:
+  - endereco
+  - horario
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/voi-fit-2bb4b250-04b0-4fac-9d80-14ec73ed615c/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
 pendencias:
 - Mensalidade direta da academia
 - Regras e custo do estacionamento
@@ -79,4 +91,4 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: '2026-11-13'
-atualizado_em: '2026-11-13'
+atualizado_em: '2026-11-16'

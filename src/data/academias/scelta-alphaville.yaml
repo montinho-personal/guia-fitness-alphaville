@@ -27,6 +27,7 @@ modalidades:
 - danca
 - pilates
 - hiit
+- lutas
 atividades_listadas:
 - Abdominal
 - Balé
@@ -36,6 +37,9 @@ atividades_listadas:
 - HIIT
 - Mat Pilates
 - Musculação
+- Jiu-jitsu (TotalPass)
+- Muay Thai (TotalPass)
+- Boxe chinês (TotalPass)
 comodidades:
 - Ar condicionado
 - Armários
@@ -55,6 +59,10 @@ agregadores:
   plano_minimo: Gold
   preco_plano: R$ 319,99
   url: https://wellhub.com/pt-br/search/partners/academia-scelta/
+- nome: TotalPass
+  plano_minimo: TP 4
+  preco_plano: R$ 299,90
+  url: https://totalpass.com/br/academias/scelta-academia/
 mensalidade: null
 site: https://www.instagram.com/sceltaacademia/
 telefone: (11) 97500-6370
@@ -70,15 +78,25 @@ proveniencia:
   url: https://wellhub.com/pt-br/search/partners/academia-scelta/
   conferido_em: '2026-11-13'
   nivel: fonte-publica
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/scelta-academia/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
 pendencias:
 - Mensalidade direta da academia
+- Grade de jiu-jitsu e muay thai (listados só no TotalPass)
 analise:
 - Abre às 5h30 em dias úteis e fecha às 23h. No sábado funciona das 8h às 16h, e no domingo, das 9h às 14h.
-- 'A página da unidade lista uma estrutura de serviços maior que a média: cafeteria, loja, toalhas de banho, fisioterapeuta e personal trainer, além de estacionamento. No Wellhub, o acesso começa no plano Gold, acima do exigido pelas academias de rede da região.'
+- 'A página da unidade lista uma estrutura de serviços maior que a média: cafeteria, loja, toalhas de banho, fisioterapeuta e personal trainer, além de estacionamento. No Wellhub, o acesso começa no plano Gold, acima do exigido pelas academias de rede da região. No TotalPass, entra pelo TP 4, e a página de lá acrescenta jiu-jitsu, muay thai e boxe chinês à grade.'
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: '2026-11-13'
-atualizado_em: '2026-11-13'
+atualizado_em: '2026-11-16'

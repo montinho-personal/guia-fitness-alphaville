@@ -1,0 +1,83 @@
+nome: Centro de Lutas Double Dragon
+regiao: barueri
+bairro: Jardim São Pedro
+tipo: estudio
+resumo: Centro de lutas no Jardim São Pedro, perto do centro de Barueri, com muay thai, turma feminina e jiu-jitsu infantil citado na página.
+endereco: R. Profa. Elvira Lefévre Sales Nemer, 87 - Jardim São Pedro, Barueri - SP
+geo:
+  lat: -23.509435
+  lng: -46.88124
+horario:
+  seg:
+  - 07:00-12:00
+  - 14:00-22:00
+  ter:
+  - 07:00-12:00
+  - 14:00-22:00
+  qua:
+  - 07:00-12:00
+  - 14:00-22:00
+  qui:
+  - 07:00-12:00
+  - 14:00-22:00
+  sex:
+  - 07:00-12:00
+  - 14:00-22:00
+  sab:
+  - 10:00-17:00
+  dom: []
+modalidades:
+- lutas
+atividades_listadas:
+- Muay Thai
+- Muay Thai feminino
+- Jiu-jitsu infantil
+comodidades:
+- Armários
+- Chuveiro
+- Itens de higiene pessoal
+- Loja de artigos esportivos
+- Personal trainer
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic+
+  preco_plano: R$ 99,99
+  url: https://wellhub.com/pt-br/search/partners/centro-de-lutas-double-dragon
+mensalidade: null
+site: https://www.instagram.com/ct_doubledragon
+telefone: (11) 95344-5236
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/centro-de-lutas-double-dragon
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - geo
+  fonte: OpenStreetMap, centro do bairro Jardim São Pedro (posição aproximada pelo bairro)
+  url: https://www.openstreetmap.org/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'CEP: o Wellhub informa 64021-190, que não é de Barueri. A ficha omite o CEP até confirmação.'
+pendencias:
+- CEP correto
+- Mensalidade direta
+- Jiu-jitsu para adultos
+analise:
+- 'O foco é o muay thai, com turma feminina própria. O jiu-jitsu aparece no texto da página só para crianças; adulto que procura jiu-jitsu deve perguntar antes.'
+- 'Tem um dos horários mais longos entre as escolas de luta de Barueri: de manhã e da tarde até as 22h nos dias úteis, e das 10h às 17h no sábado. Entra no Wellhub pelo Basic+.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

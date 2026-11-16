@@ -1,0 +1,79 @@
+nome: CT Fuinha
+regiao: barueri
+bairro: Parque dos Camargos
+tipo: estudio
+resumo: Centro de treinamento de jiu-jitsu e muay thai na Avenida Zélia, no Parque dos Camargos, com turmas de manhã e à noite.
+endereco: Av. Zélia, 251 - Parque dos Camargos, Barueri - SP, 06436-000
+geo:
+  lat: -23.540925
+  lng: -46.885278
+horario:
+  seg:
+  - 06:00-12:00
+  - 18:00-23:00
+  ter:
+  - 06:00-09:00
+  - 18:00-21:30
+  qua:
+  - 06:00-12:00
+  - 18:00-23:00
+  qui:
+  - 06:00-09:00
+  - 18:00-21:30
+  sex:
+  - 06:00-12:00
+  - 17:00-23:00
+  sab:
+  - 09:00-12:00
+  dom: []
+modalidades:
+- lutas
+atividades_listadas:
+- Jiu-jitsu
+- Muay Thai
+comodidades:
+- Bebedouro
+- Chuveiro
+- Itens de higiene pessoal
+- Loja de artigos esportivos
+- Personal trainer
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver
+  preco_plano: R$ 149,99
+  url: https://wellhub.com/pt-br/search/partners/ct-fuinha-parque-dos-camargos/
+mensalidade: null
+site: https://www.instagram.com/ct_fuinha
+telefone: (11) 95118-6490
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/ct-fuinha-parque-dos-camargos/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - geo
+  fonte: OpenStreetMap, trecho da Avenida Zélia no Parque dos Camargos (posição aproximada pela rua)
+  url: https://www.openstreetmap.org/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta
+- Grade de turmas
+analise:
+- 'Fica na mesma Avenida Zélia da Smart Fit do Parque dos Camargos, o que permite combinar musculação e luta sem atravessar a cidade. A grade listada tem jiu-jitsu e muay thai; o texto da página cita também boxe e taekwondo.'
+- 'As turmas se concentram de manhã cedo e à noite, com horários diferentes a cada dia; no sábado, só de manhã. Tem nota 4,94 no Wellhub, com 33 avaliações, e entra a partir do plano Silver.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'
