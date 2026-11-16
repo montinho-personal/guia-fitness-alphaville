@@ -1,0 +1,69 @@
+nome: Prainha Tamboré
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: estudio
+resumo: 'Arena de beach tennis na Alameda Araguaia, 3628, aberta até as 23h de segunda a sábado e aceita no Wellhub pelo Silver+.'
+endereco: 'Alameda Araguaia, 3628 - Alphaville Industrial, Barueri - SP, 06455-000'
+geo:
+  lat: -23.5036219
+  lng: -46.8274163
+horario:
+  seg:
+  - 07:00-23:00
+  ter:
+  - 07:00-23:00
+  qua:
+  - 07:00-23:00
+  qui:
+  - 07:00-23:00
+  sex:
+  - 07:00-23:00
+  sab:
+  - 07:00-23:00
+  dom:
+  - 09:00-17:00
+modalidades:
+- esportes-de-areia
+atividades_listadas:
+- Beach tennis
+comodidades:
+- Quadras de areia
+- Cafeteria
+- Mini bar
+- Loja de artigos esportivos
+- Salão de beleza
+- Vestiário
+- Estacionamento
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver+
+  preco_plano: R$ 199,99
+  url: https://wellhub.com/pt-br/search/partners/prainha-tambore-alphaville-industrial/
+mensalidade: null
+site: https://instagram.com/prainhatambore/
+telefone: '(11) 91205-4850'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da arena no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/prainha-tambore-alphaville-industrial/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade e preço de aula ou quadra
+analise:
+- 'Apesar do nome, fica na Alameda Araguaia, 3628, endereço registrado como Alphaville Industrial, no trecho que leva ao Tamboré. Abre das 7h às 23h de segunda a sábado e das 9h às 17h no domingo.'
+- 'É a arena de beach tennis com a entrada mais barata no Wellhub entre as conferidas pelo guia: Silver+. O guia não a encontrou no TotalPass.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

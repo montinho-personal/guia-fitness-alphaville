@@ -1,0 +1,68 @@
+nome: Arena Tamboré
+regiao: santana-de-parnaiba
+bairro: Centro Empresarial Tamboré
+tipo: estudio
+resumo: 'Arena de beach tennis, futevôlei e vôlei na Alameda América, 440, do lado de Santana de Parnaíba do Tamboré.'
+endereco: 'Alameda América, 440 - Centro Empresarial Tamboré, Santana de Parnaíba - SP, 06543-315'
+geo:
+  lat: -23.4745872
+  lng: -46.8303189
+horario:
+  seg:
+  - 07:00-23:00
+  ter:
+  - 07:00-23:00
+  qua:
+  - 07:00-23:00
+  qui:
+  - 07:00-23:00
+  sex:
+  - 07:00-23:00
+  sab:
+  - 07:00-19:00
+  dom: []
+modalidades:
+- esportes-de-areia
+- funcional
+atividades_listadas:
+- Beach tennis
+- Futevôlei
+- Vôlei
+- Funcional
+comodidades:
+- Quadras de areia
+- Armários
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold
+  preco_plano: R$ 319,99
+  url: https://wellhub.com/pt-br/search/partners/arena-tambore/
+mensalidade: null
+site: https://www.instagram.com/arenatambore
+telefone: '(11) 91482-2499'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da arena no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/arena-tambore/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'O TotalPass tem uma Arena Tamboré em outro endereço, na Granja Viana, em Carapicuíba; não é esta.'
+pendencias:
+- Mensalidade e preço de aula ou quadra
+analise:
+- 'Fica na Alameda América, no Centro Empresarial Tamboré, do lado de Santana de Parnaíba. Abre das 7h às 23h nos dias úteis e até as 19h no sábado; no domingo, fecha.'
+- 'Entra pelo Gold no Wellhub. Atenção ao buscar no TotalPass: lá, Arena Tamboré é outro lugar, em Carapicuíba.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'
