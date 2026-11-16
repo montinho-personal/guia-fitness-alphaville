@@ -1,0 +1,66 @@
+nome: Clínica Health Body Pilates e Fisioterapia
+titulo_seo: 'Health Body Pilates Alphaville: horário e Wellhub'
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: estudio
+resumo: 'Clínica de pilates e fisioterapia na Alameda Grajaú, com aulas que o Wellhub descreve também para idosos e gestantes.'
+endereco: 'Alameda Grajaú, 60 - Alphaville Industrial, Barueri - SP, 06454-050'
+geo:
+  lat: -23.4979843
+  lng: -46.8462495
+horario:
+  seg:
+  - 07:00-20:00
+  ter:
+  - 07:00-20:00
+  qua:
+  - 07:00-20:00
+  qui:
+  - 07:00-20:00
+  sex:
+  - 07:00-20:00
+  sab: []
+  dom: []
+modalidades:
+- pilates
+atividades_listadas:
+- Pilates
+comodidades:
+- Ar-condicionado
+- Estacionamento
+- Fisioterapeuta
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold
+  preco_plano: R$ 319,99
+  url: https://wellhub.com/pt-br/search/partners/clinica-health-body-pilates-e-fisioterapia/
+mensalidade: null
+telefone: '(11) 96769-6107'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da clínica no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/clinica-health-body-pilates-e-fisioterapia/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'O Wellhub lista também o Spine Movi Pilates no mesmo endereço e com as mesmas coordenadas; as páginas não dizem se é o mesmo espaço.'
+pendencias:
+- Mensalidade direta
+- Tamanho das turmas
+analise:
+- 'É uma clínica que junta pilates e fisioterapia, na Alameda Grajaú, no Alphaville Industrial. O texto da página no Wellhub menciona aulas para idosos e gestantes; em ambos os casos, a liberação vem do médico.'
+- 'Funciona das 7h às 20h de segunda a sexta. No Wellhub, entra a partir do Gold.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

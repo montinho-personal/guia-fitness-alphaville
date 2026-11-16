@@ -1,0 +1,83 @@
+nome: Inspire Pilates Alphaville
+regiao: alphaville
+bairro: Alphaville Comercial
+tipo: estudio
+resumo: 'Estúdio de pilates na Praça Flor de Linho, no Centro Comercial Alphaville, aceito no Wellhub pelo Silver e no TotalPass pelo TP 2+.'
+endereco: 'Praça Flor de Linho, 14 - Alphaville, Barueri - SP, 06453-007'
+geo:
+  lat: -23.4973097
+  lng: -46.8522874
+horario:
+  seg:
+  - 08:00-20:00
+  ter:
+  - 08:00-20:00
+  qua:
+  - 08:00-20:00
+  qui:
+  - 08:00-20:00
+  sex:
+  - 08:00-20:00
+  sab: []
+  dom: []
+modalidades:
+- pilates
+atividades_listadas:
+- Pilates
+- Pilates em estúdio
+comodidades:
+- Acessibilidade
+- Ar-condicionado
+- Armários
+- Banheiro acessível
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver
+  preco_plano: R$ 149,99
+  url: https://wellhub.com/pt-br/search/partners/inspire-pilates-alphaville-alphaville/
+- nome: TotalPass
+  plano_minimo: TP 2+
+  preco_plano: R$ 149,90
+  url: https://totalpass.com/br/academias/inspire-pilates-alphaville/
+mensalidade: null
+telefone: '(11) 99390-4194'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página do estúdio no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/inspire-pilates-alphaville-alphaville/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página do estúdio no TotalPass
+  url: https://totalpass.com/br/academias/inspire-pilates-alphaville/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Horário: o Wellhub informa das 8h às 20h; o TotalPass, das 7h às 21h, de segunda a sexta. A ficha usa o horário menor.'
+pendencias:
+- Mensalidade direta
+- Tamanho das turmas
+analise:
+- 'Fica na Praça Flor de Linho, no Centro Comercial Alphaville. É o único estúdio de pilates conferido pelo guia que aparece nos dois agregadores: Silver no Wellhub e TP 2+ no TotalPass.'
+- 'Abre só de segunda a sexta; as fontes divergem sobre o horário exato. O TotalPass lista itens de acessibilidade, como banheiro acessível.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

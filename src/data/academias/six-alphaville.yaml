@@ -3,6 +3,7 @@ regiao: alphaville
 bairro: 18 do Forte
 tipo: academia
 rede: SIX
+titulo_seo: 'SIX Alphaville: mensalidade, endereço e horário'
 resumo: Wellness club de alto padrão no rooftop do 23º andar do Empresarial 18 do Forte, com musculação, aulas, spa e valet, inaugurado em outubro de 2026.
 endereco: Av. Copacabana, 325, 23º andar - Empresarial 18 do Forte, Barueri - SP, 06472-001
 geo:
@@ -81,6 +82,17 @@ proveniencia:
 pendencias:
 - Mensalidade atual, que a SIX não publica no site
 - 'Posição exata no mapa: a usada é a do conjunto Empresarial 18 do Forte'
+perguntas:
+- p: Qual o valor da mensalidade da SIX Alphaville?
+  r: 'A SIX não publica preço; a matrícula começa por uma visita agendada. Em reportagem da Exame de agosto de 2026, o cofundador citou o plano semestral de Alphaville em seis parcelas de R$ 3.900, mais adesão de R$ 600, e contratos de 15 meses na pré-venda a partir de R$ 2.200, com expectativa de cerca de R$ 2.700 na abertura. São valores informados à imprensa e podem ter mudado.'
+- p: Onde fica a SIX Alphaville?
+  r: 'No rooftop do 23º andar do Empresarial 18 do Forte, na Av. Copacabana, 325, em Barueri. Abriu em outubro de 2026.'
+- p: Qual a academia mais cara de Alphaville?
+  r: 'Pelos valores conhecidos, a SIX. Os números citados à imprensa ficam muito acima das mensalidades publicadas pelas outras academias do guia, como Ironberg e NitroGym, que cobram menos de R$ 600 por mês.'
+- p: Qual o horário da SIX Alphaville?
+  r: 'Das 6h às 22h em dias úteis, das 8h às 15h no sábado e das 8h às 14h no domingo, segundo o site oficial.'
+- p: O que a mensalidade da SIX inclui?
+  r: 'O site apresenta a SIX como wellness club: além da musculação e das aulas, tem spa, recovery, salão de beleza, bar e valet gratuito para membros. Confirme na visita o que entra em cada plano.'
 analise:
 - 'A SIX abriu em outubro de 2026 no rooftop do 23º andar do Empresarial 18 do Forte, com 1.500 m² e vista para Alphaville. Não é uma academia comum: além da musculação e das aulas de ballet fitness, boxe, spinning, dança, pilates e hot yoga, tem spa, recovery, salão de beleza, bar e valet gratuito para membros. Funciona das 6h às 22h em dias úteis, das 8h às 15h no sábado e das 8h às 14h no domingo.'
 - A rede não publica preço no site; a matrícula começa por uma visita agendada. Em reportagem da Exame de agosto de 2026, antes da inauguração, o cofundador citou o plano semestral de Alphaville em seis parcelas de R$ 3.900, mais adesão de R$ 600, e contratos de 15 meses vendidos na pré-venda a partir de R$ 2.200, com expectativa de cerca de R$ 2.700 na abertura. São valores informados à imprensa, não uma tabela oficial, e podem ter mudado. Mesmo assim, colocam a SIX muito acima de qualquer outra academia do guia.
