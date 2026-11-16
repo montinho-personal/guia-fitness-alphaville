@@ -1,6 +1,7 @@
 nome: Arena 18
 regiao: alphaville
 bairro: Melville Empresarial
+titulo_seo: 'Arena 18 Alphaville: academia, beach tennis, horário e Wellhub'
 tipo: academia
 resumo: Academia e arena de esportes de areia na Rua Mario Quintana, com musculação, funcional, HIIT, beach tennis, futevôlei e vôlei no mesmo lugar.
 endereco: R. Mario Quintana, 144 - Melville Empresarial II, Barueri - SP, 06485-350
@@ -106,6 +107,21 @@ pendencias:
 - Mensalidade, que não é publicada
 - Valores e regras para reservar quadras de areia
 - Se as aulas exigem agendamento
+perguntas:
+- p: Onde fica a Arena 18 Alphaville?
+  r: 'Na Rua Mário Quintana, 144, no Melville Empresarial II, em Barueri.'
+- p: A Arena 18 é academia ou clube?
+  r: 'As duas coisas. O site apresenta musculação, Método Five, HIIT Burn e artes marciais no indoor, quadras de areia para beach tennis, futevôlei e vôlei, e um espaço de eventos para aniversários e confraternizações.'
+- p: Qual o horário da Arena 18 Alphaville?
+  r: 'Das 5h às 23h de segunda a sexta, das 8h às 23h no sábado e das 8h às 18h no domingo, segundo as fontes da ficha.'
+- p: A Arena 18 aceita Wellhub ou TotalPass?
+  r: 'Sim. No Wellhub, a partir do plano Gold; no TotalPass, a partir do TP 4.'
+- p: Tem artes marciais na Arena 18?
+  r: 'O site cita artes marciais entre as atividades indoor, sem detalhar quais. Pergunte na recepção a grade e as modalidades do mês.'
+- p: Tem sauna e banho de gelo na Arena 18?
+  r: 'Sim. A ficha do guia lista sauna, banho de gelo, spa e massagem entre as comodidades.'
+- p: O Montinho atende na Arena 18?
+  r: 'Sim. O Montinho, personal que mantém este guia, atende alunos na Arena 18. É uma relação comercial, informada também no aviso da ficha.'
 analise:
 - É a única academia deste guia que junta treino e esportes de areia no mesmo endereço. Além da sala de musculação e de um estúdio de funcional com HIIT, mobilidade e o método Five, a Arena 18 tem quadras de areia para beach tennis, futevôlei e vôlei.
 - 'A lista de estrutura informada ao Wellhub é das mais longas do guia: sauna, banho de gelo, spa e massagem, fisioterapeuta, nutricionista, cafeteria, área infantil e espaço de coworking, além de estacionamento. Funciona das 5h às 23h em dias úteis; no fim de semana o site oficial informa 8h às 23h no sábado e 8h às 18h no domingo, e os agregadores mostram o sábado só até as 18h.'
@@ -116,4 +132,4 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: '2026-11-14'
-atualizado_em: '2026-11-14'
+atualizado_em: '2026-11-16'
