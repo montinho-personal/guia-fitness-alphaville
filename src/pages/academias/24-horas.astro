@@ -4,9 +4,10 @@ import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
 import VideoMontinho from '../../components/VideoMontinho.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
+import Perguntas from '../../components/Perguntas.astro';
 import { academias, hora, e24h, abertura, fechamento, abreDomingo, faixasDia, horasSemana, urlAcademia, REGIOES, dataLonga, dataIso } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-16') };
 const todas = await academias();
 const h24 = todas.filter((a) => e24h(a.data.horario));
 const nome24 = todas.filter((a) => /24\s?h/i.test(a.data.nome) && !e24h(a.data.horario));
@@ -17,6 +18,16 @@ const abs = (u: string) => new URL(u, Astro.site).href;
 const titulo = 'Academia 24 horas em Alphaville e Barueri: quais são';
 const descricao = 'Quais academias de Alphaville, Barueri e Santana de Parnaíba têm horário publicado de 24 horas, quais abrem às 4h ou 5h e quais fecham à meia-noite.';
 const lista = (xs: typeof todas) => xs.map((a) => a.data.nome).join(', ').replace(/, ([^,]*)$/, ' e $1');
+const prem = todas.find((a) => a.id === '24h-premium-alphaville');
+const gav = todas.find((a) => a.id === 'gavioes-24h-alphaville');
+const perguntas = [
+  { p: 'Existe academia 24 horas em Alphaville?', r: h24.length ? `Sim. Com horário publicado de 24 horas, o guia tem ${lista(h24)}. No domingo, as fontes da Gaviões divergem; a Ironberg informa 24 horas todos os dias, inclusive feriados.` : 'Nenhuma academia do guia tem horário publicado de 24 horas.' },
+  { p: 'A Gaviões 24 horas fica em Alphaville?', r: gav ? `Sim. A Academia Gaviões 24h fica na ${gav.data.endereco.split(' - ')[0]}, no Alphaville Industrial, em Barueri.` : '' },
+  { p: 'A academia 24h Premium da Alameda Grajaú abre 24 horas?', r: prem ? `Não, apesar do nome. A Academia 24h Premium, na ${prem.data.endereco.split(' - ')[0]}, tem horário publicado no Wellhub de ${faixasDia(prem.data.horario.seg)} nos dias úteis, ${faixasDia(prem.data.horario.sab)} no sábado e ${faixasDia(prem.data.horario.dom)} no domingo. O Instagram listado na ficha é o da 24 Health Club.` : '' },
+  { p: 'Quanto custa a academia 24 horas em Alphaville?', r: 'A Ironberg publica R$ 399 por mês no plano de 12 meses, mais matrícula de R$ 120. A Gaviões não publica mensalidade. A 24h Premium também não publica; pelo Wellhub, ela exige o plano Gold+, de R$ 439,99 por mês.' },
+  { p: 'Tem academia 24 horas em Barueri?', r: 'Na cidade de Barueri fora de Alphaville, nenhuma academia com ficha no guia tem horário de 24 horas. As opções 24 horas ficam no lado de Alphaville, que também pertence a Barueri: a Gaviões, na Av. Juruá, e a Ironberg, na Estrada da Aldeinha.' },
+  { p: 'O que é a 24 Wellness Alphaville?', r: 'É uma marca que aparece nas buscas ligada à 24 Health Club. O guia não conseguiu ler o site da marca nem encontrou a unidade com esse nome no Wellhub ou no TotalPass, por isso ainda não tem ficha própria.' },
+];
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: '24 horas', url: '/academias/24-horas/' }]}>
@@ -70,6 +81,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       </ul>
       <p>O <a href="/ferramentas/checklist/">checklist de visita</a> reúne essas e outras perguntas. Para comparar horários de duas ou três academias, use o <a href="/ferramentas/comparador/">comparador</a>.</p>
     </div>
+    <Perguntas itens={perguntas} titulo="Perguntas sobre academia 24 horas" />
+
     <VideoMontinho id="izMrrSoJGBw" titulo="Raiva e sangue no olho" pagina="24-horas" />
     <LeiaTambem url="/academias/24-horas/" />
     <div style="margin-top:28px"><Fontes fontes={[...h24, ...cedo, ...tarde].filter((a, i, xs) => xs.indexOf(a) === i).flatMap((a) => a.data.proveniencia.filter((p) => p.campos.includes('horario')).map((p) => ({ titulo: `${p.fonte} — ${a.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })))} /></div>

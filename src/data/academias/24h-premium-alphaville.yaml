@@ -2,6 +2,7 @@ nome: Academia 24h Premium
 regiao: alphaville
 bairro: Alphaville Industrial
 tipo: academia
+titulo_seo: 'Academia 24h Premium (Alameda Grajaú): horário e Wellhub'
 resumo: Academia na Alameda Grajaú com musculação, lutas e aulas coletivas. Apesar do nome, o horário publicado não é de 24 horas.
 endereco: Alameda Grajaú, 525 - Alphaville Industrial, Barueri - SP, 06454-050
 geo:
@@ -101,6 +102,15 @@ divergencias:
 pendencias:
 - Confirmar se há funcionamento 24 horas para alunos diretos
 - Mensalidade direta da academia
+perguntas:
+- p: A academia 24h Premium abre 24 horas?
+  r: 'Não, apesar do nome. Pelo Wellhub, abre das 5h às 23h de segunda a sexta, das 7h às 15h no sábado e das 8h às 14h no domingo.'
+- p: Onde fica a academia 24h Premium?
+  r: 'Na Alameda Grajaú, 525, no Alphaville Industrial, em Barueri. O Instagram ligado à unidade é o da 24 Health Club.'
+- p: Quanto custa a academia 24h Premium?
+  r: 'A academia não publica mensalidade nas fontes consultadas. Pelo Wellhub, exige o plano Gold+, de R$ 439,99 por mês, um dos mais altos entre as academias do guia.'
+- p: Quais modalidades a 24h Premium oferece?
+  r: 'Além da musculação, a grade listada inclui boxe, jiu-jitsu, muay thai, bike, yoga e pilates de solo.'
 analise:
 - O nome sugere funcionamento ininterrupto, mas o horário listado no Wellhub é das 5h às 23h de segunda a sexta, das 7h às 15h no sábado e das 8h às 14h no domingo. Se você procura uma academia para treinar de madrugada, confirme com a unidade antes.
 - 'A estrutura informada é extensa: áreas de musculação, pesos livres, cardio e funcional, cafeteria, loja, elevador e espaço de coworking. A grade inclui boxe, jiu-jitsu, muay thai, bike, yoga e pilates. No Wellhub, o acesso exige o plano Gold+, o nível mais alto exigido entre as academias reunidas aqui.'
