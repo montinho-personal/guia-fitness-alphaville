@@ -5,10 +5,11 @@ import Fontes from '../../components/Fontes.astro';
 import VideoMontinho from '../../components/VideoMontinho.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
 import Mantem from '../../components/Mantem.astro';
+import Perguntas from '../../components/Perguntas.astro';
 import planos from '../../data/planos-agregadores.json';
 import { academias, agregador, ORDEM_WELLHUB, urlAcademia, REGIOES, TIPOS, dataLonga, dataCurta, dataIso, type Academia } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-16') };
 const todas = await academias();
 const reais = (s: string) => Number(s.replace(/[^\d,]/g, '').replace(',', '.'));
 // Menor preço mensal regular: ignora aula avulsa, diária, pacotes, mês de teste e planos só de fim de semana.
@@ -31,8 +32,22 @@ const precoPlano = (p: string) => planos.wellhub.planos.find(([n]) => n === p)?.
 const gold = todas.filter((a) => { const w = agregador(a, 'Wellhub'); return w && ['Gold', 'Gold+'].includes(w.plano_minimo); });
 const conf = new Date(planos.conferido_em);
 const abs = (u: string) => new URL(u, Astro.site).href;
-const titulo = 'Quanto custa academia em Alphaville e Barueri';
-const descricao = 'Mensalidades publicadas pelas academias de Alphaville e Barueri, com fonte e data, e o plano de Wellhub ou TotalPass que cada uma exige.';
+const titulo = 'Quanto custa academia em Alphaville e Barueri: mensalidades';
+const descricao = 'Quanto custa academia em Alphaville e Barueri: mensalidades publicadas da Ironberg, NitroGym, Smart Fit e outras, com fonte e data, e o plano de Wellhub ou TotalPass.';
+const alpha = academiasComPreco.filter((a) => a.data.regiao === 'alphaville');
+const ib = todas.find((a) => a.id === 'ironberg-alphaville');
+const h24 = todas.filter((a) => Object.values(a.data.horario).every((d) => d.join() === '00:00-23:59'));
+const nWellhub = todas.filter((a) => agregador(a, 'Wellhub')).length, nTotal = todas.filter((a) => agregador(a, 'TotalPass')).length;
+const perguntas = [
+  alpha.length ? { p: 'Quanto custa academia em Alphaville por mês?', r: `Entre as academias de Alphaville que publicam preço, a mensalidade de entrada vai de ${brl(menor(alpha[0]))} (${alpha[0].data.nome}) a ${brl(menor(alpha[alpha.length - 1]))} (${alpha[alpha.length - 1].data.nome}), em planos com fidelidade. Muitas academias não divulgam valores; nelas, o plano mínimo do Wellhub ou do TotalPass é a melhor referência.` } : null,
+  ib?.data.mensalidade ? { p: 'Quanto custa a mensalidade da Ironberg Alphaville?', r: `${ib.data.mensalidade.resumo} Os planos da rede são ${ib.data.mensalidade.planos.map((x) => `${x.nome.toLowerCase()} a ${x.preco}`).join(', ')}. A tabela vale para todas as unidades.` } : null,
+  { p: 'Qual a academia mais cara de Alphaville?', r: 'Pelos valores conhecidos, a SIX, no 23º andar do Empresarial 18 do Forte. A rede não publica preço, mas o cofundador citou à imprensa o plano semestral em seis parcelas de R$ 3.900, mais adesão de R$ 600. Entre as que publicam tabela, Ironberg e NitroGym têm as mensalidades mais altas.' },
+  { p: 'Qual a academia mais barata de Alphaville e Barueri?', r: `A mensalidade de entrada mais baixa publicada é a da ${maisBarata.data.nome}, a partir de ${brl(menor(maisBarata))} por mês${maisBarata.data.mensalidade!.abrangencia === 'rede' ? ', preço anunciado pela rede' : ''}. Em Alphaville, a mais barata com preço publicado é a ${alpha[0]?.data.nome ?? 'Smart Fit'}.` },
+  { p: 'Quanto custa uma academia 24 horas em Alphaville?', r: `As academias com horário publicado de 24 horas no guia são ${h24.map((a) => a.data.nome).join(' e ')}. ${ib?.data.mensalidade ? `A Ironberg publica preço a partir de ${brl(menor(ib))} por mês. ` : ''}A Gaviões não publica mensalidade; pelos agregadores, entra a partir do Silver+ do Wellhub e do TP 3 do TotalPass.` },
+  { p: 'Academia em Alphaville aceita Gympass?', r: `Sim, várias. O Gympass hoje se chama Wellhub. Das ${todas.length} academias do guia, ${nWellhub} aparecem no Wellhub e ${nTotal} no TotalPass, cada uma exigindo um plano mínimo diferente. A página Wellhub e TotalPass mostra o plano de cada academia.` },
+  { p: 'Quanto custa academia de jiu-jitsu ou de luta em Alphaville?', r: `O guia ainda não tem fichas das academias de jiu-jitsu de Alphaville, como as das redes Alliance e Gracie Barra, e por isso não publica esses valores. Entre as fichas atuais, listam lutas na grade: ${todas.filter((a) => a.data.modalidades.includes('lutas')).map((a) => a.data.nome).join(', ')}.` },
+  { p: 'Qual o valor de uma academia por mês na região?', r: `Com os preços publicados, uma academia de musculação da região custa de ${brl(menor(academiasComPreco[0]))} a ${brl(menor(academiasComPreco[academiasComPreco.length - 1]))} por mês no plano de entrada. Antes de comparar, some matrícula, taxa anual e estacionamento, e veja se o plano dá acesso a outras unidades.` },
+].filter((x): x is { p: string; r: string } => !!x);
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Preços', url: '/academias/precos/' }]}>
@@ -116,6 +131,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <p>Preços de academia mudam com frequência. Cada valor desta página tem a data em que foi conferido. Se você viu um preço diferente na recepção ou no site, <a href="/correcoes/">avise</a>.</p>
     </div>
 
+    <Perguntas itens={perguntas} titulo="Perguntas frequentes sobre preço de academia" />
     <section class="bloco fino"><Mantem pagina="precos" compacta titulo="Quer comparar com o custo de um personal?" texto="Se você está pesando academia e acompanhamento individual, o Montinho Personal Trainer, que mantém este guia, atende presencialmente em academias e condomínios da região." /></section>
 
     <VideoMontinho id="yndKE1GrnUQ" titulo="Toda pessoa com shape tem uma coisa em comum" pagina="precos" />
