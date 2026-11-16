@@ -3,6 +3,7 @@ regiao: alphaville
 bairro: Tamboré
 tipo: academia
 rede: NitroGym
+titulo_seo: 'NitroGym Tamboré: mensalidade, diária, horário e TotalPass'
 resumo: Academia premium de musculação no Shopping Tamboré, aberta das 5h à meia-noite em dias úteis, com estacionamento incluso por 3 horas e preço publicado.
 endereco: Avenida Piracema, 669 - Tamboré, Barueri - SP, 06460-030
 geo:
@@ -64,6 +65,12 @@ telefone: (11) 98643-0468
 site: https://nitrogymacademia.com.br/unidades/unidade-tambore
 proveniencia:
 - campos:
+  - rede
+  fonte: Site oficial da NitroGym (página inicial e descrição do site)
+  url: https://nitrogymacademia.com.br/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
   - endereco
   - horario
   - modalidades
@@ -80,6 +87,21 @@ proveniencia:
   url: https://totalpass.com/br/academias/nitrogym-tambore/
   conferido_em: '2026-11-14'
   nivel: fonte-publica
+perguntas:
+- p: Quanto custa treinar na NitroGym Tamboré?
+  r: 'Segundo o site oficial, R$ 389 por mês no plano anual, R$ 489 no semestral e R$ 589 no mensal, todos com cobrança recorrente. Há também plano só de fim de semana, a R$ 289 por mês, e diária de R$ 90, paga no local.'
+- p: Tem academia no Shopping Tamboré?
+  r: 'Sim. A NitroGym fica dentro do Shopping Tamboré, na Avenida Piracema, 669. Os planos incluem o estacionamento do shopping por até 3 horas.'
+- p: A NitroGym aceita TotalPass?
+  r: 'Sim. A unidade Tamboré aparece no TotalPass a partir do plano TP 5.'
+- p: A NitroGym aceita Gympass (Wellhub)?
+  r: 'O guia não encontrou a unidade Tamboré no Wellhub, o antigo Gympass. Confirme no aplicativo antes de ir.'
+- p: Qual o horário da NitroGym Tamboré?
+  r: 'Das 5h à meia-noite de segunda a sexta, e das 6h às 22h aos sábados, domingos e feriados, segundo o site oficial.'
+- p: Quem é o dono da NitroGym?
+  r: 'O site oficial apresenta a NitroGym como a rede de academias de musculação criada por Sérgio Arnaut.'
+- p: A NitroGym tem outras unidades?
+  r: 'O site oficial lista duas: a do Shopping Tamboré, em Barueri, e a da Granja Viana, na Rodovia Raposo Tavares, km 22, em Cotia, aberta 24 horas. O plano anual dá acesso a duas unidades.'
 divergencias:
 - 'Horário de segunda a sexta: das 5h à meia-noite no site oficial; das 6h às 23h40 no TotalPass, que pode mostrar só a janela válida para usuários do agregador.'
 pendencias:
@@ -94,4 +116,4 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: '2026-11-14'
-atualizado_em: '2026-11-14'
+atualizado_em: '2026-11-16'

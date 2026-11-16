@@ -3,8 +3,9 @@ regiao: alphaville
 bairro: Tamboré
 tipo: academia
 rede: Bluefit
+titulo_seo: 'Bluefit Tamboré: horário, endereço, Wellhub e preço'
 resumo: Unidade da rede Bluefit na Av. Tucunaré, no Tamboré, voltada a musculação e aberta todos os dias.
-endereco: Av. Tucunaré, 1498 - Alphaville, Barueri - SP, 06460-020
+endereco: Av. Tucunaré, 1498, sala 02, piso superior, bloco 02 - Tamboré, Barueri - SP, 06460-020
 geo:
   lat: -23.488764
   lng: -46.833994
@@ -69,6 +70,12 @@ site: https://www.instagram.com/bluefitacademia
 telefone: (11) 93461-6493
 proveniencia:
 - campos:
+  - mensalidade-rede
+  fonte: Site oficial da Bluefit (página da unidade)
+  url: https://www.bluefit.com.br/unidade/tambore
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
   - endereco
   - geo
   - horario
@@ -81,6 +88,19 @@ proveniencia:
   nivel: fonte-publica
 pendencias:
 - Mensalidade direta da academia
+perguntas:
+- p: 'Onde fica a Bluefit Tamboré?'
+  r: 'Na Av. Tucunaré, 1498, sala 02, piso superior, bloco 02, segundo o site da rede. É o mesmo número do Mackenzie Mall, por isso aparece nas buscas como Bluefit Alphaville Mackenzie.'
+- p: 'Qual o horário da Bluefit Tamboré?'
+  r: 'Das 5h à meia-noite de segunda a sexta, das 8h às 17h no sábado e das 8h às 14h no domingo, segundo as fontes da ficha.'
+- p: 'Qual o telefone da Bluefit Tamboré?'
+  r: '(11) 93461-6493, segundo a ficha do guia.'
+- p: 'Quanto é a mensalidade da Bluefit?'
+  r: 'O site da rede anuncia planos a partir de R$ 119,90 por mês; o valor exato de cada plano da unidade aparece na página de matrícula e pode variar. Confira antes de assinar.'
+- p: 'A Bluefit aceita Gympass (Wellhub)?'
+  r: 'Sim. Esta unidade entra no Wellhub a partir do plano Silver, de R$ 149,99 por mês.'
+- p: 'A Bluefit aceita TotalPass?'
+  r: 'O guia não encontrou esta unidade no TotalPass.'
 analise:
 - Funciona das 5h às 23h59 de segunda a sexta. No sábado abre das 8h às 17h e no domingo, das 8h às 14h.
 - A lista de atividades é centrada em musculação, pesos livres e cardio, sem a grade extensa de aulas coletivas de outras unidades da rede. A página informa estacionamento e personal trainer no local. No Wellhub, entra a partir do plano Silver, um nível abaixo do exigido pela Bluefit Alphaville.

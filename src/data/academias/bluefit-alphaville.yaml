@@ -3,6 +3,7 @@ regiao: alphaville
 bairro: Alphaville Industrial
 tipo: academia
 rede: Bluefit
+titulo_seo: 'Bluefit Alphaville: horário, endereço, Wellhub e preço'
 resumo: Unidade da rede Bluefit na Alameda Amazonas, com musculação, bike e aulas coletivas, aberta até meia-noite em dias úteis.
 endereco: Alameda Amazonas, 388 - Alphaville Industrial, Barueri - SP, 06454-070
 geo:
@@ -75,6 +76,12 @@ site: https://www.instagram.com/bluefit.alphaville/
 telefone: (11) 94041-1693
 proveniencia:
 - campos:
+  - mensalidade-rede
+  fonte: Site oficial da Bluefit (página da unidade)
+  url: https://www.bluefit.com.br/unidade/alphaville
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
   - endereco
   - geo
   - horario
@@ -88,6 +95,19 @@ proveniencia:
 pendencias:
 - Mensalidade direta da academia
 - Regras do estacionamento
+perguntas:
+- p: 'Onde fica a Bluefit Alphaville?'
+  r: 'Na Alameda Amazonas, 388, no Alphaville Industrial, em Barueri. Não confunda com a Bluefit Tamboré, na Av. Tucunaré, nem com a Bluefit Barueri, em Bethaville.'
+- p: 'Qual o horário da Bluefit Alphaville?'
+  r: 'Das 5h à meia-noite de segunda a quinta, das 5h às 22h na sexta e das 7h às 19h no sábado e no domingo, segundo as fontes da ficha.'
+- p: 'Qual o telefone da Bluefit Alphaville?'
+  r: '(11) 94041-1693, segundo a ficha do guia.'
+- p: 'Quanto é a mensalidade da Bluefit?'
+  r: 'O site da rede anuncia planos a partir de R$ 119,90 por mês; o valor exato de cada plano da unidade aparece na página de matrícula e pode variar. Confira antes de assinar.'
+- p: 'A Bluefit aceita Gympass (Wellhub)?'
+  r: 'Sim. Esta unidade entra no Wellhub a partir do plano Silver+, de R$ 199,99 por mês.'
+- p: 'A Bluefit aceita TotalPass?'
+  r: 'O guia não encontrou esta unidade no TotalPass.'
 analise:
 - De segunda a quinta funciona das 5h até 23h59. Na sexta fecha às 22h, e no fim de semana abre das 7h às 19h, inclusive no domingo.
 - A página da unidade lista áreas separadas de musculação, pesos livres, cardio e funcional, além de bike e aulas como body pump e zumba. Informa também estacionamento e balança de bioimpedância. No Wellhub, o acesso começa no plano Silver+.
