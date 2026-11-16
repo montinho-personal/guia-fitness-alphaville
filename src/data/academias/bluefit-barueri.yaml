@@ -3,6 +3,7 @@ regiao: barueri
 bairro: Bethaville
 tipo: academia
 rede: Bluefit
+titulo_seo: 'Bluefit Barueri (Bethaville): horário, Wellhub e preço'
 resumo: Unidade da rede Bluefit na Av. Trindade, em Bethaville, com musculação, lutas e aulas em grupo.
 endereco: Av. Trindade, 344 - 2023 - Bethaville I, Barueri - SP, 06404-326
 geo:
@@ -67,6 +68,12 @@ mensalidade: null
 site: https://www.instagram.com/bluefitbarueri/
 proveniencia:
 - campos:
+  - mensalidade-rede
+  fonte: Site oficial da Bluefit (página da unidade)
+  url: https://www.bluefit.com.br/unidade/barueri
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
   - endereco
   - geo
   - horario
@@ -79,6 +86,17 @@ proveniencia:
   nivel: fonte-publica
 pendencias:
 - Mensalidade direta da academia
+perguntas:
+- p: 'Onde fica a Bluefit Barueri?'
+  r: 'Na Av. Trindade, 344, em Bethaville I, em Barueri. Nas buscas, aparece também como Bluefit Bethaville.'
+- p: 'Qual o horário da Bluefit Barueri?'
+  r: 'Das 5h à meia-noite de segunda a sexta, das 8h às 16h no sábado e das 10h às 16h no domingo, segundo as fontes da ficha.'
+- p: 'Quanto é a mensalidade da Bluefit?'
+  r: 'O site da rede anuncia planos a partir de R$ 119,90 por mês; o valor exato de cada plano da unidade aparece na página de matrícula e pode variar. Confira antes de assinar.'
+- p: 'A Bluefit aceita Gympass (Wellhub)?'
+  r: 'Sim. Esta unidade entra no Wellhub a partir do plano Silver+, de R$ 199,99 por mês.'
+- p: 'A Bluefit aceita TotalPass?'
+  r: 'O guia não encontrou esta unidade no TotalPass.'
 analise:
 - Abre das 5h às 23h59 de segunda a sexta. No sábado funciona das 8h às 16h, e no domingo, das 10h às 16h.
 - Além da musculação, a grade listada inclui muay thai, jiu-jitsu e aulas em grupo. A página da unidade registra itens de acessibilidade — banheiro, chuveiro e estacionamento acessíveis — que nem todas as academias da região informam. No Wellhub, o acesso começa no plano Silver+.
