@@ -1,0 +1,97 @@
+nome: Templo Jiu Jitsu Culture Alphaville
+regiao: alphaville
+bairro: Tamboré
+tipo: estudio
+resumo: Escola de jiu-jitsu no Mackenzie Mall, na Av. Tucunaré, no Centro Empresarial Tamboré, com aulas de muay thai e boxe listadas no TotalPass.
+endereco: Av. Tucunaré, 1498, loja 05 (Mackenzie Mall) - Centro Empresarial Tamboré, Barueri - SP
+geo:
+  lat: -23.494059
+  lng: -46.835607
+horario:
+  seg:
+  - 06:00-22:00
+  ter:
+  - 06:00-22:00
+  qua:
+  - 06:00-22:00
+  qui:
+  - 06:00-22:00
+  sex:
+  - 06:00-22:00
+  sab:
+  - 09:00-12:00
+  dom: []
+modalidades:
+- lutas
+- funcional
+atividades_listadas:
+- Jiu-jitsu
+- Muay Thai
+- Muay Thai feminino
+- Boxe
+- Boxe feminino
+- Condicionamento físico
+comodidades:
+- Ar-condicionado
+- Armários
+- Vestiário
+- Chuveiro
+- Banheiro acessível
+- Estacionamento conveniado
+- Loja de artigos esportivos
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold
+  preco_plano: R$ 319,99
+  url: https://wellhub.com/pt-br/search/partners/templo-jiu-jitsu-culture-alphaville-centro-empresarial-tambore/
+- nome: TotalPass
+  plano_minimo: TP 4
+  preco_plano: R$ 299,90
+  url: https://totalpass.com/br/academias/templo-alphaville/
+mensalidade: null
+site: https://www.instagram.com/templo_alphaville
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/templo-jiu-jitsu-culture-alphaville-centro-empresarial-tambore/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/templo-alphaville/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - geo
+  fonte: OpenStreetMap, trecho da Av. Tucunaré (posição aproximada pela rua)
+  url: https://www.openstreetmap.org/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Sábado: o Wellhub informa das 9h às 12h; o TotalPass, das 9h às 16h. A ficha usa o horário menor.'
+- 'Telefone: o Wellhub mostra (11) 4208-7665 e o TotalPass, (11) 91008-9657.'
+- 'Grade: o TotalPass lista boxe e muay thai; o Wellhub lista jiu-jitsu, condicionamento e aula particular de luta.'
+pendencias:
+- Mensalidade direta
+- Grade de horários por faixa e idade
+analise:
+- 'É uma escola de luta, não academia de musculação. O jiu-jitsu está no nome, e o TotalPass soma muay thai e boxe, com turmas femininas das duas. Fica numa loja do Mackenzie Mall, na Av. Tucunaré, a mesma avenida da Bluefit Tamboré. O Wellhub avisa que é preciso agendar a aula.'
+- 'Nos agregadores, é das entradas mais caras entre as lutas da região: Gold no Wellhub e TP 4 no TotalPass. Abre das 6h às 22h nos dias úteis e só de manhã no sábado; no domingo, fecha.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

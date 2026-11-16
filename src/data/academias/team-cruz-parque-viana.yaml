@@ -1,0 +1,93 @@
+nome: Academia Team Cruz Parque Viana
+regiao: barueri
+bairro: Parque Viana
+tipo: estudio
+resumo: Equipe de jiu-jitsu na Estrada dos Pinheiros, no Parque Viana, com muay thai e boxe, aberta só de segunda a sexta.
+endereco: Estr. dos Pinheiros, 589 - Parque Viana, Barueri - SP, 06449-000
+geo:
+  lat: -23.541259
+  lng: -46.867687
+horario:
+  seg:
+  - 09:00-10:00
+  - 18:00-22:00
+  ter:
+  - 08:00-09:00
+  - 18:00-22:00
+  qua:
+  - 09:00-10:00
+  - 18:00-22:00
+  qui:
+  - 08:00-09:00
+  - 18:00-22:00
+  sex:
+  - 09:00-10:00
+  - 18:00-22:00
+  sab: []
+  dom: []
+modalidades:
+- lutas
+atividades_listadas:
+- Jiu-jitsu
+- Muay Thai
+- Boxe
+- Capoeira
+comodidades:
+- Armários
+- Vestiário
+- Chuveiro
+- Bebedouro
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic+
+  preco_plano: R$ 99,99
+  url: https://wellhub.com/pt-br/search/partners/cqYYS2uemA3UjIRp2OvNE8Ai6Pxg2eAdzRofd41xNHZ3TueVK4HqhuK2j3uy4mSA
+- nome: TotalPass
+  plano_minimo: TP 1+
+  preco_plano: R$ 89,90
+  url: https://totalpass.com/br/academias/team-cruz-parque-viana/
+mensalidade: null
+telefone: (11) 93354-8903
+proveniencia:
+- campos:
+  - endereco
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/cqYYS2uemA3UjIRp2OvNE8Ai6Pxg2eAdzRofd41xNHZ3TueVK4HqhuK2j3uy4mSA
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/team-cruz-parque-viana/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - geo
+  fonte: OpenStreetMap, trecho da Estrada dos Pinheiros no Parque Viana (posição aproximada pela rua)
+  url: https://www.openstreetmap.org/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Horário: o Wellhub informa das 8h às 22h de segunda a sexta; o TotalPass detalha turmas de manhã e à noite. A ficha usa as turmas do TotalPass.'
+- 'Capoeira aparece só no TotalPass.'
+pendencias:
+- Mensalidade direta
+- Turmas por faixa e idade
+analise:
+- 'Funciona em turmas: uma de manhã cedo e outra à noite, das 18h às 22h, de segunda a sexta. No fim de semana não abre. Além do jiu-jitsu, a grade tem muay thai e boxe, e o TotalPass inclui capoeira.'
+- 'Está entre as entradas mais baratas de luta por agregador na região: Basic+ no Wellhub e TP 1+ no TotalPass. O Wellhub pede agendamento. Fica no Parque Viana, no sul de Barueri, perto da divisa com Carapicuíba.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

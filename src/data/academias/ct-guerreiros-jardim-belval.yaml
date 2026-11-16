@@ -1,0 +1,77 @@
+nome: CT Guerreiros Fight Team
+regiao: barueri
+bairro: Jardim Belval
+tipo: estudio
+resumo: Centro de treinamento no Jardim Belval com jiu-jitsu, krav magá e hapkido, que entra no Wellhub pelo plano Basic.
+endereco: R. Tiradentes, 525 - Jardim Belval, Barueri - SP, 06420-320
+geo:
+  lat: -23.514587
+  lng: -46.896076
+horario:
+  seg:
+  - 08:00-17:00
+  - 18:00-22:00
+  ter:
+  - 08:00-17:00
+  - 18:00-22:00
+  qua:
+  - 08:00-17:00
+  - 18:00-23:00
+  qui:
+  - 18:00-22:00
+  sex:
+  - 18:00-22:00
+  sab:
+  - 10:30-12:00
+  dom: []
+modalidades:
+- lutas
+atividades_listadas:
+- Jiu-jitsu
+- Krav Magá
+- Hapkido
+comodidades:
+- Área de alongamento
+- Bebedouro
+- Espaço adaptado para cadeira de rodas
+- Loja de artigos esportivos
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic
+  preco_plano: R$ 69,99
+  url: https://wellhub.com/pt-br/search/partners/ct-guerreiros-fight-team-jardim-belval-barueri
+mensalidade: null
+site: https://www.ctguerreiros.com.br
+telefone: (11) 99419-1821
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/ct-guerreiros-fight-team-jardim-belval-barueri
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - geo
+  fonte: OpenStreetMap, trecho da Rua Tiradentes no Jardim Belval (posição aproximada pela rua)
+  url: https://www.openstreetmap.org/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta
+- Turmas de cada modalidade
+analise:
+- 'Junta jiu-jitsu com duas artes de defesa pessoal pouco comuns na região, o krav magá e o hapkido. Fica na Rua Tiradentes, no Jardim Belval, bairro que dá nome a uma das estações da Linha 8-Diamante em Barueri.'
+- 'O horário publicado é mais cheio no começo da semana: de segunda a quarta abre de manhã e à noite; quinta e sexta, só à noite. No sábado, uma janela das 10h30 ao meio-dia. No Wellhub, entra pelo Basic, um dos planos mais baratos.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'
