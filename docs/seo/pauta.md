@@ -50,7 +50,7 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 
 | # | Publicado | Página | Título atual |
 |---|---|---|---|
-| ~~1~~ | ~~2026-11-13~~ | ~~`/guias/academia-ou-personal/`~~ | ~~Academia ou personal trainer: como decidir~~ (revisado em 16/11, slug `academia-ou-personal`) |
+| ~~1~~ | ~~2026-11-13~~ | ~~`/guias/academia-ou-personal/`~~ | ~~Academia ou personal trainer: como decidir~~ (revisado em 16/11, slug `academia-ou-personal`; título novo aprovado: "Academia ou personal trainer: diferença e quando vale a pena") |
 | 2 | 2026-11-13 | `/guias/como-escolher-academia/` | Como escolher academia em Alphaville: 7 critérios |
 | 3 | 2026-11-13 | `/guias/smart-fit-ou-gavioes/` | Smart Fit ou Gaviões em Alphaville: qual escolher |
 | 4 | 2026-11-13 | `/modalidades/musculacao/` | Musculação em Alphaville: onde treinar |

@@ -1,5 +1,5 @@
 ---
-titulo: "Academia ou personal trainer: como decidir"
+titulo: "Academia ou personal trainer: diferença e quando vale a pena"
 descricao: "Quando a academia sozinha resolve, quando vale contratar personal trainer e o que conferir antes: formação, regras da academia e do condomínio."
 h1: "Academia, personal ou os dois: como decidir"
 resposta: "Academia e personal não são alternativas: a academia é o lugar, o personal é o acompanhamento. Quem já treina com segurança e constância costuma se resolver só com a academia. Acompanhamento individual tende a fazer diferença para quem está começando, voltando de lesão, com pouco tempo ou sem evoluir há meses."
