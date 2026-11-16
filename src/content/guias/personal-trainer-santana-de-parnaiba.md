@@ -1,5 +1,5 @@
 ---
-titulo: "Personal trainer em Santana de Parnaíba: como treinar"
+titulo: "Personal trainer em Santana de Parnaíba: preço e como treinar"
 descricao: "Personal trainer em Santana de Parnaíba: o lado residencial de Alphaville, as academias com ficha no guia e os horários que limitam o treino acompanhado."
 h1: "Personal trainer em Santana de Parnaíba"
 resposta: "Santana de Parnaíba reúne duas realidades. No lado da cidade que pertence a Alphaville e ao Tamboré, o treino com personal costuma acontecer em casa ou no condomínio. Desse lado, a Fábrica Premium, na Estrada da Bela Vista, é a academia com ficha no guia. Nos bairros como Jardim São Luís, Fazendinha e Polvilho, há academias de bairro, mas nenhuma delas abre aos domingos."
@@ -23,6 +23,17 @@ fontes:
 vitrine:
   destaque: adriana-nascimento
   intro: "O Montinho também atende em Santana de Parnaíba, e abaixo estão antes e depois de alunos dele. Os resultados são individuais e de emagrecimento; a vitrine não informa onde cada pessoa mora."
+perguntas:
+  - p: "Quanto custa 1 mês de personal trainer em Santana de Parnaíba?"
+    r: "Não há tabela oficial nem preço médio confiável para a cidade, e o guia não publica valores que não consegue conferir. O mês costuma ser cobrado por pacote, conforme o número de aulas por semana. Em Santana de Parnaíba, pergunte também se o deslocamento entra no preço, porque as distâncias dentro do município são grandes."
+  - p: "Qual o valor médio cobrado por um personal trainer?"
+    r: "O guia não usa média porque ela mistura situações muito diferentes: aula em casa ou na academia, profissional iniciante ou experiente, sessão avulsa ou pacote. Compare propostas pelo total do mês e pelo que cada uma inclui."
+  - p: "Quanto custa um personal 2 vezes por semana?"
+    r: "Com duas sessões semanais, o pacote mensal soma de oito a nove aulas, e o preço por aula tende a ser um pouco maior que em frequências mais altas. Peça o valor fechado do mês e a regra para remarcar faltas."
+  - p: "Onde treinar com personal em Santana de Parnaíba?"
+    r: "Em casa, no espaço fitness do condomínio, se o residencial permitir, ou numa academia que aceite profissional de fora. Nenhuma academia de Santana de Parnaíba com ficha no guia publica essa regra; pergunte antes. As academias de bairro do município não abrem no domingo."
+  - p: "É vantajoso pagar um personal trainer?"
+    r: "Faz mais diferença no começo, na volta após lesão ou quando falta constância. Para quem já treina sozinho com segurança, um acompanhamento menos frequente, só para revisar o treino, pode bastar."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

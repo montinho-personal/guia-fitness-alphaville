@@ -12,6 +12,7 @@ export async function GET() {
     '/academias/domingo/': 'domingo fim de semana feriado aberta hoje',
     '/academias/wellhub-totalpass/': 'gympass wellhub totalpass agregador plano empresa',
     '/academias/perto-de/': 'perto de mim próximo próxima perto iguatemi shopping tamboré estação trem cptm 18 do forte',
+    '/academias/smart-fit-barueri/': 'smartfit smart fit barueri centro zelia zélia parque shopping sodimac alphaville horário endereço telefone preço diária totalpass',
     '/guias/academia-ou-personal/': 'quanto custa personal valor contratar vale a pena',
     '/guias/como-escolher-academia/': 'como escolher melhor academia dicas',
     '/ferramentas/comparador/': 'comparar comparação lado a lado',

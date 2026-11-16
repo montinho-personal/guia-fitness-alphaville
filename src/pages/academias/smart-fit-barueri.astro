@@ -1,0 +1,91 @@
+---
+import Base from '../../layouts/Base.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import CartaoAcademia from '../../components/CartaoAcademia.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import { academias, agregador, urlAcademia, faixasDia, dataLonga, dataIso } from '../../lib/dados';
+
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-16'), atualizado: new Date('2026-11-16') };
+const ids = ['smart-fit-barueri-centro', 'smart-fit-parque-shopping-barueri', 'smart-fit-barueri-av-zelia', 'smart-fit-sodimac-alphaville'];
+const todas = await academias();
+const sf = ids.map((id) => todas.find((a) => a.id === id)).filter((a): a is NonNullable<typeof a> => !!a);
+const [centro, parque, zelia, sodimac] = sf;
+const semana = (a: (typeof sf)[number]) => faixasDia(a.data.horario.seg);
+const entrada = (a: (typeof sf)[number]) => a.data.mensalidade?.planos[0];
+const tp = (a: (typeof sf)[number]) => agregador(a, 'TotalPass');
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = 'Smart Fit em Barueri: unidades, horários, endereço e preço';
+const descricao = 'As 4 unidades da Smart Fit em Barueri e Alphaville: Centro, Parque Shopping, Av. Zélia e Sodimac, com horário, endereço, plano mais barato e TotalPass.';
+const perguntas = [
+  { p: 'Quantas unidades da Smart Fit existem em Barueri?', r: `O guia tem ficha de 4 unidades no município de Barueri: ${sf.map((a) => `${a.data.nome} (${a.data.endereco.split(' - ')[0].split(',').slice(0, 2).join(',')})`).join('; ')}. A unidade da Sodimac fica em Alphaville, que pertence a Barueri.` },
+  { p: 'Qual é o horário da Smart Fit em Barueri?', r: `De segunda a sexta: Centro e Parque Shopping, ${semana(centro)}; Av. Zélia, ${semana(zelia)}; Sodimac Alphaville, ${semana(sodimac)}. Aos sábados, todas abrem das 8h às 17h. No domingo, todas abrem das 8h às 14h.` },
+  { p: 'A Smart Fit de Barueri abre domingo e feriado?', r: 'Sim. No domingo, as quatro unidades abrem das 8h às 14h. Nos feriados, o site oficial informa das 8h às 14h no Centro e no Parque Shopping, e das 8h às 17h na Av. Zélia e na Sodimac Alphaville.' },
+  { p: 'Quanto custa a Smart Fit em Barueri?', r: `No Centro, no Parque Shopping e na Av. Zélia, o plano mais barato é o Fit, a ${entrada(centro)?.preco.replace('/mês', '')} por mês com fidelidade, com acesso só à unidade escolhida. Na Sodimac Alphaville não há Plano Fit: a entrada é o Smart, a ${entrada(sodimac)?.preco.replace('/mês', '')}. O Plano Black, que dá acesso a toda a rede, custa R$ 159,90 por mês. Valores promocionais do site oficial, conferidos em 13 de novembro de 2026.` },
+  { p: 'A Smart Fit vende diária em Barueri?', r: 'O site oficial da Smart Fit não publica diária nem aula avulsa nas páginas das unidades nem na página de planos. Pergunte na recepção antes de ir.' },
+  { p: 'Posso treinar duas vezes no mesmo dia na Smart Fit?', r: 'Os planos Fit, Smart e Black listam check-in ilimitado na unidade, e o site não menciona limite de entradas por dia. Se tiver dúvida sobre a sua unidade, confirme na recepção.' },
+  { p: 'Qual Smart Fit de Barueri aceita TotalPass?', r: `Pelas páginas do TotalPass conferidas pelo guia, a Smart Fit Barueri Centro aparece a partir do ${tp(centro)?.plano_minimo ?? '-'} e a Sodimac Alphaville (no TotalPass, Smart Fit Alphaville II) a partir do ${tp(sodimac)?.plano_minimo ?? '-'}. O guia não encontrou página das unidades Parque Shopping e Av. Zélia no TotalPass.` },
+  { p: 'A Smart Fit é dona do TotalPass?', r: 'O site da Smart Fit leva o link de planos corporativos para o TotalPass, e o TotalPass lista a Smart Fit como parceira exclusiva. Nas páginas oficiais lidas pelo guia, o TotalPass aparece com razão social e CNPJ próprios, e o guia não encontrou nelas uma declaração sobre quem é o dono.' },
+  { p: 'Qual o telefone da Smart Fit em Barueri?', r: 'As páginas oficiais das quatro unidades, conferidas em 16 de novembro de 2026, não publicam telefone. Endereço, horário e lotação em tempo real ficam na página de cada unidade no site da Smart Fit.' },
+];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Smart Fit em Barueri', url: '/academias/smart-fit-barueri/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Guia de academias · rede</span>
+      <h1>Smart Fit em Barueri: as 4 unidades lado a lado</h1>
+      <p class="linha-fina">Centro, Parque Shopping, Av. Zélia e Sodimac Alphaville. Mesmo nome, mas horário, plano de entrada e TotalPass mudam de uma para outra.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Barueri tem 4 unidades da Smart Fit com ficha no guia. Centro e Parque Shopping ficam abertas até a meia-noite nos dias úteis; a Av. Zélia fecha às 23h e a Sodimac Alphaville abre às 6h e fecha às 23h. Todas abrem no domingo, das 8h às 14h. O plano mais barato, o Fit, custa {entrada(centro)?.preco.replace('/mês', '')} por mês com fidelidade, menos na Sodimac, onde a entrada é o Smart.</p>
+    </div>
+
+    <div class="rolagem" tabindex="0" role="region" aria-label="Unidades da Smart Fit em Barueri" style="margin:24px 0">
+      <table class="dados">
+        <caption>Dados das fichas do guia, conferidos no site oficial da Smart Fit e no TotalPass. Abra cada ficha para ver as fontes.</caption>
+        <thead><tr><th scope="col">Unidade</th><th scope="col">Endereço</th><th scope="col">Seg a sex</th><th scope="col">Sábado</th><th scope="col">Domingo</th><th scope="col">Plano de entrada</th><th scope="col">TotalPass</th></tr></thead>
+        <tbody>{sf.map((a) => <tr><th scope="row"><a href={urlAcademia(a)}>{a.data.nome.replace('Smart Fit ', '')}</a></th><td>{a.data.endereco.split(' - ')[0]}, {a.data.bairro}</td><td>{semana(a)}</td><td>{faixasDia(a.data.horario.sab)}</td><td>{faixasDia(a.data.horario.dom)}</td><td>{entrada(a) ? `${entrada(a)!.nome}, ${entrada(a)!.preco}` : 'Não publicado'}</td><td>{tp(a) ? `a partir do ${tp(a)!.plano_minimo}` : 'Não encontrado'}</td></tr>)}</tbody>
+      </table>
+    </div>
+
+    <div class="prosa">
+      <h2>Qual unidade escolher</h2>
+      <ul>
+        <li><strong>Mora ou trabalha no centro, perto da estação Barueri da CPTM:</strong> <a href={urlAcademia(centro)}>Barueri Centro</a>, na Av. Vinte e Seis de Março. É a única das quatro que lista bike e ginástica além da musculação.</li>
+        <li><strong>Passa pelo Parque Shopping:</strong> <a href={urlAcademia(parque)}>Parque Shopping Barueri</a>, no Nova Aldeinha, entre o centro e Alphaville, com balança de bioimpedância entre as comodidades.</li>
+        <li><strong>Mora na região sul de Barueri:</strong> <a href={urlAcademia(zelia)}>Av. Zélia</a>, no Parque dos Camargos. Nos feriados fica aberta até as 17h.</li>
+        <li><strong>Trabalha no Alphaville Industrial:</strong> <a href={urlAcademia(sodimac)}>Sodimac Alphaville</a>, no 2º pavimento do estacionamento da Sodimac, na Alameda Araguaia. Lista aulas de HIIT e abdominais, mas não tem o Plano Fit.</li>
+      </ul>
+
+      <h2>Fit, Smart ou Black</h2>
+      <p>O Plano Fit dá acesso só à unidade escolhida. Nas unidades do Centro, do Parque Shopping e da Av. Zélia, o Smart custa R$ 159,90, R$ 20 a mais que o Fit; na Sodimac Alphaville, onde é o plano de entrada, sai por R$ 149,90. O Black, a R$ 159,90 por mês, libera todas as unidades da rede, o que faz sentido para quem alterna entre a academia perto de casa e a perto do trabalho. Sem fidelidade, Fit e Smart custam R$ 20 a mais por mês. O site avisa que os valores são promocionais. Compare com as outras academias da cidade na <a href="/academias/precos/">tabela de preços</a>.</p>
+
+      <h2>Domingo e feriado</h2>
+      <p>No domingo, as quatro seguem o padrão da rede: das 8h às 14h. Depois disso, só outras academias. A lista completa está em <a href="/academias/domingo/">academias abertas no domingo</a>. Para a madrugada, nenhuma Smart Fit da região serve; veja <a href="/academias/24-horas/">academias 24 horas</a>.</p>
+
+      <h2>E as outras academias de Barueri?</h2>
+      <p>No centro, a Panobianco Barueri Centro tem preço publicado parecido e mais aulas coletivas. O comparativo <a href="/guias/smart-fit-ou-gavioes/">Smart Fit ou Gaviões</a> ajuda quem precisa de horário estendido. A página <a href="/regioes/barueri/">academias em Barueri</a> reúne todas as fichas da cidade, e quem quer acompanhamento pode ler <a href="/guias/personal-trainer-barueri/">personal trainer em Barueri</a>.</p>
+    </div>
+
+    <Perguntas itens={perguntas} titulo="Perguntas sobre a Smart Fit em Barueri" />
+
+    <section class="bloco fino" aria-labelledby="fichas-t">
+      <div class="cab"><h2 id="fichas-t">As 4 fichas</h2><a class="link-forte" href="/regioes/barueri/">Academias em Barueri</a></div>
+      <div class="cartoes">{sf.map((a) => <CartaoAcademia a={a} />)}</div>
+    </section>
+
+    <VideoMontinho id="DiH1OzIR6Yk" titulo="É impossível isso dar errado" pagina="smart-fit-barueri" />
+    <LeiaTambem url="/academias/smart-fit-barueri/" />
+    <div style="margin-top:28px"><Fontes fontes={[
+      ...sf.flatMap((a) => a.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${a.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) }))),
+      { titulo: 'Smart Fit — Planos', url: 'https://www.smartfit.com.br/planos', data: '16 de novembro de 2026' },
+      { titulo: 'TotalPass — página inicial', url: 'https://totalpass.com/br/', data: '16 de novembro de 2026' },
+    ]} /></div>
+  </div>
+</Base>

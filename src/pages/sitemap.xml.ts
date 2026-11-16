@@ -21,6 +21,7 @@ export const GET: APIRoute = async ({ site }) => {
     ['/guias/ironberg-ou-nitrogym/', ultAcad],
     ['/guias/gavioes-ou-ironberg/', ultAcad],
     ['/academias/perto-de/', ultAcad],
+    ['/academias/smart-fit-barueri/', ultAcad],
     ['/ferramentas/', FIXAS], ['/ferramentas/comparador/', ultAcad], ['/ferramentas/qual-academia/', ultAcad], ['/ferramentas/checklist/', FIXAS], ['/mapa/', ultAcad],
     ['/sobre/', FIXAS], ['/metodologia/', FIXAS], ['/politica-editorial/', FIXAS], ['/correcoes/', FIXAS], ['/privacidade/', FIXAS],
   ];
