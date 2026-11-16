@@ -1,4 +1,5 @@
 nome: Ironberg Alphaville
+titulo_seo: 'Ironberg Alphaville: preço, mensalidade, tamanho e horário'
 regiao: alphaville
 bairro: Aldeinha
 tipo: academia
@@ -55,7 +56,7 @@ mensalidade:
   abrangencia: rede
   fonte: Site oficial da Ironberg (página de planos)
   url: https://www.ironberg.com.br/planos.html
-  conferido_em: '2026-11-14'
+  conferido_em: '2026-11-16'
   aviso: O site informa que os valores valem para todas as unidades da rede. A aula avulsa é vendida só na recepção, com valor a consultar.
 site: https://www.ironberg.com.br/alphaville.html
 proveniencia:
@@ -66,13 +67,13 @@ proveniencia:
   - comodidades
   fonte: Site oficial da Ironberg (página da unidade e página inicial)
   url: https://www.ironberg.com.br/alphaville.html
-  conferido_em: '2026-11-14'
+  conferido_em: '2026-11-16'
   nivel: fonte-publica
 - campos:
   - mensalidade
   fonte: Site oficial da Ironberg (página de planos)
   url: https://www.ironberg.com.br/planos.html
-  conferido_em: '2026-11-14'
+  conferido_em: '2026-11-16'
   nivel: fonte-publica
 - campos:
   - geo
@@ -87,6 +88,25 @@ divergencias:
 pendencias:
 - Valor da aula avulsa
 - Valor cobrado de personal trainer externo
+perguntas:
+- p: Qual o valor da mensalidade da Ironberg Alphaville?
+  r: No site oficial da rede, conferido em 16/11/2026, os planos são de R$ 399 por mês no plano de fidelidade de 12 meses, R$ 499 no de 6 meses e R$ 599 no plano de recorrência de 12 meses, todos com matrícula única de R$ 120. A rede informa que os valores valem para todas as unidades. Vídeos e posts antigos podem mostrar outros preços.
+- p: Quanto custa a diária da Ironberg Alphaville?
+  r: A Ironberg vende aula avulsa, mas não publica o valor. Segundo o site da rede, o preço é informado na unidade e a contratação é feita no dia do treino, direto na recepção.
+- p: Qual o tamanho da Ironberg Alphaville?
+  r: A página oficial da unidade informa 32.000 metros quadrados. É, de longe, a maior área declarada entre as academias deste guia.
+- p: A Ironberg Alphaville é a maior academia do mundo?
+  r: O site da rede apresenta a Ironberg como o maior centro de treinamento de musculação do mundo. É uma afirmação da própria rede, que este guia não tem como verificar.
+- p: Quem é o dono da Ironberg Alphaville?
+  r: Segundo a página oficial da unidade, a Ironberg Alphaville é uma realização dos sócios Juju Salimeni e Diogo Basa, junto com o fundador da rede, Betão.
+- p: A Ironberg Alphaville aceita Gympass ou TotalPass?
+  r: A unidade aparece no TotalPass a partir do plano TP 6, de R$ 599,90 por mês. O guia não encontrou a unidade no Wellhub, o antigo Gympass; confirme com a academia ou no aplicativo do seu benefício.
+- p: A Ironberg Alphaville abre 24 horas?
+  r: Sim. O site oficial informa funcionamento 24 horas, inclusive em feriados.
+- p: Onde fica a Ironberg Alphaville?
+  r: Na Estrada da Aldeinha, 181, no Jardim Santa Cecília, em Barueri, com estacionamento gratuito para mais de mil carros, segundo o site da rede.
+- p: Posso levar personal trainer de fora na Ironberg Alphaville?
+  r: Pode. A rede informa que o personal externo paga um valor fixo à academia para atender no espaço; o valor é passado na unidade.
 analise:
 - 'É, de longe, a maior academia do guia em área declarada: o site da rede fala em 32 mil m², com estacionamento gratuito para mais de mil carros, e a apresenta como o maior centro de treinamento de musculação do mundo. Fica na Estrada da Aldeinha, já fora dos bairros residenciais de Alphaville, com acesso pela rodovia.'
 - 'Funciona 24 horas, inclusive em feriados, segundo o site oficial. O foco é só musculação, sem grade de aulas coletivas. Os preços são os mesmos em todas as unidades da rede: R$ 399 por mês no plano de 12 meses, R$ 499 no de 6 meses e R$ 599 no recorrente, sempre com matrícula de R$ 120.'
@@ -97,4 +117,4 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: '2026-11-14'
-atualizado_em: '2026-11-14'
+atualizado_em: '2026-11-16'
