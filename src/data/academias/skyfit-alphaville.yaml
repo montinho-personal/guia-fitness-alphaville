@@ -3,6 +3,7 @@ regiao: alphaville
 bairro: Alphaville Industrial
 tipo: academia
 rede: SkyFit
+titulo_seo: 'SkyFit Alphaville: horário, TotalPass, Wellhub e estacionamento'
 resumo: Academia de rede na Av. Juruá com musculação, cross training, lutas e aulas, aberta todos os dias.
 endereco: Av. Juruá, 307 - Alphaville Industrial, Barueri - SP, 06455-010
 geo:
@@ -49,15 +50,30 @@ comodidades:
 - Armários
 - Chuveiro
 - Vestiário
+- Estacionamento (grátis e pago, segundo o TotalPass)
+- Wi-Fi
 agregadores:
 - nome: Wellhub
   plano_minimo: Silver
   preco_plano: R$ 149,99
   url: https://wellhub.com/pt-br/search/partners/skyfit-academia-alphaville-alphaville-industrial/
+- nome: TotalPass
+  plano_minimo: TP 1+
+  preco_plano: R$ 89,90
+  url: https://totalpass.com/br/academias/skyfit-academia-alphaville/
 mensalidade: null
 site: https://skyfitacademia.com
 telefone: (11) 98804-0056
 proveniencia:
+- campos:
+  - endereco
+  - horario
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/skyfit-academia-alphaville/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
 - campos:
   - endereco
   - geo
@@ -72,6 +88,19 @@ proveniencia:
 pendencias:
 - Mensalidade direta da academia
 - 'Estacionamento: não consta na fonte'
+perguntas:
+- p: Onde fica a SkyFit Alphaville?
+  r: 'Na Av. Juruá, 307, no Alphaville Industrial, em Barueri.'
+- p: Qual o horário da SkyFit Alphaville?
+  r: 'Das 5h às 23h de segunda a quinta, das 5h às 22h na sexta, das 7h às 17h no sábado e das 8h às 14h no domingo.'
+- p: A SkyFit Alphaville aceita TotalPass?
+  r: 'Sim, a partir do plano TP 1+, de R$ 89,90 por mês, um dos planos de entrada mais baratos do TotalPass.'
+- p: Qual plano do Gympass (Wellhub) é aceito na SkyFit Alphaville?
+  r: 'O Wellhub libera a unidade a partir do plano Silver, de R$ 149,99 por mês.'
+- p: A SkyFit Alphaville tem estacionamento?
+  r: 'A página do TotalPass lista estacionamento grátis e estacionamento pago. Confirme na recepção qual vale para alunos.'
+- p: Quanto custa a mensalidade ou a diária da SkyFit Alphaville?
+  r: 'As fontes consultadas pelo guia não publicam mensalidade nem diária desta unidade. Peça os valores na recepção; pelo TotalPass, o acesso começa em R$ 89,90 por mês.'
 analise:
 - Abre às 5h de segunda a sexta e fecha às 23h (22h na sexta). No fim de semana funciona em horário reduzido.
 - 'A grade publicada é variada para uma academia de rede: musculação, cross training, muay thai, funcional, pilates e zumba. A lista de comodidades da página é curta — armários, chuveiro e vestiário — e não menciona estacionamento. No Wellhub, entra a partir do plano Silver.'
@@ -81,4 +110,4 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: '2026-11-13'
-atualizado_em: '2026-11-13'
+atualizado_em: '2026-11-16'
