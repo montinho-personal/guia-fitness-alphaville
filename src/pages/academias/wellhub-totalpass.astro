@@ -4,17 +4,29 @@ import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
 import VideoMontinho from '../../components/VideoMontinho.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
+import Perguntas from '../../components/Perguntas.astro';
 import planos from '../../data/planos-agregadores.json';
 import { academias, agregador, ORDEM_WELLHUB, urlAcademia, REGIOES, dataLonga, dataIso } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
+const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-16') };
 const todas = await academias();
 const wh = todas.filter((a) => agregador(a, 'Wellhub')).sort((x, y) => ORDEM_WELLHUB.indexOf(agregador(x, 'Wellhub')!.plano_minimo) - ORDEM_WELLHUB.indexOf(agregador(y, 'Wellhub')!.plano_minimo) || x.data.nome.localeCompare(y.data.nome));
 const tp = todas.filter((a) => agregador(a, 'TotalPass'));
 const porPlano = planos.wellhub.planos.map(([p, v]) => ({ p, v, xs: wh.filter((a) => agregador(a, 'Wellhub')!.plano_minimo === p) })).filter((g) => g.xs.length);
 const acumulado = (p: string) => wh.filter((a) => ORDEM_WELLHUB.indexOf(agregador(a, 'Wellhub')!.plano_minimo) <= ORDEM_WELLHUB.indexOf(p)).length;
 const abs = (u: string) => new URL(u, Astro.site).href;
-const titulo = 'Academias com Wellhub e TotalPass em Alphaville';
+const preco = (lista: string[][], nome: string) => lista.find(([n]) => n === nome)?.[1];
+const whBase = wh.filter((a) => ORDEM_WELLHUB.indexOf(agregador(a, 'Wellhub')!.plano_minimo) <= ORDEM_WELLHUB.indexOf('Basic+'));
+const lista = (xs: typeof wh) => xs.map((a) => a.data.nome).join(', ').replace(/, ([^,]*)$/, ' e $1');
+const perguntas = [
+  { p: 'Quais academias aceitam Gympass em Alphaville?', r: `O Gympass hoje se chama Wellhub. Das ${todas.length} academias e estúdios com ficha no guia, ${wh.length} aceitam o Wellhub. Em Alphaville e no Tamboré, aparecem, entre outras, ${lista(wh.filter((a) => a.data.regiao === 'alphaville').slice(0, 8))}. A tabela desta página mostra o plano mínimo de cada uma.` },
+  { p: 'Quanto é o Gympass (Wellhub) por mês?', r: `Pela tabela exibida nas páginas do Wellhub, conferida em ${dataLonga(new Date(planos.conferido_em))}: Starter R$ ${preco(planos.wellhub.planos, 'Starter')}, Basic R$ ${preco(planos.wellhub.planos, 'Basic')}, Basic+ R$ ${preco(planos.wellhub.planos, 'Basic+')}, Silver R$ ${preco(planos.wellhub.planos, 'Silver')}, Silver+ R$ ${preco(planos.wellhub.planos, 'Silver+')}, Gold R$ ${preco(planos.wellhub.planos, 'Gold')}, Gold+ R$ ${preco(planos.wellhub.planos, 'Gold+')}, Platinum R$ ${preco(planos.wellhub.planos, 'Platinum')} e Diamond R$ ${preco(planos.wellhub.planos, 'Diamond')} por mês. O valor que você paga pode variar conforme o acordo da sua empresa.` },
+  { p: 'Quais academias aceitam os planos mais baratos do Wellhub?', r: whBase.length ? `Até o Basic+: ${lista(whBase)}.` : 'Nenhuma academia do guia entra pelos planos de entrada.' },
+  { p: 'Quanto custa o TotalPass por mês?', r: `Pelas páginas do TotalPass: ${planos.totalpass.planos.map(([n, v]) => `${n} R$ ${v}`).join(', ')}. Como no Wellhub, o valor final depende do acordo com a sua empresa.` },
+  { p: 'Quem tem Gympass paga academia?', r: 'Não paga a mensalidade da academia: o acesso vem do plano do agregador, desde que ele seja igual ou superior ao plano mínimo da academia. Algumas academias limitam horários ou modalidades para certos planos, como a Bodytech Iguatemi no Silver. Serviços extras, como personal ou avaliação, podem ser cobrados à parte.' },
+  { p: 'Tem Gympass para pessoa física?', r: 'O Wellhub e o TotalPass são oferecidos como benefício pela empresa onde a pessoa trabalha; as páginas conferidas pelo guia mostram a opção de verificar a elegibilidade. Se a sua empresa não oferece, a alternativa é a matrícula direta na academia.' },
+];
+const titulo = 'Gympass (Wellhub) e TotalPass em Alphaville: academias e planos';
 const descricao = 'O plano mínimo do Wellhub e do TotalPass que cada academia de Alphaville, Barueri e Santana de Parnaíba exige, e quanto esse plano custa por mês.';
 const conf = new Date(planos.conferido_em);
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
@@ -62,6 +74,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <p>Depende de quanto custa a mensalidade direta, que a maioria das academias da região não publica. A conta só fecha com os dois números na mão: o que o agregador desconta do seu salário e o que a academia cobraria de você. Peça o valor do plano direto na recepção e compare. Se você pretende frequentar mais de um lugar — musculação em uma academia e CrossFit em um <a href="/modalidades/crossfit/">box</a>, por exemplo —, o agregador tende a compensar mais.</p>
       <p>Para filtrar o guia por agregador, use <a href="/academias/?filtro=wellhub">academias no Wellhub</a> ou <a href="/academias/?filtro=totalpass">academias no TotalPass</a>.</p>
     </div>
+    <Perguntas itens={perguntas} titulo="Perguntas sobre Gympass e TotalPass" />
+
     <VideoMontinho id="yndKE1GrnUQ" titulo="Toda pessoa com shape tem uma coisa em comum" pagina="wellhub-totalpass" />
     <LeiaTambem url="/academias/wellhub-totalpass/" />
     <div style="margin-top:28px"><Fontes fontes={[{ titulo: planos.wellhub.fonte, url: planos.wellhub.url, data: dataLonga(conf) }, { titulo: planos.totalpass.fonte, url: planos.totalpass.url, data: dataLonga(conf) }, { titulo: 'Página de cada unidade nos dois agregadores, listada na respectiva ficha' }]} /></div>

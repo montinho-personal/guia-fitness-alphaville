@@ -1,5 +1,5 @@
 ---
-titulo: "Personal trainer feminino em Alphaville: como escolher"
+titulo: "Personal trainer feminino em Alphaville: preço e como escolher"
 descricao: "Personal mulher ou treino pensado para mulheres em Alphaville: horário de abertura, estacionamento, área infantil e perguntas para fazer."
 h1: "Personal trainer feminino em Alphaville"
 resposta: "Quem treina com personal em Alphaville quase sempre encaixa a aula na rotina dos polos empresariais, então horário de abertura, estacionamento e vestiário pesam na escolha. Arena 18 tem área infantil e estacionamento, a SIX oferece valet gratuito para membros e Gaviões e Ironberg funcionam 24 horas. Se você prefere uma profissional mulher, pergunte por ela diretamente."
@@ -21,13 +21,22 @@ fontes:
 video:
   id: DiH1OzIR6Yk
   titulo: "É impossível isso dar errado"
+perguntas:
+  - p: "Tem personal trainer mulher em Alphaville?"
+    r: "Sim, há profissionais mulheres atendendo na região, mas o guia não mantém lista de personal trainers. Para encontrar uma, peça indicação na academia onde você treina ou na administração do condomínio. O Montinho, que mantém este guia, é homem e atende homens e mulheres."
+  - p: "Quanto custa 1h de personal trainer feminino em Alphaville?"
+    r: "O preço não muda pelo gênero do aluno ou do profissional, e sim pela experiência, pelo local da aula e pela frequência. O guia não publica valores que não consegue conferir; compare o total do mês de duas ou três propostas."
+  - p: "Quanto custa um personal trainer 3 vezes por semana?"
+    r: "Com três sessões semanais, o pacote mensal tem cerca de doze aulas e o valor por aula costuma cair em relação a frequências menores. Pergunte o que entra no preço: avaliação, reposição de faltas e ajustes do treino."
+  - p: "O que muda no treino para mulheres?"
+    r: "Os princípios de força e condicionamento são os mesmos. O que muda é o ajuste ao objetivo, à rotina e a fases como gestação e pós-parto, sempre com liberação médica quando necessário. Um bom profissional adapta o plano a cada pessoa, seja homem ou mulher."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: 2026-11-15
-atualizado_em: 2026-11-15
+atualizado_em: 2026-11-16
 ---
 
 > **Transparência.** Por trás deste site está o Montinho, personal masculino que dá aulas em Alphaville. O convite com a assinatura dele, no rodapé, funciona como anúncio.
