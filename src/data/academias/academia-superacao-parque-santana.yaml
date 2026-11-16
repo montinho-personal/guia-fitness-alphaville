@@ -1,0 +1,85 @@
+nome: Academia Superação
+regiao: santana-de-parnaiba
+bairro: Parque Santana
+tipo: academia
+resumo: 'Academia de musculação e treino híbrido na Rua Touro, no Parque Santana, aceita no Wellhub e no TotalPass.'
+endereco: 'R. Touro, 16 - Parque Santana, Santana de Parnaíba - SP, 06515-120'
+geo:
+  lat: -23.4757401
+  lng: -46.8936373
+horario:
+  seg:
+  - 05:00-22:00
+  ter:
+  - 05:00-22:00
+  qua:
+  - 05:00-22:00
+  qui:
+  - 05:00-22:00
+  sex:
+  - 05:00-22:00
+  sab:
+  - 07:00-13:00
+  dom: []
+modalidades:
+- musculacao
+- funcional
+atividades_listadas:
+- Musculação
+- Treino híbrido
+comodidades:
+- Armários
+- Bebedouro
+- Estacionamento
+- Loja
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic+
+  preco_plano: R$ 99,99
+  url: https://wellhub.com/pt-br/search/partners/academia-superacao-parque-santana-santana-de-parnaiba/
+- nome: TotalPass
+  plano_minimo: TP 1+
+  preco_plano: R$ 89,90
+  url: https://totalpass.com/br/academias/academia-xsuperacao/
+mensalidade: null
+site: https://www.facebook.com/Xsuperacao
+telefone: '(11) 95472-6540'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/academia-superacao-parque-santana-santana-de-parnaiba/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/academia-xsuperacao/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Nome: no TotalPass aparece como Academia XSuperação.'
+pendencias:
+- Mensalidade direta
+analise:
+- 'Fica no Parque Santana, mais perto do centro histórico do município do que da Fazendinha. Abre das 5h às 22h nos dias úteis e das 7h às 13h no sábado.'
+- 'Lista musculação e treino híbrido. Entra pelo Basic+ no Wellhub e pelo TP 1+ no TotalPass.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

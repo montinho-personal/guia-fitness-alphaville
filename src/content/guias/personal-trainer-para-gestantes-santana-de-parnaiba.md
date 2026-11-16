@@ -57,7 +57,7 @@ Se o profissional não for da casa, telefone antes: as fichas não dizem se a en
 
 ## Atenção aos horários
 
-Dois detalhes do município podem atrapalhar a agenda. De segunda a sexta, a Olympia para de atender no almoço, entre 12h e 14h. Além disso, nenhuma das academias de bairro funciona aos domingos. Se a sua rotina só tem espaço no fim de semana, o treino em casa evita esse problema. Para o restante da semana, pergunte na recepção quais horários enchem e agende longe do pico.
+Dois detalhes do município podem atrapalhar a agenda. De segunda a sexta, a Olympia para de atender no almoço, entre 12h e 14h. Além disso, a maioria das academias de bairro fecha aos domingos; a Allp Fit, na Fazendinha, abre só de manhã. Se a sua rotina só tem espaço no fim de semana, o treino em casa evita esse problema. Para o restante da semana, pergunte na recepção quais horários enchem e agende longe do pico.
 
 ## Roteiro de conversa com o personal
 

@@ -57,7 +57,7 @@ As academias de bairro têm horários com particularidades que mudam o planejame
 
 As três aceitam Wellhub em planos de entrada, o que barateia a parte da academia. Quem leva um profissional externo deve confirmar antes com a academia se isso é aceito. Outra estratégia útil é ter uma segunda opção de horário na semana: se a sessão principal cair, a reposição já está combinada e o mês não desanda.
 
-## Domingo sem academia de bairro
+## Domingo e as academias de bairro
 
 Nenhuma das três abre aos domingos. Para quem usa o fim de semana como dia de treino, há duas saídas: uma sessão na sala de casa ou na academia do residencial, planejada com o personal para o equipamento disponível, ou uma academia aberta no domingo do lado de Alphaville. Quem abre no domingo aparece na [página de domingo](/academias/domingo/).
 

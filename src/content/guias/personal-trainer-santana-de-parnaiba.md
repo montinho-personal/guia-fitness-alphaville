@@ -2,7 +2,7 @@
 titulo: "Personal trainer em Santana de Parnaíba: preço e como treinar"
 descricao: "Personal trainer em Santana de Parnaíba: o lado residencial de Alphaville, as academias com ficha no guia e os horários que limitam o treino acompanhado."
 h1: "Personal trainer em Santana de Parnaíba"
-resposta: "Santana de Parnaíba reúne duas realidades. No lado da cidade que pertence a Alphaville e ao Tamboré, o treino com personal costuma acontecer em casa ou no condomínio. Desse lado, a Fábrica Premium, na Estrada da Bela Vista, é a academia com ficha no guia. Nos bairros como Jardim São Luís, Fazendinha e Polvilho, há academias de bairro, mas nenhuma delas abre aos domingos."
+resposta: "Santana de Parnaíba reúne duas realidades. No lado da cidade que pertence a Alphaville e ao Tamboré, o treino com personal costuma acontecer em casa ou no condomínio. Desse lado, a Fábrica Premium, na Estrada da Bela Vista, é a academia com ficha no guia. Nos bairros como Jardim São Luís, Fazendinha e Polvilho, há academias de bairro, e a maioria fecha aos domingos."
 cluster: D
 secao: guias
 palavra_chave: personal trainer santana de parnaíba
@@ -31,7 +31,7 @@ perguntas:
   - p: "Quanto custa um personal 2 vezes por semana?"
     r: "Com duas sessões semanais, o pacote mensal soma de oito a nove aulas, e o preço por aula tende a ser um pouco maior que em frequências mais altas. Peça o valor fechado do mês e a regra para remarcar faltas."
   - p: "Onde treinar com personal em Santana de Parnaíba?"
-    r: "Em casa, no espaço fitness do condomínio, se o residencial permitir, ou numa academia que aceite profissional de fora. Nenhuma academia de Santana de Parnaíba com ficha no guia publica essa regra; pergunte antes. As academias de bairro do município não abrem no domingo."
+    r: "Em casa, no espaço fitness do condomínio, se o residencial permitir, ou numa academia que aceite profissional de fora. Nenhuma academia de Santana de Parnaíba com ficha no guia publica essa regra; pergunte antes. A maioria das academias de bairro do município não abre no domingo; a Allp Fit, na Fazendinha, abre das 8h às 14h."
   - p: "É vantajoso pagar um personal trainer?"
     r: "Faz mais diferença no começo, na volta após lesão ou quando falta constância. Para quem já treina sozinho com segurança, um acompanhamento menos frequente, só para revisar o treino, pode bastar."
 status: publicado

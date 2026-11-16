@@ -1,0 +1,77 @@
+nome: Allp Fit Academia Santana de Parnaíba
+regiao: santana-de-parnaiba
+bairro: Fazendinha
+tipo: academia
+titulo_seo: 'Allp Fit Fazendinha (Santana de Parnaíba): horário e Wellhub'
+resumo: 'Academia na Av. Tenente Marques, 5751, na Fazendinha, com musculação e aulas, aberta também no domingo de manhã.'
+endereco: 'Av. Ten. Marques, 5751 - Jardim do Luar (Fazendinha), Santana de Parnaíba - SP, 06530-001'
+geo:
+  lat: -23.4048897
+  lng: -46.8838167
+horario:
+  seg:
+  - 05:00-23:00
+  ter:
+  - 05:00-23:00
+  qua:
+  - 05:00-23:00
+  qui:
+  - 05:00-23:00
+  sex:
+  - 05:00-23:00
+  sab:
+  - 08:00-17:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+- funcional
+- danca
+atividades_listadas:
+- Musculação
+- Circuitos funcionais
+- Condicionamento corporal
+- Fitness dance
+- Jump
+- Step
+comodidades:
+- Ar-condicionado
+- Área de cardio
+- Área de pesos livres
+- Área de treino funcional
+- Armários
+- Bebedouro
+- Chuveiro
+- Secador de cabelo
+- Vestiário
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic+
+  preco_plano: R$ 99,99
+  url: https://wellhub.com/pt-br/search/partners/allp-fit-academia-santana-pnb-jardim-do-luar-fazendinha/
+mensalidade: null
+site: https://allpfit.com.br/
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/allp-fit-academia-santana-pnb-jardim-do-luar-fazendinha/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta
+analise:
+- 'Fica na Av. Tenente Marques, na Fazendinha, poucos números depois da Mattos Fitness e do Alemão Boxing Club. É a academia de bairro de Santana de Parnaíba com o horário mais amplo no fim de semana: até as 17h no sábado e das 8h às 14h no domingo.'
+- 'Junta musculação com aulas de jump, step e fitness dance. No Wellhub, entra pelo Basic+. O telefone não aparece na página do agregador e o site não pôde ser lido.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

@@ -1,0 +1,94 @@
+nome: Power Start
+regiao: santana-de-parnaiba
+bairro: Cidade São Pedro
+tipo: academia
+resumo: 'Academia de musculação na Av. das Conchas, na Cidade São Pedro, com entrada barata no Wellhub e no TotalPass.'
+endereco: 'Av. das Conchas, 447, 2º andar - Cidade São Pedro, Santana de Parnaíba - SP, 06535-205'
+geo:
+  lat: -23.4243361
+  lng: -46.8514467
+horario:
+  seg:
+  - 05:00-12:00
+  - 14:00-22:00
+  ter:
+  - 05:00-12:00
+  - 14:00-22:00
+  qua:
+  - 05:00-12:00
+  - 14:00-22:00
+  qui:
+  - 05:00-12:00
+  - 14:00-22:00
+  sex:
+  - 05:00-12:00
+  - 14:00-22:00
+  sab:
+  - 06:00-12:00
+  dom: []
+modalidades:
+- musculacao
+- funcional
+atividades_listadas:
+- Musculação
+- Fisiculturismo
+- Circuitos funcionais
+- Step
+comodidades:
+- Armários
+- Banheiro acessível
+- Bebedouro
+- Chuveiro acessível
+- Personal trainer
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic
+  preco_plano: R$ 69,99
+  url: https://wellhub.com/pt-br/search/partners/power-start-santana-de-parnaiba/
+- nome: TotalPass
+  plano_minimo: TP 1
+  preco_plano: R$ 59,90
+  url: https://totalpass.com/br/academias/power-start/
+mensalidade: null
+site: https://www.instagram.com/power_start23
+telefone: '(11) 99634-3440'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/power-start-santana-de-parnaiba/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/power-start/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Horário: o Wellhub mostra pausa das 12h às 14h nos dias úteis; o TotalPass, das 5h às 22h direto.'
+- 'Telefone: o TotalPass mostra (11) 94121-2486.'
+pendencias:
+- Mensalidade direta
+analise:
+- 'Fica na Av. das Conchas, na Cidade São Pedro, vizinha da Nova Fitness. Abre às 5h nos dias úteis e no sábado de manhã; pelo Wellhub, para no almoço.'
+- 'Tem uma das entradas mais baratas do TotalPass, o TP 1, e entra pelo Basic no Wellhub.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

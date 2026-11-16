@@ -2,7 +2,7 @@
 titulo: "Lutas em Alphaville e Barueri: jiu-jitsu, muay thai e boxe"
 descricao: "Onde treinar jiu-jitsu, muay thai, boxe, judô e krav magá em Alphaville, Tamboré, Barueri e Santana de Parnaíba, com horário e plano de Wellhub e TotalPass."
 h1: "Lutas em Alphaville e região: onde treinar"
-resposta: "O guia tem 21 lugares com aula de luta na região. O jiu-jitsu aparece em escolas próprias, como a Templo e o Jacó Fight Club no Tamboré e a Team Cruz no Parque Viana, e em academias completas, como VoiFit, Bluefit Barueri e Mattos Fitness. Muay thai e boxe estão em quase todas. Para judô, só o Studio Cathéo Fight lista; krav magá e hapkido, só o CT Guerreiros."
+resposta: "O guia tem 23 lugares com aula de luta na região. O jiu-jitsu aparece em escolas próprias, como a Templo e o Jacó Fight Club no Tamboré e a Team Cruz no Parque Viana, e em academias completas, como VoiFit, Bluefit Barueri e Mattos Fitness. Muay thai e boxe estão em quase todas. Para judô, só o Studio Cathéo Fight lista; krav magá e hapkido, só o CT Guerreiros."
 cluster: B
 secao: modalidades
 palavra_chave: lutas alphaville

@@ -2,7 +2,7 @@
 titulo: "Personal trainer para idosos em Santana de Parnaíba"
 descricao: "Treino acompanhado para quem passou dos 60 em Santana de Parnaíba: médico antes, horários das academias de bairro, acessibilidade e distâncias."
 h1: "Personal trainer para idosos em Santana de Parnaíba: horários, acesso e distância"
-resposta: "Em Santana de Parnaíba, as distâncias dentro do município são grandes e as academias de bairro não abrem no domingo, então a agenda pesa na escolha. A Forth, no Jardim São Luís, e a Olympia, no Polvilho, informam banheiro e estacionamento acessíveis. Para quem prefere não se deslocar, o treino em casa é a alternativa, sempre com liberação médica."
+resposta: "Em Santana de Parnaíba, as distâncias dentro do município são grandes e a maioria das academias de bairro fecha no domingo, então a agenda pesa na escolha. A Forth, no Jardim São Luís, e a Olympia, no Polvilho, informam banheiro e estacionamento acessíveis. Para quem prefere não se deslocar, o treino em casa é a alternativa, sempre com liberação médica."
 cluster: D
 secao: guias
 palavra_chave: personal trainer para idosos santana de parnaíba

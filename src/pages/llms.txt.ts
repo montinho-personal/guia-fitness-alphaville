@@ -17,6 +17,7 @@ export const GET: APIRoute = async ({ site }) => {
 - [Academia perto de você](${u('/academias/perto-de/')})
 - [Smart Fit em Barueri](${u('/academias/smart-fit-barueri/')})
 - [Pilates em Alphaville](${u('/modalidades/pilates/')})
+- [Natação em Alphaville e Barueri](${u('/modalidades/natacao/')})
 - [Lutas em Alphaville e região](${u('/modalidades/lutas/')})
 - [Academias premium em Alphaville](${u('/guias/academias-premium-alphaville/')})
 - [Beach tennis e futevôlei em Alphaville](${u('/guias/beach-tennis-futevolei-alphaville/')})

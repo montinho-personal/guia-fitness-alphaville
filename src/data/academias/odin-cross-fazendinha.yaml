@@ -1,0 +1,86 @@
+nome: OdinCross
+regiao: santana-de-parnaiba
+bairro: Fazendinha
+tipo: box
+resumo: 'Box de cross training na Rua Guanabara, no Jardim Represa, na Fazendinha, com espaço infantil e aceito no Wellhub e no TotalPass.'
+endereco: 'R. Guanabara, 411 - Jardim Represa (Fazendinha), Santana de Parnaíba - SP, 06529-220'
+geo:
+  lat: -23.4035045
+  lng: -46.8804425
+horario:
+  seg:
+  - 06:00-21:00
+  ter:
+  - 06:00-21:00
+  qua:
+  - 06:00-21:00
+  qui:
+  - 06:00-21:00
+  sex:
+  - 06:00-21:00
+  sab:
+  - 09:00-10:00
+  dom: []
+modalidades:
+- cross-training
+atividades_listadas:
+- Cross training
+comodidades:
+- Área infantil
+- Cafeteria
+- Chuveiro
+- Vestiário
+- Loja
+- Nutricionista
+- Estacionamento grátis (segundo o TotalPass)
+- Espaço adaptado para cadeira de rodas
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver
+  preco_plano: R$ 149,99
+  url: https://wellhub.com/pt-br/search/partners/odincross-santana-de-parnaiba/
+- nome: TotalPass
+  plano_minimo: TP 2
+  preco_plano: R$ 119,90
+  url: https://totalpass.com/br/academias/odin-cross-151e1c6c-5512-4824-b267-3001ce5e5c68/
+mensalidade: null
+site: https://www.instagram.com/odin_cross
+telefone: '(11) 97326-2426'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página do box no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/odincross-santana-de-parnaiba/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página do box no TotalPass
+  url: https://totalpass.com/br/academias/odin-cross-151e1c6c-5512-4824-b267-3001ce5e5c68/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Horário: o TotalPass informa dias úteis até as 22h e sábado e domingo das 9h30 ao meio-dia; o Wellhub, até as 21h, sábado das 9h às 10h e domingo fechado. A ficha usa o Wellhub.'
+pendencias:
+- Mensalidade direta
+analise:
+- 'É o box de cross training de Santana de Parnaíba com ficha no guia, na Fazendinha. Tem área infantil e nutricionista entre as comodidades listadas no Wellhub.'
+- 'Entra pelo Silver no Wellhub e pelo TP 2 no TotalPass. As fontes divergem sobre o fim de semana; como em todo box, o horário é de aula com turma.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

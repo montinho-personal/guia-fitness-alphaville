@@ -1,0 +1,69 @@
+nome: Academia Ale Fitness
+regiao: santana-de-parnaiba
+bairro: Fazendinha
+tipo: academia
+resumo: 'Academia de musculação na Rua Beta, no Parque Jaguari, na Fazendinha, aceita no Wellhub pelo Basic.'
+endereco: 'R. Beta, 415 - Parque Jaguari (Fazendinha), Santana de Parnaíba - SP, 06533-225'
+geo:
+  lat: -23.4190423
+  lng: -46.8698669
+horario:
+  seg:
+  - 06:00-22:00
+  ter:
+  - 06:00-22:00
+  qua:
+  - 06:00-22:00
+  qui:
+  - 06:00-22:00
+  sex:
+  - 06:00-22:00
+  sab:
+  - 08:00-14:00
+  dom: []
+modalidades:
+- musculacao
+atividades_listadas:
+- Musculação
+- Fisiculturismo
+comodidades:
+- Área de alongamento
+- Área de cardio
+- Área de pesos livres
+- Armários
+- Bebedouro
+- Chuveiro
+- Estacionamento
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic
+  preco_plano: R$ 69,99
+  url: https://wellhub.com/pt-br/search/partners/academia-ale-fitness-santana-de-parnaiba/
+mensalidade: null
+site: https://www.instagram.com/academiaale_fitness
+telefone: '(11) 97202-7582'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/academia-ale-fitness-santana-de-parnaiba/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+pendencias:
+- Mensalidade direta
+analise:
+- 'Academia de musculação no Parque Jaguari, na Fazendinha, com área de pesos livres, cardio e estacionamento. Abre das 6h às 22h nos dias úteis e das 8h às 14h no sábado.'
+- 'No Wellhub, entra pelo Basic. O guia não a encontrou no TotalPass.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'
