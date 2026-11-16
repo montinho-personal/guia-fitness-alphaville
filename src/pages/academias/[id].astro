@@ -5,6 +5,7 @@ import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
 import Mantem from '../../components/Mantem.astro';
 import Vitrine from '../../components/Vitrine.astro';
+import Perguntas from '../../components/Perguntas.astro';
 import { Image } from 'astro:assets';
 import fotoArena18 from '../../assets/montinho/montinho-personal-trainer-arena-18.jpg';
 const FOTO_MONTINHO: Record<string, { src: typeof fotoArena18; alt: string }> = { 'arena-18-alphaville': { src: fotoArena18, alt: 'Montinho, personal trainer, em selfie no espelho da sala de musculação da Arena 18, em Alphaville' } };
@@ -28,7 +29,7 @@ const NIVEL: Record<string, string> = { 'fonte-publica': 'Conferido em fonte pú
 const CAMPOS: Record<string, string> = { endereco: 'endereço', geo: 'localização', horario: 'horário', modalidades: 'modalidades', comodidades: 'estrutura', agregadores: 'planos nos agregadores', mensalidade: 'mensalidade' };
 const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${d.nome}, ${d.endereco}`)}`;
 const abs = (u: string) => new URL(u, Astro.site).href;
-const titulo = `${d.nome}: horários, endereço e planos`;
+const titulo = d.titulo_seo ?? `${d.nome}: horários, endereço e planos`;
 const descricao = `${d.resumo} Dados conferidos em ${dataCurta(conf)}.`.slice(0, 160);
 const schema = [{
   '@type': 'Article', headline: titulo, description: d.resumo, inLanguage: 'pt-BR',
@@ -148,6 +149,7 @@ const eSite = d.site && !/instagram\.com/.test(d.site);
     )}
     {FOTO_MONTINHO[a.id] && <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={FOTO_MONTINHO[a.id].src} alt={FOTO_MONTINHO[a.id].alt} widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">O Montinho na Arena 18, onde atende alunos. Publicidade da casa.</figcaption></figure>}
     {d.montinho_atende && <Vitrine pagina={`ficha-${a.id}`} destaque="natalia-nascimento" intro={`O Montinho atende alunos na ${d.nome}, mas a vitrine abaixo não informa onde cada pessoa treinou. São resultados de emagrecimento de alunos dele, publicados no site montinhopersonal.com.br.`} />}
+    <Perguntas itens={d.perguntas} titulo={`Perguntas sobre a ${d.nome}`} />
     <section class="bloco fino prosa" aria-labelledby="perto-t">
       <h2 id="perto-t">Outras opções em {regiao.titulo}</h2>
       <ul>{vizinhas.map((o) => <li><a href={urlAcademia(o)}>{o.data.nome}</a> — {o.data.bairro}</li>)}</ul>

@@ -59,6 +59,8 @@ const academias = defineCollection({
     })).min(1),
     // true quando o Montinho Personal Trainer, que mantém o guia, atende alunos no local. Exibido como aviso na ficha.
     montinho_atende: z.boolean().default(false),
+    titulo_seo: z.string().max(65).optional(),
+    perguntas: z.array(z.object({ p: z.string(), r: z.string() })).default([]),
     divergencias: z.array(z.string()).default([]),
     pendencias: z.array(z.string()).default([]),
     analise: z.array(z.string()).min(1),
@@ -84,6 +86,7 @@ const guias = defineCollection({
     cta_destino: z.string().startsWith('/').optional(),
     lista_ids: z.array(z.string()).default([]),
     academia: z.string().optional(),
+    perguntas: z.array(z.object({ p: z.string(), r: z.string() })).default([]),
     vitrine: z.object({ intro: z.string().min(40), destaque: z.string().optional() }).optional(),
     video: z.object({ id: z.string().regex(/^[\w-]{11}$/), titulo: z.string(), publicado_em: data.optional() }).optional(),
     lista_titulo: z.string().optional(),

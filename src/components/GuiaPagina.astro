@@ -8,6 +8,7 @@ import CartaoAcademia from './CartaoAcademia.astro';
 import VideoMontinho from './VideoMontinho.astro';
 import LeiaTambem from './LeiaTambem.astro';
 import Vitrine from './Vitrine.astro';
+import Perguntas from './Perguntas.astro';
 import { CIDADES_PT, TEMAS_PT, urlTema, COMPARATIVOS, personalDaRegiao } from '../lib/artigos';
 import { REGIOES } from '../lib/dados';
 import { academias, guias, dataIso, dataLonga, type Guia } from '../lib/dados';
@@ -47,6 +48,7 @@ const schema = [...video, { '@type': 'Article', headline: d.h1, description: d.d
       </section>
     )}
 
+    <Perguntas itens={d.perguntas} />
     {d.vitrine && <Vitrine intro={d.vitrine.intro} destaque={d.vitrine.destaque} pagina={`guia-${g.id}`} />}
     {d.video && <VideoMontinho id={d.video.id} titulo={d.video.titulo} pagina={`guia-${g.id}`} />}
     {d.cta === 'montinho-contextual' && (

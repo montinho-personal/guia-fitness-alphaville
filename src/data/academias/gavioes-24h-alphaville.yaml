@@ -1,4 +1,5 @@
 nome: Academia Gaviões 24h Alphaville
+titulo_seo: 'Gaviões 24h Alphaville: preço, horário, Wellhub e TotalPass'
 regiao: alphaville
 bairro: Alphaville Industrial
 tipo: academia
@@ -30,6 +31,7 @@ modalidades:
 - danca
 - bike
 - pilates
+- yoga
 atividades_listadas:
 - Caiaque
 - Fight
@@ -38,16 +40,33 @@ atividades_listadas:
 - Musculação
 - Personal dance
 - Treino Híbrido
+- Yoga
+- Pilates
+- Bike indoor
+- Muay thai
+- Boxe
+- GAP
 comodidades:
 - Banheiro acessível
 - Estacionamento acessível
 - Portas adaptadas para cadeiras de rodas
 - Rooftop com máquinas
+- Estacionamento grátis (segundo o TotalPass)
+- Manobrista
+- Ar-condicionado
+- Toalhas
+- Bicicletário
+- Wi-Fi
+- Vestiário
 agregadores:
 - nome: Wellhub
   plano_minimo: Silver+
   preco_plano: R$ 199,99
   url: https://wellhub.com/pt-br/search/partners/academia-gavioes-24h-alphaville-alphaville-industrial/
+- nome: TotalPass
+  plano_minimo: TP 3
+  preco_plano: R$ 199,90
+  url: https://totalpass.com/br/academias/academia-gavioes-alphaville/
 mensalidade: null
 site: https://academiagavioes.com.br
 telefone: (11) 94074-7584
@@ -70,13 +89,41 @@ proveniencia:
   url: https://wellhub.com/pt-br/search/partners/academia-gavioes-24h-alphaville-alphaville-industrial/
   conferido_em: '2026-11-13'
   nivel: fonte-publica
+- campos:
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/academia-gavioes-alphaville/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Domingo: o Wellhub mostra a unidade aberta 24 horas também no domingo; o TotalPass informa que ela não abre aos domingos. Confirme com a academia antes de contar com o domingo.'
 pendencias:
 - Mensalidade e diária
 - Confirmar se o funcionamento 24 horas vale para feriados
 - Equipe disponível de madrugada
+perguntas:
+- p: Quanto custa a mensalidade da Academia Gaviões 24h Alphaville?
+  r: A Gaviões não publica mensalidade no site; a página da unidade leva a uma plataforma de matrícula. Pelos agregadores, a unidade entra a partir do plano Silver+ do Wellhub (R$ 199,99 por mês) e do TP 3 do TotalPass (R$ 199,90 por mês). Para o valor do plano direto, consulte a recepção.
+- p: Qual é a diária da Academia Gaviões Alphaville?
+  r: A diária e a aula avulsa não são divulgadas nas fontes que o guia consulta. Se a ideia é conhecer a academia antes de assinar, pergunte na unidade se há diária, aula experimental ou passe de visitante.
+- p: A Gaviões Alphaville aceita Gympass (Wellhub)?
+  r: Sim. Segundo a página da unidade no Wellhub, o antigo Gympass, o acesso começa no plano Silver+, de R$ 199,99 por mês.
+- p: A Gaviões Alphaville aceita TotalPass?
+  r: Sim. A página da unidade no TotalPass mostra acesso a partir do plano TP 3, de R$ 199,90 por mês.
+- p: A Gaviões Alphaville abre 24 horas?
+  r: De segunda a sábado, as duas fontes mostram a unidade aberta 24 horas. No domingo elas divergem - o Wellhub mostra 24 horas, e o TotalPass diz que a academia não abre. Confirme com a unidade antes de ir no domingo ou em feriado.
+- p: Tem estacionamento na Gaviões Alphaville?
+  r: A página do TotalPass lista estacionamento grátis e manobrista, e o Wellhub informa vaga acessível. Confirme na recepção se o estacionamento é gratuito para todos os planos.
+- p: Quais academias abrem 24 horas em Barueri?
+  r: Entre as academias com ficha no guia, só duas têm horário publicado de 24 horas, ambas em Alphaville, que pertence a Barueri - a Gaviões 24h, na Av. Juruá, e a Ironberg, na Estrada da Aldeinha. A lista completa de horários está na página de academias 24 horas.
+- p: Qual é a academia mais cara de Alphaville?
+  r: Pelos valores conhecidos, é a SIX, no Empresarial 18 do Forte, com preços citados à imprensa bem acima das demais. Entre as que publicam tabela, Ironberg e NitroGym têm as mensalidades mais altas. A Gaviões não publica preço. Veja a tabela de preços do guia.
 analise:
 - 'É uma das duas academias do guia com horário publicado de 24 horas, de segunda a domingo; a outra é a Ironberg Alphaville, na Estrada da Aldeinha. Para quem trabalha em turnos ou só consegue treinar de madrugada, é o dado que mais importa. Vale confirmar com a unidade como funciona o atendimento fora do horário comercial: em academias 24 horas, é comum a madrugada ter equipe reduzida.'
-- O foco é musculação. A página da unidade no site da rede lista também artes marciais, dança, sala de bike, pilates, aulas aeróbicas e um rooftop com máquinas. No Wellhub, o acesso começa no plano Silver+.
+- O foco é musculação. A página da unidade no site da rede lista também artes marciais, dança, sala de bike, pilates, aulas aeróbicas e um rooftop com máquinas. No Wellhub, o acesso começa no plano Silver+; no TotalPass, no TP 3. A página do TotalPass lista ainda yoga, muay thai, boxe e GAP, estacionamento grátis e manobrista.
 - 'A Gaviões não publica preço no site: a página da unidade leva a uma plataforma de matrícula, e a mensalidade e a diária, as dúvidas mais frequentes nas buscas sobre a academia, ainda não foram confirmadas por este guia.'
 status: publicado
 status_fatos: fonte-publica-conferida
@@ -84,4 +131,4 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: '2026-11-13'
-atualizado_em: '2026-11-13'
+atualizado_em: '2026-11-16'

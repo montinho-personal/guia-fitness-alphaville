@@ -1,0 +1,29 @@
+---
+// Perguntas frequentes com marcação FAQPage para o Google.
+// As respostas são texto simples; links ficam fora (no corpo da página).
+interface Props { itens: { p?: string; r?: string }[]; titulo?: string; id?: string }
+const { itens, titulo = 'Perguntas frequentes', id = 'perguntas' } = Astro.props;
+const lista = itens.filter((i): i is { p: string; r: string } => !!i.p && !!i.r);
+const ld = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: lista.map((i) => ({ '@type': 'Question', name: i.p, acceptedAnswer: { '@type': 'Answer', text: i.r } })) };
+---
+{lista.length > 0 && (
+  <section class="bloco fino prosa perguntas" aria-labelledby={`${id}-t`}>
+    <h2 id={`${id}-t`}>{titulo}</h2>
+    {lista.map((i) => (
+      <details>
+        <summary><h3>{i.p}</h3></summary>
+        <p>{i.r}</p>
+      </details>
+    ))}
+    <script type="application/ld+json" set:html={JSON.stringify(ld)}></script>
+  </section>
+)}
+<style>
+  .perguntas details { border-bottom: 1px solid var(--linha); padding: 4px 0; }
+  .perguntas summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 10px 0; }
+  .perguntas summary::-webkit-details-marker { display: none; }
+  .perguntas summary::after { content: '+'; font: 700 22px/1 var(--display); color: var(--alameda); flex: none; }
+  .perguntas details[open] summary::after { content: '−'; }
+  .perguntas summary h3 { margin: 0; font-size: 18px; }
+  .perguntas details p { margin: 0 0 12px; }
+</style>
