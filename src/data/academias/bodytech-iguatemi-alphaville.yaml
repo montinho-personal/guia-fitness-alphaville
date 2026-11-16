@@ -3,6 +3,7 @@ regiao: alphaville
 bairro: Alphaville
 tipo: academia
 rede: Bodytech
+titulo_seo: 'Bodytech Iguatemi Alphaville: horário, Wellhub e telefone'
 resumo: Unidade da Bodytech na Alameda Rio Negro, junto ao Iguatemi Alphaville, com a grade de aulas mais extensa deste guia.
 endereco: Al. Rio Negro, 111 - Alphaville, Barueri - SP, 06454
 geo:
@@ -94,6 +95,19 @@ pendencias:
 - Mensalidade direta da academia
 - Quais horários o plano Silver do Wellhub cobre
 - Funcionamento aos domingos
+perguntas:
+- p: Onde fica a Bodytech Alphaville?
+  r: 'Na Alameda Rio Negro, 111, junto ao Shopping Iguatemi Alphaville, no lado de Barueri.'
+- p: Qual o horário da Bodytech Iguatemi Alphaville?
+  r: 'Das 6h às 22h de segunda a sexta e das 9h às 15h no sábado. No domingo, a fonte da ficha não traz horário.'
+- p: A Bodytech Alphaville aceita Wellhub (Gympass)?
+  r: 'Sim, a partir do plano Silver. Segundo o Wellhub, no Silver o acesso vale só em horários específicos; confira no aplicativo.'
+- p: A Bodytech Alphaville aceita TotalPass?
+  r: 'O guia não encontrou a unidade Iguatemi Alphaville no TotalPass.'
+- p: Qual o preço da mensalidade da Bodytech Alphaville?
+  r: 'A Bodytech não publica a mensalidade da unidade nas fontes consultadas pelo guia. Peça o valor na recepção e compare com o plano do Wellhub.'
+- p: Qual o telefone da Bodytech Iguatemi Alphaville?
+  r: '(11) 4195-3087, segundo a ficha do guia.'
 analise:
 - A lista de atividades publicada passa de trinta itens, de musculação e corrida a balé, boxe, bike e pilates. É a oferta de aulas mais ampla entre as academias reunidas aqui.
 - Dois pontos de atenção. A unidade não tem horário listado para domingo, e no sábado funciona das 9h às 15h. E o acesso pelo Wellhub no plano Silver vale apenas para horários específicos, segundo a própria página; quem pretende usar o agregador deve conferir quais são antes de contar com a academia no horário de pico.

@@ -12,7 +12,7 @@ export async function GET() {
     '/academias/domingo/': 'domingo fim de semana feriado aberta hoje',
     '/academias/wellhub-totalpass/': 'gympass wellhub totalpass agregador plano empresa',
     '/academias/perto-de/': 'perto de mim próximo próxima perto iguatemi shopping tamboré estação trem cptm 18 do forte',
-    '/academias/smart-fit-barueri/': 'smartfit smart fit barueri centro zelia zélia parque shopping sodimac alphaville horário endereço telefone preço diária totalpass',
+    '/academias/smart-fit-barueri/': 'smartfit smart fit barueri centro zelia zélia parque shopping sodimac carrefour hiper tamboré alphaville horário endereço telefone preço diária totalpass',
     '/modalidades/lutas/': 'luta lutas artes marciais muay thai boxe judo judô krav maga magá hapkido mma capoeira kickboxing defesa pessoal',
     '/guias/jiu-jitsu-alphaville/': 'jiu jitsu jiujitsu bjj tatame gracie barra alliance g13 templo tamboré',
     '/guias/jiu-jitsu-barueri/': 'jiu jitsu jiujitsu bjj tatame team cruz guerreiros fuinha catheo',

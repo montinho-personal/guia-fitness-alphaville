@@ -1,0 +1,91 @@
+nome: Smart Fit Carrefour Hiper Tamboré
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: academia
+rede: Smart Fit
+resumo: Unidade da Smart Fit no Carrefour Hiper Tamboré, na Alameda Araguaia, 2751, com o Plano Fit mais barato entre as Smart Fit da região.
+endereco: Alameda Araguaia, 2751 - Alphaville Industrial, Barueri - SP, 06455-000
+geo:
+  lat: -23.500828
+  lng: -46.836044
+horario:
+  seg:
+  - 06:00-23:00
+  ter:
+  - 06:00-23:00
+  qua:
+  - 06:00-23:00
+  qui:
+  - 06:00-23:00
+  sex:
+  - 06:00-23:00
+  sab:
+  - 08:00-17:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+atividades_listadas:
+- Musculação
+- Sala de ginástica
+comodidades:
+- Ar-condicionado
+- Armário rotativo
+- Ducha aquecida
+- Professores formados
+agregadores:
+- nome: TotalPass
+  plano_minimo: TP 2
+  preco_plano: R$ 119,90
+  url: https://totalpass.com/br/academias/smart-fit-carrefour-hiper-tambore/
+mensalidade:
+  valor: a partir de R$ 129,90
+  resumo: Plano Fit a R$ 129,90 por mês com fidelidade, com adesão de R$ 29,90.
+  planos:
+  - nome: Plano Fit
+    preco: R$ 129,90/mês
+    condicoes: Com fidelidade; sem fidelidade, mais R$ 20 por mês. Adesão de R$ 29,90. Primeiro mês gratuito, segundo o site.
+  - nome: Plano Smart
+    preco: R$ 149,90/mês
+    condicoes: Com fidelidade; sem fidelidade, mais R$ 20 por mês. Adesão grátis.
+  - nome: Plano Black
+    preco: R$ 159,90/mês
+    condicoes: Com fidelidade. Adesão de R$ 29,90. Primeiro mês gratuito, segundo o site. Acesso a todas as unidades da rede.
+  abrangencia: unidade
+  fonte: Site oficial da Smart Fit (página da unidade)
+  url: https://www.smartfit.com.br/academias/carrefour-hiper-tambore
+  conferido_em: '2026-11-16'
+  aviso: O site informa que os valores exibidos são promocionais.
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - comodidades
+  - mensalidade
+  fonte: Site oficial da Smart Fit (página da unidade)
+  url: https://www.smartfit.com.br/academias/carrefour-hiper-tambore
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/smart-fit-carrefour-hiper-tambore/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+pendencias:
+- 'Estacionamento: não consta na fonte'
+- Telefone (o site não publica)
+analise:
+- 'Fica no Carrefour Hiper Tamboré, na Alameda Araguaia, 2751, a menos de 1 km da unidade da Sodimac, na mesma alameda. Apesar do nome Tamboré, o endereço oficial é Alphaville Industrial. Funciona das 6h às 23h nos dias úteis, das 8h às 17h no sábado e nos feriados e das 8h às 14h no domingo.'
+- 'Tem o Plano Fit mais barato entre as Smart Fit com ficha no guia: R$ 129,90 por mês com fidelidade, contra R$ 139,90 nas unidades de Barueri, mas cobra adesão de R$ 29,90, que lá é grátis. No TotalPass, entra pelo TP 2.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

@@ -23,7 +23,7 @@ export const ARTIGOS: Record<string, { titulo: string; resumo: string }> = {
   '/guias/jiu-jitsu-alphaville/': { titulo: 'Jiu-jitsu em Alphaville e Tamboré', resumo: 'A escola do Tamboré e as academias com tatame.' },
   '/guias/jiu-jitsu-barueri/': { titulo: 'Jiu-jitsu em Barueri', resumo: 'Uma escola em cada canto da cidade.' },
   '/guias/lutas-santana-de-parnaiba/': { titulo: 'Lutas em Santana de Parnaíba', resumo: 'Jiu-jitsu e boxe na Fazendinha.' },
-  '/academias/smart-fit-barueri/': { titulo: 'Smart Fit em Barueri', resumo: 'As 4 unidades com horário, endereço e plano de entrada.' },
+  '/academias/smart-fit-barueri/': { titulo: 'Smart Fit em Barueri', resumo: 'As 5 unidades com horário, endereço e plano de entrada.' },
   '/academias/perto-de/': { titulo: 'Academia perto de você', resumo: 'Iguatemi, Shopping Tamboré, 18 do Forte e estações.' },
   '/modalidades/hyrox/': { titulo: 'Hyrox: o que é e como funciona', resumo: 'Formato da prova, estações e onde treinar na região.' },
   '/guias/estacoes-do-hyrox/': { titulo: 'As 8 estações do Hyrox', resumo: 'O que cada uma exige e como praticar.' },
