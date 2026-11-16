@@ -68,7 +68,7 @@ rotina diária do Direito de Verdade (2 revisões, 2 buscas cada) cerca de 300; 
 do Personal por Perto (artigos e cidades, 2 + 2 por dia) cerca de 360; rotina do Site do
 Montinho cerca de 120 a 150; rotina do Crédito por Perto (1 revisão por dia) cerca de 60
 a 90; rotinas mensais (com o alerta do Crédito) cerca de 35. Total: 875 a 935, com pouca sobra para pedidos
-avulsos. Rotina nova, ou maior, só depois de refazer esta conta com o Renato; passou de
+avulsos. **Atenção:** a rotina diária do Onde Treinar Alphaville (1 revisão por dia, 10h23, criada em 16/11 a pedido do Renato) gasta cerca de 60 a 90 e ainda não está nesta conta; com ela, o total vai a 935 a 1.025. Falta o Renato decidir se mantém. Rotina nova, ou maior, só depois de refazer esta conta com o Renato; passou de
 850 no mês, só pesquisar o que ele pedir.
 
 **Evidência:** guardar no doc da peça, no lugar dos prints, um JSON enxuto de cada

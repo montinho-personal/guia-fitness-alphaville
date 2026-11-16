@@ -39,14 +39,7 @@ Roda uma vez por dia (tarefa agendada às 10h23 de Brasília; o montinhopersonal
 
 ## Cota do SerpApi
 
-Uma conta para todos os sites do Renato: 250 buscas por mês no plano grátis. O montinhopersonal.com.br gasta 120 a 150 por mês. Uma revisão aqui gasta 2 a 3 créditos (até 5 se precisar de busca secundária).
-
-| Ritmo | Gasto deste site por mês | Total com o montinhopersonal | Cabe em 250? |
-|---|---|---|---|
-| 2 revisões por dia | 120 a 180 | 240 a 330 | Não, no cenário comum |
-| 1 revisão por dia | 60 a 90 | 180 a 240 | Sim, com folga pequena |
-
-Por isso a rotina roda com 1 revisão por dia. Busca secundária deve ser exceção.
+Uma conta para todos os sites do Renato, em plano pago desde 16/11/2026: 1.000 buscas por mês. A conta do mês está no `CLAUDE.md`: as outras rotinas somam 875 a 935. Uma revisão aqui gasta 2 a 3 créditos (até 5 com busca secundária), cerca de 60 a 90 por mês com 1 por dia; com ela, o total vai a 935 a 1.025. Por isso a rotina fica em 1 revisão por dia, busca secundária é exceção e, se o mês passar de 850, só se pesquisa o que o Renato pedir.
 
 ## Capas
 
