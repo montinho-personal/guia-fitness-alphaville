@@ -1,5 +1,5 @@
 ---
-titulo: "Personal trainer na Aldeia da Serra: treino em casa e condomínio"
+titulo: "Personal trainer na Aldeia da Serra: preço, casa e condomínio"
 descricao: "Na Aldeia da Serra, sem academia com ficha no guia, o treino com personal acontece em casa ou no condomínio. Veja o que preparar e onde ficam as academias."
 h1: "Personal trainer na Aldeia da Serra"
 resposta: "A Aldeia da Serra não tem academia com ficha neste guia. Por isso, o treino com personal acontece quase sempre na casa do aluno ou no espaço fitness do condomínio. Quem prefere academia comercial precisa sair do bairro, e o tempo de ida e volta entra na conta da rotina."
@@ -23,6 +23,15 @@ fontes:
 vitrine:
   destaque: elisa-cruz
   intro: "Na Aldeia da Serra o treino acompanhado costuma acontecer em casa ou no condomínio. Os alunos do Montinho abaixo mostram resultados de emagrecimento; o formato de cada caso aparece ao lado do nome."
+perguntas:
+  - p: "Quanto custa 1 mês de personal trainer na Aldeia da Serra?"
+    r: "Não há tabela pública para o bairro, e o guia não divulga valores que não pode conferir. Como quase todo treino ali é em casa ou no condomínio, o deslocamento do profissional costuma pesar no preço. Peça o total do mês e pergunte se ele já inclui a ida até o residencial."
+  - p: "Quanto custa um personal 2 vezes por semana na Aldeia da Serra?"
+    r: "Com duas aulas por semana, o pacote do mês fica em torno de oito sessões. Compare propostas pelo valor fechado do mês e pela regra de reposição quando chover, já que parte dos treinos pode acontecer ao ar livre."
+  - p: "O condomínio cobra taxa do personal na Aldeia da Serra?"
+    r: "Depende de cada residencial. Alguns exigem cadastro do profissional na portaria, limitam horários do espaço fitness ou cobram taxa de prestador. Pergunte na administração antes de fechar com o personal."
+  - p: "Tem academia na Aldeia da Serra?"
+    r: "O guia não tem ficha de academia dentro da Aldeia da Serra. As opções com ficha mais próximas ficam em Barueri e em Alphaville; o mapa do guia mostra a distância até cada uma."
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

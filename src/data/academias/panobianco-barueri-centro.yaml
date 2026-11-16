@@ -3,6 +3,7 @@ regiao: barueri
 bairro: Centro
 tipo: academia
 rede: Panobianco
+titulo_seo: 'Panobianco Barueri Centro: horário, mensalidade e Wellhub'
 resumo: Unidade da rede Panobianco no centro de Barueri, com musculação, aulas coletivas e uma das entradas mais baratas via Wellhub deste guia.
 endereco: R. Jose Maria Balieiro, 267 - Centro, Barueri - SP, 06401-126
 geo:
@@ -120,6 +121,19 @@ proveniencia:
   nivel: fonte-publica
 pendencias:
 - Confirmar se a unidade Barueri Centro pratica os preços anunciados pela rede
+perguntas:
+- p: Tem Panobianco em Barueri?
+  r: 'Sim, duas com ficha no guia: a Barueri Centro, na Rua José Maria Balieiro, 267, e a Capitão Francisco, na Av. Capitão Francisco César, 225, na Vila Pindorama.'
+- p: Qual é o valor da mensalidade da Panobianco em Barueri?
+  r: 'A rede anuncia o Plano Orange a R$ 119,90 por mês, com fidelidade de 12 meses, e o Platinum a R$ 139,90, sem fidelidade. A rede pede que se confirme a disponibilidade em cada unidade; o valor praticado em Barueri não foi confirmado.'
+- p: Qual o horário da Panobianco Barueri Centro?
+  r: 'Das 5h à meia-noite de segunda a quinta, das 5h às 23h na sexta, das 8h às 17h no sábado e das 8h às 14h no domingo.'
+- p: A Panobianco aceita Gympass (Wellhub)?
+  r: 'Sim. A unidade Barueri Centro entra no Wellhub a partir do plano Basic, de R$ 69,99 por mês, uma das entradas mais baratas do guia.'
+- p: A Panobianco Barueri Centro aceita TotalPass?
+  r: 'A página da unidade no TotalPass informa que ela não faz mais parte da rede parceira (conferido em 16/11/2026).'
+- p: Qual o telefone da Panobianco Barueri Centro?
+  r: '(11) 91775-7019, segundo a ficha do guia.'
 analise:
 - Abre das 5h às 23h59 de segunda a quinta e até 23h na sexta. Funciona também no sábado, das 8h às 17h, e no domingo, das 8h às 14h.
 - A lista de estrutura da página é a mais longa entre as academias de Barueri reunidas aqui, com área infantil, elevador, itens de acessibilidade e nutricionista. No Wellhub, o acesso começa no plano Basic, ao menos dois níveis abaixo do exigido pelas unidades de rede de Alphaville. No site, a rede anuncia o Plano Orange a R$ 119,90 por mês, com fidelidade de 12 meses, e o Platinum a R$ 139,90, sem fidelidade.
@@ -129,4 +143,4 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: '2026-11-13'
-atualizado_em: '2026-11-13'
+atualizado_em: '2026-11-16'
