@@ -2,6 +2,7 @@ nome: CrossFit Barueri
 regiao: alphaville
 bairro: Alphaville Industrial
 tipo: box
+titulo_seo: 'CrossFit Barueri (Alphaville): horário, Wellhub e TotalPass'
 resumo: Box de CrossFit na Av. Juruá, em Alphaville Industrial, com aulas de segunda a sábado.
 endereco: Av. Juruá, 307 - Alphaville Industrial, Barueri - SP, 06455-010
 geo:
@@ -38,10 +39,20 @@ agregadores:
   plano_minimo: Gold
   preco_plano: R$ 319,99
   url: https://wellhub.com/pt-br/search/partners/crossfit-barueri/
+- nome: TotalPass
+  plano_minimo: TP 4
+  preco_plano: R$ 299,90
+  url: https://totalpass.com/br/academias/crossfit-barueri/
 mensalidade: null
 site: https://crossfitbarueri.com.br
 telefone: (11) 97503-7921
 proveniencia:
+- campos:
+  - agregadores
+  fonte: Página do box no TotalPass
+  url: https://totalpass.com/br/academias/crossfit-barueri/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
 - campos:
   - endereco
   - geo
@@ -57,6 +68,17 @@ pendencias:
 - Grade de aulas atual
 - Valor da mensalidade
 - 'Número do endereço: a fonte traz a grafia corrompida'
+perguntas:
+- p: Onde fica a CrossFit Barueri?
+  r: 'Apesar do nome, fica em Alphaville: na Av. Juruá, 307, no Alphaville Industrial, em Barueri.'
+- p: A CrossFit Barueri aceita Wellhub e TotalPass?
+  r: 'Sim. No Wellhub, a partir do plano Gold; no TotalPass, a partir do TP 4.'
+- p: Qual o valor mensal do CrossFit em Barueri?
+  r: 'A CrossFit Barueri não publica mensalidade nas fontes consultadas pelo guia. Como referência, a rede BlackSheep publica plano ilimitado a R$ 480 por mês; veja a página de preços do guia.'
+- p: Tem outro box de CrossFit em Barueri?
+  r: 'Sim. A Unika CF Barueri fica na Rua da Prata, 102, no Jardim dos Camargos, com turma infantil e aula também no domingo de manhã.'
+- p: O que é mais barato, CrossFit ou academia?
+  r: 'Em geral, a academia. No box, toda sessão é uma aula conduzida por coach, com turma limitada, o que encarece a mensalidade. Na tabela de preços do guia, o plano ilimitado publicado de um box passa de três vezes a mensalidade mais barata de uma Smart Fit da região.'
 analise:
 - Apesar do nome, o endereço listado fica em Alphaville Industrial, na Av. Juruá, e não no centro de Barueri. Funciona das 6h às 22h30 de segunda a quinta, até 21h30 na sexta e das 7h às 12h no sábado. Não há horário listado para domingo.
 - Entre os boxes reunidos aqui, é o que tem a janela mais longa em dias úteis. A página informa estacionamento, vestiário e loja. No Wellhub, o acesso começa no plano Gold.
@@ -66,4 +88,4 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Onde Treinar Alphaville
 revisor: null
 publicado_em: '2026-11-13'
-atualizado_em: '2026-11-13'
+atualizado_em: '2026-11-16'

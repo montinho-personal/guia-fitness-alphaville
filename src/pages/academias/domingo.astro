@@ -77,7 +77,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
 
       {boxes.length > 0 && <>
         <h2>Boxes de cross training</h2>
-        <p>{boxes.map((a, i) => <>{sep(i, boxes.length)}<a href={urlAcademia(a)}>{a.data.nome}</a></>)} {boxes.length === 1 ? 'lista' : 'listam'} só uma aula no domingo, das 9h às 10h30. Em box, o horário é de aula com turma, e não de salão aberto: chegue no início.</p>
+        <p>{boxes.map((a, i) => <>{sep(i, boxes.length)}<a href={urlAcademia(a)}>{a.data.nome}</a></>)} {boxes.length === 1 ? 'tem' : 'têm'} horário curto no domingo, de manhã: {boxes.map((a) => `${a.data.nome}, ${faixasDia(a.data.horario.dom)}`).join('; ')}. Em box, o horário é de aula com turma, e não de salão aberto: chegue no início.</p>
       </>}
 
       <h2>Por região</h2>
