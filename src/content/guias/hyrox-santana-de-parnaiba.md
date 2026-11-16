@@ -63,7 +63,7 @@ A Fábrica Premium é a mais completa da lista para quem mora do lado de Alphavi
 
 ## Detalhes de horário que mudam o plano
 
-As academias de bairro não abrem no domingo, o que pesa para quem planeja treinar aos domingos. A Olympia fecha das 12h às 14h, e a Mattos abre às 4h nos dias úteis, alternativa para encaixar a sessão bem cedo. A Forth funciona até a meia-noite de segunda a sexta. Se a ideia é correr na pista do rooftop da Fábrica Premium, confirme na unidade as regras de uso.
+Forth, Mattos e Olympia não abrem no domingo; entre as academias de bairro, a Allp Fit, na Fazendinha, é exceção, das 8h às 14h. A Olympia fecha das 12h às 14h, e a Mattos abre às 4h nos dias úteis, alternativa para encaixar a sessão bem cedo. A Forth funciona até a meia-noite de segunda a sexta. Se a ideia é correr na pista do rooftop da Fábrica Premium, confirme na unidade as regras de uso.
 
 ## E as estações específicas?
 

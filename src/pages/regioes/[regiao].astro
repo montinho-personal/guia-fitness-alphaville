@@ -152,7 +152,7 @@ const schema = [
     {regiao === 'santana-de-parnaiba' && (
       <>
         <div class="resposta"><span class="rotulo">Em resumo</span>
-          <p>Santana de Parnaíba tem {xs.length} academias com ficha, cada uma em um bairro: {bairros.map((b) => b.b).join(', ').replace(/, ([^,]*)$/, ' e $1')}. Só a Fábrica Premium, do lado de Alphaville, abre aos domingos. Em linha reta, a distância entre elas vai de {fmt(distMin)} a {fmt(distMax)} km, então a escolha aqui é, antes de tudo, pelo bairro.</p>
+          <p>Santana de Parnaíba tem {xs.length} academias com ficha, espalhadas por bairros como {bairros.map((b) => b.b).join(', ').replace(/, ([^,]*)$/, ' e $1')}. Abrem aos domingos: {xs.filter((a) => abreDomingo(a.data.horario)).map((a) => a.data.nome).join(', ').replace(/, ([^,]*)$/, ' e $1')}. Em linha reta, a distância entre elas vai de {fmt(distMin)} a {fmt(distMax)} km, então a escolha aqui é, antes de tudo, pelo bairro.</p>
         </div>
         <div class="prosa">
           <h2>Uma academia por bairro</h2>

@@ -1,0 +1,85 @@
+nome: Forja Academia
+regiao: santana-de-parnaiba
+bairro: Jardim Alagoas
+tipo: academia
+resumo: 'Academia de musculação na Rua Estrela D''Alva, no Jardim Alagoas, com uma das entradas mais baratas nos agregadores.'
+endereco: 'Rua Estrela D''Alva, 265, 2º andar - Jardim Alagoas, Santana de Parnaíba - SP, 06528-330'
+geo:
+  lat: -23.4054093
+  lng: -46.8972101
+horario:
+  seg:
+  - 05:00-22:00
+  ter:
+  - 05:00-22:00
+  qua:
+  - 05:00-22:00
+  qui:
+  - 05:00-22:00
+  sex:
+  - 05:00-22:00
+  sab:
+  - 08:00-14:00
+  dom: []
+modalidades:
+- musculacao
+atividades_listadas:
+- Musculação
+- Fisiculturismo
+comodidades:
+- Área de cardio
+- Área de musculação
+- Área de treino funcional
+- Armários
+- Bebedouro
+- Itens de higiene pessoal
+agregadores:
+- nome: Wellhub
+  plano_minimo: Starter
+  preco_plano: R$ 39,99
+  url: https://wellhub.com/pt-br/search/partners/forja-academia-jardim-alagoas/
+- nome: TotalPass
+  plano_minimo: TP 1+
+  preco_plano: R$ 89,90
+  url: https://totalpass.com/br/academias/forja-academia/
+mensalidade: null
+site: https://www.instagram.com/forj.academia
+telefone: '(11) 97684-2822'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/forja-academia-jardim-alagoas/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/forja-academia/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Domingo: o TotalPass informa das 8h ao meio-dia; o Wellhub mostra fechado. A ficha usa o Wellhub.'
+- 'O Wellhub lista também a Spartans Academia no mesmo endereço, com outro telefone e outro horário; as páginas não dizem se é o mesmo espaço.'
+pendencias:
+- Mensalidade direta
+analise:
+- 'É uma academia focada em musculação, no 2º andar de um prédio da Rua Estrela D''Alva, no Jardim Alagoas. Abre das 5h às 22h nos dias úteis e das 8h às 14h no sábado.'
+- 'Tem a entrada mais barata possível no Wellhub, o Starter, e entra no TotalPass pelo TP 1+. As fontes divergem sobre o domingo; confirme antes.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'

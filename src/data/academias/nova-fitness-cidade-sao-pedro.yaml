@@ -1,0 +1,93 @@
+nome: Nova Fitness Academia
+regiao: santana-de-parnaiba
+bairro: Cidade São Pedro
+tipo: academia
+resumo: 'Academia na Av. das Conchas, na Cidade São Pedro, com musculação, funcional, jiu-jitsu e muay thai e área infantil.'
+endereco: 'Av. das Conchas, 391 - Cidade São Pedro, Santana de Parnaíba - SP, 06535-205'
+geo:
+  lat: -23.423948
+  lng: -46.851267
+horario:
+  seg:
+  - 06:00-22:00
+  ter:
+  - 06:00-22:00
+  qua:
+  - 06:00-22:00
+  qui:
+  - 06:00-22:00
+  sex:
+  - 06:00-22:00
+  sab:
+  - 08:00-12:00
+  dom: []
+modalidades:
+- musculacao
+- funcional
+- lutas
+atividades_listadas:
+- Musculação
+- Funcional
+- Circuito funcional
+- Jiu-jitsu
+- Muay Thai
+comodidades:
+- Área infantil
+- Armários
+- Banheiro acessível
+- Bebedouro
+- Estacionamento
+- Loja
+- Personal trainer
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic
+  preco_plano: R$ 69,99
+  url: https://wellhub.com/pt-br/search/partners/nova-fitness-academia-372f2bde-ae49-4dff-bf1f-033600dad5e9/
+- nome: TotalPass
+  plano_minimo: TP 1
+  preco_plano: R$ 59,90
+  url: https://totalpass.com/br/academias/academia-nova-fitness/
+mensalidade: null
+site: https://www.instagram.com/novafitnessacademia_
+telefone: '(11) 94057-7322'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/nova-fitness-academia-372f2bde-ae49-4dff-bf1f-033600dad5e9/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/academia-nova-fitness/
+  conferido_em: '2026-11-16'
+  nivel: fonte-publica
+divergencias:
+- 'Telefone: o TotalPass mostra (11) 99360-1178.'
+- 'Atividades: jiu-jitsu e muay thai aparecem só no Wellhub.'
+pendencias:
+- Mensalidade direta
+analise:
+- 'Fica na Av. das Conchas, na Cidade São Pedro, poucos números antes da Power Start. Além da musculação e do funcional, o Wellhub lista jiu-jitsu e muay thai, e a página registra área infantil.'
+- 'Abre das 6h às 22h nos dias úteis e das 8h ao meio-dia no sábado. Entra pelo Basic no Wellhub e pelo TP 1 no TotalPass.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Onde Treinar Alphaville
+revisor: null
+publicado_em: '2026-11-16'
+atualizado_em: '2026-11-16'
