@@ -83,3 +83,14 @@ autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: '2026-11-16'
 atualizado_em: '2026-11-16'
+personal_externo:
+  status: aceita
+  condicoes:
+  - A rede pede para verificar as regras e os planos diretamente na unidade.
+  taxa:
+    situacao: pendente
+    condicoes: a rede não publica se há taxa
+  abrangencia: rede
+  fonte: SAC da Panobianco
+  url: https://www.panobiancoacademia.com.br/sac
+  conferido_em: 2026-11-17

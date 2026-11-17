@@ -2,7 +2,7 @@
 titulo: "Personal trainer na Bluefit Alphaville: o que saber antes"
 descricao: "Treinar com personal na Bluefit Alphaville, na Alameda Amazonas: o que perguntar sobre profissional de fora, horários até 23h59, Wellhub Silver+ e vizinhas."
 h1: "Personal trainer na Bluefit Alphaville"
-resposta: "A Bluefit Alphaville, na Alameda Amazonas, não publica regra para personal de fora, e a página da unidade nem lista personal trainer entre os serviços. Por isso, confirme na recepção antes de contratar. A estrutura ajuda: áreas separadas de pesos livres, funcional e cardio, aberta das 5h às 23h59 de segunda a quinta e das 7h às 19h no fim de semana."
+resposta: "A Bluefit Alphaville, na Alameda Amazonas, aceita personal de fora pela regra da rede: o profissional faz cadastro na unidade, contrata o plano da Bluefit para personal e compra o uniforme oficial. O valor desse plano não é publicado; confirme na recepção. A estrutura ajuda: áreas separadas de pesos livres, funcional e cardio, aberta das 5h às 23h59 de segunda a quinta e das 7h às 19h no fim de semana."
 cluster: D
 secao: guias
 palavra_chave: personal trainer bluefit alphaville
@@ -31,9 +31,9 @@ atualizado_em: 2026-11-15
 
 > **Transparência.** O Montinho, personal trainer da região de Alphaville, edita este guia. Ao pé da página, o serviço dele aparece em formato de anúncio, e é isso que ele é.
 
-## Personal de fora: uma pergunta em aberto
+## Personal de fora: o que a rede publica
 
-Entre as três Bluefit que o guia cobre, só esta deixa de fora o item personal trainer na página do Wellhub. Isso não quer dizer que seja proibido. Quer dizer apenas que não há nenhuma informação pública sobre o assunto, nem regra para profissional externo.
+A regra da rede Bluefit, publicada nas perguntas frequentes do site, permite levar personal próprio: o profissional faz cadastro na unidade, contrata o plano da Bluefit destinado a personal e compra o uniforme oficial. Com esse plano ele atende em todas as unidades da rede, sem limite de alunos. O valor do plano não é publicado, e quem paga é o profissional, que pode repassar o custo no preço dele. Veja como ficam as outras academias em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/).
 
 Antes de fechar com um personal, leve estas perguntas à recepção da [Bluefit Alphaville](/academias/bluefit-alphaville/):
 

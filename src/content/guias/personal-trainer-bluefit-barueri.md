@@ -2,7 +2,7 @@
 titulo: "Personal trainer na Bluefit Barueri, no Bethaville"
 descricao: "Bluefit Barueri, na Av. Trindade: personal da casa listado, o que perguntar sobre profissional externo, lutas, acessibilidade, horários e plano Silver+."
 h1: "Personal trainer na Bluefit Barueri"
-resposta: "A Bluefit Barueri, no Bethaville, informa personal trainer entre os serviços, mas não publica se aceita profissional de fora nem quanto cobraria. A unidade abre das 5h às 23h59 inclusive na sexta e tem banheiro, chuveiro e estacionamento acessíveis. Pelo Wellhub, a entrada é o plano Silver+."
+resposta: "A Bluefit Barueri, no Bethaville, informa personal trainer entre os serviços, e a regra da rede aceita profissional de fora com cadastro, plano próprio para personal e uniforme oficial; o valor não é publicado. A unidade abre das 5h às 23h59 inclusive na sexta e tem banheiro, chuveiro e estacionamento acessíveis. Pelo Wellhub, a entrada é o plano Silver+."
 cluster: D
 secao: guias
 palavra_chave: personal trainer bluefit barueri
@@ -31,9 +31,9 @@ atualizado_em: 2026-11-15
 
 > **Transparência.** Quem banca este guia é o Montinho, personal que tem atendimento em Barueri. O bloco final, com a oferta dele, é propaganda.
 
-## Equipe da casa não resolve a dúvida de quem vem de fora
+## Personal de fora: a regra da rede
 
-A página da [Bluefit Barueri](/academias/bluefit-barueri/) no Wellhub inclui "Personal trainer" na lista de serviços. Em geral, isso indica profissionais que já atendem dentro da academia. Para quem tem um personal de confiança e quer trazê-lo, a informação não ajuda: a unidade não divulga regra para profissional externo.
+Pela resposta publicada no atendimento da Bluefit, dá para trazer personal próprio, desde que ele se cadastre na unidade, assine o plano que a rede reserva a personal trainers e use o uniforme oficial. O valor desse plano não é divulgado e sai do bolso do profissional, que pode embuti-lo no preço. A comparação com outras academias da região está em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/).
 
 Então a conversa com a recepção precisa cobrir:
 

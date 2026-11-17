@@ -111,3 +111,18 @@ autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: '2026-11-13'
 atualizado_em: '2026-11-13'
+personal_externo:
+  status: aceita-com-condicoes
+  condicoes:
+  - Cadastro do personal na unidade.
+  - O personal contrata o plano da Bluefit destinado a personal.
+  - O personal compra o uniforme oficial.
+  taxa:
+    situacao: confirmada
+    quem_paga: profissional
+    condicoes: É o plano para personal, contratado pelo profissional; valor e periodicidade não publicados.
+  abrangencia: rede
+  fonte: Atendimento (perguntas frequentes) da Bluefit
+  url: https://www.bluefit.com.br/atendimento
+  conferido_em: 2026-11-17
+  nota: Segundo a rede, com esse plano o personal acessa todas as unidades e não tem limite de alunos.

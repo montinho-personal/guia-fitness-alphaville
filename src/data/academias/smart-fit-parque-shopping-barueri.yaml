@@ -79,3 +79,17 @@ autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: '2026-11-13'
 atualizado_em: '2026-11-13'
+personal_externo:
+  status: aceita-com-condicoes
+  condicoes:
+  - A Smart Fit avalia o pedido do personal; se autorizado, ele se cadastra na rede e assina o contrato de uso das instalações.
+  - O profissional só pode atender alunos matriculados na Smart Fit.
+  - Ex-funcionários seguem regras próprias de carência, segundo a rede.
+  taxa:
+    situacao: pendente
+    condicoes: o contrato do profissional é de uso das instalações; a rede não publica valor nem quem paga
+  abrangencia: rede
+  fonte: Normas de Utilização da Smart Fit (item 4.3) e formulário prévio ao Contrato Personal
+  url: https://www.smartfit.com.br/files/store/0675ce6c1b7f8c722cd91f29a31e12c06cfb4c78f8d85e60831103d96815.pdf
+  conferido_em: 2026-11-17
+  nota: Regra das Normas de Utilização, que valem para as unidades da rede. A página desta unidade não traz regra própria.

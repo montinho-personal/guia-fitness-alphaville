@@ -1,6 +1,6 @@
 ---
 titulo: "Personal trainer na Smart Fit Barueri Centro: horário e custo"
-descricao: "Smart Fit da Av. Vinte e Seis de Março: aberta das 5h à meia-noite, com bike, TotalPass a partir do TP 1+ e sem norma divulgada sobre personal de fora."
+descricao: "Smart Fit da Av. Vinte e Seis de Março: aberta das 5h à meia-noite, com bike, TotalPass a partir do TP 1+ e regra da rede para personal de fora."
 h1: "Personal trainer na Smart Fit Barueri Centro"
 resposta: "A Smart Fit Barueri Centro não informa se aceita profissional trazido pelo aluno, e a eventual taxa também não aparece nas fontes: tudo isso se resolve na unidade. Ela funciona das 5h à meia-noite nos dias úteis, tem indoor bike na grade e entra no TotalPass a partir do plano TP 1+, de R$ 89,90."
 cluster: D
@@ -54,7 +54,7 @@ A [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/) fica na Av. V
 
 ## O que perguntar antes da primeira sessão
 
-Nem o site da Smart Fit nem a página do TotalPass trazem regra para personal externo. Os professores formados citados nas comodidades são da casa. Para treinar com um profissional seu, a conversa na recepção precisa cobrir quatro pontos: se a unidade aceita personal de fora, quanto custa uma eventual taxa e quem a paga, se o profissional precisa de cadastro e em quais horários isso é permitido. Sem essas respostas, evite fechar pacote de aulas.
+Para a unidade da Vinte e Seis de Março, a referência é o documento de normas da Smart Fit: o personal de fora só atua depois de autorizado pela rede, com cadastro e contrato de uso das instalações vigente, e atende apenas alunos da própria Smart Fit. O documento não diz quanto custa nem quem paga. Compare com outras academias em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/). Os professores formados citados nas comodidades são da casa. Para treinar com um profissional seu, a conversa na recepção precisa cobrir quatro pontos: se a unidade aceita personal de fora, quanto custa uma eventual taxa e quem a paga, se o profissional precisa de cadastro e em quais horários isso é permitido. Sem essas respostas, evite fechar pacote de aulas.
 
 ## Musculação, bike, ginástica e Smart Box
 

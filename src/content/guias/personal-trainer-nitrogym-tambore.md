@@ -74,4 +74,4 @@ Pelo site oficial, a academia funciona das 5h até a meia-noite nos dias úteis.
 ## Comparando com a vizinhança
 
 - [Bluefit Tamboré](/academias/bluefit-tambore/), na Av. Tucunaré: musculação, pesos livres e cardio, com personal trainer listado entre os serviços e entrada pelo plano Silver do Wellhub. Mais em [personal trainer na Bluefit Tamboré](/guias/personal-trainer-bluefit-tambore/).
-- [Ironberg Alphaville](/academias/ironberg-alphaville/), acessada pela rodovia: a única com regra publicada para personal externo. Leia o duelo [Ironberg ou NitroGym](/guias/ironberg-ou-nitrogym/) e a página de [personal trainer na Ironberg](/guias/personal-trainer-ironberg-alphaville/).
+- [Ironberg Alphaville](/academias/ironberg-alphaville/), acessada pela rodovia: tem regra publicada para personal externo (o profissional paga um valor fixo à academia). Leia o duelo [Ironberg ou NitroGym](/guias/ironberg-ou-nitrogym/) e a página de [personal trainer na Ironberg](/guias/personal-trainer-ironberg-alphaville/).

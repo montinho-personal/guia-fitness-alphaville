@@ -1,6 +1,6 @@
 ---
 titulo: "Personal trainer na Smart Fit Parque Shopping Barueri"
-descricao: "Smart Fit dentro do Parque Shopping Barueri, na Nova Aldeinha: estacionamento, regra de personal externo a confirmar, horário até meia-noite e preços."
+descricao: "Smart Fit dentro do Parque Shopping Barueri, na Nova Aldeinha: estacionamento, regra de personal externo da rede, horário até meia-noite e preços."
 h1: "Personal trainer na Smart Fit Parque Shopping Barueri"
 resposta: "Na Smart Fit do Parque Shopping Barueri, o guia não achou norma sobre personal trazido pelo aluno, então vale perguntar na unidade se ele é aceito e se há taxa. Ela fica na Nova Aldeinha, entre o centro de Barueri e Alphaville, abre às 5h e fecha à meia-noite de segunda a sexta, e cobra R$ 139,90 por mês no Plano Fit com fidelidade."
 cluster: D
@@ -45,7 +45,7 @@ Estar num shopping tende a facilitar a vaga, mas a página da unidade não diz s
 
 ## Um personal de fora pode atender aqui?
 
-O guia não encontrou nenhuma regra publicada sobre isso. A página oficial menciona professores formados, que são funcionários da Smart Fit e não respondem pela entrada de um profissional contratado à parte. Leve estas dúvidas ao balcão: a unidade aceita personal externo? Cobra algum valor? Quem paga, aluno ou personal? Exige cadastro? Há horário restrito? Peça a resposta por escrito, se possível.
+Dentro do shopping, a regra é a mesma da rede inteira, descrita nas Normas de Utilização: o pedido do aluno passa por avaliação, e o profissional aprovado se cadastra e assina um contrato para usar o espaço, sempre com aluno matriculado. Nenhuma taxa é publicada. Veja quem aceita e como em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/). Os professores formados citados na página oficial são funcionários da Smart Fit. Leve estas dúvidas ao balcão: a unidade aceita personal externo? Cobra algum valor? Quem paga, aluno ou personal? Exige cadastro? Há horário restrito? Peça a resposta por escrito, se possível.
 
 ## A estrutura dá conta de um treino individual?
 
@@ -63,7 +63,7 @@ No site, a mensalidade do Fit é R$ 139,90 no regime de fidelidade, sem adesão,
 
 ## Quais são as alternativas por perto?
 
-- [Ironberg Alphaville](/academias/ironberg-alphaville/), na Estrada da Aldeinha, aberta 24 horas e com estacionamento gratuito. É a única academia do guia que publica regra: personal externo paga um valor fixo à academia, informado só na unidade ([personal na Ironberg](/guias/personal-trainer-ironberg-alphaville/)).
+- [Ironberg Alphaville](/academias/ironberg-alphaville/), na Estrada da Aldeinha, aberta 24 horas e com estacionamento gratuito. Pela regra publicada pela rede, o personal externo paga um valor fixo à academia, informado só na unidade ([personal na Ironberg](/guias/personal-trainer-ironberg-alphaville/)).
 - [Smart Fit Barueri Centro](/academias/smart-fit-barueri-centro/), a outra unidade da rede aberta até meia-noite, com TotalPass confirmado ([o artigo de personal dela](/guias/personal-trainer-smart-fit-barueri-centro/)).
 
 Para Barueri como um todo, veja o [panorama de personal na cidade](/guias/personal-trainer-barueri/). Entre os grandes nomes da região, veja ainda [Ironberg ou NitroGym](/guias/ironberg-ou-nitrogym/).

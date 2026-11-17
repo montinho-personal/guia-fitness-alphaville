@@ -19,13 +19,15 @@ const lista = (await academias())
 const conta = (s: StatusPE) => lista.filter((x) => x.p.status === s).length;
 const aceitam = lista.filter((x) => x.p.status === 'aceita' || x.p.status === 'aceita-com-condicoes');
 const nomes = (xs: typeof lista) => xs.map((x) => x.a.data.nome).join(', ').replace(/, ([^,]*)$/, ' e $1');
+// Agrupa por rede: "Smart Fit (5 unidades), Bluefit (3 unidades) e Ironberg".
+const porRede = (xs: typeof lista) => { const m = new Map<string, number>(); xs.forEach((x) => { const r = x.a.data.rede || x.a.data.nome; m.set(r, (m.get(r) ?? 0) + 1); }); return [...m].sort((x, y) => y[1] - x[1]).map(([r, n]) => (n > 1 ? `${r} (${n} unidades)` : r)).join(', ').replace(/, ([^,]*)$/, ' e $1'); };
 const ultima = lista.map((x) => x.p.conferido).filter((d): d is Date => !!d).sort((a, b) => b.getTime() - a.getTime())[0];
 const tel = (t?: string) => (t ? `tel:+55${t.replace(/\D/g, '')}` : '');
 
 const titulo = 'Academias que aceitam personal externo em Alphaville';
 const descricao = 'Posso levar meu personal para a academia? Veja, unidade por unidade em Alphaville, Tamboré, Barueri e Santana, quem aceita, o cadastro e quem paga a taxa.';
 const perguntas = [
-  { p: 'Posso levar meu personal para a academia?', r: `Depende da academia. Não há uma regra única: cada rede ou unidade define se aceita personal de fora, se exige cadastro e se cobra taxa. Entre as academias conferidas pelo guia em Alphaville e região, ${aceitam.length ? `aceitam personal externo: ${nomes(aceitam)}` : 'nenhuma publicou a regra até agora'}. Nas demais, confirme na unidade antes de contratar.` },
+  { p: 'Posso levar meu personal para a academia?', r: `Depende da academia. Não há uma regra única: cada rede ou unidade define se aceita personal de fora, se exige cadastro e se cobra taxa. Entre as academias conferidas pelo guia em Alphaville e região, ${aceitam.length ? `aceitam personal externo as unidades de ${porRede(aceitam)}` : 'nenhuma publicou a regra até agora'}. Nas demais, confirme na unidade antes de contratar.` },
   { p: 'Quem paga a taxa de personal externo?', r: 'Depende da academia. Em algumas, quem paga é o profissional, que repassa ou não esse custo no preço dele; em outras, a cobrança pode ser feita ao aluno. Pergunte à academia quem paga e pergunte ao personal se o valor dele já inclui a taxa, para não pagar duas vezes.' },
   { p: 'As academias podem cobrar do personal trainer?', r: 'Muitas cobram, e de formas diferentes: taxa mensal, por aula ou por ida, paga pelo profissional ou pelo aluno. A regra está no regulamento e no contrato de cada academia, por isso o guia mostra a fonte de cada unidade. Este guia não dá orientação jurídica; em caso de dúvida sobre seus direitos, procure o Procon ou um advogado.' },
   { p: 'Pode treinar com personal na Smart Fit?', r: 'A rede diz, em página oficial, que o aluno pode levar o próprio personal, desde que o profissional faça cadastro na unidade. Veja abaixo como ficou cada unidade da Smart Fit da região e o que a fonte diz sobre taxa.' },
@@ -44,7 +46,7 @@ const schema = [{ '@type': 'ItemList', name: titulo, numberOfItems: lista.length
     </header>
 
     <div class="resposta"><span class="rotulo">Em resumo</span>
-      <p>Das {lista.length} academias com ficha no guia em Alphaville, Tamboré, Barueri e Santana de Parnaíba, {conta('aceita') + conta('aceita-com-condicoes')} têm aceitação de personal externo confirmada em fonte pública{aceitam.length ? `: ${nomes(aceitam)}` : ''}. {conta('nao-aceita') ? `${conta('nao-aceita')} não aceitam. ` : ''}As outras {conta('a-confirmar')} não publicam a regra e aparecem como "a confirmar", com o canal oficial para perguntar. Taxa de personal muda de academia para academia e, em algumas, quem paga é o profissional.</p>
+      <p>Das {lista.length} academias com ficha no guia em Alphaville, Tamboré, Barueri e Santana de Parnaíba, {conta('aceita') + conta('aceita-com-condicoes')} têm aceitação de personal externo confirmada em fonte pública{aceitam.length ? `: ${porRede(aceitam)}` : ''}. {conta('nao-aceita') ? `${conta('nao-aceita')} não aceitam. ` : ''}As outras {conta('a-confirmar')} não publicam a regra e aparecem como "a confirmar", com o canal oficial para perguntar. Taxa de personal muda de academia para academia e, em algumas, quem paga é o profissional.</p>
     </div>
 
     <section class="pe" id="pe" aria-labelledby="pe-t">
@@ -68,7 +70,7 @@ const schema = [{ '@type': 'ItemList', name: titulo, numberOfItems: lista.length
           const pendente = p.status === 'a-confirmar' || p.taxa.situacao === 'pendente';
           const canal = p.canal || d.telefone;
           return (
-            <li class={`pe-item st-${p.status}`} data-reg={d.regiao} data-st={p.status} data-q={`${d.nome} ${d.bairro} ${REGIOES[d.regiao].nome} ${d.rede ?? ''}`.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')}>
+            <li class={`pe-item st-${p.status}`} data-id={a.id} data-reg={d.regiao} data-st={p.status} data-q={`${d.nome} ${d.bairro} ${REGIOES[d.regiao].nome} ${d.rede ?? ''}`.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')}>
               <div class="pe-cab">
                 <h3><a href={urlAcademia(a)} data-evento="clique_academia" data-ref="personal-externo">{d.nome}</a></h3>
                 <span class="pe-local">{d.bairro} · {REGIOES[d.regiao].nome}</span>
@@ -162,16 +164,17 @@ const schema = [{ '@type': 'ItemList', name: titulo, numberOfItems: lista.length
 
 <style is:global>
   .pe{margin:8px 0 28px}
-  .pe-filtros{position:sticky;top:0;z-index:5;background:var(--papel);padding:12px 0 10px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--linha)}
+  .pe-filtros{background:var(--papel);padding:12px 0 10px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--linha)}
+  @media(min-width:900px){.pe-filtros{position:sticky;top:0;z-index:5}}
   .pe-busca input{width:100%;font:600 17px/1.2 var(--display);padding:13px 14px;border:1.5px solid #E3DDCF;border-radius:12px;background:#fff;color:var(--tinta)}
   .pe-busca input:focus{border-color:var(--alameda);box-shadow:0 0 0 3px rgba(27,79,156,.18);outline:none}
   .pe-chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
   .pe-chips button{flex:none;border:1.5px solid #E3DDCF;background:#fff;border-radius:999px;padding:8px 13px;font:700 13.5px var(--display);color:var(--tinta);cursor:pointer;white-space:nowrap}
   .pe-chips button[aria-pressed=true]{background:var(--tinta);border-color:var(--tinta);color:#fff}
   .pe-conta{margin:0;font:600 13px var(--display);color:var(--cinza)}
-  .pe-lista{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:14px}
-  @media(min-width:900px){.pe-lista{grid-template-columns:1fr 1fr}}
-  .pe-item{background:#fff;border:1px solid #E3DDCF;border-radius:16px;padding:16px 18px;box-shadow:0 6px 18px rgba(16,27,45,.05);display:flex;flex-direction:column;gap:12px}
+  .pe-lista{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+  @media(min-width:900px){.pe-lista{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .pe-item{min-width:0;overflow-wrap:anywhere;background:#fff;border:1px solid #E3DDCF;border-radius:16px;padding:16px 18px;box-shadow:0 6px 18px rgba(16,27,45,.05);display:flex;flex-direction:column;gap:12px}
   .pe-item[hidden]{display:none}
   .pe-cab{display:grid;grid-template-columns:1fr;gap:4px}
   .pe-cab h3{margin:0;font-size:19px;line-height:1.2}

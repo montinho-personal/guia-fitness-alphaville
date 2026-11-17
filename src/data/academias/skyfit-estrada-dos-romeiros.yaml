@@ -83,3 +83,12 @@ autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: '2026-11-17'
 atualizado_em: '2026-11-17'
+personal_externo:
+  status: a-confirmar
+  condicoes: []
+  taxa:
+    situacao: pendente
+  abrangencia: unidade
+  fonte: Site oficial da SkyFit (conteúdo só no aplicativo), sem regra legível
+  url: https://skyfitacademia.com
+  conferido_em: 2026-11-17
