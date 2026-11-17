@@ -12,7 +12,7 @@ Atualizada em 16/11/2026. Junta o que estava em `docs/pauta-blog.md`, em `docs/p
 |---|---|---|---|---|
 | ~~1~~ | ~~Academias no Tamboré (página própria)~~ | publicado em 17/11, `/regioes/tambore/` | | |
 | ~~2~~ | ~~Yoga em Alphaville e Barueri~~ | publicado em 17/11, `/modalidades/yoga/` | | |
-| 3 | Treino funcional em Alphaville | lacuna de modalidade | não medido | Buscar antes. Não canibalizar `/modalidades/crossfit/` (funcional ≠ box) |
+| ~~3~~ | ~~Treino funcional em Alphaville~~ | publicado em 17/11, `/modalidades/funcional/` | | |
 | 4 | Academia com estacionamento em Alphaville | pauta B15 | não medido | Só com regra publicada (grátis, pago, tempo); hoje há dado em ~15 fichas |
 | 5 | Academia para iniciantes na região | pauta B24 | não medido | Não canibalizar `personal-trainer-para-iniciantes-*` (aqui o foco é a academia, não o personal) |
 | 6 | Academia para idosos na região | pauta B25 | não medido | Idem com `personal-trainer-para-idosos-*`; liberação médica sempre |

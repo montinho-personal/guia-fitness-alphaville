@@ -56,7 +56,7 @@ Os dois formatos convivem bem. Há quem use as aulas como base e marque sessões
 
 ## Hyrox com acompanhamento
 
-Na lista de atividades do BlackSheep estão cross training, treino funcional, treino híbrido e Hyrox. Segundo a rede, a unidade de Alphaville oferece o Hybrid, voltado a provas de Hyrox, e o Hyrox Training Club oficial fica na unidade Moema. Quem se prepara para uma prova e quer um olhar individual sobre corrida e estações deve perguntar se o box tem esse serviço ou se aceita alguém de fora.
+Na lista de atividades do BlackSheep estão cross training, [treino funcional](/modalidades/funcional/), treino híbrido e Hyrox. Segundo a rede, a unidade de Alphaville oferece o Hybrid, voltado a provas de Hyrox, e o Hyrox Training Club oficial fica na unidade Moema. Quem se prepara para uma prova e quer um olhar individual sobre corrida e estações deve perguntar se o box tem esse serviço ou se aceita alguém de fora.
 
 ## Das 6h às 20h30, com janela curta no fim de semana
 

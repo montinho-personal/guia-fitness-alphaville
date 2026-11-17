@@ -1,0 +1,78 @@
+nome: 4Perform
+regiao: alphaville
+bairro: 18 do Forte
+tipo: estudio
+resumo: Estúdio de treinamento funcional na Av. Copacabana, 325, no Empresarial 18 do Forte, com sauna e manobrista, aberto de segunda a sábado e no TotalPass pelo TP 5.
+endereco: Av. Copacabana, 325, 1º andar, lojas 101 a 104 - Empresarial 18 do Forte, Barueri - SP, 06472-001
+geo:
+  lat: -23.484725617660207
+  lng: -46.85466955767254
+horario:
+  seg:
+  - 06:00-21:00
+  ter:
+  - 06:00-21:00
+  qua:
+  - 06:00-21:00
+  qui:
+  - 06:00-21:00
+  sex:
+  - 06:00-21:00
+  sab:
+  - 09:00-12:00
+  dom: []
+modalidades:
+- funcional
+atividades_listadas:
+- Funcional
+- Circuito funcional
+- Treinamento funcional
+comodidades:
+- Ar-condicionado
+- Armários
+- Bebedouro
+- Cadeira de massagem
+- Estacionamento (grátis e pago, segundo o TotalPass)
+- Manobrista
+- Sauna
+- Secador de cabelo
+- Smart SPA
+- Toalhas
+- Vestiário
+- Wi-Fi
+agregadores:
+- nome: TotalPass
+  plano_minimo: TP 5
+  preco_plano: R$ 399,90
+  url: https://totalpass.com/br/academias/4perform/
+mensalidade: null
+site: http://www.4perform.com.br/
+telefone: (11) 94983-0001
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  - telefone
+  fonte: Página do estúdio no TotalPass
+  url: https://totalpass.com/br/academias/4perform/
+  conferido_em: '2026-11-17'
+  nivel: fonte-publica
+divergencias: []
+pendencias:
+- Mensalidade direta
+- Formato das aulas (turma ou individual) e grade
+- Presença no Wellhub
+analise:
+- 'É um estúdio dedicado a treinamento funcional, no 1º andar do mesmo prédio da SIX, na Av. Copacabana, no Empresarial 18 do Forte. O TotalPass lista funcional, circuito funcional e treinamento funcional, e uma estrutura de alto padrão para o tamanho: sauna, toalhas, manobrista e cadeira de massagem.'
+- Abre das 6h às 21h nos dias úteis e das 9h ao meio-dia no sábado; no domingo, fecha. No TotalPass, entra pelo TP 5 (R$ 399,90 por mês), uma das entradas mais altas da região.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Guia Fitness Alphaville
+revisor: null
+publicado_em: '2026-11-17'
+atualizado_em: '2026-11-17'
