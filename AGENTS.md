@@ -39,7 +39,13 @@ Roda uma vez por dia (tarefa agendada às 10h23 de Brasília; o montinhopersonal
 
 ## Cota do SerpApi
 
-Uma conta para todos os sites do Renato, em plano pago desde 16/11/2026: 1.000 buscas por mês. A conta do mês está no `CLAUDE.md`: as outras rotinas somam 875 a 935. Uma revisão aqui gasta 2 a 3 créditos (até 5 com busca secundária), cerca de 60 a 90 por mês com 1 por dia; com ela, o total vai a 935 a 1.025. Por isso a rotina fica em 1 revisão por dia, busca secundária é exceção e, se o mês passar de 850, só se pesquisa o que o Renato pedir.
+Uma conta para todos os sites do Renato, em plano pago (1.000 buscas por mês). A conta do mês está no `CLAUDE.md`: a soma das rotinas passa da cota por decisão do Renato (17/11/2026, "segue tudo para todos"). Esta rotina gasta 2 a 3 créditos por revisão (busca secundária só se a principal vier fraca). **Quando o SerpApi disser que a cota acabou, parar na hora e avisar o Renato**; ele decide se aumenta o plano ou espera a renovação.
+
+## Rotinas agendadas deste site
+
+- **Revisão diária**, 10h23 de Brasília (`trig_01Se8d5oL529gaMjSDVo3GPJ`): a rotina descrita acima.
+- **Monitor mensal de visão de IA e ideias**, dia 16 às 14h42 (`trig_015zdMwMGvRiyPXbkRXT6CGD`): mantém `docs/seo/visao-de-ia.md` e manda as ideias para `docs/seo/pauta.md`.
+- Uma segunda revisão diária (11h23, `trig_01Vmz6ruQGhFSYELRqq8Jrv4`), criada em 17/11 pela conversa do Direito de Verdade, foi desligada para não duplicar a de 10h23.
 
 ## Capas
 
