@@ -23,7 +23,7 @@ export const GET: APIRoute = async ({ site }) => {
     ['/academias/perto-de/', ultAcad],
     ['/academias/smart-fit-barueri/', ultAcad],
     ['/ferramentas/', FIXAS], ['/ferramentas/comparador/', ultAcad], ['/ferramentas/qual-academia/', ultAcad], ['/ferramentas/checklist/', FIXAS], ['/mapa/', ultAcad],
-    ['/sobre/', FIXAS], ['/metodologia/', FIXAS], ['/politica-editorial/', FIXAS], ['/correcoes/', FIXAS], ['/privacidade/', FIXAS],
+    ['/sobre/', FIXAS], ['/montinho/', FIXAS], ['/metodologia/', FIXAS], ['/politica-editorial/', FIXAS], ['/correcoes/', FIXAS], ['/privacidade/', FIXAS],
   ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([u, d]) => `<url><loc>${new URL(u, site).href}</loc><lastmod>${d}</lastmod></url>`).join('\n')}\n</urlset>\n`;
   return new Response(xml, { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });

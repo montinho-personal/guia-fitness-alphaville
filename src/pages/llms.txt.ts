@@ -34,6 +34,7 @@ ${as.map((a) => `- [${a.data.nome}](${u(`/academias/${a.id}/`)}): ${a.data.resum
 
 ## Transparência
 - [Sobre e quem mantém](${u('/sobre/')})
+- [Serviços do Montinho, que mantém o guia](${u('/montinho/')})
 - [Metodologia](${u('/metodologia/')})
 - [Política editorial](${u('/politica-editorial/')})
 `;
