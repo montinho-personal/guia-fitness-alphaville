@@ -16,9 +16,9 @@ lista_ids: [24h-premium-alphaville, arena-18-alphaville, scelta-alphaville, iron
 fontes:
   - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
     url: "https://www.who.int/publications/i/item/9789240015128"
-  - titulo: "Ficha da Academia 24h Premium no Onde Treinar Alphaville"
+  - titulo: "Ficha da Academia 24h Premium no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/24h-premium-alphaville/"
-  - titulo: "Ficha da Arena 18 no Onde Treinar Alphaville"
+  - titulo: "Ficha da Arena 18 no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/arena-18-alphaville/"
 video:
   id: yqPAYRVTe0E
@@ -26,7 +26,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

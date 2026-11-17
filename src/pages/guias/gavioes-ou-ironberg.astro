@@ -7,7 +7,7 @@ import VideoMontinho from '../../components/VideoMontinho.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
 import { academias, MODALIDADES, agregador, urlAcademia, dataLonga, dataIso } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-15'), atualizado: new Date('2026-11-15') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-15'), atualizado: new Date('2026-11-15') };
 const todas = await academias();
 const gv = todas.find((a) => a.id === 'gavioes-24h-alphaville')!;
 const ib = todas.find((a) => a.id === 'ironberg-alphaville')!;
@@ -28,7 +28,7 @@ const linhas: [string, string, string][] = [
 const abs = (u: string) => new URL(u, Astro.site).href;
 const titulo = 'Gaviões 24h ou Ironberg: qual academia 24 horas escolher';
 const descricao = 'Gaviões 24h Alphaville ou Ironberg Alphaville: as duas academias 24 horas do guia comparadas em preço, aulas, estrutura, estacionamento e regra para personal.';
-const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Gaviões ou Ironberg', url: '/guias/gavioes-ou-ironberg/' }]}>
   <div class="wrap">

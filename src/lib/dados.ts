@@ -124,7 +124,7 @@ export const urlRegiao = (r: string) => `/regioes/${r}/`;
 
 /** Link de WhatsApp com a origem no texto, para atribuir o contato sem depender de cookie. */
 export function linkWhatsapp(ref: string): string {
-  const texto = `Olá, Montinho! Vim pelo Onde Treinar Alphaville e quero saber como funciona o atendimento presencial. (ref: ${ref})`;
+  const texto = `Olá, Montinho! Vim pelo Guia Fitness Alphaville e quero saber como funciona o atendimento presencial. (ref: ${ref})`;
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
 }
 export function linkMontinho(caminho: string, posicao: string, pagina: string): string {

@@ -18,9 +18,9 @@ cta_destino: /personal-trainer-barueri
 lista_titulo: "Academias de Barueri citadas neste texto"
 lista_ids: [panobianco-barueri-centro, smart-fit-barueri-centro, bluefit-barueri, ct-don-combat-barueri]
 fontes:
-  - titulo: "Tabela de preços de academias do Onde Treinar Alphaville"
+  - titulo: "Tabela de preços de academias do Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/precos/"
-  - titulo: "Fichas das academias de Barueri no Onde Treinar Alphaville"
+  - titulo: "Fichas das academias de Barueri no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/regioes/barueri/"
 vitrine:
   destaque: elisa-cruz
@@ -39,7 +39,7 @@ perguntas:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-14
 atualizado_em: 2026-11-16

@@ -7,7 +7,7 @@ import LeiaTambem from '../../components/LeiaTambem.astro';
 import CartaoAcademia from '../../components/CartaoAcademia.astro';
 import { academias, MODALIDADES, agregador, urlAcademia, dataLonga, dataIso, temComodidade, horasSemana } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
 const todas = await academias();
 const sf = todas.find((a) => a.id === 'smart-fit-sodimac-alphaville')!;
 const gv = todas.find((a) => a.id === 'gavioes-24h-alphaville')!;
@@ -28,7 +28,7 @@ const linhas: [string, string, string][] = [
 const abs = (u: string) => new URL(u, Astro.site).href;
 const titulo = 'Smart Fit ou Gaviões em Alphaville: qual escolher';
 const descricao = 'Smart Fit Sodimac ou Gaviões 24h em Alphaville: horário, preço, modalidades, estacionamento e agregadores lado a lado, para escolher conforme a sua rotina.';
-const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Smart Fit ou Gaviões', url: '/guias/smart-fit-ou-gavioes/' }]}>
   <div class="wrap">

@@ -14,9 +14,9 @@ cta_destino: /blog/personal-trainer-feminino-santana-de-parnaiba
 lista_titulo: "Academias de Santana de Parnaíba citadas aqui"
 lista_ids: [fabrica-premium-alphaville, forth-academia-jardim-sao-luis, mattos-fitness-fazendinha, olympia-fitness-polvilho]
 fontes:
-  - titulo: "Ficha da Fábrica Premium Alphaville no Onde Treinar Alphaville"
+  - titulo: "Ficha da Fábrica Premium Alphaville no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/fabrica-premium-alphaville/"
-  - titulo: "Ficha da Olympia Fitness Academia no Onde Treinar Alphaville"
+  - titulo: "Ficha da Olympia Fitness Academia no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/olympia-fitness-polvilho/"
 video:
   id: CgPDOWBXh8k
@@ -24,7 +24,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

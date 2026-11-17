@@ -8,7 +8,7 @@ import VideoMontinho from '../../components/VideoMontinho.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
 import { academias, agregador, urlAcademia, faixasDia, dataLonga, dataIso } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-16'), atualizado: new Date('2026-11-16') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-16'), atualizado: new Date('2026-11-16') };
 const ids = ['smart-fit-barueri-centro', 'smart-fit-parque-shopping-barueri', 'smart-fit-barueri-av-zelia', 'smart-fit-sodimac-alphaville', 'smart-fit-carrefour-tambore'];
 const todas = await academias();
 const sf = ids.map((id) => todas.find((a) => a.id === id)).filter((a): a is NonNullable<typeof a> => !!a);
@@ -31,7 +31,7 @@ const perguntas = [
   { p: 'Tem Smart Fit no Tamboré?', r: 'A unidade chamada Carrefour Hiper Tamboré fica na Alameda Araguaia, 2751, endereço que o site oficial registra como Alphaville Industrial. Abre das 6h às 23h nos dias úteis. Dentro do Shopping Tamboré, a academia com ficha no guia é a NitroGym.' },
   { p: 'Qual o telefone da Smart Fit em Barueri?', r: 'As páginas oficiais das cinco unidades, conferidas em 16 de novembro de 2026, não publicam telefone. Endereço, horário e lotação em tempo real ficam na página de cada unidade no site da Smart Fit.' },
 ];
-const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Smart Fit em Barueri', url: '/academias/smart-fit-barueri/' }]}>
   <div class="wrap">

@@ -14,9 +14,9 @@ cta_destino: /personal-trainer-a-domicilio-tambore
 lista_titulo: "Academias do Tamboré para alternar com o treino em casa"
 lista_ids: [nitrogym-tambore, bluefit-tambore]
 fontes:
-  - titulo: "Ficha da NitroGym Tamboré no Onde Treinar Alphaville"
+  - titulo: "Ficha da NitroGym Tamboré no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/nitrogym-tambore/"
-  - titulo: "Ficha da Bluefit Tamboré no Onde Treinar Alphaville"
+  - titulo: "Ficha da Bluefit Tamboré no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-tambore/"
 video:
   id: Dg8Sbv6_V8w
@@ -24,7 +24,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

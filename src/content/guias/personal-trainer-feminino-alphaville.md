@@ -14,9 +14,9 @@ cta_destino: /blog/personal-trainer-feminino-alphaville
 lista_titulo: "Academias de Alphaville citadas nesta página"
 lista_ids: [arena-18-alphaville, six-alphaville, scelta-alphaville, 24h-premium-alphaville, gavioes-24h-alphaville]
 fontes:
-  - titulo: "Ficha da Arena 18 no Onde Treinar Alphaville"
+  - titulo: "Ficha da Arena 18 no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/arena-18-alphaville/"
-  - titulo: "Ficha da SIX Alphaville no Onde Treinar Alphaville"
+  - titulo: "Ficha da SIX Alphaville no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/six-alphaville/"
 video:
   id: DiH1OzIR6Yk
@@ -33,7 +33,7 @@ perguntas:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-16

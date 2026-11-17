@@ -20,13 +20,13 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** Quem edita o Onde Treinar Alphaville é o Montinho, personal que atua na região. Ele trabalha com preparação para Hyrox, e o espaço reservado a ele no fim desta comparação é publicitário.
+> **Transparência.** Quem edita o Guia Fitness Alphaville é o Montinho, personal que atua na região. Ele trabalha com preparação para Hyrox, e o espaço reservado a ele no fim desta comparação é publicitário.
 
 ## A pergunta certa não é qual é melhor
 

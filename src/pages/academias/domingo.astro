@@ -7,7 +7,7 @@ import LeiaTambem from '../../components/LeiaTambem.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import { academias, e24h, abreDomingo, faixasDia, urlAcademia, REGIOES, dataLonga, dataIso, type Academia } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-14'), atualizado: new Date('2026-11-16') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-14'), atualizado: new Date('2026-11-16') };
 const todas = await academias();
 const min = (s: string) => { const [h, m] = s.split(':').map(Number); return h * 60 + m; };
 const ini = (a: Academia) => min(a.data.horario.dom[0].split('-')[0]);
@@ -44,7 +44,7 @@ const perguntas = [
 ];
 const titulo = 'Academia aberta domingo em Barueri e Alphaville: horários';
 const descricao = 'Academias abertas no domingo em Barueri, Alphaville, Tamboré e Santana de Parnaíba: horário de cada uma, quem fica aberta depois das 14h e as 24 horas.';
-const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Abertas no domingo', url: '/academias/domingo/' }]}>
   <div class="wrap">

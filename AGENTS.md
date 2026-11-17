@@ -1,4 +1,4 @@
-# Regras para agentes (Onde Treinar Alphaville)
+# Regras para agentes (Guia Fitness Alphaville)
 
 Leia também o `CLAUDE.md` (pesquisa no SerpApi: aparelho, região, cota, evidência) e o `README.md` (como publicar). Tudo o que está lá continua valendo; este arquivo junta as regras da rotina de revisão.
 

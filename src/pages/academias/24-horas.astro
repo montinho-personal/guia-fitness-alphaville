@@ -7,7 +7,7 @@ import LeiaTambem from '../../components/LeiaTambem.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import { academias, hora, e24h, abertura, fechamento, abreDomingo, faixasDia, horasSemana, urlAcademia, REGIOES, dataLonga, dataIso } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-16') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-16') };
 const todas = await academias();
 const h24 = todas.filter((a) => e24h(a.data.horario));
 const nome24 = todas.filter((a) => /24\s?h/i.test(a.data.nome) && !e24h(a.data.horario));
@@ -28,7 +28,7 @@ const perguntas = [
   { p: 'Tem academia 24 horas em Barueri?', r: 'Na cidade de Barueri fora de Alphaville, nenhuma academia com ficha no guia tem horário de 24 horas. As opções 24 horas ficam no lado de Alphaville, que também pertence a Barueri: a Gaviões, na Av. Juruá, e a Ironberg, na Estrada da Aldeinha.' },
   { p: 'O que é a 24 Wellness Alphaville?', r: 'É uma marca que aparece nas buscas ligada à 24 Health Club. O guia não conseguiu ler o site da marca nem encontrou a unidade com esse nome no Wellhub ou no TotalPass, por isso ainda não tem ficha própria.' },
 ];
-const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: '24 horas', url: '/academias/24-horas/' }]}>
   <div class="wrap">

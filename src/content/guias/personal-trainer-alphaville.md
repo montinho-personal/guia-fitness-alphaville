@@ -18,7 +18,7 @@ cta_destino: /personal-trainer-alphaville
 lista_titulo: "Academias de Alphaville citadas neste texto"
 lista_ids: [arena-18-alphaville, ironberg-alphaville, scelta-alphaville, 24h-premium-alphaville, blacksheep-alphaville, six-alphaville]
 fontes:
-  - titulo: "Fichas das academias do Onde Treinar Alphaville, com fonte e data de cada informação"
+  - titulo: "Fichas das academias do Guia Fitness Alphaville, com fonte e data de cada informação"
     url: "https://guiafitnessalphaville.com.br/academias/"
 vitrine:
   destaque: natalia-nascimento
@@ -41,7 +41,7 @@ perguntas:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-14
 atualizado_em: 2026-11-16

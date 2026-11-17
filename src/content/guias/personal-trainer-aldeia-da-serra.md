@@ -18,7 +18,7 @@ cta_destino: /blog/personal-trainer-aldeia-da-serra
 fontes:
   - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
     url: "https://www.who.int/publications/i/item/9789240015128"
-  - titulo: "Mapa das academias do Onde Treinar Alphaville"
+  - titulo: "Mapa das academias do Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/mapa/"
 vitrine:
   destaque: elisa-cruz
@@ -35,7 +35,7 @@ perguntas:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-14
 atualizado_em: 2026-11-14

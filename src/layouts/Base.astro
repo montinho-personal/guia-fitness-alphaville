@@ -18,9 +18,9 @@ interface Props {
   semSufixo?: boolean;
 }
 const { titulo, descricao, migalhas = [], schema = [], tipo = 'website', noindex = false, semSufixo = false } = Astro.props;
-const SITE = 'Onde Treinar Alphaville';
+const SITE = 'Guia Fitness Alphaville';
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const SUFIXO = ' | Onde Treinar';
+const SUFIXO = ' | Guia Fitness';
 // O sufixo da marca só entra quando o título continua com até 60 caracteres.
 const tituloCompleto = semSufixo || titulo.length + SUFIXO.length > 60 ? titulo : `${titulo}${SUFIXO}`;
 const trilha = [{ nome: 'Início', url: '/' }, ...migalhas];

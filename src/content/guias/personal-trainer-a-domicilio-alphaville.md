@@ -14,9 +14,9 @@ cta_destino: /blog/personal-trainer-a-domicilio-alphaville
 lista_titulo: "Academias de Alphaville que podem complementar o treino em casa"
 lista_ids: [arena-18-alphaville, ironberg-alphaville, gavioes-24h-alphaville]
 fontes:
-  - titulo: "Ficha da Arena 18 no Onde Treinar Alphaville"
+  - titulo: "Ficha da Arena 18 no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/arena-18-alphaville/"
-  - titulo: "Ficha da Ironberg Alphaville no Onde Treinar Alphaville"
+  - titulo: "Ficha da Ironberg Alphaville no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/ironberg-alphaville/"
 video:
   id: izMrrSoJGBw
@@ -35,13 +35,13 @@ perguntas:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-16
 ---
 
-> **Transparência.** O Onde Treinar Alphaville tem um editor só: o Montinho, que leva o treino até casas de Alphaville. Ao final, o quadro com os dados dele funciona como anúncio.
+> **Transparência.** O Guia Fitness Alphaville tem um editor só: o Montinho, que leva o treino até casas de Alphaville. Ao final, o quadro com os dados dele funciona como anúncio.
 
 ## Casa em residencial muda a conversa
 

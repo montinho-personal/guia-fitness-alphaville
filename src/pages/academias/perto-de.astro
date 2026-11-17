@@ -7,7 +7,7 @@ import LeiaTambem from '../../components/LeiaTambem.astro';
 import ref from '../../data/referencias.json';
 import { academias, urlAcademia, faixasDia, abreDomingo, e24h, dataLonga, dataIso, type Academia } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-15'), atualizado: new Date('2026-11-15') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-15'), atualizado: new Date('2026-11-15') };
 const todas = await academias();
 const RAIO = 2.5; // km, em linha reta
 const km = (a: { lat: number; lng: number }, b: { lat: number; lng: number }) => { const R = 6371, r = (x: number) => (x * Math.PI) / 180; const dLa = r(b.lat - a.lat), dLo = r(b.lng - a.lng); const h = Math.sin(dLa / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dLo / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
@@ -18,7 +18,7 @@ const resumoAc = (a: Academia) => [e24h(a.data.horario) ? '24 horas' : uteis(a),
 const abs = (u: string) => new URL(u, Astro.site).href;
 const titulo = 'Academia perto do Iguatemi, Shopping Tamboré e estações';
 const descricao = 'Academias perto do Iguatemi Alphaville, Shopping Tamboré, 18 do Forte, Parque Shopping Barueri e estações da CPTM, com distância em linha reta e horário.';
-const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Perto de você', url: '/academias/perto-de/' }]}>
   <div class="wrap">

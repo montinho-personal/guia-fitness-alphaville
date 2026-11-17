@@ -5,7 +5,7 @@ import Instagram from './Instagram.astro';
 interface Props { pagina: string; titulo?: string; texto?: string; compacta?: boolean; destino?: string }
 const { pagina, compacta = false, destino = '/personal-trainer-alphaville',
   titulo = 'Já escolheu onde treinar? Falta decidir como.',
-  texto = 'O Onde Treinar Alphaville é mantido pelo Montinho Personal Trainer, que atende presencialmente em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Se você quer acompanhamento individual, é com ele que este guia conversa.' } = Astro.props;
+  texto = 'O Guia Fitness Alphaville é mantido pelo Montinho Personal Trainer, que atende presencialmente em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Se você quer acompanhamento individual, é com ele que este guia conversa.' } = Astro.props;
 ---
 <aside class:list={['mantem', { compacta }]} aria-label="Quem mantém este guia">
   <div>

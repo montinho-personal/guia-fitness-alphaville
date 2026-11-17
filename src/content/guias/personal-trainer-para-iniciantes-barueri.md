@@ -14,9 +14,9 @@ cta_destino: /personal-trainer-barueri
 lista_titulo: "Academias de Barueri citadas nesta página"
 lista_ids: [panobianco-barueri-centro, smart-fit-barueri-centro, smart-fit-barueri-av-zelia, smart-fit-parque-shopping-barueri, bluefit-barueri]
 fontes:
-  - titulo: "Ficha da Panobianco Barueri Centro no Onde Treinar Alphaville"
+  - titulo: "Ficha da Panobianco Barueri Centro no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/panobianco-barueri-centro/"
-  - titulo: "Ficha da Smart Fit Barueri Centro no Onde Treinar Alphaville"
+  - titulo: "Ficha da Smart Fit Barueri Centro no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/smart-fit-barueri-centro/"
 video:
   id: yqPAYRVTe0E
@@ -24,7 +24,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

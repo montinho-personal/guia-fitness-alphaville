@@ -58,6 +58,6 @@ export function ctaDaPagina(caminho: string, academias: Record<string, string>):
 }
 
 export function linkWhatsappCta(cta: Cta, ref: string): string {
-  const texto = `Olá, Montinho! Vim pelo Onde Treinar Alphaville e quero conversar sobre ${cta.assunto}. (ref: ${ref})`;
+  const texto = `Olá, Montinho! Vim pelo Guia Fitness Alphaville e quero conversar sobre ${cta.assunto}. (ref: ${ref})`;
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
 }
