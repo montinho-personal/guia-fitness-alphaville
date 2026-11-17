@@ -19,6 +19,8 @@ Atualizada em 16/11/2026. Junta o que estava em `docs/pauta-blog.md`, em `docs/p
 | 7 | Academia feminina ou com área para mulheres | pauta B26; "academia para mulheres barueri" | ATP 210 (Bing) + 10 | Só se houver casos reais confirmados na região; sem isso, não escrever |
 | 8 | Esporte e academia gratuita em Barueri (programas da prefeitura) | "academia gratuita barueri", "natação gratuita barueri", "natação barueri prefeitura" | ATP 10 + 10 | Precisa de fonte oficial da prefeitura (hoje o site não abre daqui) |
 | 9 | Academia menos cheia | pauta B27 | não medido | Só com dado público (ocupação informada pela rede); sem achismo |
+| 10 | Smart Fit ou SkyFit em Alphaville (comparativo) | PAA "Qual é melhor, Sky Fit ou Smart Fit?" em "como escolher academia" (SerpApi 17/11) | não medido | As duas têm ficha (Smart Fit Sodimac, SkyFit Alphaville). Mesmo molde de `/guias/smart-fit-ou-gavioes/` |
+| 11 | Panobianco ou Gaviões (comparativo) | Orgânico TikTok "qual melhor academia panobianco ou gaviões" e REL "Panobianco" em "smart fit ou gaviões" (17/11) | não medido | Unidades em lados diferentes (Panobianco em Barueri, Gaviões em Alphaville): só vale se a busca local confirmar interesse; buscar antes |
 
 Itens antigos da pauta que **já existem** e saíram desta lista: academia barata (→ `/academias/precos/`), domingo, piscina e natação (`/modalidades/natacao/`), perto de..., Santana de Parnaíba (`/regioes/santana-de-parnaiba/`), Hyrox, beach tennis, lutas e jiu-jitsu, CrossFit, Ironberg ou NitroGym, premium. Aldeia da Serra como página de academias: não há academia com ficha no bairro; fica coberta pelas páginas de personal.
 
@@ -51,8 +53,8 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 | # | Publicado | Página | Título atual |
 |---|---|---|---|
 | ~~1~~ | ~~2026-11-13~~ | ~~`/guias/academia-ou-personal/`~~ | ~~Academia ou personal trainer: como decidir~~ (revisado em 16/11, slug `academia-ou-personal`; título novo aprovado: "Academia ou personal trainer: diferença e quando vale a pena") |
-| 2 | 2026-11-13 | `/guias/como-escolher-academia/` | Como escolher academia em Alphaville: 7 critérios |
-| 3 | 2026-11-13 | `/guias/smart-fit-ou-gavioes/` | Smart Fit ou Gaviões em Alphaville: qual escolher |
+| ~~2~~ | ~~2026-11-13~~ | ~~`/guias/como-escolher-academia/`~~ | ~~Como escolher academia em Alphaville: 7 critérios~~ (revisado em 17/11, slug `como-escolher-academia`; título: proposta aguardando aprovação) |
+| ~~3~~ | ~~2026-11-13~~ | ~~`/guias/smart-fit-ou-gavioes/`~~ | ~~Smart Fit ou Gaviões em Alphaville: qual escolher~~ (revisado em 17/11, slug `smart-fit-ou-gavioes`; título mantido) |
 | 4 | 2026-11-13 | `/modalidades/musculacao/` | Musculação em Alphaville: onde treinar |
 | 5 | 2026-11-14 | `/guias/ironberg-ou-nitrogym/` | Ironberg ou NitroGym em Alphaville: qual escolher |
 | 6 | 2026-11-15 | `/academias/perto-de/` | Academia perto do Iguatemi, Shopping Tamboré e estações |
