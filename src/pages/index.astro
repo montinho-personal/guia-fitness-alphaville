@@ -15,8 +15,8 @@ const porRegiao = (r: string) => todas.filter((a) => a.data.regiao === r).length
 const mods = [...new Set(todas.flatMap((a) => a.data.modalidades))];
 const abs = (u: string) => new URL(u, Astro.site).href;
 const schema = [
-  { '@type': 'WebSite', '@id': abs('/#site'), url: abs('/'), name: 'Onde Treinar Alphaville', inLanguage: 'pt-BR', publisher: { '@id': abs('/#org') }, potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: `${abs('/busca/')}?q={search_term_string}` }, 'query-input': 'required name=search_term_string' } },
-  { '@type': 'Organization', '@id': abs('/#org'), name: 'Onde Treinar Alphaville', url: abs('/'), logo: { '@type': 'ImageObject', url: abs('/icon.png'), width: 512, height: 512 }, description: 'Guia local de academias e treino em Alphaville, Barueri e Santana de Parnaíba. Mantido por Montinho Personal Trainer.', parentOrganization: { '@type': 'Organization', name: 'Montinho Personal Trainer', url: 'https://www.montinhopersonal.com.br', sameAs: ['https://www.instagram.com/montinho_personal/'] } },
+  { '@type': 'WebSite', '@id': abs('/#site'), url: abs('/'), name: 'Guia Fitness Alphaville', inLanguage: 'pt-BR', publisher: { '@id': abs('/#org') }, potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: `${abs('/busca/')}?q={search_term_string}` }, 'query-input': 'required name=search_term_string' } },
+  { '@type': 'Organization', '@id': abs('/#org'), name: 'Guia Fitness Alphaville', url: abs('/'), logo: { '@type': 'ImageObject', url: abs('/icon.png'), width: 512, height: 512 }, description: 'Guia local de academias e treino em Alphaville, Barueri e Santana de Parnaíba. Mantido por Montinho Personal Trainer.', parentOrganization: { '@type': 'Organization', name: 'Montinho Personal Trainer', url: 'https://www.montinhopersonal.com.br', sameAs: ['https://www.instagram.com/montinho_personal/'] } },
 ];
 const lista = [
   { url: '/academias/precos/', t: 'Quanto custa academia em Alphaville e Barueri', p: 'As mensalidades que as academias publicam, com fonte e data, e o plano de agregador das que não publicam.' },
@@ -29,7 +29,7 @@ const lista = [
   ...gs.filter((g) => g.data.secao === 'guias' && !g.id.startsWith('personal-trainer-') && !/hyrox/.test(g.id)).map((g) => ({ url: `/guias/${g.id}/`, t: g.data.h1, p: g.data.descricao })),
 ];
 ---
-<Base titulo="Onde Treinar Alphaville: academias com fonte e data" descricao="Guia local de academias em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Endereço, horários e planos de cada uma, com a fonte e a data de conferência." schema={schema} semSufixo>
+<Base titulo="Guia Fitness Alphaville: academias com fonte e data" descricao="Guia local de academias em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Endereço, horários e planos de cada uma, com a fonte e a data de conferência." schema={schema} semSufixo>
   <section class="bloco" style="padding-bottom:36px">
     <div class="wrap" style="display:grid;gap:36px" id="abertura">
       <div>

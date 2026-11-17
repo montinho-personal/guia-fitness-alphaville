@@ -25,13 +25,13 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15
 ---
 
-> **Transparência.** O Onde Treinar Alphaville pertence ao Montinho, que dá aulas como personal em Barueri. O bloco assinado por ele, lá embaixo, é propaganda.
+> **Transparência.** O Guia Fitness Alphaville pertence ao Montinho, que dá aulas como personal em Barueri. O bloco assinado por ele, lá embaixo, é propaganda.
 
 ## A ficha em uma tabela
 

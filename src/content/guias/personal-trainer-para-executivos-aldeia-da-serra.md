@@ -14,7 +14,7 @@ cta_destino: /blog/personal-trainer-aldeia-da-serra
 fontes:
   - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
     url: "https://www.who.int/publications/i/item/9789240015128"
-  - titulo: "Ficha da Ironberg Alphaville no Onde Treinar Alphaville"
+  - titulo: "Ficha da Ironberg Alphaville no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/ironberg-alphaville/"
 video:
   id: izMrrSoJGBw
@@ -22,7 +22,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

@@ -14,9 +14,9 @@ cta_destino: /blog/personal-trainer-para-emagrecer-alphaville
 lista_titulo: "Academias de Alphaville citadas nesta página"
 lista_ids: [arena-18-alphaville, bodytech-iguatemi-alphaville, smart-fit-sodimac-alphaville, bluefit-alphaville, scelta-alphaville, gavioes-24h-alphaville]
 fontes:
-  - titulo: "Ficha da Arena 18 no Onde Treinar Alphaville"
+  - titulo: "Ficha da Arena 18 no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/arena-18-alphaville/"
-  - titulo: "Ficha da Bodytech Iguatemi Alphaville no Onde Treinar Alphaville"
+  - titulo: "Ficha da Bodytech Iguatemi Alphaville no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bodytech-iguatemi-alphaville/"
 vitrine:
   destaque: adriana-nascimento
@@ -27,7 +27,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

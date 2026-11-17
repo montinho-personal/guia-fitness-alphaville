@@ -8,7 +8,7 @@ import Perguntas from '../../components/Perguntas.astro';
 import planos from '../../data/planos-agregadores.json';
 import { academias, agregador, ORDEM_WELLHUB, urlAcademia, REGIOES, dataLonga, dataIso } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-16') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-16') };
 const todas = await academias();
 const wh = todas.filter((a) => agregador(a, 'Wellhub')).sort((x, y) => ORDEM_WELLHUB.indexOf(agregador(x, 'Wellhub')!.plano_minimo) - ORDEM_WELLHUB.indexOf(agregador(y, 'Wellhub')!.plano_minimo) || x.data.nome.localeCompare(y.data.nome));
 const tp = todas.filter((a) => agregador(a, 'TotalPass'));
@@ -29,7 +29,7 @@ const perguntas = [
 const titulo = 'Gympass (Wellhub) e TotalPass em Alphaville: academias e planos';
 const descricao = 'O plano mínimo do Wellhub e do TotalPass que cada academia de Alphaville, Barueri e Santana de Parnaíba exige, e quanto esse plano custa por mês.';
 const conf = new Date(planos.conferido_em);
-const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Wellhub e TotalPass', url: '/academias/wellhub-totalpass/' }]}>
   <div class="wrap">

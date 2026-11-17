@@ -14,7 +14,7 @@ cta_destino: /blog/personal-trainer-para-executivos-alphaville
 lista_titulo: "Academias de Alphaville úteis para quem treina cedo, no almoço ou de madrugada"
 lista_ids: [arena-18-alphaville, scelta-alphaville, 24h-premium-alphaville, gavioes-24h-alphaville, ironberg-alphaville, bluefit-alphaville]
 fontes:
-  - titulo: "Fichas das academias do Onde Treinar Alphaville"
+  - titulo: "Fichas das academias do Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/"
 video:
   id: izMrrSoJGBw
@@ -22,7 +22,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

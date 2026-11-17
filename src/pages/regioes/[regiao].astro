@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 const { regiao } = Astro.params as { regiao: RegiaoId };
 const { xs } = Astro.props as { xs: Academia[] };
 const r = REGIOES[regiao];
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
 
 const bairros = [...new Set(xs.map((a) => a.data.bairro))].map((b) => ({ b, as: xs.filter((a) => a.data.bairro === b) })).sort((x, y) => y.as.length - x.as.length);
 const rua = (a: Academia) => a.data.endereco.split(',')[0];
@@ -77,7 +77,7 @@ const m = META[regiao];
 const outras = (Object.keys(REGIOES) as RegiaoId[]).filter((x) => x !== regiao);
 const abs = (u: string) => new URL(u, Astro.site).href;
 const schema = [
-  { '@type': 'Article', headline: m.h1, description: m.descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } },
+  { '@type': 'Article', headline: m.h1, description: m.descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } },
   { '@type': 'ItemList', name: m.h1, numberOfItems: xs.length, itemListElement: xs.map((a, i) => ({ '@type': 'ListItem', position: i + 1, name: a.data.nome, url: abs(urlAcademia(a)) })) },
 ];
 ---

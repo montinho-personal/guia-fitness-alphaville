@@ -4,7 +4,7 @@ import { academias, guias, REGIOES } from '../lib/dados';
 // Não há evidência de que mecanismos de IA usem este arquivo; o custo de mantê-lo é zero.
 export const GET: APIRoute = async ({ site }) => {
   const as = await academias(); const gs = await guias(); const u = (p: string) => new URL(p, site).href;
-  const txt = `# Onde Treinar Alphaville
+  const txt = `# Guia Fitness Alphaville
 
 > Guia local de academias, boxes e estúdios em Alphaville, Tamboré, Barueri e Santana de Parnaíba (SP). Cada dado local traz a fonte e a data de conferência. Mantido por Montinho Personal Trainer.
 

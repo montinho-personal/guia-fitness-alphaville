@@ -9,7 +9,7 @@ import Perguntas from '../../components/Perguntas.astro';
 import planos from '../../data/planos-agregadores.json';
 import { academias, agregador, ORDEM_WELLHUB, urlAcademia, REGIOES, TIPOS, dataLonga, dataCurta, dataIso, type Academia } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Onde Treinar Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-16') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-16') };
 const todas = await academias();
 const reais = (s: string) => Number(s.replace(/[^\d,]/g, '').replace(',', '.'));
 // Menor preço mensal regular: ignora aula avulsa, diária, pacotes, mês de teste e planos só de fim de semana.
@@ -48,7 +48,7 @@ const perguntas = [
   { p: 'Quanto custa academia de jiu-jitsu ou de luta em Alphaville?', r: `O guia ainda não tem fichas das academias de jiu-jitsu de Alphaville, como as das redes Alliance e Gracie Barra, e por isso não publica esses valores. Entre as fichas atuais, listam lutas na grade: ${todas.filter((a) => a.data.modalidades.includes('lutas')).map((a) => a.data.nome).join(', ')}.` },
   { p: 'Qual o valor de uma academia por mês na região?', r: `Com os preços publicados, uma academia de musculação da região custa de ${brl(menor(academiasComPreco[0]))} a ${brl(menor(academiasComPreco[academiasComPreco.length - 1]))} por mês no plano de entrada. Antes de comparar, some matrícula, taxa anual e estacionamento, e veja se o plano dá acesso a outras unidades.` },
 ].filter((x): x is { p: string; r: string } => !!x);
-const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Preços', url: '/academias/precos/' }]}>
   <div class="wrap">

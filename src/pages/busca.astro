@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import CampoBusca from '../components/CampoBusca.astro';
 ---
-<Base titulo="Buscar no guia" descricao="Busque academias, bairros, personal trainer, Hyrox, preços e guias do Onde Treinar Alphaville." noindex migalhas={[{ nome: 'Busca', url: '/busca/' }]}>
+<Base titulo="Buscar no guia" descricao="Busque academias, bairros, personal trainer, Hyrox, preços e guias do Guia Fitness Alphaville." noindex migalhas={[{ nome: 'Busca', url: '/busca/' }]}>
   <div class="wrap">
     <header class="cab-pag">
       <span class="rotulo cor-marca">Busca</span>
@@ -31,7 +31,7 @@ import CampoBusca from '../components/CampoBusca.astro';
   const status = document.querySelector<HTMLParagraphElement>('.busca-pg-status')!;
   if (campo) { campo.value = q; if (!q) campo.focus(); }
   if (q) {
-    document.title = `“${q}” — busca · Onde Treinar Alphaville`;
+    document.title = `“${q}” — busca · Guia Fitness Alphaville`;
     document.getElementById('busca-titulo')!.textContent = `Resultados para “${q}”`;
     carregar().then((itens) => {
       const res = buscar(itens, q, 50);

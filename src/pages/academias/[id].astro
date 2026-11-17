@@ -34,7 +34,7 @@ const descricao = `${d.resumo} Dados conferidos em ${dataCurta(conf)}.`.slice(0,
 const schema = [{
   '@type': 'Article', headline: titulo, description: d.resumo, inLanguage: 'pt-BR',
   datePublished: dataIso(d.publicado_em), dateModified: dataIso(d.atualizado_em),
-  author: { '@type': 'Organization', name: 'Onde Treinar Alphaville', url: abs('/sobre/') },
+  author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') },
   publisher: { '@id': abs('/#org') }, mainEntityOfPage: { '@id': `${abs(urlAcademia(a))}#pagina` },
   about: { '@type': 'Place', name: d.nome, address: d.endereco },
 }];

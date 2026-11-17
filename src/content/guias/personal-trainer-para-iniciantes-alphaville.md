@@ -14,9 +14,9 @@ cta_destino: /personal-trainer-alphaville
 lista_titulo: "Academias de Alphaville citadas nesta página"
 lista_ids: [blacksheep-alphaville, smart-fit-sodimac-alphaville, arena-18-alphaville, ironberg-alphaville, scelta-alphaville, fast-treino-alphaville]
 fontes:
-  - titulo: "Ficha da BlackSheep Alphaville no Onde Treinar Alphaville"
+  - titulo: "Ficha da BlackSheep Alphaville no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/blacksheep-alphaville/"
-  - titulo: "Ficha da Ironberg Alphaville no Onde Treinar Alphaville"
+  - titulo: "Ficha da Ironberg Alphaville no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/ironberg-alphaville/"
 video:
   id: yqPAYRVTe0E
@@ -24,7 +24,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

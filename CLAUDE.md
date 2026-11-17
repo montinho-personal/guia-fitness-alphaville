@@ -1,4 +1,4 @@
-# Onde Treinar Alphaville — regras para o Claude
+# Guia Fitness Alphaville — regras para o Claude
 
 Visão geral do projeto, comandos e organização: ver README.md e docs/estado-atual.md.
 
@@ -66,7 +66,7 @@ repetir busca já feita no mesmo dia.
 **Orçamento do mês (1.000 pesquisas, todos os sites somados; conta de 17/11/2026):**
 rotinas diárias: Direito de Verdade (2 revisões, 2 buscas cada) cerca de 300; Personal por
 Perto (artigos e cidades, 2 + 2 por dia) cerca de 360; Site do Montinho cerca de 120 a 150;
-Crédito por Perto (1 por dia) cerca de 60 a 90; Onde Treinar Alphaville (1 por dia) cerca
+Crédito por Perto (1 por dia) cerca de 60 a 90; Guia Fitness Alphaville (1 por dia) cerca
 de 150 a 180. Rotinas mensais (dia 16): visão de IA com ideias de artigo nos 5 sites, mapa
 do Montinho e alertas de regra do Direito e do Crédito, cerca de 150. Total: 1.140 a 1.230,
 **acima da cota**, por decisão do Renato (17/11/2026: "segue tudo para todos"). Por isso:

@@ -16,9 +16,9 @@ lista_ids: [panobianco-barueri-centro, bluefit-barueri, boa-forma-barueri]
 fontes:
   - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
     url: "https://www.who.int/publications/i/item/9789240015128"
-  - titulo: "Ficha da Panobianco Barueri Centro no Onde Treinar Alphaville"
+  - titulo: "Ficha da Panobianco Barueri Centro no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/panobianco-barueri-centro/"
-  - titulo: "Ficha da Bluefit Barueri no Onde Treinar Alphaville"
+  - titulo: "Ficha da Bluefit Barueri no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-barueri/"
 video:
   id: izMrrSoJGBw
@@ -26,7 +26,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

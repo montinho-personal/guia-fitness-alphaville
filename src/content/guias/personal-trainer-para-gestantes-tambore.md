@@ -16,9 +16,9 @@ lista_ids: [nitrogym-tambore, bluefit-tambore]
 fontes:
   - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
     url: "https://www.who.int/publications/i/item/9789240015128"
-  - titulo: "Ficha da NitroGym Tamboré no Onde Treinar Alphaville"
+  - titulo: "Ficha da NitroGym Tamboré no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/nitrogym-tambore/"
-  - titulo: "Ficha da Bluefit Tamboré no Onde Treinar Alphaville"
+  - titulo: "Ficha da Bluefit Tamboré no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/bluefit-tambore/"
 video:
   id: yndKE1GrnUQ
@@ -26,7 +26,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

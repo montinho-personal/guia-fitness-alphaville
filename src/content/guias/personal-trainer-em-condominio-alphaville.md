@@ -14,9 +14,9 @@ cta_destino: /blog/personal-trainer-em-condominio-alphaville
 lista_titulo: "Academias de Alphaville para complementar o treino do condomínio"
 lista_ids: [ironberg-alphaville, gavioes-24h-alphaville, arena-18-alphaville]
 fontes:
-  - titulo: "Ficha da Ironberg Alphaville no Onde Treinar Alphaville"
+  - titulo: "Ficha da Ironberg Alphaville no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/ironberg-alphaville/"
-  - titulo: "Ficha da Arena 18 no Onde Treinar Alphaville"
+  - titulo: "Ficha da Arena 18 no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/arena-18-alphaville/"
 video:
   id: yqPAYRVTe0E
@@ -24,7 +24,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

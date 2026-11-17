@@ -14,7 +14,7 @@ cta_destino: /personal-trainer-santana-de-parnaiba
 lista_titulo: "Academias de Santana de Parnaíba citadas"
 lista_ids: [fabrica-premium-alphaville, mattos-fitness-fazendinha, forth-academia-jardim-sao-luis, olympia-fitness-polvilho]
 fontes:
-  - titulo: "Fichas das academias de Santana de Parnaíba no Onde Treinar Alphaville"
+  - titulo: "Fichas das academias de Santana de Parnaíba no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/"
 video:
   id: izMrrSoJGBw
@@ -22,7 +22,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

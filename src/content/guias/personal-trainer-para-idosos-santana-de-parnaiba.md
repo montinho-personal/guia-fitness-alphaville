@@ -14,9 +14,9 @@ cta_destino: /personal-trainer-santana-de-parnaiba
 lista_titulo: "Academias de Santana de Parnaíba comparadas"
 lista_ids: [forth-academia-jardim-sao-luis, olympia-fitness-polvilho, mattos-fitness-fazendinha, fabrica-premium-alphaville]
 fontes:
-  - titulo: "Ficha da Forth Academia no Onde Treinar Alphaville"
+  - titulo: "Ficha da Forth Academia no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/forth-academia-jardim-sao-luis/"
-  - titulo: "Ficha da Olympia Fitness Academia no Onde Treinar Alphaville"
+  - titulo: "Ficha da Olympia Fitness Academia no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/olympia-fitness-polvilho/"
   - titulo: "Organização Mundial da Saúde — Diretrizes sobre atividade física e comportamento sedentário (2020)"
     url: "https://www.who.int/publications/i/item/9789240015128"
@@ -26,7 +26,7 @@ video:
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
 atualizado_em: 2026-11-15

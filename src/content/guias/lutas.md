@@ -13,12 +13,12 @@ cta_texto: "O Montinho não dá aula de luta. Ele é personal e trabalha força,
 cta_destino: /personal-trainer-alphaville
 lista_modalidades: [lutas]
 fontes:
-  - titulo: "Fichas das academias e escolas de luta do Onde Treinar Alphaville, com a fonte de cada dado"
+  - titulo: "Fichas das academias e escolas de luta do Guia Fitness Alphaville, com a fonte de cada dado"
     url: "https://guiafitnessalphaville.com.br/academias/"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
-autor: Redação do Onde Treinar Alphaville
+autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-16
 atualizado_em: 2026-11-16
