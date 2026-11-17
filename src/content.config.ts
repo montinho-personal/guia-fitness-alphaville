@@ -57,6 +57,26 @@ const academias = defineCollection({
       conferido_em: data,
       nivel: z.enum(['fonte-publica', 'confirmado-com-a-academia', 'visita']),
     })).min(1),
+    // Política de personal externo (profissional de fora que atende um aluno na unidade). Ver docs/personal-externo.md.
+    // Ausente = "a confirmar". Taxa só com valor quando a fonte publica; ausência de valor nunca vira R$ 0.
+    personal_externo: z.object({
+      status: z.enum(['aceita', 'aceita-com-condicoes', 'nao-aceita', 'a-confirmar']),
+      condicoes: z.array(z.string()).default([]),
+      taxa: z.object({
+        situacao: z.enum(['confirmada', 'sem-taxa', 'pendente']),
+        valor: z.string().optional(),
+        centavos: z.number().int().nonnegative().optional(),
+        quem_paga: z.enum(['aluno', 'profissional']).optional(),
+        periodicidade: z.enum(['mes', 'aula', 'ida']).optional(),
+        condicoes: z.string().optional(),
+      }),
+      abrangencia: z.enum(['unidade', 'rede']),
+      fonte: z.string(),
+      url: z.string().url().optional(),
+      conferido_em: data,
+      canal: z.string().optional(),
+      nota: z.string().optional(),
+    }).optional(),
     // true quando o Montinho Personal Trainer, que mantém o guia, atende alunos no local. Exibido como aviso na ficha.
     montinho_atende: z.boolean().default(false),
     titulo_seo: z.string().max(65).optional(),

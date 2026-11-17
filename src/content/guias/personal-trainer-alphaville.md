@@ -35,7 +35,7 @@ perguntas:
   - p: "Tem personal trainer mulher em Alphaville?"
     r: "O guia não mantém lista de profissionais. Se você prefere uma personal mulher, pergunte nas academias que informam personal trainer entre os serviços e peça indicações. O Montinho, que mantém este guia, é homem."
   - p: "Posso levar personal trainer na Ironberg Alphaville?"
-    r: "Sim. A Ironberg é a única academia do guia que publica a regra: o personal de fora paga um valor fixo à academia para atender no espaço. O valor é informado na unidade."
+    r: "Sim. Ironberg, Smart Fit, Bluefit e Panobianco publicam regra que aceita personal de fora; na Ironberg, o profissional paga um valor fixo à academia para atender no espaço. O valor é informado na unidade."
   - p: "Qual a academia mais cara de Alphaville?"
     r: "Pelos valores conhecidos, a SIX, no 23º andar do Empresarial 18 do Forte, com preços citados à imprensa bem acima das demais. Entre as que publicam tabela, Ironberg e NitroGym têm as mensalidades mais altas."
 status: publicado
@@ -70,6 +70,8 @@ Outras fichas registram "personal trainer" entre os serviços, como **Arena 18**
 - se é preciso cadastro prévio ou contrato com a academia.
 
 **Relação comercial:** o Montinho atende alunos na Arena 18.
+
+Para saber se a academia aceita personal de fora, se exige cadastro e quem paga a taxa, veja [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/).
 
 ## Perto do trabalho, no horário do almoço
 

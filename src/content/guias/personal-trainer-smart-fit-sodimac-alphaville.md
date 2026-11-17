@@ -2,7 +2,7 @@
 titulo: "Personal trainer na Smart Fit Sodimac Alphaville: o que saber"
 descricao: "Treino com personal na Smart Fit do estacionamento da Sodimac, em Alphaville Industrial: o que perguntar, horários, Plano Smart, Black e TotalPass."
 h1: "Personal trainer na Smart Fit Sodimac Alphaville"
-resposta: "Não há regra publicada sobre personal externo na Smart Fit Sodimac Alphaville, então aceitação e cobrança dependem do que a recepção disser. A unidade fica no 2º pavimento do estacionamento da Sodimac, na Alameda Araguaia, e não vende o Plano Fit: o plano mais barato ali é o Smart, a R$ 149,90 por mês com fidelidade."
+resposta: "A Smart Fit Sodimac Alphaville segue a regra da rede para personal externo: a Smart Fit avalia o pedido e, se autorizar, o profissional se cadastra e assina contrato de uso das instalações; o custo não é publicado. A unidade fica no 2º pavimento do estacionamento da Sodimac, na Alameda Araguaia, e não vende o Plano Fit: o plano mais barato ali é o Smart, a R$ 149,90 por mês com fidelidade."
 cluster: D
 secao: guias
 palavra_chave: personal trainer smart fit sodimac alphaville
@@ -43,9 +43,9 @@ O estacionamento consta na lista de comodidades do site oficial, coisa que as tr
 
 *Antes e depois do próprio Montinho, que mantém este guia. É a trajetória dele, não promessa de resultado.*
 
-## Personal de fora: o que a unidade não publica
+## Personal de fora: a regra da rede
 
-O guia não achou regra publicada sobre personal externo nesta Smart Fit. O site cita professores formados, ou seja, a equipe da própria academia. Isso não esclarece nada sobre um profissional contratado por você. Na recepção, pergunte:
+As Normas de Utilização da Smart Fit, que valem para as unidades da rede, permitem que o aluno contrate o próprio personal: a rede avalia o pedido e, se autorizar, o profissional se cadastra e assina o contrato de uso das instalações, para atender só alunos matriculados. A rede não publica valor nem quem paga por esse contrato. Veja como ficam as outras academias em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/). Na recepção, pergunte:
 
 - se personal externo pode dar aula ali;
 - se há taxa e quem paga, você ou o profissional;

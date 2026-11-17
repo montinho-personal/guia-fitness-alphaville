@@ -2,7 +2,7 @@
 titulo: "Personal trainer na Bluefit Tamboré: regras, horário e Wellhub"
 descricao: "Bluefit Tamboré, na Av. Tucunaré: personal da casa listado, perguntas sobre profissional externo, foco em musculação, domingo até 14h e Wellhub Silver."
 h1: "Personal trainer na Bluefit Tamboré"
-resposta: "A Bluefit Tamboré, na Av. Tucunaré, lista personal trainer no local, mas não publica regra para profissional de fora. É uma unidade centrada em musculação, pesos livres e cardio, aberta todos os dias. No Wellhub, entra pelo plano Silver, de R$ 149,99, um degrau abaixo da Bluefit Alphaville."
+resposta: "A Bluefit Tamboré, na Av. Tucunaré, lista personal trainer no local, e a regra da rede aceita profissional de fora com cadastro, plano próprio para personal e uniforme oficial. É uma unidade centrada em musculação, pesos livres e cardio, aberta todos os dias. No Wellhub, entra pelo plano Silver, de R$ 149,99, um degrau abaixo da Bluefit Alphaville."
 cluster: D
 secao: guias
 palavra_chave: personal trainer bluefit tamboré
@@ -43,7 +43,7 @@ Para quem contrata personal justamente para a musculação, esse foco é o que i
 
 ## "Personal trainer no local": o que isso cobre
 
-O Wellhub registra, para esta unidade, personal trainer no local. Ou seja, há profissionais ligados à academia. A regra para quem já tem o próprio personal, porém, não foi publicada. Leve à recepção:
+A Bluefit responde no próprio site que o aluno pode levar o seu personal: o profissional se registra na unidade, contrata um plano específico para personal e compra o uniforme da rede, o que o libera para atender em qualquer Bluefit. Quanto custa esse plano não é publicado. Outras academias estão em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/). Leve à recepção:
 
 - Profissional externo pode atender aqui?
 - Se pode, há cobrança? Paga o aluno ou o personal?

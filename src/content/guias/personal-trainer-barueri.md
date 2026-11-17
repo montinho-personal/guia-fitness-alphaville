@@ -67,6 +67,8 @@ Nas fichas de Barueri, três unidades listam personal trainer entre os serviços
 
 "Personal trainer" na lista de serviços indica que há profissionais trabalhando ali. Não garante que um personal de fora possa entrar. Pergunte na recepção se é permitido, quanto custa e em que horários.
 
+Para saber se a academia aceita personal de fora, se exige cadastro e quem paga a taxa, veja [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/).
+
 ## Horário de treino e horário da academia
 
 A maioria das unidades do centro abre às 5h nos dias úteis e funciona até perto da meia-noite. No domingo, o horário encurta: Smart Fit e Panobianco Barueri Centro abrem das 8h às 14h, segundo as fichas. Se a sua aula com personal vai ser no fim de semana, confira esse detalhe antes de matricular.

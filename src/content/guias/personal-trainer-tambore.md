@@ -78,6 +78,8 @@ Para quem tem área livre na varanda, na garagem ou num cômodo, o treino em cas
 
 Se você vai treinar com personal às 5h ou às 6h, as duas abrem nesse horário nos dias úteis, o que nem sempre acontece com a academia do condomínio. As escolas de luta, as arenas e o lado do Tamboré que fica em Santana de Parnaíba estão em [academias no Tamboré](/regioes/tambore/).
 
+Para saber se a academia aceita personal de fora, se exige cadastro e quem paga a taxa, veja [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/).
+
 ## Para decidir
 
 Se o residencial tem uma academia razoável e regra simples para prestador, comece por ela. Se faltam equipamentos ou o horário não fecha, compare as duas academias acima nas fichas. Para pensar se você precisa mesmo de acompanhamento, veja [academia ou personal trainer](/guias/academia-ou-personal/).

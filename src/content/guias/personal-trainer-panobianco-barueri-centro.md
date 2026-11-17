@@ -2,7 +2,7 @@
 titulo: "Personal trainer na Panobianco Barueri Centro: custo e regras"
 descricao: "Panobianco Barueri Centro: plano da rede a R$ 119,90, Wellhub Basic, personal e nutricionista listados, o que perguntar sobre personal externo e horários."
 h1: "Personal trainer na Panobianco Barueri Centro"
-resposta: "A Panobianco Barueri Centro está entre as entradas mais baratas do guia: Wellhub a partir do plano Basic, de R$ 69,99, e plano da rede anunciado a R$ 119,90 com fidelidade. A unidade lista personal trainer e nutricionista, mas não publica regra para personal de fora, então confirme na recepção."
+resposta: "A Panobianco Barueri Centro está entre as entradas mais baratas do guia: Wellhub a partir do plano Basic, de R$ 69,99, e plano da rede anunciado a R$ 119,90 com fidelidade. A unidade lista personal trainer e nutricionista, e o SAC da rede diz que as unidades permitem levar o próprio personal; regras e taxa ficam para confirmar na recepção."
 cluster: D
 secao: guias
 palavra_chave: personal trainer panobianco barueri centro
@@ -48,7 +48,7 @@ A própria rede avisa que os planos dependem de cada unidade, e o guia ainda nã
 
 ## Regra para personal externo: o que confirmar
 
-A unidade lista personal trainer entre os serviços, o que aponta para profissionais da própria casa. Não há regra publicada para quem traz alguém de fora. Na visita, pergunte:
+O SAC da Panobianco diz que as unidades da rede permitem levar o próprio personal trainer, mas pede para verificar as regras e os planos diretamente na unidade. Taxa e cadastro não são publicados. Veja como ficam as outras academias em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/). Na visita, pergunte:
 
 - se profissional externo pode atender alunos ali;
 - qual taxa existe e se ela cai no aluno ou no personal;

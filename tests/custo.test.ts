@@ -159,3 +159,21 @@ test('planos das fichas: só mensais, com adesão quando publicada', () => {
   assert.deepEqual(ps.map((p) => p.inicial), [12000, 0, 990, null]);
   assert.equal(ps[0].centavos, 39900);
 });
+
+test('taxa de personal externo a confirmar fica pendente, não vira zero', () => {
+  const r = calcular(cen({ acessoValor: '150', freqValor: '8', freqPeriodo: 'mes', personal: 'valor', personalModo: 'mes', personalValor: '800', taxaExterno: 'pendente' }));
+  assert.equal(r.mensal, null);
+  assert.equal(r.parcial.mensal, 95000);
+  assert.ok(r.pendencias.some((p) => /a confirmar/.test(p)));
+});
+
+test('taxa de personal externo por ida usa as idas do mês', () => {
+  const r = calcular(cen({ acessoValor: '150', freqValor: '3', freqPeriodo: 'semana', personal: 'valor', personalModo: 'mes', personalValor: '800', taxaExterno: 'valor', taxaExternoModo: 'ida', taxaExternoValor: '10' }));
+  assert.equal(r.mensal, 15000 + 80000 + 13000);
+});
+
+test('taxa paga pelo profissional não entra no custo do aluno', () => {
+  const r = calcular(cen({ acessoValor: '150', freqValor: '8', freqPeriodo: 'mes', personal: 'valor', personalModo: 'mes', personalValor: '800', taxaExterno: 'nao' }));
+  assert.equal(r.mensal, 95000);
+  assert.equal(r.componentes.some((c) => c.chave === 'taxaExterno'), false);
+});

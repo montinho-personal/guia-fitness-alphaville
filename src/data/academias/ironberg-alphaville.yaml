@@ -110,7 +110,7 @@ perguntas:
 analise:
 - 'É, de longe, a maior academia do guia em área declarada: o site da rede fala em 32 mil m², com estacionamento gratuito para mais de mil carros, e a apresenta como o maior centro de treinamento de musculação do mundo. Fica na Estrada da Aldeinha, já fora dos bairros residenciais de Alphaville, com acesso pela rodovia.'
 - 'Funciona 24 horas, inclusive em feriados, segundo o site oficial. O foco é só musculação, sem grade de aulas coletivas. Os preços são os mesmos em todas as unidades da rede: R$ 399 por mês no plano de 12 meses, R$ 499 no de 6 meses e R$ 599 no recorrente, sempre com matrícula de R$ 120.'
-- 'Para quem treina com personal, a Ironberg é uma das poucas da região que publica a regra: personal externo pode atender no espaço pagando um valor fixo à academia, e não por aula ou por aluno. O valor é informado só na unidade.'
+- 'Para quem treina com personal, a Ironberg está entre as academias da região que publicam a regra: personal externo pode atender no espaço pagando um valor fixo à academia, e não por aula ou por aluno. O valor é informado só na unidade.'
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
@@ -118,3 +118,15 @@ autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: '2026-11-14'
 atualizado_em: '2026-11-16'
+personal_externo:
+  status: aceita-com-condicoes
+  condicoes:
+  - O personal externo combina com a unidade a condição para atender no espaço.
+  taxa:
+    situacao: confirmada
+    quem_paga: profissional
+    condicoes: Valor fixo, não por aula nem por aluno, informado na unidade; a rede cita descontos progressivos com novos alunos.
+  abrangencia: rede
+  fonte: Site oficial da Ironberg (página de planos, bloco Personal)
+  url: https://www.ironberg.com.br/planos.html
+  conferido_em: 2026-11-17

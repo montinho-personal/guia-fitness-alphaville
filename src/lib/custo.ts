@@ -32,9 +32,9 @@ export interface Cenario {
   personalValor: string;
   personalAulas: string;
   personalAulasPeriodo: Periodo;
-  /** Taxa da academia para personal externo. 'incluido' = já está no valor informado do personal. */
-  taxaExterno: Situacao;
-  taxaExternoModo: 'mes' | 'aula';
+  /** Taxa da academia para personal externo. 'incluido' = já está no valor do personal; 'pendente' = o visitante não sabe (não vira zero). */
+  taxaExterno: Situacao | 'pendente';
+  taxaExternoModo: 'mes' | 'aula' | 'ida';
   taxaExternoValor: string;
 }
 
@@ -213,16 +213,19 @@ export function calcular(c: Cenario): Resultado {
   }
 
   // Taxa de personal externo
-  if (c.personal !== 'nao') {
-    extra(c.taxaExterno, 'taxaExterno', 'Taxa de personal externo', () => {
+  if (c.personal !== 'nao' && c.taxaExterno === 'pendente') {
+    pend.push('Taxa de personal externo (a confirmar com a academia)');
+    comps.push({ chave: 'taxaExterno', rotulo: 'Taxa de personal externo (a confirmar)', estado: 'pendente', primeiroMes: null, mensal: null, ano: null });
+  } else if (c.personal !== 'nao') {
+    extra(c.taxaExterno as Situacao, 'taxaExterno', 'Taxa de personal externo', () => {
       const v = dinheiro('taxaExternoValor', c.taxaExternoValor, 'Taxa de personal externo');
-      const rot = c.taxaExternoModo === 'aula' ? 'Taxa de personal externo (por aula)' : 'Taxa de personal externo (por mês)';
+      const rot = `Taxa de personal externo (${c.taxaExternoModo === 'aula' ? 'por aula' : c.taxaExternoModo === 'ida' ? 'por ida' : 'por mês'})`;
       if (v === null) { pend.push('Taxa de personal externo'); return { chave: 'taxaExterno', rotulo: rot, estado: 'pendente', primeiroMes: null, mensal: null, ano: null }; }
       if (c.taxaExternoModo === 'mes') return { chave: 'taxaExterno', rotulo: rot, estado: v === 0 ? 'zero' : 'ok', primeiroMes: v, mensal: v, ano: v * 12 };
-      const base = aulasMes;
-      if (base === null) { pend.push('Quantidade de aulas com personal (para a taxa por aula)'); return { chave: 'taxaExterno', rotulo: rot, estado: 'pendente', primeiroMes: null, mensal: null, ano: null }; }
+      const base = c.taxaExternoModo === 'ida' ? idasMes : aulasMes;
+      if (base === null) { pend.push(c.taxaExternoModo === 'ida' ? 'Frequência (para a taxa por ida)' : 'Quantidade de aulas com personal (para a taxa por aula)'); return { chave: 'taxaExterno', rotulo: rot, estado: 'pendente', primeiroMes: null, mensal: null, ano: null }; }
       const m = Math.round(v * base);
-      return { chave: 'taxaExterno', rotulo: rot, estado: v === 0 ? 'zero' : 'ok', primeiroMes: m, mensal: m, ano: m * 12, nota: `${reais(v)} × ${fmtNum(base)} aulas por mês.` };
+      return { chave: 'taxaExterno', rotulo: rot, estado: v === 0 ? 'zero' : 'ok', primeiroMes: m, mensal: m, ano: m * 12, nota: `${reais(v)} × ${fmtNum(base)} ${c.taxaExternoModo === 'ida' ? 'idas' : 'aulas'} por mês.` };
     });
   }
 

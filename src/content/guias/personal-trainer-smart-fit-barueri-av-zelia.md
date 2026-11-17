@@ -2,7 +2,7 @@
 titulo: "Personal trainer na Smart Fit Av. Zélia, em Barueri"
 descricao: "Smart Fit da Avenida Zélia, no Parque dos Camargos: perguntas para levar um personal de fora, horário das 5h, Plano Fit restrito à unidade e vizinhas."
 h1: "Personal trainer na Smart Fit Barueri Av. Zélia"
-resposta: "A unidade da Avenida Zélia, no Parque dos Camargos, não traz regra escrita para personal de fora; liberação e custo ficam a cargo da recepção. Ela abre às 5h de segunda a sexta, lista só musculação, e o Plano Fit, de R$ 139,90 mensais na fidelidade, vale apenas ali."
+resposta: "A unidade da Avenida Zélia, no Parque dos Camargos, segue a regra da rede: a Smart Fit avalia o pedido e, se autorizar, o personal se cadastra e assina contrato de uso das instalações; o custo não é publicado. Ela abre às 5h de segunda a sexta, lista só musculação, e o Plano Fit, de R$ 139,90 mensais na fidelidade, vale apenas ali."
 cluster: D
 secao: guias
 palavra_chave: personal trainer smart fit av zelia barueri
@@ -47,7 +47,7 @@ O item professores formados se refere à equipe contratada pela academia. Não i
 
 ## Cinco perguntas para a recepção
 
-Nenhuma regra para personal externo foi encontrada nas fontes desta unidade. Vá com a lista pronta:
+Na Av. Zélia vale o que está nas Normas de Utilização da rede: quem quer treinar com um profissional próprio pede a liberação, e a Smart Fit decide se autoriza. Liberado, o personal faz cadastro e firma contrato de uso das instalações, e só pode atender quem é aluno matriculado. Valor e responsável pelo pagamento não aparecem no documento. O panorama das outras academias está em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/). Na unidade, vá com a lista pronta:
 
 1. Profissional de fora pode acompanhar aluno aqui?
 2. Existe cobrança para isso? É mensal, por aula ou valor fixo?

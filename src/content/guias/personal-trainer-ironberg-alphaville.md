@@ -2,7 +2,7 @@
 titulo: "Personal trainer na Ironberg Alphaville: regra, horário e custo"
 descricao: "A Ironberg Alphaville publica a regra para personal de fora: o profissional paga um valor fixo à academia. Veja horário 24h, planos, TotalPass e o que perguntar."
 h1: "Personal trainer na Ironberg Alphaville"
-resposta: "Sim, dá para levar personal de fora. A Ironberg é a única academia do guia que publica a regra: o profissional externo paga um valor fixo à academia, e não por aula ou por aluno. O valor só é informado na unidade da Estrada da Aldeinha, que abre 24 horas e tem planos a partir de R$ 399 por mês."
+resposta: "Sim, dá para levar personal de fora. A Ironberg publica a regra: o profissional externo paga um valor fixo à academia, e não por aula ou por aluno. O valor só é informado na unidade da Estrada da Aldeinha, que abre 24 horas e tem planos a partir de R$ 399 por mês."
 cluster: D
 secao: guias
 palavra_chave: personal trainer ironberg alphaville
@@ -37,7 +37,7 @@ atualizado_em: 2026-11-15
 
 ## A regra existe e está escrita
 
-Das academias cadastradas aqui, só a Ironberg diz em público como funciona o personal externo. O profissional pode atender no espaço desde que pague um valor fixo à academia. A cobrança não é feita por aula nem por aluno atendido.
+A Ironberg diz em público como funciona o personal externo, como também fazem Smart Fit, Bluefit e Panobianco; a comparação está em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/). O profissional pode atender no espaço desde que pague um valor fixo à academia. A cobrança não é feita por aula nem por aluno atendido.
 
 O que falta é o número. O valor é informado só na unidade, e o guia ainda não conseguiu confirmá-lo. Para entender como o assunto funciona nas outras academias da região, veja a página de [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).
 
