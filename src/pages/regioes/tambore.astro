@@ -1,0 +1,81 @@
+---
+import Base from '../../layouts/Base.astro';
+import CartaoAcademia from '../../components/CartaoAcademia.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Mantem from '../../components/Mantem.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import { academias, agregador, abreDomingo, faixasDia, dataIso, type Academia } from '../../lib/dados';
+
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-17'), atualizado: new Date('2026-11-17') };
+const todas = await academias();
+const pega = (ids: string[]) => ids.map((id) => todas.find((a) => a.id === id)).filter((a): a is Academia => !!a);
+// Grupos por onde ficam. A lista é fixa porque "Tamboré" no nome nem sempre quer dizer o bairro.
+const bairro = pega(['nitrogym-tambore', 'bluefit-tambore', 'templo-jiu-jitsu-tambore', 'jaco-fight-club-alphaville']);
+const santana = pega(['g13-alphaville-tambore', 'arena-tambore']);
+const vizinhas = pega(['smart-fit-carrefour-tambore', 'prainha-tambore']);
+const lista = [...bairro, ...santana, ...vizinhas];
+const ac = (id: string) => todas.find((a) => a.id === id)!;
+const nitro = ac('nitrogym-tambore'), blue = ac('bluefit-tambore'), sfc = ac('smart-fit-carrefour-tambore'), sfs = ac('smart-fit-sodimac-alphaville');
+const ag = (a: Academia, n: 'Wellhub' | 'TotalPass') => agregador(a, n)?.plano_minimo;
+const academiasDeMusculacao = lista.filter((a) => a.data.modalidades.includes('musculacao'));
+const domingo = lista.filter((a) => abreDomingo(a.data.horario));
+const abs = (u: string) => new URL(u, Astro.site).href;
+
+const titulo = 'Academia no Tamboré: Shopping Tamboré, Tucunaré e Tamboré III';
+const descricao = `Academias no Tamboré: NitroGym no Shopping Tamboré, Bluefit e lutas na Av. Tucunaré, G13 no Tamboré III e Smart Fit do Carrefour, com horário e preço.`;
+const perguntas = [
+  { p: 'Tem academia no Shopping Tamboré?', r: `Sim. A NitroGym Tamboré fica no Shopping Tamboré, na Av. Piracema, 669. Abre das 5h à meia-noite nos dias úteis e das 6h às 22h no fim de semana, com plano ${nitro.data.mensalidade?.valor ?? ''} por mês e estacionamento do shopping incluso por 3 horas, segundo a rede.` },
+  { p: 'Qual a academia mais barata do Tamboré?', r: `Entre as que publicam preço, a Smart Fit do Carrefour Hiper Tamboré, na Alameda Araguaia, 2751: ${sfc.data.mensalidade?.resumo ?? ''} A Bluefit Tamboré não publica mensalidade; nos agregadores, entra pelo ${ag(blue, 'Wellhub')} no Wellhub${ag(blue, 'TotalPass') ? ` e pelo ${ag(blue, 'TotalPass')} no TotalPass` : ''}.` },
+  { p: 'Tem Smart Fit no Tamboré?', r: 'A Smart Fit mais perto do Tamboré é a do Carrefour Hiper Tamboré, na Alameda Araguaia, 2751, em Alphaville Industrial. A outra unidade próxima é a da Sodimac, também na Alameda Araguaia.' },
+  { p: 'Tem academia no Tamboré 1, 2, 3, 10 ou 11?', r: 'Tamboré 1, 2, 3, 10 e 11 são residenciais. As academias internas dos condomínios não têm ficha no guia; informe-se na administração. Aberta ao público, a G13 fica junto ao Residencial Tamboré III, na Av. Marcos Penteado de Ulhôa Rodrigues.' },
+  { p: 'Quais academias do Tamboré abrem no domingo?', r: `${domingo.length} das ${lista.length} opções desta página abrem no domingo: ${domingo.map((a) => a.data.nome).join(', ')}. Confira o horário de cada uma na ficha.` },
+  { p: 'A Arena Tamboré fica na Granja Viana?', r: 'Não. A Arena Tamboré com ficha no guia fica na Alameda América, 440, no Centro Empresarial Tamboré, do lado de Santana de Parnaíba. É arena de beach tennis, futevôlei e vôlei, não academia de musculação.' },
+];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Regiões', url: '/regioes/' }, { nome: 'Alphaville e Tamboré', url: '/regioes/alphaville/' }, { nome: 'Tamboré', url: '/regioes/tambore/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Região · bairro</span>
+      <h1>Academias no Tamboré: onde treinar</h1>
+      <p class="linha-fina">Shopping Tamboré, Av. Tucunaré, Centro Empresarial Tamboré e Tamboré III, com o que fica do lado de Barueri e do lado de Santana de Parnaíba.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta"><span class="rotulo">Em resumo</span>
+      <p>No Tamboré, a academia de musculação é a <a href="/academias/nitrogym-tambore/">NitroGym</a>, no Shopping Tamboré, a opção premium do bairro, e a <a href="/academias/bluefit-tambore/">Bluefit Tamboré</a>, na Av. Tucunaré, a de rede. Para lutas, há a Templo e o Jacó Fight Club na Av. Tucunaré e a G13 no Tamboré III. A Smart Fit mais perto é a do Carrefour Hiper Tamboré, em Alphaville Industrial.</p>
+    </div>
+
+    <div class="prosa">
+      <h2>Shopping Tamboré e Av. Tucunaré</h2>
+      <p>A <a href="/academias/nitrogym-tambore/">NitroGym Tamboré</a> fica no Shopping Tamboré, na Av. Piracema, 669. É academia premium de musculação: abre das 5h à meia-noite nos dias úteis e das 6h às 22h no sábado e no domingo, publica plano {nitro.data.mensalidade?.valor} por mês e informa estacionamento do shopping incluso por 3 horas. No TotalPass, entra a partir do {ag(nitro, 'TotalPass')}. A comparação com a Ironberg está em <a href="/guias/ironberg-ou-nitrogym/">Ironberg ou NitroGym</a>.</p>
+      <p>Na Av. Tucunaré, a <a href="/academias/bluefit-tambore/">Bluefit Tamboré</a> é a academia de rede do bairro, no número 1498, voltada a musculação e aberta todos os dias. Não publica mensalidade; no Wellhub, entra pelo {ag(blue, 'Wellhub')}. No mesmo endereço, no Mackenzie Mall, fica a <a href="/academias/templo-jiu-jitsu-tambore/">Templo Jiu Jitsu Culture</a>, e alguns números antes, no 955, o <a href="/academias/jaco-fight-club-alphaville/">Jacó Fight Club</a>, com muay thai, boxe, jiu-jitsu e MMA.</p>
+
+      <h2>Centro Empresarial Tamboré e Tamboré III, do lado de Santana de Parnaíba</h2>
+      <p>Parte do Tamboré pertence a Santana de Parnaíba. Ali ficam a <a href="/academias/g13-alphaville-tambore/">G13 BJJ Alphaville</a>, escola de jiu-jitsu com muay thai e boxe junto ao Residencial Tamboré III, e a <a href="/academias/arena-tambore/">Arena Tamboré</a>, na Alameda América, 440, com beach tennis, futevôlei e vôlei. Nenhuma das duas é academia de musculação.</p>
+
+      <h2>Com Tamboré no nome, em Alphaville Industrial</h2>
+      <p>Duas opções levam Tamboré no nome, mas ficam na Alameda Araguaia, em Alphaville Industrial. A <a href="/academias/smart-fit-carrefour-tambore/">Smart Fit do Carrefour Hiper Tamboré</a>, no número 2751, tem o Plano Fit mais barato entre as Smart Fit da região: {sfc.data.mensalidade?.valor} por mês. A <a href="/academias/prainha-tambore/">Prainha Tamboré</a>, no 3628, é arena de beach tennis. A outra Smart Fit da Alameda Araguaia é a <a href="/academias/smart-fit-sodimac-alphaville/">Smart Fit Sodimac</a>, {sfs.data.mensalidade?.valor} por mês.</p>
+
+      <h2>Como escolher</h2>
+      <ul>
+        <li><strong>Só musculação, perto de casa:</strong> {academiasDeMusculacao.map((a) => a.data.nome).join(', ')}. Compare horário e preço no <a href={`/ferramentas/comparador/?a=${nitro.id}&b=${blue.id}`}>comparador</a>.</li>
+        <li><strong>Lutas:</strong> Templo, Jacó e G13; detalhes em <a href="/guias/jiu-jitsu-alphaville/">jiu-jitsu em Alphaville e Tamboré</a>.</li>
+        <li><strong>Beach tennis e futevôlei:</strong> Arena Tamboré e Prainha; veja <a href="/guias/beach-tennis-futevolei-alphaville/">beach tennis em Alphaville</a>.</li>
+        <li><strong>Usa Wellhub ou TotalPass:</strong> veja <a href="/academias/wellhub-totalpass/">o plano mínimo de cada academia</a>.</li>
+        <li><strong>Quer o restante de Alphaville:</strong> a página <a href="/regioes/alphaville/">Alphaville e Tamboré</a> tem todas as academias da região.</li>
+      </ul>
+    </div>
+
+    <section class="bloco fino" aria-labelledby="lista-t">
+      <div class="cab"><h2 id="lista-t">Fichas do Tamboré e arredores</h2><a class="link-forte" href="/mapa/">Ver no mapa</a></div>
+      <div class="cartoes">{lista.map((a) => <CartaoAcademia a={a} />)}</div>
+    </section>
+
+    <Perguntas itens={perguntas} titulo="Perguntas sobre academia no Tamboré" />
+
+    <LeiaTambem url="/regioes/tambore/" />
+    <section class="bloco fino"><Mantem pagina="regiao-tambore" compacta destino="/personal-trainer-tambore" titulo="Personal no Tamboré" texto="O Montinho Personal Trainer, que mantém este guia, atende no Tamboré: em casa, no condomínio ou em academia que aceite personal externo." /></section>
+  </div>
+</Base>

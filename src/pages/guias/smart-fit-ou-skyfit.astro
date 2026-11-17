@@ -1,0 +1,108 @@
+---
+import Base from '../../layouts/Base.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import CartaoAcademia from '../../components/CartaoAcademia.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import { academias, MODALIDADES, agregador, urlAcademia, dataLonga, dataIso, horasSemana, type Academia } from '../../lib/dados';
+
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-17'), atualizado: new Date('2026-11-17') };
+const todas = await academias();
+const sf = todas.find((a) => a.id === 'smart-fit-sodimac-alphaville')!;
+const sk = todas.find((a) => a.id === 'skyfit-alphaville')!;
+const redeSF = todas.filter((a) => a.data.rede === 'Smart Fit');
+const redeSK = todas.filter((a) => a.data.rede === 'SkyFit');
+const outrasSK = redeSK.filter((a) => a.id !== sk.id);
+const hora = (a: Academia, d: 'seg' | 'sab' | 'dom') => a.data.horario[d].length ? a.data.horario[d].map((f) => f.replace(/:00/g, 'h').replace(/(^|-)0(\d)/g, '$1$2').replace('-', ' às ')).join(', ') : 'fechada';
+const ag = (a: Academia, n: 'Wellhub' | 'TotalPass') => { const g = agregador(a, n); return g ? `${g.plano_minimo} (${g.preco_plano})` : 'não consta'; };
+const mods = (a: Academia) => a.data.modalidades.map((m) => MODALIDADES[m]).join(', ');
+const linhas: [string, string, string][] = [
+  ['Onde fica', sf.data.endereco.split(' - ')[0], sk.data.endereco.split(' - ')[0]],
+  ['Segunda a sexta', hora(sf, 'seg'), hora(sk, 'seg') + (sk.data.horario.sex[0] !== sk.data.horario.seg[0] ? ' (sexta até 22h)' : '')],
+  ['Sábado', hora(sf, 'sab'), hora(sk, 'sab')],
+  ['Domingo', hora(sf, 'dom'), hora(sk, 'dom')],
+  ['Horas abertas por semana', String(horasSemana(sf.data.horario)), String(horasSemana(sk.data.horario))],
+  ['Mensalidade', sf.data.mensalidade ? `${sf.data.mensalidade.valor} (site oficial)` : 'não publicada', sk.data.mensalidade ? sk.data.mensalidade.valor : 'não publicada por unidade'],
+  ['Modalidades', mods(sf), mods(sk)],
+  ['Wellhub', ag(sf, 'Wellhub'), ag(sk, 'Wellhub')],
+  ['TotalPass', ag(sf, 'TotalPass'), ag(sk, 'TotalPass')],
+  ['Unidades com ficha no guia', String(redeSF.length), String(redeSK.length)],
+];
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = 'Smart Fit ou SkyFit em Alphaville: qual escolher';
+const descricao = 'Smart Fit Sodimac ou SkyFit Alphaville: preço, horário, aulas, Wellhub e TotalPass lado a lado, e as outras unidades das duas redes em Barueri.';
+const tsf = agregador(sf, 'TotalPass'), tsk = agregador(sk, 'TotalPass'), wsk = agregador(sk, 'Wellhub'), wsf = agregador(sf, 'Wellhub');
+const perguntas = [
+  { p: 'Qual é melhor, Smart Fit ou SkyFit?', r: `Depende do que você usa. Em Alphaville, a Smart Fit da Sodimac publica o preço (${sf.data.mensalidade?.valor} por mês) e tem mais unidades na região. A SkyFit Alphaville tem grade de aulas mais variada, com cross training, muay thai, zumba e pilates, e entra mais barato nos agregadores.` },
+  { p: 'Qual o valor mensal da SkyFit?', r: `A SkyFit não publica a mensalidade da unidade de Alphaville no site; o valor aparece só no fluxo de matrícula. Pelos agregadores, a unidade entra a partir do ${tsk?.plano_minimo} no TotalPass (${tsk?.preco_plano} por mês) e do ${wsk?.plano_minimo} no Wellhub (${wsk?.preco_plano}).` },
+  { p: 'Qual o valor da Smart Fit em Alphaville?', r: `Na Smart Fit Sodimac Alphaville, o site oficial mostra ${sf.data.mensalidade?.planos.map((x) => `${x.nome} a ${x.preco}`).join(' e ')}. No Carrefour Hiper Tamboré, o Plano Fit sai por R$ 129,90.` },
+  { p: 'A SkyFit aceita Gympass (Wellhub) e TotalPass?', r: `Sim. A SkyFit Alphaville aparece no Wellhub a partir do ${wsk?.plano_minimo} e no TotalPass a partir do ${tsk?.plano_minimo}. A Smart Fit da Sodimac aparece só no TotalPass, a partir do ${tsf?.plano_minimo}${wsf ? ` e no Wellhub a partir do ${wsf.plano_minimo}` : ''}.` },
+  { p: 'Qual é a concorrente da Smart Fit em Alphaville?', r: 'Entre as redes com ficha no guia, disputam o mesmo público SkyFit, Bluefit e Panobianco, além da Gaviões 24h, que tem horário de 24 horas. Compare o preço publicado e o plano mínimo nos agregadores.' },
+  { p: 'SkyFit ou Bluefit?', r: 'As duas não publicam mensalidade por unidade em Alphaville. A SkyFit fica na Av. Juruá e lista mais aulas; a Bluefit tem unidades na Alameda Amazonas e no Tamboré. Compare horário e plano mínimo nas fichas.' },
+];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Smart Fit ou SkyFit', url: '/guias/smart-fit-ou-skyfit/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Guias de decisão · comparativo</span>
+      <h1>Smart Fit ou SkyFit em Alphaville: qual escolher</h1>
+      <p class="linha-fina">As duas são redes de academia de baixo custo e têm unidade em Alphaville Industrial: a Smart Fit no estacionamento da Sodimac, na Alameda Araguaia, e a SkyFit na Av. Juruá. A escolha depende de preço, aulas e de onde mais você quer treinar.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Se você quer saber o preço antes de ir e treinar em mais unidades da região, a Smart Fit é a escolha mais previsível: publica {sf.data.mensalidade?.valor} por mês na Sodimac e tem {redeSF.length} unidades com ficha no guia. Se você quer aulas variadas, como cross training, muay thai, zumba e pilates, ou usa agregador, a SkyFit atende melhor: entra a partir do {tsk?.plano_minimo} no TotalPass e do {wsk?.plano_minimo} no Wellhub.</p>
+    </div>
+
+    <div class="rolagem" tabindex="0" role="region" aria-label="Smart Fit e SkyFit lado a lado" style="margin:24px 0">
+      <table class="dados">
+        <caption>Dados das fichas do guia. Abra cada ficha para ver as fontes e a data de conferência.</caption>
+        <thead><tr><th scope="col">Critério</th><th scope="col"><a href={urlAcademia(sf)} style="color:inherit">{sf.data.nome}</a></th><th scope="col"><a href={urlAcademia(sk)} style="color:inherit">{sk.data.nome}</a></th></tr></thead>
+        <tbody>{linhas.map(([c, a, b]) => <tr><th scope="row">{c}</th><td>{a}</td><td>{b}</td></tr>)}</tbody>
+      </table>
+    </div>
+
+    <div class="prosa">
+      <h2>Preço: um publica, o outro não</h2>
+      <p>A Smart Fit mostra os planos no site: na Sodimac, {sf.data.mensalidade?.planos.map((x) => `${x.nome} a ${x.preco}`).join(' e ')}, ambos com fidelidade; sem fidelidade, o Plano Smart custa R$ 20 a mais por mês. O Black dá acesso a todas as unidades da rede. A SkyFit diz no site que os planos são sem fidelidade, mas o valor da unidade de Alphaville só aparece no fluxo de matrícula. Para comparar, peça o valor na recepção da SkyFit e coloque ao lado dos números da Smart Fit.</p>
+      <p>Com agregador, a SkyFit sai na frente: entra no TotalPass pelo {tsk?.plano_minimo}, de {tsk?.preco_plano} por mês, e no Wellhub pelo {wsk?.plano_minimo}, de {wsk?.preco_plano}. A Smart Fit da Sodimac está no TotalPass a partir do {tsf?.plano_minimo}, de {tsf?.preco_plano}, {wsf ? `e no Wellhub a partir do ${wsf.plano_minimo}.` : 'e não aparece no Wellhub.'} Os valores de cada plano estão em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
+
+      <h2>Aulas e estrutura</h2>
+      <p>A SkyFit Alphaville lista {sk.data.atividades_listadas.length} atividades, entre elas {sk.data.atividades_listadas.filter((x) => /Cross|Muay|Zumba|Pilates|Bounce/.test(x)).join(', ').toLowerCase().replace(/, ([^,]*)$/, ' e $1')}. A Smart Fit da Sodimac é mais enxuta: musculação e aulas curtas de alta intensidade, como {sf.data.atividades_listadas.filter((x) => /Smart|Hiit/i.test(x)).join(', ').replace(/, ([^,]*)$/, ' e $1')}.</p>
+      <p>Na estrutura informada, a Smart Fit lista ar-condicionado, ducha aquecida, armário rotativo, balança de bioimpedância e estacionamento. A SkyFit lista vestiário com chuveiro, armários, Wi-Fi e estacionamento, grátis e pago segundo o TotalPass. Nenhuma das duas redes publica a lista de aparelhos da unidade; confira na visita os equipamentos que você mais usa.</p>
+
+      <h2>Horário</h2>
+      <p>As duas abrem todos os dias. A SkyFit abre mais cedo, às 5h, e a Smart Fit às 6h; à noite, as duas vão até as 23h nos dias úteis (a SkyFit fecha às 22h na sexta). No domingo, as duas abrem das 8h às 14h. Para treinar de madrugada, nenhuma resolve; veja as <a href="/academias/24-horas/">academias 24 horas</a>.</p>
+
+      <h2>Outras unidades na região</h2>
+      <p>A Smart Fit tem {redeSF.length} unidades com ficha no guia: além da Sodimac, a do Carrefour Hiper Tamboré, também na Alameda Araguaia, e três em Barueri, reunidas em <a href="/academias/smart-fit-barueri/">Smart Fit em Barueri</a>. No Plano Black, a mensalidade vale em todas.</p>
+      {outrasSK.length > 0 && <p>A SkyFit tem também {outrasSK.map((a, i) => <>{i > 0 && ', '}<a href={urlAcademia(a)}>{a.data.nome}</a></>)}, em Barueri, na estrada que liga a cidade a Santana de Parnaíba. Ela é mais focada em musculação e cardio e entra pelo TotalPass a partir do {agregador(outrasSK[0], 'TotalPass')?.plano_minimo}.</p>}
+
+      <h2>Resumo por perfil</h2>
+      <ul>
+        <li><strong>Quer saber o preço antes de ir:</strong> Smart Fit.</li>
+        <li><strong>Quer treinar em várias unidades da região ou viajando:</strong> Smart Fit, no Plano Black.</li>
+        <li><strong>Quer aulas de luta, dança, cross training ou pilates:</strong> SkyFit.</li>
+        <li><strong>Usa Wellhub:</strong> SkyFit. <strong>Usa TotalPass:</strong> as duas; a SkyFit pede o plano mais barato.</li>
+        <li><strong>Treina cedo, antes das 6h:</strong> SkyFit, que abre às 5h.</li>
+      </ul>
+      <p>Visite as duas no horário em que você vai treinar. O <a href="/ferramentas/checklist/">checklist de visita</a> ajuda, e o <a href={`/ferramentas/comparador/?a=${sf.id}&b=${sk.id}`}>comparador</a> mostra os dados completos lado a lado. Se a dúvida é entre Smart Fit e uma academia 24 horas, leia <a href="/guias/smart-fit-ou-gavioes/">Smart Fit ou Gaviões</a>.</p>
+    </div>
+
+    <section class="bloco fino" aria-labelledby="fichas-t">
+      <div class="cab"><h2 id="fichas-t">As fichas</h2><a class="link-forte" href="/academias/?regiao=alphaville">Outras academias de Alphaville</a></div>
+      <div class="cartoes">{[sf, sk, ...outrasSK].map((a) => <CartaoAcademia a={a} />)}</div>
+    </section>
+
+    <Perguntas itens={perguntas} titulo="Perguntas sobre Smart Fit e SkyFit" />
+    <LeiaTambem url="/guias/smart-fit-ou-skyfit/" />
+    <div style="margin-top:28px"><Fontes fontes={[
+      ...sf.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${sf.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
+      ...sk.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${sk.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
+      { titulo: 'Site oficial da SkyFit (planos sem fidelidade)', url: 'https://skyfitacademia.com/', data: dataLonga(new Date('2026-11-17')) },
+    ]} /></div>
+  </div>
+</Base>

@@ -10,7 +10,7 @@ Atualizada em 16/11/2026. Junta o que estava em `docs/pauta-blog.md`, em `docs/p
 
 | # | Artigo proposto | Buscas que pedem | Volume | Cuidados |
 |---|---|---|---|---|
-| 1 | Academias no Tamboré (página própria) | "academia tamboré", "academia tambore shopping", "academia tamboré 1/2/3/10/11", "academia shopping tambore alphaville" (prints de 16/11) | ATP 10 ("academia shopping tambore alphaville") | Hoje o Tamboré é seção de `/regioes/alphaville/`: separar sem canibalizar (a página de Alphaville passa a linkar a do Tamboré). Fichas já existem: NitroGym, Bluefit Tamboré, Templo, Jacó, Prainha, Arena Soccer Grass |
+| ~~1~~ | ~~Academias no Tamboré (página própria)~~ | publicado em 17/11, `/regioes/tambore/` | | |
 | 2 | Yoga em Alphaville e Barueri | lacuna de modalidade (sem busca feita ainda) | não medido | Fazer a busca no SerpApi antes. Fichas com yoga: 24h Premium, SIX (hot yoga), Gaviões |
 | 3 | Treino funcional em Alphaville | lacuna de modalidade | não medido | Buscar antes. Não canibalizar `/modalidades/crossfit/` (funcional ≠ box) |
 | 4 | Academia com estacionamento em Alphaville | pauta B15 | não medido | Só com regra publicada (grátis, pago, tempo); hoje há dado em ~15 fichas |
@@ -19,8 +19,9 @@ Atualizada em 16/11/2026. Junta o que estava em `docs/pauta-blog.md`, em `docs/p
 | 7 | Academia feminina ou com área para mulheres | pauta B26; "academia para mulheres barueri" | ATP 210 (Bing) + 10 | Só se houver casos reais confirmados na região; sem isso, não escrever |
 | 8 | Esporte e academia gratuita em Barueri (programas da prefeitura) | "academia gratuita barueri", "natação gratuita barueri", "natação barueri prefeitura" | ATP 10 + 10 | Precisa de fonte oficial da prefeitura (hoje o site não abre daqui) |
 | 9 | Academia menos cheia | pauta B27 | não medido | Só com dado público (ocupação informada pela rede); sem achismo |
-| 10 | Smart Fit ou SkyFit em Alphaville (comparativo) | PAA "Qual é melhor, Sky Fit ou Smart Fit?" em "como escolher academia" (SerpApi 17/11) | não medido | As duas têm ficha (Smart Fit Sodimac, SkyFit Alphaville). Mesmo molde de `/guias/smart-fit-ou-gavioes/` |
+| ~~10~~ | ~~Smart Fit ou SkyFit em Alphaville (comparativo)~~ | publicado em 17/11, `/guias/smart-fit-ou-skyfit/` | | |
 | 11 | Panobianco ou Gaviões (comparativo) | Orgânico TikTok "qual melhor academia panobianco ou gaviões" e REL "Panobianco" em "smart fit ou gaviões" (17/11) | não medido | Unidades em lados diferentes (Panobianco em Barueri, Gaviões em Alphaville): só vale se a busca local confirmar interesse; buscar antes |
+| 12 | Smart Fit ou Bluefit / SkyFit ou Bluefit (comparativo) | AC "sky fit ou bluefit", REL "smart fit ou bluefit qual o melhor" em "smart fit ou skyfit" (17/11) | não medido | As três têm ficha em Alphaville; mesmo molde dos comparativos. Bluefit não publica mensalidade |
 
 Itens antigos da pauta que **já existem** e saíram desta lista: academia barata (→ `/academias/precos/`), domingo, piscina e natação (`/modalidades/natacao/`), perto de..., Santana de Parnaíba (`/regioes/santana-de-parnaiba/`), Hyrox, beach tennis, lutas e jiu-jitsu, CrossFit, Ironberg ou NitroGym, premium. Aldeia da Serra como página de academias: não há academia com ficha no bairro; fica coberta pelas páginas de personal.
 

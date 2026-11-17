@@ -41,6 +41,7 @@ export async function GET() {
   }
   for (const [u, a] of Object.entries(ARTIGOS)) add({ t: a.titulo, u, c: 'Guia', d: a.resumo, k: u.replace(/[/-]/g, ' ') });
   for (const [id, r] of Object.entries(REGIOES)) add({ t: `Academias em ${r.titulo}`, u: `/regioes/${id}/`, c: 'Região', d: r.descricao, k: `onde treinar ${r.nome}` });
+  add({ t: 'Academias no Tamboré', u: '/regioes/tambore/', c: 'Região', d: 'NitroGym no Shopping Tamboré, Bluefit e lutas na Av. Tucunaré, G13 no Tamboré III e Smart Fit do Carrefour.', k: 'academia tambore shopping tambore tucunare tambore 1 2 3 10 11' });
   const extras = [
     { t: 'Todas as academias', u: '/academias/', c: 'Página', d: 'Lista com filtros por região, horário, modalidade e agregador.', k: 'filtro lista academias' },
     { t: 'Mapa das academias', u: '/mapa/', c: 'Página', d: 'Todas as academias do guia no mapa.', k: 'mapa localização perto' },
