@@ -26,6 +26,9 @@ header.topo{border-bottom:1px solid var(--linha);background:var(--papel);positio
 .topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap}
 .marca{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
 .marca svg{flex:none}
+.marca .logo{display:block;width:auto;height:40px}
+@media(min-width:900px){.marca .logo-cab{height:48px}}
+.rodape .marca .logo-rod{height:72px}
 .marca .nome{font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:-.03em;line-height:.95;display:block}
 .marca .lugar{font-family:var(--display);font-weight:700;font-size:10px;letter-spacing:.3em;color:var(--alameda);display:block;margin-top:3px}
 nav.principal ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;font-family:var(--display);font-weight:600;font-size:15px}
