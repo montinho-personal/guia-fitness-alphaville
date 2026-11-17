@@ -1,0 +1,68 @@
+nome: Yogar Barueri
+regiao: barueri
+bairro: Vila Sargento José de Paula
+tipo: estudio
+resumo: Estúdio de hatha yoga e yoga restaurativa na Rua Damião Fernandes, perto do centro de Barueri, com aulas de segunda a quinta e Wellhub pelo Silver+.
+endereco: Rua Damião Fernandes, 105, sala 01 - Vila Sargento José de Paula, Barueri - SP, 06404-000
+geo:
+  lat: -23.5096368
+  lng: -46.8722617
+horario:
+  seg:
+  - 07:00-20:30
+  ter:
+  - 06:30-19:30
+  qua:
+  - 07:00-20:30
+  qui:
+  - 06:30-19:30
+  sex: []
+  sab: []
+  dom: []
+modalidades:
+- yoga
+atividades_listadas:
+- Hatha yoga
+- Yoga restaurativa
+comodidades:
+- Banheiro acessível
+agregadores:
+- nome: Wellhub
+  plano_minimo: Silver+
+  preco_plano: R$ 199,99
+  url: https://wellhub.com/pt-br/search/partners/yogar-barueri-vila-sargento-jose-de-paula/
+mensalidade: null
+site: https://www.instagram.com/yogar_barueri/
+telefone: (11) 95584-4117
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  - telefone
+  fonte: Página do estúdio no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/yogar-barueri-vila-sargento-jose-de-paula/
+  conferido_em: '2026-11-17'
+  nivel: fonte-publica
+- campos:
+  - geo
+  fonte: OpenStreetMap, trecho da Rua Damião Fernandes (posição aproximada pela rua)
+  url: https://www.openstreetmap.org/
+  conferido_em: '2026-11-17'
+  nivel: fonte-publica
+divergencias: []
+pendencias:
+- Mensalidade direta
+- Grade de aulas
+analise:
+- É o estúdio de yoga com ficha mais perto do centro de Barueri, na Rua Damião Fernandes. O Wellhub descreve aulas de hatha yoga e yoga restaurativa, um estilo mais lento e de relaxamento.
+- 'Funciona de segunda a quinta: das 7h às 20h30 na segunda e na quarta e das 6h30 às 19h30 na terça e na quinta. No Wellhub, entra pelo Silver+ (R$ 199,99 por mês).'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Guia Fitness Alphaville
+revisor: null
+publicado_em: '2026-11-17'
+atualizado_em: '2026-11-17'

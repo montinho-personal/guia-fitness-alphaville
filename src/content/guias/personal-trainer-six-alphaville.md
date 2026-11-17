@@ -55,7 +55,7 @@ Para comparar com o restante da região, abra o guia de [personal trainer em Alp
 
 ## Um clube no alto de um prédio comercial
 
-A SIX abriu em outubro de 2026 no rooftop do 23º andar do Empresarial 18 do Forte, na Av. Copacabana, com 1.500 m². Além da musculação, a unidade lista ballet fitness, boxe, spinning, dança, pilates e hot yoga. Fora do treino, há spa, recovery, salão de beleza e bar pré e pós-treino. Para chegar, membros têm valet gratuito.
+A SIX abriu em outubro de 2026 no rooftop do 23º andar do Empresarial 18 do Forte, na Av. Copacabana, com 1.500 m². Além da musculação, a unidade lista ballet fitness, boxe, spinning, dança, pilates e [hot yoga](/modalidades/yoga/). Fora do treino, há spa, recovery, salão de beleza e bar pré e pós-treino. Para chegar, membros têm valet gratuito.
 
 Para quem tem escritório no próprio 18 do Forte, há uma vantagem óbvia: a sessão pode acontecer no mesmo conjunto do escritório.
 

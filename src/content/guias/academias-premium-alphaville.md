@@ -44,7 +44,7 @@ atualizado_em: 2026-11-15
 
 ## SIX: clube no 23º andar
 
-A [SIX](/academias/six-alphaville/) ocupa o rooftop do 23º andar do Empresarial 18 do Forte. Além de musculação, lista aulas como ballet fitness, boxe, spinning, dança, pilates e hot yoga, e serviços de spa, recovery, salão de beleza, bar e valet gratuito para membros. Não publica preço; em reportagem da Exame de agosto de 2026, antes da inauguração, o cofundador citou o plano semestral em seis parcelas de R$ 3.900, mais adesão de R$ 600. São valores dados à imprensa, não uma tabela oficial. Funciona das 6h às 22h nos dias úteis.
+A [SIX](/academias/six-alphaville/) ocupa o rooftop do 23º andar do Empresarial 18 do Forte. Além de musculação, lista aulas como ballet fitness, boxe, spinning, dança, pilates e [hot yoga](/modalidades/yoga/), e serviços de spa, recovery, salão de beleza, bar e valet gratuito para membros. Não publica preço; em reportagem da Exame de agosto de 2026, antes da inauguração, o cofundador citou o plano semestral em seis parcelas de R$ 3.900, mais adesão de R$ 600. São valores dados à imprensa, não uma tabela oficial. Funciona das 6h às 22h nos dias úteis.
 
 ## Ironberg: escala e 24 horas
 

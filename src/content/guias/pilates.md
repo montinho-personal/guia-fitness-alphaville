@@ -67,6 +67,9 @@ A diferença entre o Silver e o Platinum é grande, e costuma refletir o preço 
 
 Aera Pilates, que aparece nas buscas no 18 do Forte, e Corpo e Equilíbrio não foram encontrados nos agregadores, e os sites deles não puderam ser lidos. Por isso ainda não têm ficha. Nas sugestões do Google, parte das buscas por "pilates Alphaville" leva a outras cidades, como Campinas, Salvador e Nova Lima.
 
+Se a ideia é uma prática de corpo e mente, compare também com [yoga em Alphaville e Barueri](/modalidades/yoga/).
+
 ## Para gestantes e pessoas com dor
+
 
 Pilates é procurado por quem está grávida ou tem dor nas costas, mas a liberação e os limites vêm do médico. Leve as orientações para a aula experimental e pergunte se o instrutor tem experiência com o seu caso.

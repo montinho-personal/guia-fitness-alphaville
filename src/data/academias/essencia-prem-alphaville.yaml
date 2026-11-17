@@ -1,0 +1,91 @@
+nome: Essência Prem Estúdio de Yoga
+regiao: alphaville
+bairro: Centro Comercial Alphaville
+tipo: estudio
+resumo: Estúdio de yoga no Centro Comercial Alphaville, na Praça dos Gerânios, com hatha, vinyasa e slow flow, no Wellhub pelo Gold e no TotalPass pelo TP 4.
+endereco: Praça dos Gerânios, 64, 2º andar - Centro Comercial Alphaville, Barueri - SP
+geo:
+  lat: -23.4972014
+  lng: -46.8513204
+horario:
+  seg:
+  - 06:00-21:00
+  ter:
+  - 06:00-21:00
+  qua:
+  - 06:00-21:00
+  qui:
+  - 06:00-21:00
+  sex:
+  - 08:00-18:00
+  sab:
+  - 08:00-12:00
+  dom: []
+modalidades:
+- yoga
+atividades_listadas:
+- Yoga
+- Hatha yoga
+- Vinyasa flow
+- Slow flow yoga
+- Yoga ativo
+- Kriya hatha yoga
+comodidades:
+- Ar-condicionado
+- Área de alongamento
+- Armários
+- Bebedouro
+- Tapete de ioga
+- Vestiário
+- Wi-Fi
+- Estacionamento pago (segundo o TotalPass)
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold
+  preco_plano: R$ 319,99
+  url: https://wellhub.com/pt-br/search/partners/essencia-prem-estudio-de-yoga-alphaville/
+- nome: TotalPass
+  plano_minimo: TP 4
+  preco_plano: R$ 299,90
+  url: https://totalpass.com/br/academias/essencia-prem/
+mensalidade: null
+site: https://www.instagram.com/essencia_prem/
+telefone: (11) 92580-3259
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  - telefone
+  fonte: Página do estúdio no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/essencia-prem-estudio-de-yoga-alphaville/
+  conferido_em: '2026-11-17'
+  nivel: fonte-publica
+- campos:
+  - endereco
+  - geo
+  - horario
+  - comodidades
+  - agregadores
+  fonte: Página do estúdio no TotalPass
+  url: https://totalpass.com/br/academias/essencia-prem/
+  conferido_em: '2026-11-17'
+  nivel: fonte-publica
+divergencias:
+- 'Horário: o Wellhub informa das 6h às 21h de segunda a sexta e das 8h ao meio-dia no sábado; o TotalPass informa abertura às 7h30 na segunda e na quarta, sexta das 8h às 18h e domingo das 6h ao meio-dia. A ficha usa a sexta do TotalPass e não conta com o domingo.'
+- 'Telefone: o Wellhub mostra (11) 92580-3259 e o TotalPass, (11) 94060-7692.'
+pendencias:
+- Mensalidade direta
+- Grade de aulas por estilo
+analise:
+- É um estúdio só de yoga, no prédio da Praça dos Gerânios, no Centro Comercial Alphaville, perto do Iguatemi. O Wellhub lista hatha, vinyasa flow, slow flow, yoga ativo e kriya hatha yoga, e informa tapete de ioga e área de alongamento.
+- 'Nos agregadores, é entrada alta: Gold no Wellhub (R$ 319,99 por mês) e TP 4 no TotalPass (R$ 299,90). Os horários diferem entre as duas fontes; confirme a aula antes de ir.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Guia Fitness Alphaville
+revisor: null
+publicado_em: '2026-11-17'
+atualizado_em: '2026-11-17'

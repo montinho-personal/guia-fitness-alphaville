@@ -1,0 +1,71 @@
+nome: Espaço Renata Sanches
+regiao: alphaville
+bairro: Alphaville Conde II
+tipo: estudio
+resumo: Estúdio de yoga no Alpha Square Mall, na Av. Sagitário, Torre London, com aulas com reserva antecipada e acesso pelo Wellhub a partir do Gold.
+endereco: Av. Sagitário, 138, Torre London, sala 1115 (Alpha Square Mall) - Alphaville Conde II, Barueri - SP, 06473-073
+geo:
+  lat: -23.4837639
+  lng: -46.8592395
+horario:
+  seg:
+  - 07:00-20:00
+  ter:
+  - 07:00-20:00
+  qua:
+  - 07:00-20:00
+  qui:
+  - 07:00-20:00
+  sex:
+  - 07:00-20:00
+  sab:
+  - 10:00-12:00
+  dom: []
+modalidades:
+- yoga
+atividades_listadas:
+- Yoga
+comodidades:
+- Armários
+- Estacionamento
+- Vestiário
+agregadores:
+- nome: Wellhub
+  plano_minimo: Gold
+  preco_plano: R$ 319,99
+  url: https://wellhub.com/pt-br/search/partners/espaco-renata-sanches/
+mensalidade: null
+site: https://espacorenatasanches.com
+telefone: (11) 99881-0251
+proveniencia:
+- campos:
+  - endereco
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  - telefone
+  fonte: Página do estúdio no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/espaco-renata-sanches/
+  conferido_em: '2026-11-17'
+  nivel: fonte-publica
+- campos:
+  - geo
+  fonte: OpenStreetMap (Alpha Square Mall, Av. Sagitário, 138)
+  url: https://www.openstreetmap.org/
+  conferido_em: '2026-11-17'
+  nivel: fonte-publica
+divergencias: []
+pendencias:
+- Mensalidade direta
+- Estilos de yoga e grade de aulas
+analise:
+- É um estúdio de yoga numa sala comercial do Alpha Square Mall, na Av. Sagitário, no lado residencial de Alphaville. O Wellhub avisa que é preciso reservar a aula com antecedência.
+- Abre das 7h às 20h nos dias úteis e das 10h ao meio-dia no sábado. No Wellhub, entra pelo Gold (R$ 319,99 por mês); o guia não encontrou o estúdio no TotalPass.
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Guia Fitness Alphaville
+revisor: null
+publicado_em: '2026-11-17'
+atualizado_em: '2026-11-17'
