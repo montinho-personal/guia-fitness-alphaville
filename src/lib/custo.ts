@@ -249,7 +249,7 @@ export function calcular(c: Cenario): Resultado {
 }
 
 export type Criterio = 'primeiroMes' | 'mensal' | 'porIda' | 'ano';
-export const CRITERIOS: Record<Criterio, string> = { primeiroMes: 'primeiro mês', mensal: 'mês típico', porIda: 'custo por ida', ano: 'primeiro ano' };
+export const CRITERIOS: Record<Criterio, string> = { primeiroMes: 'primeiro mês', mensal: 'mês típico', porIda: 'custo por treino', ano: 'primeiro ano' };
 
 /** Índices dos cenários mais baratos no critério, comparando só os completos. Exige ao menos dois completos. */
 export function maisBarato(rs: Resultado[], criterio: Criterio): { indices: number[]; comparados: number } {

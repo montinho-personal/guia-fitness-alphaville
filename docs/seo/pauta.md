@@ -143,6 +143,17 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 | 88 | 2026-11-16 | `/guias/jiu-jitsu-barueri/` | Jiu-jitsu em Barueri: escolas, horários e Wellhub |
 | 89 | 2026-11-16 | `/guias/lutas-santana-de-parnaiba/` | Jiu-jitsu e lutas em Santana de Parnaíba: onde treinar |
 
+### Ferramentas sem pesquisa de busca (regra de 17/11: ferramentas também usam as intenções)
+
+| # | Página | Busca principal a testar |
+|---|---|---|
+| F1 | `/ferramentas/comparador/` | "comparar academias alphaville" |
+| F2 | `/ferramentas/qual-academia/` | "qual academia escolher" (São Paulo, assunto geral) |
+| F3 | `/ferramentas/checklist/` | "o que observar ao visitar academia" (São Paulo) |
+| F4 | `/mapa/` | "academias alphaville mapa" |
+| F5 | `/ferramentas/` | "ferramentas para escolher academia" (provável busca fraca; verificar antes de gastar) |
+| ~~F0~~ | ~~`/ferramentas/custo-para-treinar-em-alphaville/`~~ | ~~pesquisada em 17/11 (3 buscas)~~ |
+
 ## Capas pendentes
 
 O site não tem capa por artigo: todas as páginas usam a mesma imagem de compartilhamento (`public/og.png`). Não há padrão a seguir nem capa a fazer; esta seção fica vazia até existir um padrão.
