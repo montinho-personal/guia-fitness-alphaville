@@ -4,6 +4,7 @@
 import Comparador from './Comparador.astro';
 import Instagram from './Instagram.astro';
 import { carregarVitrine } from '../lib/vitrine';
+import { linkMontinho } from '../lib/dados';
 interface Props { intro: string; pagina: string; destaque?: string }
 const { intro, pagina, destaque } = Astro.props;
 const v = await carregarVitrine();
@@ -14,7 +15,7 @@ const outras = v && principal ? v.transformacoes.filter((t) => t !== principal) 
   <section class="vitrine bloco fino" aria-labelledby="vitrine-t" data-vitrine data-ref={pagina}>
     <span class="rotulo cor-marca">Alunos do Montinho Personal Trainer · publicidade da casa</span>
     <h2 id="vitrine-t">Resultados reais. Transformações de verdade.</h2>
-    <p class="vit-sub">Antes e depois de alunos acompanhados pelo personal Montinho, que mantém este guia. Os dados e as fotos vêm do site dele, <a href="https://www.montinhopersonal.com.br/" rel="noopener" target="_blank">montinhopersonal.com.br</a>.</p>
+    <p class="vit-sub">Antes e depois de alunos acompanhados pelo personal Montinho, que mantém este guia. Os dados e as fotos vêm do site dele, <a href={linkMontinho("/", "vitrine", pagina)} rel="noopener" target="_blank" data-evento="clique_montinho" data-ref={pagina}>montinhopersonal.com.br</a>.</p>
     <p class="vit-intro">{intro}</p>
 
     <div class="vit-destaque">

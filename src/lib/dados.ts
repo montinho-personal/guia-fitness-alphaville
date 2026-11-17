@@ -128,7 +128,9 @@ export function linkWhatsapp(ref: string): string {
   return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
 }
 export function linkMontinho(caminho: string, posicao: string, pagina: string): string {
-  const p = new URLSearchParams({ utm_source: 'ondetreinaralphaville', utm_medium: 'referral', utm_campaign: 'portal', utm_content: `${posicao}-${pagina}` });
+  // Mesmo padrão dos links curtos do site do Montinho (/l/guia-*): origem = guiafitnessalphaville.
+  // utm_campaign = posição do link (bloco, rodape, servicos, video); utm_content = página de origem.
+  const p = new URLSearchParams({ utm_source: 'guiafitnessalphaville', utm_medium: 'referral', utm_campaign: posicao, utm_content: pagina });
   return `https://www.montinhopersonal.com.br${caminho}?${p}`;
 }
 
