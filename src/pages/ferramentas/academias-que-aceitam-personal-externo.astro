@@ -46,7 +46,7 @@ const schema = [{ '@type': 'ItemList', name: titulo, numberOfItems: lista.length
     </header>
 
     <div class="resposta"><span class="rotulo">Em resumo</span>
-      <p>Das {lista.length} academias com ficha no guia em Alphaville, Tamboré, Barueri e Santana de Parnaíba, {conta('aceita') + conta('aceita-com-condicoes')} têm aceitação de personal externo confirmada em fonte pública{aceitam.length ? `: ${porRede(aceitam)}` : ''}. {conta('nao-aceita') ? `${conta('nao-aceita')} não aceitam. ` : ''}As outras {conta('a-confirmar')} não publicam a regra e aparecem como "a confirmar", com o canal oficial para perguntar. Taxa de personal muda de academia para academia e, em algumas, quem paga é o profissional.</p>
+      <p>Das {lista.length} academias com ficha no guia em Alphaville, Tamboré, Barueri e Santana de Parnaíba, {conta('aceita') + conta('aceita-com-condicoes')} têm aceitação de personal externo confirmada, por fonte pública da rede ou por quem atende na unidade{aceitam.length ? `: ${porRede(aceitam)}` : ''}. {conta('nao-aceita') ? `${conta('nao-aceita')} não aceitam. ` : ''}As outras {conta('a-confirmar')} não publicam a regra e aparecem como "a confirmar", com o canal oficial para perguntar. Taxa de personal muda de academia para academia e, em algumas, quem paga é o profissional.</p>
     </div>
 
     <section class="pe" id="pe" aria-labelledby="pe-t">
@@ -105,7 +105,7 @@ const schema = [{ '@type': 'ItemList', name: titulo, numberOfItems: lista.length
       <p><em>Exemplo fictício, só para mostrar a conta:</em> se a academia cobrasse R$ 10 por ida do aluno e você treinasse com o personal 8 vezes por mês, a taxa somaria R$ 80 por mês. Se a mesma taxa fosse paga pelo profissional, ela não entraria na sua conta, mas poderia estar embutida no preço dele. A <a href="/ferramentas/custo-para-treinar-em-alphaville/">calculadora de custo</a> separa essas situações para não contar duas vezes.</p>
 
       <h2>Como a política foi verificada</h2>
-      <p>Cada cartão usa só fonte pública da própria academia ou da rede: página oficial, regulamento ou comunicado. Uma regra da rede só é aplicada à unidade quando a fonte indica que vale para ela. Quando as fontes divergem, ou a resposta depende de perguntar na unidade, o cartão fica como "a confirmar" e mostra o canal oficial. Taxa sem valor publicado aparece como pendente, nunca como gratuita. Última verificação: {ultima ? dataCurta(ultima) : 'em andamento'}. Viu algo diferente na sua unidade? <a href="/correcoes/">Envie a correção com a fonte</a>.</p>
+      <p>Cada cartão usa fonte pública da própria academia ou da rede (página oficial, regulamento ou comunicado) ou a informação de quem atende na unidade, identificada no cartão; é o caso da Arena 18, onde o Montinho, que mantém este guia, atende alunos. Uma regra da rede só é aplicada à unidade quando a fonte indica que vale para ela. Quando as fontes divergem, ou a resposta depende de perguntar na unidade, o cartão fica como "a confirmar" e mostra o canal oficial. Taxa sem valor publicado aparece como pendente, nunca como gratuita. Última verificação: {ultima ? dataCurta(ultima) : 'em andamento'}. Viu algo diferente na sua unidade? <a href="/correcoes/">Envie a correção com a fonte</a>.</p>
 
       <h2>Antes de contratar o personal</h2>
       <ul>
