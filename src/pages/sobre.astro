@@ -1,6 +1,7 @@
 ---
 import Institucional from '../components/Institucional.astro';
 import Contato from '../components/Contato.astro';
+import { linkMontinho } from '../lib/dados';
 ---
 <Institucional titulo="Sobre o Guia Fitness Alphaville e quem o mantém" descricao="O Guia Fitness Alphaville é um guia local de academias mantido pelo Montinho Personal Trainer. Veja quem faz, como o guia se sustenta e o que ele não é." h1="Sobre o Guia Fitness Alphaville" fina="Um guia local para decidir onde e como treinar, com a origem e a data de cada informação." url="/sobre/" nome="Sobre">
   <h2>O que é</h2>
@@ -8,7 +9,7 @@ import Contato from '../components/Contato.astro';
   <p>Além das fichas, o guia tem ferramentas para comparar academias e textos curtos de decisão.</p>
 
   <h2>Quem mantém</h2>
-  <p>O guia é mantido pelo <strong>Montinho Personal Trainer</strong>, serviço de treinamento personalizado de Renato Montinho, que atende presencialmente em Alphaville, Tamboré, Barueri e Santana de Parnaíba. O site do serviço é <a href="https://www.montinhopersonal.com.br" rel="noopener">montinhopersonal.com.br</a>, e o Instagram é <a href="https://www.instagram.com/montinho_personal/" rel="noopener" target="_blank" data-evento="clique_instagram" data-ref="sobre">@montinho_personal</a>.</p>
+  <p>O guia é mantido pelo <strong>Montinho Personal Trainer</strong>, serviço de treinamento personalizado de Renato Montinho, que atende presencialmente em Alphaville, Tamboré, Barueri e Santana de Parnaíba. O site do serviço é <a href={linkMontinho("/", "texto", "sobre")} rel="noopener" data-evento="clique_montinho" data-ref="sobre">montinhopersonal.com.br</a>, e o Instagram é <a href="https://www.instagram.com/montinho_personal/" rel="noopener" target="_blank" data-evento="clique_instagram" data-ref="sobre">@montinho_personal</a>.</p>
   <p>Isso significa que o guia tem um interesse comercial: parte dos leitores que procuram academia também procura acompanhamento, e alguns contratam o Montinho. É assim que o projeto se paga.</p>
 
   <h2>Como separamos conteúdo e publicidade</h2>

@@ -142,7 +142,11 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
     gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
     (function () {
       var CHAVE = 'ota-consent', caixa = document.getElementById('consent'), GA4 = /^G-/.test(GTM_ID || '');
-      function evento(nome, dados) { if (GA4) gtag('event', nome, dados); else dataLayer.push(Object.assign({ event: nome }, dados)); }
+      function evento(nome, dados) {
+        dados = dados || {};
+        if (dados.termo && !dados.search_term) dados.search_term = dados.termo; // nome recomendado pelo GA4
+        if (GA4) gtag('event', nome, dados); else dataLayer.push(Object.assign({ event: nome }, dados));
+      }
       var escolha = null; try { escolha = localStorage.getItem(CHAVE); } catch (e) {}
       function carregar() {
         if (!GTM_ID || window.__gtm) return; window.__gtm = true;
@@ -150,7 +154,7 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
         var s = document.createElement('script'); s.async = true;
         if (GA4) {
           // ID do GA4 (G-...): tag do Google direto, sem contêiner do GTM.
-          gtag('js', new Date()); gtag('config', GTM_ID);
+          gtag('js', new Date()); gtag('config', GTM_ID, { content_group: (location.pathname.split('/')[1] || 'inicio') });
           s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GTM_ID;
         } else {
           dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
@@ -165,11 +169,50 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
         caixa.hidden = true; if (v === 'sim') carregar();
       });
       document.getElementById('abrir-consent').addEventListener('click', function () { caixa.hidden = false; caixa.querySelector('button').focus(); });
-      // Eventos: qualquer elemento com data-evento. Ficam na dataLayer; só saem do navegador se houver consentimento.
+      // Cliques: todo link é medido. data-evento dá o nome; sem ele, o nome sai do destino.
+      // Links para o site do Montinho sem UTM recebem UTM na hora do clique, para o GA4 de lá atribuir a origem.
+      var MONT = /(^|\.)montinhopersonal\.com\.br$/;
+      function nomePorDestino(u) {
+        var h = u.hostname;
+        if (u.protocol === 'tel:') return 'clique_telefone';
+        if (u.protocol === 'mailto:') return 'clique_email';
+        if (h === location.hostname) return null;
+        if (/(^|\.)wa\.me$|whatsapp\.com$/.test(h)) return 'clique_whatsapp';
+        if (MONT.test(h)) return 'clique_montinho';
+        if (/instagram\.com$/.test(h)) return 'clique_instagram';
+        if (/youtube\.com$|youtu\.be$/.test(h)) return 'clique_youtube';
+        if (/wellhub\.com$|gympass\.com$|totalpass\.com$/.test(h)) return 'clique_agregador';
+        if (/google\.[a-z.]+$/.test(h) && /maps|dir|place|search/.test(u.pathname + u.search)) return 'clique_mapa_externo';
+        return 'clique_saida';
+      }
+      function aoClicar(e) {
+        var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+        var u; try { u = new URL(a.href, location.href); } catch (x) { return; }
+        if (MONT.test(u.hostname) && !u.searchParams.has('utm_source') && !/^\/l\//.test(u.pathname)) {
+          u.searchParams.set('utm_source', 'guiafitnessalphaville'); u.searchParams.set('utm_medium', 'referral');
+          u.searchParams.set('utm_campaign', 'link'); u.searchParams.set('utm_content', location.pathname.replace(/^\/|\/$/g, '').replace(/\//g, '-') || 'inicio');
+          a.href = u.href;
+        }
+        var nome = a.getAttribute('data-evento') || nomePorDestino(u); if (!nome) return;
+        evento(nome, {
+          ref: a.getAttribute('data-ref') || '', pagina: location.pathname,
+          link_url: u.href.slice(0, 300), link_domain: u.hostname, link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 100),
+          outbound: u.hostname !== location.hostname
+        });
+      }
+      document.addEventListener('click', aoClicar, true);
+      document.addEventListener('auxclick', function (e) { if (e.button === 1) aoClicar(e); }, true);
+      // Elementos que não são link (botões com data-evento).
       document.addEventListener('click', function (e) {
-        var el = e.target.closest && e.target.closest('[data-evento]'); if (!el) return;
+        var el = e.target.closest && e.target.closest('[data-evento]:not(a)'); if (!el) return;
         evento(el.getAttribute('data-evento'), { ref: el.getAttribute('data-ref') || '', pagina: location.pathname });
       });
+      // Perguntas frequentes abertas e menu do celular.
+      document.addEventListener('toggle', function (e) {
+        var d = e.target; if (!d || d.tagName !== 'DETAILS' || !d.open) return;
+        if (d.classList.contains('menu-m')) { evento('menu_aberto', { pagina: location.pathname }); return; }
+        var t = d.querySelector('summary'); evento('pergunta_aberta', { pergunta: t ? t.textContent.trim().slice(0, 100) : '', pagina: location.pathname });
+      }, true);
       window.otaEvento = function (nome, dados) { evento(nome, Object.assign({ pagina: location.pathname }, dados || {})); };
     })();
   </script>
