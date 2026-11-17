@@ -22,12 +22,15 @@ h1,h2,h3,h4{font-family:var(--display);line-height:1.05;margin:0;letter-spacing:
 .previa{background:var(--atencao);color:#fff;font-family:var(--display);font-size:13px;font-weight:600;padding:7px 0;text-align:center}
 
 /* cabeçalho */
-header.topo{border-bottom:1px solid var(--linha);background:var(--papel);position:relative;z-index:20}
-.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap}
+header.topo{background:#fff;border-top:4px solid #FF6A00;border-bottom:1px solid var(--linha);box-shadow:0 6px 20px rgba(17,24,39,.07);position:relative;z-index:20}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:76px;padding-top:14px;padding-bottom:14px;flex-wrap:nowrap}
 .marca{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
 .marca svg{flex:none}
 .marca .logo{display:block;width:auto;height:40px}
-@media(min-width:900px){.marca .logo-cab{height:48px}}
+.topo .marca{flex:0 1 auto;min-width:0}
+.topo .marca .logo-cab{height:auto;width:100%;max-width:196px}
+.topo-acoes{flex:none}
+@media(min-width:900px){.topo .marca .logo-cab{max-width:none;width:auto;height:50px}.topo .wrap{min-height:84px}}
 .rodape .marca .logo-rod{height:72px}
 .marca .nome{font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:-.03em;line-height:.95;display:block}
 .marca .lugar{font-family:var(--display);font-weight:700;font-size:10px;letter-spacing:.3em;color:var(--alameda);display:block;margin-top:3px}
