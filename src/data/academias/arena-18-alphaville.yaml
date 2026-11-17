@@ -133,3 +133,18 @@ autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: '2026-11-14'
 atualizado_em: '2026-11-16'
+personal_externo:
+  status: aceita-com-condicoes
+  condicoes:
+  - Cadastro do personal na unidade.
+  taxa:
+    situacao: confirmada
+    valor: R$ 400
+    centavos: 40000
+    quem_paga: profissional
+    periodicidade: mes
+  abrangencia: unidade
+  fonte: Informação do Montinho Personal Trainer, que atende alunos na Arena 18 (relação comercial declarada)
+  conferido_em: 2026-11-17
+  canal: (11) 93419-1818
+  nota: O Montinho, que mantém este guia, atende alunos nesta academia. A informação vem dele e segue os mesmos critérios das demais unidades.
