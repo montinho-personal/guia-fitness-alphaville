@@ -37,6 +37,17 @@ Roda uma vez por dia (tarefa agendada às 10h23 de Brasília; o montinhopersonal
 6. **Responder em português, curto:** os links; as intenções separadas por tipo (autocompletar, "As pessoas também perguntam", "Outras pessoas pesquisaram", visão de IA com o que diz e quem cita, quem ranqueia), com ✅ no que entrou e ❌ no que ficou de fora; a separação do que ficou de fora nos três grupos; e as propostas de título e descrição que esperam aprovação.
 7. **Se o SerpApi responder sem cota, com erro de chave ou fora do ar: parar e avisar o Renato.** Não revisar às cegas e não pedir print sem ele concordar.
 
+## Ferramentas, calculadoras e simuladores (regra do Renato, 17/11/2026)
+
+Toda ferramenta (calculadora, comparador, teste, checklist, mapa, simulador) é tratada como página de busca: o objetivo é posicionar bem e trazer acesso.
+
+1. **Antes de criar ou reformular uma ferramenta, pesquisar no SerpApi** como manda o `CLAUDE.md` (celular; Barueri ou a cidade da página; São Paulo para assunto geral): a busca principal e até duas secundárias com as formas como as pessoas pedem aquela conta ou comparação.
+2. **Usar as intenções no texto em volta da ferramenta:** título, H1, resposta direta, "como usar", perguntas frequentes e links. O conteúdo fica no HTML inicial; a ferramenta em JavaScript não substitui o texto.
+3. **Ver o formato que ranqueia:** se os primeiros resultados são calculadoras, a página compete como ferramenta; se são tabelas ou listas, a página precisa também de tabela ou lista com dados das fichas.
+4. **Não disputar busca com o site do Montinho:** onde o montinhopersonal.com.br já ocupa os primeiros lugares (ex.: preço de personal em Alphaville), a ferramenta do guia linka para ele e não tenta ranquear no mesmo termo.
+5. **Guardar a evidência** em `docs/pesquisa/serp/` e responder ao Renato com as intenções por tipo (✅/❌) e a separação do que ficou de fora, como nos artigos. Título e descrição de ferramenta já publicada: só proposta.
+6. As ferramentas já publicadas sem pesquisa entram na parte 4 da pauta e são revisadas pela rotina diária.
+
 ## Cota do SerpApi
 
 Uma conta para todos os sites do Renato, em plano pago (1.000 buscas por mês). A conta do mês está no `CLAUDE.md`: a soma das rotinas passa da cota por decisão do Renato (17/11/2026, "segue tudo para todos"). Esta rotina gasta 2 a 3 créditos por revisão (busca secundária só se a principal vier fraca), cerca de 120 a 180 por mês com 2 revisões por dia. **Quando o SerpApi disser que a cota acabou, parar na hora e avisar o Renato**; ele decide se aumenta o plano ou espera a renovação.
