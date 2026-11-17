@@ -5,19 +5,23 @@ import Fontes from '../../components/Fontes.astro';
 import VideoMontinho from '../../components/VideoMontinho.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
 import CartaoAcademia from '../../components/CartaoAcademia.astro';
+import Perguntas from '../../components/Perguntas.astro';
 import { academias, MODALIDADES, agregador, urlAcademia, dataLonga, dataIso, temComodidade, horasSemana } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-13') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-17') };
 const todas = await academias();
 const sf = todas.find((a) => a.id === 'smart-fit-sodimac-alphaville')!;
 const gv = todas.find((a) => a.id === 'gavioes-24h-alphaville')!;
 const sfBarueri = todas.filter((a) => a.data.rede === 'Smart Fit' && a.data.regiao === 'barueri');
+const porId = (id: string) => todas.find((a) => a.id === id);
+const outras = ['bluefit-alphaville', 'skyfit-alphaville', 'panobianco-barueri-centro'].map(porId).filter((a): a is typeof sf => !!a);
+const wgv = agregador(gv, 'Wellhub'), tgv = agregador(gv, 'TotalPass'), tsf = agregador(sf, 'TotalPass'), wsf = agregador(sf, 'Wellhub');
 const km = (() => { const R = 6371, rad = (x: number) => (x * Math.PI) / 180, a = sf.data.geo, b = gv.data.geo; const dLa = rad(b.lat - a.lat), dLo = rad(b.lng - a.lng); const h = Math.sin(dLa / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLo / 2) ** 2; return (2 * R * Math.asin(Math.sqrt(h))).toFixed(1).replace('.', ','); })();
 const so = (x: string[], y: string[]) => x.filter((m) => !y.includes(m)).map((m) => MODALIDADES[m]);
 const ag = (a: typeof sf, n: 'Wellhub' | 'TotalPass') => agregador(a, n) ? `a partir do ${agregador(a, n)!.plano_minimo}` : 'não consta';
 const linhas: [string, string, string][] = [
   ['Onde fica', sf.data.endereco.split(' - ')[0], gv.data.endereco.split(' - ')[0]],
-  ['Horário', 'Seg a sex, 6h às 23h · sáb e feriados, 8h às 17h · dom, 8h às 14h', '24 horas, todos os dias'],
+  ['Horário', 'Seg a sex, 6h às 23h · sáb e feriados, 8h às 17h · dom, 8h às 14h', '24 horas de segunda a sábado · domingo: as fontes divergem'],
   ['Horas abertas por semana', String(horasSemana(sf.data.horario)), String(horasSemana(gv.data.horario))],
   ['Mensalidade', sf.data.mensalidade ? `${sf.data.mensalidade.valor} (site oficial)` : 'não confirmada', gv.data.mensalidade ? gv.data.mensalidade.valor : 'não publicada'],
   ['Modalidades', sf.data.modalidades.map((m) => MODALIDADES[m]).join(', '), gv.data.modalidades.map((m) => MODALIDADES[m]).join(', ')],
@@ -41,7 +45,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
 
     <div class="resposta">
       <span class="rotulo">Resposta direta</span>
-      <p>Se você precisa treinar de madrugada ou quer aulas variadas, como lutas, dança, bike e pilates, a Gaviões 24h atende melhor. Se o preço conhecido e o acesso a outras unidades da rede pesam mais, a Smart Fit é a escolha mais previsível: publica a mensalidade, a partir de R$ 149,90 por mês nesta unidade. A Gaviões não publica preço.</p>
+      <p>Depende da sua rotina. Se você precisa treinar de madrugada ou quer aulas variadas, como lutas, dança, bike e pilates, a Gaviões 24h atende melhor. Se o preço conhecido, o padrão igual em todas as unidades e o acesso a outras academias da rede pesam mais, a Smart Fit é a escolha mais previsível: publica a mensalidade, a partir de {sf.data.mensalidade?.valor.replace('a partir de ', '')} por mês nesta unidade. A Gaviões não publica preço.</p>
     </div>
 
     <div class="rolagem" tabindex="0" role="region" aria-label="Smart Fit e Gaviões lado a lado" style="margin:24px 0">
@@ -54,7 +58,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
 
     <div class="prosa">
       <h2>Horário: a maior diferença</h2>
-      <p>A Gaviões tem horário publicado de 24 horas, todos os dias, o que dá {horasSemana(gv.data.horario)} horas abertas por semana. A Smart Fit da Sodimac abre {horasSemana(sf.data.horario)} horas e fecha às 23h nos dias úteis. Para quem trabalha em turnos, chega tarde de viagem ou só consegue treinar antes das 6h, a Gaviões é a única das duas que resolve.</p>
+      <p>A Gaviões aparece aberta 24 horas de segunda a sábado nas duas fontes do guia. No domingo, elas divergem: o Wellhub mostra 24 horas e o TotalPass diz que a unidade não abre; confirme antes de contar com o fim de semana. A Smart Fit da Sodimac abre {horasSemana(sf.data.horario)} horas e fecha às 23h nos dias úteis. Para quem trabalha em turnos, chega tarde de viagem ou só consegue treinar antes das 6h, a Gaviões é a única das duas que resolve.</p>
       <p>Um cuidado: o guia ainda não confirmou como a Gaviões funciona de madrugada. Em academias 24 horas é comum a equipe ser reduzida nesse período.</p>
 
       <h2>Preço: um lado conhecido, outro não</h2>
@@ -63,18 +67,25 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <p>Se você usa agregador, a conta é outra: a Gaviões entra no Wellhub a partir do plano {agregador(gv, 'Wellhub')?.plano_minimo} e no TotalPass a partir do {agregador(gv, 'TotalPass')?.plano_minimo}; a Smart Fit, no TotalPass a partir do {agregador(sf, 'TotalPass')?.plano_minimo}. Veja o que cada plano custa em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
 
       <h2>O que dá para fazer em cada uma</h2>
-      <p>A Gaviões tem a grade mais ampla: além da musculação, lista {so(gv.data.modalidades, sf.data.modalidades).join(', ').toLowerCase().replace(/, ([^,]*)$/, ' e $1')}, e o site da rede menciona um rooftop com máquinas. A Smart Fit é mais enxuta, centrada em musculação e aulas curtas de alta intensidade.</p>
+      <p>A Gaviões tem a grade mais ampla: além da musculação, lista {so(gv.data.modalidades, sf.data.modalidades).join(', ').toLowerCase().replace(/, ([^,]*)$/, ' e $1')}, e o site da rede menciona um rooftop com máquinas. A Smart Fit é mais enxuta e padronizada, centrada em musculação e aulas curtas de alta intensidade: a unidade lista {sf.data.atividades_listadas.join(', ').toLowerCase().replace(/, ([^,]*)$/, ' e $1')}.</p>
+      <p>Na estrutura, a ficha da Smart Fit informa {sf.data.comodidades.join(', ').toLowerCase().replace(/, ([^,]*)$/, ' e $1')}. A lista de aparelhos de cada unidade não é publicada pelas duas redes; na visita, confira os equipamentos que você mais usa.</p>
 
       <h2>Chegar e estacionar</h2>
       <p>A Smart Fit fica no 2º pavimento do estacionamento da Sodimac, e o site da unidade informa estacionamento. A Gaviões fica na Av. Juruá, no mesmo número do Fast Treino e perto da SkyFit; a página do TotalPass lista estacionamento grátis e manobrista. Na Smart Fit, a fonte não diz se o estacionamento é gratuito para alunos.</p>
+
+      <h2>Smart Fit em Barueri</h2>
+      <p>Quem mora ou trabalha do lado de Barueri tem outras {sfBarueri.length} unidades da Smart Fit com ficha no guia, como as do Centro e do Parque Shopping Barueri. Endereços, horários e planos estão em <a href="/academias/smart-fit-barueri/">Smart Fit em Barueri</a>. No Plano Black, a mesma mensalidade vale para todas.</p>
+
+      <h2>E as outras redes da região?</h2>
+      <p>Smart Fit e Gaviões não são as únicas redes por aqui. Também têm ficha no guia {outras.map((a, i) => <>{i > 0 && (i === outras.length - 1 ? ' e ' : ', ')}<a href={urlAcademia(a)}>{a.data.nome}</a></>)}. Para ver todas lado a lado, use o <a href="/ferramentas/comparador/">comparador</a> ou a página de <a href="/academias/precos/">preços</a>.</p>
 
       <h2>Resumo por perfil</h2>
       <ul>
         <li><strong>Treina de madrugada ou em horários irregulares:</strong> Gaviões.</li>
         <li><strong>Quer saber exatamente quanto vai pagar antes de ir:</strong> Smart Fit.</li>
-        <li><strong>Quer treinar também em Barueri ou em outras cidades:</strong> Smart Fit, no Plano Black. A região tem {sfBarueri.length + 1} unidades da rede.</li>
+        <li><strong>Quer treinar também em Barueri ou em outras cidades:</strong> Smart Fit, no Plano Black. A região tem {todas.filter((a) => a.data.rede === 'Smart Fit').length} unidades da rede com ficha no guia, contando a do Carrefour Hiper Tamboré.</li>
         <li><strong>Quer lutas, dança, bike ou pilates no mesmo lugar:</strong> Gaviões.</li>
-        <li><strong>Tem Wellhub:</strong> Gaviões. <strong>Tem TotalPass:</strong> as duas aparecem; compare o plano mínimo de cada uma.</li>
+        <li><strong>Tem Wellhub (antigo Gympass):</strong> Gaviões{wsf ? ' ou Smart Fit' : ''}. <strong>Tem TotalPass:</strong> as duas aparecem; compare o plano mínimo de cada uma.</li>
       </ul>
       <p>Antes de decidir, visite as duas no horário em que você vai treinar. O <a href="/ferramentas/checklist/">checklist de visita</a> ajuda, e o <a href={`/ferramentas/comparador/?a=${sf.id}&b=${gv.id}`}>comparador</a> mostra os dados completos lado a lado.</p>
     </div>
@@ -84,6 +95,15 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <div class="cartoes">{[sf, gv].map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
 
+
+    <Perguntas titulo="Perguntas sobre Smart Fit e Gaviões" itens={[
+      { p: 'Qual academia é melhor, Smart Fit ou Gaviões?', r: `Depende da rotina. A Gaviões 24h abre 24 horas de segunda a sábado e tem lutas, dança, bike, pilates e yoga na grade. A Smart Fit da Sodimac fecha às 23h, é mais enxuta e publica o preço: ${sf.data.mensalidade?.valor ?? 'consulte'} por mês.` },
+      { p: 'Quais planos a Gaviões aceita?', r: `Na unidade de Alphaville, a Gaviões aceita Wellhub a partir do ${wgv?.plano_minimo} (${wgv?.preco_plano} por mês) e TotalPass a partir do ${tgv?.plano_minimo} (${tgv?.preco_plano} por mês). A mensalidade direta não é publicada; peça na recepção.` },
+      { p: 'A Smart Fit aceita Gympass (Wellhub)?', r: wsf ? `Sim, a partir do plano ${wsf.plano_minimo}.` : `As fontes do guia não mostram a Smart Fit da Sodimac no Wellhub, o antigo Gympass. Ela aparece no TotalPass a partir do ${tsf?.plano_minimo} (${tsf?.preco_plano} por mês).` },
+      { p: 'Quais são os aparelhos da Smart Fit?', r: `A rede não publica a lista de aparelhos por unidade. Na Sodimac Alphaville, a ficha lista musculação e aulas como Smart Box, Smart Shape e HIIT, além de ${sf.data.comodidades.slice(0, 3).join(', ').toLowerCase()}. Confira os equipamentos na visita.` },
+      { p: 'Qual academia é concorrente da Smart Fit em Alphaville?', r: `Entre as redes com ficha no guia, as que disputam o mesmo público em Alphaville e Barueri são Bluefit, SkyFit e Panobianco, além da Gaviões. Compare preço, horário e plano mínimo nos agregadores antes de decidir.` },
+      { p: 'A Gaviões abre domingo?', r: 'As fontes divergem. O Wellhub mostra a unidade de Alphaville aberta 24 horas no domingo; o TotalPass informa que ela não abre. Confirme com a academia antes de ir.' },
+    ]} />
     <VideoMontinho id="yqPAYRVTe0E" titulo="Não existe o treino perfeito" pagina="smart-fit-ou-gavioes" />
     <LeiaTambem url="/guias/smart-fit-ou-gavioes/" />
     <div style="margin-top:28px"><Fontes fontes={[
