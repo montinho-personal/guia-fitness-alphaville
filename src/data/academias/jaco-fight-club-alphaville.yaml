@@ -48,10 +48,20 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Artes marciais mistas (MMA)", "Boxe", "Funcional", "Jiu-jitsu", "Jiu-jitsu infantil", "Massagem", "Muay Thai", "Muay Thai infantil", "Personal trainer - Luta / Artes marciais", "Personal trainer - Treino funcional"]
+  musculacao: false
+  condicoes: ["Reserva ou agendamento necessário, segundo o Wellhub."]
+  conferido_em: '2026-11-17'
   plano_minimo: Platinum
   preco_plano: R$ 599,99
   url: https://wellhub.com/pt-br/search/partners/jaco-fight-club-alphaville-alphaville/
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 4", "TP 5", "TP 5+", "TP 6", "TP 7"]
+  atividades: ["HIIT", "Muay Thai", "MMA", "Cross Fight", "Boxe", "Jiu Jitsu", "Funcional", "Treinamento Funcional", "Recovery", "Personal Training", "Personal Fight"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: TP 4
   preco_plano: R$ 299,90
   url: https://totalpass.com/br/academias/jaco-fight-club-247c5b0a-7e8d-4444-83b7-6156d40e2081/

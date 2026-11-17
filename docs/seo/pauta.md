@@ -153,6 +153,7 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 | F4 | `/mapa/` | "academias alphaville mapa" |
 | F5 | `/ferramentas/` | "ferramentas para escolher academia" (provável busca fraca; verificar antes de gastar) |
 | ~~F6~~ | ~~`/ferramentas/academias-que-aceitam-personal-externo/`~~ | ~~criada com pesquisa em 17/11 (2 buscas)~~ |
+| ~~F7~~ | ~~`/academias/wellhub-totalpass/` (buscador)~~ | ~~refeita com pesquisa em 17/11 (2 buscas)~~ |
 | ~~F0~~ | ~~`/ferramentas/custo-para-treinar-em-alphaville/`~~ | ~~pesquisada em 17/11 (3 buscas)~~ |
 
 ## Capas pendentes

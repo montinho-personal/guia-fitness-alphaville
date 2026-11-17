@@ -35,6 +35,11 @@ comodidades:
 - Professores na sala
 agregadores:
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 5", "TP 5+", "TP 6", "TP 7"]
+  atividades: ["Musculação"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: TP 5
   preco_plano: R$ 399,90
   url: https://totalpass.com/br/academias/nitrogym-tambore/

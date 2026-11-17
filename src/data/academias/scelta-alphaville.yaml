@@ -56,10 +56,19 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Abdominal", "Balé", "Dança", "Fisiculturismo", "Glúteos", "HIIT", "Mat Pilates", "Musculação"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: Gold
   preco_plano: R$ 319,99
   url: https://wellhub.com/pt-br/search/partners/academia-scelta/
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 4", "TP 5", "TP 5+", "TP 6", "TP 7"]
+  atividades: ["Cardiovascular", "Bola Pilates", "Ballet Fitness", "Dance Mix", "Musculação", "indoor bike", "Alongamento", "Abdominais", "Body Pump", "Circuito Funcional", "Power Jump", "Boxe Chinês", "Jiu Jitsu", "Muay Thai"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: TP 4
   preco_plano: R$ 299,90
   url: https://totalpass.com/br/academias/scelta-academia/

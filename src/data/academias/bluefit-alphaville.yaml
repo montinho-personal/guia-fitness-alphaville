@@ -68,6 +68,10 @@ comodidades:
 - Vestiário
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Body Jam", "Body Pump", "Cardio", "Condicionamento corporal", "Corrida", "Corrida na esteira", "Fisiculturismo", "Fortalecimento", "Indoor bike", "Levantamento de peso", "Mobilidade", "Musculação", "Perda de peso", "Pesos livres", "Power Bike", "Queima de gordura", "Respiração consciente", "RPM", "Tonificação", "Treinamento cardio", "Treino localizado", "Zumba"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: Silver+
   preco_plano: R$ 199,99
   url: https://wellhub.com/pt-br/search/partners/bluefit-alphaville-alphaville-industrial/

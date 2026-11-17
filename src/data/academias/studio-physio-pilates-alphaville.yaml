@@ -44,6 +44,10 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Aeropilates", "Pilates", "Pilates com bola", "Pilates para bebês", "Pilates reformer", "Power Pilates"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: Silver+
   preco_plano: R$ 199,99
   url: https://wellhub.com/pt-br/search/partners/studio-physio-pilates/

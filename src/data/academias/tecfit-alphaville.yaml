@@ -42,6 +42,10 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Eletroestimulação", "Funcional", "Musculação", "Treino funcional"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: Gold+
   preco_plano: R$ 439,99
   url: https://wellhub.com/pt-br/search/partners/tecfit-alphaville-alphaville-industrial-barueri/

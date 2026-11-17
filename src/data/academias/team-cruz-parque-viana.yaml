@@ -40,10 +40,20 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Boxe", "Ju-jitsu", "Muay Thai"]
+  musculacao: false
+  condicoes: ["Reserva ou agendamento necessário, segundo o Wellhub."]
+  conferido_em: '2026-11-17'
   plano_minimo: Basic+
   preco_plano: R$ 99,99
   url: https://wellhub.com/pt-br/search/partners/cqYYS2uemA3UjIRp2OvNE8Ai6Pxg2eAdzRofd41xNHZ3TueVK4HqhuK2j3uy4mSA
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 1+", "TP 3", "TP 4", "TP 5", "TP 5+", "TP 6", "TP 7", "TP 2", "TP 2+"]
+  atividades: ["Jiu-Jitsu", "Capoeira", "Boxe", "Muay Thai"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: TP 1+
   preco_plano: R$ 89,90
   url: https://totalpass.com/br/academias/team-cruz-parque-viana/

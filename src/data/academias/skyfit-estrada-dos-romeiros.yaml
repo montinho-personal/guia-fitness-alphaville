@@ -37,10 +37,19 @@ comodidades:
 - Portas adaptadas para cadeiras de rodas
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Cardio"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: Basic+
   preco_plano: R$ 99,99
   url: https://wellhub.com/pt-br/search/partners/skyfit-academia-estrada-dos-romeiros-jardim-regina-alice/
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 1+", "TP 3", "TP 4", "TP 5", "TP 5+", "TP 6", "TP 7", "TP 2", "TP 2+"]
+  atividades: ["Musculação"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: TP 1+
   preco_plano: R$ 89,90
   url: https://totalpass.com/br/academias/skyfit-academia-estrada-dos-romeiros/

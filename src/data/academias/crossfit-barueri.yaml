@@ -36,10 +36,19 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["CrossFit", "HIIT"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: Gold
   preco_plano: R$ 319,99
   url: https://wellhub.com/pt-br/search/partners/crossfit-barueri/
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 4", "TP 5", "TP 5+", "TP 6", "TP 7"]
+  atividades: ["Crossfit"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: TP 4
   preco_plano: R$ 299,90
   url: https://totalpass.com/br/academias/crossfit-barueri/

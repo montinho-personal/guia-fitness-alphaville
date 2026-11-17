@@ -28,7 +28,7 @@ export const GET: APIRoute = async ({ site }) => {
 - [Beach tennis e futevôlei em Alphaville](${u('/guias/beach-tennis-futevolei-alphaville/')})
 - [Academias 24 horas e de horário estendido](${u('/academias/24-horas/')})
 - [Academias abertas no domingo](${u('/academias/domingo/')})
-- [Academias com Wellhub e TotalPass](${u('/academias/wellhub-totalpass/')})
+- [Buscador de academias com Wellhub (Gympass) e TotalPass](${u('/academias/wellhub-totalpass/')})
 ${Object.entries(REGIOES).map(([id, r]) => `- [Onde treinar em ${r.titulo}](${u(`/regioes/${id}/`)})`).join('\n')}
 - [Academias no Tamboré](${u('/regioes/tambore/')})
 

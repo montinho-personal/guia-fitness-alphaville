@@ -36,11 +36,20 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["CrossFit", "CrossFit infantil"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: Silver
   preco_plano: R$ 149,99
   url: https://wellhub.com/pt-br/search/partners/unika-cf-barueri/
   nota: Na página do Wellhub, as aulas de CrossFit aparecem a partir do plano Gold.
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 3", "TP 4", "TP 5", "TP 5+", "TP 6", "TP 7"]
+  atividades: ["CrossFit"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: TP 3
   preco_plano: R$ 199,90
   url: https://totalpass.com/br/academias/unika-cf/

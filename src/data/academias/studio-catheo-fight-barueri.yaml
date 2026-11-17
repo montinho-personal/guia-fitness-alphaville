@@ -35,6 +35,11 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 3", "TP 4", "TP 5", "TP 5+", "TP 6", "TP 7", "TP 2+"]
+  atividades: ["Judo", "Muay Thai", "MMA", "Boxe", "Jiu Jitsu"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: TP 2+
   preco_plano: R$ 149,90
   url: https://totalpass.com/br/academias/studio-catheo-fight/

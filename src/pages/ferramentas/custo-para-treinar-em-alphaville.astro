@@ -21,6 +21,7 @@ const lista = todas.map((a) => {
     conferido: f ? dataCurta(f.conferido_em) : dataCurta(conferidoEm(a)),
     abrangencia: m?.abrangencia ?? null,
     estacionamento: a.data.comodidades.filter((c) => /estacionamento|valet|manobrista/i.test(c)),
+    ags: a.data.agregadores.map((g) => ({ nome: g.nome, plano_minimo: g.plano_minimo, preco_plano: g.preco_plano })),
     pe: (() => { const p = politicaPE(a.data.personal_externo); return { status: STATUS_PE[p.status].rotulo, ...prefillTaxa(p), conferido: p.conferido ? dataCurta(p.conferido) : null }; })(),
   };
 });
@@ -181,9 +182,9 @@ const perguntas = [
     import { calcular, cenarioVazio, maisBarato, reais, CRITERIOS, type Cenario, type Criterio, type Resultado, type Situacao } from '../../lib/custo';
 
     type Plano = { nome: string; centavos: number; inicial: number | null; condicoes: string };
-    type Acad = { id: string; nome: string; bairro: string; regiaoNome: string; url: string; planos: Plano[]; fonte: string | null; fonteUrl: string | null; conferido: string; abrangencia: string | null; estacionamento: string[]; pe: { status: string; taxaExterno: 'nao' | 'valor' | 'pendente'; taxaExternoModo?: 'mes' | 'aula' | 'ida'; taxaExternoValor?: string; nota: string; conferido: string | null } };
+    type Acad = { id: string; nome: string; bairro: string; regiaoNome: string; url: string; planos: Plano[]; fonte: string | null; fonteUrl: string | null; conferido: string; abrangencia: string | null; estacionamento: string[]; ags: { nome: string; plano_minimo: string; preco_plano: string }[]; pe: { status: string; taxaExterno: 'nao' | 'valor' | 'pendente'; taxaExternoModo?: 'mes' | 'aula' | 'ida'; taxaExternoValor?: string; nota: string; conferido: string | null } };
     type Tipo = '' | 'guia' | 'manual' | 'condominio';
-    type Item = { tipo: Tipo; acad: string; plano: string; busca: string; c: Cenario };
+    type Item = { tipo: Tipo; acad: string; plano: string; busca: string; c: Cenario; beneficio?: string };
 
     const ACADS: Acad[] = JSON.parse(document.getElementById('calc-dados')!.textContent!);
     const porId = (id: string) => ACADS.find((a) => a.id === id);
@@ -250,7 +251,10 @@ const perguntas = [
         const a = porId(it.acad)!;
         const p = a.planos[Number(it.plano)];
         let h = `${tipos}<div class="escolhida"><div><strong>${esc(a.nome)}</strong><span>${esc(a.bairro)} · ${esc(a.regiaoNome)}</span></div><button type="button" class="btn-txt" data-acao="trocar">Trocar</button></div>`;
-        if (a.planos.length) {
+        const ag = it.beneficio ? a.ags.find((g) => g.nome.toLowerCase() === it.beneficio) : undefined;
+        if (it.beneficio) {
+          h += `<p class="fonte pe-calc"><strong>Acesso pelo ${esc(ag?.nome ?? it.beneficio)}.</strong> Informe abaixo quanto você paga pelo benefício; a mensalidade direta da academia não entra, para não contar o acesso duas vezes.${ag ? ` Referência: a unidade entra a partir do ${esc(ag.plano_minimo)}, de ${esc(ag.preco_plano)} por mês na tabela do benefício; o valor da sua empresa pode ser outro.` : ''} <button type="button" class="btn-txt" data-acao="sem-beneficio">Usar mensalidade direta</button></p>`;
+        } else if (a.planos.length) {
           h += `<fieldset class="planos"><legend>Plano publicado</legend>${a.planos.map((pl, j) => `<button type="button" class="plano" data-plano="${j}" aria-pressed="${String(j) === it.plano}"><span>${esc(pl.nome)}</span><strong>${reais(pl.centavos)}<small>/mês</small></strong></button>`).join('')}</fieldset>
             <p class="fonte">${p ? `${esc(p.condicoes)} ` : ''}Fonte: <a href="${a.fonteUrl}" target="_blank" rel="nofollow noopener">${esc(a.fonte!)}</a>, ${a.conferido}${a.abrangencia === 'rede' ? ', preço da rede' : ''}. Recebeu outro valor? Edite abaixo.</p>`;
         } else h += `<p class="fonte">Esta academia não publica mensalidade. Informe abaixo o valor que ela passar para você.</p>`;
@@ -301,7 +305,7 @@ const perguntas = [
         ${it.tipo && !(it.tipo === 'guia' && !it.acad) ? `
         <div class="etapa"><p class="rot-q">Como você paga o acesso?</p>
           ${it.tipo === 'condominio' ? '' : `${seg('acessoModo', [['mensal', 'Mensalidade'], ['avista', 'À vista'], ['incluido', 'Já incluído']], c.acessoModo, 'Forma de pagamento', i)}`}
-          ${c.acessoModo === 'incluido' ? '' : `<div class="linha2">${dinheiro('acessoValor', c.acessoValor, c.acessoModo === 'avista' ? 'Valor total pago' : 'Mensalidade', i)}${c.acessoModo === 'avista' ? numero('avistaMeses', c.avistaMeses, 'Meses do plano', i) : ''}</div>`}
+          ${c.acessoModo === 'incluido' ? '' : `<div class="linha2">${dinheiro('acessoValor', c.acessoValor, it.beneficio ? 'Quanto você paga pelo benefício, por mês' : c.acessoModo === 'avista' ? 'Valor total pago' : 'Mensalidade', i)}${c.acessoModo === 'avista' ? numero('avistaMeses', c.avistaMeses, 'Meses do plano', i) : ''}</div>`}
         </div>
         <div class="etapa"><p class="rot-q">Quantas vezes você vai treinar de verdade?</p>
           <div class="linha2">${numero('freqValor', c.freqValor, 'Treinos', i)}${seg('freqPeriodo', [['semana', 'por semana'], ['mes', 'por mês']], c.freqPeriodo, 'Período', i)}</div>
@@ -394,7 +398,8 @@ const perguntas = [
       if (b.dataset.remover !== undefined) { itens.splice(i, 1); desenhar(undefined, 'add'); return; }
       if (b.dataset.tipo) { escolherTipo(it, b.dataset.tipo as Tipo); desenhar(i, b.dataset.tipo === 'guia' ? `c${i}-busca` : b.dataset.tipo === 'manual' ? `c${i}-nome` : `c${i}-tipo-${b.dataset.tipo}`); return; }
       if (b.dataset.acad) { escolherAcad(it, b.dataset.acad); desenhar(i, `c${i}-freqValor`); return; }
-      if (b.dataset.acao === 'trocar') { it.acad = ''; it.plano = ''; desenhar(i, `c${i}-busca`); return; }
+      if (b.dataset.acao === 'sem-beneficio') { it.beneficio = undefined; escolherAcad(it, it.acad); desenhar(i, `c${i}-acessoValor`); return; }
+      if (b.dataset.acao === 'trocar') { it.acad = ''; it.plano = ''; it.beneficio = undefined; desenhar(i, `c${i}-busca`); return; }
       if (b.dataset.plano !== undefined) { escolherPlano(it, b.dataset.plano); desenhar(i, `c${i}-acessoValor`); return; }
       if (b.dataset.extra) { const k = b.dataset.extra as 'inicial' | 'transporte' | 'personal' | 'anual'; it.c[k] = it.c[k] === 'nao' ? 'valor' : 'nao'; if (k === 'personal' && it.c.personal !== 'nao') aplicarPE(it); desenhar(i, it.c[k] === 'nao' ? undefined : `c${i}-${k}Valor`); return; }
       if (b.dataset.extraSai) { (it.c as any)[b.dataset.extraSai] = 'nao'; desenhar(i); return; }
@@ -424,10 +429,11 @@ const perguntas = [
       ];
     } else {
       const ids = ['a', 'b', 'c'].map((k) => p.get(k)).filter((v, i, arr): v is string => !!v && !!porId(v) && arr.indexOf(v) === i).slice(0, 3);
-      itens = ids.length ? ids.map((id) => { const it = novo(); escolherAcad(it, id); if (p.get('personal') === '1') { it.c.personal = 'valor'; aplicarPE(it); } return it; }) : [novo()];
+      const ben = p.get('beneficio'); const benOk = ben === 'wellhub' || ben === 'totalpass' ? ben : '';
+      itens = ids.length ? ids.map((id) => { const it = novo(); escolherAcad(it, id); if (benOk && porId(id)!.ags.some((g) => g.nome.toLowerCase() === benOk)) { it.beneficio = benOk; it.plano = ''; it.c.acessoValor = ''; it.c.inicial = 'nao'; it.c.inicialValor = ''; } if (p.get('personal') === '1') { it.c.personal = 'valor'; aplicarPE(it); } return it; }) : [novo()];
     }
     desenhar();
-    ev('calculadora_aberta', { origem: de === 'comparador' || de === 'ficha' || de === 'personal-externo' ? de : p.get('exemplo') ? 'exemplo' : 'direta' });
+    ev('calculadora_aberta', { origem: de === 'comparador' || de === 'ficha' || de === 'personal-externo' || de === 'beneficios' ? de : p.get('exemplo') ? 'exemplo' : 'direta' });
     raiz.dataset.pronto = '1';
   </script>
 </Base>

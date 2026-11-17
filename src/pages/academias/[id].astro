@@ -130,8 +130,8 @@ const eSite = d.site && !/instagram\.com/.test(d.site);
         {d.agregadores.length > 0 && (
           <div class="caixa">
             <h2>Agregadores</h2>
-            {d.agregadores.map((g) => <p><strong>{g.nome}:</strong> a partir do plano {g.plano_minimo} ({g.preco_plano}/mês, preço do agregador). {g.nota}</p>)}
-            <p style="font-size:15px"><a href="/academias/wellhub-totalpass/">Comparar planos</a></p>
+            {d.agregadores.map((g) => <p><strong>{g.nome}:</strong> a partir do plano {g.plano_minimo} ({g.preco_plano}/mês, preço de referência do benefício). {g.musculacao === false && d.modalidades.includes('musculacao') ? 'A página do benefício não lista musculação nesta unidade. ' : ''}{g.nota} {(g.condicoes ?? []).join(' ')} <a href={`/academias/wellhub-totalpass/?b=${g.nome.toLowerCase()}&plano=${encodeURIComponent(g.plano_minimo)}`} data-evento="clique_buscador_beneficio" data-ref={`ficha-${a.id}`} style="font-size:15px">Outras unidades no {g.plano_minimo}</a></p>)}
+            <p style="font-size:15px"><a href="/academias/wellhub-totalpass/" data-evento="clique_buscador_beneficio" data-ref={`ficha-${a.id}`}>Buscador de Wellhub e TotalPass</a></p>
           </div>
         )}
         <div class="caixa">

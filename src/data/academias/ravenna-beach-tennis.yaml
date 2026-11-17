@@ -42,10 +42,20 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Beach tennis", "Futevôlei"]
+  musculacao: false
+  condicoes: ["Reserva ou agendamento necessário, segundo o Wellhub."]
+  conferido_em: '2026-11-17'
   plano_minimo: Gold
   preco_plano: R$ 319,99
   url: https://wellhub.com/pt-br/search/partners/ravenna-beach-tennis-alpha/
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 4", "TP 5", "TP 5+", "TP 6", "TP 7"]
+  atividades: ["Funcional", "Beach Tennis", "Futevôlei", "Volei de Praia"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: TP 4
   preco_plano: R$ 299,90
   url: https://totalpass.com/br/academias/ravenna-beach-tennis/

@@ -72,6 +72,10 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Abdômen e braço", "Abdômen e glúteos", "Abdominal", "Alongamento", "Aula de corrida", "Balé", "Ballet fitness", "Body tech", "Boxe", "Circuitos funcionais", "Duatlo", "Fisiculturismo", "Fitness dance", "HIIT", "Indoor bike", "Jump", "Mat Pilates", "Mexe Fitness", "Muay Thai", "Musculação", "Pernas", "Piloxing", "Run HIIT", "Step aerobics", "Street dance", "Strong by Zumba", "Treinamento cardio", "Treino", "Treino combinado", "Treino de core", "Treino localizado", "Zumba"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: Silver
   preco_plano: R$ 149,99
   url: https://wellhub.com/pt-br/search/partners/bodytech-iguatemi-alphaville/
