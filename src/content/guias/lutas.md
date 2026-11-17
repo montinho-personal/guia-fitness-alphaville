@@ -2,7 +2,7 @@
 titulo: "Lutas em Alphaville e Barueri: jiu-jitsu, muay thai e boxe"
 descricao: "Onde treinar jiu-jitsu, muay thai, boxe, judô e krav magá em Alphaville, Tamboré, Barueri e Santana de Parnaíba, com horário e plano de Wellhub e TotalPass."
 h1: "Lutas em Alphaville e região: onde treinar"
-resposta: "O guia tem 23 lugares com aula de luta na região. O jiu-jitsu aparece em escolas próprias, como a Templo e o Jacó Fight Club no Tamboré e a Team Cruz no Parque Viana, e em academias completas, como VoiFit, Bluefit Barueri e Mattos Fitness. Muay thai e boxe estão em quase todas. Para judô, só o Studio Cathéo Fight lista; krav magá e hapkido, só o CT Guerreiros."
+resposta: "O guia tem 24 lugares com aula de luta na região. O jiu-jitsu aparece em escolas próprias, como a Templo e o Jacó Fight Club no Tamboré, a G13 no Tamboré III e a Team Cruz no Parque Viana, e em academias completas, como VoiFit, Bluefit Barueri e Mattos Fitness. Muay thai e boxe estão em quase todas. Para judô, só o Studio Cathéo Fight lista; krav magá e hapkido, só o CT Guerreiros."
 cluster: B
 secao: modalidades
 palavra_chave: lutas alphaville
@@ -21,7 +21,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-16
-atualizado_em: 2026-11-16
+atualizado_em: 2026-11-17
 perguntas:
   - p: "Onde treinar jiu-jitsu em Alphaville?"
     r: "No lado de Alphaville e do Tamboré, as opções com ficha no guia são a Templo Jiu Jitsu Culture, no Mackenzie Mall da Av. Tucunaré; o Jacó Fight Club, na Av. Tucunaré, 955; a VoiFit, no Empresarial 18 do Forte; a 24h Premium, no Alphaville Industrial; e a Academia Scelta, na Av. Andrômeda, cujo jiu-jitsu aparece no TotalPass."
@@ -49,7 +49,7 @@ Nas escolas, o horário publicado quase sempre é de turma, não de porta aberta
 
 ## Jiu-jitsu
 
-No lado de Alphaville, as escolas de luta são a [Templo Jiu Jitsu Culture](/academias/templo-jiu-jitsu-tambore/) e o [Jacó Fight Club](/academias/jaco-fight-club-alphaville/), ambos na Av. Tucunaré, no Tamboré. Entre as academias, [VoiFit](/academias/voifit-alphaville/) e [24h Premium](/academias/24h-premium-alphaville/) listam a modalidade. Em Barueri há mais opções de bairro: [Team Cruz](/academias/team-cruz-parque-viana/), [CT Guerreiros](/academias/ct-guerreiros-jardim-belval/), [CT Fuinha](/academias/ct-fuinha-parque-dos-camargos/) e [Studio Cathéo Fight](/academias/studio-catheo-fight-barueri/). Os detalhes estão em [jiu-jitsu em Alphaville](/guias/jiu-jitsu-alphaville/) e [jiu-jitsu em Barueri](/guias/jiu-jitsu-barueri/).
+No lado de Alphaville, as escolas de luta são a [Templo Jiu Jitsu Culture](/academias/templo-jiu-jitsu-tambore/) e o [Jacó Fight Club](/academias/jaco-fight-club-alphaville/), ambos na Av. Tucunaré, no Tamboré, e a [G13 BJJ Alphaville](/academias/g13-alphaville-tambore/), no Tamboré III, do lado de Santana de Parnaíba. Entre as academias, [VoiFit](/academias/voifit-alphaville/) e [24h Premium](/academias/24h-premium-alphaville/) listam a modalidade. Em Barueri há mais opções de bairro: [Team Cruz](/academias/team-cruz-parque-viana/), [CT Guerreiros](/academias/ct-guerreiros-jardim-belval/), [CT Fuinha](/academias/ct-fuinha-parque-dos-camargos/) e [Studio Cathéo Fight](/academias/studio-catheo-fight-barueri/). Os detalhes estão em [jiu-jitsu em Alphaville](/guias/jiu-jitsu-alphaville/) e [jiu-jitsu em Barueri](/guias/jiu-jitsu-barueri/).
 
 ## Muay thai e boxe
 
@@ -61,7 +61,7 @@ O [Studio Cathéo Fight](/academias/studio-catheo-fight-barueri/) é o único da
 
 ## O que o guia ainda não conferiu
 
-Equipes conhecidas de jiu-jitsu aparecem nas buscas com endereço em Alphaville, como Gracie Barra, Alliance e G13. O guia não conseguiu conferir endereço, horário e grade delas em fonte própria ou em agregador, e por isso elas ainda não têm ficha. Se você treina numa delas, [mande os dados](/correcoes/) com a fonte.
+Das equipes conhecidas de jiu-jitsu, a [G13 BJJ Alphaville](/academias/g13-alphaville-tambore/), no Tamboré III, já tem ficha conferida no site oficial. Gracie Barra e Alliance também aparecem nas buscas com endereço em Alphaville, mas o guia não conseguiu conferir endereço, horário e grade delas em fonte própria ou em agregador, e por isso ainda não têm ficha. Se você treina numa delas, [mande os dados](/correcoes/) com a fonte.
 
 ## Antes de se matricular
 

@@ -12,7 +12,7 @@ cta_titulo: "Condicionamento para quem luta em Santana de Parnaíba"
 cta_texto: "O Montinho não dá aula de luta. Ele é personal e atende em Santana de Parnaíba, em casa ou no condomínio, com treino de força e fôlego que complementa o tatame."
 cta_destino: /personal-trainer-santana-de-parnaiba
 lista_titulo: "Lutas em Santana de Parnaíba com ficha no guia"
-lista_ids: [mattos-fitness-fazendinha, alemao-boxing-fazendinha, meta-fit-jardim-sao-luis, nova-fitness-cidade-sao-pedro]
+lista_ids: [g13-alphaville-tambore, mattos-fitness-fazendinha, alemao-boxing-fazendinha, meta-fit-jardim-sao-luis, nova-fitness-cidade-sao-pedro]
 fontes:
   - titulo: "Academia Mattos Fitness no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/academia-mattos-fitness/"
@@ -24,12 +24,12 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-16
-atualizado_em: 2026-11-16
+atualizado_em: 2026-11-17
 perguntas:
   - p: "Onde treinar jiu-jitsu em Santana de Parnaíba?"
     r: "Com ficha no guia: Mattos Fitness, na Estrada Tenente Marques, na Fazendinha; Meta Fit, na Rua Porto Rico, no Jardim São Luís; e Nova Fitness, na Av. das Conchas, na Cidade São Pedro. As três listam jiu-jitsu e muay thai. Do lado de Alphaville, as opções mais próximas ficam em Barueri, como a Templo Jiu Jitsu Culture, no Tamboré."
   - p: "Tem G13 em Santana de Parnaíba?"
-    r: "A G13 aparece nas buscas com endereço na Av. Marcos Penteado de Ulhôa Rodrigues, do lado de Santana de Parnaíba. O guia não conseguiu conferir os dados em fonte própria ou agregador, e por isso ela ainda não tem ficha."
+    r: "Sim. A G13 BJJ Alphaville fica na Av. Marcos Penteado de Ulhôa Rodrigues, 3272, no Tamboré III, que pertence a Santana de Parnaíba. Tem jiu-jitsu, muay thai e boxe no mesmo plano, turmas de 3 a 15 anos e aula experimental gratuita."
   - p: "Tem aula de boxe em Santana de Parnaíba?"
     r: "Sim. O Alemão Boxing Club, na Fazendinha, tem turmas às 7h e às 20h de segunda a sexta, com agendamento pelo Wellhub a partir do Basic+."
   - p: "Academia de luta abre no fim de semana em Santana de Parnaíba?"
@@ -52,9 +52,9 @@ A [Meta Fit](/academias/meta-fit-jardim-sao-luis/), na Rua Porto Rico, no Jardim
 
 ## Do lado de Alphaville
 
-Boa parte de Alphaville e do Tamboré fica dentro de Santana de Parnaíba, mas as escolas de luta com ficha no guia estão do lado de Barueri. Para quem mora ali, as mais próximas costumam ser a [Templo Jiu Jitsu Culture](/academias/templo-jiu-jitsu-tambore/), no Tamboré, e a [VoiFit](/academias/voifit-alphaville/), no 18 do Forte. Os detalhes estão em [jiu-jitsu em Alphaville](/guias/jiu-jitsu-alphaville/).
+Boa parte de Alphaville e do Tamboré fica dentro de Santana de Parnaíba, e a maior parte das escolas de luta com ficha no guia está do lado de Barueri. Para quem mora ali, as mais próximas costumam ser a [Templo Jiu Jitsu Culture](/academias/templo-jiu-jitsu-tambore/), no Tamboré, e a [VoiFit](/academias/voifit-alphaville/), no 18 do Forte. Os detalhes estão em [jiu-jitsu em Alphaville](/guias/jiu-jitsu-alphaville/).
 
-A G13 aparece nas buscas com endereço na Av. Marcos Penteado de Ulhôa Rodrigues, do lado de Santana de Parnaíba, mas o guia ainda não conferiu os dados. Se você treina lá, [envie a informação com a fonte](/correcoes/).
+Dentro do município, no Tamboré III, fica a [G13 BJJ Alphaville](/academias/g13-alphaville-tambore/), na Av. Marcos Penteado de Ulhôa Rodrigues, 3272. É escola de jiu-jitsu com muay thai e boxe no mesmo plano, turmas kids e teens e aula experimental gratuita; a mensalidade não é publicada.
 
 ## E a Aldeia da Serra?
 

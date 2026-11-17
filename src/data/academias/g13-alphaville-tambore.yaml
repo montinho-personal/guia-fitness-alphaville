@@ -1,0 +1,69 @@
+nome: G13 BJJ Alphaville
+regiao: santana-de-parnaiba
+bairro: Tamboré III
+tipo: estudio
+rede: G13
+resumo: Escola de jiu-jitsu da equipe G13 na Av. Marcos Penteado de Ulhôa Rodrigues, no Tamboré III, com muay thai e boxe no mesmo plano e turmas de 3 a 15 anos.
+endereco: Av. Marcos Penteado de Ulhôa Rodrigues, 3272, loja 07 - Residencial Tamboré III, Santana de Parnaíba - SP, 06543-001
+geo:
+  lat: -23.4674376
+  lng: -46.8502265
+horario:
+  seg:
+  - 06:00-23:00
+  ter:
+  - 06:00-23:00
+  qua:
+  - 06:00-23:00
+  qui:
+  - 06:00-23:00
+  sex:
+  - 06:00-23:00
+  sab:
+  - 10:00-23:00
+  dom: []
+modalidades:
+- lutas
+atividades_listadas:
+- Jiu-jitsu
+- Muay Thai
+- Boxe
+- Jiu-jitsu kids (3 a 10 anos) e teens (11 a 15 anos)
+- Turma para mulheres
+- Treino para competição
+- Aula experimental gratuita
+comodidades:
+- Estacionamento gratuito
+- Aplicativo com check-in e biblioteca de exercícios
+agregadores: []
+mensalidade: null
+site: https://g13alphaville.com.br/
+telefone: (11) 99166-0889
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - telefone
+  fonte: Site oficial da G13 Alphaville
+  url: https://g13alphaville.com.br/
+  conferido_em: '2026-11-17'
+  nivel: fonte-publica
+divergencias:
+- 'Endereço: o rodapé do site diz loja 7A; os dados estruturados do mesmo site dizem loja 07.'
+pendencias:
+- Mensalidade (o site cita planos semestrais e anuais, sem valor)
+- Grade de aulas por modalidade e faixa etária (o horário da ficha é o de funcionamento informado nos dados do site, não a grade)
+- Presença em Wellhub e TotalPass (não encontrada nas listas conferidas)
+analise:
+- 'É uma escola de luta, não academia de musculação. A G13 é uma equipe de jiu-jitsu com unidades pelo país, e a de Alphaville fica no Tamboré III, do lado de Santana de Parnaíba, na mesma avenida que liga o Tamboré à Fazendinha. O site informa estacionamento gratuito.'
+- 'O plano dá acesso livre a jiu-jitsu, muay thai e boxe, sem limite de aulas por dia, e a matrícula é por plano semestral ou anual. Há turmas kids (3 a 10 anos), teens (11 a 15), adultos, para mulheres e para competição, e a aula experimental é gratuita.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Guia Fitness Alphaville
+revisor: null
+publicado_em: '2026-11-17'
+atualizado_em: '2026-11-17'
