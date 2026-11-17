@@ -1,0 +1,390 @@
+---
+import Base from '../../layouts/Base.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import { academias, conferidoEm, dataCurta, dataLonga, linkMontinho, linkWhatsapp, urlAcademia, WHATSAPP } from '../../lib/dados';
+import { calcular, cenarioVazio, planosMensais, reais, type Cenario } from '../../lib/custo';
+
+const URL_PAG = '/ferramentas/custo-para-treinar-em-alphaville/';
+const todas = (await academias()).sort((a, b) => a.data.nome.localeCompare(b.data.nome, 'pt-BR'));
+
+// Dados para a calculadora: nome, unidade, ficha e, quando houver, os planos mensais publicados com fonte e data.
+const fonteMensalidade = (a: (typeof todas)[number]) => a.data.proveniencia.find((p) => p.campos.includes('mensalidade'));
+const lista = todas.map((a) => {
+  const m = a.data.mensalidade;
+  const f = fonteMensalidade(a);
+  return {
+    id: a.id, nome: a.data.nome, bairro: a.data.bairro, url: urlAcademia(a),
+    planos: m ? planosMensais(m.planos as { nome: string; preco: string; condicoes: string }[]) : [],
+    fonte: m ? m.fonte : null, fonteUrl: m ? m.url : null,
+    conferido: f ? dataCurta(f.conferido_em) : dataCurta(conferidoEm(a)),
+    abrangencia: m?.abrangencia ?? null,
+    estacionamento: a.data.comodidades.filter((c) => /estacionamento|valet|manobrista/i.test(c)),
+  };
+});
+const comPreco = lista.filter((a) => a.planos.length);
+const precos = comPreco.flatMap((a) => a.planos.map((p) => p.centavos));
+const menor = Math.min(...precos), maior = Math.max(...precos);
+
+// Exemplo com valores fictícios, calculado pela mesma lógica da ferramenta.
+const ex: [string, Cenario][] = [
+  ['Academia perto do trabalho', { ...cenarioVazio(), acessoValor: '160', freqValor: '8', freqPeriodo: 'mes', transporte: 'valor', transporteModo: 'ida', transporteValor: '10' }],
+  ['Academia perto de casa', { ...cenarioVazio(), acessoValor: '210', freqValor: '12', freqPeriodo: 'mes', transporte: 'valor', transporteModo: 'ida', transporteValor: '0' }],
+  ['Condomínio com personal', { ...cenarioVazio(), acessoModo: 'incluido', freqValor: '8', freqPeriodo: 'mes', personal: 'valor', personalModo: 'mes', personalValor: '960' }],
+];
+const exRes = ex.map(([n, c]) => ({ n, r: calcular(c) }));
+
+const titulo = 'Quanto custa treinar em Alphaville? Calculadora';
+const descricao = 'Simule quanto custa treinar em Alphaville, Tamboré, Barueri e Santana de Parnaíba: mensalidade, matrícula, estacionamento e personal, por mês e por ida.';
+const schema = [{ '@type': 'WebApplication', name: 'Calculadora de custo para treinar em Alphaville', url: new URL(URL_PAG, Astro.site).href, applicationCategory: 'FinanceApplication', operatingSystem: 'Qualquer navegador', inLanguage: 'pt-BR', offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' } }];
+
+const perguntas = [
+  { p: 'Quanto custa treinar em Alphaville por mês?', r: `Depende da academia, de quantas vezes você vai e dos custos em volta. Entre os planos mensais publicados nas fichas do guia, a mensalidade vai de ${reais(menor)} a ${reais(maior)}. Some estacionamento, deslocamento e, se for o caso, personal; a calculadora faz essa conta e mostra também o custo por ida.` },
+  { p: 'Como a calculadora trata o plano anual pago à vista?', r: 'O valor inteiro aparece no primeiro mês, porque é o que sai do bolso. No mês típico, ele entra dividido pelos meses do plano, e no primeiro ano entra uma vez só. Plano anual cobrado mês a mês, com fidelidade, deve ser informado como mensalidade.' },
+  { p: 'A matrícula entra no custo mensal?', r: 'Não. Matrícula e adesão entram no primeiro mês e no primeiro ano, quando são cobradas. O mês típico e o custo por ida mostram só o que se repete todo mês.' },
+  { p: 'Como informar o estacionamento?', r: 'Por ida, informe o total de ida e volta de um treino, incluindo estacionamento, combustível ou aplicativo, se quiser. Por mês, informe o valor fechado. Se o estacionamento for grátis, marque o valor zero; se já estiver no plano, escolha "já incluído".' },
+  { p: 'Quanto custa personal trainer no condomínio em Alphaville?', r: 'O guia não publica preço de personal, porque o valor muda com a frequência, o formato e o profissional. Informe na calculadora a proposta que você recebeu, por mês ou por aula, e compare com treinar sozinho numa academia.' },
+  { p: 'A academia cobra taxa de personal externo?', r: 'Algumas academias cobram uma taxa para o personal de fora atender lá, e outras não aceitam personal externo. As fichas do guia ainda não confirmam essa regra por unidade; pergunte na recepção. Na calculadora, você informa a taxa e diz se ela já está no valor do personal, para não contar duas vezes.' },
+  { p: 'Por que olhar o custo por ida?', r: 'Uma academia mais cara pode sair mais barata por treino se você for mais vezes, e uma barata pode sair cara se o estacionamento for pago a cada ida. O custo por ida divide o mês típico pelo número de idas.' },
+];
+---
+<Base titulo={titulo} semSufixo descricao={descricao} schema={schema} migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Calculadora de custo', url: URL_PAG }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Ferramenta</span>
+      <h1>Calculadora de custo para treinar em Alphaville</h1>
+      <p class="linha-fina">Compare até três opções, como a academia perto de casa, a perto do trabalho e o espaço fitness do condomínio, considerando quantas vezes você realmente vai treinar.</p>
+    </header>
+
+    <div class="resposta"><span class="rotulo">Em resumo</span>
+      <p>O custo real de treinar é a mensalidade mais o que vem junto: matrícula, estacionamento ou deslocamento e, se houver, personal. Entre os planos mensais publicados nas fichas do guia, a mensalidade vai de {reais(menor)} a {reais(maior)}. Informe sua frequência e veja o primeiro mês, o mês típico, o custo por ida e o primeiro ano de cada opção.</p>
+    </div>
+
+    <section class="bloco fino" aria-labelledby="calc-t">
+      <h2 id="calc-t" class="so-leitor">Calculadora</h2>
+      <div id="calc" class="calc" data-url={URL_PAG}>
+        <noscript><p class="caixa">A calculadora precisa de JavaScript. Sem ele, use o exemplo e a tabela de planos publicados abaixo para fazer a conta: mensalidade + estacionamento por ida × idas no mês.</p></noscript>
+        <div id="cenarios" class="cen-grade"></div>
+        <p class="calc-acoes"><button type="button" class="btn sec peq" id="add">Adicionar cenário</button> <span id="limite" class="rotulo" hidden>Máximo de três cenários.</span></p>
+        <section id="resumo" class="caixa resumo" aria-live="polite" hidden>
+          <div class="resumo-cab">
+            <h3>Comparação</h3>
+            <label class="campo"><span class="rotulo">Mais barato pelo critério</span>
+              <select id="criterio"><option value="mensal">Mês típico</option><option value="porIda">Custo por ida</option><option value="primeiroMes">Primeiro mês</option><option value="ano">Primeiro ano</option></select>
+            </label>
+          </div>
+          <div id="resumo-tab"></div>
+          <p id="resumo-nota" class="nota-pq"></p>
+        </section>
+        <aside id="cta" class="caixa cta-calc" hidden aria-label="Atendimento com personal">
+          <span class="rotulo cor-marca">Quem mantém este guia · publicidade da casa</span>
+          <p>O Montinho Personal Trainer atende presencialmente em Alphaville, Tamboré, Barueri e Santana de Parnaíba, em casa, no condomínio ou em academia que aceite personal externo. O guia não publica preço de personal: use na calculadora o valor da proposta que você receber.</p>
+          <p class="cta-botoes">
+            <a class="btn" href={linkMontinho('/onde-atendo', 'calculadora', 'custo-para-treinar')} rel="nofollow" data-evento="clique_montinho" data-ref="calculadora-cta">Consultar atendimento presencial na minha região <i aria-hidden="true"></i></a>
+            {WHATSAPP && <a class="link-forte" href={linkWhatsapp('calculadora')} rel="nofollow noopener" target="_blank" data-evento="clique_whatsapp" data-ref="calculadora-cta">Conversar no WhatsApp</a>}
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <div class="prosa">
+      <h2>Como usar</h2>
+      <ol>
+        <li>Escolha uma academia do guia, digite outra ou marque "academia do condomínio". Quando a ficha tem plano publicado, ele entra preenchido, com a fonte e a data; troque pelo valor da cotação que você recebeu.</li>
+        <li>Informe quantas vezes vai treinar, por semana ou por mês. Use a frequência real, não a ideal.</li>
+        <li>Em "Adicionar outros custos", inclua matrícula, taxa anual, estacionamento e deslocamento, personal e taxa de personal externo.</li>
+        <li>Adicione até três cenários e escolha o critério de comparação. Nada é enviado nem guardado: a conta é feita no seu aparelho.</li>
+      </ol>
+
+      <h2>Como a conta é feita</h2>
+      <ul>
+        <li><strong>Idas por mês:</strong> frequência semanal × 52 semanas ÷ 12 meses. Quem treina 3 vezes por semana faz 13 idas por mês. Se você informar por mês, vale o número informado.</li>
+        <li><strong>Primeiro mês:</strong> o que sai do bolso no começo: primeira mensalidade, matrícula, taxa anual e plano pago à vista.</li>
+        <li><strong>Mês típico:</strong> o equivalente mensal do que se repete. Plano à vista e taxa anual entram divididos pelos meses que cobrem; matrícula não entra.</li>
+        <li><strong>Custo por ida:</strong> mês típico ÷ idas por mês. Sem frequência, ou com frequência zero, fica indisponível.</li>
+        <li><strong>Primeiro ano:</strong> doze meses típicos dos custos recorrentes, mais matrícula e taxa anual uma vez, e o plano à vista uma vez.</li>
+        <li><strong>Campos vazios não viram zero.</strong> Um custo marcado e sem valor aparece como pendente, e o total vira subtotal identificado. Valor zero é zero; "já incluído" não é cobrado de novo.</li>
+        <li><strong>Mais barato:</strong> só entram na comparação os cenários completos no critério escolhido.</li>
+      </ul>
+
+      <h2>Exemplo de simulação</h2>
+      <p><em>Valores fictícios, só para mostrar a conta. Não são preços de academias nem de personal da região.</em></p>
+    </div>
+    <div class="rolagem" tabindex="0" role="region" aria-label="Exemplo de simulação">
+      <table class="dados">
+        <caption>Simulação com valores fictícios.</caption>
+        <thead><tr><th scope="col">Cenário</th><th scope="col">Composição</th><th scope="col">Mês típico</th><th scope="col">Por ida</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">{exRes[0].n}</th><td>Mensalidade de R$ 160 + estacionamento de R$ 10 por ida × 8 idas</td><td>{reais(exRes[0].r.mensal!)}</td><td>{reais(exRes[0].r.porIda!)}</td></tr>
+          <tr><th scope="row">{exRes[1].n}</th><td>Mensalidade de R$ 210, estacionamento grátis, 12 idas</td><td>{reais(exRes[1].r.mensal!)}</td><td>{reais(exRes[1].r.porIda!)}</td></tr>
+          <tr><th scope="row">{exRes[2].n}</th><td>Acesso já incluído + personal de R$ 960 por mês, 8 idas</td><td>{reais(exRes[2].r.mensal!)}</td><td>{reais(exRes[2].r.porIda!)}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="prosa">
+      <p>O terceiro cenário é o mais caro porque inclui acompanhamento profissional, que os outros dois não têm. Compare totais sabendo o que cada um entrega. <a href={`${URL_PAG}?exemplo=1`}>Abrir este exemplo na calculadora</a>.</p>
+
+      <h2>Planos publicados que a calculadora usa</h2>
+      <p>Só estas unidades publicam mensalidade em fonte oficial conferida pelo guia. Nas demais, a calculadora traz o nome e a ficha, e o valor fica para você informar. Diárias, pacotes e aulas avulsas não entram.</p>
+    </div>
+    <div class="rolagem" tabindex="0" role="region" aria-label="Planos publicados">
+      <table class="dados">
+        <caption>Planos mensais das fichas, com a fonte e a data de conferência. Condições podem ter mudado; confirme na academia.</caption>
+        <thead><tr><th scope="col">Academia</th><th scope="col">Plano</th><th scope="col">Valor</th><th scope="col">Condições</th><th scope="col">Fonte</th></tr></thead>
+        <tbody>
+          {comPreco.flatMap((a) => a.planos.map((p, i) => (
+            <tr>
+              <th scope="row">{i === 0 ? <a href={a.url}>{a.nome}</a> : ''}</th>
+              <td>{p.nome}</td><td>{reais(p.centavos)}/mês</td><td>{p.condicoes}</td>
+              <td>{i === 0 ? <><a href={a.fonteUrl!} rel="nofollow noopener" target="_blank">{a.fonte}</a>, {a.conferido}{a.abrangencia === 'rede' ? ' (preço da rede)' : ''}</> : ''}</td>
+            </tr>
+          )))}
+        </tbody>
+      </table>
+    </div>
+    <div class="prosa">
+      <p>Para ver preços com mais contexto, leia <a href="/academias/precos/">quanto custa academia em Alphaville e Barueri</a>. Para comparar horário e estrutura antes do custo, use o <a href="/ferramentas/comparador/">comparador</a>; se a dúvida é treinar sozinho ou com acompanhamento, leia <a href="/guias/academia-ou-personal/">academia ou personal trainer</a>. Quem usa agregador encontra o plano mínimo de cada academia em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
+    </div>
+
+    <Perguntas itens={perguntas} titulo="Dúvidas que mudam a conta" />
+    <LeiaTambem url={URL_PAG} />
+  </div>
+
+  <script type="application/json" id="calc-dados" set:html={JSON.stringify(lista)}></script>
+  <script>
+    import { calcular, cenarioVazio, maisBarato, reais, CRITERIOS, type Cenario, type Criterio, type Resultado } from '../../lib/custo';
+
+    type Acad = { id: string; nome: string; bairro: string; url: string; planos: { nome: string; centavos: number; inicial: number | null; condicoes: string }[]; fonte: string | null; fonteUrl: string | null; conferido: string; abrangencia: string | null; estacionamento: string[] };
+    type Item = { origem: string; plano: string; c: Cenario };
+    const ACADS: Acad[] = JSON.parse(document.getElementById('calc-dados')!.textContent!);
+    const porId = (id: string) => ACADS.find((a) => a.id === id);
+    const raiz = document.getElementById('calc')!;
+    const box = document.getElementById('cenarios')!;
+    const ev = (n: string, d: Record<string, string | number> = {}) => { const w = window as any; if (typeof w.otaEvento === 'function') w.otaEvento(n, d); };
+    const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+    const centParaTxt = (c: number) => (c / 100).toFixed(2).replace('.', ',').replace(/,00$/, '');
+
+    let itens: Item[] = [];
+    const novo = (origem = ''): Item => { const it: Item = { origem: '', plano: '', c: cenarioVazio() }; if (origem) aplicarOrigem(it, origem); return it; };
+
+    function aplicarOrigem(it: Item, origem: string) {
+      const freq = { freqValor: it.c.freqValor, freqPeriodo: it.c.freqPeriodo };
+      it.origem = origem; it.plano = '';
+      it.c = { ...cenarioVazio(), ...freq };
+      if (origem === 'condominio') { it.c.nome = 'Academia do condomínio'; it.c.acessoModo = 'incluido'; return; }
+      if (origem === 'manual') { it.c.nome = ''; return; }
+      const a = porId(origem); if (!a) return;
+      it.c.nome = a.nome;
+      if (a.planos.length) aplicarPlano(it, '0');
+    }
+    function aplicarPlano(it: Item, idx: string) {
+      it.plano = idx;
+      const a = porId(it.origem); const p = a?.planos[Number(idx)];
+      if (!p) return;
+      it.c.acessoModo = 'mensal'; it.c.acessoValor = centParaTxt(p.centavos);
+      if (p.inicial !== null) { it.c.inicial = 'valor'; it.c.inicialValor = centParaTxt(p.inicial); } else { it.c.inicial = 'nao'; it.c.inicialValor = ''; }
+    }
+
+    const sel = (k: string, opts: [string, string][], v: string, rot: string, i: number) =>
+      `<label class="campo" data-campo="${k}"><span class="rotulo">${rot}</span><select data-k="${k}" id="c${i}-${k}">${opts.map(([val, t]) => `<option value="${val}"${val === v ? ' selected' : ''}>${t}</option>`).join('')}</select></label>`;
+    const num = (k: string, v: string, rot: string, i: number, dica = '', dec = true) =>
+      `<label class="campo" data-campo="${k}"><span class="rotulo">${rot}</span><input type="text" inputmode="${dec ? 'decimal' : 'numeric'}" autocomplete="off" data-k="${k}" id="c${i}-${k}" value="${esc(v)}"${dica ? ` aria-describedby="c${i}-${k}-d"` : ''}>${dica ? `<small id="c${i}-${k}-d" class="dica">${dica}</small>` : ''}<small class="erro" id="c${i}-${k}-e" role="alert"></small></label>`;
+    const SIT: [string, string][] = [['nao', 'Não tenho este custo'], ['valor', 'Informar valor'], ['incluido', 'Já incluído em outro valor']];
+
+    function cartao(it: Item, i: number): string {
+      const a = porId(it.origem); const c = it.c;
+      const opcoes = `<option value="">Escolha</option><optgroup label="Outros"><option value="manual"${it.origem === 'manual' ? ' selected' : ''}>Outra academia (digitar)</option><option value="condominio"${it.origem === 'condominio' ? ' selected' : ''}>Academia do condomínio</option></optgroup><optgroup label="Academias do guia">${ACADS.map((x) => `<option value="${x.id}"${x.id === it.origem ? ' selected' : ''}>${esc(x.nome)} — ${esc(x.bairro)}</option>`).join('')}</optgroup>`;
+      let fonte = '';
+      if (a && a.planos.length) {
+        const p = a.planos[Number(it.plano)];
+        fonte = `<label class="campo"><span class="rotulo">Plano publicado</span><select data-plano id="c${i}-plano"><option value="">Não usar (informar valor)</option>${a.planos.map((pl, j) => `<option value="${j}"${String(j) === it.plano ? ' selected' : ''}>${esc(pl.nome)} — ${reais(pl.centavos)}/mês</option>`).join('')}</select></label>
+          <p class="fonte">Fonte: <a href="${a.fonteUrl}" target="_blank" rel="nofollow noopener">${esc(a.fonte!)}</a>, conferido em ${a.conferido}${a.abrangencia === 'rede' ? ' (preço da rede)' : ''}. ${p ? `Condições: ${esc(p.condicoes)}` : ''} Os valores são editáveis: use a cotação que você recebeu.</p>`;
+      } else if (a) {
+        fonte = `<p class="fonte">A ficha não traz mensalidade publicada. Informe o valor que a academia passar.</p>`;
+      }
+      if (a && a.estacionamento.length) fonte += `<p class="fonte">Na ficha: ${esc(a.estacionamento.join('; '))}. O valor do estacionamento não é publicado.</p>`;
+      if (a) fonte += `<p class="fonte"><a href="${a.url}">Ver a ficha da ${esc(a.nome)}</a></p>`;
+      return `<article class="cen" data-i="${i}" aria-labelledby="c${i}-t">
+        <div class="cen-cab"><h3 id="c${i}-t">Cenário ${i + 1}</h3>${itens.length > 1 ? `<button type="button" class="btn sec peq" data-remover="${i}" aria-label="Remover cenário ${i + 1}">Remover</button>` : ''}</div>
+        <label class="campo"><span class="rotulo">Academia ou local</span><select data-origem id="c${i}-origem">${opcoes}</select></label>
+        <label class="campo" data-campo="nome"${it.origem === 'manual' ? '' : ' hidden'}><span class="rotulo">Nome da academia</span><input type="text" data-k="nome" id="c${i}-nome" value="${esc(c.nome)}" autocomplete="off"></label>
+        ${fonte}
+        ${sel('acessoModo', [['mensal', 'Mensalidade'], ['avista', 'Plano pago à vista'], ['incluido', 'Já incluído (condomínio)']], c.acessoModo, 'Como você paga o acesso', i)}
+        <div class="duas">${num('acessoValor', c.acessoValor, c.acessoModo === 'avista' ? 'Valor pago à vista (R$)' : 'Mensalidade (R$)', i)}${num('avistaMeses', c.avistaMeses, 'Meses cobertos', i, '', false)}</div>
+        <div class="duas">${num('freqValor', c.freqValor, 'Quantas vezes vai treinar', i, '', true)}${sel('freqPeriodo', [['semana', 'por semana'], ['mes', 'por mês']], c.freqPeriodo, 'Período', i)}</div>
+        <details class="extras"${['inicial', 'anual', 'transporte', 'personal'].some((k) => (c as any)[k] !== 'nao') ? ' open' : ''}><summary>Adicionar outros custos</summary>
+          ${sel('inicial', SIT, c.inicial, 'Matrícula, adesão ou custo inicial', i)}${num('inicialValor', c.inicialValor, 'Valor (R$)', i)}
+          ${sel('anual', SIT, c.anual, 'Taxa anual (manutenção, anuidade)', i)}${num('anualValor', c.anualValor, 'Valor por ano (R$)', i)}
+          ${sel('transporte', SIT, c.transporte, 'Estacionamento e deslocamento', i)}
+          <div class="duas">${sel('transporteModo', [['ida', 'por ida'], ['mes', 'por mês']], c.transporteModo, 'Cobrança', i)}${num('transporteValor', c.transporteValor, 'Valor (R$)', i, 'Por ida: total de ida e volta de um treino.')}</div>
+          ${sel('personal', SIT, c.personal, 'Personal trainer', i)}
+          <div class="duas">${sel('personalModo', [['mes', 'por mês'], ['aula', 'por aula']], c.personalModo, 'Cobrança', i)}${num('personalValor', c.personalValor, 'Valor (R$)', i)}</div>
+          <div class="duas">${num('personalAulas', c.personalAulas, 'Aulas com personal', i, 'Pode ser menos que o total de idas.', false)}${sel('personalAulasPeriodo', [['mes', 'por mês'], ['semana', 'por semana']], c.personalAulasPeriodo, 'Período', i)}</div>
+          ${sel('taxaExterno', [['nao', 'Não há taxa'], ['valor', 'Eu pago a taxa'], ['incluido', 'Já incluída no valor do personal']], c.taxaExterno, 'Taxa da academia para personal externo', i)}
+          <div class="duas">${sel('taxaExternoModo', [['mes', 'por mês'], ['aula', 'por aula']], c.taxaExternoModo, 'Cobrança', i)}${num('taxaExternoValor', c.taxaExternoValor, 'Valor (R$)', i)}</div>
+        </details>
+        <div class="cen-res" id="c${i}-res" aria-live="polite"></div>
+      </article>`;
+    }
+
+    function visibilidade(el: HTMLElement, c: Cenario) {
+      const mostra = (k: string, v: boolean) => { const x = el.querySelector<HTMLElement>(`[data-campo="${k}"]`); if (x) x.hidden = !v; };
+      mostra('acessoValor', c.acessoModo !== 'incluido'); mostra('avistaMeses', c.acessoModo === 'avista');
+      const rot = el.querySelector('[data-campo="acessoValor"] .rotulo'); if (rot) rot.textContent = c.acessoModo === 'avista' ? 'Valor pago à vista (R$)' : 'Mensalidade (R$)';
+      mostra('inicialValor', c.inicial === 'valor'); mostra('anualValor', c.anual === 'valor');
+      mostra('transporteModo', c.transporte === 'valor'); mostra('transporteValor', c.transporte === 'valor');
+      const p = c.personal !== 'nao';
+      mostra('personalModo', c.personal === 'valor'); mostra('personalValor', c.personal === 'valor');
+      mostra('personalAulas', p); mostra('personalAulasPeriodo', p); mostra('taxaExterno', p);
+      mostra('taxaExternoModo', p && c.taxaExterno === 'valor'); mostra('taxaExternoValor', p && c.taxaExterno === 'valor');
+    }
+
+    const nomeCen = (it: Item, i: number) => it.c.nome || `Cenário ${i + 1}`;
+    const linha = (rot: string, v: number | null, parcial: number, pend: boolean) =>
+      `<div class="met"><dt>${rot}</dt><dd>${v !== null ? `<strong>${reais(v)}</strong>` : pend && parcial > 0 ? `<span class="incerto">subtotal ${reais(parcial)} + pendente</span>` : '<span class="incerto">pendente</span>'}</dd></div>`;
+    const EST: Record<string, string> = { ok: '', zero: 'informado como zero', incluido: 'já incluído', pendente: 'pendente' };
+
+    function resultadoHTML(r: Resultado, it: Item): string {
+      const comp = r.componentes.map((x) => `<li><span>${esc(x.rotulo)}</span> <span class="v">${x.estado === 'pendente' ? '<span class="incerto">pendente</span>' : x.estado === 'incluido' ? 'já incluído' : `${x.mensal !== null && x.mensal !== x.primeiroMes ? `${reais(x.primeiroMes ?? 0)} no 1º mês · ${reais(x.mensal)}/mês` : `${reais(x.mensal ?? x.primeiroMes ?? 0)}${x.mensal === 0 && x.primeiroMes ? '' : '/mês'}`}`}${x.estado === 'zero' ? ` <em>(${EST.zero})</em>` : ''}</span>${x.nota ? `<small>${esc(x.nota)}</small>` : ''}</li>`).join('');
+      const pend = r.pendencias.length > 0 || r.erros.length > 0;
+      return `<dl class="mets">
+          ${linha('Primeiro mês', r.primeiroMes, r.parcial.primeiroMes, pend)}
+          ${linha('Mês típico', r.mensal, r.parcial.mensal, pend)}
+          <div class="met"><dt>Por ida, em média</dt><dd>${r.porIda !== null ? `<strong>${reais(r.porIda)}</strong>` : `<span class="incerto">${esc(r.motivoPorIda || 'indisponível')}</span>`}</dd></div>
+          ${linha('Primeiro ano', r.ano, r.parcial.ano, pend)}
+        </dl>
+        <p class="premissa">${esc(r.premissaIdas)}</p>
+        ${r.erros.length ? `<p class="erro-geral">${r.erros.map((e) => esc(e.msg)).join(' ')}</p>` : ''}
+        ${r.pendencias.length ? `<p class="pend"><strong>Falta informar:</strong> ${r.pendencias.map(esc).join(', ')}.</p>` : ''}
+        <details class="comp"${r.temPersonal ? ' open' : ''}><summary>O que entrou na conta${r.temPersonal ? ' (inclui personal)' : ''}</summary><ul>${comp}</ul></details>`;
+    }
+
+    let jaSimulou = false, jaComparou = false;
+    function atualizar() {
+      const rs = itens.map((it) => calcular(it.c));
+      rs.forEach((r, i) => {
+        const el = box.querySelector<HTMLElement>(`[data-i="${i}"]`); if (!el) return;
+        visibilidade(el, itens[i].c);
+        el.querySelector(`#c${i}-res`)!.innerHTML = resultadoHTML(r, itens[i]);
+        el.querySelectorAll<HTMLInputElement>('input[data-k]').forEach((inp) => {
+          const e = r.erros.find((x) => x.campo === inp.dataset.k);
+          inp.setAttribute('aria-invalid', e ? 'true' : 'false');
+          const m = el.querySelector(`#c${i}-${inp.dataset.k}-e`); if (m) m.textContent = e ? e.msg : '';
+          if (e) inp.setAttribute('aria-errormessage', `c${i}-${inp.dataset.k}-e`); else inp.removeAttribute('aria-errormessage');
+        });
+      });
+      // Resumo comparativo
+      const resumo = document.getElementById('resumo')!;
+      const crit = (document.getElementById('criterio') as HTMLSelectElement).value as Criterio;
+      resumo.hidden = itens.length < 2;
+      if (itens.length >= 2) {
+        const mb = maisBarato(rs, crit);
+        const cel = (v: number | null) => (v === null ? '<span class="incerto">pendente</span>' : reais(v));
+        const linhas: [Criterio, string][] = [['primeiroMes', 'Primeiro mês'], ['mensal', 'Mês típico'], ['porIda', 'Por ida'], ['ano', 'Primeiro ano']];
+        document.getElementById('resumo-tab')!.innerHTML = `<table class="dados resumo-t"><thead><tr><th scope="col"><span class="so-leitor">Critério</span></th>${itens.map((it, i) => `<th scope="col">${esc(nomeCen(it, i))}${rs[i].temPersonal ? '<br><small>com personal</small>' : ''}${mb.indices.includes(i) ? `<br><span class="selo-barato">Mais barato no ${CRITERIOS[crit]}</span>` : ''}</th>`).join('')}</tr></thead><tbody>${linhas.map(([k, rot]) => `<tr${k === crit ? ' class="crit"' : ''}><th scope="row">${rot}</th>${rs.map((r) => `<td>${cel(r[k])}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+        document.getElementById('resumo-nota')!.textContent = mb.indices.length
+          ? `Critério: ${CRITERIOS[crit]}. Comparados ${mb.comparados} cenários com esse valor completo.${rs.some((r) => r.temPersonal) && rs.some((r) => !r.temPersonal) ? ' Atenção: há cenários com e sem personal; os totais não incluem a mesma coisa.' : ''}`
+          : `Para indicar o mais barato no ${CRITERIOS[crit]}, complete esse valor em pelo menos dois cenários.`;
+        if (!jaComparou && rs.filter((r) => r.mensal !== null && r.idasMes).length >= 2) { jaComparou = true; ev('calculadora_comparacao', { cenarios: itens.length }); }
+      }
+      document.getElementById('cta')!.hidden = !itens.some((it) => it.c.personal !== 'nao');
+      if (!jaSimulou && rs.some((r) => r.mensal !== null && r.idasMes)) { jaSimulou = true; ev('calculadora_simulacao', { cenarios: itens.length }); }
+      const add = document.getElementById('add') as HTMLButtonElement;
+      add.disabled = itens.length >= 3; document.getElementById('limite')!.hidden = itens.length < 3;
+      // Mantém na URL só as academias escolhidas (sem valores digitados).
+      const q = new URLSearchParams(); itens.forEach((it, i) => { if (porId(it.origem)) q.set('abc'[i], it.origem); });
+      history.replaceState(null, '', q.toString() ? `?${q}` : location.pathname);
+    }
+
+    function desenhar(foco?: string) {
+      box.innerHTML = itens.map(cartao).join('');
+      atualizar();
+      if (foco) document.getElementById(foco)?.focus();
+    }
+
+    box.addEventListener('input', (e) => {
+      const t = e.target as HTMLInputElement; const el = t.closest<HTMLElement>('[data-i]'); if (!el || !t.dataset.k) return;
+      (itens[Number(el.dataset.i)].c as any)[t.dataset.k] = t.value;
+      atualizar();
+    });
+    box.addEventListener('change', (e) => {
+      const t = e.target as HTMLSelectElement; const el = t.closest<HTMLElement>('[data-i]'); if (!el) return;
+      const i = Number(el.dataset.i), it = itens[i];
+      if (t.hasAttribute('data-origem')) { aplicarOrigem(it, t.value); desenhar(`c${i}-origem`); return; }
+      if (t.hasAttribute('data-plano')) { if (t.value === '') it.plano = ''; else aplicarPlano(it, t.value); desenhar(`c${i}-plano`); return; }
+      if (t.dataset.k) { (it.c as any)[t.dataset.k] = t.value; atualizar(); }
+    });
+    box.addEventListener('click', (e) => {
+      const b = (e.target as HTMLElement).closest<HTMLElement>('[data-remover]'); if (!b) return;
+      itens.splice(Number(b.dataset.remover), 1); desenhar('add');
+    });
+    document.getElementById('add')!.addEventListener('click', () => { if (itens.length < 3) { itens.push(novo()); desenhar(`c${itens.length - 1}-origem`); } });
+    document.getElementById('criterio')!.addEventListener('change', atualizar);
+
+    // Estado inicial: ?a=&b=&c= (comparador ou ficha), ?exemplo=1 ou um cenário vazio.
+    const p = new URLSearchParams(location.search);
+    const de = p.get('de');
+    if (p.get('exemplo') === '1') {
+      const a = novo('manual'); Object.assign(a.c, { nome: 'Academia perto do trabalho', acessoValor: '160', freqValor: '8', freqPeriodo: 'mes', transporte: 'valor', transporteModo: 'ida', transporteValor: '10' });
+      const b = novo('manual'); Object.assign(b.c, { nome: 'Academia perto de casa', acessoValor: '210', freqValor: '12', freqPeriodo: 'mes', transporte: 'valor', transporteModo: 'ida', transporteValor: '0' });
+      const c = novo('condominio'); Object.assign(c.c, { freqValor: '8', freqPeriodo: 'mes', personal: 'valor', personalModo: 'mes', personalValor: '960' });
+      itens = [a, b, c];
+    } else {
+      const ids = ['a', 'b', 'c'].map((k) => p.get(k)).filter((v, i, arr): v is string => !!v && !!porId(v) && arr.indexOf(v) === i).slice(0, 3);
+      itens = ids.length ? ids.map((id) => novo(id)) : [novo()];
+    }
+    desenhar();
+    ev('calculadora_aberta', { origem: de === 'comparador' || de === 'ficha' ? de : p.get('exemplo') ? 'exemplo' : 'direta' });
+    raiz.dataset.pronto = '1';
+  </script>
+</Base>
+
+<style is:global>
+  .calc{margin-top:8px}
+  .calc .cen-grade{display:grid;gap:16px}
+  @media(min-width:900px){.calc .cen-grade{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}}
+  .calc .cen{background:var(--cartao);border:1.5px solid var(--tinta);border-radius:var(--raio);padding:16px;display:flex;flex-direction:column;gap:12px;min-width:0}
+  .calc .cen [hidden]{display:none!important}
+  .calc .cen-cab{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .calc .cen-cab h3{margin:0;font-size:20px}
+  .calc .cen label.campo>span.rotulo{color:var(--cinza)}
+  .calc .cen input[type=text]{width:100%;font-family:var(--display);font-size:16px;font-weight:600;padding:12px;border:1px solid var(--linha);border-radius:var(--raio);background:#fff;color:var(--tinta)}
+  .calc .cen input[aria-invalid=true]{border-color:#B42318;outline:2px solid #B42318}
+  .calc .cen .duas{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+  .calc .cen .duas>[hidden]{display:none}
+  .calc .cen .dica{display:block;font-size:13px;color:var(--cinza);margin-top:4px;line-height:1.35}
+  .calc .cen .erro{display:block;font-size:13px;color:#B42318;margin-top:4px;font-family:var(--display);font-weight:600}
+  .calc .cen .erro:empty{display:none}
+  .calc .cen .fonte{font-size:14px;color:var(--texto2);margin:0;line-height:1.45}
+  .calc .cen .extras{border-top:1px solid var(--linha);padding-top:10px}
+  .calc .cen .extras>summary{cursor:pointer;font-family:var(--display);font-weight:700;color:var(--alameda);padding:6px 0}
+  .calc .cen .extras[open]{display:flex;flex-direction:column;gap:10px}
+  .calc .cen .mets{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}
+  .calc .cen .met{background:var(--papel);border-radius:var(--raio);padding:10px}
+  .calc .cen .met dt{font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cinza)}
+  .calc .cen .met dd{margin:4px 0 0;font-family:var(--display);font-size:20px;line-height:1.2}
+  .calc .cen .met dd .incerto{font-size:14px}
+  .calc .cen .premissa{font-size:14px;color:var(--cinza);margin:8px 0 0}
+  .calc .cen .pend{font-size:14px;margin:6px 0 0;color:var(--atencao)}
+  .calc .cen .erro-geral{font-size:14px;margin:6px 0 0;color:#B42318}
+  .calc .cen .comp summary{cursor:pointer;font-family:var(--display);font-weight:700;font-size:15px;padding:6px 0}
+  .calc .cen .comp ul{list-style:none;padding:0;margin:0;font-size:15px}
+  .calc .cen .comp li{padding:6px 0;border-bottom:1px solid var(--linha);display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px}
+  .calc .cen .comp li small{flex-basis:100%;color:var(--cinza);font-size:13px}
+  .calc .cen .comp .v{font-family:var(--display);font-weight:700}
+  .calc-acoes{margin:14px 0}
+  .calc .resumo{max-width:none;margin-top:8px}
+  .calc .resumo-cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:10px;margin-bottom:10px}
+  .calc .resumo-cab h3{margin:0}
+  .calc table.dados.resumo-t{width:100%;min-width:0;table-layout:fixed;font-size:14px}
+  .calc table.dados.resumo-t th,.calc table.dados.resumo-t td{overflow-wrap:anywhere;padding:8px 6px}
+  .calc table.dados.resumo-t thead th{white-space:normal;letter-spacing:.02em;text-transform:none;font-size:13px}
+  .calc table.dados.resumo-t tbody th{font-size:14px}
+  @media(min-width:600px){.calc table.dados.resumo-t th,.calc table.dados.resumo-t td{padding:10px 12px}}
+  .calc .resumo-t tr.crit{background:var(--musgo)}
+  .calc .selo-barato{display:inline-block;margin-top:4px;font-size:12px;font-weight:700;background:var(--alameda);color:#fff;border-radius:999px;padding:2px 8px}
+  .calc .nota-pq{font-size:14px;color:var(--cinza);margin:8px 0 0}
+  .calc .cta-calc{max-width:none;margin-top:16px}
+  .calc .cta-botoes{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+  @media(max-width:420px){.calc .cen .mets{grid-template-columns:1fr 1fr}.calc .cen .met dd{font-size:18px}}
+</style>
