@@ -12,6 +12,7 @@ export const GET: APIRoute = async ({ site }) => {
 - [Academias, com filtros](${u('/academias/')}): ${as.length} fichas
 - [Quanto custa academia em Alphaville e Barueri](${u('/academias/precos/')})
 - [Calculadora de custo para treinar em Alphaville](${u('/ferramentas/custo-para-treinar-em-alphaville/')})
+- [Academias que aceitam personal externo em Alphaville](${u('/ferramentas/academias-que-aceitam-personal-externo/')})
 - [Smart Fit ou Gaviões em Alphaville](${u('/guias/smart-fit-ou-gavioes/')})
 - [Ironberg ou NitroGym em Alphaville](${u('/guias/ironberg-ou-nitrogym/')})
 - [Smart Fit ou SkyFit em Alphaville](${u('/guias/smart-fit-ou-skyfit/')})

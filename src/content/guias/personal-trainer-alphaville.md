@@ -71,6 +71,8 @@ Outras fichas registram "personal trainer" entre os serviços, como **Arena 18**
 
 **Relação comercial:** o Montinho atende alunos na Arena 18.
 
+Para saber se a academia aceita personal de fora, se exige cadastro e quem paga a taxa, veja [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/).
+
 ## Perto do trabalho, no horário do almoço
 
 Quem trabalha no 18 do Forte ou no Alphaville Empresarial às vezes só tem a janela do almoço. Nesse caso, a academia que conta é a que fica a poucos minutos do escritório, não a de casa. A **SIX**, no 23º andar de um prédio da Avenida Copacabana, e a **VoiFit**, na Avenida Alphaville, estão nesse eixo. Confirme com elas a regra para personal antes de montar a rotina em volta disso.

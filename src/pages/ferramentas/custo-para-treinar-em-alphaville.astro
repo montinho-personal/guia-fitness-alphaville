@@ -4,6 +4,7 @@ import Perguntas from '../../components/Perguntas.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
 import { academias, conferidoEm, dataCurta, dataLonga, linkMontinho, linkWhatsapp, urlAcademia, WHATSAPP, REGIOES } from '../../lib/dados';
 import { calcular, cenarioVazio, planosMensais, reais, type Cenario } from '../../lib/custo';
+import { politicaPE, prefillTaxa, STATUS_PE } from '../../lib/personal';
 
 const URL_PAG = '/ferramentas/custo-para-treinar-em-alphaville/';
 const todas = (await academias()).sort((a, b) => a.data.nome.localeCompare(b.data.nome, 'pt-BR'));
@@ -20,6 +21,7 @@ const lista = todas.map((a) => {
     conferido: f ? dataCurta(f.conferido_em) : dataCurta(conferidoEm(a)),
     abrangencia: m?.abrangencia ?? null,
     estacionamento: a.data.comodidades.filter((c) => /estacionamento|valet|manobrista/i.test(c)),
+    pe: (() => { const p = politicaPE(a.data.personal_externo); return { status: STATUS_PE[p.status].rotulo, ...prefillTaxa(p), conferido: p.conferido ? dataCurta(p.conferido) : null }; })(),
   };
 });
 const comPreco = lista.filter((a) => a.planos.length);
@@ -179,7 +181,7 @@ const perguntas = [
     import { calcular, cenarioVazio, maisBarato, reais, CRITERIOS, type Cenario, type Criterio, type Resultado, type Situacao } from '../../lib/custo';
 
     type Plano = { nome: string; centavos: number; inicial: number | null; condicoes: string };
-    type Acad = { id: string; nome: string; bairro: string; regiaoNome: string; url: string; planos: Plano[]; fonte: string | null; fonteUrl: string | null; conferido: string; abrangencia: string | null; estacionamento: string[] };
+    type Acad = { id: string; nome: string; bairro: string; regiaoNome: string; url: string; planos: Plano[]; fonte: string | null; fonteUrl: string | null; conferido: string; abrangencia: string | null; estacionamento: string[]; pe: { status: string; taxaExterno: 'nao' | 'valor' | 'pendente'; taxaExternoModo?: 'mes' | 'aula' | 'ida'; taxaExternoValor?: string; nota: string; conferido: string | null } };
     type Tipo = '' | 'guia' | 'manual' | 'condominio';
     type Item = { tipo: Tipo; acad: string; plano: string; busca: string; c: Cenario };
 
@@ -209,6 +211,13 @@ const perguntas = [
       it.tipo = 'guia'; it.acad = id; it.busca = ''; it.c.nome = a.nome; it.plano = '';
       it.c.acessoModo = 'mensal'; it.c.acessoValor = ''; it.c.inicial = 'nao'; it.c.inicialValor = '';
       if (a.planos.length) escolherPlano(it, '0');
+    }
+    // Política de personal externo da ficha: só preenche taxa confirmada e paga pelo aluno; o resto fica pendente ou fora.
+    function aplicarPE(it: Item) {
+      const pe = porId(it.acad)?.pe; if (!pe) return;
+      it.c.taxaExterno = pe.taxaExterno;
+      if (pe.taxaExternoModo) it.c.taxaExternoModo = pe.taxaExternoModo;
+      it.c.taxaExternoValor = pe.taxaExternoValor ?? '';
     }
     function escolherPlano(it: Item, idx: string) {
       const p = porId(it.acad)?.planos[Number(idx)]; if (!p) return;
@@ -261,7 +270,11 @@ const perguntas = [
       return cab + xs.map((a) => `<li><button type="button" data-acad="${a.id}"><strong>${esc(a.nome)}</strong><span>${esc(a.bairro)} · ${esc(a.regiaoNome)}</span>${a.planos.length ? `<em>a partir de ${reais(Math.min(...a.planos.map((p) => p.centavos)))}</em>` : ''}</button></li>`).join('');
     }
 
-    function blocoExtras(c: Cenario, i: number): string {
+    function peNota(it: Item): string {
+      const pe = porId(it.acad)?.pe; if (!pe) return '';
+      return `<p class="fonte pe-calc"><strong>${esc(pe.status)}.</strong> ${esc(pe.nota)}${pe.conferido ? ` Verificado em ${pe.conferido}.` : ''}</p>`;
+    }
+    function blocoExtras(c: Cenario, i: number, it: Item): string {
       const chips = `<div class="chips">${EXTRAS.map((x) => `<button type="button" class="chip" data-extra="${x.k}" aria-pressed="${c[x.k] !== 'nao'}">${c[x.k] !== 'nao' ? '✓' : '+'} ${x.t}</button>`).join('')}</div>`;
       const caixa = (k: string, titulo: string, corpo: string) => `<div class="extra" data-bloco="${k}"><div class="extra-cab"><strong>${titulo}</strong><button type="button" class="btn-txt" data-extra-sai="${k}" aria-label="Remover ${titulo}">Remover</button></div>${corpo}</div>`;
       const sit = (k: string, s: Situacao, rot: string) => seg(k, [['valor', 'Tenho um valor'], ['incluido', 'Já está incluído']], s, rot, i);
@@ -269,8 +282,11 @@ const perguntas = [
       if (c.transporte !== 'nao') h += caixa('transporte', 'Estacionamento e deslocamento', `${sit('transporte', c.transporte, 'Estacionamento')}${c.transporte === 'valor' ? `${seg('transporteModo', [['ida', 'Por ida'], ['mes', 'Por mês']], c.transporteModo, 'Cobrança', i)}${dinheiro('transporteValor', c.transporteValor, c.transporteModo === 'ida' ? 'Valor por ida (ida e volta)' : 'Valor por mês', i, c.transporteModo === 'ida' ? 'Some estacionamento, combustível ou aplicativo de um treino. Grátis? Digite 0.' : '')}` : ''}`);
       if (c.personal !== 'nao') h += caixa('personal', 'Personal trainer', `${sit('personal', c.personal, 'Personal')}${c.personal === 'valor' ? `${seg('personalModo', [['mes', 'Por mês'], ['aula', 'Por aula']], c.personalModo, 'Cobrança do personal', i)}${dinheiro('personalValor', c.personalValor, c.personalModo === 'aula' ? 'Valor por aula' : 'Valor por mês', i)}` : ''}
         ${c.personal === 'valor' && c.personalModo === 'aula' || c.taxaExterno !== 'nao' && c.taxaExternoModo === 'aula' ? `<div class="linha2">${numero('personalAulas', c.personalAulas, 'Aulas com personal', i, 'Pode ser menos que o total de idas.')}${seg('personalAulasPeriodo', [['semana', 'por semana'], ['mes', 'por mês']], c.personalAulasPeriodo, 'Período das aulas', i)}</div>` : ''}
-        <p class="rot-q">A academia cobra taxa para personal de fora?</p>${seg('taxaExterno', [['nao', 'Não'], ['valor', 'Sim, eu pago'], ['incluido', 'Já no valor do personal']], c.taxaExterno, 'Taxa de personal externo', i)}
-        ${c.taxaExterno === 'valor' ? `${seg('taxaExternoModo', [['mes', 'Por mês'], ['aula', 'Por aula']], c.taxaExternoModo, 'Cobrança da taxa', i)}${dinheiro('taxaExternoValor', c.taxaExternoValor, 'Valor da taxa', i)}` : ''}`);
+        <p class="rot-q">A academia cobra taxa para personal de fora?</p>
+        ${peNota(it)}
+        ${seg('taxaExterno', [['nao', 'Não, ou paga o personal'], ['valor', 'Sim, eu pago'], ['incluido', 'Já no valor do personal'], ['pendente', 'Não sei']], c.taxaExterno, 'Taxa de personal externo', i)}
+        ${c.taxaExterno === 'valor' ? `${seg('taxaExternoModo', [['mes', 'Por mês'], ['aula', 'Por aula'], ['ida', 'Por ida']], c.taxaExternoModo, 'Cobrança da taxa', i)}${dinheiro('taxaExternoValor', c.taxaExternoValor, 'Valor da taxa', i)}` : ''}
+        <p class="fonte"><a href="/ferramentas/academias-que-aceitam-personal-externo/" data-evento="clique_guia_personal_externo" data-ref="calculadora">Ver academias que aceitam personal externo</a></p>`);
       if (c.inicial !== 'nao') h += caixa('inicial', 'Matrícula ou adesão', `${sit('inicial', c.inicial, 'Matrícula')}${c.inicial === 'valor' ? dinheiro('inicialValor', c.inicialValor, 'Valor cobrado uma vez', i, 'Entra só no primeiro mês e no ano. Isenta? Digite 0.') : ''}`);
       if (c.anual !== 'nao') h += caixa('anual', 'Taxa anual', `${sit('anual', c.anual, 'Taxa anual')}${c.anual === 'valor' ? dinheiro('anualValor', c.anualValor, 'Valor por ano', i, 'Cobrada no primeiro mês; no mês típico entra 1/12.') : ''}`);
       return chips + h;
@@ -290,7 +306,7 @@ const perguntas = [
         <div class="etapa"><p class="rot-q">Quantas vezes você vai treinar de verdade?</p>
           <div class="linha2">${numero('freqValor', c.freqValor, 'Treinos', i)}${seg('freqPeriodo', [['semana', 'por semana'], ['mes', 'por mês']], c.freqPeriodo, 'Período', i)}</div>
         </div>
-        <div class="etapa"><p class="rot-q">Outros custos</p>${blocoExtras(c, i)}</div>
+        <div class="etapa"><p class="rot-q">Outros custos</p>${blocoExtras(c, i, it)}</div>
         <div class="res" id="c${i}-res" aria-live="polite"></div>` : ''}
       </article>`;
     }
@@ -380,7 +396,7 @@ const perguntas = [
       if (b.dataset.acad) { escolherAcad(it, b.dataset.acad); desenhar(i, `c${i}-freqValor`); return; }
       if (b.dataset.acao === 'trocar') { it.acad = ''; it.plano = ''; desenhar(i, `c${i}-busca`); return; }
       if (b.dataset.plano !== undefined) { escolherPlano(it, b.dataset.plano); desenhar(i, `c${i}-acessoValor`); return; }
-      if (b.dataset.extra) { const k = b.dataset.extra as 'inicial' | 'transporte' | 'personal' | 'anual'; it.c[k] = it.c[k] === 'nao' ? 'valor' : 'nao'; desenhar(i, it.c[k] === 'nao' ? undefined : `c${i}-${k}Valor`); return; }
+      if (b.dataset.extra) { const k = b.dataset.extra as 'inicial' | 'transporte' | 'personal' | 'anual'; it.c[k] = it.c[k] === 'nao' ? 'valor' : 'nao'; if (k === 'personal' && it.c.personal !== 'nao') aplicarPE(it); desenhar(i, it.c[k] === 'nao' ? undefined : `c${i}-${k}Valor`); return; }
       if (b.dataset.extraSai) { (it.c as any)[b.dataset.extraSai] = 'nao'; desenhar(i); return; }
       if (b.dataset.passo) {
         const k = b.dataset.passo; const atual = parseFloat(String((it.c as any)[k] || '0').replace(',', '.')) || 0;
@@ -408,10 +424,10 @@ const perguntas = [
       ];
     } else {
       const ids = ['a', 'b', 'c'].map((k) => p.get(k)).filter((v, i, arr): v is string => !!v && !!porId(v) && arr.indexOf(v) === i).slice(0, 3);
-      itens = ids.length ? ids.map((id) => { const it = novo(); escolherAcad(it, id); return it; }) : [novo()];
+      itens = ids.length ? ids.map((id) => { const it = novo(); escolherAcad(it, id); if (p.get('personal') === '1') { it.c.personal = 'valor'; aplicarPE(it); } return it; }) : [novo()];
     }
     desenhar();
-    ev('calculadora_aberta', { origem: de === 'comparador' || de === 'ficha' ? de : p.get('exemplo') ? 'exemplo' : 'direta' });
+    ev('calculadora_aberta', { origem: de === 'comparador' || de === 'ficha' || de === 'personal-externo' ? de : p.get('exemplo') ? 'exemplo' : 'direta' });
     raiz.dataset.pronto = '1';
   </script>
 </Base>
@@ -436,6 +452,9 @@ const perguntas = [
   .calc .seg button[aria-checked=true]{background:var(--tinta);color:#fff;box-shadow:0 2px 6px rgba(16,27,45,.18)}
   .calc .seg button:not([aria-checked=true]):hover{background:#EDE8DB}
   .calc .seg-tipo button{font-size:13.5px}
+  .calc .seg:has(button:nth-child(4)){flex-wrap:wrap}
+  .calc .seg:has(button:nth-child(4)) button{flex:1 1 calc(50% - 4px)}
+  .calc .pe-calc{background:var(--c-suave);border-radius:10px;padding:8px 10px}
   /* campos */
   .calc .campo-v{display:flex;flex-direction:column;gap:6px;min-width:0}
   .calc .campo-v .rot{font:600 13px/1.2 var(--display);color:var(--cinza)}

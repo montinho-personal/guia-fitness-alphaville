@@ -97,4 +97,4 @@ Se você já treina em uma academia e quer saber se ela aceita personal de fora,
 
 O valor varia com a frequência semanal, o local do atendimento e a experiência do profissional. Este guia não publica faixas de preço de personal, porque não tem como verificá-las. Peça propostas a mais de um profissional e compare o que está incluído: avaliação, planilha, suporte fora da sessão.
 
-Some ao valor do personal a mensalidade da academia ou a taxa cobrada por ela. É essa soma que entra na comparação, e a [calculadora de custo para treinar](/ferramentas/custo-para-treinar-em-alphaville/) faz a conta com a proposta que você recebeu, inclusive no condomínio.
+Some ao valor do personal a mensalidade da academia ou a taxa cobrada por ela. É essa soma que entra na comparação, e a [calculadora de custo para treinar](/ferramentas/custo-para-treinar-em-alphaville/) faz a conta com a proposta que você recebeu, inclusive no condomínio. Antes de levar o personal para a academia, veja [quais academias aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/) e quem paga a taxa.

@@ -1,0 +1,197 @@
+---
+import Base from '../../layouts/Base.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import { academias, dataCurta, linkMontinho, REGIOES, urlAcademia } from '../../lib/dados';
+import { politicaPE, respostasPE, STATUS_PE, type StatusPE } from '../../lib/personal';
+
+const URL_PAG = '/ferramentas/academias-que-aceitam-personal-externo/';
+// Escopo: academias com sala de musculação. Boxes e estúdios trabalham em aula com professor próprio.
+const ORDEM_REG: Record<string, number> = { alphaville: 0, barueri: 1, 'santana-de-parnaiba': 2 };
+const lista = (await academias())
+  .filter((a) => a.data.tipo === 'academia')
+  .map((a) => {
+    const p = politicaPE(a.data.personal_externo);
+    return { a, p, r: respostasPE(p) };
+  })
+  .sort((x, y) => STATUS_PE[x.p.status].ordem - STATUS_PE[y.p.status].ordem || ORDEM_REG[x.a.data.regiao] - ORDEM_REG[y.a.data.regiao] || x.a.data.nome.localeCompare(y.a.data.nome, 'pt-BR'));
+
+const conta = (s: StatusPE) => lista.filter((x) => x.p.status === s).length;
+const aceitam = lista.filter((x) => x.p.status === 'aceita' || x.p.status === 'aceita-com-condicoes');
+const nomes = (xs: typeof lista) => xs.map((x) => x.a.data.nome).join(', ').replace(/, ([^,]*)$/, ' e $1');
+const ultima = lista.map((x) => x.p.conferido).filter((d): d is Date => !!d).sort((a, b) => b.getTime() - a.getTime())[0];
+const tel = (t?: string) => (t ? `tel:+55${t.replace(/\D/g, '')}` : '');
+
+const titulo = 'Academias que aceitam personal externo em Alphaville';
+const descricao = 'Posso levar meu personal para a academia? Veja, unidade por unidade em Alphaville, Tamboré, Barueri e Santana, quem aceita, o cadastro e quem paga a taxa.';
+const perguntas = [
+  { p: 'Posso levar meu personal para a academia?', r: `Depende da academia. Não há uma regra única: cada rede ou unidade define se aceita personal de fora, se exige cadastro e se cobra taxa. Entre as academias conferidas pelo guia em Alphaville e região, ${aceitam.length ? `aceitam personal externo: ${nomes(aceitam)}` : 'nenhuma publicou a regra até agora'}. Nas demais, confirme na unidade antes de contratar.` },
+  { p: 'Quem paga a taxa de personal externo?', r: 'Depende da academia. Em algumas, quem paga é o profissional, que repassa ou não esse custo no preço dele; em outras, a cobrança pode ser feita ao aluno. Pergunte à academia quem paga e pergunte ao personal se o valor dele já inclui a taxa, para não pagar duas vezes.' },
+  { p: 'As academias podem cobrar do personal trainer?', r: 'Muitas cobram, e de formas diferentes: taxa mensal, por aula ou por ida, paga pelo profissional ou pelo aluno. A regra está no regulamento e no contrato de cada academia, por isso o guia mostra a fonte de cada unidade. Este guia não dá orientação jurídica; em caso de dúvida sobre seus direitos, procure o Procon ou um advogado.' },
+  { p: 'Pode treinar com personal na Smart Fit?', r: 'A rede diz, em página oficial, que o aluno pode levar o próprio personal, desde que o profissional faça cadastro na unidade. Veja abaixo como ficou cada unidade da Smart Fit da região e o que a fonte diz sobre taxa.' },
+  { p: 'O que o personal precisa fazer antes da primeira aula?', r: 'Na maioria das academias que aceitam, o profissional faz um cadastro na unidade, com documentos e às vezes contrato com o aluno, antes da primeira sessão. Algumas limitam horários ou pedem agendamento. Cada cartão abaixo mostra o que a fonte da unidade informa.' },
+  { p: 'Academia pode proibir personal externo?', r: 'Pode definir regras no contrato e no regulamento, inclusive não permitir profissional de fora. Leia o contrato antes de assinar e, se você já tem personal, escolha uma academia que aceite.' },
+  { p: 'E se a academia não aceitar meu personal?', r: 'Há outros caminhos: treinar com o personal em casa, no espaço fitness do condomínio ou em outra academia que aceite. A calculadora de custo compara essas opções com mensalidade, estacionamento e personal.' },
+];
+const schema = [{ '@type': 'ItemList', name: titulo, numberOfItems: lista.length, itemListElement: lista.map((x, i) => ({ '@type': 'ListItem', position: i + 1, name: x.a.data.nome, url: new URL(urlAcademia(x.a), Astro.site).href })) }];
+---
+<Base titulo={titulo} descricao={descricao} schema={schema} migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Personal externo', url: URL_PAG }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Guia interativo</span>
+      <h1>Academias que aceitam personal externo em Alphaville e região</h1>
+      <p class="linha-fina">Posso levar meu próprio personal? Preciso fazer cadastro? Vou pagar alguma taxa? A resposta, academia por academia, com a fonte e a data de cada informação.</p>
+    </header>
+
+    <div class="resposta"><span class="rotulo">Em resumo</span>
+      <p>Das {lista.length} academias com ficha no guia em Alphaville, Tamboré, Barueri e Santana de Parnaíba, {conta('aceita') + conta('aceita-com-condicoes')} têm aceitação de personal externo confirmada em fonte pública{aceitam.length ? `: ${nomes(aceitam)}` : ''}. {conta('nao-aceita') ? `${conta('nao-aceita')} não aceitam. ` : ''}As outras {conta('a-confirmar')} não publicam a regra e aparecem como "a confirmar", com o canal oficial para perguntar. Taxa de personal muda de academia para academia e, em algumas, quem paga é o profissional.</p>
+    </div>
+
+    <section class="pe" id="pe" aria-labelledby="pe-t">
+      <h2 id="pe-t" class="so-leitor">Lista de academias</h2>
+      <div class="pe-filtros nao-imprime" role="search">
+        <label class="pe-busca"><span class="so-leitor">Buscar academia</span><input type="search" id="pe-q" placeholder="Busque sua academia pelo nome ou bairro" autocomplete="off"></label>
+        <div class="pe-chips" role="group" aria-label="Região">
+          <button type="button" data-reg="" aria-pressed="true">Todas</button>
+          {Object.entries(REGIOES).map(([id, r]) => <button type="button" data-reg={id} aria-pressed="false">{r.nome}</button>)}
+        </div>
+        <div class="pe-chips" role="group" aria-label="Situação">
+          <button type="button" data-st="" aria-pressed="true">Todas as situações</button>
+          {(Object.keys(STATUS_PE) as StatusPE[]).map((s) => <button type="button" data-st={s} aria-pressed="false">{STATUS_PE[s].curto} ({conta(s)})</button>)}
+        </div>
+        <p class="pe-conta" id="pe-conta" aria-live="polite">{lista.length} academias</p>
+      </div>
+
+      <ol class="pe-lista" id="pe-lista">
+        {lista.map(({ a, p, r }) => {
+          const d = a.data;
+          const pendente = p.status === 'a-confirmar' || p.taxa.situacao === 'pendente';
+          const canal = p.canal || d.telefone;
+          return (
+            <li class={`pe-item st-${p.status}`} data-reg={d.regiao} data-st={p.status} data-q={`${d.nome} ${d.bairro} ${REGIOES[d.regiao].nome} ${d.rede ?? ''}`.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')}>
+              <div class="pe-cab">
+                <h3><a href={urlAcademia(a)} data-evento="clique_academia" data-ref="personal-externo">{d.nome}</a></h3>
+                <span class="pe-local">{d.bairro} · {REGIOES[d.regiao].nome}</span>
+                <span class={`pe-selo s-${p.status}`}>{STATUS_PE[p.status].rotulo}</span>
+              </div>
+              <dl class="pe-qa">
+                <div><dt>Posso levar meu personal?</dt><dd>{r.posso}</dd></div>
+                <div><dt>O que fazer antes da primeira sessão?</dt><dd>{r.antes.length === 1 ? r.antes[0] : <ul>{r.antes.map((c) => <li>{c}</li>)}</ul>}</dd></div>
+                <div><dt>Tem taxa? Quem paga?</dt><dd>{r.taxa}</dd></div>
+                <div><dt>Verificado em</dt><dd>{p.conferido ? <>{dataCurta(p.conferido)}{p.fonte && <> · {p.url ? <a href={p.url} rel="nofollow noopener" target="_blank">{p.fonte}</a> : p.fonte}</>}{p.abrangencia === 'rede' && ' (regra da rede, que a fonte aplica a esta unidade)'}</> : 'Sem fonte pública com a regra desta unidade.'}</dd></div>
+              </dl>
+              {p.nota && <p class="pe-nota">{p.nota}</p>}
+              <p class="pe-acoes">
+                <a class="btn peq" href={`/ferramentas/custo-para-treinar-em-alphaville/?a=${a.id}&de=personal-externo&personal=1`} data-evento="clique_calculadora" data-ref="personal-externo">Simular meu custo nesta academia</a>
+                <a class="link-forte" href={urlAcademia(a)} data-evento="clique_academia" data-ref="personal-externo">Ver a ficha</a>
+                {pendente && canal && <a class="link-forte" href={canal.startsWith('http') ? canal : tel(canal)} rel="nofollow noopener" data-evento="consultar_unidade" data-ref={a.id}>Consultar a unidade{canal.startsWith('http') ? '' : `: ${canal}`}</a>}
+                {pendente && !canal && d.site && <a class="link-forte" href={d.site} rel="nofollow noopener" target="_blank" data-evento="consultar_unidade" data-ref={a.id}>Consultar a unidade</a>}
+              </p>
+            </li>
+          );
+        })}
+      </ol>
+      <div class="pe-vazio caixa" id="pe-vazio" hidden>
+        <p><strong>Nenhuma academia encontrada com esses filtros.</strong> O guia lista {lista.length} academias com ficha; estúdios e boxes ficam de fora porque trabalham em aula com professor próprio.</p>
+        <button type="button" class="btn sec peq" id="pe-limpar">Limpar filtros</button>
+      </div>
+    </section>
+
+    <div class="prosa">
+      <h2>Aceitar, cadastrar e cobrar: três coisas diferentes</h2>
+      <p><strong>Aceitar</strong> é a academia permitir que um profissional que não é funcionário dela atenda um aluno matriculado. <strong>Cadastrar</strong> é o passo que muitas exigem antes da primeira sessão: o personal se registra na unidade, apresenta documentos e às vezes o contrato com o aluno. <strong>Cobrar</strong> é a taxa: pode não existir, pode ser paga pelo profissional à academia ou pode ser cobrada do aluno, por mês, por aula ou por ida.</p>
+      <p><em>Exemplo fictício, só para mostrar a conta:</em> se a academia cobrasse R$ 10 por ida do aluno e você treinasse com o personal 8 vezes por mês, a taxa somaria R$ 80 por mês. Se a mesma taxa fosse paga pelo profissional, ela não entraria na sua conta, mas poderia estar embutida no preço dele. A <a href="/ferramentas/custo-para-treinar-em-alphaville/">calculadora de custo</a> separa essas situações para não contar duas vezes.</p>
+
+      <h2>Como a política foi verificada</h2>
+      <p>Cada cartão usa só fonte pública da própria academia ou da rede: página oficial, regulamento ou comunicado. Uma regra da rede só é aplicada à unidade quando a fonte indica que vale para ela. Quando as fontes divergem, ou a resposta depende de perguntar na unidade, o cartão fica como "a confirmar" e mostra o canal oficial. Taxa sem valor publicado aparece como pendente, nunca como gratuita. Última verificação: {ultima ? dataCurta(ultima) : 'em andamento'}. Viu algo diferente na sua unidade? <a href="/correcoes/">Envie a correção com a fonte</a>.</p>
+
+      <h2>Antes de contratar o personal</h2>
+      <ul>
+        <li>Pergunte na recepção se o profissional precisa de cadastro e quanto tempo leva para liberar.</li>
+        <li>Pergunte se há taxa, de quanto, em que periodicidade e quem paga.</li>
+        <li>Pergunte se há horário ou área restritos para atendimento com personal.</li>
+        <li>Confirme com o personal se o valor dele já inclui a taxa da academia.</li>
+      </ul>
+      <p>Para comparar academias por horário e estrutura, use o <a href="/ferramentas/comparador/">comparador</a>. Se a dúvida é entre treinar sozinho ou com acompanhamento, leia <a href="/guias/academia-ou-personal/">academia ou personal trainer</a>. Quem treina no Tamboré encontra as opções do bairro em <a href="/regioes/tambore/">academias no Tamboré</a>.</p>
+    </div>
+
+    <Perguntas itens={perguntas} titulo="Dúvidas sobre personal externo na academia" />
+
+    <aside class="pe-cta" aria-label="Serviço de quem mantém este guia">
+      <span class="rotulo">Serviço próprio de quem mantém este guia · publicidade da casa</span>
+      <p>Ainda procura acompanhamento? O Montinho Personal Trainer atende presencialmente em Alphaville, Tamboré, Barueri e Santana de Parnaíba. A posição e a política de cada academia acima seguem os mesmos critérios para todas.</p>
+      <a class="link-forte" href={linkMontinho('/onde-atendo', 'personal-externo', 'academias-que-aceitam-personal-externo')} rel="nofollow" data-evento="clique_montinho" data-ref="personal-externo-cta">Consultar atendimento presencial na minha região</a>
+    </aside>
+    <LeiaTambem url={URL_PAG} />
+  </div>
+
+  <script>
+    const lista = document.getElementById('pe-lista')!;
+    const itens = Array.from(lista.querySelectorAll<HTMLElement>('.pe-item'));
+    const q = document.getElementById('pe-q') as HTMLInputElement;
+    const conta = document.getElementById('pe-conta')!;
+    const vazio = document.getElementById('pe-vazio')!;
+    let reg = '', st = '';
+    const sem = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    const ev = (n: string, d: Record<string, string>) => { const w = window as any; if (typeof w.otaEvento === 'function') w.otaEvento(n, d); };
+    let tBusca = 0;
+    function aplicar() {
+      const t = sem(q.value.trim());
+      let n = 0;
+      itens.forEach((li) => { const ok = (!reg || li.dataset.reg === reg) && (!st || li.dataset.st === st) && (!t || li.dataset.q!.includes(t)); li.hidden = !ok; if (ok) n++; });
+      conta.textContent = n === 1 ? '1 academia' : `${n} academias`;
+      vazio.hidden = n > 0;
+    }
+    function chips(attr: string, set: (v: string) => void) {
+      document.querySelectorAll<HTMLButtonElement>(`[data-${attr}]`).forEach((b) => b.addEventListener('click', () => {
+        document.querySelectorAll(`[data-${attr}]`).forEach((x) => { if (x.tagName === 'BUTTON') x.setAttribute('aria-pressed', String(x === b)); });
+        set(b.dataset[attr === 'reg' ? 'reg' : 'st'] || ''); aplicar();
+        ev('personal_externo_filtro', { filtro: attr === 'reg' ? 'regiao' : 'situacao' });
+      }));
+    }
+    chips('reg', (v) => { reg = v; });
+    chips('st', (v) => { st = v; });
+    q.addEventListener('input', () => { aplicar(); clearTimeout(tBusca); tBusca = window.setTimeout(() => ev('personal_externo_filtro', { filtro: 'busca' }), 1200); });
+    document.getElementById('pe-limpar')!.addEventListener('click', () => {
+      q.value = ''; reg = ''; st = '';
+      document.querySelectorAll('[data-reg],[data-st]').forEach((x) => { if (x.tagName === 'BUTTON') x.setAttribute('aria-pressed', String(!(x as HTMLElement).dataset.reg && !(x as HTMLElement).dataset.st)); });
+      aplicar(); q.focus();
+    });
+  </script>
+</Base>
+
+<style is:global>
+  .pe{margin:8px 0 28px}
+  .pe-filtros{position:sticky;top:0;z-index:5;background:var(--papel);padding:12px 0 10px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--linha)}
+  .pe-busca input{width:100%;font:600 17px/1.2 var(--display);padding:13px 14px;border:1.5px solid #E3DDCF;border-radius:12px;background:#fff;color:var(--tinta)}
+  .pe-busca input:focus{border-color:var(--alameda);box-shadow:0 0 0 3px rgba(27,79,156,.18);outline:none}
+  .pe-chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+  .pe-chips button{flex:none;border:1.5px solid #E3DDCF;background:#fff;border-radius:999px;padding:8px 13px;font:700 13.5px var(--display);color:var(--tinta);cursor:pointer;white-space:nowrap}
+  .pe-chips button[aria-pressed=true]{background:var(--tinta);border-color:var(--tinta);color:#fff}
+  .pe-conta{margin:0;font:600 13px var(--display);color:var(--cinza)}
+  .pe-lista{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:14px}
+  @media(min-width:900px){.pe-lista{grid-template-columns:1fr 1fr}}
+  .pe-item{background:#fff;border:1px solid #E3DDCF;border-radius:16px;padding:16px 18px;box-shadow:0 6px 18px rgba(16,27,45,.05);display:flex;flex-direction:column;gap:12px}
+  .pe-item[hidden]{display:none}
+  .pe-cab{display:grid;grid-template-columns:1fr;gap:4px}
+  .pe-cab h3{margin:0;font-size:19px;line-height:1.2}
+  .pe-cab h3 a{text-decoration:none}
+  .pe-local{font:600 13px var(--display);color:var(--cinza)}
+  .pe-selo{justify-self:start;margin-top:4px;font:800 12.5px var(--display);padding:5px 10px;border-radius:999px;border:1px solid}
+  .s-aceita{background:#E3F2E8;border-color:#B7DCC3;color:#1E5631}
+  .s-aceita-com-condicoes{background:#E8EFFA;border-color:#C5D4EA;color:#1B4F9C}
+  .s-nao-aceita{background:#FBE9E7;border-color:#F2C4BC;color:#8E2A1A}
+  .s-a-confirmar{background:#FFF4E0;border-color:#F3D7A6;color:#7A4A0B}
+  .s-aceita::before{content:"✓ "}.s-aceita-com-condicoes::before{content:"✓ "}.s-nao-aceita::before{content:"✕ "}.s-a-confirmar::before{content:"? "}
+  .pe-qa{margin:0;display:grid;gap:10px}
+  .pe-qa div{display:grid;gap:2px}
+  .pe-qa dt{font:700 13px/1.3 var(--display);color:var(--cinza)}
+  .pe-qa dd{margin:0;font-size:16px;line-height:1.45}
+  .pe-qa ul{margin:0;padding-left:18px}
+  .pe-nota{margin:0;font-size:14px;color:var(--texto2);background:#F7F4EC;border-radius:10px;padding:8px 10px}
+  .pe-acoes{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin:0;padding-top:10px;border-top:1px dashed #E3DDCF}
+  .pe-vazio{margin-top:14px}
+  .pe-vazio p{margin:0 0 10px}
+  .pe-cta{margin:28px 0 8px;padding:16px 18px;border:1px solid var(--linha);border-radius:14px;background:var(--cartao);max-width:var(--leitura)}
+  .pe-cta p{margin:6px 0 10px;font-size:16px}
+</style>

@@ -63,6 +63,8 @@ O restante da cidade, com centro histórico, Fazendinha, Polvilho e bairros ao l
 
 Nenhuma das três abre no domingo, e nenhuma informa uma regra pública para personal de fora. Pergunte na recepção antes de combinar o local com o profissional.
 
+Para saber se a academia aceita personal de fora, se exige cadastro e quem paga a taxa, veja [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/).
+
 ## Deslocamento pesa mais aqui
 
 As distâncias dentro do município são grandes, e o trânsito nas estradas que ligam os bairros a Alphaville e à Castelo Branco varia muito ao longo do dia. Na prática:

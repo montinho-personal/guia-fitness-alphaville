@@ -11,6 +11,7 @@ import fotoArena18 from '../../assets/montinho/montinho-personal-trainer-arena-1
 const FOTO_MONTINHO: Record<string, { src: typeof fotoArena18; alt: string }> = { 'arena-18-alphaville': { src: fotoArena18, alt: 'Montinho, personal trainer, em selfie no espelho da sala de musculação da Arena 18, em Alphaville' } };
 import { ARTIGOS, COMPARATIVOS, personalDaRegiao } from '../../lib/artigos';
 import { abreDomingo, guias } from '../../lib/dados';
+import { politicaPE, respostasPE, STATUS_PE } from '../../lib/personal';
 import { academias, REGIOES, MODALIDADES, TIPOS, DIAS, DIAS_NOME, faixasDia, horarioResumo, e24h, conferidoEm, dataCurta, dataLonga, dataIso, nivelVerificacao, urlAcademia, urlRegiao, type Academia } from '../../lib/dados';
 
 export async function getStaticPaths() {
@@ -138,6 +139,14 @@ const eSite = d.site && !/instagram\.com/.test(d.site);
           {d.montinho_atende && <p style="font-size:15px;margin-top:10px"><strong>Relação comercial:</strong> o Montinho Personal Trainer, que mantém este guia, atende alunos nesta academia.</p>}
           <p style="font-size:15px;margin-top:10px"><a href="/metodologia/">O que este selo significa</a></p>
         </div>
+        {d.tipo === 'academia' && (() => { const pe = politicaPE(d.personal_externo); const rr = respostasPE(pe); return (
+          <div class="caixa">
+            <h2>Personal externo</h2>
+            <p><strong>{STATUS_PE[pe.status].rotulo}.</strong> {rr.posso !== 'Sim.' && rr.posso !== 'Sim, com condições.' ? '' : rr.antes.join(' ')}</p>
+            <p style="font-size:15px">Taxa: {rr.taxa}</p>
+            <p style="font-size:14px;color:var(--cinza)">{pe.conferido ? <>Verificado em {dataCurta(pe.conferido)}{pe.url ? <> · <a href={pe.url} rel="nofollow noopener" target="_blank">fonte</a></> : ''}.</> : 'Sem fonte pública com a regra desta unidade.'}</p>
+            <p style="font-size:15px"><a href="/ferramentas/academias-que-aceitam-personal-externo/" data-evento="clique_guia_personal_externo" data-ref={`ficha-${a.id}`}>Academias que aceitam personal externo</a></p>
+          </div>); })()}
         <a class="btn sec" href={`/ferramentas/comparador/?a=${a.id}`}>Comparar com outra academia <i aria-hidden="true"></i></a>
         <a class="link-forte" href={`/ferramentas/custo-para-treinar-em-alphaville/?a=${a.id}&de=ficha`}>Calcular custo para treinar nesta unidade</a>
       </aside>
