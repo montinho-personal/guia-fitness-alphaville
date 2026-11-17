@@ -23,9 +23,13 @@ Atualizado em 17/11/2026.
 | `clique_saida` | Qualquer outro link externo (sites de academias, fontes) | `link_domain`, `link_url`, `link_text` |
 | `clique_telefone`, `clique_email` | Links `tel:` e `mailto:` | `link_url` |
 | `busca`, `busca_aberta`, `busca_clique` | Busca do site | `termo` e `search_term`, `resultados`, `destino` |
-| `pergunta_aberta` | Pergunta frequente aberta | `pergunta`, `pagina` |
+| `pergunta_aberta` | Pergunta frequente aberta (só nas listas de perguntas) | `pergunta`, `pagina` |
 | `menu_aberto` | Menu do celular aberto | `pagina` |
 | `vitrine_view`, `vitrine_cta_click`, `vitrine_resultados_click` | Vitrine de resultados do Montinho | `ref` |
+| `calculadora_aberta` | Calculadora de custo aberta | `origem`: `direta`, `comparador`, `ficha` ou `exemplo` |
+| `calculadora_simulacao` | Primeira simulação válida (custo mensal completo e frequência informada) | `cenarios` (quantidade) |
+| `calculadora_comparacao` | Dois ou mais cenários completos | `cenarios` (quantidade) |
+| `clique_montinho` com `ref=calculadora-cta` | CTA "Consultar atendimento presencial na minha região" | `ref` |
 | `barra_whatsapp_fechada` | Barra do WhatsApp fechada | `pagina` |
 | Ferramentas (comparador, teste, checklist, mapa, filtros) | Uso das ferramentas | ver cada página |
 
@@ -56,3 +60,5 @@ O código monta os links com `linkMontinho()` (`src/lib/dados.ts`). Se algum lin
 1. Relatórios > Aquisição > Aquisição de tráfego: filtrar "Origem da sessão" = `guiafitnessalphaville`. A "Campanha da sessão" mostra a posição do link e o "Conteúdo do anúncio manual" mostra a página do guia de onde a pessoa veio.
 2. Para ver contatos vindos do guia: Explorar > nova exploração com "Origem da sessão" e os eventos principais do site do Montinho.
 3. Em Administrador > Fluxos de dados > Configurar tag > Listar referências indesejadas: **não** incluir `guiafitnessalphaville.com.br`.
+
+A calculadora não envia valores digitados nem dados de contato: só a origem da visita e a quantidade de cenários.

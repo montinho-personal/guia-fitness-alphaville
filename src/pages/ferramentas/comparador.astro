@@ -25,14 +25,14 @@ const dados = paraFerramentas(todas);
     <section class="bloco fino" aria-live="polite">
       <p id="cmp-vazio" class="caixa">Escolha pelo menos duas academias acima.</p>
       <div class="rolagem" id="cmp-res" tabindex="0" role="region" aria-label="Comparação" hidden></div>
-      <p id="cmp-acoes" class="nao-imprime" style="margin-top:16px" hidden><button class="btn sec peq" type="button" id="cmp-link">Copiar link desta comparação</button> <span id="cmp-ok" class="rotulo cor-marca" role="status"></span></p>
+      <p id="cmp-acoes" class="nao-imprime" style="margin-top:16px" hidden><a class="btn peq" id="cmp-custo" href="/ferramentas/custo-para-treinar-em-alphaville/">Simular quanto vou gastar <i aria-hidden="true"></i></a> <button class="btn sec peq" type="button" id="cmp-link">Copiar link desta comparação</button> <span id="cmp-ok" class="rotulo cor-marca" role="status"></span></p>
       <noscript><p class="caixa">O comparador precisa de JavaScript. Sem ele, use o <a href="/academias/#tabela-t">comparativo rápido do guia</a>, que tem os mesmos dados em uma tabela.</p></noscript>
     </section>
 
     <div class="prosa">
       <h2>O que o comparador mostra e o que não mostra</h2>
       <p>Os dados vêm das páginas públicas de cada unidade nos agregadores, conferidas na data indicada. Mensalidade direta e lotação não aparecem porque ainda não foram confirmadas. Onde a estrutura mostra "não informado", a fonte não cita o item; não quer dizer que a academia não o tenha.</p>
-      <p>Depois de reduzir a lista, visite as candidatas com o <a href="/ferramentas/checklist/">checklist</a> no celular.</p>
+      <p>Depois de reduzir a lista, visite as candidatas com o <a href="/ferramentas/checklist/">checklist</a> no celular. Para colocar na conta mensalidade, estacionamento e personal, use a <a href="/ferramentas/custo-para-treinar-em-alphaville/">calculadora de custo para treinar</a>.</p>
     </div>
   </div>
 
@@ -65,6 +65,8 @@ const dados = paraFerramentas(todas);
         var xs = ids.map(function (id) { return D.filter(function (d) { return d.id === id; })[0]; });
         var q = new URLSearchParams(); ['a', 'b', 'c'].forEach(function (k) { if (f.elements[k].value) q.set(k, f.elements[k].value); });
         history.replaceState(null, '', q.toString() ? '?' + q : location.pathname);
+        var qc = new URLSearchParams(); ids.slice(0, 3).forEach(function (id, i) { qc.set('abc'[i], id); }); qc.set('de', 'comparador');
+        document.getElementById('cmp-custo').href = '/ferramentas/custo-para-treinar-em-alphaville/?' + qc;
         if (xs.length < 2) { res.hidden = true; acoes.hidden = true; vazio.hidden = false; return; }
         var h = '<table class="dados"><caption>Dados das fichas do guia. Abra a ficha para ver a fonte de cada um.</caption><thead><tr><th scope="col">Critério</th>' + xs.map(function (d) { return '<th scope="col"><a href="' + d.url + '" style="color:inherit">' + esc(d.nome) + '</a></th>'; }).join('') + '</tr></thead><tbody>';
         LINHAS.forEach(function (l) { h += '<tr><th scope="row">' + l[0] + '</th>' + xs.map(function (d) { return '<td>' + l[1](d) + '</td>'; }).join('') + '</tr>'; });

@@ -211,6 +211,7 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
       document.addEventListener('toggle', function (e) {
         var d = e.target; if (!d || d.tagName !== 'DETAILS' || !d.open) return;
         if (d.classList.contains('menu-m')) { evento('menu_aberto', { pagina: location.pathname }); return; }
+        if (!d.closest('.perguntas')) return;
         var t = d.querySelector('summary'); evento('pergunta_aberta', { pergunta: t ? t.textContent.trim().slice(0, 100) : '', pagina: location.pathname });
       }, true);
       window.otaEvento = function (nome, dados) { evento(nome, Object.assign({ pagina: location.pathname }, dados || {})); };
