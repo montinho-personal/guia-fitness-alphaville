@@ -141,13 +141,22 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
     function gtag() { dataLayer.push(arguments); }
     gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
     (function () {
-      var CHAVE = 'ota-consent', caixa = document.getElementById('consent');
+      var CHAVE = 'ota-consent', caixa = document.getElementById('consent'), GA4 = /^G-/.test(GTM_ID || '');
+      function evento(nome, dados) { if (GA4) gtag('event', nome, dados); else dataLayer.push(Object.assign({ event: nome }, dados)); }
       var escolha = null; try { escolha = localStorage.getItem(CHAVE); } catch (e) {}
       function carregar() {
         if (!GTM_ID || window.__gtm) return; window.__gtm = true;
         gtag('consent', 'update', { analytics_storage: 'granted' });
-        dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
-        var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID; document.head.appendChild(s);
+        var s = document.createElement('script'); s.async = true;
+        if (GA4) {
+          // ID do GA4 (G-...): tag do Google direto, sem contêiner do GTM.
+          gtag('js', new Date()); gtag('config', GTM_ID);
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GTM_ID;
+        } else {
+          dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+          s.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID;
+        }
+        document.head.appendChild(s);
       }
       if (escolha === 'sim') carregar(); else if (!escolha && GTM_ID) caixa.hidden = false;
       caixa.addEventListener('click', function (e) {
@@ -159,9 +168,9 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
       // Eventos: qualquer elemento com data-evento. Ficam na dataLayer; só saem do navegador se houver consentimento.
       document.addEventListener('click', function (e) {
         var el = e.target.closest && e.target.closest('[data-evento]'); if (!el) return;
-        dataLayer.push({ event: el.getAttribute('data-evento'), ref: el.getAttribute('data-ref') || '', pagina: location.pathname });
+        evento(el.getAttribute('data-evento'), { ref: el.getAttribute('data-ref') || '', pagina: location.pathname });
       });
-      window.otaEvento = function (nome, dados) { dataLayer.push(Object.assign({ event: nome, pagina: location.pathname }, dados || {})); };
+      window.otaEvento = function (nome, dados) { evento(nome, Object.assign({ pagina: location.pathname }, dados || {})); };
     })();
   </script>
 </body>

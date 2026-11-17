@@ -55,7 +55,7 @@ Só entra no build de produção o que está `aprovado` ou `publicado`.
 |---|---|
 | `PUBLIC_INDEXAVEL` | `true` libera a indexação. Só depois da aprovação editorial |
 | `PUBLIC_MOSTRAR_EM_REVISAO` | `true` inclui conteúdo ainda não aprovado (pré-visualização). Não pode ser `true` junto com `PUBLIC_INDEXAVEL=true` |
-| `PUBLIC_GTM_ID` | Contêiner do Google Tag Manager. Vazio = sem medição e sem aviso de cookies |
+| `PUBLIC_GTM_ID` | ID do GA4 (`G-...`, tag do Google direto) ou do contêiner do Google Tag Manager (`GTM-...`). Vazio = sem medição e sem aviso de cookies |
 | `PUBLIC_WHATSAPP` | Número do WhatsApp do Montinho, só dígitos |
 | `PUBLIC_EMAIL_CONTATO` | E-mail público de contato e de privacidade |
 
