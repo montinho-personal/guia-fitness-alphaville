@@ -79,6 +79,11 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Alongamento", "Bike", "Body Pump", "Boxe", "Core", "Corrida", "Corrida ao ar livre", "Fisiculturismo", "Grit Series", "Grit Strength", "Jiu-jitsu", "Mat Pilates", "Muay Thai", "Musculação", "Power jump", "Ritmos", "Yoga", "Zumba"]
+  musculacao: true
+  condicoes: ["Algumas atividades podem exigir reserva, segundo o Wellhub."]
+  conferido_em: '2026-11-17'
   plano_minimo: Gold+
   preco_plano: R$ 439,99
   url: https://wellhub.com/pt-br/search/partners/academia-24h-premium-alphaville-industrial-barueri/

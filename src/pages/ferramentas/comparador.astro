@@ -25,7 +25,7 @@ const dados = paraFerramentas(todas);
     <section class="bloco fino" aria-live="polite">
       <p id="cmp-vazio" class="caixa">Escolha pelo menos duas academias acima.</p>
       <div class="rolagem" id="cmp-res" tabindex="0" role="region" aria-label="Comparação" hidden></div>
-      <p id="cmp-acoes" class="nao-imprime" style="margin-top:16px" hidden><a class="btn peq" id="cmp-custo" href="/ferramentas/custo-para-treinar-em-alphaville/">Simular quanto vou gastar <i aria-hidden="true"></i></a> <button class="btn sec peq" type="button" id="cmp-link">Copiar link desta comparação</button> <span id="cmp-ok" class="rotulo cor-marca" role="status"></span></p>
+      <p id="cmp-acoes" class="nao-imprime" style="margin-top:16px" hidden><a class="btn peq" id="cmp-custo" href="/ferramentas/custo-para-treinar-em-alphaville/">Simular quanto vou gastar <i aria-hidden="true"></i></a> <a class="btn sec peq" id="cmp-plano" href="/academias/wellhub-totalpass/?modo=par" data-evento="clique_buscador_beneficio" data-ref="comparador">Cabem no mesmo plano?</a> <button class="btn sec peq" type="button" id="cmp-link">Copiar link desta comparação</button> <span id="cmp-ok" class="rotulo cor-marca" role="status"></span></p>
       <noscript><p class="caixa">O comparador precisa de JavaScript. Sem ele, use o <a href="/academias/#tabela-t">comparativo rápido do guia</a>, que tem os mesmos dados em uma tabela.</p></noscript>
     </section>
 
@@ -67,6 +67,8 @@ const dados = paraFerramentas(todas);
         history.replaceState(null, '', q.toString() ? '?' + q : location.pathname);
         var qc = new URLSearchParams(); ids.slice(0, 3).forEach(function (id, i) { qc.set('abc'[i], id); }); qc.set('de', 'comparador');
         document.getElementById('cmp-custo').href = '/ferramentas/custo-para-treinar-em-alphaville/?' + qc;
+        var qp = new URLSearchParams({ modo: 'par', de: 'comparador' }); if (ids[0]) qp.set('a', ids[0]); if (ids[1]) qp.set('b', ids[1]);
+        document.getElementById('cmp-plano').href = '/academias/wellhub-totalpass/?' + qp;
         if (xs.length < 2) { res.hidden = true; acoes.hidden = true; vazio.hidden = false; return; }
         var h = '<table class="dados"><caption>Dados das fichas do guia. Abra a ficha para ver a fonte de cada um.</caption><thead><tr><th scope="col">Critério</th>' + xs.map(function (d) { return '<th scope="col"><a href="' + d.url + '" style="color:inherit">' + esc(d.nome) + '</a></th>'; }).join('') + '</tr></thead><tbody>';
         LINHAS.forEach(function (l) { h += '<tr><th scope="row">' + l[0] + '</th>' + xs.map(function (d) { return '<td>' + l[1](d) + '</td>'; }).join('') + '</tr>'; });

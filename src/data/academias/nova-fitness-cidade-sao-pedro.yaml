@@ -43,10 +43,20 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Funcional", "Jiu-jitsu", "Muay Thai", "Musculação"]
+  musculacao: true
+  condicoes: ["Sem necessidade de reserva, segundo o Wellhub."]
+  conferido_em: '2026-11-17'
   plano_minimo: Basic
   preco_plano: R$ 69,99
   url: https://wellhub.com/pt-br/search/partners/nova-fitness-academia-372f2bde-ae49-4dff-bf1f-033600dad5e9/
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 1", "TP 1+", "TP 3", "TP 4", "TP 5", "TP 5+", "TP 6", "TP 7", "TP 2", "TP 2+"]
+  atividades: ["Musculação", "Cardio Training", "Cross Funcional", "Circuito Funcional"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: TP 1
   preco_plano: R$ 59,90
   url: https://totalpass.com/br/academias/academia-nova-fitness/

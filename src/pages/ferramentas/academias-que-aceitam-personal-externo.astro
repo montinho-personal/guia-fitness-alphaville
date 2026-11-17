@@ -151,9 +151,11 @@ const schema = [{ '@type': 'ItemList', name: titulo, numberOfItems: lista.length
         ev('personal_externo_filtro', { filtro: attr === 'reg' ? 'regiao' : 'situacao' });
       }));
     }
+    const q0 = new URLSearchParams(location.search).get('q'); if (q0) { q.value = q0; }
     chips('reg', (v) => { reg = v; });
     chips('st', (v) => { st = v; });
     q.addEventListener('input', () => { aplicar(); clearTimeout(tBusca); tBusca = window.setTimeout(() => ev('personal_externo_filtro', { filtro: 'busca' }), 1200); });
+    if (q0) aplicar();
     document.getElementById('pe-limpar')!.addEventListener('click', () => {
       q.value = ''; reg = ''; st = '';
       document.querySelectorAll('[data-reg],[data-st]').forEach((x) => { if (x.tagName === 'BUTTON') x.setAttribute('aria-pressed', String(!(x as HTMLElement).dataset.reg && !(x as HTMLElement).dataset.st)); });

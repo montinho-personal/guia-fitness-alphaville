@@ -17,7 +17,7 @@ export const ARTIGOS: Record<string, { titulo: string; resumo: string }> = {
   '/ferramentas/custo-para-treinar-em-alphaville/': { titulo: 'Calculadora de custo para treinar', resumo: 'Mensalidade, estacionamento e personal por mês e por ida.' },
   '/academias/24-horas/': { titulo: 'Academias 24 horas', resumo: 'Quem abre de madrugada e quem só tem 24h no nome.' },
   '/academias/domingo/': { titulo: 'Academias abertas no domingo', resumo: 'Quem abre, até que horas, e onde treinar à tarde.' },
-  '/academias/wellhub-totalpass/': { titulo: 'Wellhub e TotalPass', resumo: 'O plano mínimo que cada academia exige.' },
+  '/academias/wellhub-totalpass/': { titulo: 'Buscador Wellhub e TotalPass', resumo: 'Onde seu plano entra e qual plano cobre duas academias.' },
   '/modalidades/musculacao/': { titulo: 'Musculação na região', resumo: 'Onde treinar musculação e o que observar no salão.' },
   '/modalidades/crossfit/': { titulo: 'CrossFit e cross training', resumo: 'Boxes da região e como funciona a aula.' },
   '/guias/gavioes-ou-ironberg/': { titulo: 'Gaviões 24h ou Ironberg', resumo: 'As duas academias 24 horas do guia, lado a lado.' },

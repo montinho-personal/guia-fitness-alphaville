@@ -35,10 +35,19 @@ comodidades:
 - Itens de higiene pessoal
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Fisiculturismo"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: Starter
   preco_plano: R$ 39,99
   url: https://wellhub.com/pt-br/search/partners/forja-academia-jardim-alagoas/
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 1+", "TP 3", "TP 4", "TP 5", "TP 5+", "TP 6", "TP 7", "TP 2", "TP 2+"]
+  atividades: ["Musculação"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: TP 1+
   preco_plano: R$ 89,90
   url: https://totalpass.com/br/academias/forja-academia/

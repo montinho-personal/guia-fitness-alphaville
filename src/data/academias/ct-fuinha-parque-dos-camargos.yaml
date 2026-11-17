@@ -41,6 +41,11 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Jiu-jitsu", "Muay Thai"]
+  musculacao: false
+  condicoes: ["Reserva ou agendamento necessário, segundo o Wellhub."]
+  conferido_em: '2026-11-17'
   plano_minimo: Silver
   preco_plano: R$ 149,99
   url: https://wellhub.com/pt-br/search/partners/ct-fuinha-parque-dos-camargos/

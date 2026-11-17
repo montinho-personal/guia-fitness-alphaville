@@ -34,7 +34,22 @@ const academias = defineCollection({
     modalidades: z.array(z.enum(MODALIDADES)).min(1),
     atividades_listadas: z.array(z.string()).default([]),
     comodidades: z.array(z.string()).default([]),
-    agregadores: z.array(z.object({ nome: z.enum(['Wellhub', 'TotalPass']), plano_minimo: z.string(), preco_plano: z.string(), url: z.string().url(), nota: z.string().optional() })).default([]),
+    // Wellhub e TotalPass por unidade. Ver docs/beneficios.md e src/lib/beneficios.ts.
+    // planos: os planos que a página do TotalPass lista como "planos que dão acesso" (o Wellhub só publica o mínimo, "a partir do plano").
+    // atividades: como a página do benefício lista; musculacao: se a musculação aparece entre elas.
+    agregadores: z.array(z.object({
+      nome: z.enum(['Wellhub', 'TotalPass']),
+      situacao: z.enum(['confirmada', 'nao-aceita']).default('confirmada'),
+      plano_minimo: z.string(),
+      preco_plano: z.string(),
+      url: z.string().url(),
+      nota: z.string().optional(),
+      planos: z.array(z.string()).optional(),
+      atividades: z.array(z.string()).optional(),
+      musculacao: z.boolean().optional(),
+      condicoes: z.array(z.string()).default([]),
+      conferido_em: data.optional(),
+    })).default([]),
     // Só preencher com valor confirmado. null = não confirmada.
     // valor: o menor preço mensal publicado para um plano regular da unidade.
     mensalidade: z.object({
@@ -76,6 +91,8 @@ const academias = defineCollection({
       conferido_em: data,
       canal: z.string().optional(),
       nota: z.string().optional(),
+      // A regra vale também para quem entra pelo Wellhub ou TotalPass? Sem confirmação explícita, fica a confirmar.
+      beneficio: z.enum(['confirmada', 'a-confirmar']).default('a-confirmar'),
     }).optional(),
     // true quando o Montinho Personal Trainer, que mantém o guia, atende alunos no local. Exibido como aviso na ficha.
     montinho_atende: z.boolean().default(false),

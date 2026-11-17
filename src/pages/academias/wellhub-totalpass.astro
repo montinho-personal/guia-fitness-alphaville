@@ -2,82 +2,300 @@
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
-import VideoMontinho from '../../components/VideoMontinho.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import planos from '../../data/planos-agregadores.json';
-import { academias, agregador, ORDEM_WELLHUB, urlAcademia, REGIOES, dataLonga, dataIso } from '../../lib/dados';
+import { academias, urlAcademia, REGIOES, dataLonga, dataCurta, dataIso, type Academia } from '../../lib/dados';
+import { BENEFICIOS, MODS_BEN, cobreModalidade, planosQueAcessam, type Beneficio, type EntradaBen } from '../../lib/beneficios';
+import { politicaPE } from '../../lib/personal';
 
-const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-16') };
-const todas = await academias();
-const wh = todas.filter((a) => agregador(a, 'Wellhub')).sort((x, y) => ORDEM_WELLHUB.indexOf(agregador(x, 'Wellhub')!.plano_minimo) - ORDEM_WELLHUB.indexOf(agregador(y, 'Wellhub')!.plano_minimo) || x.data.nome.localeCompare(y.data.nome));
-const tp = todas.filter((a) => agregador(a, 'TotalPass'));
-const porPlano = planos.wellhub.planos.map(([p, v]) => ({ p, v, xs: wh.filter((a) => agregador(a, 'Wellhub')!.plano_minimo === p) })).filter((g) => g.xs.length);
-const acumulado = (p: string) => wh.filter((a) => ORDEM_WELLHUB.indexOf(agregador(a, 'Wellhub')!.plano_minimo) <= ORDEM_WELLHUB.indexOf(p)).length;
-const abs = (u: string) => new URL(u, Astro.site).href;
-const preco = (lista: string[][], nome: string) => lista.find(([n]) => n === nome)?.[1];
-const whBase = wh.filter((a) => ORDEM_WELLHUB.indexOf(agregador(a, 'Wellhub')!.plano_minimo) <= ORDEM_WELLHUB.indexOf('Basic+'));
-const lista = (xs: typeof wh) => xs.map((a) => a.data.nome).join(', ').replace(/, ([^,]*)$/, ' e $1');
-const perguntas = [
-  { p: 'Quais academias aceitam Gympass em Alphaville?', r: `O Gympass hoje se chama Wellhub. Das ${todas.length} academias e estúdios com ficha no guia, ${wh.length} aceitam o Wellhub. Em Alphaville e no Tamboré, aparecem, entre outras, ${lista(wh.filter((a) => a.data.regiao === 'alphaville').slice(0, 8))}. A tabela desta página mostra o plano mínimo de cada uma.` },
-  { p: 'Quanto é o Gympass (Wellhub) por mês?', r: `Pela tabela exibida nas páginas do Wellhub, conferida em ${dataLonga(new Date(planos.conferido_em))}: Starter R$ ${preco(planos.wellhub.planos, 'Starter')}, Basic R$ ${preco(planos.wellhub.planos, 'Basic')}, Basic+ R$ ${preco(planos.wellhub.planos, 'Basic+')}, Silver R$ ${preco(planos.wellhub.planos, 'Silver')}, Silver+ R$ ${preco(planos.wellhub.planos, 'Silver+')}, Gold R$ ${preco(planos.wellhub.planos, 'Gold')}, Gold+ R$ ${preco(planos.wellhub.planos, 'Gold+')}, Platinum R$ ${preco(planos.wellhub.planos, 'Platinum')} e Diamond R$ ${preco(planos.wellhub.planos, 'Diamond')} por mês. O valor que você paga pode variar conforme o acordo da sua empresa.` },
-  { p: 'Quais academias aceitam os planos mais baratos do Wellhub?', r: whBase.length ? `Até o Basic+: ${lista(whBase)}.` : 'Nenhuma academia do guia entra pelos planos de entrada.' },
-  { p: 'Quanto custa o TotalPass por mês?', r: `Pelas páginas do TotalPass: ${planos.totalpass.planos.map(([n, v]) => `${n} R$ ${v}`).join(', ')}. Como no Wellhub, o valor final depende do acordo com a sua empresa.` },
-  { p: 'Quem tem Gympass paga academia?', r: 'Não paga a mensalidade da academia: o acesso vem do plano do agregador, desde que ele seja igual ou superior ao plano mínimo da academia. Algumas academias limitam horários ou modalidades para certos planos, como a Bodytech Iguatemi no Silver. Serviços extras, como personal ou avaliação, podem ser cobrados à parte.' },
-  { p: 'Tem Gympass para pessoa física?', r: 'O Wellhub e o TotalPass são oferecidos como benefício pela empresa onde a pessoa trabalha; as páginas conferidas pelo guia mostram a opção de verificar a elegibilidade. Se a sua empresa não oferece, a alternativa é a matrícula direta na academia.' },
-];
-const titulo = 'Gympass (Wellhub) e TotalPass em Alphaville: academias e planos';
-const descricao = 'O plano mínimo do Wellhub e do TotalPass que cada academia de Alphaville, Barueri e Santana de Parnaíba exige, e quanto esse plano custa por mês.';
+const URL_PAG = '/academias/wellhub-totalpass/';
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-13'), atualizado: new Date('2026-11-17') };
+const ORDEM: Record<Beneficio, string[]> = { Wellhub: planos.wellhub.planos.map(([p]) => p), TotalPass: planos.totalpass.planos.map(([p]) => p) };
+const PRECO: Record<Beneficio, Record<string, string>> = { Wellhub: Object.fromEntries(planos.wellhub.planos), TotalPass: Object.fromEntries(planos.totalpass.planos) };
+const ORDEM_REG: Record<string, number> = { alphaville: 0, barueri: 1, 'santana-de-parnaiba': 2 };
+const todas = (await academias()).sort((a, b) => ORDEM_REG[a.data.regiao] - ORDEM_REG[b.data.regiao] || a.data.nome.localeCompare(b.data.nome, 'pt-BR'));
+const ents = (a: Academia) => a.data.agregadores as unknown as EntradaBen[];
+
+// Uma linha por unidade e benefício, com os planos que dão acesso e as modalidades cobertas.
+const linhas = BENEFICIOS.flatMap((ben) => todas.flatMap((a) => {
+  const e = ents(a).find((x) => x.nome === ben); if (!e) return [];
+  const pe = politicaPE(a.data.personal_externo);
+  return [{ a, ben, e, acessam: planosQueAcessam(e, ORDEM[ben]) ?? [], mods: Object.keys(MODS_BEN).filter((m) => cobreModalidade(e, m) === true), rank: ORDEM[ben].indexOf(e.plano_minimo), pe }];
+})).sort((x, y) => x.rank - y.rank || ORDEM_REG[x.a.data.regiao] - ORDEM_REG[y.a.data.regiao] || x.a.data.nome.localeCompare(y.a.data.nome, 'pt-BR'));
+
+const conta = (ben: Beneficio, mod?: string, reg?: string) => linhas.filter((l) => l.ben === ben && (!mod || l.mods.includes(mod)) && (!reg || l.a.data.regiao === reg)).length;
+const academiasMusc = todas.filter((a) => a.data.tipo === 'academia');
+const semBen = (ben: Beneficio) => academiasMusc.filter((a) => !ents(a).some((x) => x.nome === ben));
+const lista = (xs: string[]) => xs.join(', ').replace(/, ([^,]*)$/, ' e $1');
+const minMusc = (ben: Beneficio) => linhas.filter((l) => l.ben === ben && l.mods.includes('musculacao') && l.a.data.regiao === 'alphaville').slice(0, 6).map((l) => `${l.a.data.nome} (${l.e.plano_minimo})`);
 const conf = new Date(planos.conferido_em);
-const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const R = (n: string) => n.replace('.', ',');
+
+// Dados para a parte interativa (o mesmo conteúdo já está no HTML).
+const dadosJS = todas.map((a) => ({ id: a.id, nome: a.data.nome, bairro: a.data.bairro, reg: a.data.regiao, regNome: REGIOES[a.data.regiao].nome, url: urlAcademia(a), tipo: a.data.tipo, ags: ents(a).map((e) => ({ ...e, conferido_em: undefined })) }));
+
+const titulo = 'Academias Wellhub e TotalPass em Alphaville';
+const descricao = 'Buscador de academias com Wellhub (Gympass) e TotalPass em Alphaville, Tamboré, Barueri e Santana: plano mínimo, musculação e o plano que cobre duas unidades.';
+const perguntas = [
+  { p: 'Quais academias aceitam Wellhub (Gympass) em Alphaville?', r: `Das academias com ficha no guia, ${conta('Wellhub', undefined, 'alphaville')} unidades de Alphaville e do Tamboré estão no Wellhub, ${conta('Wellhub', 'musculacao', 'alphaville')} delas com musculação. Entre as de plano mais baixo: ${lista(minMusc('Wellhub'))}. O buscador desta página filtra por plano, região e modalidade.` },
+  { p: 'Quais academias aceitam TotalPass em Alphaville?', r: `${conta('TotalPass', undefined, 'alphaville')} unidades de Alphaville e do Tamboré com ficha no guia estão no TotalPass, ${conta('TotalPass', 'musculacao', 'alphaville')} com musculação. Entre as de plano mais baixo: ${lista(minMusc('TotalPass'))}.` },
+  { p: 'Quem tem Gympass pode malhar em qualquer academia?', r: 'Não. Cada unidade exige um plano mínimo, e a página dela no Wellhub diz "a partir do plano" tal. Com um plano abaixo desse, a unidade não entra. Algumas unidades também aceitam o benefício só para certas atividades ou horários; o buscador mostra isso por unidade.' },
+  { p: 'Qual é mais barato, Gympass ou TotalPass?', r: `Depende da academia. Pelas tabelas das páginas de parceiros, o plano de entrada do TotalPass é o TP GO (R$ ${R(PRECO.TotalPass['TP GO'])}) e o do Wellhub é o Starter (R$ ${R(PRECO.Wellhub['Starter'])}), mas o que importa é o plano mínimo da academia que você quer. A SkyFit Alphaville, por exemplo, entra pelo Silver do Wellhub e pelo TP 1+ do TotalPass. O valor que você paga ainda depende do acordo da sua empresa.` },
+  { p: 'Um plano superior dá acesso às academias de planos inferiores?', r: 'Na unidade, sim, conforme a própria página: o Wellhub informa o acesso "a partir do plano" mínimo, e o TotalPass lista os planos que dão acesso, que vão do mínimo para cima. O guia usa essas páginas, unidade por unidade, e não uma regra geral.' },
+  { p: 'Qual plano cobre a academia perto de casa e a perto do trabalho?', r: 'Use o modo "Qual plano cobre as duas?" desta página: escolha as duas unidades e a modalidade, e o buscador mostra, no Wellhub e no TotalPass, o menor plano que dá acesso às duas. Se uma delas não estiver no benefício ou não listar a modalidade, o resultado explica o motivo.' },
+  { p: 'Quem tem Wellhub ou TotalPass pode treinar com personal?', r: 'O benefício dá acesso à academia; o personal é um serviço à parte. Mesmo quando a academia aceita personal externo, o guia ainda não confirmou se a regra vale igual para quem entra pelo benefício. Pergunte na unidade e veja a regra geral no guia de personal externo.' },
+  { p: 'O que o plano TP 2 do TotalPass oferece?', r: `Pela tabela do TotalPass, o TP 2 custa R$ ${R(PRECO.TotalPass['TP 2'])} por mês como referência. Nas fichas do guia, ele dá acesso, por exemplo, às Smart Fit da Sodimac e do Carrefour Hiper Tamboré. Escolha TotalPass e TP 2 no buscador para ver a lista completa da região.` },
+];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: new URL('/sobre/', Astro.site).href }, publisher: { '@id': new URL('/#org', Astro.site).href } }];
+const urlCalc = (id: string, ben: Beneficio) => `/ferramentas/custo-para-treinar-em-alphaville/?a=${id}&beneficio=${ben.toLowerCase()}&de=beneficios`;
+const urlPE = (nome: string) => `/ferramentas/academias-que-aceitam-personal-externo/?q=${encodeURIComponent(nome)}`;
 ---
-<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Wellhub e TotalPass', url: '/academias/wellhub-totalpass/' }]}>
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Wellhub e TotalPass', url: URL_PAG }]}>
   <div class="wrap">
     <header class="cab-pag">
-      <span class="rotulo cor-marca">Guia de academias · agregadores</span>
-      <h1>Academias com Wellhub e TotalPass em Alphaville e região</h1>
-      <p class="linha-fina">Aceitar o agregador não basta: cada academia exige um plano mínimo, e a diferença entre eles passa de R$ 300 por mês. Aqui está o plano que cada uma pede.</p>
+      <span class="rotulo cor-marca">Buscador · benefício corporativo</span>
+      <h1>Academias que aceitam Wellhub (Gympass) e TotalPass em Alphaville</h1>
+      <p class="linha-fina">Escolha seu plano e veja onde ele entra, ou descubra qual plano cobre duas academias, como a perto de casa e a perto do trabalho. Dados de cada unidade, com a data em que foram conferidos.</p>
       <Assinatura {...gov} />
     </header>
 
-    <div class="resposta">
-      <span class="rotulo">Resposta direta</span>
-      <p>Das {todas.length} academias com ficha, {wh.length} estão no Wellhub e {tp.length} no TotalPass. No Wellhub, o plano Silver (R$ 149,99 por mês) dá acesso a {acumulado('Silver')} delas; o Silver+ (R$ 199,99), a {acumulado('Silver+')}; e só o Gold+ (R$ 439,99) cobre todas as {wh.length}. Os preços são os do agregador em {dataLonga(conf)} e podem variar conforme o convênio da sua empresa.</p>
+    <div class="resposta"><span class="rotulo">Resposta direta</span>
+      <p>Em Alphaville e no Tamboré, {conta('Wellhub', 'musculacao', 'alphaville')} academias com musculação estão no Wellhub (o antigo Gympass) e {conta('TotalPass', 'musculacao', 'alphaville')} no TotalPass, segundo as fichas do guia. Cada uma exige um plano mínimo: no Wellhub, por exemplo, {lista(minMusc('Wellhub').slice(0, 3))}; no TotalPass, {lista(minMusc('TotalPass').slice(0, 3))}. Em Barueri e Santana de Parnaíba há mais {conta('Wellhub', 'musculacao') - conta('Wellhub', 'musculacao', 'alphaville')} no Wellhub e {conta('TotalPass', 'musculacao') - conta('TotalPass', 'musculacao', 'alphaville')} no TotalPass.</p>
     </div>
+
+    <section class="bn" id="bn" aria-labelledby="bn-t">
+      <h2 id="bn-t" class="so-leitor">Buscador</h2>
+      <div class="bn-modos nao-imprime" role="tablist" aria-label="Modo">
+        <button type="button" role="tab" id="aba-plano" aria-selected="true" aria-controls="modo-plano">Já tenho um plano</button>
+        <button type="button" role="tab" id="aba-par" aria-selected="false" aria-controls="modo-par" tabindex="-1">Qual plano cobre as duas?</button>
+      </div>
+
+      <div id="modo-plano" role="tabpanel" aria-labelledby="aba-plano">
+        <div class="bn-filtros nao-imprime">
+          <div class="bn-seg" role="radiogroup" aria-label="Benefício">
+            {BENEFICIOS.map((b, i) => <button type="button" role="radio" data-ben={b} aria-checked={i === 0 ? 'true' : 'false'}>{b === 'Wellhub' ? 'Wellhub (Gympass)' : 'TotalPass'}</button>)}
+          </div>
+          <div class="bn-linha">
+            <label><span>Seu plano</span><select id="bn-plano"><option value="">Qualquer plano</option></select></label>
+            <label><span>Modalidade</span><select id="bn-mod">{Object.entries(MODS_BEN).map(([k, m]) => <option value={k} selected={k === 'musculacao'}>{m.rotulo}</option>)}</select></label>
+          </div>
+          <div class="bn-chips" role="group" aria-label="Região">
+            <button type="button" data-reg="" aria-pressed="true">Todas as regiões</button>
+            {Object.entries(REGIOES).map(([id, r]) => <button type="button" data-reg={id} aria-pressed="false">{r.nome}</button>)}
+          </div>
+          <p class="bn-conta" id="bn-conta" aria-live="polite"></p>
+        </div>
+
+        {BENEFICIOS.map((ben) => (
+          <div class="bn-grupo" data-grupo={ben}>
+            <h3 class="bn-gtit">{ben === 'Wellhub' ? 'Wellhub (Gympass)' : 'TotalPass'}: unidades e plano mínimo</h3>
+            <ol class="bn-lista">
+              {linhas.filter((l) => l.ben === ben).map((l) => {
+                const d = l.a.data;
+                const peAceita = l.pe.status === 'aceita' || l.pe.status === 'aceita-com-condicoes';
+                return (
+                  <li class="bn-item" data-ben={ben} data-reg={d.regiao} data-planos={l.acessam.join('|')} data-mods={l.mods.join(' ')} data-id={l.a.id}>
+                    <div class="bn-cab">
+                      <h4><a href={urlAcademia(l.a)} data-evento="clique_academia" data-ref="beneficios">{d.nome}</a></h4>
+                      <span class="bn-local">{d.bairro} · {REGIOES[d.regiao].nome}</span>
+                      <span class="bn-plano">A partir do <strong>{l.e.plano_minimo}</strong>{PRECO[ben][l.e.plano_minimo] && <> · R$ {PRECO[ben][l.e.plano_minimo]}/mês de referência</>}</span>
+                    </div>
+                    <p class="bn-mod" data-musc={l.mods.includes('musculacao') ? '1' : '0'}>{l.mods.includes('musculacao') ? 'Musculação incluída' : 'Sem musculação na lista do benefício'}{l.mods.filter((m) => m !== 'musculacao').length > 0 && <> · também {l.mods.filter((m) => m !== 'musculacao').map((m) => MODS_BEN[m].rotulo.toLowerCase()).join(', ')}</>}</p>
+                    {(l.e.nota || (l.e.condicoes ?? []).length > 0) && <ul class="bn-cond">{l.e.nota && <li>{l.e.nota}</li>}{(l.e.condicoes ?? []).map((c) => <li>{c}</li>)}</ul>}
+                    {ben === 'TotalPass' && l.e.planos && <p class="bn-planos">Planos que dão acesso: {l.acessam.join(', ')}</p>}
+                    <p class="bn-meta">Conferido em {l.e.conferido_em ? dataCurta(new Date(l.e.conferido_em as any)) : dataCurta(conf)} · <a href={l.e.url} rel="nofollow noopener" target="_blank">página da unidade no {ben}</a></p>
+                    <p class="bn-pe">{peAceita ? <>Personal externo: a academia aceita em geral; <strong>para quem entra pelo {ben}, a confirmar</strong>. </> : ''}<a href={urlPE(d.nome)} data-evento="clique_guia_personal_externo" data-ref="beneficios">Ver regras para personal externo</a></p>
+                    <p class="bn-acoes"><a class="btn peq" href={urlCalc(l.a.id, ben)} data-evento="clique_calculadora" data-ref="beneficios">Simular meu custo nesta academia</a> <a class="link-forte" href={urlAcademia(l.a)} data-evento="clique_academia" data-ref="beneficios">Ver a ficha</a></p>
+                  </li>
+                );
+              })}
+            </ol>
+            <div class="bn-outros">
+              <p class="bn-outra" data-outra={ben} hidden></p>
+              <p class="bn-pend"><strong>A confirmar no {ben}:</strong> {semBen(ben).length} academias com musculação do guia não aparecem no catálogo do {ben} conferido, como {lista(semBen(ben).slice(0, 6).map((a) => a.data.nome))}. Isso não quer dizer que não aceitem; confirme no aplicativo.</p>
+            </div>
+          </div>
+        ))}
+        <div class="bn-vazio caixa" id="bn-vazio" hidden>
+          <p id="bn-vazio-txt"></p>
+          <button type="button" class="btn sec peq" id="bn-limpar">Limpar filtros</button>
+        </div>
+      </div>
+
+      <div id="modo-par" role="tabpanel" aria-labelledby="aba-par" hidden>
+        <p class="bn-intro">Escolha duas unidades, por exemplo uma perto de casa e outra perto do trabalho. O buscador mostra, no Wellhub e no TotalPass, o menor plano que dá acesso às duas na modalidade escolhida.</p>
+        <div class="bn-linha">
+          <label><span>Perto de casa</span><select id="par-a"><option value="">Escolha</option>{todas.filter((a) => ents(a).length).map((a) => <option value={a.id}>{a.data.nome} — {a.data.bairro}</option>)}</select></label>
+          <label><span>Perto do trabalho</span><select id="par-b"><option value="">Escolha</option>{todas.filter((a) => ents(a).length).map((a) => <option value={a.id}>{a.data.nome} — {a.data.bairro}</option>)}</select></label>
+          <label><span>Modalidade</span><select id="par-mod">{Object.entries(MODS_BEN).map(([k, m]) => <option value={k} selected={k === 'musculacao'}>{m.rotulo}</option>)}</select></label>
+        </div>
+        <div id="par-res" class="par-res" aria-live="polite"></div>
+        <p class="nota-pq">Unidades sem Wellhub e sem TotalPass nas fichas do guia não aparecem nesta lista.</p>
+      </div>
+    </section>
 
     <div class="prosa">
-      <h2>Wellhub: o que cada plano abre</h2>
-      <p>A lista está agrupada pelo plano mínimo exigido. Quem tem um plano superior acessa também as academias dos grupos anteriores.</p>
-      {porPlano.map((g) => <>
-        <h3>A partir do {g.p} — R$ {g.v} por mês</h3>
-        <ul>{g.xs.map((a) => <li><a href={urlAcademia(a)}>{a.data.nome}</a> — {a.data.bairro}, {REGIOES[a.data.regiao].nome}{agregador(a, 'Wellhub')!.nota && <>. <em>{agregador(a, 'Wellhub')!.nota}</em></>}</li>)}</ul>
-      </>)}
+      <h2>Como os dados foram conferidos</h2>
+      <p>Cada unidade foi conferida na sua página oficial de parceiro no Wellhub e no TotalPass, comparando nome e endereço com a ficha do guia. Do Wellhub vêm o plano mínimo ("a partir do plano"), as atividades e avisos como reserva ou horários específicos; do TotalPass vêm os planos que dão acesso e as modalidades. A cobertura de uma unidade nunca é estendida a outra da mesma rede. Unidade que não aparece no catálogo fica como "a confirmar", e não como "não aceita". Os preços são os de referência das tabelas dos próprios benefícios em {dataLonga(conf)}; o valor que você paga depende do acordo da sua empresa.</p>
 
-      <h2>TotalPass</h2>
-      <p>Só conferimos, até agora, as páginas do TotalPass de {tp.length} academias. Outras podem aceitar o agregador sem que isso esteja registrado aqui.</p>
+      <h2>Tabela de planos de referência</h2>
     </div>
-    <div class="rolagem" tabindex="0" role="region" aria-label="Academias no TotalPass" style="margin:8px 0 28px">
+    <div class="rolagem" tabindex="0" role="region" aria-label="Planos de referência">
       <table class="dados">
-        <caption>Plano mínimo conforme a página de cada unidade no TotalPass, em {dataLonga(conf)}.</caption>
-        <thead><tr><th scope="col">Academia</th><th scope="col">Região</th><th scope="col">Plano mínimo</th><th scope="col">Preço do plano</th></tr></thead>
-        <tbody>{tp.map((a) => <tr><th scope="row"><a href={urlAcademia(a)}>{a.data.nome}</a></th><td>{a.data.bairro}</td><td>{agregador(a, 'TotalPass')!.plano_minimo}</td><td>{agregador(a, 'TotalPass')!.preco_plano}/mês</td></tr>)}</tbody>
+        <caption>Preço mensal de referência exibido nas páginas de parceiros, em {dataLonga(conf)}. O valor final depende do acordo com a sua empresa.</caption>
+        <thead><tr><th scope="col">Wellhub</th><th scope="col">Por mês</th><th scope="col">TotalPass</th><th scope="col">Por mês</th></tr></thead>
+        <tbody>{Array.from({ length: Math.max(planos.wellhub.planos.length, planos.totalpass.planos.length) }, (_, i) => <tr><th scope="row">{planos.wellhub.planos[i]?.[0] ?? ''}</th><td>{planos.wellhub.planos[i] ? `R$ ${planos.wellhub.planos[i][1]}` : ''}</td><th scope="row">{planos.totalpass.planos[i]?.[0] ?? ''}</th><td>{planos.totalpass.planos[i] ? `R$ ${planos.totalpass.planos[i][1]}` : ''}</td></tr>)}</tbody>
       </table>
     </div>
     <div class="prosa">
-      <h2>Três cuidados ao usar agregador</h2>
+      <h2>Três cuidados ao usar o benefício</h2>
       <ul>
-        <li><strong>O preço do plano não é a mensalidade da academia.</strong> É o que você paga ao agregador, em geral com desconto em folha. O valor para quem contrata direto com a academia é outro; as que publicam preço estão em <a href="/academias/precos/">quanto custa academia</a>.</li>
-        <li><strong>Pode haver restrição de horário.</strong> Algumas unidades liberam o acesso pelo plano mais barato só em janelas específicas. A ficha da <a href="/academias/bodytech-iguatemi-alphaville/">Bodytech Iguatemi Alphaville</a> registra um caso assim.</li>
-        <li><strong>O horário exibido pode ser só o do agregador.</strong> Em estúdios pequenos, a página às vezes mostra apenas a janela disponível para usuários da plataforma.</li>
+        <li><strong>O preço do plano não é a mensalidade da academia.</strong> É o que você paga ao benefício, em geral com desconto em folha. Para comparar com a matrícula direta, use a <a href="/ferramentas/custo-para-treinar-em-alphaville/">calculadora de custo</a> e veja os preços em <a href="/academias/precos/">quanto custa academia</a>.</li>
+        <li><strong>A unidade pode entrar por outra atividade.</strong> Uma academia pode aparecer no benefício só para lutas ou aulas, sem a musculação. O buscador mostra o que a página do benefício lista.</li>
+        <li><strong>Pode haver reserva ou restrição de horário.</strong> Algumas unidades pedem agendamento, e outras liberam certos planos só em horários específicos, como a <a href="/academias/bodytech-iguatemi-alphaville/">Bodytech Iguatemi</a>.</li>
       </ul>
-      <h2>Vale mais o agregador ou o plano direto?</h2>
-      <p>Depende de quanto custa a mensalidade direta, que a maioria das academias da região não publica. A conta só fecha com os dois números na mão: o que o agregador desconta do seu salário e o que a academia cobraria de você. Peça o valor do plano direto na recepção e compare. Se você pretende frequentar mais de um lugar — musculação em uma academia e CrossFit em um <a href="/modalidades/crossfit/">box</a>, por exemplo —, o agregador tende a compensar mais.</p>
-      <p>Para filtrar o guia por agregador, use <a href="/academias/?filtro=wellhub">academias no Wellhub</a> ou <a href="/academias/?filtro=totalpass">academias no TotalPass</a>.</p>
+      <p>Para colocar academias lado a lado por horário e estrutura, use o <a href="/ferramentas/comparador/">comparador</a>. Quem treina com personal deve ver também <a href="/ferramentas/academias-que-aceitam-personal-externo/">academias que aceitam personal externo</a>.</p>
     </div>
-    <Perguntas itens={perguntas} titulo="Perguntas sobre Gympass e TotalPass" />
-
-    <VideoMontinho id="yndKE1GrnUQ" titulo="Toda pessoa com shape tem uma coisa em comum" pagina="wellhub-totalpass" />
-    <LeiaTambem url="/academias/wellhub-totalpass/" />
-    <div style="margin-top:28px"><Fontes fontes={[{ titulo: planos.wellhub.fonte, url: planos.wellhub.url, data: dataLonga(conf) }, { titulo: planos.totalpass.fonte, url: planos.totalpass.url, data: dataLonga(conf) }, { titulo: 'Página de cada unidade nos dois agregadores, listada na respectiva ficha' }]} /></div>
+    <Perguntas itens={perguntas} titulo="Perguntas sobre Wellhub (Gympass) e TotalPass" />
+    <LeiaTambem url={URL_PAG} />
+    <div style="margin-top:28px"><Fontes fontes={[{ titulo: planos.wellhub.fonte, url: planos.wellhub.url, data: dataLonga(conf) }, { titulo: planos.totalpass.fonte, url: planos.totalpass.url, data: dataLonga(conf) }, { titulo: 'Página de cada unidade nos dois benefícios, com link em cada resultado' }]} /></div>
   </div>
+
+  <script type="application/json" id="bn-dados" set:html={JSON.stringify({ academias: dadosJS, ordem: ORDEM, mods: Object.fromEntries(Object.entries(MODS_BEN).map(([k, m]) => [k, m.rotulo])) })}></script>
+  <script>
+    import { planoComum, cobertura, type Beneficio, type EntradaBen } from '../../lib/beneficios';
+    type A = { id: string; nome: string; bairro: string; reg: string; regNome: string; url: string; tipo: string; ags: EntradaBen[] };
+    const J = JSON.parse(document.getElementById('bn-dados')!.textContent!) as { academias: A[]; ordem: Record<Beneficio, string[]>; mods: Record<string, string> };
+    const ev = (n: string, d: Record<string, string>) => { const w = window as any; if (typeof w.otaEvento === 'function') w.otaEvento(n, d); };
+    const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+    const $ = (id: string) => document.getElementById(id)!;
+    const p = new URLSearchParams(location.search);
+
+    // ---------- modo "Já tenho um plano" ----------
+    let ben: Beneficio = p.get('b')?.toLowerCase() === 'totalpass' ? 'TotalPass' : 'Wellhub';
+    let reg = '';
+    const selPlano = $('bn-plano') as HTMLSelectElement, selMod = $('bn-mod') as HTMLSelectElement;
+    function opcoesPlano(manter = '') {
+      selPlano.innerHTML = '<option value="">Qualquer plano</option>' + J.ordem[ben].map((x) => `<option${x === manter ? ' selected' : ''}>${x}</option>`).join('');
+    }
+    function aplicar() {
+      const plano = selPlano.value, mod = selMod.value;
+      document.querySelectorAll<HTMLElement>('[data-ben][role=radio]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.ben === ben)));
+      let n = 0;
+      document.querySelectorAll<HTMLElement>('.bn-grupo').forEach((g) => { g.hidden = g.dataset.grupo !== ben; });
+      const outra: string[] = [];
+      document.querySelectorAll<HTMLElement>(`.bn-item[data-ben="${ben}"]`).forEach((li) => {
+        const okReg = !reg || li.dataset.reg === reg;
+        const okPlano = !plano || li.dataset.planos!.split('|').includes(plano);
+        const okMod = li.dataset.mods!.split(' ').includes(mod);
+        if (okReg && okPlano && !okMod) outra.push(li.querySelector('h4')!.textContent!);
+        li.hidden = !(okReg && okPlano && okMod); if (!li.hidden) n++;
+      });
+      const rot = J.mods[mod].toLowerCase();
+      $('bn-conta').textContent = `${n} ${n === 1 ? 'unidade' : 'unidades'} com ${rot} ${plano ? `no ${ben} ${plano}` : `no ${ben}`}`;
+      const po = document.querySelector<HTMLElement>(`[data-outra="${ben}"]`)!;
+      po.hidden = !outra.length;
+      po.innerHTML = outra.length ? `<strong>Aceitam o ${ben}${plano ? ` ${plano}` : ''}, mas a página do benefício não lista ${esc(rot)}:</strong> ${outra.map(esc).join(', ')}.` : '';
+      $('bn-vazio').hidden = n > 0;
+      if (!n) $('bn-vazio-txt').textContent = `Nenhuma unidade confirmada para ${rot} ${plano ? `no ${ben} ${plano}` : `no ${ben}`}${reg ? ' nesta região' : ''}. Isso não significa que as academias recusem o plano: pode ser um plano abaixo do mínimo delas ou uma unidade ainda não conferida.`;
+      const q = new URLSearchParams(); q.set('b', ben.toLowerCase()); if (plano) q.set('plano', plano); if (mod !== 'musculacao') q.set('mod', mod); if (reg) q.set('reg', reg);
+      history.replaceState(null, '', `?${q}`);
+    }
+    document.querySelectorAll<HTMLButtonElement>('[data-ben][role=radio]').forEach((b) => b.addEventListener('click', () => { ben = b.dataset.ben as Beneficio; opcoesPlano(); aplicar(); ev('beneficio_filtro', { filtro: 'beneficio' }); }));
+    selPlano.addEventListener('change', () => { aplicar(); ev('beneficio_filtro', { filtro: 'plano' }); });
+    selMod.addEventListener('change', () => { aplicar(); ev('beneficio_filtro', { filtro: 'modalidade' }); });
+    document.querySelectorAll<HTMLButtonElement>('[data-reg]').forEach((b) => b.addEventListener('click', () => {
+      reg = b.dataset.reg || ''; document.querySelectorAll('[data-reg]').forEach((x) => { if (x.tagName === 'BUTTON') x.setAttribute('aria-pressed', String(x === b)); }); aplicar(); ev('beneficio_filtro', { filtro: 'regiao' });
+    }));
+    $('bn-limpar').addEventListener('click', () => { selPlano.value = ''; selMod.value = 'musculacao'; reg = ''; document.querySelectorAll('[data-reg]').forEach((x) => { if (x.tagName === 'BUTTON') x.setAttribute('aria-pressed', String(!(x as HTMLElement).dataset.reg)); }); aplicar(); selPlano.focus(); });
+
+    // ---------- modo "Qual plano cobre as duas?" ----------
+    const porId = (id: string) => J.academias.find((a) => a.id === id);
+    const sa = $('par-a') as HTMLSelectElement, sb = $('par-b') as HTMLSelectElement, sm = $('par-mod') as HTMLSelectElement;
+    function comparar(registrar = true) {
+      const a = porId(sa.value), b = porId(sb.value); const out = $('par-res');
+      if (!a || !b) { out.innerHTML = '<p class="nota-pq">Escolha as duas unidades.</p>'; return; }
+      if (a.id === b.id) { out.innerHTML = '<p class="nota-pq">Escolha duas unidades diferentes.</p>'; return; }
+      const mod = sm.value; const rot = J.mods[mod].toLowerCase();
+      const cards = (['Wellhub', 'TotalPass'] as Beneficio[]).map((bn) => {
+        const r = planoComum(a.ags, b.ags, bn, mod, J.ordem[bn], [a.nome, b.nome]);
+        const linha = (x: A) => { const c = cobertura(x.ags, bn, mod); return `<li><strong>${esc(x.nome)}:</strong> ${c.e && c.estado === 'confirmada' ? `a partir do ${esc(c.e.plano_minimo)}${(c.e.condicoes ?? []).length || c.e.nota ? ` <small>(${esc([c.e.nota, ...(c.e.condicoes ?? [])].filter(Boolean).join(' '))})</small>` : ''}` : c.estado === 'outra-modalidade' ? `aceita o ${bn}, sem ${esc(rot)} na lista` : c.estado === 'nao-aceita' ? 'não aceita, segundo a fonte' : 'a confirmar'}</li>`; };
+        const topo = r.tipo === 'comum' ? `<p class="par-ok">✓ O <strong>${esc(r.plano)}</strong> cobre as duas${r.planos.length > 1 ? `; ${esc(r.planos.slice(1).join(', '))} também` : ''}.</p>`
+          : r.tipo === 'incompativel' ? `<p class="par-nao">✕ Nenhum plano cobre as duas. ${esc(r.motivo)}</p>` : `<p class="par-pend">? Comparação pendente. ${esc(r.motivo)}</p>`;
+        return `<div class="par-card"><h4>${bn === 'Wellhub' ? 'Wellhub (Gympass)' : 'TotalPass'}</h4>${topo}<ul>${linha(a)}${linha(b)}</ul></div>`;
+      });
+      out.innerHTML = `<div class="par-grade">${cards.join('')}</div><p class="par-links"><a href="/ferramentas/comparador/?a=${a.id}&b=${b.id}" data-evento="clique_comparador" data-ref="beneficios">Comparar horário e estrutura das duas</a> · <a href="/ferramentas/custo-para-treinar-em-alphaville/?a=${a.id}&b=${b.id}&de=beneficios" data-evento="clique_calculadora" data-ref="beneficios-par">Simular o custo</a></p>`;
+      if (registrar) ev('beneficio_comparacao', { modalidade: mod });
+      const q = new URLSearchParams({ modo: 'par', a: a.id, b: b.id }); if (mod !== 'musculacao') q.set('mod', mod); history.replaceState(null, '', `?${q}`);
+    }
+    [sa, sb, sm].forEach((s) => s.addEventListener('change', () => comparar()));
+
+    // ---------- abas ----------
+    const abas = [$('aba-plano'), $('aba-par')], paineis = [$('modo-plano'), $('modo-par')];
+    function abrir(i: number, foco = false) {
+      abas.forEach((t, j) => { t.setAttribute('aria-selected', String(i === j)); t.tabIndex = i === j ? 0 : -1; paineis[j].hidden = i !== j; });
+      if (foco) abas[i].focus();
+      if (i === 0) aplicar(); else comparar(false);
+    }
+    abas.forEach((t, i) => { t.addEventListener('click', () => abrir(i)); t.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); abrir(1 - i, true); } }); });
+
+    // ---------- estado inicial pela URL ----------
+    opcoesPlano(p.get('plano') || '');
+    if (p.get('mod') && J.mods[p.get('mod')!]) { selMod.value = p.get('mod')!; sm.value = p.get('mod')!; }
+    if (p.get('reg')) { reg = p.get('reg')!; document.querySelectorAll('[data-reg]').forEach((x) => { if (x.tagName === 'BUTTON') x.setAttribute('aria-pressed', String((x as HTMLElement).dataset.reg === reg)); }); }
+    if (p.get('modo') === 'par' || (p.get('a') && p.get('b'))) {
+      if (porId(p.get('a') || '')) sa.value = p.get('a')!; if (porId(p.get('b') || '')) sb.value = p.get('b')!;
+      abrir(1);
+      if (p.get('de') === 'comparador') ev('beneficio_aberto', { origem: 'comparador' });
+    } else abrir(0);
+  </script>
 </Base>
+
+<style is:global>
+  .bn{margin:8px 0 28px}
+  .bn-modos{display:flex;gap:6px;background:#F7F4EC;border:1px solid #E3DDCF;border-radius:14px;padding:5px;margin-bottom:14px}
+  .bn-modos button{flex:1;min-height:46px;border:0;border-radius:10px;background:transparent;font:700 15px/1.2 var(--display);color:var(--texto2);cursor:pointer;padding:8px}
+  .bn-modos button[aria-selected=true]{background:var(--tinta);color:#fff}
+  .bn-filtros{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+  .bn-seg{display:flex;gap:6px}
+  .bn-seg button{flex:1;min-height:44px;border:1.5px solid #E3DDCF;background:#fff;border-radius:12px;font:700 15px var(--display);color:var(--tinta);cursor:pointer}
+  .bn-seg button[aria-checked=true]{background:var(--alameda);border-color:var(--alameda);color:#fff}
+  .bn-linha{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+  .bn-linha label{display:flex;flex-direction:column;gap:5px;font:600 13px var(--display);color:var(--cinza);min-width:0}
+  .bn-linha select{width:100%;font:700 16px var(--display);padding:12px;border:1.5px solid #E3DDCF;border-radius:12px;background:#fff;color:var(--tinta)}
+  .bn-chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  .bn-chips button{flex:none;border:1.5px solid #E3DDCF;background:#fff;border-radius:999px;padding:8px 13px;font:700 13.5px var(--display);color:var(--tinta);cursor:pointer;white-space:nowrap}
+  .bn-chips button[aria-pressed=true]{background:var(--tinta);border-color:var(--tinta);color:#fff}
+  .bn-conta{margin:0;font:700 14px var(--display);color:var(--alameda)}
+  .bn-gtit{font-size:18px;margin:14px 0 8px}
+  .bn-lista{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+  @media(min-width:900px){.bn-lista{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .bn-item{min-width:0;overflow-wrap:anywhere;background:#fff;border:1px solid #E3DDCF;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;box-shadow:0 6px 18px rgba(16,27,45,.05)}
+  .bn-item[hidden]{display:none}
+  .bn-cab{display:grid;gap:3px}
+  .bn-cab h4{margin:0;font-size:18px;line-height:1.2}
+  .bn-cab h4 a{text-decoration:none}
+  .bn-local{font:600 13px var(--display);color:var(--cinza)}
+  .bn-plano{font:600 15px var(--display);color:var(--tinta)}
+  .bn-plano strong{background:#E8EFFA;color:var(--alameda);border-radius:8px;padding:1px 7px}
+  .bn-mod{margin:0;font:700 13.5px var(--display)}
+  .bn-mod[data-musc="1"]{color:#1E5631}.bn-mod[data-musc="1"]::before{content:"✓ "}
+  .bn-mod[data-musc="0"]{color:#7A4A0B}.bn-mod[data-musc="0"]::before{content:"! "}
+  .bn-cond{margin:0;padding-left:18px;font-size:14.5px;color:var(--texto2)}
+  .bn-planos,.bn-meta,.bn-pe{margin:0;font-size:14px;color:var(--texto2)}
+  .bn-acoes{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:0;padding-top:8px;border-top:1px dashed #E3DDCF}
+  .bn-outros p{font-size:15px;margin:12px 0 0;padding:10px 12px;border-radius:12px;background:#FFF4E0;border:1px solid #F3D7A6}
+  .bn-outros .bn-pend{background:#F7F4EC;border-color:#E3DDCF}
+  .bn-vazio{margin-top:12px}
+  .bn-intro{margin:0 0 12px}
+  .par-res{margin-top:14px}
+  .par-grade{display:grid;gap:12px}
+  @media(min-width:700px){.par-grade{grid-template-columns:1fr 1fr}}
+  .par-card{background:#fff;border:1px solid #E3DDCF;border-radius:16px;padding:14px 16px}
+  .par-card h4{margin:0 0 8px;font-size:17px}
+  .par-card ul{margin:8px 0 0;padding-left:18px;font-size:15px}
+  .par-ok,.par-nao,.par-pend{margin:0;font:700 16px/1.35 var(--display);padding:10px 12px;border-radius:10px}
+  .par-ok{background:#E3F2E8;color:#1E5631}.par-nao{background:#FBE9E7;color:#8E2A1A}.par-pend{background:#FFF4E0;color:#7A4A0B}
+  .par-links{font-size:15px;margin:12px 0 0}
+</style>

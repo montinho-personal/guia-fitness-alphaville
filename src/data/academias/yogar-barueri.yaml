@@ -28,6 +28,10 @@ comodidades:
 - Banheiro acessível
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Yoga"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: Silver+
   preco_plano: R$ 199,99
   url: https://wellhub.com/pt-br/search/partners/yogar-barueri-vila-sargento-jose-de-paula/

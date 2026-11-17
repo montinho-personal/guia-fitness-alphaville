@@ -61,6 +61,10 @@ comodidades:
 - Vestiário
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Aeróbica", "Aula de pula corda", "Aulas em grupo", "Caiaque", "Crossfoot", "Fisiculturismo", "GRIT", "Grupos Especiais", "Jiu-jitsu", "Muay Thai", "Musculação", "Treino de Power Plate"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: Silver+
   preco_plano: R$ 199,99
   url: https://wellhub.com/pt-br/search/partners/academia-bluefit-barueri/

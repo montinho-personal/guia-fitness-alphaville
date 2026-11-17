@@ -33,6 +33,11 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Pilates"]
+  musculacao: false
+  condicoes: ["Reserva ou agendamento necessário, segundo o Wellhub."]
+  conferido_em: '2026-11-17'
   plano_minimo: Platinum
   preco_plano: R$ 599,99
   url: https://wellhub.com/pt-br/search/partners/studio-vitalle-pilates/

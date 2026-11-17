@@ -37,6 +37,11 @@ comodidades:
 - Heliponto
 agregadores:
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 6", "TP 7"]
+  atividades: ["Musculação"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: TP 6
   preco_plano: R$ 599,90
   url: https://totalpass.com/br/academias/ironberg-alphaville/

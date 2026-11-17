@@ -46,6 +46,10 @@ comodidades:
 - Vestiário
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Circuitos funcionais", "Condicionamento corporal", "Fitness dance", "Jump", "Musculação", "Step aerobics"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: Basic+
   preco_plano: R$ 99,99
   url: https://wellhub.com/pt-br/search/partners/allp-fit-academia-santana-pnb-jardim-do-luar-fazendinha/

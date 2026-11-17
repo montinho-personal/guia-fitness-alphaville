@@ -31,10 +31,20 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Personal trainer - Pilates", "Pilates"]
+  musculacao: false
+  condicoes: ["Reserva ou agendamento necessário, segundo o Wellhub."]
+  conferido_em: '2026-11-17'
   plano_minimo: Silver
   preco_plano: R$ 149,99
   url: https://wellhub.com/pt-br/search/partners/pilates-gavioes-alphaville-alphaville-industrial/
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 3", "TP 4", "TP 5", "TP 5+", "TP 6", "TP 7"]
+  atividades: ["Pilates"]
+  musculacao: false
+  conferido_em: '2026-11-17'
   plano_minimo: TP 3
   preco_plano: R$ 199,90
   url: https://totalpass.com/br/academias/pilates-gavioes-alphaville/

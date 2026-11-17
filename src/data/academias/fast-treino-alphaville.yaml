@@ -34,6 +34,10 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Musculação", "Musculação"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: Silver
   preco_plano: R$ 149,99
   url: https://wellhub.com/pt-br/search/partners/fast-treino-alphaville-alphaville-industrial/

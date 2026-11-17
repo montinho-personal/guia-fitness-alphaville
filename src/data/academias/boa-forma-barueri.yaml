@@ -62,6 +62,11 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Abdominal", "Alongamento", "Bike", "Boxing Fit", "Circuitos", "Corrida", "Duatlo", "Fisiculturismo", "Funcional", "Hidroginástica", "Hidroterapia", "Jump", "Musculação", "Natação", "Natação para adultos", "Pernas", "Personal trainer", "Ritmos", "Step aerobics", "Treino localizado", "Zumba"]
+  musculacao: true
+  condicoes: ["Reserva ou agendamento necessário, segundo o Wellhub."]
+  conferido_em: '2026-11-17'
   plano_minimo: Silver+
   preco_plano: R$ 199,99
   url: https://wellhub.com/pt-br/search/partners/boa-forma-jardim-alberto-barueri/

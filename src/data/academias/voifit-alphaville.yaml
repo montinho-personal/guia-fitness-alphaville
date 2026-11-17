@@ -49,10 +49,20 @@ comodidades:
 - Wi-Fi
 agregadores:
 - nome: Wellhub
+  situacao: confirmada
+  atividades: ["Abd", "Bike", "Fisiculturismo", "Funcional", "Jiu-jitsu", "Localizado", "Mat Pilates", "Muay Thai", "Musculação", "Ritmos"]
+  musculacao: true
+  condicoes: ["Algumas atividades podem exigir reserva, segundo o Wellhub."]
+  conferido_em: '2026-11-17'
   plano_minimo: Silver
   preco_plano: R$ 149,99
   url: https://wellhub.com/pt-br/search/partners/voifit-academia-alphaville-empresarial-18-do-forte-barueri/
 - nome: TotalPass
+  situacao: confirmada
+  planos: ["TP 3", "TP 4", "TP 5", "TP 5+", "TP 6", "TP 7", "TP 2+"]
+  atividades: ["Musculação", "Aeróbicas", "Jiu Jitsu", "Muay Thai"]
+  musculacao: true
+  conferido_em: '2026-11-17'
   plano_minimo: TP 2+
   preco_plano: R$ 149,90
   url: https://totalpass.com/br/academias/voi-fit-2bb4b250-04b0-4fac-9d80-14ec73ed615c/
