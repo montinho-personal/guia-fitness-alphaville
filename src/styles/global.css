@@ -37,6 +37,8 @@ header.topo{background:#fff;border-top:4px solid #FF6A00;border-bottom:1px solid
 nav.principal ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;font-family:var(--display);font-weight:600;font-size:15px}
 nav.principal a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;display:block}
 nav.principal a:hover,nav.principal a[aria-current]{border-color:var(--sinal)}
+nav.principal .nav-montinho a{color:#C24E00;font-weight:800}
+@media(min-width:900px){nav.principal .nav-montinho a{background:#FF6A00;color:#111827;border:0;border-radius:999px;padding:6px 14px}nav.principal .nav-montinho a:hover,nav.principal .nav-montinho a[aria-current]{background:#E55F00}}
 .menu-m{font-family:var(--display)}
 .menu-m summary{list-style:none;cursor:pointer;font-weight:700;font-size:14px;border:1.5px solid var(--tinta);border-radius:var(--raio);padding:9px 14px}
 .menu-m summary::-webkit-details-marker{display:none}
@@ -226,7 +228,7 @@ footer .nota{color:var(--cinza);max-width:34em;font-size:15px;margin-top:12px}
   .confianca li{border:0;padding:20px 0}
   .cartoes{grid-template-columns:repeat(2,1fr)}
   .grade-ferr{grid-template-columns:repeat(2,1fr)}
-  footer .cols{grid-template-columns:2fr 1fr 1fr}
+  footer .cols{grid-template-columns:2fr 1fr 1fr 1fr}
   .mantem{padding:36px}
 }
 @media(min-width:1000px){

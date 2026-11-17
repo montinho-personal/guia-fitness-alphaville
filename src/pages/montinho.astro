@@ -1,0 +1,57 @@
+---
+import Institucional from '../components/Institucional.astro';
+import { linkMontinho, linkWhatsapp } from '../lib/dados';
+const L = (caminho: string) => linkMontinho(caminho, 'servicos', 'montinho');
+const modalidades = [
+  { nome: 'Personal presencial', onde: 'Alphaville, Tamboré, Barueri, Santana de Parnaíba e Aldeia da Serra', texto: 'Treino acompanhado de perto, com correção da execução e ajuste de carga durante a série, avaliação no início e reavaliações.', url: '/consultoria#modalidades' },
+  { nome: 'Consultoria online', onde: 'Online, de qualquer lugar', texto: 'Treino montado para você a partir de uma anamnese, com vídeo de cada exercício no aplicativo, correção pelos vídeos que você envia e conversas periódicas de acompanhamento.', url: '/consultoria-online' },
+  { nome: 'Modelo híbrido', onde: 'Presencial em Alphaville e online', texto: 'Encontros presenciais na semana para acertar a técnica e acompanhamento online nos outros dias.', url: '/consultoria#modalidades' },
+  { nome: 'Pacote flexível', onde: 'Presencial na região e online', texto: 'Dez aulas presenciais para usar quando quiser, sem horário fixo, com a consultoria online incluída nos outros dias. As aulas podem ser no condomínio, em casa, na Arena 18 ou em academia que aceite personal externo.', url: '/consultoria#modalidades' },
+];
+const regioes = [
+  { nome: 'Personal trainer em Alphaville', url: '/personal-trainer-alphaville' },
+  { nome: 'Personal trainer em Tamboré', url: '/personal-trainer-tambore' },
+  { nome: 'Personal trainer em Barueri', url: '/personal-trainer-barueri' },
+  { nome: 'Personal trainer em Santana de Parnaíba', url: '/personal-trainer-santana-de-parnaiba' },
+  { nome: 'Personal trainer na Aldeia da Serra', url: '/blog/personal-trainer-aldeia-da-serra' },
+  { nome: 'Onde o Montinho atende', url: '/onde-atendo' },
+];
+const gratis = [
+  { nome: 'Revisão de execução', texto: 'mande o vídeo de uma série e receba a análise.', url: '/revisao-de-execucao' },
+  { nome: 'Diagnóstico', texto: 'um questionário curto para entender por onde começar.', url: '/diagnostico' },
+  { nome: 'Ferramentas e simuladores', texto: 'calculadoras, tabela de alimentos e treino para a sua rotina.', url: '/ferramentas' },
+];
+---
+<Institucional titulo="Montinho Personal Trainer: serviços de quem mantém o guia" descricao="Personal presencial em Alphaville, Tamboré, Barueri e Santana de Parnaíba, consultoria online, modelo híbrido e pacote flexível: os serviços do Montinho." h1="Treine com o Montinho" fina="Os serviços do personal trainer que mantém este guia, em um só lugar. Esta página é publicidade da casa." url="/montinho/" nome="Treine com o Montinho" atualizado="2026-11-17">
+  <p>O Guia Fitness Alphaville é mantido pelo <strong>Montinho Personal Trainer</strong>. As fichas de academias seguem a <a href="/politica-editorial/">política editorial</a> e não favorecem ninguém; esta é a única página do guia feita para apresentar o serviço dele. Os detalhes, valores e a contratação ficam no site do Montinho.</p>
+
+  <h2>Modalidades</h2>
+  <div class="servicos">
+    {modalidades.map((m) => (
+      <article class="cartao">
+        <h3>{m.nome}</h3>
+        <p class="onde">{m.onde}</p>
+        <p>{m.texto}</p>
+        <a class="link-forte" href={L(m.url)} rel="nofollow" data-evento="clique_montinho" data-ref="montinho">Ver {m.nome.toLowerCase()} no site do Montinho</a>
+      </article>
+    ))}
+  </div>
+
+  <h2>Atendimento presencial por região</h2>
+  <ul>{regioes.map((r) => <li><a href={L(r.url)} rel="nofollow" data-evento="clique_montinho" data-ref="montinho">{r.nome}</a></li>)}</ul>
+
+  <h2>Grátis no site do Montinho</h2>
+  <ul>{gratis.map((g) => <li><a href={L(g.url)} rel="nofollow" data-evento="clique_montinho" data-ref="montinho">{g.nome}</a>: {g.texto}</li>)}</ul>
+
+  <h2>Falar com ele</h2>
+  <p>Para tirar dúvida ou combinar uma aula, o caminho mais rápido é o WhatsApp.</p>
+  <p><a class="btn" href={linkWhatsapp('montinho')} rel="nofollow noopener" data-evento="clique_whatsapp" data-ref="montinho">Conversar no WhatsApp <i aria-hidden="true"></i></a></p>
+</Institucional>
+
+<style>
+  .servicos{display:grid;gap:14px;margin:8px 0 24px}
+  @media(min-width:700px){.servicos{grid-template-columns:1fr 1fr}}
+  .servicos h3{margin:0;font-family:var(--display);font-size:20px}
+  .servicos p{margin:0}
+  .servicos .onde{font-family:var(--display);font-size:13px;font-weight:700;color:var(--alameda)}
+</style>

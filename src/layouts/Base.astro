@@ -6,7 +6,7 @@ import Instagram from '../components/Instagram.astro';
 import BarraWhatsapp from '../components/BarraWhatsapp.astro';
 import Busca from '../components/Busca.astro';
 import Marca from '../components/Marca.astro';
-import { INDEXAVEL, MOSTRAR_EM_REVISAO, GTM_ID } from '../lib/dados';
+import { INDEXAVEL, MOSTRAR_EM_REVISAO, GTM_ID, linkMontinho } from '../lib/dados';
 
 interface Props {
   titulo: string;
@@ -36,6 +36,14 @@ const nav = [
   { nome: 'Modalidades', url: '/modalidades/' },
   { nome: 'Guias', url: '/guias/' },
   { nome: 'Ferramentas', url: '/ferramentas/' },
+];
+// Serviços do Montinho: publicidade da casa, links nofollow com origem marcada.
+const servicos = [
+  { nome: 'Personal presencial', url: '/consultoria#modalidades' },
+  { nome: 'Consultoria online', url: '/consultoria-online' },
+  { nome: 'Modelo híbrido', url: '/consultoria#modalidades' },
+  { nome: 'Pacote flexível', url: '/consultoria#modalidades' },
+  { nome: 'Revisão de execução grátis', url: '/revisao-de-execucao' },
 ];
 const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(u) ? 'page' : undefined);
 ---
@@ -74,14 +82,14 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
     <div class="wrap">
       <a class="marca" href="/"><Marca /></a>
       <nav class="principal so-desktop" aria-label="Principal">
-        <ul>{nav.map((n) => <li><a href={n.url} aria-current={atual(n.url)}>{n.nome}</a></li>)}</ul>
+        <ul>{nav.map((n) => <li><a href={n.url} aria-current={atual(n.url)}>{n.nome}</a></li>)}<li class="nav-montinho"><a href="/montinho/" aria-current={atual('/montinho/')}>Treine com o Montinho</a></li></ul>
       </nav>
       <div class="topo-acoes">
       <Busca />
       <details class="menu-m so-movel">
         <summary>Menu</summary>
         <nav class="principal" aria-label="Principal (celular)">
-          <ul>{nav.map((n) => <li><a href={n.url} aria-current={atual(n.url)}>{n.nome}</a></li>)}</ul>
+          <ul>{nav.map((n) => <li><a href={n.url} aria-current={atual(n.url)}>{n.nome}</a></li>)}<li class="nav-montinho"><a href="/montinho/" aria-current={atual('/montinho/')}>Treine com o Montinho</a></li></ul>
         </nav>
       </details>
       </div>
@@ -105,6 +113,10 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
           <p style="margin-top:12px"><Instagram pagina="rodape" texto="Siga o Montinho: @montinho_personal" /></p>
         </div>
         <div><h2>Guia</h2><ul>{nav.map((n) => <li><a href={n.url}>{n.nome}</a></li>)}<li><a href="/mapa/">Mapa</a></li></ul></div>
+        <div><h2>Treine com o Montinho</h2><ul>
+          {servicos.map((sv) => <li><a href={linkMontinho(sv.url, 'rodape', 'site')} rel="nofollow" data-evento="clique_montinho" data-ref="rodape">{sv.nome}</a></li>)}
+          <li><a href="/montinho/"><strong>Todos os serviços</strong></a></li>
+        </ul></div>
         <div><h2>Transparência</h2><ul>
           <li><a href="/sobre/">Sobre</a></li><li><a href="/metodologia/">Metodologia</a></li><li><a href="/politica-editorial/">Política editorial</a></li><li><a href="/correcoes/">Correções</a></li><li><a href="/privacidade/">Privacidade</a></li>
           <li><button type="button" id="abrir-consent" style="background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer">Preferências de cookies</button></li>
