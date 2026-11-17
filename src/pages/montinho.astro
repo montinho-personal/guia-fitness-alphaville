@@ -1,6 +1,7 @@
 ---
 import Institucional from '../components/Institucional.astro';
 import { linkMontinho, linkWhatsapp } from '../lib/dados';
+import VideoApp from '../components/VideoApp.astro';
 const L = (caminho: string) => linkMontinho(caminho, 'servicos', 'montinho');
 const modalidades = [
   { nome: 'Personal presencial', onde: 'Alphaville, Tamboré, Barueri, Santana de Parnaíba e Aldeia da Serra', texto: 'Treino acompanhado de perto, com correção da execução e ajuste de carga durante a série, avaliação no início e reavaliações.', url: '/consultoria#modalidades' },
@@ -36,6 +37,10 @@ const gratis = [
       </article>
     ))}
   </div>
+
+  <h2>Como é o app da consultoria online</h2>
+  <p>Na consultoria online, no modelo híbrido e no pacote flexível, o treino fica no app do Montinho. O vídeo mostra as telas por dentro.</p>
+  <VideoApp pagina="montinho" />
 
   <h2>Atendimento presencial por região</h2>
   <ul>{regioes.map((r) => <li><a href={L(r.url)} rel="nofollow" data-evento="clique_montinho" data-ref="montinho">{r.nome}</a></li>)}</ul>

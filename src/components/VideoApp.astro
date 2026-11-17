@@ -1,0 +1,52 @@
+---
+// Vídeo do app do Montinho (YouTube Shorts). Nada do YouTube carrega antes do clique:
+// sem cookie de terceiros e sem peso extra na página.
+import { linkMontinho } from '../lib/dados';
+interface Props { pagina: string }
+const { pagina } = Astro.props;
+const ID = 'DPAQDPVffCg';
+const titulo = 'Como funciona o acompanhamento no app do Montinho';
+---
+<figure class="video-app">
+  <div class="va-quadro" data-video={ID}>
+    <button type="button" class="va-play" aria-label={`Assistir: ${titulo}`} data-evento="video_app" data-ref={pagina}>
+      <span class="va-rotulo">No app do Montinho</span>
+      <strong class="va-tit">Seu treino na palma da mão</strong>
+      <span class="va-icone" aria-hidden="true"></span>
+      <span class="va-dur">Vídeo curto · YouTube</span>
+    </button>
+  </div>
+  <figcaption>
+    A carga da última sessão já preenchida, os recados do Montinho durante a série e a opção de treino para o dia corrido: é pelo app que ele acompanha o aluno da consultoria online entre um check-in e outro. Telas reais, com dados de demonstração.
+    <a href={linkMontinho('/videos/app-do-montinho', 'video', pagina)} rel="nofollow" data-evento="clique_montinho" data-ref={pagina}>Ler o resumo do vídeo</a>
+  </figcaption>
+</figure>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.va-quadro').forEach((q) => {
+    q.querySelector('button')?.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = `https://www.youtube-nocookie.com/embed/${q.dataset.video}?autoplay=1&rel=0`;
+      f.title = 'Como funciona o acompanhamento no app do Montinho';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.allowFullscreen = true;
+      q.replaceChildren(f);
+    });
+  });
+</script>
+
+<style>
+  .video-app{margin:12px 0 28px;max-width:300px}
+  .va-quadro{position:relative;aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:#111827}
+  .va-quadro :global(iframe){position:absolute;inset:0;width:100%;height:100%;border:0}
+  .va-play{position:absolute;inset:0;width:100%;border:0;cursor:pointer;color:#fff;text-align:center;padding:28px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+    background:radial-gradient(120% 80% at 50% 0%,#3a2f12 0%,#111827 60%);font-family:var(--display)}
+  .va-rotulo{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E5C46B}
+  .va-tit{font-size:24px;line-height:1.15;max-width:12em}
+  .va-icone{width:68px;height:68px;border-radius:50%;background:#FF6A00;position:relative;margin-top:8px;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+  .va-icone::after{content:"";position:absolute;left:27px;top:21px;border-left:20px solid #111827;border-top:13px solid transparent;border-bottom:13px solid transparent}
+  .va-play:hover .va-icone{background:#E55F00}
+  .va-dur{font-size:13px;color:#CBD5E1}
+  .video-app figcaption{font-size:15px;color:var(--cinza);margin-top:10px;line-height:1.5}
+  .video-app figcaption a{display:inline-block;margin-top:4px;font-family:var(--display);font-weight:700;color:var(--tinta)}
+</style>
