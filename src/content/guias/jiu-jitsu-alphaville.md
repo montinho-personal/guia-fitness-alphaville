@@ -72,7 +72,7 @@ Nessas academias, a luta é uma aula entre muitas. A vantagem é usar a mesma me
 
 A [G13 BJJ Alphaville](/academias/g13-alphaville-tambore/) fica na Av. Marcos Penteado de Ulhôa Rodrigues, 3272, loja 07, no Tamboré III, do lado de Santana de Parnaíba. É escola da equipe G13, e o plano dá acesso livre a jiu-jitsu, muay thai e boxe, sem limite de aulas por dia. O site cita turmas kids (3 a 10 anos), teens (11 a 15), adultos, para mulheres e para competição, aula experimental gratuita e estacionamento gratuito.
 
-A matrícula é por plano semestral ou anual, e o valor não aparece no site. O guia não encontrou a G13 nas listas do Wellhub e do TotalPass. O horário publicado é de funcionamento, das 6h às 23h nos dias úteis e das 10h às 23h no sábado; peça a grade de aulas da sua faixa antes de ir.
+A matrícula é por plano semestral ou anual, e o valor não aparece no site. O guia não encontrou a G13 nas listas do Wellhub e do TotalPass. O horário publicado é de funcionamento, das 6h às 23h nos dias úteis e das 10h às 23h no sábado; peça a grade de aulas da sua faixa antes de ir. As outras opções do bairro estão em [academias no Tamboré](/regioes/tambore/).
 
 ## Equipes que ainda não têm ficha
 

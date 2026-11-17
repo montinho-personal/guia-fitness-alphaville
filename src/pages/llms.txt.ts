@@ -13,6 +13,7 @@ export const GET: APIRoute = async ({ site }) => {
 - [Quanto custa academia em Alphaville e Barueri](${u('/academias/precos/')})
 - [Smart Fit ou Gaviões em Alphaville](${u('/guias/smart-fit-ou-gavioes/')})
 - [Ironberg ou NitroGym em Alphaville](${u('/guias/ironberg-ou-nitrogym/')})
+- [Smart Fit ou SkyFit em Alphaville](${u('/guias/smart-fit-ou-skyfit/')})
 - [Gaviões 24h ou Ironberg](${u('/guias/gavioes-ou-ironberg/')})
 - [Academia perto de você](${u('/academias/perto-de/')})
 - [Smart Fit em Barueri](${u('/academias/smart-fit-barueri/')})
@@ -25,6 +26,7 @@ export const GET: APIRoute = async ({ site }) => {
 - [Academias abertas no domingo](${u('/academias/domingo/')})
 - [Academias com Wellhub e TotalPass](${u('/academias/wellhub-totalpass/')})
 ${Object.entries(REGIOES).map(([id, r]) => `- [Onde treinar em ${r.titulo}](${u(`/regioes/${id}/`)})`).join('\n')}
+- [Academias no Tamboré](${u('/regioes/tambore/')})
 
 ## Guias de decisão
 ${gs.map((g) => `- [${g.data.h1}](${u(`/${g.data.secao}/${g.id}/`)}): ${g.data.descricao}`).join('\n')}

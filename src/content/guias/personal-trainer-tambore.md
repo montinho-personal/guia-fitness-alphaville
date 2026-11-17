@@ -76,7 +76,7 @@ Para quem tem área livre na varanda, na garagem ou num cômodo, o treino em cas
 - **NitroGym Tamboré** (Avenida Piracema): só musculação, aberta das 5h às 23h59 nos dias úteis e das 6h às 22h no fim de semana, com estacionamento incluído por até 3 horas. A regra para personal externo ainda está em apuração na ficha.
 - **Bluefit Tamboré** (Avenida Tucunaré): musculação, funcional e HIIT. A página da unidade informa personal trainer entre os serviços; para profissional de fora, a regra precisa ser confirmada na recepção. Fecha mais cedo no fim de semana: até 17h no sábado e 14h no domingo.
 
-Se você vai treinar com personal às 5h ou às 6h, as duas abrem nesse horário nos dias úteis, o que nem sempre acontece com a academia do condomínio.
+Se você vai treinar com personal às 5h ou às 6h, as duas abrem nesse horário nos dias úteis, o que nem sempre acontece com a academia do condomínio. As escolas de luta, as arenas e o lado do Tamboré que fica em Santana de Parnaíba estão em [academias no Tamboré](/regioes/tambore/).
 
 ## Para decidir
 

@@ -4,6 +4,8 @@ import { guias } from '../lib/dados';
 interface Props { url: string; itens?: string[] }
 const { url, itens: explicitos } = Astro.props;
 const existentes = new Set((await guias()).map((g) => `/${g.data.secao}/${g.id}/`));
+// Guias escritos como página .astro (comparativos) também contam.
+for (const arq of Object.keys(import.meta.glob('../pages/guias/*.astro'))) { const n = arq.split('/').pop()!.replace('.astro', ''); if (n !== 'index' && !n.startsWith('[')) existentes.add(`/guias/${n}/`); }
 const existe = (u: string) => !/^\/(guias|modalidades)\//.test(u) || existentes.has(u);
 const itens = (explicitos ?? RELACIONADOS[url] ?? []).filter((u) => ARTIGOS[u] && existe(u));
 ---

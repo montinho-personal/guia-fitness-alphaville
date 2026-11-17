@@ -1,0 +1,85 @@
+nome: SkyFit Estrada dos Romeiros
+regiao: barueri
+bairro: Vila São Silvestre
+tipo: academia
+rede: SkyFit
+resumo: Unidade da SkyFit na Estrada dos Romeiros, em Barueri, com musculação e cardio, aberta todos os dias e no TotalPass a partir do TP 1+.
+endereco: Estrada dos Romeiros, 1565 - Vila São Silvestre, Barueri - SP, 06417-000
+geo:
+  lat: -23.4928333
+  lng: -46.8810514
+horario:
+  seg:
+  - 05:00-23:00
+  ter:
+  - 05:00-23:00
+  qua:
+  - 05:00-23:00
+  qui:
+  - 06:00-23:00
+  sex:
+  - 05:00-23:00
+  sab:
+  - 08:00-17:00
+  dom:
+  - 08:00-14:00
+modalidades:
+- musculacao
+atividades_listadas:
+- Musculação
+- Cardio
+comodidades:
+- Ar-condicionado
+- Armários
+- Bebedouro
+- Banheiro acessível
+- Estacionamento (pago, segundo o TotalPass)
+- Portas adaptadas para cadeiras de rodas
+agregadores:
+- nome: Wellhub
+  plano_minimo: Basic+
+  preco_plano: R$ 99,99
+  url: https://wellhub.com/pt-br/search/partners/skyfit-academia-estrada-dos-romeiros-jardim-regina-alice/
+- nome: TotalPass
+  plano_minimo: TP 1+
+  preco_plano: R$ 89,90
+  url: https://totalpass.com/br/academias/skyfit-academia-estrada-dos-romeiros/
+mensalidade: null
+site: https://skyfitacademia.com/unidade/estrada-dos-romeiros
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no TotalPass
+  url: https://totalpass.com/br/academias/skyfit-academia-estrada-dos-romeiros/
+  conferido_em: '2026-11-17'
+  nivel: fonte-publica
+- campos:
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da unidade no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/skyfit-academia-estrada-dos-romeiros-jardim-regina-alice/
+  conferido_em: '2026-11-17'
+  nivel: fonte-publica
+divergencias:
+- 'Quinta-feira: o Wellhub informa abertura às 6h; o TotalPass, às 5h. A ficha usa o horário mais tarde.'
+- 'Bairro: o TotalPass diz Vila São Silvestre (CEP 06417-000); o Wellhub, Jardim Regina Alice (CEP 06412-180).'
+pendencias:
+- Mensalidade direta (o site da rede mostra os planos só no fluxo de matrícula)
+- Grade de aulas coletivas
+analise:
+- 'É uma academia de rede focada em musculação e cardio, na Estrada dos Romeiros, do lado de Barueri que vai para Santana de Parnaíba. Abre das 5h às 23h nos dias úteis (na quinta, a partir das 6h segundo o Wellhub), das 8h às 17h no sábado e das 8h às 14h no domingo.'
+- 'Nos agregadores, é das entradas mais baratas da região: TP 1+ no TotalPass (R$ 89,90 por mês) e Basic+ no Wellhub (R$ 99,99). O TotalPass informa estacionamento pago.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Guia Fitness Alphaville
+revisor: null
+publicado_em: '2026-11-17'
+atualizado_em: '2026-11-17'
