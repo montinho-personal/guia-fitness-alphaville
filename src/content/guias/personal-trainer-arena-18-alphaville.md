@@ -45,12 +45,7 @@ atualizado_em: 2026-11-15
 
 ## E se o seu personal for outro?
 
-A lista de serviços informada ao Wellhub inclui personal trainer. Isso confirma que existe acompanhamento individual no local. Não diz, porém, se um profissional sem relação com a casa pode entrar com o aluno, nem em quais condições. O guia não encontrou essa regra publicada. Antes de combinar qualquer coisa, ligue para a academia e pergunte:
-
-- se aceita profissional de fora;
-- se há taxa, de quanto, e se ela cai na conta do aluno ou do personal;
-- se há cadastro prévio do profissional;
-- se existem faixas de horário sem permissão.
+A lista de serviços informada ao Wellhub inclui personal trainer. A regra para profissional de fora não está publicada, mas o Montinho, que atende alunos aqui e mantém este guia, informa como funciona: a Arena 18 aceita personal externo, com cadastro do profissional na unidade, e cobra dele uma taxa de R$ 400 por mês. A taxa é do personal, não do aluno, embora possa estar embutida no preço do serviço. Antes de combinar, confirme na recepção se há faixas de horário sem permissão. A comparação com outras academias está em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/).
 
 Para ver como outras academias lidam com o tema, consulte [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).
 

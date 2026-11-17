@@ -2,7 +2,7 @@
 titulo: "Personal trainer na Ironberg Alphaville: regra, horário e custo"
 descricao: "A Ironberg Alphaville publica a regra para personal de fora: o profissional paga um valor fixo à academia. Veja horário 24h, planos, TotalPass e o que perguntar."
 h1: "Personal trainer na Ironberg Alphaville"
-resposta: "Sim, dá para levar personal de fora. A Ironberg publica a regra: o profissional externo paga um valor fixo à academia, e não por aula ou por aluno. O valor só é informado na unidade da Estrada da Aldeinha, que abre 24 horas e tem planos a partir de R$ 399 por mês."
+resposta: "Sim, dá para levar personal de fora. A Ironberg publica a regra: o profissional externo paga um valor fixo à academia, e não por aula ou por aluno. O profissional se cadastra e paga R$ 1.000 por mês, segundo informação do Montinho, que mantém este guia. A unidade da Estrada da Aldeinha abre 24 horas e tem planos a partir de R$ 399 por mês."
 cluster: D
 secao: guias
 palavra_chave: personal trainer ironberg alphaville
@@ -39,7 +39,7 @@ atualizado_em: 2026-11-15
 
 A Ironberg diz em público como funciona o personal externo, como também fazem Smart Fit, Bluefit e Panobianco; a comparação está em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/). O profissional pode atender no espaço desde que pague um valor fixo à academia. A cobrança não é feita por aula nem por aluno atendido.
 
-O que falta é o número. O valor é informado só na unidade, e o guia ainda não conseguiu confirmá-lo. Para entender como o assunto funciona nas outras academias da região, veja a página de [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).
+O valor, informado pelo Montinho Personal Trainer, que mantém este guia, é de R$ 1.000 por mês, pago pelo profissional, que também precisa se cadastrar na unidade. Esse custo não é cobrado do aluno, mas pode estar embutido no preço do personal. Para entender como o assunto funciona nas outras academias da região, veja a página de [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).
 
 ![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
 

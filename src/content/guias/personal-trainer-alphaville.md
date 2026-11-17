@@ -61,7 +61,7 @@ Por isso, a pergunta que abre a conversa com qualquer personal é: **onde você 
 
 ## Na academia: a regra muda de uma para outra
 
-Das academias com ficha neste guia, a **Ironberg**, na Estrada da Aldeinha, é a que deixa a regra mais clara em público: o profissional externo paga um valor fixo à academia para atender lá. O valor não está no site; é informado na unidade.
+Das academias com ficha neste guia, a **Ironberg**, na Estrada da Aldeinha, é a que deixa a regra mais clara em público: o profissional externo paga um valor fixo à academia para atender lá, que é de R$ 1.000 por mês, com cadastro, segundo informação do Montinho. Na **Arena 18**, onde o Montinho atende, a taxa é de R$ 400 por mês, também paga pelo personal. A comparação de todas está em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/).
 
 Outras fichas registram "personal trainer" entre os serviços, como **Arena 18**, **Scelta**, **24h Premium** e **BlackSheep**. Isso mostra que há profissionais atuando no local, mas não diz se alguém de fora pode entrar com o aluno. Pergunte na recepção:
 
