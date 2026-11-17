@@ -1,0 +1,96 @@
+{
+  "busca": "treino funcional alphaville",
+  "data": "2026-11-17",
+  "aparelho": "mobile",
+  "local": "Barueri,State of Sao Paulo,Brazil",
+  "autocompletar": [
+    "treinamento funcional alphaville",
+    "funcional em alphaville",
+    "treino funcional em barueri"
+  ],
+  "pessoas_tambem_perguntam": [
+    "Qual o valor de um treino funcional?",
+    "Qual a academia mais cara de Alphaville, SP?"
+  ],
+  "outras_pesquisas": [],
+  "visao_de_ia": null,
+  "organicos": [
+    {
+      "posicao": 1,
+      "titulo": "https://www.systemgym.com.br/",
+      "fonte": "systemgym.com.br",
+      "url": "https://www.systemgym.com.br"
+    },
+    {
+      "posicao": 2,
+      "titulo": "Promoções :: - Webnode",
+      "fonte": "Webnode",
+      "url": "https://academiaterritorio.webnode.com.br"
+    },
+    {
+      "posicao": 3,
+      "titulo": "https://n8n.corporetraininggym.com.br/",
+      "fonte": "n8n.corporetraininggym.com.br",
+      "url": "https://n8n.corporetraininggym.com.br"
+    },
+    {
+      "posicao": 4,
+      "titulo": "SpringFit (@springfitstudio) · São Paulo, SP",
+      "fonte": "Instagram · sceltaacademia",
+      "url": "Mais de 30 marcações \"Gostei\""
+    },
+    {
+      "posicao": 5,
+      "titulo": "https://portal.hubfit.com.br/treinoexato/unidade/1",
+      "fonte": "portal.hubfit.com.br",
+      "url": "https://portal.hubfit.com.br"
+    },
+    {
+      "posicao": 6,
+      "titulo": "https://dev.gurupass.com.br/detalhes-da-academia/n...",
+      "fonte": "Gurupass",
+      "url": "https://dev.gurupass.com.br"
+    },
+    {
+      "posicao": 7,
+      "titulo": "Academia Alphaville Nova Esplanada 1 - Home",
+      "fonte": "Facebook",
+      "url": "https://m.facebook.com"
+    },
+    {
+      "posicao": 8,
+      "titulo": "https://www.n8n.redealphafitness.com.br/",
+      "fonte": "Rede Alpha Fitness",
+      "url": "https://www.n8n.redealphafitness.com.br"
+    },
+    {
+      "posicao": 9,
+      "titulo": "http://bonacrossfit.tecnofit.com.br/site",
+      "fonte": "Tecnofit",
+      "url": "http://bonacrossfit.tecnofit.com.br"
+    },
+    {
+      "posicao": 10,
+      "titulo": "https://www.cotanet.com.br/treinamentos-funcionais...",
+      "fonte": "cotanet.com.br",
+      "url": "https://www.cotanet.com.br"
+    }
+  ],
+  "mapa": [
+    {
+      "nome": "ACTION 360° - ALPHAVILLE",
+      "endereco": "Barueri - SP",
+      "nota": 5
+    },
+    {
+      "nome": "Go Now Alphaville",
+      "endereco": "Barueri - SP",
+      "nota": 5
+    },
+    {
+      "nome": "4PERFORM",
+      "endereco": "Barueri - SP",
+      "nota": 4.9
+    }
+  ]
+}

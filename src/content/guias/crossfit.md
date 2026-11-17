@@ -72,6 +72,8 @@ No treino, são muito parecidos: aulas em grupo, com levantamento de peso, giná
 
 Para quem vai treinar, o nome importa menos do que a qualidade da aula. Observe o tamanho das turmas, se o coach corrige a execução e se há adaptação para iniciantes.
 
+Se a ideia é treino em circuito, sem levantamento olímpico, veja [treino funcional em Alphaville](/modalidades/funcional/).
+
 ## E o Hyrox?
 
 O BlackSheep informa no site que, em Alphaville, oferece o Hybrid, um treino voltado à prova, e que as aulas de Hyrox propriamente ditas ficam na unidade de Moema, em São Paulo. O formato da prova e as opções da região estão em [Hyrox: o que é e como funciona](/modalidades/hyrox/) e em [Hyrox ou CrossFit](/guias/hyrox-ou-crossfit/).

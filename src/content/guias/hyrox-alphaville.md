@@ -52,7 +52,7 @@ No Hyrox, corrida e exercício funcional se revezam: oito vezes você cobre 1 km
 
 ## BlackSheep: a única ficha que cita Hyrox
 
-Na Alameda Araguaia, 122, a [BlackSheep Alphaville](/academias/blacksheep-alphaville/) lista Hyrox, treino híbrido, cross training e funcional. Segundo a rede, a unidade oferece o Hybrid, voltado a esse tipo de prova. A própria rede informa, porém, que o Hyrox Training Club oficial dela fica em Moema, e não aqui.
+Na Alameda Araguaia, 122, a [BlackSheep Alphaville](/academias/blacksheep-alphaville/) lista Hyrox, treino híbrido, cross training e [funcional](/modalidades/funcional/). Segundo a rede, a unidade oferece o Hybrid, voltado a esse tipo de prova. A própria rede informa, porém, que o Hyrox Training Club oficial dela fica em Moema, e não aqui.
 
 Os preços publicados são da rede inteira: ilimitado a R$ 480 por mês em contrato de três meses ou mais, aula avulsa a R$ 75 e mês de teste a R$ 400 para novos alunos. Pelo Wellhub, a entrada pede o plano Gold+. Fique de olho no horário: de segunda a quinta vai até 20h30, na sexta fecha às 19h30, e no fim de semana a janela é curta, das 9h às 10h30.
 
