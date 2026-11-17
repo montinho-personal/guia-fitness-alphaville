@@ -54,12 +54,17 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
   <meta property="og:title" content={titulo}>
   <meta property="og:description" content={descricao}>
   <meta property="og:url" content={canonical}>
-  <meta property="og:image" content={abs('/og.png')}>
+  <meta property="og:image" content={abs('/og-image.png')}>
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Guia Fitness Alphaville: academias, boxes e estúdios em Alphaville, Tamboré, Barueri e Santana de Parnaíba">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content={abs('/og-image.png')}>
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#101B2D">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#111827">
   <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': grafo })}></script>
 </head>
 <body>
@@ -95,7 +100,7 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
     <div class="wrap">
       <div class="cols">
         <div>
-          <a class="marca" href="/"><Marca tamanho={28} /></a>
+          <a class="marca" href="/"><Marca variante="rodape" /></a>
           <p class="nota">Guia local de academias e treino. Mantido por Montinho Personal Trainer, que atende presencialmente na região. As academias citadas não pagam para aparecer. Encontrou um dado errado? <a href="/correcoes/">Peça a correção</a>.</p>
           <p style="margin-top:12px"><Instagram pagina="rodape" texto="Siga o Montinho: @montinho_personal" /></p>
         </div>

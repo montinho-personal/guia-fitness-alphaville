@@ -1,5 +1,10 @@
 ---
-const { tamanho = 34 } = Astro.props;
+// Logo do Guia Fitness Alphaville. "cabecalho" usa o logo horizontal; "rodape", a versão empilhada.
+// Versões para fundo escuro: /logo-dark.svg e /logo-footer-dark.svg.
+interface Props { variante?: 'cabecalho' | 'rodape' }
+const { variante = 'cabecalho' } = Astro.props;
+const cab = variante === 'cabecalho';
 ---
-<svg width={tamanho} height={Math.round(tamanho * 42 / 34)} viewBox="0 0 34 42" aria-hidden="true"><path d="M17 41C17 41 32 25.5 32 16A15 15 0 0 0 2 16C2 25.5 17 41 17 41Z" fill="#101B2D"/><circle cx="17" cy="16" r="9.2" fill="none" stroke="#F5F1E8" stroke-width="2.4"/><circle cx="17" cy="16" r="3.4" fill="#E2502A"/></svg>
-<span><span class="nome">onde treinar</span><span class="lugar">ALPHAVILLE</span></span>
+{cab
+  ? <img class="logo logo-cab" src="/logo.svg" alt="Guia Fitness Alphaville" width="565" height="122" fetchpriority="high">
+  : <img class="logo logo-rod" src="/logo-footer.svg" alt="Guia Fitness Alphaville" width="301" height="150" loading="lazy">}

@@ -1,0 +1,16 @@
+{
+  "name": "Guia Fitness Alphaville",
+  "short_name": "Guia Fitness",
+  "description": "Academias, boxes e estúdios em Alphaville, Tamboré, Barueri e Santana de Parnaíba.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "icons": [
+    { "src": "/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
