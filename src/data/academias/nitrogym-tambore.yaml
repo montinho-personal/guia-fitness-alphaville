@@ -141,3 +141,16 @@ horario_feriados:
   fonte: 'Site oficial da NitroGym (página da unidade) — "Sábado, Domingo e Feriados: das 06h às 22h"'
   url: https://nitrogymacademia.com.br/unidades/unidade-tambore
   conferido_em: '2026-11-18'
+acesso_avulso:
+- tipo: diaria
+  nome: Day use (diária)
+  modalidades: [musculacao]
+  musculacao: true
+  preco: { situacao: valor, valor: R$ 90, centavos: 9000 }
+  regras: ['Pagamento direto no local.', 'Acesso livre a todas as áreas da academia.', 'Estacionamento incluso por até 3 horas.']
+  destino: { tipo: contato, url: 'https://wa.me/5511986430468', canal: 'WhatsApp da unidade (11) 98643-0468' }
+  situacao: confirmada
+  fonte: Site oficial da NitroGym (página da unidade Tamboré)
+  url: https://nitrogymacademia.com.br/unidades/unidade-tambore
+  conferido_em: '2026-11-18'
+  pendencias: ['Horário de entrada da diária (o site não diz se vale em todo o horário de funcionamento).']

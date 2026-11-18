@@ -118,3 +118,16 @@ horario_fonte:
   fonte: 'Site oficial da SIX (página da unidade Alphaville)'
   url: https://sixwellnessclub.com/units/alphaville
   conferido_em: '2026-11-18'
+acesso_avulso:
+- tipo: visita-guiada
+  nome: Visita agendada
+  modalidades: []
+  musculacao: false
+  preco: { situacao: a-consultar }
+  regras: ['A equipe apresenta o espaço e as condições de membership.', 'Agendamento pelo site.']
+  destino: { tipo: reserva, url: 'https://sixwellnessclub.com/units/alphaville' }
+  situacao: confirmada
+  fonte: Site oficial da SIX (página da unidade Alphaville)
+  url: https://sixwellnessclub.com/units/alphaville
+  conferido_em: '2026-11-18'
+  pendencias: ['Se a visita inclui treino.']

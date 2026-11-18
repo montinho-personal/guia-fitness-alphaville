@@ -147,3 +147,16 @@ horario_feriados:
   fonte: 'Site oficial da Ironberg (página inicial da rede: 24 horas por dia, inclusive nos feriados) — "sempre aberta, inclusive nos feriados"'
   url: https://www.ironberg.com.br/
   conferido_em: '2026-11-18'
+acesso_avulso:
+- tipo: diaria
+  nome: Aula avulsa (diária)
+  modalidades: [musculacao]
+  musculacao: true
+  preco: { situacao: a-consultar }
+  regras: ['Contratação no dia do treino, só na recepção da unidade.', 'Não precisa agendar.']
+  destino: { tipo: pagina, url: 'https://www.ironberg.com.br/planos.html' }
+  situacao: confirmada
+  fonte: Site oficial da Ironberg (planos e perguntas frequentes)
+  url: https://www.ironberg.com.br/planos.html
+  conferido_em: '2026-11-18'
+  pendencias: ['Valor da aula avulsa, informado só na unidade.']

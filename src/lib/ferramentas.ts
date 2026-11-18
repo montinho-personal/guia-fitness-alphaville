@@ -2,7 +2,7 @@
 // o próximo passo de quem está lendo, já abertas com o que a página sabe (academia, região, modalidade).
 // Lógica pura, sem Astro, para servir a GuiaPagina e às páginas .astro.
 
-export type FerramentaId = 'custo' | 'personal' | 'beneficio' | 'teste' | 'comparador' | 'checklist' | 'mapa' | 'abertas';
+export type FerramentaId = 'custo' | 'personal' | 'beneficio' | 'teste' | 'comparador' | 'checklist' | 'mapa' | 'abertas' | 'diaria';
 export type RegiaoId = 'alphaville' | 'barueri' | 'santana-de-parnaiba';
 
 export interface Ferramenta { id: FerramentaId; titulo: string; texto: string; href: string; rotulo: string; }
@@ -16,6 +16,7 @@ const BASE: Record<FerramentaId, { path: string; rotulo: string }> = {
   checklist: { path: '/ferramentas/checklist/', rotulo: 'Checklist' },
   mapa: { path: '/mapa/', rotulo: 'Mapa' },
   abertas: { path: '/ferramentas/academias-abertas-alphaville/', rotulo: 'Academias abertas' },
+  diaria: { path: '/ferramentas/academias-diaria-aula-experimental-alphaville/', rotulo: 'Diária e aula experimental' },
 };
 
 /** Modalidades que o buscador de Wellhub e TotalPass filtra (mesmas chaves de MODS_BEN). */
@@ -72,7 +73,7 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       ];
     case 'personal-publico': {
       const extra: Record<string, Ferramenta> = {
-        iniciantes: f('checklist', 'Checklist para a primeira visita à academia', 'O que perguntar na recepção e o que observar antes de assinar o plano.'),
+        iniciantes: f('diaria', 'Teste a academia antes de assinar', 'Diária e aula experimental na região, com preço, regras e o canal de cada academia.', { modo: 'teste', regiao: c.regiao }),
         idosos: f('teste', `Academias${em} com acessibilidade e estacionamento`, 'O teste filtra as academias que informam itens de acessibilidade e onde parar o carro.', { regiao: c.regiao, precisa: 'acessivel,estacionamento' }),
         gestantes: f('checklist', 'O que conferir na academia antes de começar', 'Vestiário, ventilação, lotação e o que perguntar sobre a orientação na sala.'),
         executivos: f('abertas', `Academias${em} abertas antes ou depois do expediente`, 'Diga a hora em que você chega e quanto tempo treina: só aparece quem fica aberta até o fim.', { regiao: c.regiao, atalho: 'cedo' }),
@@ -115,7 +116,7 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       return [
         f('teste', 'Faça o teste: qual academia combina com você', 'Os critérios desta página viram cinco perguntas, com o resultado explicado.'),
         f('checklist', 'Leve o checklist na visita', '27 pontos para marcar no celular, da recepção ao vestiário.'),
-        f('custo', 'Calcule o custo real antes de assinar', 'Matrícula, anuidade, estacionamento e personal entram na conta.', { de: 'artigo' }),
+        f('diaria', 'Teste antes de assinar', 'Onde dá para pagar uma diária ou fazer aula experimental na região.', { modo: 'teste' }),
       ];
     case 'academia-ou-personal':
       return [

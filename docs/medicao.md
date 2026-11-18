@@ -76,3 +76,14 @@ Clique nos atalhos e cartões de ferramenta dos artigos. `ref` = `<ferramenta>:a
 | `abertas_ajuste` | Clique num ajuste sugerido quando não há resultado | `ajuste` |
 | `clique_academia` | Abertura da ficha a partir do resultado | `ref` = `abertas:<id>` |
 | `clique_ferramenta` | Links para Wellhub e TotalPass, personal externo e calculadora; link da ficha e do comparador para o buscador | `ref` = `beneficio:abertas`, `personal:abertas`, `custo:abertas`, `abertas:ficha`, `abertas:comparador` |
+
+## Diária e aula experimental (18/11/2026)
+
+| Evento | Quando | Parâmetros |
+|---|---|---|
+| `acesso_modo` | Troca entre "Quero treinar hoje" e "Quero testar antes de contratar" | `modo` (`diaria` ou `teste`) |
+| `acesso_diaria_busca` | Filtro de diária aplicado | `regiao`, `com_hora`, `so_preco`, `idas`, `resultados` |
+| `acesso_teste_filtro` | Filtro de modalidade no caminho de teste | `modalidade` |
+| `clique_acesso_academia` | Botão para o canal oficial da academia (comprar, consultar, agendar) | `ref` = `<tipo>:<id>` (com `:ficha` quando vem da ficha) |
+| `clique_ferramenta` | Calculadora, horários e checklist a partir da ferramenta; link da ficha para a ferramenta | `ref` = `custo:diaria`, `abertas:diaria`, `checklist:experimental`, `diaria:ficha` |
+| `clique_whatsapp` | WhatsApp do Montinho no card de aula experimental (intenção de contato) | `ref` = `acesso-experimental` ou `acesso-experimental-unidade`; o texto da mensagem não é enviado |

@@ -105,3 +105,37 @@ autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: '2026-11-13'
 atualizado_em: '2026-11-13'
+acesso_avulso:
+- tipo: aula-experimental
+  nome: Aula experimental de Hybrid
+  modalidades: [cross-training, hyrox]
+  musculacao: false
+  preco: { situacao: a-consultar }
+  regras: ['Agendamento pelo WhatsApp da unidade.']
+  destino: { tipo: reserva, url: 'https://crossliftblacksheep.com.br/hybrid-alphaville/' }
+  situacao: confirmada
+  fonte: Site oficial da Crosslift Blacksheep (página Hybrid Alphaville)
+  url: https://crossliftblacksheep.com.br/hybrid-alphaville/
+  conferido_em: '2026-11-13'
+- tipo: diaria
+  nome: Aula avulsa (drop in)
+  modalidades: [cross-training]
+  musculacao: false
+  preco: { situacao: referencia-rede, valor: R$ 75, centavos: 7500 }
+  regras: ['Uma aula.', 'Valor da tabela da rede; confirme o da unidade Alphaville.']
+  destino: { tipo: pagina, url: 'https://www.crossliftblacksheep.com.br/' }
+  situacao: confirmada
+  fonte: Site oficial da Crosslift Blacksheep (tabela de planos da rede)
+  url: https://www.crossliftblacksheep.com.br/
+  conferido_em: '2026-11-13'
+- tipo: treino-experimental
+  nome: Mês teste
+  modalidades: [cross-training]
+  musculacao: false
+  preco: { situacao: referencia-rede, valor: R$ 400, centavos: 40000 }
+  regras: ['Só para novos alunos.', 'Valor da tabela da rede; confirme o da unidade Alphaville.']
+  destino: { tipo: pagina, url: 'https://www.crossliftblacksheep.com.br/' }
+  situacao: confirmada
+  fonte: Site oficial da Crosslift Blacksheep (tabela de planos da rede)
+  url: https://www.crossliftblacksheep.com.br/
+  conferido_em: '2026-11-13'

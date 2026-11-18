@@ -112,3 +112,16 @@ personal_externo:
   url: https://voifit.com.br/alphaville.html
   conferido_em: 2026-11-17
   canal: (11) 4193-8418
+horario_status:
+  dom: a-confirmar
+horario_fonte:
+  fonte: Site oficial da VoiFit (página da unidade Alphaville)
+  url: https://voifit.com.br/alphaville.html?unit_id=kyd9cwre
+  conferido_em: '2026-11-18'
+horario_feriados:
+  faixas: ['09:00-17:00']
+  fonte: 'Site oficial da VoiFit (página da unidade Alphaville) — "Sáb e Feriados: 9h às 17h"'
+  url: https://voifit.com.br/alphaville.html?unit_id=kyd9cwre
+  conferido_em: '2026-11-18'
+divergencias:
+- 'Domingo: o Wellhub mostra 10h às 14h; o site oficial da unidade lista só segunda a sexta e sábado e feriados (conferido em 18/11/2026).'

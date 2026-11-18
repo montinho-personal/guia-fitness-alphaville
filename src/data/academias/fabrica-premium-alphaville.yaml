@@ -103,3 +103,16 @@ horario_feriados:
   fonte: 'Site oficial da Fábrica Premium Alphaville — "Domingos e feriados: 08:00 às 14:00"'
   url: https://fabricapremiumalphaville.com.br/
   conferido_em: '2026-11-18'
+acesso_avulso:
+- tipo: visita-guiada
+  nome: Visita agendada
+  modalidades: []
+  musculacao: false
+  preco: { situacao: a-consultar }
+  regras: ['Agendamento pelo site.']
+  destino: { tipo: reserva, url: 'https://fabricapremiumalphaville.com.br/' }
+  situacao: confirmada
+  fonte: Site oficial da Fábrica Premium Alphaville
+  url: https://fabricapremiumalphaville.com.br/
+  conferido_em: '2026-11-18'
+  pendencias: ['Se a visita inclui treino.']

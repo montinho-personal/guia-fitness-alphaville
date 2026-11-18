@@ -109,3 +109,15 @@ autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: '2026-11-13'
 atualizado_em: '2026-11-16'
+acesso_avulso:
+- tipo: aula-experimental
+  nome: Aula experimental
+  modalidades: []
+  musculacao: false
+  preco: { situacao: a-consultar }
+  regras: ['Agendamento pelo link do perfil no Instagram.']
+  destino: { tipo: reserva, url: 'https://www.instagram.com/sceltaacademia/' }
+  situacao: a-confirmar
+  fonte: Instagram oficial da Scelta (post visto na busca do Google; o site não abriu na conferência)
+  conferido_em: '2026-11-18'
+  pendencias: ['Modalidade incluída (musculação ou aula coletiva).', 'Preço e regras de primeira visita.']
