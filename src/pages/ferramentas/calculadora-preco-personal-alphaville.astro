@@ -23,8 +23,8 @@ const revisado = new Date(`${D0.registrado_em}T12:00:00Z`);
 const titulo = 'Calculadora de preço de personal trainer em Alphaville';
 const descricao = 'Calcule a faixa de preço de personal trainer em Alphaville, Tamboré, Barueri e Santana de Parnaíba por aula e por mês, no condomínio, na academia, em casa ou online.';
 const perguntas = [
-  { p: 'Quanto custa treinar com personal em Alphaville?', r: `Pela referência editorial usada nesta calculadora, a aula avulsa fica entre ${faixaTxt(ex.avulsa!)} e o pacote mensal de 2 a 3 vezes por semana, entre ${faixaTxt(ex.mes)}. É uma ordem de grandeza por perfil de cidade, não uma pesquisa de preços: o valor real depende do profissional, do local e do que está incluído.` },
-  { p: 'Quanto custa um personal trainer 3 vezes por semana?', r: `Três vezes por semana dão cerca de ${sessoesMes(3)} sessões no mês (3 × 52 ÷ 12). Em Alphaville, a faixa de referência do pacote é de ${faixaTxt(ex.mes)} por mês. Em Barueri e Santana de Parnaíba, de ${faixaTxt(calcular(D, 'barueri-centro', 'academia', 3).mes)}.` },
+  { p: 'Quanto custa treinar com personal em Alphaville?', r: `Pela referência editorial usada nesta calculadora, a aula dentro de um pacote fica entre ${faixaTxt(ex.aulaPacote!)} e a aula avulsa, entre ${faixaTxt(ex.avulsa!)}. Treinando 3 vezes por semana, isso dá de ${faixaTxt(ex.mes)} por mês. É uma ordem de grandeza, não uma pesquisa de preços: o valor real depende do profissional, do local e do que está incluído.` },
+  { p: 'Quanto custa um personal trainer 3 vezes por semana?', r: `Três vezes por semana dão cerca de ${sessoesMes(3)} sessões no mês (3 × 52 ÷ 12). Em Alphaville, com a aula no pacote entre ${faixaTxt(ex.aulaPacote!)}, a faixa de referência é de ${faixaTxt(ex.mes)} por mês. Em Barueri e Santana de Parnaíba, de ${faixaTxt(calcular(D, 'barueri-centro', 'academia', 3).mes)}.` },
   { p: 'Personal trainer no condomínio custa mais caro?', r: 'A referência não separa condomínio de academia. O que muda é a conta em volta: no condomínio você não paga mensalidade de academia nem taxa de personal externo, mas o prédio pode exigir cadastro do profissional e ter regra de uso da sala. Confirme na administração antes de fechar.' },
   { p: 'A academia cobra taxa do meu personal?', r: `Depende da academia. ${taxas.map((x) => `A ${x.a.data.nome} cobra ${x.t.valor} por mês, pagos pelo profissional`).join('; ')}. A taxa é do profissional, mas pode entrar no preço da aula: pergunte. A lista completa está na página de academias que aceitam personal externo.` },
   { p: 'Personal online é mais barato que presencial?', r: `Costuma ser, e a cobrança é mensal, não por aula: ${faixaTxt(D.bases.alphaville.online)} por mês na referência de Alphaville. Não é o mesmo serviço: o presencial acompanha cada treino; o online entrega planejamento, ajustes e acompanhamento a distância.` },
@@ -43,7 +43,7 @@ const schema = [{ '@type': 'WebApplication', name: titulo, url: new URL(URL_PAG,
 
     <div class="resposta">
       <span class="rotulo">Resposta direta</span>
-      <p>Em Alphaville, a faixa de referência para personal trainer é de {faixaTxt(ex.avulsa!)} por aula avulsa e de {faixaTxt(ex.mes)} por mês no pacote de 2 a 3 vezes por semana; online, de {faixaTxt(D.bases.alphaville.online)} por mês. São referências editoriais por perfil de cidade, não preços pesquisados: servem para saber se uma proposta está dentro do esperado.</p>
+      <p>Em Alphaville, a faixa de referência para personal trainer é de {faixaTxt(ex.avulsa!)} por aula avulsa e de {faixaTxt(ex.aulaPacote!)} por aula dentro de um pacote, o que dá de {faixaTxt(ex.mes)} por mês para quem treina 3 vezes por semana; online, de {faixaTxt(D.bases.alphaville.online)} por mês. São referências editoriais por perfil de cidade, não preços pesquisados: servem para saber se uma proposta está dentro do esperado.</p>
     </div>
 
     <form class="pp-form nao-imprime" id="pp-form" aria-label="Calcular preço de personal">
@@ -81,9 +81,9 @@ const schema = [{ '@type': 'WebApplication', name: titulo, url: new URL(URL_PAG,
       <h2>Faixas de referência por local</h2>
       <div class="rolagem" tabindex="0" role="region" aria-label="Faixas de referência por local">
         <table class="dados pp-t">
-          <caption>Referência editorial registrada em {dataLonga(revisado)}. Presencial: pacote de 2 a 3 vezes por semana.</caption>
-          <thead><tr><th scope="col">Local</th><th scope="col">Aula avulsa</th><th scope="col">Pacote mensal</th><th scope="col">Online por mês</th><th scope="col">Faixa usada</th></tr></thead>
-          <tbody>{D.locais.map((l) => { const b = D.bases[l.base]; return <tr><th scope="row">{l.nome}</th><td>{faixaTxt(b.avulsa)}</td><td>{faixaTxt(b.mensal)}</td><td>{faixaTxt(b.online)}</td><td>{l.motivo ? `Referência de ${b.nome}: ${l.motivo}` : `Própria (${b.nome})`}</td></tr>; })}</tbody>
+          <caption>Referência editorial registrada em {dataLonga(revisado)}. O total do mês é a aula no pacote multiplicada pelas sessões.</caption>
+          <thead><tr><th scope="col">Local</th><th scope="col">Aula avulsa</th><th scope="col">Aula no pacote</th><th scope="col">Online por mês</th><th scope="col">Faixa usada</th></tr></thead>
+          <tbody>{D.locais.map((l) => { const b = D.bases[l.base]; return <tr><th scope="row">{l.nome}</th><td>{faixaTxt(b.avulsa)}</td><td>{faixaTxt(b.aula_pacote)}</td><td>{faixaTxt(b.online)}</td><td>{l.motivo ? `Referência de ${b.nome}: ${l.motivo}` : `Própria (${b.nome})`}</td></tr>; })}</tbody>
         </table>
       </div>
 
@@ -91,7 +91,7 @@ const schema = [{ '@type': 'WebApplication', name: titulo, url: new URL(URL_PAG,
       <div class="rolagem" tabindex="0" role="region" aria-label="Faixa mensal por frequência em Alphaville">
         <table class="dados pp-t">
           <thead><tr><th scope="col">Frequência</th><th scope="col">Sessões no mês</th><th scope="col">Faixa por mês</th><th scope="col">Como foi calculado</th></tr></thead>
-          <tbody>{freqs.map((f) => { const r = calcular(D, 'alphaville', 'academia', f); return <tr><th scope="row">{f}× por semana</th><td>cerca de {r.sessoes}</td><td>{faixaTxt(r.mes)}</td><td>{r.extrapolado ? 'Extrapolação: aula no pacote × sessões' : 'Faixa do pacote'}</td></tr>; })}</tbody>
+          <tbody>{freqs.map((f) => { const r = calcular(D, 'alphaville', 'academia', f); return <tr><th scope="row">{f}× por semana</th><td>cerca de {r.sessoes}</td><td>{faixaTxt(r.mes)}</td><td>{faixaTxt(r.aulaPacote!)} × {r.sessoes}</td></tr>; })}</tbody>
         </table>
       </div>
       <p>Frequência alta multiplica a conta depressa. Antes de fechar 5 vezes por semana, veja se a sua agenda sustenta: pagar por 22 sessões e ir a 10 é o pior negócio.</p>
@@ -112,8 +112,8 @@ const schema = [{ '@type': 'WebApplication', name: titulo, url: new URL(URL_PAG,
       <p>Compare o total do mês, não o preço da aula. Pergunte a duração da sessão, se há avaliação, o que acontece quando você falta, se a taxa da academia está incluída e se há ajuste do treino entre as aulas. Duas propostas com o mesmo valor podem entregar coisas bem diferentes.</p>
 
       <h2>De onde vêm as faixas</h2>
-      <p>As faixas desta calculadora <strong>não são pesquisa de preços praticados</strong>. São estimativas editoriais por perfil de cidade, com base nas do portal <a href={D0.url} rel="noopener">Personal por Perto</a>, registradas aqui em {dataLonga(revisado)}. Dois limites foram ajustados pelo Montinho Personal Trainer, que mantém este guia e atende na região: a aula avulsa pode chegar a R$ 300 e o acompanhamento online começa em R$ 110 por mês. O Centro de Barueri ficou com a faixa original. Não existe amostra, por isso a ferramenta não fala em "preço médio" e nunca dá valor exato. O guia ainda não coletou preços reais de profissionais da região; quando coletar, esta seção dirá quantos são, de quando e de que fonte.</p>
-      <p>A conta é aberta: sessões por mês = vezes por semana × 52 ÷ 12, arredondado; para 2 e 3 vezes por semana vale a faixa do pacote; para 1, 4 e 5 vezes, a aula dentro do pacote (faixa mensal ÷ {D.sessoes_base_pacote}) é multiplicada pelas sessões, e o resultado aparece como extrapolação; o arredondamento é para a dezena até R$ 1.000 e para a cinquentena acima disso. Tamboré e Aldeia da Serra não têm faixa própria e usam a referência de Barueri, com aviso na tela. A referência não distingue aula de 30 e de 60 minutos, aula em dupla nem experiência do profissional.</p>
+      <p>As faixas desta calculadora <strong>não são pesquisa de preços praticados</strong>. São estimativas editoriais por perfil de cidade, com base nas do portal <a href={D0.url} rel="noopener">Personal por Perto</a>, registradas aqui em {dataLonga(revisado)}. A faixa da aula dentro do pacote, o teto da aula avulsa (R$ 300) e o piso do online (R$ 110 por mês) foram informados pelo Montinho Personal Trainer, que mantém este guia e atende na região. No Centro de Barueri, a aula avulsa e o online ficaram com a faixa original. Não existe amostra, por isso a ferramenta não fala em "preço médio" e nunca dá valor exato. O guia ainda não coletou preços reais de profissionais da região; quando coletar, esta seção dirá quantos são, de quando e de que fonte.</p>
+      <p>A conta é aberta: sessões por mês = vezes por semana × 52 ÷ 12, arredondado; total do mês = aula dentro do pacote × sessões; o arredondamento é para a dezena até R$ 1.000 e para a cinquentena acima disso. Tamboré e Aldeia da Serra não têm faixa própria e partem da referência de Barueri, com os limites informados pelo Montinho e aviso na tela. A referência não distingue aula de 30 e de 60 minutos, aula em dupla nem experiência do profissional, e por isso a faixa é larga.</p>
       <p>Mora em outra cidade? Use a <a href={D0.url} rel="noopener">calculadora do Personal por Perto</a>, que cobre o resto do país.</p>
     </div>
 
@@ -146,7 +146,6 @@ const schema = [{ '@type': 'WebApplication', name: titulo, url: new URL(URL_PAG,
       if (r.aulaPacote) $('pp-aula').textContent = faixaTxt(r.aulaPacote);
       if (r.avulsa) $('pp-avulsa').textContent = faixaTxt(r.avulsa);
       const av = $('pp-aviso') as HTMLElement, avisos: string[] = [];
-      if (r.extrapolado) avisos.push(`Extrapolação: a referência é definida para 2 a 3 vezes por semana; para ${r.freq}× o valor foi estimado pela aula no pacote.`);
       if (formato !== 'online' && r.freq >= 4) avisos.push('Frequência alta multiplica o custo: confira se a sua agenda sustenta antes de fechar.');
       if (formato === 'online') avisos.push('No online, a frequência não muda o valor.');
       av.textContent = avisos.join(' '); av.hidden = !avisos.length;
