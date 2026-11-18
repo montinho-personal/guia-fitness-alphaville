@@ -5,7 +5,7 @@ import Base from '../../layouts/Base.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
 import { academias, REGIOES, urlAcademia, dataLonga, MODALIDADES, WHATSAPP, type Academia } from '../../lib/dados';
-import { TIPO_NOME, precoTexto, rotuloBotao, eGratis, mensagemWhatsapp, linkWhatsappMontinho, type Oferta } from '../../lib/acesso';
+import { TIPO_NOME, precoTexto, rotuloBotao, eGratis, mensagemWhatsapp, linkWhatsappMontinho, destinoOferta, type Oferta } from '../../lib/acesso';
 import { paraCentavos } from '../../lib/custo';
 import { link } from '../../lib/ferramentas';
 import FER from '../../data/feriados.json';
@@ -64,7 +64,7 @@ const dataBR = (d: Date) => dataLonga(d);
 
     <div class="resposta">
       <span class="rotulo">Resposta direta</span>
-      <p>Para musculação com diária, a <a href={urlAcademia(confirmadas.find((x) => x.a.id === 'nitrogym-tambore')!.a)}>NitroGym Tamboré</a> cobra R$ 90 pelo day use, pago no local, e a <a href="/academias/ironberg-alphaville/">Ironberg Alphaville</a> vende aula avulsa na recepção, com valor a consultar. As unidades da Smart Fit têm passe diário a confirmar. Para experimentar outras modalidades, o CrossFit Barueri e a G13 publicam aula experimental grátis.</p>
+      <p>Para musculação com diária, a <a href={urlAcademia(confirmadas.find((x) => x.a.id === 'nitrogym-tambore')!.a)}>NitroGym Tamboré</a> cobra R$ 90 pelo day use, pago no local, e a <a href="/academias/ironberg-alphaville/">Ironberg Alphaville</a> vende aula avulsa na recepção, com valor a consultar. As unidades da Smart Fit têm passe diário a confirmar. Para experimentar outras modalidades, o CrossFit Barueri e a G13 publicam aula experimental grátis. Na Arena 18, o Montinho, que mantém este guia, faz aula experimental de musculação grátis, sem diária.</p>
     </div>
 
     <div class="av-modos nao-imprime" role="group" aria-label="O que você quer fazer">
@@ -141,7 +141,7 @@ const dataBR = (d: Date) => dataLonga(d);
       <ul class="av-lista" id="av-lista-teste">
         {ordem(testes).map(({ a, o, k }) => (
           <li class="av-item" data-k={k} data-musc={o.musculacao ? '1' : '0'}>
-            <div class="av-topo"><a class="av-nome" href={urlAcademia(a)} data-evento="clique_academia" data-ref={`acesso:${a.id}`}>{a.data.nome}</a>{eGratis(o) && <span class="av-selo av-gratis">Grátis</span>}<span class={`av-selo ${o.situacao === 'confirmada' ? 'av-selo-t' : 'av-selo-p'}`}>{o.situacao === 'confirmada' ? TIPO_NOME[o.tipo] : `${TIPO_NOME[o.tipo]} a confirmar`}</span></div>
+            <div class="av-topo"><a class="av-nome" href={urlAcademia(a)} data-evento="clique_academia" data-ref={`acesso:${a.id}`}>{a.data.nome}</a>{eGratis(o) && <span class="av-selo av-gratis">Grátis</span>}{o.responsavel === 'montinho' && <span class="av-selo av-mt-selo">Atendimento do Montinho</span>}<span class={`av-selo ${o.situacao === 'confirmada' ? 'av-selo-t' : 'av-selo-p'}`}>{o.situacao === 'confirmada' ? TIPO_NOME[o.tipo] : `${TIPO_NOME[o.tipo]} a confirmar`}</span></div>
             <p class="av-local">{local(a)}</p>
             <dl class="av-dl">
               <div><dt>Inclui</dt><dd>{o.tipo === 'visita-guiada' ? 'Visita ao espaço (não é treino)' : o.modalidades.length ? o.modalidades.map(nomeMod).join(', ') : 'Modalidade a confirmar'}{o.musculacao ? '' : o.tipo !== 'visita-guiada' && o.modalidades.length ? ' (não é musculação)' : ''}</dd></div>
@@ -151,7 +151,7 @@ const dataBR = (d: Date) => dataLonga(d);
             </dl>
             {o.pendencias.length > 0 && <p class="av-pend">A confirmar: {o.pendencias.join(' ')}</p>}
             <p class="av-fonte">Fonte: {o.url ? <a href={o.url} rel="nofollow noopener" target="_blank">{o.fonte}</a> : o.fonte}, {o.situacao === 'confirmada' ? 'conferida' : 'anotada'} em {dataBR(o.conferido_em)}.</p>
-            <p class="av-acoes"><a class="btn peq" href={o.destino.url} rel="nofollow noopener" target="_blank" data-evento="clique_acesso_academia" data-ref={`${o.tipo}:${a.id}`}>{rotuloBotao(o)}</a><a href={urlAcademia(a)}>Ficha</a></p>
+            <p class="av-acoes"><a class={`btn peq${o.responsavel === 'montinho' ? ' av-wa-peq' : ''}`} href={destinoOferta(o, a.data.nome, WHATSAPP).href} rel="nofollow noopener" target="_blank" data-evento={destinoOferta(o, a.data.nome, WHATSAPP).evento} data-ref={o.responsavel === 'montinho' ? `experimental-montinho:${a.id}` : `${o.tipo}:${a.id}`}>{rotuloBotao(o)}</a><a href={urlAcademia(a)}>Ficha</a></p>
           </li>
         ))}
         {diariasMusc.filter((x) => x.o.situacao === 'confirmada').map(({ a, o, k }) => (
@@ -163,7 +163,7 @@ const dataBR = (d: Date) => dataLonga(d);
           </li>
         ))}
       </ul>
-      <p class="av-nota">Nenhuma academia com ficha no guia publica, até a conferência, aula experimental de musculação. Para testar a sala de musculação, as opções confirmadas são as diárias acima.</p>
+      <p class="av-nota">Até a conferência, nenhuma academia com ficha no guia publica aula experimental de musculação própria. Na Arena 18, a aula experimental de musculação é o atendimento do Montinho, que mantém este guia: é publicidade da casa. As diárias acima também servem para testar a sala de musculação.</p>
       <p><a class="link-forte" href="/ferramentas/checklist/" data-evento="clique_ferramenta" data-ref="checklist:experimental">Abrir checklist de visita</a></p>
     </section>
 
@@ -282,6 +282,8 @@ const dataBR = (d: Date) => dataLonga(d);
   .av .av-selo-t { background: #fff; color: #111827; border: 1.5px solid #111827; }
   .av .av-selo-p { background: #fff; color: #8a4b00; border: 1.5px dashed #8a4b00; }
   .av .av-gratis { background: #0f6b3a; }
+  .av .av-mt-selo { background: #25D366; color: #0b2b17; }
+  .av .av-wa-peq { background: #25D366; color: #0b2b17; border-color: #25D366; }
   .av .av-local { margin: 4px 0 8px; color: var(--cinza, #4b5563); font-size: 15px; }
   .av .av-dl { margin: 0; display: grid; gap: 6px; }
   .av .av-dl div { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 8px; font-size: 16px; }

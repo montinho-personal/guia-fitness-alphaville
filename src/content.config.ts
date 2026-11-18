@@ -51,6 +51,8 @@ const academias = defineCollection({
       horario_acesso: z.string().optional(),
       horario_acesso_confirmado: z.boolean().default(false),
       destino: z.object({ tipo: z.enum(['compra', 'reserva', 'contato', 'pagina']), url: z.string().url(), canal: z.string().optional() }),
+      // 'montinho': atendimento do Montinho Personal Trainer no local (publicidade da casa); o botão abre o WhatsApp dele.
+      responsavel: z.enum(['academia', 'montinho']).default('academia'),
       situacao: z.enum(['confirmada', 'a-confirmar']),
       fonte: z.string(), url: z.string().url().optional(), conferido_em: data,
       pendencias: z.array(z.string()).default([]),

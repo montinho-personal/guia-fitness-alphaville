@@ -158,3 +158,15 @@ personal_externo:
   conferido_em: 2026-11-17
   canal: (11) 93419-1818
   nota: O Montinho, que mantém este guia, atende alunos nesta academia. A informação vem dele e segue os mesmos critérios das demais unidades.
+acesso_avulso:
+- tipo: aula-experimental
+  nome: Aula experimental de musculação com o Montinho
+  modalidades: [musculacao]
+  musculacao: true
+  preco: { situacao: gratis }
+  regras: ['Atendimento do Montinho Personal Trainer, que dá aulas na Arena 18.', 'Sem diária: a aula experimental não tem custo de entrada.', 'Agendamento pelo WhatsApp do Montinho.']
+  destino: { tipo: reserva, url: 'https://www.montinhopersonal.com.br/', canal: 'WhatsApp do Montinho' }
+  responsavel: montinho
+  situacao: confirmada
+  fonte: Informação do Montinho Personal Trainer, que atende alunos na Arena 18 (relação comercial declarada)
+  conferido_em: '2026-11-18'
