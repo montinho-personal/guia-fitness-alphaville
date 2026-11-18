@@ -32,8 +32,8 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | ~~"academia barata barueri", "academia mais barata alphaville"~~ | ~~`/academias/precos/`~~ | Já respondido na seção "Qual a academia mais barata de Alphaville e Barueri?" (conferido em 18/11) |
 | ~~"academia 18 do forte", "academia iguatemi alphaville", "academia shopping tamboré"~~ | ~~`/academias/perto-de/`~~ | Já respondido: a página tem uma seção por ponto (Iguatemi, Shopping Tamboré, Empresarial 18 do Forte); conferido em 18/11 |
 | ~~"pode ir 2x por dia na academia"~~ | ~~`/guias/como-escolher-academia/`~~ | Já respondido na página (conferido em 18/11) |
-| Hyrox Training Club da CrossFit Barueri, OBox | `/guias/hyrox-barueri/`, `/modalidades/crossfit/` | Só com fonte; hoje sem confirmação |
-| Gracie Barra, Alliance, G13 Alphaville | `/guias/jiu-jitsu-alphaville/` (fichas) | Esperando liberar os sites (lembrete agendado) |
+| Hyrox Training Club da CrossFit Barueri, OBox | `/guias/hyrox-barueri/`, `/modalidades/crossfit/` | Só com fonte; o site do CrossFit Barueri não cita Hyrox (18/11) e o da OBox não abriu |
+| Gracie Barra, Alliance (G13 já entrou na página e tem ficha; conferido em 18/11) | `/guias/jiu-jitsu-alphaville/` (fichas) | Esperando liberar os sites (lembrete agendado) |
 | SESI Santana de Parnaíba | `/regioes/santana-de-parnaiba/` (ficha) | Site oficial bloqueado aqui |
 | ~~Spine Movi Pilates, Clínica de Fisioterapia Araguaia~~ | ~~`/modalidades/pilates/` (fichas)~~ | Feito em 18/11: duas fichas pelo Wellhub e citação na página de pilates |
 | Escolas de natação (Mori, Cubo d'Água, clubes) | `/modalidades/natacao/` | Sem fonte que confirme |
@@ -45,6 +45,7 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | Vivere Alpha, academia terapêutica e fisioterapia (REL de "personal trainer para iniciantes alphaville", 18/11) | ficha nova | Só com fonte oficial do lugar |
 | ~~"Quais os tipos de academias que existem?" (PAA de "ironberg ou nitrogym", 18/11)~~ | ~~`/guias/como-escolher-academia/`~~ | Feito em 18/11: seção "Que tipo de academia você procura" |
 | Black Belt Club, Calçada das Orquídeas (orgânico de "musculação alphaville", 18/11) | ficha nova | Só com fonte oficial do lugar |
+| Bio Ritmo Shopping Tamboré e Soul Ride (visão de IA e orgânicos de "academia premium alphaville", 18/11) | fichas novas | Só com fonte oficial do lugar |
 | "primeira vez na academia", "o que devo saber antes de entrar na academia" (PAA de 18/11) | `/ferramentas/checklist/` | FAQ feita; artigo próprio só se aparecer busca local |
 
 ## 3. Materiais para baixar
@@ -65,8 +66,8 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 | ~~3~~ | ~~2026-11-13~~ | ~~`/guias/smart-fit-ou-gavioes/`~~ | ~~Smart Fit ou Gaviões em Alphaville: qual escolher~~ (revisado em 17/11, slug `smart-fit-ou-gavioes`; título mantido) |
 | ~~4~~ | ~~2026-11-13~~ | ~~`/modalidades/musculacao/`~~ | ~~Musculação em Alphaville: onde treinar~~ (revisado em 18/11, SerpApi) |
 | ~~5~~ | ~~2026-11-14~~ | ~~`/guias/ironberg-ou-nitrogym/`~~ | ~~Ironberg ou NitroGym em Alphaville: qual escolher~~ (revisado em 18/11, SerpApi) |
-| 6 | 2026-11-15 | `/academias/perto-de/` | Academia perto do Iguatemi, Shopping Tamboré e estações |
-| 7 | 2026-11-15 | `/guias/academias-premium-alphaville/` | Academias premium em Alphaville: o que o preço maior compra |
+| ~~6~~ | ~~2026-11-15~~ | ~~`/academias/perto-de/`~~ | ~~Academia perto do Iguatemi, Shopping Tamboré e estações~~ (revisado em 18/11, SerpApi) |
+| ~~7~~ | ~~2026-11-15~~ | ~~`/guias/academias-premium-alphaville/`~~ | ~~Academias premium em Alphaville: o que o preço maior compra~~ (revisado em 18/11, SerpApi) |
 | 8 | 2026-11-15 | `/guias/categorias-do-hyrox/` | Categorias do Hyrox: Open, Pro, Doubles e Relay |
 | 9 | 2026-11-15 | `/guias/como-treinar-para-o-primeiro-hyrox/` | Como treinar para o primeiro Hyrox: princípios gerais |
 | 10 | 2026-11-15 | `/guias/estacoes-do-hyrox/` | Estações do Hyrox: as 8 provas explicadas uma a uma |

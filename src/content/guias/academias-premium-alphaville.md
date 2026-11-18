@@ -24,6 +24,13 @@ fontes:
     url: "https://arena18.com.br/"
   - titulo: "Site oficial da Fábrica Premium Alphaville"
     url: "https://fabricapremiumalphaville.com.br/"
+perguntas:
+  - p: "Qual é a academia mais cara de Alphaville?"
+    r: "Pelos valores conhecidos, a SIX Alphaville. Ela não publica tabela, mas o cofundador citou à Exame, em agosto de 2026, seis parcelas de R$ 3.900 no plano semestral, mais adesão. Entre as que publicam preço, Ironberg e NitroGym ficam no topo, com planos mensais perto de R$ 600."
+  - p: "A Academia 24h Premium é uma academia premium?"
+    r: "O nome não define a categoria. A Academia 24h Premium, na Alameda Grajaú, não publica preço nem funciona 24 horas pelo horário publicado; no Wellhub, entra a partir do Gold+."
+  - p: "Como pagar menos numa academia premium?"
+    r: "Três caminhos: o plano anual, que na Ironberg e na NitroGym sai cerca de R$ 200 por mês mais barato que o mensal; o Wellhub ou o TotalPass, quando a unidade entra no seu plano (a Ironberg só a partir do TP 6); e a diária, se você vai poucas vezes por mês. A calculadora de custo compara as opções."
 video:
   id: yndKE1GrnUQ
   titulo: "Toda pessoa com shape tem uma coisa em comum"
@@ -33,7 +40,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
-atualizado_em: 2026-11-15
+atualizado_em: 2026-11-18
 ---
 
 > **Transparência.** O guia é mantido pelo Montinho, personal trainer que atende alunos na Arena 18, uma das academias desta lista. As outras quatro não têm relação comercial com ele.
@@ -66,9 +73,19 @@ A [Arena 18](/academias/arena-18-alphaville/), no Melville Empresarial, junta mu
 
 A [Fábrica Premium](/academias/fabrica-premium-alphaville/), na Estrada da Bela Vista, do lado de Santana de Parnaíba, descreve valet, carregador para carro elétrico, concierge, crioterapia em banheira de gelo, nutricionista e nutrólogo, salão de beleza e café no rooftop, onde fica uma pista de corrida. Não publica preço, e o guia não a encontrou no Wellhub nem no TotalPass.
 
-![Montinho, personal trainer em Alphaville, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+![Montinho, personal trainer em Alphaville, na máquina de remada vermelha da Ironberg](../../assets/montinho/montinho-ironberg-remada-maquina.jpg)
 
-*Montinho, personal trainer que atende em Alphaville.*
+*O Montinho treinando na Ironberg. Foto dele, tirada na academia.*
+
+## Dá para experimentar antes de assinar
+
+Em academia premium, testar antes faz diferença, porque o contrato costuma ser mais caro e mais longo. Pelas fontes oficiais conferidas em 18/11/2026:
+
+- **NitroGym Tamboré:** day use de R$ 90, pago no local, com acesso a todas as áreas;
+- **Ironberg Alphaville:** aula avulsa contratada na recepção, no dia do treino, sem agendamento; o valor só é informado na unidade;
+- **SIX e Fábrica Premium:** visita agendada para conhecer o espaço, o que não é a mesma coisa que treinar.
+
+As regras de cada uma, com o canal para comprar ou agendar, estão em [academias com diária e aula experimental](/ferramentas/academias-diaria-aula-experimental-alphaville/).
 
 ## Como decidir
 

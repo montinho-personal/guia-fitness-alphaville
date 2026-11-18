@@ -28,6 +28,14 @@
       "de": "do Shopping Tamboré"
     },
     {
+      "id": "carrefour-tambore",
+      "nome": "Carrefour Hiper Tamboré",
+      "tipo": "mercado",
+      "lat": -23.500828,
+      "lng": -46.836044,
+      "de": "do Carrefour Hiper Tamboré (Al. Araguaia, 2751)"
+    },
+    {
       "id": "18-do-forte",
       "nome": "Empresarial 18 do Forte",
       "tipo": "trabalho",
