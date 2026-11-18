@@ -126,11 +126,11 @@ acesso_avulso:
   nome: Passe diário
   modalidades: [musculacao]
   musculacao: true
-  preco: { situacao: a-consultar }
-  regras: []
+  preco: { situacao: a-partir-de, valor: 'R$ 24,90', centavos: 2490 }
+  regras: ['Treino por um dia inteiro, com as aulas coletivas disponíveis na data.', 'Compra pelo app da Smart Fit (opção Passe Diário) ou nos totens da recepção.', 'Vale para não alunos e para alunos dos planos Smart ou Fit; alunos Black e ex-alunos com pendência financeira não podem comprar.', 'A central de ajuda cita valores a partir de R$ 24,90 e a partir de R$ 29,90 em artigos diferentes; o valor da unidade aparece no app ou na recepção.']
   destino: { tipo: pagina, url: 'https://www.smartfit.com.br/academias/barueri-centro' }
-  situacao: a-confirmar
-  fonte: Central de ajuda da Smart Fit (artigo "A Smart Fit possui passe diário?", citado pela busca do Google); a página não abriu aqui
+  situacao: confirmada
+  fonte: Central de ajuda da Smart Fit (artigos "A Smart Fit possui passe diário?" e "Posso fazer uma aula experimental na Smart Fit?")
   url: https://ajuda.smartfit.com.br/hc/pt-br/articles/360051874051-A-Smart-Fit-possui-passe-di%C3%A1rio
   conferido_em: '2026-11-18'
-  pendencias: ['Regra, preço e forma de compra do passe diário: a central de ajuda da rede não abriu na conferência.', 'Se o passe vale para esta unidade.']
+  pendencias: ['Valor exato nesta unidade (a rede publica só o "a partir de").']

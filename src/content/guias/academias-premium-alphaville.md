@@ -82,7 +82,7 @@ A [Fábrica Premium](/academias/fabrica-premium-alphaville/), na Estrada da Bela
 Em academia premium, testar antes faz diferença, porque o contrato costuma ser mais caro e mais longo. Pelas fontes oficiais conferidas em 18/11/2026:
 
 - **NitroGym Tamboré:** day use de R$ 90, pago no local, com acesso a todas as áreas;
-- **Ironberg Alphaville:** aula avulsa contratada na recepção, no dia do treino, sem agendamento; o valor só é informado na unidade;
+- **Ironberg Alphaville:** Day Pass de R$ 120 no site da unidade, válido até 23h59 do dia de uso, com musculação e, onde houver, aulas de Hyrox e Ironbike; dá para usar em até 7 dias depois da compra;
 - **SIX e Fábrica Premium:** visita agendada para conhecer o espaço, o que não é a mesma coisa que treinar.
 
 As regras de cada uma, com o canal para comprar ou agendar, estão em [academias com diária e aula experimental](/ferramentas/academias-diaria-aula-experimental-alphaville/).

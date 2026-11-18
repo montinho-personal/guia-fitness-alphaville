@@ -72,7 +72,7 @@ Os preços valem para todas as unidades da rede e sempre têm matrícula única 
 - fidelidade de 6 meses: R$ 499 por mês;
 - recorrência de 12 meses: R$ 599 por mês.
 
-Quem usa TotalPass precisa do TP 6, de R$ 599,90. A aula avulsa só é vendida na recepção, com valor a consultar. Ao orçamento somam-se o valor do profissional e a taxa fixa que ele paga à Ironberg; pergunte se ela já está embutida no preço dele. O estacionamento não pesa: é gratuito, com mais de mil vagas. Fica na Estrada da Aldeinha, fora dos bairros residenciais, com acesso pela rodovia. Compare em [preços das academias](/academias/precos/) e [Wellhub e TotalPass](/academias/wellhub-totalpass/).
+Quem usa TotalPass precisa do TP 6, de R$ 599,90. O Day Pass, para um dia de treino, sai por R$ 120 no site da unidade. Ao orçamento somam-se o valor do profissional e a taxa fixa que ele paga à Ironberg; pergunte se ela já está embutida no preço dele. O estacionamento não pesa: é gratuito, com mais de mil vagas. Fica na Estrada da Aldeinha, fora dos bairros residenciais, com acesso pela rodovia. Compare em [preços das academias](/academias/precos/) e [Wellhub e TotalPass](/academias/wellhub-totalpass/).
 
 ![Montinho, personal trainer em Alphaville, fazendo elevação de pernas no aparelho de paralelas da Ironberg](../../assets/montinho/montinho-ironberg-abdominal-paralelas.jpg)
 

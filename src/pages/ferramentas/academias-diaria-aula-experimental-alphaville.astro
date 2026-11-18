@@ -44,10 +44,10 @@ const confirmadas = diariasMusc.filter((x) => x.o.situacao === 'confirmada');
 const titulo = 'Academias com diária e aula experimental em Alphaville';
 const descricao = 'Onde fazer musculação pagando só uma diária e onde testar antes de contratar em Alphaville, Tamboré e Barueri: preço, regras, reserva e o canal de cada academia.';
 const perguntas = [
-  { p: 'Tem academia com diária em Alphaville?', r: `Sim. Com diária de musculação confirmada na fonte oficial: ${confirmadas.map((x) => `${x.a.data.nome} (${precoTexto(x.o)})`).join('; ')}. A Smart Fit tem passe diário segundo a central de ajuda da rede, mas a regra e o preço por unidade ainda estão a confirmar.` },
+  { p: 'Tem academia com diária em Alphaville?', r: `Sim. Com diária de musculação confirmada na fonte oficial: ${confirmadas.map((x) => `${x.a.data.nome} (${precoTexto(x.o)})`).join('; ')}.` },
   { p: 'Quanto custa a diária da NitroGym Tamboré?', r: 'R$ 90 pelo day use, com pagamento direto no local e acesso a todas as áreas da academia, segundo o site da NitroGym. O estacionamento do shopping fica incluso por até 3 horas.' },
-  { p: 'A Ironberg Alphaville vende diária?', r: 'Vende aula avulsa, contratada no dia do treino, só na recepção da unidade, sem agendamento. O valor não é publicado: é informado na unidade.' },
-  { p: 'Tem day use na Smart Fit?', r: 'A central de ajuda da Smart Fit trata do passe diário, mas o guia não conseguiu ler a página na conferência. Confirme no aplicativo da rede ou na recepção da unidade antes de ir, inclusive o preço, que pode variar por unidade.' },
+  { p: 'A Ironberg Alphaville vende diária?', r: 'Vende. O site da unidade mostra o Day Pass a R$ 120: uma entrada válida até 23h59 do dia de uso, com musculação e, onde houver, aulas de Hyrox e Ironbike com check-in no app. Dá para usar em até 7 dias depois da compra; passado esse prazo, o valor não é devolvido.' },
+  { p: 'Tem day use na Smart Fit?', r: 'Tem o passe diário, que vale o dia inteiro, com as aulas coletivas da data. A central de ajuda da rede fala em valores a partir de R$ 24,90 (outro artigo da mesma central diz a partir de R$ 29,90): o preço de cada unidade aparece no app ou no totem da recepção. A Smart Fit não faz aula experimental. Alunos Black e ex-alunos com pendência não podem comprar o passe.' },
   { p: 'Como é uma aula experimental na academia?', r: 'Depende do lugar. Em box de CrossFit, costuma ser uma aula guiada, às vezes separada da turma, para aprender os movimentos. Em academia premium, muitas vezes é uma visita com apresentação do espaço. Antes de ir, pergunte se dá para treinar musculação, quanto tempo dura e se precisa reservar.' },
   { p: 'Diária ou mensalidade: o que compensa?', r: 'Some as diárias do mês e compare com o plano mensal sem fidelidade. Na NitroGym, por exemplo, 7 diárias de R$ 90 já passam do plano mensal de R$ 589. A ferramenta faz essa conta para a quantidade de idas que você escolher; a matrícula, quando existe, pesa só no primeiro mês.' },
 ];
@@ -64,7 +64,7 @@ const dataBR = (d: Date) => dataLonga(d);
 
     <div class="resposta">
       <span class="rotulo">Resposta direta</span>
-      <p>Para musculação com diária, a <a href={urlAcademia(confirmadas.find((x) => x.a.id === 'nitrogym-tambore')!.a)}>NitroGym Tamboré</a> cobra R$ 90 pelo day use, pago no local, e a <a href="/academias/ironberg-alphaville/">Ironberg Alphaville</a> vende aula avulsa na recepção, com valor a consultar. As unidades da Smart Fit têm passe diário a confirmar. Para experimentar outras modalidades, o CrossFit Barueri e a G13 publicam aula experimental grátis. Na Arena 18, o Montinho, que mantém este guia, faz aula experimental de musculação grátis, sem diária.</p>
+      <p>Para musculação com diária, a <a href={urlAcademia(confirmadas.find((x) => x.a.id === 'nitrogym-tambore')!.a)}>NitroGym Tamboré</a> cobra R$ 90 pelo day use, pago no local, e a <a href="/academias/ironberg-alphaville/">Ironberg Alphaville</a> vende Day Pass a R$ 120 no site da unidade. As unidades da Smart Fit têm passe diário a partir de R$ 24,90, comprado no app ou no totem. Para experimentar outras modalidades, o CrossFit Barueri e a G13 publicam aula experimental grátis. Na Arena 18, o Montinho, que mantém este guia, faz aula experimental de musculação grátis, sem diária.</p>
     </div>
 
     <div class="av-modos nao-imprime" role="group" aria-label="O que você quer fazer">
@@ -170,7 +170,7 @@ const dataBR = (d: Date) => dataLonga(d);
 
     <div class="prosa">
       <h2>Como comprar uma diária</h2>
-      <p>Cada academia faz de um jeito. Na NitroGym Tamboré, o day use é pago direto no local. Na Ironberg, a aula avulsa é contratada na recepção, no dia do treino, sem agendamento, e o valor só é informado na unidade. Leve documento e, se for de carro, confira a regra do estacionamento. Antes de sair, confirme se a diária vale no horário em que você pretende chegar: o site das academias nem sempre diz se a entrada avulsa segue todo o horário de funcionamento. Para ver o horário de cada unidade, use o <a href="/ferramentas/academias-abertas-alphaville/">buscador de academias abertas</a>.</p>
+      <p>Cada academia faz de um jeito. Na NitroGym Tamboré, o day use é pago direto no local. Na Ironberg, o Day Pass é comprado no site da unidade e vale até 23h59 do dia de uso, com até 7 dias para ser usado. Na Smart Fit, o passe diário sai no app ou no totem da recepção. Leve documento e, se for de carro, confira a regra do estacionamento. Antes de sair, confirme se a diária vale no horário em que você pretende chegar: o site das academias nem sempre diz se a entrada avulsa segue todo o horário de funcionamento. Para ver o horário de cada unidade, use o <a href="/ferramentas/academias-abertas-alphaville/">buscador de academias abertas</a>.</p>
 
       <h2>O que pode estar incluído numa aula experimental</h2>
       <p>"Aula experimental" quer dizer coisas diferentes. No CrossFit Barueri, é uma aula grátis, separada da turma, para aprender os movimentos. Na BlackSheep Alphaville, é uma aula de Hybrid agendada pelo WhatsApp. Na SIX e na Fábrica Premium, o que existe é uma visita agendada para conhecer o espaço, que não é a mesma coisa que treinar. Pergunte sempre: dá para treinar musculação, quanto tempo dura, quem acompanha e se há custo.</p>

@@ -38,7 +38,7 @@ const linhas: [string, string, string][] = [
   ['Personal de fora', 'Aceito, com cadastro e taxa de R$ 1.000 por mês paga pelo profissional', 'Regra não publicada'],
 ];
 const perguntas = [
-  { p: 'Quanto custa treinar na Ironberg Alphaville?', r: 'Pela tabela publicada pela rede: R$ 399 por mês no plano de 12 meses, R$ 499 no de 6 meses e R$ 599 no recorrente sem fidelidade, todos com matrícula de R$ 120. A aula avulsa é vendida só na recepção, sem valor publicado.' },
+  { p: 'Quanto custa treinar na Ironberg Alphaville?', r: 'Pela tabela publicada pela rede: R$ 399 por mês no plano de 12 meses, R$ 499 no de 6 meses e R$ 599 no recorrente sem fidelidade, todos com matrícula de R$ 120. O site da unidade vende Day Pass a R$ 120.' },
   { p: 'Qual a mensalidade da NitroGym Tamboré?', r: 'Pelo site da NitroGym: R$ 389 por mês no plano de 12 meses, R$ 489 no de 6 meses e R$ 589 no mensal. Há diária de R$ 90 e plano só de fim de semana a R$ 289 por mês. A tabela não menciona matrícula; confirme na recepção.' },
   { p: 'A NitroGym Tamboré funciona 24 horas?', r: 'Não. Pelo site da rede, a unidade do Shopping Tamboré abre às 5h e fecha à meia-noite nos dias úteis, e funciona das 6h às 22h no sábado, no domingo e nos feriados. Entre as duas, só a Ironberg é 24 horas.' },
   { p: 'Qual a marca dos equipamentos da Ironberg?', r: 'O site da Ironberg não lista as marcas. Ele descreve a unidade de Alphaville como climatizada, organizada por grupos musculares e com equipamentos importados. Se a marca de um aparelho importa para o seu treino, confira na visita.' },
@@ -93,7 +93,7 @@ const __todasDestaque = await __academias();
 
       <h2>Flexibilidade: aqui a NitroGym sai na frente</h2>
       <p>A NitroGym publica uma diária de R$ 90 e um plano só para sábado e domingo, a R$ 289 por mês. Serve para quem quer conhecer o espaço antes de assinar, para quem treina em outro lugar durante a semana ou para visitantes. O plano anual ainda dá acesso a uma segunda unidade; o site da rede lista outra, na Granja Viana, em Cotia.</p>
-      <p>A Ironberg vende aula avulsa só na recepção, sem valor publicado, e não tem plano de fim de semana. Em compensação, a tabela de preços vale para todas as unidades da rede.</p>
+      <p>A Ironberg vende Day Pass de R$ 120 no site da unidade, válido até 23h59 do dia de uso, e não tem plano de fim de semana. Em compensação, a tabela de preços vale para todas as unidades da rede.</p>
 
       <h2>Quem usa TotalPass</h2>
       <p>Nenhuma das duas aparece no Wellhub. No TotalPass, a NitroGym entra a partir do {tpNg.plano_minimo}, de {tpNg.preco_plano}, e a Ironberg só a partir do {tpIb.plano_minimo}, de {tpIb.preco_plano}. Se o seu plano for o {tpNg.plano_minimo}, só a NitroGym está liberada. Veja todos os planos em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
