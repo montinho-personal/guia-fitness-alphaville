@@ -37,6 +37,9 @@ perguntas:
     r: "Programas gratuitos costumam depender da prefeitura e mudam de um ano para outro. O guia não conferiu as inscrições atuais; consulte os canais oficiais da Prefeitura de Barueri."
   - p: "Tem hidroginástica em Barueri?"
     r: "Sim. A Boa Forma, no Jardim Alberto, lista hidroginástica e hidroterapia entre as atividades no Wellhub."
+video:
+  id: RvapDDClRXY
+  titulo: "Melhor exercício para ganhar músculo? A pergunta está errada"
 ---
 
 > **Transparência.** O guia é mantido pelo Montinho, personal trainer que atende em Alphaville e Barueri. Ele não dá aula de natação nem tem relação com os lugares citados; o bloco dele no rodapé é publicidade.
@@ -44,6 +47,10 @@ perguntas:
 ## A piscina conferida: Boa Forma
 
 A [Academia Boa Forma](/academias/boa-forma-barueri/) fica no Jardim Alberto, em Barueri, e é a única academia com ficha no guia que tem piscina. No Wellhub, ela lista natação, natação para adultos, hidroginástica e hidroterapia, além de musculação e aulas coletivas. Funciona de segunda a sexta, das 7h às 22h (às 21h30 na segunda), e no sábado de manhã; no domingo, fecha. A página do Wellhub pede agendamento e libera a partir do Silver+. No TotalPass, a unidade lista aula de natação e musculação a partir do TP 3, de R$ 199,90 por mês. Para ver quais outras academias o mesmo plano cobre, use o [buscador de Wellhub e TotalPass](/academias/wellhub-totalpass/).
+
+![Montinho, personal trainer que mantém este guia, na praia](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+
+*Montinho, personal trainer que mantém este guia. Ele não dá aula de natação; o vídeo abaixo trata de escolher o exercício que você consegue manter.*
 
 ## E as escolas de natação de Alphaville?
 

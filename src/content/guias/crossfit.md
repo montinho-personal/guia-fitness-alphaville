@@ -37,7 +37,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-13
-atualizado_em: 2026-11-16
+atualizado_em: 2026-11-18
 ---
 
 > **Transparência.** O guia é mantido pelo Montinho, personal trainer de Alphaville. Ele não é coach de CrossFit nem tem relação com os boxes citados; o bloco dele no rodapé é publicidade.
@@ -53,6 +53,10 @@ Os três ficam no Alphaville Industrial, a poucos minutos um do outro. O [Templo
 | Templo SA | manhã até 13h e fim de tarde | sábado e domingo 9h às 10h30 | Gold | TP 4 |
 
 Os horários vêm dos agregadores e mostram a janela de aulas, não porta aberta o dia todo. Peça a grade de turmas antes de se matricular.
+
+![Montinho, personal trainer que mantém este guia, no elevador a caminho do treino](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que mantém este guia. Ele não é coach de CrossFit; atende alunos de musculação e preparação física.*
 
 ## Fora de Alphaville: Barueri e Santana de Parnaíba
 

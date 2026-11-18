@@ -35,6 +35,9 @@ perguntas:
     r: "Uma aula por semana já dá contato com a técnica, mas a evolução tende a ser mais lenta do que com duas ou três. Converse com o instrutor sobre seu objetivo e, se houver dor ou lesão, siga a orientação do médico ou do fisioterapeuta."
   - p: "Qual estúdio de pilates aceita TotalPass em Alphaville?"
     r: "Entre os conferidos, o Inspire Pilates (a partir do TP 2+) e o Pilates Gaviões (a partir do TP 3)."
+video:
+  id: ILCXLmG2ucQ
+  titulo: "Mobilidade de inferiores: quadril, lombar e joelho"
 ---
 
 > **Transparência.** Este guia é mantido pelo Montinho, personal trainer de Alphaville. Ele não dá aula de pilates nem tem relação com os estúdios citados; o bloco dele no rodapé é publicidade.
@@ -42,6 +45,10 @@ perguntas:
 ## Dois polos: Centro Comercial e Alphaville Industrial
 
 Os estúdios se concentram em dois pontos. No **Centro Comercial**, perto do Iguatemi, ficam o [Studio Vitalle](/academias/studio-vitalle-pilates-alphaville/) e o [Studio Physio Pilates](/academias/studio-physio-pilates-alphaville/), ambos na Calçada das Violetas, e o [Inspire Pilates](/academias/inspire-pilates-alphaville/), na Praça Flor de Linho. No **Alphaville Industrial**, o [Pilates Gaviões](/academias/pilates-gavioes-alphaville/) funciona no mesmo número da Gaviões 24h, na Av. Juruá, a [Clínica Health Body](/academias/health-body-pilates-alphaville/) e o [Spine Movi Pilates](/academias/spine-movi-pilates-alphaville/) dividem o endereço na Alameda Grajaú, e a [Clínica de Fisioterapia Araguaia](/academias/fisio-araguaia-pilates-alphaville/) fica na Alameda Araguaia. No Wellhub, a Araguaia e a Health Body entram a partir do Gold; o Spine Movi, só a partir do Platinum.
+
+![Montinho, personal trainer que mantém este guia, de boné em frente ao espelho da academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia. Ele não dá aula de pilates; o vídeo abaixo mostra uma sequência de mobilidade de quadril, lombar e joelho.*
 
 ## Estúdio ou aula na academia
 

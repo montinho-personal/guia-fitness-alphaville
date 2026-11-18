@@ -2,6 +2,11 @@
 import FerramentasContexto from '../../components/FerramentasContexto.astro';
 import { ferramentasPara } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import VideoMontinho from '../../components/VideoMontinho.astro';
+import fotoArena from '../../assets/montinho/montinho-personal-trainer-arena-18.jpg';
+import fotoEspelho from '../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg';
+import fotoSelfie from '../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg';
 import CartaoAcademia from '../../components/CartaoAcademia.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Mantem from '../../components/Mantem.astro';
@@ -83,6 +88,12 @@ const schema = [
   { '@type': 'ItemList', name: m.h1, numberOfItems: xs.length, itemListElement: xs.map((a, i) => ({ '@type': 'ListItem', position: i + 1, name: a.data.nome, url: abs(urlAcademia(a)) })) },
 ];
 const ferramentas = ferramentasPara({ tipo: 'regiao', regiao: regiao as RegiaoId, lugar: REGIOES[regiao as RegiaoId].nome });
+const MIDIA = {
+  alphaville: { foto: fotoArena, alt: 'Montinho, personal trainer que mantém este guia, na Arena 18, em Alphaville', legenda: 'O Montinho na Arena 18, no Melville Empresarial, onde atende alunos. Publicidade da casa.', video: { id: 'BoXag2fY0u0', titulo: 'Como montar seu treino de musculação em 5 passos' } },
+  barueri: { foto: fotoEspelho, alt: 'Montinho, personal trainer que mantém este guia, de boné em frente ao espelho da academia', legenda: 'O Montinho, personal trainer que mantém este guia e atende em Barueri. Publicidade da casa.', video: { id: 'L5w4DBU2la8', titulo: 'Como filmar o seu exercício na academia' } },
+  'santana-de-parnaiba': { foto: fotoSelfie, alt: 'Montinho, personal trainer que mantém este guia, em selfie no espelho da academia', legenda: 'O Montinho, personal trainer que mantém este guia e atende em Santana de Parnaíba. Publicidade da casa.', video: { id: 'yndKE1GrnUQ', titulo: 'Toda pessoa com shape tem uma coisa em comum' } },
+} as const;
+const midia = MIDIA[regiao as keyof typeof MIDIA];
 ---
 <Base titulo={m.titulo} descricao={m.descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Regiões', url: '/regioes/' }, { nome: r.titulo, url: urlRegiao(regiao) }]}>
   <div class="wrap">
@@ -197,6 +208,8 @@ const ferramentas = ferramentasPara({ tipo: 'regiao', regiao: regiao as RegiaoId
         {regiao === 'santana-de-parnaiba' && <><li><a href="/guias/personal-trainer-santana-de-parnaiba/">Personal trainer em Santana de Parnaíba</a></li><li><a href="/guias/personal-trainer-aldeia-da-serra/">Personal trainer na Aldeia da Serra</a></li></>}
       </ul>
     </section>
+    {midia && <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={midia.foto} alt={midia.alt} widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">{midia.legenda}</figcaption></figure>}
+    {midia && <VideoMontinho id={midia.video.id} titulo={midia.video.titulo} pagina={`regiao-${regiao}`} />}
     <FerramentasContexto itens={ferramentas} />
     <Perguntas itens={perguntasAlpha} titulo="Perguntas frequentes sobre academias em Alphaville" />
     <Perguntas itens={perguntasBarueri} titulo="Perguntas frequentes sobre academias em Barueri" id="perguntas-barueri" />
