@@ -6,14 +6,15 @@ import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
 import VideoMontinho from '../../components/VideoMontinho.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
+import Perguntas from '../../components/Perguntas.astro';
 import ref from '../../data/referencias.json';
 import { academias, urlAcademia, faixasDia, abreDomingo, e24h, dataLonga, dataIso, type Academia } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-15'), atualizado: new Date('2026-11-15') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-15'), atualizado: new Date('2026-11-18') };
 const todas = await academias();
 const RAIO = 2.5; // km, em linha reta
 const km = (a: { lat: number; lng: number }, b: { lat: number; lng: number }) => { const R = 6371, r = (x: number) => (x * Math.PI) / 180; const dLa = r(b.lat - a.lat), dLo = r(b.lng - a.lng); const h = Math.sin(dLa / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dLo / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
-const fmt = (n: number) => (n < 1 ? `${Math.round(n * 1000 / 50) * 50} m` : `${n.toFixed(1).replace('.', ',')} km`);
+const fmt = (n: number) => (n < 0.03 ? 'no mesmo endereço' : n < 1 ? `${Math.round(n * 1000 / 50) * 50} m` : `${n.toFixed(1).replace('.', ',')} km`);
 const pontos = (ref.pontos as { id: string; nome: string; de: string; tipo: string; lat: number; lng: number }[]).map((p) => ({ ...p, perto: todas.map((a) => ({ a, d: km(p, a.data.geo as { lat: number; lng: number }) })).filter((x) => x.d <= RAIO).sort((x, y) => x.d - y.d).slice(0, 6) }));
 const uteis = (a: Academia) => { const H = a.data.horario; const iguais = ['ter', 'qua', 'qui', 'sex'].every((d) => faixasDia(H[d as 'seg']) === faixasDia(H.seg)); if (iguais) return `seg a sex ${faixasDia(H.seg)}`; const qui = ['ter', 'qua', 'qui'].every((d) => faixasDia(H[d as 'seg']) === faixasDia(H.seg)); return qui ? `seg a qui ${faixasDia(H.seg)}, sex ${faixasDia(H.sex)}` : `seg ${faixasDia(H.seg)}`; };
 const resumoAc = (a: Academia) => [e24h(a.data.horario) ? '24 horas' : uteis(a), abreDomingo(a.data.horario) ? 'abre no domingo' : 'sem domingo', a.data.mensalidade ? a.data.mensalidade.valor : null].filter(Boolean).join(' · ');
@@ -22,6 +23,11 @@ const titulo = 'Academia perto do Iguatemi, Shopping Tamboré e estações';
 const descricao = 'Academias perto do Iguatemi Alphaville, Shopping Tamboré, 18 do Forte, Parque Shopping Barueri e estações da CPTM, com distância em linha reta e horário.';
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 const ferramentas = ferramentasPara({ tipo: 'perto-de' });
+const perguntas = [
+  { p: 'Tem academia perto do Carrefour Hiper Tamboré?', r: 'Sim. A Smart Fit Carrefour Hiper Tamboré fica no próprio endereço do hipermercado, na Alameda Araguaia, 2751, no Alphaville Industrial. Abre às 6h nos dias úteis e no domingo vai das 8h às 14h, segundo o site da Smart Fit.' },
+  { p: 'Qual academia fica dentro de shopping em Alphaville e Barueri?', r: 'A NitroGym fica dentro do Shopping Tamboré, com estacionamento do shopping incluso por até 3 horas. Em Barueri, a Smart Fit Parque Shopping Barueri fica no Parque Shopping. Perto do Iguatemi Alphaville, a lista acima mostra as academias a poucos minutos a pé.' },
+  { p: 'Como achar a academia mais perto de mim em Alphaville?', r: 'Se o seu ponto não está nesta página, abra o mapa do guia: ele mostra todas as academias com ficha e a lista de endereços por região. Depois, confira no buscador de academias abertas se ela funciona no horário em que você vai treinar.' },
+];
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Perto de você', url: '/academias/perto-de/' }]}>
   <div class="wrap">
@@ -46,7 +52,7 @@ const ferramentas = ferramentasPara({ tipo: 'perto-de' });
       <section class="bloco fino prosa" id={p.id} aria-labelledby={`${p.id}-t`}>
         <h2 id={`${p.id}-t`}>Academia perto {p.de}</h2>
         {p.perto.length === 0 ? <p>Nenhuma academia com ficha no guia num raio de {RAIO.toString().replace('.', ',')} km.</p> : (
-          <ol>{p.perto.map(({ a, d }) => <li><a href={urlAcademia(a)}>{a.data.nome}</a> — {fmt(d)} em linha reta. {resumoAc(a)}.</li>)}</ol>
+          <ol>{p.perto.map(({ a, d }) => <li><a href={urlAcademia(a)}>{a.data.nome}</a> — {d < 0.03 ? fmt(d) : `${fmt(d)} em linha reta`}. {resumoAc(a)}.</li>)}</ol>
         )}
       </section>
     ))}
@@ -59,6 +65,7 @@ const ferramentas = ferramentasPara({ tipo: 'perto-de' });
 
     <FerramentasContexto itens={ferramentas} />
 
+    <Perguntas itens={perguntas} titulo="Perguntas sobre academia perto de você" />
     <VideoMontinho id="DiH1OzIR6Yk" titulo="É impossível isso dar errado" pagina="perto-de" />
     <LeiaTambem url="/academias/perto-de/" />
     <div style="margin-top:28px"><Fontes fontes={[{ titulo: `${ref.fonte}: coordenadas dos pontos de referência`, url: ref.url, data: dataLonga(new Date(ref.conferido_em)) }, { titulo: 'Fichas das academias do guia, com endereço e fonte de cada informação', url: 'https://guiafitnessalphaville.com.br/academias/', data: dataLonga(gov.atualizado) }]} /></div>
