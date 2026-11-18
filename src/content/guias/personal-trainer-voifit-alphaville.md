@@ -26,7 +26,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
-atualizado_em: 2026-11-15
+atualizado_em: 2026-11-18
 ---
 
 > **Transparência.** O Montinho, que treina alunos em Alphaville, mantém este site. O anúncio dele fecha a página e não faz parte da análise.
@@ -62,9 +62,9 @@ A lista de comodidades é curta: ar-condicionado, armários, vestiário, Wi-Fi, 
 
 Não há mensalidade direta publicada. No Wellhub, basta o Silver (R$ 149,99) para entrar na VoiFit. O estacionamento consta na ficha, mas regras e custo ainda estão pendentes. Some ainda o personal e a possível taxa da academia. Para comparar, veja a [tabela de preços](/academias/precos/).
 
-![Montinho, personal trainer em Alphaville, sorrindo na praia ao lado de coqueiros](../../assets/montinho/montinho-personal-trainer-praia.jpg)
+![Montinho, personal trainer em Alphaville, fazendo rosca com halteres na área de pesos livres da VoiFit](../../assets/montinho/montinho-voifit-rosca-halteres.jpg)
 
-*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
+*O Montinho treinando na VoiFit. Foto dele, tirada na academia.*
 
 ## Duas vizinhas para comparar
 

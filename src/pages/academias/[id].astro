@@ -7,6 +7,12 @@ import Mantem from '../../components/Mantem.astro';
 import Vitrine from '../../components/Vitrine.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import { Image } from 'astro:assets';
+import fotoIbRemada from '../../assets/montinho/montinho-ironberg-remada-maquina.jpg';
+import fotoVfRosca from '../../assets/montinho/montinho-voifit-rosca-halteres.jpg';
+import fotoVfHalteres from '../../assets/montinho/montinho-voifit-halteres-sala.jpg';
+import fotoVfRemada from '../../assets/montinho/montinho-voifit-remada-halteres.jpg';
+import fotoVfVestiario from '../../assets/montinho/montinho-voifit-vestiario.jpg';
+import fotoVfVestiarioBone from '../../assets/montinho/montinho-voifit-vestiario-bone.jpg';
 import fotoIbParalelas from '../../assets/montinho/montinho-ironberg-abdominal-paralelas.jpg';
 import fotoIbEspelho from '../../assets/montinho/montinho-ironberg-espelho.jpg';
 import fotoIbFones from '../../assets/montinho/montinho-ironberg-abdominal-fones.jpg';
@@ -21,8 +27,19 @@ const FOTO_MONTINHO: Record<string, { fotos: { src: typeof fotoArena18; alt: str
       { src: fotoIbEspelho, alt: 'Montinho em frente aos espelhos da área de treino da Ironberg, com paredes de bloco preto e piso claro' },
       { src: fotoIbFones, alt: 'Montinho de fone de ouvido no aparelho de elevação de pernas da Ironberg, com o logo da academia na parede de vidro' },
       { src: fotoIbCostas, alt: 'Montinho de costas, em pose de duplo bíceps diante do espelho da Ironberg' },
+      { src: fotoIbRemada, alt: 'Montinho na máquina de remada vermelha da Ironberg, sob o teto com luzes em X e faixas de LED rosa' },
     ],
     legenda: 'O Montinho treinando na Ironberg. Fotos dele, tiradas na academia. Publicidade da casa.',
+  },
+  'voifit-alphaville': {
+    fotos: [
+      { src: fotoVfRosca, alt: 'Montinho fazendo rosca com halteres na frente do suporte de halteres da VoiFit, com parede roxa e esteiras ao fundo' },
+      { src: fotoVfRemada, alt: 'Montinho fazendo remada unilateral com halter apoiado no suporte da área de pesos livres da VoiFit' },
+      { src: fotoVfHalteres, alt: 'Montinho segurando um par de halteres na sala de musculação da VoiFit, com aparelhos e janelas ao fundo' },
+      { src: fotoVfVestiario, alt: 'Montinho sorrindo diante do espelho do vestiário da VoiFit, com boxes de chuveiro ao fundo' },
+      { src: fotoVfVestiarioBone, alt: 'Montinho de boné diante do espelho do vestiário da VoiFit' },
+    ],
+    legenda: 'O Montinho treinando na VoiFit. Fotos dele, tiradas na academia. Publicidade da casa.',
   },
 };
 import { ARTIGOS, COMPARATIVOS, personalDaRegiao } from '../../lib/artigos';
