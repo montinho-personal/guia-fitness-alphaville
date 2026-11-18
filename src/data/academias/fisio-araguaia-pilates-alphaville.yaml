@@ -1,0 +1,70 @@
+nome: Clínica de Fisioterapia Araguaia
+titulo_seo: 'Clínica Araguaia: pilates em Alphaville e Wellhub'
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: estudio
+resumo: 'Fisioterapia e pilates numa sala da Alameda Araguaia, em dias úteis, com aula reservada pelo Wellhub.'
+endereco: 'Alameda Araguaia, 933, sala 36 - Alphaville Industrial, Barueri - SP, 06455-000'
+geo:
+  lat: -23.497975
+  lng: -46.8520603
+horario:
+  seg:
+  - 07:00-20:00
+  ter:
+  - 07:00-20:00
+  qua:
+  - 07:00-20:00
+  qui:
+  - 07:00-20:00
+  sex:
+  - 07:00-20:00
+  sab: []
+  dom: []
+modalidades:
+- pilates
+atividades_listadas:
+- Pilates
+comodidades:
+- Fisioterapeuta
+- Wi-Fi
+agregadores:
+- nome: Wellhub
+  situacao: confirmada
+  atividades: ["Pilates"]
+  musculacao: false
+  condicoes: ["Reserva necessária, segundo o Wellhub."]
+  conferido_em: '2026-11-18'
+  plano_minimo: Gold
+  preco_plano: R$ 319,99
+  url: https://wellhub.com/pt-br/search/partners/clinica-de-fisioterpia-araguaia-alphaville-industrial-barueri/
+mensalidade: null
+site: https://www.instagram.com/fisioaraguaia/
+telefone: '(11) 94956-2354'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página da clínica no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/clinica-de-fisioterpia-araguaia-alphaville-industrial-barueri/
+  conferido_em: '2026-11-18'
+  nivel: fonte-publica
+divergencias:
+- 'O Wellhub situa a clínica no "Alphaville Commercial Center" e no Alphaville Industrial, e a chama também de "Pilatesutdio" no texto de apresentação.'
+pendencias:
+- Mensalidade direta
+- Tamanho das turmas
+analise:
+- 'Na Alameda Araguaia, número 933, sala 36, a clínica soma fisioterapia e aulas de pilates. Serve a quem está saindo de um tratamento e quer continuar o exercício com o mesmo time.'
+- 'Atende em horário comercial estendido, das 7h às 20h, só em dias úteis. Pelo Wellhub, a aula precisa ser reservada antes e o acesso começa no plano Gold.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Guia Fitness Alphaville
+revisor: null
+publicado_em: '2026-11-18'
+atualizado_em: '2026-11-18'
