@@ -1,4 +1,5 @@
 ---
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
@@ -157,6 +158,7 @@ const urlPE = (nome: string) => `/ferramentas/academias-que-aceitam-personal-ext
       </ul>
       <p>Para colocar academias lado a lado por horário e estrutura, use o <a href="/ferramentas/comparador/">comparador</a>. Quem treina com personal deve ver também <a href="/ferramentas/academias-que-aceitam-personal-externo/">academias que aceitam personal externo</a>.</p>
     </div>
+    <VideoMontinho id="RvapDDClRXY" titulo="O melhor exercício é o que você mantém" pagina="wellhub-totalpass" />
     <Perguntas itens={perguntas} titulo="Perguntas sobre Wellhub (Gympass) e TotalPass" />
     <LeiaTambem url={URL_PAG} />
     <div style="margin-top:28px"><Fontes fontes={[{ titulo: planos.wellhub.fonte, url: planos.wellhub.url, data: dataLonga(conf) }, { titulo: planos.totalpass.fonte, url: planos.totalpass.url, data: dataLonga(conf) }, { titulo: 'Página de cada unidade nos dois benefícios, com link em cada resultado' }]} /></div>

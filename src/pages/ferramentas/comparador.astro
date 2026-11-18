@@ -1,4 +1,5 @@
 ---
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import Base from '../../layouts/Base.astro';
 import { academias, paraFerramentas, MODALIDADES } from '../../lib/dados';
 const todas = await academias();
@@ -44,6 +45,7 @@ const dados = paraFerramentas(todas);
       <p>Os dados vêm das páginas públicas de cada unidade nos agregadores, conferidas na data indicada. Mensalidade direta e lotação não aparecem porque ainda não foram confirmadas. Onde a estrutura mostra "não informado", a fonte não cita o item; não quer dizer que a academia não o tenha.</p>
       <p>Depois de reduzir a lista, visite as candidatas com o <a href="/ferramentas/checklist/">checklist</a> no celular. Para colocar na conta mensalidade, estacionamento e personal, use a <a href="/ferramentas/custo-para-treinar-em-alphaville/">calculadora de custo para treinar</a>.</p>
     </div>
+    <div class="nao-imprime"><VideoMontinho id="BoXag2fY0u0" titulo="Como montar seu treino de musculação em 5 passos" pagina="comparador" /></div>
   </div>
 
   <script type="application/json" id="dados" set:html={JSON.stringify({ dados, mods: MODALIDADES })}></script>

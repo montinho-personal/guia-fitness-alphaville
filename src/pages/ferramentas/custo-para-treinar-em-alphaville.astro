@@ -1,4 +1,5 @@
 ---
+import VideoApp from '../../components/VideoApp.astro';
 import Base from '../../layouts/Base.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
@@ -173,6 +174,7 @@ const perguntas = [
       <p>Para ver preços com mais contexto, leia <a href="/academias/precos/">quanto custa academia em Alphaville e Barueri</a>. Para comparar horário e estrutura antes do custo, use o <a href="/ferramentas/comparador/">comparador</a>; se a dúvida é treinar sozinho ou com acompanhamento, leia <a href="/guias/academia-ou-personal/">academia ou personal trainer</a>. Quem usa agregador encontra o plano mínimo de cada academia em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
     </div>
 
+    <VideoApp pagina="calculadora" />
     <Perguntas itens={perguntas} titulo="Dúvidas que mudam a conta" />
     <LeiaTambem url={URL_PAG} />
   </div>

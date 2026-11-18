@@ -1,4 +1,5 @@
 ---
+import VideoMontinho from '../components/VideoMontinho.astro';
 import Base from '../layouts/Base.astro';
 import { academias, paraFerramentas, REGIOES } from '../lib/dados';
 const todas = await academias();
@@ -33,6 +34,7 @@ const porBairro = Object.entries(todas.reduce((m, a) => { m[a.data.bairro] = (m[
         </div>
       </section>
     ))}
+    <VideoMontinho id="GPuqJs_DRoY" titulo="O poder da disciplina: a sensação de dever feito" pagina="mapa" />
   </div>
   <script type="application/json" id="dados" set:html={JSON.stringify(dados)}></script>
   <script>

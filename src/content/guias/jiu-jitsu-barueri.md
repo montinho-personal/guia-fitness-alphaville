@@ -28,7 +28,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-16
-atualizado_em: 2026-11-16
+atualizado_em: 2026-11-18
 perguntas:
   - p: "Onde tem jiu-jitsu em Barueri?"
     r: "Com ficha no guia: Team Cruz, na Estrada dos Pinheiros (Parque Viana); CT Guerreiros, na Rua Tiradentes (Jardim Belval); CT Fuinha, na Av. Zélia (Parque dos Camargos); Studio Cathéo Fight, na Av. Capitão Francisco César (Engenho Novo); e Bluefit Barueri, na Av. Trindade (Bethaville)."
@@ -40,6 +40,9 @@ perguntas:
     r: "CT Guerreiros (10h30 ao meio-dia) e CT Fuinha (9h ao meio-dia) abrem no sábado de manhã. Team Cruz e Studio Cathéo Fight não abrem no fim de semana."
   - p: "Tem judô em Barueri?"
     r: "Entre os lugares com ficha no guia, só o Studio Cathéo Fight, no Engenho Novo, lista judô, junto com jiu-jitsu, muay thai, boxe e MMA."
+video:
+  id: izMrrSoJGBw
+  titulo: "Raiva e sangue no olho"
 ---
 
 > **Transparência.** O guia é mantido pelo Montinho, personal trainer que atende em Barueri. Ele não ensina luta nem tem vínculo com as escolas desta página; o bloco dele no rodapé é publicidade.
@@ -52,6 +55,10 @@ O jiu-jitsu de Barueri está espalhado pelos bairros, e isso ajuda a escolher pe
 - **Oeste, perto da Linha 8 da CPTM:** o [CT Guerreiros](/academias/ct-guerreiros-jardim-belval/), na Rua Tiradentes, no Jardim Belval.
 - **Norte:** o [Studio Cathéo Fight](/academias/studio-catheo-fight-barueri/), na Av. Capitão Francisco César, no Engenho Novo.
 - **A caminho de Alphaville:** a [Bluefit Barueri](/academias/bluefit-barueri/), em Bethaville, uma academia completa que inclui jiu-jitsu e muay thai na grade.
+
+![Montinho, personal trainer que mantém este guia, no elevador a caminho do treino](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
+
+*Montinho, personal trainer que mantém este guia. Ele não dá aula de jiu-jitsu; atende alunos de musculação e preparação física em Barueri.*
 
 ## Horário é de turma
 

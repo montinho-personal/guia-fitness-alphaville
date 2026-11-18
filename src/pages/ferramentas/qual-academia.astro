@@ -1,4 +1,5 @@
 ---
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import Base from '../../layouts/Base.astro';
 import Mantem from '../../components/Mantem.astro';
 import { academias, paraFerramentas, MODALIDADES, REGIOES, ORDEM_WELLHUB } from '../../lib/dados';
@@ -49,6 +50,7 @@ const planosWh = ORDEM_WELLHUB.filter((p) => todas.some((a) => a.data.agregadore
       <p>Cada resposta vira um critério. Para cada academia, o teste confere se o dado da ficha atende ao critério e soma um ponto quando atende. Não há pesos escondidos. O Montinho Personal Trainer, que mantém o guia, não aparece entre os resultados.</p>
       <p>O teste usa só o que está nas fichas, e as fichas ainda não têm mensalidade nem lotação. Trate o resultado como uma lista curta para visitar, não como veredito. Leve o <a href="/ferramentas/checklist/">checklist</a>.</p>
     </div>
+    <VideoMontinho id="yndKE1GrnUQ" titulo="Toda transformação começa com uma decisão" pagina="quiz" />
     <section class="bloco fino"><Mantem pagina="quiz" compacta titulo="Precisa de ajuda para começar a treinar?" texto="Se a sua dúvida não é só onde, mas como treinar, o Montinho Personal Trainer atende presencialmente na região. Este bloco é publicidade da casa e não faz parte do resultado do teste." /></section>
   </div>
 

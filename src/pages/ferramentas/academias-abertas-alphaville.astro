@@ -1,4 +1,5 @@
 ---
+import VideoMontinho from '../../components/VideoMontinho.astro';
 // Buscador "Academias abertas aos domingos e 24h em Alphaville".
 // Mesma fonte das fichas (src/data/academias/*.yaml); regras de horário em src/lib/horarios.ts; feriados em src/data/feriados.json.
 import Base from '../../layouts/Base.astro';
@@ -150,6 +151,7 @@ const dadosJson = JSON.stringify({ U, feriados, pendentesMunicipais: FER.municip
       <p>Os feriados municipais de Barueri e de Santana de Parnaíba entram no buscador quando o calendário oficial de cada prefeitura for conferido. Até lá, num feriado municipal, confirme o horário direto com a academia.</p>
     </div>
 
+    <VideoMontinho id="DiH1OzIR6Yk" titulo="Proteja o seu objetivo: a brecha que te faz recomeçar" pagina="academias-abertas" />
     <FerramentasContexto itens={ferr} />
     <Perguntas itens={perguntas} titulo="Perguntas sobre academia aberta no domingo, 24 horas e feriados" />
     <LeiaTambem url="/ferramentas/academias-abertas-alphaville/" />
