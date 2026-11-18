@@ -2,7 +2,7 @@
 titulo: "Natação em Alphaville e Barueri: onde tem piscina"
 descricao: "Onde fazer natação e hidroginástica em Alphaville e Barueri: a academia com piscina conferida pelo guia, o Wellhub e o que perguntar às escolas de natação."
 h1: "Natação em Alphaville e Barueri: onde nadar"
-resposta: "Entre as academias com ficha no guia, só a Boa Forma, no Jardim Alberto, em Barueri, tem piscina, com natação, natação para adultos e hidroginástica, aceita no Wellhub pelo Silver+. As escolas de natação de Alphaville que aparecem nas buscas, como Mori, Cubo d'Água e as dos clubes, ainda não foram conferidas pelo guia em fonte própria ou agregador."
+resposta: "Entre as academias com ficha no guia, só a Boa Forma, no Jardim Alberto, em Barueri, tem piscina, com natação, natação para adultos e hidroginástica, aceita no Wellhub pelo Silver+ e no TotalPass pelo TP 3. As escolas de natação de Alphaville que aparecem nas buscas, como Mori, Cubo d'Água e as dos clubes, ainda não foram conferidas pelo guia em fonte própria ou agregador."
 cluster: B
 secao: modalidades
 palavra_chave: natação alphaville
@@ -15,18 +15,22 @@ lista_modalidades: [natacao]
 fontes:
   - titulo: "Boa Forma no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/boa-forma-jardim-alberto-barueri/"
+  - titulo: "Boa Forma no TotalPass"
+    url: "https://totalpass.com/br/academias/boa-forma/"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-16
-atualizado_em: 2026-11-16
+atualizado_em: 2026-11-18
 perguntas:
   - p: "Onde fazer natação em Alphaville?"
     r: "Entre as academias conferidas pelo guia, nenhuma em Alphaville tem piscina. A mais próxima com natação é a Boa Forma, na Rua Dr. Francis D Hornet, no Jardim Alberto, em Barueri. Escolas de natação e clubes de Alphaville aparecem nas buscas, mas ainda não foram conferidos pelo guia."
   - p: "Tem natação pelo Wellhub em Barueri?"
     r: "Sim. A Boa Forma, no Jardim Alberto, lista natação, natação para adultos e hidroginástica no Wellhub, a partir do plano Silver+, de R$ 199,99 por mês. A página avisa que é preciso agendar."
+  - p: "Tem natação pelo TotalPass em Alphaville ou Barueri?"
+    r: "Sim, em Barueri. A Boa Forma, no Jardim Alberto, lista aula de natação e musculação no TotalPass, a partir do plano TP 3, de R$ 199,90 por mês. Em Alphaville, nenhuma academia com ficha no guia tem piscina. Confira a grade e a reserva no aplicativo antes de ir."
   - p: "Quanto custa natação 2 vezes na semana?"
     r: "As escolas e academias da região não publicam preço nas fontes que o guia conseguiu ler. Pergunte o valor do pacote mensal com duas aulas semanais, se há taxa de matrícula e se o exame médico é exigido."
   - p: "Tem natação gratuita em Barueri?"
@@ -39,7 +43,7 @@ perguntas:
 
 ## A piscina conferida: Boa Forma
 
-A [Academia Boa Forma](/academias/boa-forma-barueri/) fica no Jardim Alberto, em Barueri, e é a única academia com ficha no guia que tem piscina. No Wellhub, ela lista natação, natação para adultos, hidroginástica e hidroterapia, além de musculação e aulas coletivas. Funciona de segunda a sexta, das 7h às 22h (às 21h30 na segunda), e no sábado de manhã; no domingo, fecha. A página do Wellhub pede agendamento e libera a partir do Silver+.
+A [Academia Boa Forma](/academias/boa-forma-barueri/) fica no Jardim Alberto, em Barueri, e é a única academia com ficha no guia que tem piscina. No Wellhub, ela lista natação, natação para adultos, hidroginástica e hidroterapia, além de musculação e aulas coletivas. Funciona de segunda a sexta, das 7h às 22h (às 21h30 na segunda), e no sábado de manhã; no domingo, fecha. A página do Wellhub pede agendamento e libera a partir do Silver+. No TotalPass, a unidade lista aula de natação e musculação a partir do TP 3, de R$ 199,90 por mês. Para ver quais outras academias o mesmo plano cobre, use o [buscador de Wellhub e TotalPass](/academias/wellhub-totalpass/).
 
 ## E as escolas de natação de Alphaville?
 

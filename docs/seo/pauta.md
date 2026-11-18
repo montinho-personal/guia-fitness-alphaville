@@ -29,18 +29,19 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 
 | Tema (buscas) | Página | Situação |
 |---|---|---|
-| "academia barata barueri", "academia mais barata alphaville" | `/academias/precos/` | FAQ na próxima revisão |
-| "academia 18 do forte", "academia iguatemi alphaville", "academia shopping tamboré" | `/academias/perto-de/` | Seção na revisão da página |
+| ~~"academia barata barueri", "academia mais barata alphaville"~~ | ~~`/academias/precos/`~~ | Já respondido na seção "Qual a academia mais barata de Alphaville e Barueri?" (conferido em 18/11) |
+| ~~"academia 18 do forte", "academia iguatemi alphaville", "academia shopping tamboré"~~ | ~~`/academias/perto-de/`~~ | Já respondido: a página tem uma seção por ponto (Iguatemi, Shopping Tamboré, Empresarial 18 do Forte); conferido em 18/11 |
 | "pode ir 2x por dia na academia" | `/guias/como-escolher-academia/` | FAQ (a Smart Fit já responde na página dela) |
 | Hyrox Training Club da CrossFit Barueri, OBox | `/guias/hyrox-barueri/`, `/modalidades/crossfit/` | Só com fonte; hoje sem confirmação |
 | Gracie Barra, Alliance, G13 Alphaville | `/guias/jiu-jitsu-alphaville/` (fichas) | Esperando liberar os sites (lembrete agendado) |
 | SESI Santana de Parnaíba | `/regioes/santana-de-parnaiba/` (ficha) | Site oficial bloqueado aqui |
 | Spine Movi Pilates, Clínica de Fisioterapia Araguaia | `/modalidades/pilates/` (fichas) | Dados no Wellhub; falta ficha |
 | Escolas de natação (Mori, Cubo d'Água, clubes) | `/modalidades/natacao/` | Sem fonte que confirme |
+| ~~"natacao alphaville totalpass" (AC de 17/11)~~ | ~~`/modalidades/natacao/`~~ | Feito em 18/11: Boa Forma no TotalPass (TP 3), na ficha, na página e no buscador |
 | 24 Wellness / 24 Health Club | `/academias/24-horas/` | Site bloqueado |
 | "crossfit kids", "crossfit infantil" | `/modalidades/crossfit/` | Já respondido (Unika CF) |
-| "academia mais cara de alphaville", "mensalidade ironberg/scelta alphaville" (busca de 18/11) | `/academias/precos/` e `/guias/academias-premium-alphaville/` | Só com mensalidade confirmada na fonte; hoje sem valor publicado |
-| "academia 24h alphaville" (REL de 18/11) | `/academias/24-horas/` | Conferir na próxima revisão se a página responde no lead |
+| "mensalidade ironberg/scelta alphaville" (busca de 18/11); "academia mais cara" já respondida em `/academias/precos/` | `/academias/precos/` e `/guias/academias-premium-alphaville/` | Scelta: só com mensalidade publicada na fonte (Ironberg já tem preço na ficha) |
+| ~~"academia 24h alphaville" (REL de 18/11)~~ | ~~`/academias/24-horas/`~~ | Já respondido: a resposta direta abre com a academia 24 horas; conferido em 18/11 |
 | Vivere Alpha, academia terapêutica e fisioterapia (REL de "personal trainer para iniciantes alphaville", 18/11) | ficha nova | Só com fonte oficial do lugar |
 | "primeira vez na academia", "o que devo saber antes de entrar na academia" (PAA de 18/11) | `/ferramentas/checklist/` | FAQ feita; artigo próprio só se aparecer busca local |
 
