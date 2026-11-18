@@ -22,6 +22,8 @@ Atualizada em 16/11/2026. Junta o que estava em `docs/pauta-blog.md`, em `docs/p
 | ~~10~~ | ~~Smart Fit ou SkyFit em Alphaville (comparativo)~~ | publicado em 17/11, `/guias/smart-fit-ou-skyfit/` | | |
 | 11 | Panobianco ou Gaviões (comparativo) | Orgânico TikTok "qual melhor academia panobianco ou gaviões" e REL "Panobianco" em "smart fit ou gaviões" (17/11) | não medido | Unidades em lados diferentes (Panobianco em Barueri, Gaviões em Alphaville): só vale se a busca local confirmar interesse; buscar antes |
 | 12 | Smart Fit ou Bluefit / SkyFit ou Bluefit (comparativo) | AC "sky fit ou bluefit", REL "smart fit ou bluefit qual o melhor" em "smart fit ou skyfit" (17/11) | não medido | As três têm ficha em Alphaville; mesmo molde dos comparativos. Bluefit não publica mensalidade |
+| 13 | Hyrox São Paulo: datas, inscrição e como se preparar saindo de Alphaville | AC "tempo hyrox sao paulo", "tempo hyrox sp" (calculadora Hyrox, 18/11) | não medido | Só com o site oficial da HYROX Brasil, que não abre na rede do ambiente (liberar `hyroxbrazil.com`); datas mudam a cada temporada |
+| 14 | PFT do Hyrox: o que é o teste físico oficial e como fazer | PAA "O que é o PFT da HYROX?" (18/11) | não medido | Fonte oficial (página "Test Your Fitness" da HYROX); pode virar um segundo modo da calculadora |
 
 Itens antigos da pauta que **já existem** e saíram desta lista: academia barata (→ `/academias/precos/`), domingo, piscina e natação (`/modalidades/natacao/`), perto de..., Santana de Parnaíba (`/regioes/santana-de-parnaiba/`), Hyrox, beach tennis, lutas e jiu-jitsu, CrossFit, Ironberg ou NitroGym, premium. Aldeia da Serra como página de academias: não há academia com ficha no bairro; fica coberta pelas páginas de personal.
 
@@ -32,6 +34,9 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | ~~"academia barata barueri", "academia mais barata alphaville"~~ | ~~`/academias/precos/`~~ | Já respondido na seção "Qual a academia mais barata de Alphaville e Barueri?" (conferido em 18/11) |
 | ~~"academia 18 do forte", "academia iguatemi alphaville", "academia shopping tamboré"~~ | ~~`/academias/perto-de/`~~ | Já respondido: a página tem uma seção por ponto (Iguatemi, Shopping Tamboré, Empresarial 18 do Forte); conferido em 18/11 |
 | ~~"pode ir 2x por dia na academia"~~ | ~~`/guias/como-escolher-academia/`~~ | Já respondido na página (conferido em 18/11) |
+| PAA "Como evoluir no HYROX?" (calculadora Hyrox, 18/11) | `/guias/como-treinar-para-o-primeiro-hyrox/` | Entra na revisão do artigo (é o próximo da fila), com link para a calculadora |
+| Tempo médio de prova por categoria (visão de IA em "tempo médio hyrox", 18/11) | `/ferramentas/calculadora-hyrox/` | Só com resultados oficiais conferidos; hoje a visão de IA cita blogs. Sem fonte, não publicar número |
+| Altura do alvo do Wall Balls, faixas etárias e duplas Pro | `/ferramentas/calculadora-hyrox/`, `/guias/categorias-do-hyrox/` | Estão nos regulamentos em PDF (`hyroxbrazil.com`, `maintain.hyrox.com`), bloqueados na rede |
 | Hyrox Training Club da CrossFit Barueri, OBox | `/guias/hyrox-barueri/`, `/modalidades/crossfit/` | Só com fonte; o site do CrossFit Barueri não cita Hyrox (18/11) e o da OBox não abriu |
 | Gracie Barra, Alliance (G13 já entrou na página e tem ficha; conferido em 18/11) | `/guias/jiu-jitsu-alphaville/` (fichas) | Esperando liberar os sites (lembrete agendado) |
 | SESI Santana de Parnaíba | `/regioes/santana-de-parnaiba/` (ficha) | Site oficial bloqueado aqui |

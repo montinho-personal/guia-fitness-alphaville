@@ -11,7 +11,7 @@ export const GET: APIRoute = async ({ site }) => {
   const ultAcad = maisRecente(as.map((a) => a.data.atualizado_em));
   const ultGuia = gs.length ? maisRecente(gs.map((g) => g.data.atualizado_em)) : FIXAS;
   const urls: [string, string][] = [
-    ['/', ultAcad], ['/academias/', ultAcad], ['/ferramentas/academias-abertas-alphaville/', ultAcad], ['/ferramentas/personal-presencial-ou-online/', FIXAS], ['/ferramentas/calculadora-preco-personal-alphaville/', ultAcad], ['/ferramentas/academias-diaria-aula-experimental-alphaville/', ultAcad], ['/academias/precos/', ultAcad], ['/academias/wellhub-totalpass/', ultAcad],
+    ['/', ultAcad], ['/academias/', ultAcad], ['/ferramentas/academias-abertas-alphaville/', ultAcad], ['/ferramentas/personal-presencial-ou-online/', FIXAS], ['/ferramentas/calculadora-hyrox/', FIXAS], ['/ferramentas/calculadora-preco-personal-alphaville/', ultAcad], ['/ferramentas/academias-diaria-aula-experimental-alphaville/', ultAcad], ['/academias/precos/', ultAcad], ['/academias/wellhub-totalpass/', ultAcad],
     ...as.map((a) => [`/academias/${a.id}/`, dataIso(a.data.atualizado_em)] as [string, string]),
     ['/regioes/', ultAcad],
     ['/regioes/tambore/', '2026-11-17'],

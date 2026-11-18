@@ -1,0 +1,313 @@
+---
+// Calculadora do Hyrox: cargas oficiais por categoria e plano de prova (ritmo e tempo por trecho).
+// Dados em src/data/hyrox.json (site oficial do HYROX); conta em src/lib/hyrox.ts. Doc: docs/calculadora-hyrox.md.
+import Base from '../../layouts/Base.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import { WHATSAPP, academias, urlAcademia, linkMontinho } from '../../lib/dados';
+import { carga, plano, porExtenso, relogio, FORMATOS, type DadosHyrox, type Divisao } from '../../lib/hyrox';
+import D0 from '../../data/hyrox.json';
+
+const URL_PAG = '/ferramentas/calculadora-hyrox/';
+const D = D0 as unknown as DadosHyrox;
+const E = D.estacoes;
+const div = (id: string) => D.divisoes.find((d) => d.id === id)!;
+const COM_CARGA = E.filter((e) => carga(D.divisoes[0], e.id));
+const conferido = new Date(D.conferido_em + 'T12:00:00Z').toLocaleDateString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' });
+const grupos: { formato: Divisao['formato']; titulo: string; nota: string }[] = [
+  { formato: 'individual', titulo: 'Pesos do Hyrox individual: Open e Pro', nota: 'No individual, você faz sozinho os 8 km e as 8 estações. O Pro usa cargas mais pesadas; o Pro feminino usa as mesmas cargas do Open masculino.' },
+  { formato: 'dupla', titulo: 'Pesos do Hyrox em dupla', nota: 'Na dupla, os dois correm juntos e dividem cada estação como quiserem. A dupla mista usa as cargas da dupla masculina.' },
+  { formato: 'revezamento', titulo: 'Pesos do Hyrox no revezamento', nota: 'No revezamento, a equipe tem quatro pessoas: cada uma corre 2 vezes 1 km, e cada corrida é seguida de uma estação. No misto, a carga é a da categoria de quem executa.' },
+];
+// Exemplo fixo da resposta direta e das perguntas: calculado pela mesma função da ferramenta.
+const ex = plano({ metaSeg: 5400, ritmoSeg: 360 }, E);
+const exLento = plano({ metaSeg: 5400, ritmoSeg: 405 }, E);
+const boxes = (await academias()).filter((a) => a.data.modalidades.includes('hyrox'));
+const titulo = 'Calculadora Hyrox: pesos por categoria e tempo de prova';
+const descricao = 'Calculadora Hyrox: pesos oficiais de cada estação no Open, Pro, dupla e revezamento, e plano de prova com ritmo de corrida e tempo por estação.';
+const om = div('open-m'), of = div('open-f'), pm = div('pro-m');
+const perguntas = [
+  { p: 'Quais são os pesos do Hyrox Open masculino?', r: `No Open masculino, o trenó de empurrar (Sled Push) pesa ${om.push} e o de puxar (Sled Pull) ${om.pull}, os dois com o trenó incluído. O Farmers Carry usa ${om.farmers}, o Sandbag Lunges um saco de ${om.lunges} e o Wall Balls uma bola de ${om.wall}. Os dados são do site oficial do HYROX, conferidos em ${conferido}.` },
+  { p: 'Quais são os pesos do Hyrox Open feminino?', r: `No Open feminino, o Sled Push pesa ${of.push} e o Sled Pull ${of.pull}, com o trenó incluído. O Farmers Carry usa ${of.farmers}, o Sandbag Lunges um saco de ${of.lunges} e o Wall Balls uma bola de ${of.wall}.` },
+  { p: 'Quais são os pesos do Hyrox Pro?', r: `No Pro masculino: Sled Push de ${pm.push}, Sled Pull de ${pm.pull}, Farmers Carry com ${pm.farmers}, saco de ${pm.lunges} e bola de ${pm.wall}. O Pro feminino usa as mesmas cargas do Open masculino: ${om.push} e ${om.pull} nos trenós, ${om.farmers}, saco de ${om.lunges} e bola de ${om.wall}.` },
+  { p: 'Quais são os pesos do Hyrox na dupla mista?', r: `A dupla mista usa as cargas da categoria masculina: Sled Push de ${om.push}, Sled Pull de ${om.pull}, Farmers Carry com ${om.farmers}, saco de ${om.lunges} e bola de ${om.wall}. Os dois correm juntos e dividem as estações como quiserem.` },
+  { p: 'Como calcular o tempo do Hyrox?', r: `Some três partes: os 8 km de corrida (8 vezes o seu ritmo por km), o tempo das 8 estações e as transições. Exemplo: correndo a 6:00 por km, a corrida leva ${porExtenso(ex.corridaTotal)}. Para fechar em 1h30min, sobram ${porExtenso(ex.estacoesTotal)} para as estações, uma média de ${relogio(ex.mediaEstacao)} em cada uma. É conta, não previsão: a calculadora mostra o que a meta exige.` },
+  { p: 'Que ritmo de corrida preciso para fazer o Hyrox em 1h30?', r: `Depende de quanto tempo você gasta nas estações. Correndo a 6:00 por km, sobram em média ${relogio(ex.mediaEstacao)} por estação. Correndo a 6:45, sobram ${relogio(exLento.mediaEstacao)} por estação, já com as transições dentro. Use a calculadora com o seu ritmo para ver o que sobra.` },
+  { p: 'Quantos quilômetros se corre no Hyrox?', r: 'São 8 km, em oito corridas de 1 km. Depois de cada corrida vem uma estação: SkiErg, Sled Push, Sled Pull, Burpee Broad Jump, remo, Farmers Carry, Sandbag Lunges e Wall Balls, sempre nessa ordem.' },
+  { p: 'Onde treinar para o Hyrox em Alphaville?', r: 'O guia lista os lugares da região com aula de preparação e os que têm estrutura para treinar corrida, força e estações. Veja a página de Hyrox em Alphaville e, para testar um box antes de fechar, a ferramenta de diária e aula experimental.' },
+];
+const schema = [{ '@type': 'WebApplication', name: 'Calculadora Hyrox: pesos por categoria e plano de prova', url: new URL(URL_PAG, Astro.site).href, applicationCategory: 'HealthApplication', operatingSystem: 'Web', inLanguage: 'pt-BR', offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' } }];
+---
+<Base titulo={titulo} descricao={descricao} schema={schema} migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Calculadora Hyrox', url: URL_PAG }]}>
+  <div class="wrap hx">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Ferramenta · grátis · sem cadastro</span>
+      <h1>Calculadora Hyrox: pesos da sua categoria e plano de prova</h1>
+      <p class="linha-fina">Escolha a categoria para ver a carga oficial de cada estação. Depois, diga a sua meta e o seu ritmo de corrida: a calculadora mostra quanto tempo sobra para cada estação e a hora do relógio em cada trecho.</p>
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>O Hyrox tem 8 corridas de 1 km, cada uma seguida de uma estação. No Open masculino, os trenós pesam {om.push} (empurrar) e {om.pull} (puxar), o Farmers Carry usa {om.farmers}, o saco pesa {om.lunges} e a bola {om.wall}. No Open feminino: {of.push}, {of.pull}, {of.farmers}, {of.lunges} e {of.wall}. Para o tempo, a conta é corrida mais estações: a 6:00 por km, a corrida leva {porExtenso(ex.corridaTotal)}, e uma meta de 1h30min deixa {relogio(ex.mediaEstacao)} em média por estação.</p>
+    </div>
+
+    <form class="hx-form nao-imprime" id="hx-form" aria-label="Calculadora do Hyrox" novalidate>
+      <fieldset class="hx-bloco">
+        <legend><span class="hx-n">1</span> Sua categoria</legend>
+        <div class="hx-ops" role="radiogroup" aria-label="Formato">
+          {(Object.keys(FORMATOS) as Divisao['formato'][]).map((f, i) => <label class="hx-op"><input type="radio" name="formato" value={f} checked={i === 0}><span>{FORMATOS[f]}</span></label>)}
+        </div>
+        <label class="campo hx-campo"><span class="rotulo">Divisão</span>
+          <select id="hx-div" name="div">{D.divisoes.map((d) => <option value={d.id} data-formato={d.formato} selected={d.id === 'open-m'}>{d.nome}</option>)}</select></label>
+        <div class="hx-cargas" id="hx-cargas" aria-live="polite">
+          <h2 class="hx-sub" id="hx-cargas-t">Cargas do Open masculino</h2>
+          <ol class="hx-lista" id="hx-lista">{E.map((e, i) => <li><span class="hx-ord">{i + 1}</span><span class="hx-est"><strong>{e.nome}</strong><small>{e.medida}</small></span><b>{carga(om, e.id) ?? 'sem carga'}</b></li>)}</ol>
+          <p class="hx-fonte">Fonte: <a href={D.url} rel="noopener nofollow">{D.fonte}</a>, conferido em {conferido}. Os pesos dos trenós incluem o trenó.</p>
+        </div>
+      </fieldset>
+
+      <fieldset class="hx-bloco">
+        <legend><span class="hx-n">2</span> Seu plano de prova</legend>
+        <div class="campos c2">
+          <label class="campo"><span class="rotulo">Meta de tempo final</span>
+            <input id="hx-meta" name="meta" inputmode="numeric" autocomplete="off" value="1:30:00" aria-describedby="hx-meta-a"><small id="hx-meta-a">Horas:minutos:segundos. Ex.: 1:30:00</small></label>
+          <label class="campo"><span class="rotulo">Ritmo de corrida, por km</span>
+            <input id="hx-ritmo" name="ritmo" inputmode="numeric" autocomplete="off" value="6:00" aria-describedby="hx-ritmo-a"><small id="hx-ritmo-a">Minutos:segundos. Ex.: 6:00</small></label>
+        </div>
+        <div class="hx-atalhos" aria-label="Metas comuns">
+          <span class="rotulo">Metas comuns</span>
+          {[['1:15:00', '1h15'], ['1:30:00', '1h30'], ['1:45:00', '1h45'], ['2:00:00', '2h']].map(([v, t]) => <button type="button" class="hx-chip" data-meta={v}>{t}</button>)}
+        </div>
+        <p class="hx-dica">Não sabe o ritmo? Divida o seu tempo nos 5 km por 5: quem faz 5 km em 30 minutos corre a 6:00 por km. Na prova você corre cansado das estações, então teste também um ritmo mais lento.</p>
+        <details class="hx-det">
+          <summary>Ajustar transições e o tempo de cada estação</summary>
+          <label class="campo hx-campo"><span class="rotulo">Transições, no total (opcional)</span>
+            <input id="hx-trans" name="trans" inputmode="numeric" autocomplete="off" placeholder="0:00" aria-describedby="hx-trans-a"><small id="hx-trans-a">Tempo que você quer reservar para ir da pista às estações e voltar. Minutos:segundos.</small></label>
+          <p class="hx-dica">Já sabe quanto leva em alguma estação? Preencha só as que souber: as outras dividem o tempo que sobrar.</p>
+          <div class="hx-ests">{E.map((e, i) => <label class="campo"><span class="rotulo">{i + 1}. {e.nome.replace(/ \(.*\)/, '')}</span><input class="hx-e" data-i={i} inputmode="numeric" autocomplete="off" placeholder="min:seg" aria-label={`Tempo no ${e.nome}, em minutos e segundos`}></label>)}</div>
+        </details>
+        <p class="hx-erro" id="hx-erro" role="alert" hidden></p>
+        <button class="btn" type="submit">Montar meu plano <i aria-hidden="true"></i></button>
+        <p class="hx-nota">A conta acontece no seu navegador. Nada do que você digita é enviado.</p>
+        <noscript><p class="caixa">A calculadora precisa de JavaScript. As tabelas de pesos abaixo funcionam sem ele.</p></noscript>
+      </fieldset>
+    </form>
+
+    <section class="hx-res" id="hx-res" tabindex="-1" aria-labelledby="hx-res-t" hidden>
+      <span class="rotulo">Seu plano de prova</span>
+      <h2 id="hx-res-t"></h2>
+      <div class="hx-nums">
+        <div><small>Corrida, 8 km</small><b id="hx-n-corrida"></b></div>
+        <div><small>8 estações</small><b id="hx-n-est"></b></div>
+        <div><small>Média por estação</small><b id="hx-n-media"></b></div>
+      </div>
+      <p id="hx-leitura"></p>
+      <div class="rolagem" tabindex="0" role="region" aria-label="Plano de prova trecho a trecho">
+        <table class="hx-t"><thead><tr><th scope="col">Trecho</th><th scope="col">Carga</th><th scope="col">Tempo</th><th scope="col">Relógio</th></tr></thead><tbody id="hx-tb"></tbody></table>
+      </div>
+      <p class="hx-aviso">Isto é uma conta com os números que você informou, não uma previsão do seu resultado. Serve para treinar com um alvo por trecho e ajustar a meta ao que você já faz.</p>
+      <div class="hx-acoes nao-imprime">
+        <button type="button" class="hx-bt" id="hx-copiar">Copiar plano</button>
+        <button type="button" class="hx-bt" id="hx-imprimir">Imprimir</button>
+        <span class="hx-ok" id="hx-ok" role="status" hidden>Plano copiado.</span>
+      </div>
+      <aside class="hx-mt nao-imprime" aria-labelledby="hx-mt-t">
+        <span class="rotulo">Atendimento do Montinho Personal Trainer · publicidade da casa</span>
+        <h3 id="hx-mt-t">Quer treinar para bater esse plano?</h3>
+        <p>O Montinho, que mantém este guia, tem um serviço de preparação para o Hyrox e atende em Alphaville e região. Mande a sua categoria e a sua meta: ele responde pelo WhatsApp e explica como organiza o treino.</p>
+        <a class="btn hx-wa" id="hx-wa" href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="nofollow noopener" data-evento="clique_whatsapp" data-ref="calculadora-hyrox:plano">Enviar meu plano ao Montinho no WhatsApp</a>
+      </aside>
+    </section>
+
+    <aside class="hx-mt hx-mt-claro nao-imprime" aria-labelledby="hx-mt2-t">
+      <span class="rotulo">Atendimento do Montinho Personal Trainer · publicidade da casa</span>
+      <h2 id="hx-mt2-t">Preparação para o Hyrox com acompanhamento</h2>
+      <p>Corrida, força e as estações no mesmo plano. O Montinho, que mantém este guia, atende em Alphaville e região: conte para qual prova você está treinando.</p>
+      <p class="hx-mt-bts"><a class="btn hx-wa" id="hx-wa2" href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="nofollow noopener" data-evento="clique_whatsapp" data-ref="calculadora-hyrox:bloco">Falar com o Montinho no WhatsApp</a>
+        <a href={linkMontinho('/preparacao-para-hyrox', 'bloco', 'calculadora-hyrox')} rel="nofollow" data-evento="clique_montinho" data-ref="calculadora-hyrox">Ver como funciona a preparação</a></p>
+    </aside>
+
+    <div class="prosa">
+      {grupos.map((g) => (
+        <>
+          <h2>{g.titulo}</h2>
+          <p>{g.nota}</p>
+          <div class="rolagem" tabindex="0" role="region" aria-label={g.titulo}>
+            <table class="dados hx-pesos">
+              <thead><tr><th scope="col">Estação</th>{D.divisoes.filter((d) => d.formato === g.formato).map((d) => <th scope="col">{d.nome}</th>)}</tr></thead>
+              <tbody>{COM_CARGA.map((e) => <tr><th scope="row">{e.nome}<small> · {e.medida}</small></th>{D.divisoes.filter((d) => d.formato === g.formato).map((d) => <td>{carga(d, e.id)}</td>)}</tr>)}</tbody>
+            </table>
+          </div>
+        </>
+      ))}
+      <p>SkiErg (1.000 m), Burpee Broad Jump (80 m) e remo (1.000 m) não têm carga: a distância é a mesma em todas as categorias. Os pesos dos trenós já incluem o trenó. Fonte: <a href={D.url} rel="noopener nofollow">{D.fonte}</a>, conferido em {conferido}. A página oficial não informa a altura do alvo do Wall Balls nem as faixas etárias, por isso elas não entram aqui; confira no regulamento da sua prova.</p>
+
+      <h2>Como a calculadora monta o plano</h2>
+      <p>O tempo final do Hyrox é a soma de três partes: os 8 km de corrida, as 8 estações e as transições entre a pista e as estações. A calculadora multiplica o seu ritmo por 8 para achar o tempo de corrida, desconta da meta e divide o que sobra por igual entre as estações. Se você já sabe quanto leva em alguma delas, preencha esse tempo: as outras dividem o resto, e o total é refeito.</p>
+      <p>A coluna "Relógio" mostra a hora de prova ao fim de cada trecho. Serve como referência no treino e no dia: se você sai do remo com o relógio acima do previsto, sabe quanto precisa recuperar. O plano não estima o seu desempenho: mostra o que a meta exige. Se a média por estação ficar curta demais para o que você faz hoje, a meta está apertada ou o ritmo de corrida precisa cair.</p>
+
+      <h2>Open ou Pro, sozinho ou em dupla?</h2>
+      <p>O Open é a prova padrão, e a organização descreve o Pro como a categoria de atletas experientes. As cargas sobem bastante: o trenó de empurrar passa de {om.push} para {pm.push} no masculino. A dupla reduz o trabalho nas estações, que são divididas, mas os dois correm os 8 km. O revezamento divide tudo por quatro. Os critérios de escolha estão em <a href="/guias/categorias-do-hyrox/">categorias do Hyrox</a>, e o que cada estação exige em <a href="/guias/estacoes-do-hyrox/">as 8 estações do Hyrox</a>.</p>
+
+      <h2>Onde treinar para o Hyrox em Alphaville e região</h2>
+      <p>Treinar para o Hyrox pede três coisas: lugar para correr, sala de força e os aparelhos das estações, como trenó, remo e SkiErg. {boxes.length > 0 && <>No guia, {boxes.length === 1 ? 'tem aula no formato da prova' : 'têm aula no formato da prova'}: {boxes.map((a, i) => <>{i > 0 && ', '}<a href={urlAcademia(a)}>{a.data.nome}</a></>)}. </>}As opções por lugar estão em <a href="/guias/hyrox-alphaville/">Hyrox em Alphaville</a>, <a href="/guias/hyrox-tambore/">no Tamboré</a> e <a href="/guias/hyrox-barueri/">em Barueri</a>. Para testar um box antes de fechar, veja quem tem <a href="/ferramentas/academias-diaria-aula-experimental-alphaville/?modo=teste" data-evento="clique_ferramenta" data-ref="diaria:calculadora-hyrox">diária e aula experimental</a>. Se a dúvida é por onde começar, leia <a href="/guias/como-treinar-para-o-primeiro-hyrox/">como treinar para o primeiro Hyrox</a>.</p>
+    </div>
+
+    <Perguntas itens={perguntas} titulo="Perguntas sobre pesos e tempo do Hyrox" />
+    <LeiaTambem url={URL_PAG} />
+  </div>
+
+  <script type="application/json" id="hx-dados" set:html={JSON.stringify({ whats: WHATSAPP, estacoes: E, divisoes: D.divisoes })}></script>
+  <script>
+    import { carga, plano, paraSegundos, relogio, porExtenso, textoPlano, mensagemHyrox, rotuloDivisao, type Divisao, type Estacao, type Plano } from '../../lib/hyrox';
+    const J = JSON.parse(document.getElementById('hx-dados')!.textContent!) as { whats: string; estacoes: Estacao[]; divisoes: Divisao[] };
+    const ev = (n: string, d: Record<string, string | number> = {}) => { const w = window as any; if (typeof w.otaEvento === 'function') w.otaEvento(n, d); };
+    const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
+    const f = $<HTMLFormElement>('hx-form'), sel = $<HTMLSelectElement>('hx-div'), res = $('hx-res'), erro = $('hx-erro');
+    const meta = $<HTMLInputElement>('hx-meta'), ritmo = $<HTMLInputElement>('hx-ritmo'), trans = $<HTMLInputElement>('hx-trans');
+    const ests = [...document.querySelectorAll<HTMLInputElement>('.hx-e')];
+    const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!));
+    const divisao = () => J.divisoes.find((d) => d.id === sel.value)!;
+    const wa = (d: Divisao | null, m?: number, r?: number) => `https://wa.me/${J.whats}?text=${encodeURIComponent(mensagemHyrox(d, m, r))}`;
+    let ultimo: { p: Plano; ritmo: number } | null = null, iniciou = false;
+    const inicio = () => { if (!iniciou) { iniciou = true; ev('hyrox_inicio'); } };
+
+    function formato(fm: string, manter = false) {
+      let primeira = '';
+      [...sel.options].forEach((o) => { const ok = o.dataset.formato === fm; o.hidden = !ok; o.disabled = !ok; if (ok && !primeira) primeira = o.value; });
+      if (!manter || sel.selectedOptions[0]?.disabled) sel.value = fm === 'individual' && !manter ? 'open-m' : primeira;
+      cargas();
+    }
+    function cargas() {
+      const d = divisao();
+      $('hx-cargas-t').textContent = `Cargas: ${rotuloDivisao(d)}`;
+      $('hx-lista').innerHTML = J.estacoes.map((e, i) => `<li><span class="hx-ord">${i + 1}</span><span class="hx-est"><strong>${esc(e.nome)}</strong><small>${esc(e.medida)}</small></span><b>${esc(carga(d, e.id) ?? 'sem carga')}</b></li>`).join('');
+      $<HTMLAnchorElement>('hx-wa2').href = wa(d);
+      if (ultimo) render();
+    }
+    function ler(): { p: Plano; ritmo: number } | null {
+      const m = paraSegundos(meta.value, 'prova'), r = paraSegundos(ritmo.value, 'ritmo');
+      const t = trans.value.trim() ? paraSegundos(trans.value, 'ritmo') : 0;
+      const es = ests.map((i) => (i.value.trim() ? paraSegundos(i.value, 'ritmo') : null));
+      const ruim = m === null ? meta : r === null ? ritmo : t === null ? trans : ests.find((i, k) => i.value.trim() && es[k] === null);
+      if (ruim) { mostraErro('Não entendi esse tempo. Use o formato minutos:segundos, como 6:00, ou horas:minutos:segundos na meta, como 1:30:00.', ruim); return null; }
+      const p = plano({ metaSeg: m!, ritmoSeg: r!, transSeg: t!, estacoesSeg: es }, J.estacoes);
+      if (!p.ok) { mostraErro(p.erro!, /ritmo/i.test(p.erro!) && !/meta entre/.test(p.erro!) ? ritmo : meta); return null; }
+      return { p, ritmo: r! };
+    }
+    function mostraErro(t: string, campo: HTMLElement) { erro.textContent = t; erro.hidden = false; res.hidden = true; campo.focus(); }
+    function render() {
+      if (!ultimo) return;
+      const { p, ritmo: r } = ultimo, d = divisao(), m = paraSegundos(meta.value, 'prova')!;
+      $('hx-res-t').textContent = `${porExtenso(p.total)} · ${rotuloDivisao(d)}`;
+      $('hx-n-corrida').textContent = porExtenso(p.corridaTotal); $('hx-n-est').textContent = porExtenso(p.estacoesTotal); $('hx-n-media').textContent = relogio(p.mediaEstacao);
+      const pc = Math.round((p.corridaTotal / p.total) * 100);
+      let l = `Correndo a ${relogio(r)} por km, a corrida ocupa ${pc}% da prova.`;
+      if (p.transTotal) l += ` Você reservou ${porExtenso(p.transTotal)} para as transições, divididos pelas 8 estações na coluna do relógio.`;
+      if (p.personalizado && p.diferenca !== 0) l += p.diferenca > 0 ? ` Com os tempos que você informou, o total passa ${porExtenso(p.diferenca)} da meta de ${porExtenso(m)}.` : ` Com os tempos que você informou, sobram ${porExtenso(-p.diferenca)} em relação à meta de ${porExtenso(m)}.`;
+      else l += ` Para fechar em ${porExtenso(m)}, cada estação precisa sair em ${relogio(p.mediaEstacao)}, em média.`;
+      $('hx-leitura').textContent = l;
+      $('hx-tb').innerHTML = p.segmentos.map((s) => { const e = J.estacoes[s.n - 1]; return s.tipo === 'corrida'
+        ? `<tr class="hx-c"><th scope="row">Corrida ${s.n}</th><td>1 km</td><td>${relogio(s.dur)}</td><td>${relogio(s.acum)}</td></tr>`
+        : `<tr><th scope="row">${esc(e.nome.replace(/ \(.*\)/, ''))}<small>${esc(e.medida)}</small></th><td>${esc(carga(d, e.id) ?? '-')}</td><td>${relogio(s.dur)}</td><td><b>${relogio(s.acum)}</b></td></tr>`; }).join('');
+      $<HTMLAnchorElement>('hx-wa').href = wa(d, p.total, r);
+    }
+    f.addEventListener('input', inicio);
+    f.querySelectorAll<HTMLInputElement>('input[name="formato"]').forEach((i) => i.addEventListener('change', () => { formato(i.value); ev('hyrox_categoria', { categoria: sel.value }); }));
+    sel.addEventListener('change', () => { inicio(); cargas(); ev('hyrox_categoria', { categoria: sel.value }); });
+    document.querySelectorAll<HTMLButtonElement>('.hx-chip').forEach((b) => b.addEventListener('click', () => { meta.value = b.dataset.meta!; inicio(); f.requestSubmit(); }));
+    f.addEventListener('submit', (e) => {
+      e.preventDefault(); erro.hidden = true;
+      const x = ler(); if (!x) return;
+      ultimo = x; render(); res.hidden = false; res.focus({ preventScroll: true }); res.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      const q = new URLSearchParams({ cat: sel.value, meta: meta.value.trim(), ritmo: ritmo.value.trim() });
+      history.replaceState(null, '', `${location.pathname}?${q}`);
+      ev('hyrox_plano', { categoria: sel.value, meta_min: Math.round(x.p.total / 60), ritmo_seg: x.ritmo, personalizado: x.p.personalizado ? 1 : 0 });
+    });
+    $('hx-copiar').addEventListener('click', async () => {
+      if (!ultimo) return;
+      const t = `${textoPlano(ultimo.p, divisao(), ultimo.ritmo)}\n${location.href}`;
+      try { await navigator.clipboard.writeText(t); } catch { const a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select(); document.execCommand('copy'); a.remove(); }
+      const ok = $('hx-ok'); ok.hidden = false; setTimeout(() => { ok.hidden = true; }, 2500); ev('hyrox_copiar');
+    });
+    $('hx-imprimir').addEventListener('click', () => { ev('hyrox_imprimir'); window.print(); });
+
+    // Estado inicial: categoria, meta e ritmo podem vir pelo endereço (links dos artigos e plano compartilhado).
+    const p0 = new URLSearchParams(location.search), d0 = J.divisoes.find((d) => d.id === p0.get('cat'));
+    if (d0) { f.querySelector<HTMLInputElement>(`input[name="formato"][value="${d0.formato}"]`)!.checked = true; formato(d0.formato, true); sel.value = d0.id; cargas(); } else formato('individual', true);
+    if (p0.get('meta') && paraSegundos(p0.get('meta')!, 'prova')) meta.value = p0.get('meta')!;
+    if (p0.get('ritmo') && paraSegundos(p0.get('ritmo')!, 'ritmo')) ritmo.value = p0.get('ritmo')!;
+    if (p0.get('meta') && p0.get('ritmo')) { const x = ler(); if (x) { ultimo = x; render(); res.hidden = false; } }
+  </script>
+</Base>
+
+<style is:global>
+  .hx .hx-form { margin: 22px 0 14px; display: grid; gap: 16px; }
+  .hx .hx-bloco { margin: 0; padding: 18px 16px; border: 1px solid var(--linha, #d8dee8); border-radius: 14px; background: #fff; min-width: 0; display: grid; gap: 14px; }
+  .hx .hx-bloco legend { font: 800 21px/1.2 var(--display); padding: 0 4px; }
+  .hx .hx-n { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #FF6A00; color: #111827; font-size: 16px; margin-right: 4px; }
+  .hx .hx-ops { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .hx .hx-op { position: relative; display: block; }
+  .hx .hx-op input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+  .hx .hx-op span { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 48px; padding: 10px 12px; border-radius: 10px; border: 1.5px solid #9aa3b2; background: #fff; font-size: 16px; font-weight: 600; }
+  .hx .hx-op input:checked + span { border-color: #111827; background: #111827; color: #fff; }
+  .hx .hx-op input:focus-visible + span, .hx .hx-chip:focus-visible, .hx .hx-bt:focus-visible, .hx .hx-det summary:focus-visible { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .hx .hx-campo { max-width: 420px; }
+  .hx .campo input, .hx .campo select { min-height: 48px; font-size: 17px; }
+  .hx .campo small { display: block; margin-top: 4px; font-size: 13.5px; color: var(--cinza, #4b5563); }
+  .hx .hx-sub { font-size: 19px; margin: 0 0 8px; }
+  .hx .hx-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border: 1px solid var(--linha, #d8dee8); border-radius: 12px; overflow: hidden; }
+  .hx .hx-lista li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 11px 12px; border-bottom: 1px solid var(--linha, #d8dee8); background: #FBFAF6; }
+  .hx .hx-lista li:last-child { border-bottom: 0; }
+  .hx .hx-ord { width: 26px; height: 26px; border-radius: 50%; background: #111827; color: #fff; display: inline-flex; align-items: center; justify-content: center; font: 700 13px/1 var(--display); }
+  .hx .hx-est strong { display: block; font-size: 16px; line-height: 1.25; }
+  .hx .hx-est small { color: var(--cinza, #4b5563); font-size: 13.5px; }
+  .hx .hx-lista b { font: 800 17px/1.2 var(--display); text-align: right; max-width: 11.5em; }
+  .hx .hx-fonte, .hx .hx-nota, .hx .hx-dica { font-size: 14px; color: var(--cinza, #4b5563); margin: 8px 0 0; }
+  .hx .hx-dica { margin: 0; }
+  .hx .hx-atalhos { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .hx .hx-chip { min-height: 44px; padding: 8px 16px; border-radius: 999px; border: 1.5px solid #111827; background: #fff; font: 700 15px/1 var(--display); cursor: pointer; }
+  .hx .hx-chip:hover { background: #111827; color: #fff; }
+  .hx .hx-det { border: 1px dashed #9aa3b2; border-radius: 12px; padding: 4px 14px; }
+  .hx .hx-det summary { cursor: pointer; font-weight: 700; padding: 10px 0; min-height: 44px; display: flex; align-items: center; }
+  .hx .hx-det[open] { padding-bottom: 14px; display: grid; gap: 12px; }
+  .hx .hx-ests { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+  .hx .hx-erro { color: #a11; font-weight: 700; margin: 0; }
+  .hx .hx-res { margin: 8px 0 18px; padding: 22px 18px; border-radius: 14px; background: #111827; color: #F5F1E8; scroll-margin-top: 12px; }
+  .hx .hx-res[hidden] { display: none; }
+  .hx .hx-res:focus { outline: none; }
+  .hx .hx-res .rotulo { color: #FFB066; }
+  .hx .hx-res h2 { color: #fff; margin: 6px 0 12px; font-size: clamp(24px, 6vw, 34px); }
+  .hx .hx-nums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 12px; }
+  .hx .hx-nums div { background: #1b2434; border-radius: 10px; padding: 10px; min-width: 0; }
+  .hx .hx-nums small { display: block; font: 700 11px/1.3 var(--display); letter-spacing: .08em; text-transform: uppercase; color: #AEB7C6; }
+  .hx .hx-nums b { display: block; margin-top: 4px; font: 800 clamp(17px, 4.6vw, 24px)/1.1 var(--display); color: #FF8A33; }
+  .hx .hx-res .rolagem, .hx .hx-t, .hx .hx-t tr, .hx .hx-t th, .hx .hx-t td { background: transparent; }
+  .hx .hx-res .rolagem { border: 1px solid #2a3547; border-radius: 10px; padding: 0 8px; }
+  .hx .hx-t { width: 100%; min-width: 0; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+  .hx .hx-t th, .hx .hx-t td { padding: 8px 6px; text-align: left; border-bottom: 1px solid #2a3547; vertical-align: top; }
+  .hx .hx-t thead th { font: 700 11px/1.3 var(--display); letter-spacing: .08em; text-transform: uppercase; color: #AEB7C6; }
+  .hx .hx-t tbody th { font-weight: 700; color: #fff; }
+  .hx .hx-t tbody th small { display: block; font-weight: 400; color: #AEB7C6; font-size: 13px; }
+  .hx .hx-t tr.hx-c th, .hx .hx-t tr.hx-c td { color: #AEB7C6; font-weight: 400; }
+  .hx .hx-t td:nth-child(3), .hx .hx-t td:nth-child(4), .hx .hx-t th:nth-child(3), .hx .hx-t th:nth-child(4) { text-align: right; white-space: nowrap; }
+  .hx .hx-t td b { color: #FF8A33; }
+  .hx .hx-aviso { margin: 12px 0 0; padding: 10px 12px; border-left: 4px solid #FF6A00; background: #1b2434; font-size: 15px; }
+  .hx .hx-acoes { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 14px 0 0; }
+  .hx .hx-bt { min-height: 44px; padding: 8px 14px; border-radius: 10px; border: 1.5px solid #F5F1E8; background: transparent; color: #F5F1E8; font: inherit; cursor: pointer; }
+  .hx .hx-ok { color: #9ff0bf; font-weight: 700; }
+  .hx .hx-mt { margin: 16px 0 4px; padding: 16px; border-radius: 12px; background: #1b2434; border-left: 6px solid #25D366; }
+  .hx .hx-mt .rotulo { color: #9ff0bf; }
+  .hx .hx-mt h3, .hx .hx-mt h2 { margin: 6px 0 6px; font-size: 20px; color: #fff; }
+  .hx .hx-mt p { margin: 0 0 4px; }
+  .hx .hx-wa { display: flex; justify-content: center; text-align: center; margin-top: 10px; min-height: 50px; background: #25D366; color: #0b2b17 !important; border-color: #25D366; font-weight: 800; }
+  .hx .hx-mt-claro { background: #F0FBF4; color: var(--tinta, #111827); margin: 20px 0; }
+  .hx .hx-mt-claro .rotulo { color: #14532D; }
+  .hx .hx-mt-claro h2 { color: var(--tinta, #111827); }
+  .hx .hx-mt-bts { display: grid; gap: 10px; }
+  .hx .hx-mt-bts a:not(.btn) { font-weight: 700; }
+  .hx table.dados.hx-pesos { min-width: 520px; }
+  .hx table.dados.hx-pesos th small { font-weight: 400; color: var(--cinza, #4b5563); }
+  @media (min-width: 720px) { .hx .hx-mt-bts { grid-template-columns: auto 1fr; align-items: center; gap: 18px; } .hx .hx-wa { display: inline-flex; padding-left: 22px; padding-right: 22px; } }
+  @media print { .hx .hx-res { background: #fff; color: #000; padding: 0; } .hx .hx-res h2, .hx .hx-t tbody th, .hx .hx-nums b, .hx .hx-t td b { color: #000; } .hx .hx-nums div, .hx .hx-aviso { background: #fff; border: 1px solid #999; } .hx .hx-t tr.hx-c th, .hx .hx-t tr.hx-c td, .hx .hx-nums small, .hx .hx-t thead th, .hx .hx-t tbody th small { color: #333; } .hx .resposta, .hx .prosa, .hx .perguntas, .hx .leia-tambem, .hx .cab-pag .linha-fina { display: none; } }
+</style>
