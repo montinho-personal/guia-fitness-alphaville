@@ -27,7 +27,7 @@ const perguntas = [
   { p: 'Quanto custa um personal trainer 3 vezes por semana?', r: `Três vezes por semana dão cerca de ${sessoesMes(3)} sessões no mês (3 × 52 ÷ 12). Em Alphaville, com a aula no pacote entre ${faixaTxt(ex.aulaPacote!)}, a faixa de referência é de ${faixaTxt(ex.mes)} por mês. Em Barueri e Santana de Parnaíba, de ${faixaTxt(calcular(D, 'barueri-centro', 'academia', 3).mes)}.` },
   { p: 'Personal trainer no condomínio custa mais caro?', r: 'A referência não separa condomínio de academia. O que muda é a conta em volta: no condomínio você não paga mensalidade de academia nem taxa de personal externo, mas o prédio pode exigir cadastro do profissional e ter regra de uso da sala. Confirme na administração antes de fechar.' },
   { p: 'A academia cobra taxa do meu personal?', r: `Depende da academia. ${taxas.map((x) => `A ${x.a.data.nome} cobra ${x.t.valor} por mês, pagos pelo profissional`).join('; ')}. A taxa é do profissional, mas pode entrar no preço da aula: pergunte. A lista completa está na página de academias que aceitam personal externo.` },
-  { p: 'Personal online é mais barato que presencial?', r: `Costuma ser, e a cobrança é mensal, não por aula: ${faixaTxt(D.bases.alphaville.online)} por mês na referência de Alphaville. Não é o mesmo serviço: o presencial acompanha cada treino; o online entrega planejamento, ajustes e acompanhamento a distância.` },
+  { p: 'Personal online é mais barato que presencial?', r: `Costuma ser, e a cobrança é mensal, não por aula: ${faixaTxt(D.bases.alphaville.online)} por mês na referência de Alphaville. Não é o mesmo serviço: o presencial acompanha cada treino; o online entrega planejamento, ajustes e acompanhamento a distância. O teste presencial ou online do guia ajuda a escolher.` },
   { p: 'Vale a pena pagar um personal trainer?', r: 'Costuma valer para quem está começando, voltando de lesão, travado nos resultados ou sem constância. Para quem já treina com segurança e mantém a rotina, uma consultoria online ou revisões periódicas podem bastar. O guia academia ou personal ajuda a decidir.' },
   { p: 'Quanto custa personal trainer na Smart Fit?', r: 'A Smart Fit não publica preço de personal. Pelas normas da rede, o profissional de fora precisa de autorização, cadastro e contrato com a rede, e só atende alunos matriculados. O valor da aula é combinado com o profissional.' },
 ];
@@ -107,6 +107,8 @@ const schema = [{ '@type': 'WebApplication', name: titulo, url: new URL(URL_PAG,
       <p>Na aula em casa, o profissional gasta tempo de trânsito entre um residencial e outro, com portaria e identificação em cada entrada. Esse tempo costuma entrar no preço. Horários fora do pico e aulas em sequência no mesmo residencial ajudam na negociação.</p>
       <h3>Horários</h3>
       <p>Antes do expediente e no começo da noite, a agenda dos profissionais costuma ser mais disputada. Se você pode treinar no meio da manhã ou da tarde, vale perguntar se há condição diferente para esses horários.</p>
+
+      <p>Em dúvida entre os formatos? Faça o teste <a href="/ferramentas/personal-presencial-ou-online/">personal presencial ou online</a>.</p>
 
       <h2>Como comparar duas propostas</h2>
       <p>Compare o total do mês, não o preço da aula. Pergunte a duração da sessão, se há avaliação, o que acontece quando você falta, se a taxa da academia está incluída e se há ajuste do treino entre as aulas. Duas propostas com o mesmo valor podem entregar coisas bem diferentes.</p>

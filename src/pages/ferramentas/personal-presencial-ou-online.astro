@@ -1,0 +1,191 @@
+---
+// Teste "Personal presencial ou online?" para Alphaville e região.
+// Regras em src/lib/formatoPersonal.ts (determinísticas, no navegador). Doc: docs/presencial-ou-online.md.
+import Base from '../../layouts/Base.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import VideoApp from '../../components/VideoApp.astro';
+import { WHATSAPP } from '../../lib/dados';
+import { PERGUNTAS, TITULOS } from '../../lib/formatoPersonal';
+import { calcular, faixaTxt, type Dados } from '../../lib/precoPersonal';
+import { link } from '../../lib/ferramentas';
+import D0 from '../../data/preco-personal.json';
+
+const URL_PAG = '/ferramentas/personal-presencial-ou-online/';
+const D = D0 as unknown as Dados;
+const pres = calcular(D, 'alphaville', 'condominio', 3), onl = calcular(D, 'alphaville', 'online', 3);
+const titulo = 'Personal presencial ou online em Alphaville? Faça o teste';
+const descricao = 'Personal trainer presencial ou online: responda 9 perguntas e veja qual formato combina com a sua experiência, rotina e local de treino em Alphaville e região.';
+const linhas: [string, string, string][] = [
+  ['O que você recebe', 'O profissional ao seu lado durante o treino', 'Plano, progressão, ajustes e acompanhamento a distância'],
+  ['Correção da execução', 'Na hora, durante o exercício', 'Depois, por vídeo que você grava'],
+  ['Horário', 'Combinado e fixo na semana', 'Você treina quando conseguir'],
+  ['Onde funciona em Alphaville', 'No condomínio, em casa ou em academia que aceite personal de fora', 'Em qualquer academia, no condomínio ou em casa'],
+  ['Taxa de personal externo', 'Pode existir, conforme a academia', 'Não se aplica: o profissional não entra na academia'],
+  ['Faixa de referência em Alphaville', `${faixaTxt(pres.mes)} por mês, 3× por semana`, `${faixaTxt(onl.mes)} por mês`],
+  ['Para quem costuma servir', 'Iniciante, quem tem dor ou insegurança, quem não treina sozinho', 'Quem já executa com segurança e tem agenda variável'],
+];
+const perguntas = [
+  { p: 'Qual a diferença entre personal presencial e online?', r: 'No presencial, o profissional está ao seu lado durante o treino: corrige na hora, ajusta a carga e conduz a sessão. No online, ele planeja o treino, acompanha a evolução e corrige por vídeo, e você treina no horário que conseguir. A diferença central é a presença durante o treino, não a qualidade.' },
+  { p: 'Personal trainer online vale a pena?', r: 'Costuma valer para quem já executa os exercícios com segurança e precisa de plano, progressão e cobrança, mas não de alguém ao lado. Para quem está começando, tem dor ou não treina sozinho, o presencial tende a render mais no início.' },
+  { p: 'Quanto é um personal trainer online?', r: `Pela referência editorial da calculadora do guia, o acompanhamento online em Alphaville fica entre ${faixaTxt(onl.mes)} por mês, contra ${faixaTxt(pres.mes)} do presencial 3 vezes por semana. São faixas de referência, não preços pesquisados.` },
+  { p: 'Como funciona o personal trainer online?', r: 'Em geral: uma avaliação inicial por formulário ou conversa, o treino entregue num aplicativo ou planilha, vídeos seus para correção da execução e ajustes periódicos do plano. Combine antes com que frequência o profissional revisa o treino e por onde vocês se falam.' },
+  { p: 'Personal online consegue corrigir a execução?', r: 'Consegue, por vídeo: você grava a série e recebe o retorno depois. Funciona bem para quem já tem alguma base. Para quem tem muita dúvida ou não se sente à vontade gravando, a correção presencial costuma ser melhor no começo.' },
+  { p: 'Dá para combinar presencial e online?', r: 'Dá, e faz sentido para quem precisa de checagem técnica de tempos em tempos, mas não sustenta horário fixo toda semana. Só funciona com combinado claro: quantas aulas presenciais, com que intervalo e o que acontece entre elas.' },
+  { p: 'Minha academia não aceita personal de fora. E agora?', r: 'O online resolve, porque o profissional não precisa entrar na academia. Outra saída é treinar com ele no condomínio ou em uma academia que aceite personal externo; a lista com a regra de cada uma está no guia.' },
+];
+const schema = [{ '@type': 'WebApplication', name: 'Personal presencial ou online: qual combina com você', url: new URL(URL_PAG, Astro.site).href, applicationCategory: 'HealthApplication', operatingSystem: 'Web', inLanguage: 'pt-BR', offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' } }];
+---
+<Base titulo={titulo} descricao={descricao} schema={schema} migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Presencial ou online', url: URL_PAG }]}>
+  <div class="wrap po">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Ferramenta · 1 minuto · sem cadastro</span>
+      <h1>Personal trainer presencial ou online: qual combina com você?</h1>
+      <p class="linha-fina">Nove perguntas sobre a sua experiência, a sua rotina e onde você treina em Alphaville e região. O resultado explica o porquê e mostra quando os dois formatos servem.</p>
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Escolha o presencial se você está começando, tem dor ou insegurança na execução, ou não treina sozinho. Escolha o online se já executa com segurança, tem agenda que muda toda semana e precisa de plano e progressão. Em Alphaville, pesa também o local: no condomínio o personal vai até você; na academia, depende de ela aceitar profissional de fora.</p>
+    </div>
+
+    <form class="po-form nao-imprime" id="po-form" aria-label="Teste presencial ou online">
+      {PERGUNTAS.map((q, i) => (
+        <fieldset class="po-q" data-q={q.id}>
+          <legend><span class="po-n">{i + 1}</span> {q.titulo}</legend>
+          {q.ajuda && <p class="po-ajuda">{q.ajuda}</p>}
+          <div class="po-ops">{q.opcoes.map((o) => <label class="po-op"><input type="radio" name={q.id} value={o.id}><span>{o.rotulo}</span></label>)}</div>
+        </fieldset>
+      ))}
+      <p class="po-erro" id="po-erro" role="alert" hidden></p>
+      <button class="btn" type="submit">Ver meu resultado <i aria-hidden="true"></i></button>
+      <p class="po-nota">O cálculo acontece no seu navegador. Suas respostas não são enviadas a lugar nenhum.</p>
+      <noscript><p class="caixa">O teste precisa de JavaScript. A comparação abaixo usa os mesmos critérios.</p></noscript>
+    </form>
+
+    <section class="po-res" id="po-res" tabindex="-1" aria-live="polite" aria-labelledby="po-res-t" hidden>
+      <span class="rotulo">Seu resultado</span>
+      <h2 id="po-res-t"></h2>
+      <p id="po-resumo"></p>
+      <div class="po-cols">
+        <div><h3>A favor do presencial</h3><ul id="po-pp"></ul></div>
+        <div><h3>A favor do online</h3><ul id="po-po"></ul></div>
+      </div>
+      <div id="po-conf" hidden><h3>Onde suas respostas se contradizem</h3><ul id="po-confl"></ul></div>
+      <p class="po-aviso" id="po-aviso" hidden></p>
+      <div class="po-prox" id="po-prox"></div>
+      <aside class="po-mt" aria-labelledby="po-mt-t">
+        <span class="rotulo">Atendimento do Montinho Personal Trainer · publicidade da casa</span>
+        <h3 id="po-mt-t">Quer conversar sobre o seu caso?</h3>
+        <p>O Montinho, que mantém este guia, atende presencialmente em Alphaville e região e também online. Conte o resultado do teste e veja o que ele sugere.</p>
+        <a class="btn po-wa" id="po-wa" href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="nofollow noopener" data-evento="clique_whatsapp" data-ref="presencial-ou-online">Falar com o Montinho no WhatsApp</a>
+      </aside>
+      <p class="nao-imprime"><button type="button" class="po-refazer" id="po-refazer">Refazer o teste</button></p>
+    </section>
+
+    <div class="prosa">
+      <h2>Presencial e online, lado a lado</h2>
+      <div class="rolagem" tabindex="0" role="region" aria-label="Comparação entre personal presencial e online">
+        <table class="dados po-t">
+          <thead><tr><th scope="col">Critério</th><th scope="col">Presencial</th><th scope="col">Online</th></tr></thead>
+          <tbody>{linhas.map(([c, a, b]) => <tr><th scope="row">{c}</th><td>{a}</td><td>{b}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p>As faixas são a referência editorial da <a href={link('preco')}>calculadora de preço de personal</a>, não preços pesquisados.</p>
+
+      <h2>Quando o presencial faz mais sentido em Alphaville</h2>
+      <p>Para quem nunca treinou, voltou de lesão ou não confia na própria execução, a correção na hora vale muito: ajustar o movimento enquanto ele acontece é diferente de descobrir o erro dias depois, num vídeo. Na região, o presencial acontece de três jeitos. No condomínio ou em casa, o profissional vai até você, e a regra é a do residencial. Na academia, é preciso que ela aceite personal de fora: veja a regra de cada unidade em <a href="/ferramentas/academias-que-aceitam-personal-externo/">academias que aceitam personal externo</a>. Na Arena 18, onde o Montinho dá aulas, ele faz <a href={link('diaria', { modo: 'teste' })}>aula experimental grátis</a>.</p>
+
+      <h2>Quando o online resolve melhor</h2>
+      <p>Para quem já entra na academia sabendo o que fazer e precisa de plano, progressão e alguém cobrando. O online também destrava três situações comuns por aqui: agenda de trabalho que muda toda semana, viagens frequentes e academia que não aceita profissional de fora ou cobra taxa por isso. O treino acontece na sua academia de sempre, no seu horário.</p>
+
+      <VideoApp pagina="presencial-ou-online" />
+
+      <h2>Online não é o presencial mais barato</h2>
+      <p>O online costuma custar menos por mês porque não ocupa a hora exclusiva do profissional nem o deslocamento dele. Mas são serviços diferentes: um entrega presença, o outro entrega planejamento e acompanhamento. Escolher o online só pelo preço, sem autonomia para treinar sozinho, costuma sair caro: o serviço fica pago e não usado. Por isso, no teste, o valor não decide o resultado de quem diz que não treina sozinho.</p>
+
+      <h2>E o modelo híbrido?</h2>
+      <p>Faz sentido quando os dois lados puxam ao mesmo tempo: você precisa de checagem técnica, mas a rotina não comporta horário fixo toda semana. Funciona com combinado explícito, por exemplo uma aula presencial a cada quinze dias e o acompanhamento online entre elas. Sem isso, vira um presencial espaçado sem acompanhamento.</p>
+
+      <h2>Como o teste chega ao resultado</h2>
+      <p>Cada resposta soma pontos para o presencial, para o online ou para os dois. O teste só aponta um formato quando a diferença é clara; quando não é, diz que os dois podem funcionar. Se a sua necessidade aponta para um lado e a sua rotina para o outro, ele mostra o conflito e sugere o híbrido. O teste não mostra porcentagem, porque nove perguntas não sustentam essa precisão. As regras são fixas: as mesmas respostas dão sempre o mesmo resultado. Com dor, lesão ou restrição médica, a liberação do médico vem antes de qualquer formato.</p>
+      <p>Mora em outra cidade? O <a href="https://www.personalporperto.com.br/ferramentas/presencial-ou-online/" rel="noopener">Personal por Perto</a> tem uma ferramenta parecida, sem o recorte de Alphaville.</p>
+    </div>
+
+    <Perguntas itens={perguntas} titulo="Perguntas sobre personal presencial e online" />
+    <LeiaTambem url={URL_PAG} />
+  </div>
+
+  <script type="application/json" id="po-dados" set:html={JSON.stringify({ whats: WHATSAPP, titulos: TITULOS })}></script>
+  <script>
+    import { avaliar, mensagemResultado, PERGUNTAS, type Respostas } from '../../lib/formatoPersonal';
+    const J = JSON.parse(document.getElementById('po-dados')!.textContent!);
+    const ev = (n: string, d: Record<string, string | number> = {}) => { const w = window as any; if (typeof w.otaEvento === 'function') w.otaEvento(n, d); };
+    const f = document.getElementById('po-form') as HTMLFormElement, res = document.getElementById('po-res') as HTMLElement, erro = document.getElementById('po-erro') as HTMLElement;
+    const $ = (id: string) => document.getElementById(id)!;
+    const li = (xs: string[], vazio: string) => (xs.length ? xs : [vazio]).map((t) => `<li>${t.charAt(0).toUpperCase() + t.slice(1)}${/[.!?]$/.test(t) ? '' : '.'}</li>`).join('');
+    const LOCAL_PRECO: Record<string, string> = { condominio: 'condominio', casa: 'domicilio', academia: 'academia', fora: 'online' };
+    let iniciou = false;
+    f.addEventListener('change', () => { if (!iniciou) { iniciou = true; ev('formato_personal_inicio'); } erro.hidden = true; });
+    f.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const r: Respostas = {}; new FormData(f).forEach((v, k) => { r[k] = String(v); });
+      const falta = PERGUNTAS.find((q) => !r[q.id]);
+      if (falta) {
+        erro.textContent = `Falta responder: "${falta.titulo}"`; erro.hidden = false;
+        const fs = f.querySelector<HTMLElement>(`[data-q="${falta.id}"]`)!; fs.scrollIntoView({ block: 'center' }); fs.querySelector<HTMLInputElement>('input')!.focus(); return;
+      }
+      const x = avaliar(r);
+      $('po-res-t').textContent = x.titulo; $('po-resumo').textContent = x.resumo;
+      $('po-pp').innerHTML = li(x.proPresencial, 'Nenhuma das suas respostas pesou para este lado');
+      $('po-po').innerHTML = li(x.proOnline, 'Nenhuma das suas respostas pesou para este lado');
+      ($('po-conf') as HTMLElement).hidden = !x.conflitos.length; $('po-confl').innerHTML = x.conflitos.map((t) => `<li>${t}</li>`).join('');
+      const av = $('po-aviso') as HTMLElement; av.hidden = !x.avisos.length; av.textContent = x.avisos.join(' ');
+      const fmt = x.tipo === 'online' ? 'online' : LOCAL_PRECO[r.local] === 'online' ? 'condominio' : LOCAL_PRECO[r.local];
+      const prox: string[] = [`<a href="/ferramentas/calculadora-preco-personal-alphaville/?formato=${fmt}" data-evento="clique_ferramenta" data-ref="preco:presencial-ou-online">Ver a faixa de preço ${x.tipo === 'online' ? 'do online' : 'desse formato'}</a>`];
+      if (x.tipo !== 'online' && r.local === 'academia') prox.push('<a href="/ferramentas/academias-que-aceitam-personal-externo/" data-evento="clique_ferramenta" data-ref="personal:presencial-ou-online">Conferir se a sua academia aceita personal de fora</a>');
+      if (x.tipo !== 'online') prox.push('<a href="/ferramentas/academias-diaria-aula-experimental-alphaville/?modo=teste" data-evento="clique_ferramenta" data-ref="diaria:presencial-ou-online">Experimentar uma aula antes de fechar</a>');
+      $('po-prox').innerHTML = '<h3>Próximos passos</h3><ul>' + prox.map((t) => `<li>${t}</li>`).join('') + '</ul>';
+      ($('po-wa') as HTMLAnchorElement).href = `https://wa.me/${J.whats}?text=${encodeURIComponent(mensagemResultado(x.tipo))}`;
+      ($('po-wa') as HTMLElement).dataset.ref = `presencial-ou-online:${x.tipo}`;
+      res.hidden = false; res.focus(); res.scrollIntoView({ block: 'start' });
+      ev('formato_personal_resultado', { resultado: x.tipo, conflitos: x.conflitos.length });
+    });
+    $('po-refazer').addEventListener('click', () => { f.reset(); res.hidden = true; f.scrollIntoView({ block: 'start' }); f.querySelector<HTMLInputElement>('input')!.focus(); ev('formato_personal_refazer'); });
+  </script>
+</Base>
+
+<style is:global>
+  .po .po-form { margin: 22px 0 14px; display: grid; gap: 14px; }
+  .po .po-q { margin: 0; padding: 16px; border: 1px solid var(--linha, #d8dee8); border-radius: 14px; background: #fff; min-width: 0; }
+  .po .po-q legend { font-weight: 700; font-size: 18px; padding: 0 4px; }
+  .po .po-n { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #FF6A00; color: #111827; font-size: 15px; margin-right: 4px; }
+  .po .po-ajuda { font-size: 14px; color: var(--cinza, #4b5563); margin: 4px 0 0; }
+  .po .po-ops { display: grid; gap: 8px; margin-top: 10px; }
+  .po .po-op { position: relative; display: block; }
+  .po .po-op input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+  .po .po-op span { display: flex; align-items: center; min-height: 48px; padding: 10px 14px; border-radius: 10px; border: 1.5px solid #9aa3b2; background: #fff; font-size: 16px; }
+  .po .po-op input:checked + span { border-color: #111827; background: #111827; color: #fff; font-weight: 600; }
+  .po .po-op input:focus-visible + span { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .po .po-erro { color: #a11; font-weight: 700; margin: 0; }
+  .po .po-nota { font-size: 14px; color: var(--cinza, #4b5563); margin: 0; }
+  .po .po-res { margin: 8px 0 18px; padding: 20px 18px; border-radius: 14px; background: #111827; color: #F5F1E8; }
+  .po .po-res[hidden] { display: none; }
+  .po .po-res:focus { outline: none; }
+  .po .po-res .rotulo { color: #FFB066; }
+  .po .po-res h2 { color: #fff; margin: 6px 0 8px; font-size: 26px; }
+  .po .po-res h3 { color: #fff; font-size: 17px; margin: 14px 0 6px; }
+  .po .po-res ul { margin: 0; padding-left: 20px; font-size: 16px; }
+  .po .po-res li { margin: 4px 0; }
+  .po .po-res a { color: #FFB066; }
+  .po .po-cols { display: grid; gap: 4px 18px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 720px) { .po .po-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .po .po-aviso { margin: 12px 0 0; padding: 10px 12px; border-left: 4px solid #FF6A00; background: #1b2434; font-size: 15px; }
+  .po .po-mt { margin: 16px 0 10px; padding: 16px; border-radius: 12px; background: #1b2434; border-left: 6px solid #25D366; }
+  .po .po-mt .rotulo { color: #9ff0bf; }
+  .po .po-mt h3 { margin-top: 6px; font-size: 19px; }
+  .po .po-wa { display: flex; justify-content: center; text-align: center; margin-top: 10px; min-height: 48px; background: #25D366; color: #0b2b17 !important; border-color: #25D366; font-weight: 700; }
+  .po .po-refazer { min-height: 44px; padding: 8px 14px; border-radius: 10px; border: 1.5px solid #F5F1E8; background: transparent; color: #F5F1E8; font: inherit; cursor: pointer; }
+  .po .po-res a:focus-visible, .po .po-refazer:focus-visible { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .po table.dados.po-t { min-width: 560px; }
+</style>

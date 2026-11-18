@@ -2,7 +2,7 @@
 // o próximo passo de quem está lendo, já abertas com o que a página sabe (academia, região, modalidade).
 // Lógica pura, sem Astro, para servir a GuiaPagina e às páginas .astro.
 
-export type FerramentaId = 'custo' | 'personal' | 'beneficio' | 'teste' | 'comparador' | 'checklist' | 'mapa' | 'abertas' | 'diaria' | 'preco';
+export type FerramentaId = 'custo' | 'personal' | 'beneficio' | 'teste' | 'comparador' | 'checklist' | 'mapa' | 'abertas' | 'diaria' | 'preco' | 'formato';
 export type RegiaoId = 'alphaville' | 'barueri' | 'santana-de-parnaiba';
 
 export interface Ferramenta { id: FerramentaId; titulo: string; texto: string; href: string; rotulo: string; }
@@ -17,6 +17,7 @@ const BASE: Record<FerramentaId, { path: string; rotulo: string }> = {
   mapa: { path: '/mapa/', rotulo: 'Mapa' },
   abertas: { path: '/ferramentas/academias-abertas-alphaville/', rotulo: 'Academias abertas' },
   preco: { path: '/ferramentas/calculadora-preco-personal-alphaville/', rotulo: 'Preço de personal' },
+  formato: { path: '/ferramentas/personal-presencial-ou-online/', rotulo: 'Presencial ou online' },
   diaria: { path: '/ferramentas/academias-diaria-aula-experimental-alphaville/', rotulo: 'Diária e aula experimental' },
 };
 
@@ -126,7 +127,7 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       return [
         preco(),
         f('custo', 'Academia sozinho ou com personal: quanto muda', 'Simule as duas situações e veja a diferença por mês e por treino.', { personal: '1', de: 'artigo' }),
-        f('personal', 'Quais academias aceitam personal de fora', 'Antes de contratar, confira se a sua academia deixa o profissional atender.'),
+        f('formato', 'Personal presencial ou online: faça o teste', 'Nove perguntas sobre experiência, rotina e local de treino, com o resultado explicado.'),
       ];
     case 'premium':
       return [
