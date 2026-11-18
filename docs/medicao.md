@@ -62,3 +62,7 @@ O código monta os links com `linkMontinho()` (`src/lib/dados.ts`). Se algum lin
 3. Em Administrador > Fluxos de dados > Configurar tag > Listar referências indesejadas: **não** incluir `guiafitnessalphaville.com.br`.
 
 A calculadora não envia valores digitados nem dados de contato: só a origem da visita e a quantidade de cenários.
+
+## clique_ferramenta (18/11/2026)
+
+Clique nos atalhos e cartões de ferramenta dos artigos. `ref` = `<ferramenta>:atalho` ou `<ferramenta>:bloco` (ferramentas: custo, personal, beneficio, teste, comparador, checklist, mapa); `pagina` = caminho do artigo. Para ver no GA4 qual artigo mais leva às ferramentas, registre `ref` como dimensão personalizada.

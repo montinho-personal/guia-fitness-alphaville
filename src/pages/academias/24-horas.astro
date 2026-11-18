@@ -1,4 +1,6 @@
 ---
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
@@ -29,6 +31,7 @@ const perguntas = [
   { p: 'O que é a 24 Wellness Alphaville?', r: 'É uma marca que aparece nas buscas ligada à 24 Health Club. O guia não conseguiu ler o site da marca nem encontrou a unidade com esse nome no Wellhub ou no TotalPass, por isso ainda não tem ficha própria.' },
 ];
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const ferramentas = ferramentasPara({ tipo: '24h' });
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: '24 horas', url: '/academias/24-horas/' }]}>
   <div class="wrap">
@@ -43,6 +46,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <span class="rotulo">Resposta direta</span>
       <p>Entre as {todas.length} academias com ficha neste guia, {h24.length === 1 ? <>só uma tem horário publicado de 24 horas, todos os dias: a <a href={urlAcademia(h24[0])}>{h24[0].data.nome}</a>, em {h24[0].data.bairro}</> : <>{h24.length} têm horário publicado de 24 horas</>}. Outras {tarde.length} fecham à meia-noite em dias úteis, e {cedo.length} abrem às 5h ou antes.</p>
     </div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
 
     <div class="prosa">
       <h2>{h24.length === 1 ? 'A que funciona 24 horas' : 'As que funcionam 24 horas'}</h2>
@@ -81,6 +85,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       </ul>
       <p>O <a href="/ferramentas/checklist/">checklist de visita</a> reúne essas e outras perguntas. Para comparar horários de duas ou três academias, use o <a href="/ferramentas/comparador/">comparador</a>.</p>
     </div>
+    <FerramentasContexto itens={ferramentas} />
     <Perguntas itens={perguntas} titulo="Perguntas sobre academia 24 horas" />
 
     <VideoMontinho id="izMrrSoJGBw" titulo="Raiva e sangue no olho" pagina="24-horas" />

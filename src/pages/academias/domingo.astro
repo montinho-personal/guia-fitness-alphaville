@@ -1,4 +1,6 @@
 ---
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
@@ -45,6 +47,7 @@ const perguntas = [
 const titulo = 'Academia aberta domingo em Barueri e Alphaville: horários';
 const descricao = 'Academias abertas no domingo em Barueri, Alphaville, Tamboré e Santana de Parnaíba: horário de cada uma, quem fica aberta depois das 14h e as 24 horas.';
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const ferramentas = ferramentasPara({ tipo: 'domingo' });
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Abertas no domingo', url: '/academias/domingo/' }]}>
   <div class="wrap">
@@ -59,6 +62,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <span class="rotulo">Resposta direta</span>
       <p>Das {todas.length} academias com ficha no guia, {abrem.length} têm horário publicado para domingo. {diaTodo.length > 0 && <>{diaTodo.length === 1 ? 'Uma funciona' : diaTodo.length === 2 ? 'Duas funcionam' : `Ao todo, ${diaTodo.length} funcionam`} o dia inteiro ({lista(diaTodo)}). </>}A maioria das demais abre só de manhã, e o horário mais comum é das 8h às 14h. Depois das 14h, além das 24 horas, só {tarde.length === 1 ? 'uma academia continua' : `${tarde.length} academias continuam`} aberta{tarde.length === 1 ? '' : 's'}: {lista(tarde)}.</p>
     </div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
 
     <div class="prosa">
       {diaTodo.length > 0 && <>
@@ -102,6 +106,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <p>Estas {fechadas.length} academias não têm horário de domingo nas fontes consultadas, o que em geral significa que fecham: {fechadas.map((a, i) => <>{sep(i, fechadas.length)}<a href={urlAcademia(a)}>{a.data.nome}</a></>)}. Se alguma delas abrir, <a href="/correcoes/">avise o guia</a>.</p>
       <p>Para cruzar o domingo com outros critérios, use o filtro "Aberta aos domingos" no <a href="/academias/">guia de academias</a>.</p>
     </div>
+
+    <FerramentasContexto itens={ferramentas} />
 
     <Perguntas itens={perguntas} titulo="Perguntas sobre academia no domingo" />
 

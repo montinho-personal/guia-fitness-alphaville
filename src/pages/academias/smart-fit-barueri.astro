@@ -1,4 +1,6 @@
 ---
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara, type RegiaoId } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
@@ -32,6 +34,7 @@ const perguntas = [
   { p: 'Qual o telefone da Smart Fit em Barueri?', r: 'As páginas oficiais das cinco unidades, conferidas em 16 de novembro de 2026, não publicam telefone. Endereço, horário e lotação em tempo real ficam na página de cada unidade no site da Smart Fit.' },
 ];
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const ferramentas = ferramentasPara({ tipo: 'rede', academia: { id: 'smart-fit-barueri-centro', nome: 'Smart Fit' }, regiao: 'barueri', lugar: 'Barueri' });
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Smart Fit em Barueri', url: '/academias/smart-fit-barueri/' }]}>
   <div class="wrap">
@@ -46,6 +49,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <span class="rotulo">Resposta direta</span>
       <p>Barueri, incluindo Alphaville, tem 5 unidades da Smart Fit com ficha no guia. Centro e Parque Shopping ficam abertas até a meia-noite nos dias úteis; a Av. Zélia fecha às 23h, e Sodimac e Carrefour Hiper Tamboré abrem às 6h e fecham às 23h. Todas abrem no domingo, das 8h às 14h. O Plano Fit custa {entrada(centro)?.preco.replace('/mês', '')} por mês com fidelidade nas três de Barueri e {entrada(carrefour)?.preco.replace('/mês', '')} no Carrefour, com adesão; na Sodimac, a entrada é o Smart.</p>
     </div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
 
     <div class="rolagem" tabindex="0" role="region" aria-label="Unidades da Smart Fit em Barueri" style="margin:24px 0">
       <table class="dados">
@@ -74,6 +78,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <h2>E as outras academias de Barueri?</h2>
       <p>No centro, a Panobianco Barueri Centro tem preço publicado parecido e mais aulas coletivas. O comparativo <a href="/guias/smart-fit-ou-gavioes/">Smart Fit ou Gaviões</a> ajuda quem precisa de horário estendido. A página <a href="/regioes/barueri/">academias em Barueri</a> reúne todas as fichas da cidade, e quem quer acompanhamento pode ler <a href="/guias/personal-trainer-barueri/">personal trainer em Barueri</a>.</p>
     </div>
+
+    <FerramentasContexto itens={ferramentas} />
 
     <Perguntas itens={perguntas} titulo="Perguntas sobre a Smart Fit em Barueri" />
 

@@ -1,4 +1,6 @@
 ---
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
@@ -29,6 +31,7 @@ const abs = (u: string) => new URL(u, Astro.site).href;
 const titulo = 'Gaviões 24h ou Ironberg: qual academia 24 horas escolher';
 const descricao = 'Gaviões 24h Alphaville ou Ironberg Alphaville: as duas academias 24 horas do guia comparadas em preço, aulas, estrutura, estacionamento e regra para personal.';
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'gavioes-24h-alphaville', nome: 'Gaviões 24h' }, { id: 'ironberg-alphaville', nome: 'Ironberg' }] });
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Gaviões ou Ironberg', url: '/guias/gavioes-ou-ironberg/' }]}>
   <div class="wrap">
@@ -43,6 +46,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <span class="rotulo">Resposta direta</span>
       <p>Se você quer variedade de aulas (lutas, dança, bike, pilates, yoga) e usa Wellhub ou um plano de entrada do TotalPass, a Gaviões 24h tende a servir melhor. Se o foco é só musculação, com muito espaço e preço conhecido antes de ir, a Ironberg é a escolha mais previsível. Para quem treina com personal de fora, a Ironberg é a única das duas que publica a regra.</p>
     </div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
 
     <div class="rolagem" tabindex="0" role="region" aria-label="Gaviões 24h e Ironberg lado a lado" style="margin:24px 0">
       <table class="dados">
@@ -85,6 +89,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <div class="cab"><h2 id="fichas-t">As duas fichas</h2><a class="link-forte" href="/academias/24-horas/">Academias 24 horas</a></div>
       <div class="cartoes">{[gv, ib].map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
+
+    <FerramentasContexto itens={ferramentas} />
 
     <VideoMontinho id="izMrrSoJGBw" titulo="Raiva e sangue no olho" pagina="gavioes-ou-ironberg" />
     <LeiaTambem url="/guias/gavioes-ou-ironberg/" />

@@ -1,4 +1,6 @@
 ---
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
@@ -33,6 +35,7 @@ const abs = (u: string) => new URL(u, Astro.site).href;
 const titulo = 'Smart Fit ou Gaviões em Alphaville: qual escolher';
 const descricao = 'Smart Fit Sodimac ou Gaviões 24h em Alphaville: horário, preço, modalidades, estacionamento e agregadores lado a lado, para escolher conforme a sua rotina.';
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'smart-fit-sodimac-alphaville', nome: 'Smart Fit' }, { id: 'gavioes-24h-alphaville', nome: 'Gaviões 24h' }] });
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Smart Fit ou Gaviões', url: '/guias/smart-fit-ou-gavioes/' }]}>
   <div class="wrap">
@@ -47,6 +50,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <span class="rotulo">Resposta direta</span>
       <p>Depende da sua rotina. Se você precisa treinar de madrugada ou quer aulas variadas, como lutas, dança, bike e pilates, a Gaviões 24h atende melhor. Se o preço conhecido, o padrão igual em todas as unidades e o acesso a outras academias da rede pesam mais, a Smart Fit é a escolha mais previsível: publica a mensalidade, a partir de {sf.data.mensalidade?.valor.replace('a partir de ', '')} por mês nesta unidade. A Gaviões não publica preço.</p>
     </div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
 
     <div class="rolagem" tabindex="0" role="region" aria-label="Smart Fit e Gaviões lado a lado" style="margin:24px 0">
       <table class="dados">
@@ -94,6 +98,9 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <div class="cab"><h2 id="fichas-t">As duas fichas</h2><a class="link-forte" href="/academias/?regiao=alphaville">Outras academias de Alphaville</a></div>
       <div class="cartoes">{[sf, gv].map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
+
+
+    <FerramentasContexto itens={ferramentas} />
 
 
     <Perguntas titulo="Perguntas sobre Smart Fit e Gaviões" itens={[

@@ -48,6 +48,9 @@ Toda ferramenta (calculadora, comparador, teste, checklist, mapa, simulador) é 
 5. **Guardar a evidência** em `docs/pesquisa/serp/` e responder ao Renato com as intenções por tipo (✅/❌) e a separação do que ficou de fora, como nos artigos. Título e descrição de ferramenta já publicada: só proposta.
 6. As ferramentas já publicadas sem pesquisa entram na parte 4 da pauta e são revisadas pela rotina diária.
 
+
+**Ferramentas nos artigos (18/11/2026):** todo artigo leva às ferramentas do próximo passo, já preenchidas com o contexto da página. Regras e tabela em `docs/ferramentas-nos-artigos.md`; a lógica fica em `src/lib/ferramentas.ts`.
+
 ## Cota do SerpApi
 
 Uma conta para todos os sites do Renato, em plano pago (1.000 buscas por mês). A conta do mês está no `CLAUDE.md`: a soma das rotinas passa da cota por decisão do Renato (17/11/2026, "segue tudo para todos"). Esta rotina gasta 2 a 3 créditos por revisão (busca secundária só se a principal vier fraca), cerca de 120 a 180 por mês com 2 revisões por dia. **Quando o SerpApi disser que a cota acabou, parar na hora e avisar o Renato**; ele decide se aumenta o plano ou espera a renovação.

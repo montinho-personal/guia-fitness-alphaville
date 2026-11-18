@@ -1,4 +1,6 @@
 ---
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
@@ -42,6 +44,7 @@ const abs = (u: string) => new URL(u, Astro.site).href;
 const titulo = 'Ironberg ou NitroGym em Alphaville: qual escolher';
 const descricao = 'Ironberg Alphaville ou NitroGym Tamboré: preço publicado, custo do primeiro ano, horário, estacionamento, TotalPass e regra para personal, lado a lado.';
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'ironberg-alphaville', nome: 'Ironberg' }, { id: 'nitrogym-tambore', nome: 'NitroGym' }] });
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Ironberg ou NitroGym', url: '/guias/ironberg-ou-nitrogym/' }]}>
   <div class="wrap">
@@ -56,6 +59,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <span class="rotulo">Resposta direta</span>
       <p>No preço mensal, as duas quase empatam: R$ 399 na Ironberg e R$ 389 na NitroGym no plano de 12 meses. A Ironberg ganha em horário (24 horas, todos os dias), em espaço e em estacionamento gratuito sem limite de tempo, e publica a regra para personal de fora. A NitroGym ganha em flexibilidade: tem diária de R$ 90, plano só de fim de semana fica dentro do Shopping Tamboré e não menciona matrícula na tabela publicada.</p>
     </div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
 
     <div class="rolagem" tabindex="0" role="region" aria-label="Ironberg e NitroGym lado a lado" style="margin:24px 0">
       <table class="dados">
@@ -105,6 +109,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       </ul>
       <p>Visite as duas no horário em que você vai treinar. O <a href="/ferramentas/checklist/">checklist de visita</a> ajuda, e o <a href={`/ferramentas/comparador/?a=${ib.id}&b=${ng.id}`}>comparador</a> mostra as duas fichas completas lado a lado. Para outras opções de padrão parecido, veja a <a href="/academias/precos/">tabela de preços</a>.</p>
     </div>
+
+    <FerramentasContexto itens={ferramentas} />
 
     <Perguntas itens={perguntas} titulo="Perguntas sobre Ironberg e NitroGym" />
 

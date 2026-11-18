@@ -1,4 +1,6 @@
 ---
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
@@ -49,6 +51,7 @@ const perguntas = [
   { p: 'Qual o valor de uma academia por mês na região?', r: `Com os preços publicados, uma academia de musculação da região custa de ${brl(menor(academiasComPreco[0]))} a ${brl(menor(academiasComPreco[academiasComPreco.length - 1]))} por mês no plano de entrada. Antes de comparar, some matrícula, taxa anual e estacionamento, e veja se o plano dá acesso a outras unidades.` },
 ].filter((x): x is { p: string; r: string } => !!x);
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const ferramentas = ferramentasPara({ tipo: 'precos' });
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Preços', url: '/academias/precos/' }]}>
   <div class="wrap">
@@ -67,6 +70,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
         As demais academias não divulgam valores; nelas, o plano mínimo do Wellhub vai de R$ 39,99 a R$ 439,99 por mês.
       </p>
     </div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
 
     <div class="prosa">
       <h2>Academias com preço publicado</h2>
@@ -131,6 +135,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <h2>Os preços estão desatualizados?</h2>
       <p>Preços de academia mudam com frequência. Cada valor desta página tem a data em que foi conferido. Se você viu um preço diferente na recepção ou no site, <a href="/correcoes/">avise</a>.</p>
     </div>
+
+    <FerramentasContexto itens={ferramentas} />
 
     <Perguntas itens={perguntas} titulo="Perguntas frequentes sobre preço de academia" />
     <section class="bloco fino"><Mantem pagina="precos" compacta titulo="Quer comparar com o custo de um personal?" texto="Se você está pesando academia e acompanhamento individual, o Montinho Personal Trainer, que mantém este guia, atende presencialmente em academias e condomínios da região." /></section>
