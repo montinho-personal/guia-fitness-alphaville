@@ -46,6 +46,10 @@ Antes dos critérios, vale saber em que tipo de lugar você quer treinar. Na reg
 - **Box de CrossFit ou cross training**: aula em grupo com horário marcado, sem treino livre na sala. Veja [CrossFit](/modalidades/crossfit/).
 - **Estúdio**, de pilates, funcional, lutas ou yoga: turma pequena e uma modalidade principal. Veja as páginas de [modalidades](/modalidades/).
 
+![Montinho, personal trainer que mantém este guia, de boné em frente ao espelho da academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia. A academia certa é a que você consegue frequentar.*
+
 ## 1. Distância e caminho
 
 A academia precisa ficar no seu trajeto: perto de casa, do trabalho ou entre os dois. É o critério que mais pesa para você continuar indo depois do primeiro mês. Em Alphaville, isso costuma significar escolher entre treinar perto do residencial ou perto do escritório. Boa parte das academias da região está em Alphaville Industrial, em duas vias; a página de [Alphaville e Tamboré](/regioes/alphaville/) mostra quem fica onde, e a de [academias perto de](/academias/perto-de/) organiza por ponto de referência.

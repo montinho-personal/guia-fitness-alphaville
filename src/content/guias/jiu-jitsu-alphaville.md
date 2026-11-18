@@ -26,7 +26,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-16
-atualizado_em: 2026-11-17
+atualizado_em: 2026-11-18
 perguntas:
   - p: "Qual a melhor academia de jiu-jitsu em Alphaville?"
     r: "Depende do que você procura. Para treinar jiu-jitsu como atividade principal, com turma e professor da modalidade, a Templo Jiu Jitsu Culture, o Jacó Fight Club e a G13 são as escolas de luta com ficha no guia. Para combinar jiu-jitsu e musculação no mesmo plano, VoiFit, 24h Premium e Scelta listam a modalidade."
@@ -44,6 +44,9 @@ perguntas:
     r: "Sim. A VoiFit entra a partir do TP 2+, e a Templo, a Scelta e o Jacó Fight Club a partir do TP 4. Confirme no aplicativo se a aula de jiu-jitsu está liberada no seu plano."
   - p: "Tem jiu-jitsu para mulheres em Alphaville?"
     r: "A Templo lista turmas femininas de muay thai e boxe no TotalPass; para jiu-jitsu, a G13 informa no site uma turma para mulheres. Nas outras, pergunte na escola."
+video:
+  id: GPuqJs_DRoY
+  titulo: "O poder da disciplina: a sensação de dever feito"
 ---
 
 > **Transparência.** Quem mantém este guia é o Montinho, personal trainer que atende em Alphaville e no Tamboré. Ele não dá aula de luta, e o espaço dele no rodapé é anúncio.
@@ -55,6 +58,10 @@ A [Templo](/academias/templo-jiu-jitsu-tambore/) fica numa loja do Mackenzie Mal
 O horário publicado vai das 6h às 22h nos dias úteis. No sábado, as fontes divergem: o Wellhub mostra das 9h às 12h e o TotalPass, até as 16h. No domingo, fecha. Como é escola de turma, o horário que vale é o da aula, e o Wellhub avisa que é preciso agendar.
 
 Nos agregadores, é uma entrada alta: Gold no Wellhub e TP 4 no TotalPass. Quem vai treinar várias vezes por semana deve comparar com a mensalidade direta, que a escola não publica.
+
+![Montinho, personal trainer que mantém este guia, de costas, em pose de duplo bíceps](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que mantém este guia. Ele não dá aula de jiu-jitsu; a musculação costuma entrar como complemento do treino de quem luta.*
 
 ## Outra escola: Jacó Fight Club
 

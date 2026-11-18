@@ -1,4 +1,5 @@
 ---
+import VideoApp from '../../components/VideoApp.astro';
 import Base from '../../layouts/Base.astro';
 import Ferramentas from '../../components/Ferramentas.astro';
 ---
@@ -15,5 +16,6 @@ import Ferramentas from '../../components/Ferramentas.astro';
     <h2>Como as ferramentas funcionam</h2>
     <p>O comparador e o teste leem os dados das fichas e os cruzam com o que você escolhe. Não há pontuação escondida nem academia favorecida: o teste mostra, critério por critério, por que cada resultado apareceu. O Montinho Personal Trainer, que mantém o guia, não é uma das opções de resultado.</p>
     <p>Os detalhes estão na <a href="/metodologia/">metodologia</a>.</p>
+  <div class="wrap"><VideoApp pagina="ferramentas" /></div>
   </div>
 </Base>

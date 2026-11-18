@@ -1,4 +1,6 @@
 ---
+import fotoMontinho from '../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg';
+import { Image } from 'astro:assets';
 import FerramentasContexto from '../../components/FerramentasContexto.astro';
 import { ferramentasPara } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
@@ -100,6 +102,7 @@ const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'sm
     </section>
 
 
+    <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={fotoMontinho} alt="Montinho, personal trainer que mantém este guia, em selfie no espelho da academia" widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">O Montinho, personal trainer que mantém este guia. Publicidade da casa.</figcaption></figure>
     <FerramentasContexto itens={ferramentas} />
 
 

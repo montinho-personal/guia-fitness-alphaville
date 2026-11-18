@@ -24,7 +24,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-16
-atualizado_em: 2026-11-17
+atualizado_em: 2026-11-18
 perguntas:
   - p: "Onde treinar jiu-jitsu em Santana de Parnaíba?"
     r: "Com ficha no guia: Mattos Fitness, na Estrada Tenente Marques, na Fazendinha; Meta Fit, na Rua Porto Rico, no Jardim São Luís; e Nova Fitness, na Av. das Conchas, na Cidade São Pedro. As três listam jiu-jitsu e muay thai. Do lado de Alphaville, as opções mais próximas ficam em Barueri, como a Templo Jiu Jitsu Culture, no Tamboré."
@@ -34,6 +34,9 @@ perguntas:
     r: "Sim. O Alemão Boxing Club, na Fazendinha, tem turmas às 7h e às 20h de segunda a sexta, com agendamento pelo Wellhub a partir do Basic+."
   - p: "Academia de luta abre no fim de semana em Santana de Parnaíba?"
     r: "A Mattos Fitness abre no sábado das 8h às 14h, mas o guia não sabe se há aula de luta nesse horário. O Alemão Boxing Club não abre no fim de semana, e nenhuma das duas abre no domingo."
+video:
+  id: DiH1OzIR6Yk
+  titulo: "Proteja o seu objetivo: a brecha que te faz recomeçar"
 ---
 
 > **Transparência.** O Montinho, personal trainer que atende em Santana de Parnaíba, mantém este guia. Ele não ensina luta, e o anúncio dele aparece no fim da página.
@@ -45,6 +48,10 @@ A [Mattos Fitness](/academias/mattos-fitness-fazendinha/) é uma academia comple
 Poucos números adiante, na mesma via, fica o [Alemão Boxing Club](/academias/alemao-boxing-fazendinha/). É só boxe, em duas turmas de uma hora: às 7h e às 20h, de segunda a sexta. O Wellhub pede agendamento e libera a partir do Basic+.
 
 Quem mora na Fazendinha pode, então, combinar as duas: musculação e jiu-jitsu numa, boxe na outra, sem sair do bairro.
+
+![Montinho, personal trainer que mantém este guia, em selfie no espelho da academia](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia. Ele não dá aula de luta; atende alunos de musculação e preparação física em Santana de Parnaíba.*
 
 ## Jardim São Luís e Cidade São Pedro
 
