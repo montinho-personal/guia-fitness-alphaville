@@ -8,7 +8,7 @@ No mesmo espírito da calculadora do Personal por Perto, escrita para Alphaville
 | Número | Origem | Como aparece |
 |---|---|---|
 | Faixas de Alphaville, Barueri e Santana de Parnaíba (avulsa, pacote mensal, online) | Estimativas editoriais por perfil de cidade do Personal por Perto, informadas pelo Renato em 18/11/2026. **Não há amostra.** | "Referência editorial"; nunca "preço médio", nunca valor exato |
-| Teto da aula avulsa (R$ 300, todos os locais) e piso do online (R$ 110 por mês) | Ajuste informado pelo Montinho em 18/11/2026 | Dentro da mesma "referência editorial"; a página diz que os dois limites vieram dele |
+| Teto da aula avulsa (R$ 300) e piso do online (R$ 110 por mês) em Alphaville, Tamboré, Aldeia da Serra e Santana de Parnaíba; Centro de Barueri com a faixa original | Ajuste informado pelo Montinho em 18/11/2026 | Dentro da mesma "referência editorial"; a página diz que os dois limites vieram dele |
 | Tamboré e Aldeia da Serra | Sem faixa própria: usam a referência de Barueri | Aviso na tela ("Referência de Barueri: …") |
 | Taxa de personal externo (Ironberg R$ 1.000/mês, Arena 18 R$ 400/mês, pagas pelo profissional) | Campo `personal_externo` das fichas, com a fonte de cada uma | Texto e pergunta frequente; não entra na faixa |
 | Preços reais de personais da região | O guia não tem nenhum coletado | A seção "De onde vêm as faixas" diz isso |

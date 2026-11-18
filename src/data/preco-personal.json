@@ -1,5 +1,5 @@
 {
-  "nota": "Faixas de REFERÊNCIA EDITORIAL, não pesquisa de preços praticados. Origem: estimativas editoriais por perfil de cidade do portal Personal por Perto (personalporperto.com.br/ferramentas/calculadora-preco-personal/), informadas pelo Renato em 18/11/2026. Não há amostra. Nunca chamar de preço médio. Quando o guia coletar preços reais (com data e fonte), trocar aqui e dizer quantos são e de quando. Ajuste de 18/11/2026, informado pelo Montinho Personal Trainer (que atende na região): teto da aula avulsa em R$ 300 em todos os locais e piso do online em R$ 110 por mês.",
+  "nota": "Faixas de REFERÊNCIA EDITORIAL, não pesquisa de preços praticados. Origem: estimativas editoriais por perfil de cidade do portal Personal por Perto (personalporperto.com.br/ferramentas/calculadora-preco-personal/), informadas pelo Renato em 18/11/2026. Não há amostra. Nunca chamar de preço médio. Quando o guia coletar preços reais (com data e fonte), trocar aqui e dizer quantos são e de quando. Ajuste de 18/11/2026, informado pelo Montinho Personal Trainer (que atende na região): teto da aula avulsa em R$ 300 e piso do online em R$ 110 por mês em Alphaville, Tamboré, Aldeia da Serra e Santana de Parnaíba. O Centro de Barueri ficou com a faixa original, a pedido dele.",
   "origem": "Personal por Perto (estimativa editorial por perfil de cidade), com teto da aula avulsa e piso do online ajustados pelo Montinho Personal Trainer",
   "url": "https://www.personalporperto.com.br/ferramentas/calculadora-preco-personal/",
   "registrado_em": "2026-11-18",
@@ -28,6 +28,21 @@
       "nome": "Barueri",
       "avulsa": [
         90,
+        220
+      ],
+      "mensal": [
+        450,
+        1300
+      ],
+      "online": [
+        200,
+        500
+      ]
+    },
+    "santana-de-parnaiba": {
+      "nome": "Santana de Parnaíba",
+      "avulsa": [
+        90,
         300
       ],
       "mensal": [
@@ -39,8 +54,8 @@
         500
       ]
     },
-    "santana-de-parnaiba": {
-      "nome": "Santana de Parnaíba",
+    "barueri-entorno": {
+      "nome": "Barueri",
       "avulsa": [
         90,
         300
@@ -64,14 +79,14 @@
     {
       "id": "tambore",
       "nome": "Tamboré",
-      "base": "barueri",
-      "motivo": "sem faixa própria; Tamboré fica em Barueri"
+      "base": "barueri-entorno",
+      "motivo": "sem faixa própria; Tamboré fica em Barueri. Aula avulsa até R$ 300 e online a partir de R$ 110, limites informados pelo Montinho"
     },
     {
       "id": "aldeia-da-serra",
       "nome": "Aldeia da Serra",
-      "base": "barueri",
-      "motivo": "sem faixa própria; a Aldeia da Serra se divide entre Barueri e Santana de Parnaíba, que têm a mesma faixa presencial"
+      "base": "barueri-entorno",
+      "motivo": "sem faixa própria; a Aldeia da Serra se divide entre Barueri e Santana de Parnaíba, que têm a mesma faixa presencial. Aula avulsa até R$ 300 e online a partir de R$ 110, limites informados pelo Montinho"
     },
     {
       "id": "barueri-centro",
