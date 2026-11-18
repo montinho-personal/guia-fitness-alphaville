@@ -2,7 +2,7 @@
 // o próximo passo de quem está lendo, já abertas com o que a página sabe (academia, região, modalidade).
 // Lógica pura, sem Astro, para servir a GuiaPagina e às páginas .astro.
 
-export type FerramentaId = 'custo' | 'personal' | 'beneficio' | 'teste' | 'comparador' | 'checklist' | 'mapa' | 'abertas' | 'diaria' | 'preco' | 'formato' | 'hyrox';
+export type FerramentaId = 'custo' | 'personal' | 'beneficio' | 'teste' | 'comparador' | 'checklist' | 'mapa' | 'abertas' | 'diaria' | 'preco' | 'formato' | 'hyrox' | 'condominio';
 export type RegiaoId = 'alphaville' | 'barueri' | 'santana-de-parnaiba';
 
 export interface Ferramenta { id: FerramentaId; titulo: string; texto: string; href: string; rotulo: string; }
@@ -19,6 +19,7 @@ const BASE: Record<FerramentaId, { path: string; rotulo: string }> = {
   preco: { path: '/ferramentas/calculadora-preco-personal-alphaville/', rotulo: 'Preço de personal' },
   formato: { path: '/ferramentas/personal-presencial-ou-online/', rotulo: 'Presencial ou online' },
   hyrox: { path: '/ferramentas/calculadora-hyrox/', rotulo: 'Calculadora Hyrox' },
+  condominio: { path: '/ferramentas/treino-academia-do-condominio/', rotulo: 'Treino no condomínio' },
   diaria: { path: '/ferramentas/academias-diaria-aula-experimental-alphaville/', rotulo: 'Diária e aula experimental' },
 };
 
@@ -98,13 +99,13 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
     case 'domicilio':
       return [
         preco('domicilio'),
-        f('custo', 'Aula em casa ou academia: compare o custo', 'Ponha lado a lado o personal em casa e a academia com personal, com deslocamento e taxas.', { personal: '1', de: 'artigo' }),
+        f('condominio', 'O que dá para treinar em casa com o que você tem', 'Marque halteres, banco, elásticos e o que mais tiver: o simulador mostra o que cobre e o que falta.', { local: 'casa' }),
         f('formato', 'Em casa ou online: faça o teste', 'Nove perguntas sobre rotina, espaço e experiência para saber se o presencial em casa vale a pena para você.'),
       ];
     case 'condominio':
       return [
+        f('condominio', 'O que dá para treinar na academia do seu prédio', 'Marque os equipamentos e veja os movimentos cobertos, o que falta e como dividir a semana.'),
         preco('condominio'),
-        f('custo', 'Condomínio ou academia: quanto custa cada um', 'A calculadora tem a opção de treinar no condomínio e compara com academias da região.', { personal: '1', de: 'artigo' }),
         f('personal', `Academias${em} que aceitam o seu personal`, 'Para os dias em que o espaço do prédio não basta: quem aceita, cadastro e taxa.', { reg: c.regiao }),
       ];
     case 'modalidade': {
