@@ -49,7 +49,7 @@ export async function GET() {
     { t: 'Qual academia combina com você', u: '/ferramentas/qual-academia/', c: 'Ferramenta', d: 'Teste de cinco perguntas.', k: 'teste quiz escolher' },
     { t: 'Academias que aceitam personal externo', u: '/ferramentas/academias-que-aceitam-personal-externo/', c: 'Ferramenta', d: 'Quem aceita, cadastro e quem paga a taxa, por academia.', k: 'personal externo levar meu personal taxa cadastro aceita' },
     { t: 'Calculadora de custo para treinar', u: '/ferramentas/custo-para-treinar-em-alphaville/', c: 'Ferramenta', d: 'Mensalidade, estacionamento e personal por mês e por ida.', k: 'quanto custa preço gasto calculadora simulador personal condomínio' },
-    { t: 'Checklist de visita à academia', u: '/ferramentas/checklist/', c: 'Ferramenta', d: '22 pontos para conferir na visita.', k: 'checklist visita' },
+    { t: 'Checklist de visita à academia', u: '/ferramentas/checklist/', c: 'Ferramenta', d: '27 pontos para conferir na visita.', k: 'checklist visita' },
     { t: 'Modalidades', u: '/modalidades/', c: 'Página', d: 'Musculação, CrossFit, Hyrox, lutas, dança e outras.', k: 'modalidade aula' },
     { t: 'Todos os guias', u: '/guias/', c: 'Página', d: 'Guias de decisão, personal trainer por região, tema e academia.', k: 'artigos blog' },
     { t: 'Sobre o guia e quem o mantém', u: '/sobre/', c: 'Institucional', d: 'Quem faz o guia e como ele se sustenta.', k: 'montinho contato quem somos' },

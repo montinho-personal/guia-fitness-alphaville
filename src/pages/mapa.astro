@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import { academias, paraFerramentas, REGIOES } from '../lib/dados';
 const todas = await academias();
 const dados = paraFerramentas(todas).map(({ id, nome, url, geo, bairro, horario, tipo }) => ({ id, nome, url, geo, bairro, horario, tipo }));
+const porBairro = Object.entries(todas.reduce((m, a) => { m[a.data.bairro] = (m[a.data.bairro] ?? 0) + 1; return m; }, {} as Record<string, number>)).sort((x, y) => y[1] - x[1]).slice(0, 3);
 ---
 <Base titulo="Mapa de academias de Alphaville e região" descricao="Mapa das academias, boxes e estúdios com ficha no guia, em Alphaville, Tamboré, Barueri e Santana de Parnaíba, com a lista de endereços por região." migalhas={[{ nome: 'Mapa', url: '/mapa/' }]}>
   <div class="wrap">
@@ -19,6 +20,7 @@ const dados = paraFerramentas(todas).map(({ id, nome, url, geo, bairro, horario,
       </div>
     </div>
     <p style="font-size:14px;color:var(--cinza)">As posições vêm das coordenadas publicadas pelos agregadores para cada unidade e podem ter alguns metros de erro.</p>
+    <p>Em Alphaville, a maior parte das academias com ficha no guia fica no Alphaville Industrial; o Alphaville Comercial e Tamboré também concentram unidades. Os bairros com mais academias no guia são {porBairro.map(([b, n]) => `${b} (${n})`).join(', ')}. Para filtrar por horário, modalidade ou plano, use o <a href="/academias/">guia de academias</a>, o <a href="/ferramentas/comparador/">comparador</a> ou o <a href="/academias/wellhub-totalpass/">buscador de Wellhub e TotalPass</a>.</p>
 
     {Object.entries(REGIOES).map(([id, r]) => (
       <section class="bloco fino" aria-labelledby={`r-${id}`}>
