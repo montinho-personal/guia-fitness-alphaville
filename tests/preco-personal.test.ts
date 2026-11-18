@@ -31,6 +31,8 @@ test('online é mensal e não muda com a frequência', () => {
 test('fallback nunca é silencioso: Tamboré e Aldeia usam a referência de Barueri e dizem isso', () => {
   for (const l of ['tambore', 'aldeia-da-serra']) { const r = calcular(D, l, 'condominio', 3); assert.equal(r.fallback, true); assert.deepEqual(r.mes, [450, 1300]); assert.match(r.memoria[0], /referência de Barueri/); }
   const c = calcular(D, 'barueri-centro', 'academia', 2); assert.deepEqual(c.mes, [450, 1300]);
+  assert.deepEqual(c.avulsa, [90, 220]); assert.deepEqual(calcular(D, 'barueri-centro', 'online', 2).mes, [200, 500]);
+  assert.deepEqual(calcular(D, 'tambore', 'academia', 2).avulsa, [90, 300]); assert.deepEqual(calcular(D, 'tambore', 'online', 2).mes, [110, 500]);
   assert.equal(calcular(D, 'alphaville', 'academia', 2).fallback, false);
 });
 test('memória de cálculo sai linha a linha', () => {
