@@ -1,0 +1,20 @@
+{
+  "nota": "Faixas de REFERÊNCIA EDITORIAL, não pesquisa de preços praticados. Origem: estimativas editoriais por perfil de cidade do portal Personal por Perto (personalporperto.com.br/ferramentas/calculadora-preco-personal/), informadas pelo Renato em 18/11/2026. Não há amostra. Nunca chamar de preço médio. Quando o guia coletar preços reais (com data e fonte), trocar aqui e dizer quantos são e de quando.",
+  "origem": "Personal por Perto (estimativa editorial por perfil de cidade)",
+  "url": "https://www.personalporperto.com.br/ferramentas/calculadora-preco-personal/",
+  "registrado_em": "2026-11-18",
+  "pacote_frequencias": [2, 3],
+  "sessoes_base_pacote": 11,
+  "bases": {
+    "alphaville": { "nome": "Alphaville", "avulsa": [100, 250], "mensal": [500, 1500], "online": [220, 550] },
+    "barueri": { "nome": "Barueri", "avulsa": [90, 220], "mensal": [450, 1300], "online": [200, 500] },
+    "santana-de-parnaiba": { "nome": "Santana de Parnaíba", "avulsa": [90, 220], "mensal": [450, 1300], "online": [190, 500] }
+  },
+  "locais": [
+    { "id": "alphaville", "nome": "Alphaville", "base": "alphaville" },
+    { "id": "tambore", "nome": "Tamboré", "base": "barueri", "motivo": "sem faixa própria; Tamboré fica em Barueri" },
+    { "id": "aldeia-da-serra", "nome": "Aldeia da Serra", "base": "barueri", "motivo": "sem faixa própria; a Aldeia da Serra se divide entre Barueri e Santana de Parnaíba, que têm a mesma faixa presencial" },
+    { "id": "barueri-centro", "nome": "Centro de Barueri", "base": "barueri" },
+    { "id": "santana-de-parnaiba", "nome": "Santana de Parnaíba", "base": "santana-de-parnaiba" }
+  ]
+}

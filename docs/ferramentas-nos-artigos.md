@@ -35,3 +35,5 @@ Criado em 18/11/2026, a pedido do Renato: cada artigo leva às ferramentas que r
 ## Página nova
 
 Ao criar um tipo de página novo, inclua o caso em `ferramentasPara` e confira o bloco no celular (360 px). Ferramenta nova: inclua em `BASE` e nos casos em que ela resolve o próximo passo do leitor.
+
+Atualização de 18/11/2026: as páginas de personal (cidade, público, domicílio, condomínio) e "academia ou personal" passaram a levar à calculadora de preço de personal, já com o local e o formato da página.

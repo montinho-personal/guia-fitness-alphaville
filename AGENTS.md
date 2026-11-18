@@ -7,7 +7,7 @@ Leia também o `CLAUDE.md` (pesquisa no SerpApi: aparelho, região, cota, evidê
 - **Fato só com fonte:** site oficial ou dois veículos independentes. Wellhub e TotalPass valem para endereço, horário, comodidades e plano mínimo. Print e visão de IA do Google **não são fonte**: dizem o que as pessoas perguntam.
 - **Nunca citar CREF, CONFEF nem "conselho regional/federal de Educação Física".**
 - **Nada sobre Alpha DL nem sobre o site "Viver em Alphaville".**
-- **Sem preço de personal** que não possa ser conferido; sem promessa de resultado; saúde de idoso e gestante sempre com liberação médica.
+- **Sem preço de personal** que não possa ser conferido (exceção, pedido do Renato em 18/11/2026: a calculadora de preço de personal usa faixas de **referência editorial**, sempre rotuladas assim, nunca "preço médio" nem valor exato; ver `docs/calculadora-preco-personal.md`); sem promessa de resultado; saúde de idoso e gestante sempre com liberação médica.
 - **Transparência:** o guia é mantido pelo Montinho Personal Trainer; o bloco dele é publicidade e isso aparece no texto. Ele só atende na Arena 18 entre as academias; nunca dizer que atende em outra.
 - **Tom:** português do Brasil, frases curtas, sem jargão, sem emojis.
 - **Canibalização:** antes de escrever, conferir no acervo (slug, título e páginas, com hífen e acento normalizados) se já existe página para a busca. Se existir, o tema vira seção ou FAQ dela.
