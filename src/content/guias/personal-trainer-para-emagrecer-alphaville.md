@@ -2,7 +2,7 @@
 titulo: "Personal trainer para emagrecer em Alphaville: como escolher"
 descricao: "Personal para emagrecer em Alphaville: o que o treino acompanhado resolve, o papel da nutricionista e academias perto do trabalho e abertas no domingo."
 h1: "Personal trainer para emagrecer em Alphaville"
-resposta: "Em Alphaville, quem quer emagrecer com personal costuma ganhar mais escolhendo um lugar no caminho entre casa e escritório do que procurando um treino especial. Arena 18 e Bodytech Iguatemi listam nutricionista na ficha, e várias academias do Industrial abrem cedo e fecham tarde. O treino e a constância são tarefa do personal, enquanto cardápio é assunto de nutricionista."
+resposta: "Para emagrecer com personal em Alphaville, junte três coisas: um profissional que planeje o treino e cobre a frequência, uma nutricionista para o cardápio e uma academia no caminho entre casa e trabalho que aceite personal de fora. Smart Fit, Bluefit, Ironberg e Arena 18 publicam ou informam a regra; Arena 18 e Bodytech Iguatemi listam nutricionista na ficha."
 cluster: D
 secao: guias
 palavra_chave: personal trainer para emagrecer alphaville
@@ -21,6 +21,13 @@ fontes:
 vitrine:
   destaque: adriana-nascimento
   intro: "Estes são alunos do Montinho que emagreceram treinando com ele. Cada história partiu de um ponto diferente e mostra um resultado individual, não uma meta para copiar."
+perguntas:
+  - p: "Quanto custa personal trainer para emagrecer em Alphaville?"
+    r: "O guia não publica preço de personal que não consegue conferir. O valor depende da experiência do profissional, do local e de quantas aulas por semana, e o objetivo de emagrecer não muda a conta. Compare o total do mês de duas ou três propostas e pergunte se a taxa que a academia cobra do profissional está incluída. A calculadora de custo soma mensalidade, deslocamento e personal."
+  - p: "Personal ou nutricionista: qual procurar primeiro?"
+    r: "Os dois cuidam de partes diferentes e funcionam melhor juntos. O personal planeja e acompanha o treino; cardápio, quantidades e suplementação são da nutricionista. Se for começar por um só, escolha o que você tem mais chance de manter; academias como Arena 18 e Bodytech Iguatemi têm nutricionista no mesmo endereço."
+  - p: "Onde encontrar personal trainer para emagrecer em Alphaville?"
+    r: "O guia não mantém lista de personal trainers. Peça indicação na academia onde você treina ou na administração do condomínio e converse com dois ou três antes de fechar. O Montinho, que mantém este guia, atende em Alphaville; o quadro dele ao pé da página é anúncio."
 video:
   id: Dg8Sbv6_V8w
   titulo: "Meu maior conselho para quem quer emagrecer"
@@ -30,7 +37,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
-atualizado_em: 2026-11-15
+atualizado_em: 2026-11-18
 ---
 
 > **Transparência.** Este conteúdo é publicado pelo Montinho, que atua como personal em Alphaville, e o quadro assinado por ele ao pé da página é anúncio.
@@ -60,7 +67,26 @@ Para quem trabalha no Industrial ou no Empresarial, treinar antes ou depois do e
 - **Academia Scelta**, no Empresarial, abre às 5h30 e lista estacionamento e fisioterapeuta;
 - **Academia Gaviões 24h** não fecha em nenhum dia da semana.
 
-Quem já escolheu um profissional deve perguntar à recepção se gente de fora pode dar aula ali e em que condições. Cada academia tem a sua regra.
+## Onde o seu personal pode dar aula
+
+Se o personal não é funcionário da academia, a academia precisa aceitar a entrada dele. Em Alphaville, as regras que o guia conseguiu conferir são estas:
+
+- **Smart Fit Sodimac:** a rede avalia o pedido; se autorizar, o personal se cadastra e assina um contrato de uso das instalações, e só atende alunos matriculados na Smart Fit;
+- **Bluefit Alphaville:** cadastro na unidade, e o personal contrata o plano da rede destinado a personal;
+- **Ironberg Alphaville:** cadastro e taxa fixa de R$ 1.000 por mês, paga pelo profissional;
+- **Arena 18:** cadastro e taxa de R$ 400 por mês, paga pelo profissional. O Montinho, que mantém este guia, dá aulas lá.
+
+Bodytech Iguatemi e Gaviões 24h ainda não têm regra conferida: pergunte na recepção. A lista completa, com a fonte de cada unidade, está em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/).
+
+## Como escolher o personal para emagrecer
+
+Antes de fechar, observe se o profissional:
+
+- começa com uma conversa sobre rotina, histórico e o que já deu errado, além das medidas;
+- propõe metas que você controla, como número de treinos na semana, e não só quilos na balança;
+- mede sempre nas mesmas condições e mostra a evolução de tempos em tempos;
+- encaminha para a nutricionista quando o assunto é cardápio;
+- tem horário disponível no período em que você consegue treinar de verdade.
 
 ## Bioimpedância: um dado, não um veredito
 
@@ -74,4 +100,4 @@ Arena 18, Bluefit Alphaville, Smart Fit Sodimac e Academia 24h Premium informam 
 
 Sábado e domingo são os dias em que a rotina mais escorrega. Várias academias da região abrem no domingo pela manhã, como Smart Fit Sodimac e VoiFit; a Arena 18 vai até as 18h. Confira as demais na [lista de domingo do guia](/academias/domingo/).
 
-Ainda sem certeza de que precisa de alguém acompanhando? A comparação [vale mais a academia sozinho ou o personal?](/guias/academia-ou-personal/) ajuda a decidir, e o retrato geral da região fica na [página de personal em Alphaville](/guias/personal-trainer-alphaville/).
+Ainda sem certeza de que precisa de alguém acompanhando? A comparação [vale mais a academia sozinho ou o personal?](/guias/academia-ou-personal/) ajuda a decidir, e o retrato geral da região fica na [página de personal em Alphaville](/guias/personal-trainer-alphaville/). Para pôr na conta a mensalidade, o deslocamento e o personal, use a [calculadora de custo](/ferramentas/custo-para-treinar-em-alphaville/?personal=1).

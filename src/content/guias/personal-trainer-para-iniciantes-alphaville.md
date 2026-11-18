@@ -18,6 +18,13 @@ fontes:
     url: "https://guiafitnessalphaville.com.br/academias/blacksheep-alphaville/"
   - titulo: "Ficha da Ironberg Alphaville no Guia Fitness Alphaville"
     url: "https://guiafitnessalphaville.com.br/academias/ironberg-alphaville/"
+perguntas:
+  - p: "Vale a pena pagar personal trainer sendo iniciante?"
+    r: "Costuma valer nos primeiros meses, quando a técnica ainda é fraca e o hábito ainda não existe. O personal ensina a execução, ajusta a carga e vira um compromisso fixo na agenda. Depois, muita gente segue sozinha e volta ao profissional para revisar o treino. A comparação completa está no guia academia ou personal."
+  - p: "Quanto custa um personal trainer 3 vezes por semana em Alphaville?"
+    r: "O guia não publica preço de personal que não consegue conferir. Três sessões por semana dão cerca de doze aulas no mês, e o valor por aula costuma cair em pacotes com mais aulas. Pergunte o que entra no preço (avaliação, reposição de faltas, taxa da academia) e use a calculadora de custo para somar a mensalidade da academia."
+  - p: "Como é a primeira aula com personal?"
+    r: "Em geral, uma conversa sobre rotina, histórico de dores e objetivo, algumas medidas e testes simples de mobilidade e força, e um primeiro treino leve para aprender os movimentos básicos. A carga sobe nas semanas seguintes, conforme a execução fica segura."
 video:
   id: yqPAYRVTe0E
   titulo: "Não existe o treino perfeito"
@@ -27,7 +34,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
-atualizado_em: 2026-11-15
+atualizado_em: 2026-11-18
 ---
 
 > **Transparência.** Quem escreve e cuida deste guia trabalha como personal em Alphaville: o Montinho. Ao final aparece um anúncio dele, e é só lá que ele se oferece. O conteúdo vale para quem for começar com outro profissional também.
@@ -41,6 +48,16 @@ O outro aprendizado é a constância. No começo, a vontade é grande e a técni
 ![Antes e depois do Montinho, personal trainer para iniciantes em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
 
 *A transformação do Montinho, responsável por este guia. Cada corpo responde no próprio ritmo.*
+
+## Como são as primeiras semanas
+
+O começo com personal costuma seguir três etapas:
+
+1. **Avaliação.** Conversa sobre rotina, histórico de dores e objetivo, algumas medidas e testes simples de mobilidade e força.
+2. **Adaptação.** Nas primeiras semanas, o treino tem poucos exercícios, carga baixa e foco em aprender os movimentos. Articulações e músculos se acostumam ao esforço antes de a intensidade subir.
+3. **Progressão.** Com a execução segura, a carga e o volume sobem aos poucos, e o treino passa a seguir o seu objetivo: emagrecer, ganhar força ou cuidar da saúde.
+
+O treino pode acontecer na academia, em estúdio, no condomínio ou em casa. Para quem nunca treinou, o acompanhamento presencial nas primeiras semanas ajuda a corrigir a execução na hora.
 
 ## Testar antes de assinar
 
@@ -58,7 +75,7 @@ O professor do salão esclarece dúvidas e monta uma ficha, mas cuida de muita g
 
 ## Levar o personal para a academia
 
-Se a academia já está escolhida, confirme se ela deixa um personal de fora trabalhar ali. Entre as academias com ficha, só a **Ironberg** deixa a regra pública: o profissional de fora acerta com a academia um valor fixo, revelado apenas na unidade. Para as outras, só perguntando no balcão.
+Se a academia já está escolhida, confirme se ela deixa um personal de fora trabalhar ali. Em Alphaville, a **Smart Fit** avalia o pedido e exige cadastro e contrato do profissional; a **Bluefit** pede cadastro e um plano próprio para personal; a **Ironberg** cobra do profissional R$ 1.000 por mês; e a **Arena 18**, R$ 400 por mês, também pagos pelo profissional. Pergunte se essa taxa entra no preço que o personal cobra de você. A regra de cada unidade, com a fonte, está em [academias que aceitam personal externo](/ferramentas/academias-que-aceitam-personal-externo/).
 
 **Relação comercial:** o Montinho dá aulas na Arena 18, localizada no Melville Empresarial.
 
@@ -78,4 +95,4 @@ Sinais de que dá para ganhar autonomia:
 - sabe subir a carga quando o exercício fica fácil;
 - treina mesmo nas semanas sem sessão marcada.
 
-A página [personal trainer em Alphaville](/guias/personal-trainer-alphaville/) mostra os lugares onde o treino acompanhado acontece na cidade. Mensalidades anunciadas pelas academias ficam reunidas em [preços](/academias/precos/).
+A página [personal trainer em Alphaville](/guias/personal-trainer-alphaville/) mostra os lugares onde o treino acompanhado acontece na cidade. Mensalidades anunciadas pelas academias ficam reunidas em [preços](/academias/precos/), e a [calculadora de custo](/ferramentas/custo-para-treinar-em-alphaville/?personal=1) soma academia e personal no mês.
