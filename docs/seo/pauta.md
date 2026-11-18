@@ -43,6 +43,8 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | "mensalidade ironberg/scelta alphaville" (busca de 18/11); "academia mais cara" já respondida em `/academias/precos/` | `/academias/precos/` e `/guias/academias-premium-alphaville/` | Scelta: só com mensalidade publicada na fonte (Ironberg já tem preço na ficha) |
 | ~~"academia 24h alphaville" (REL de 18/11)~~ | ~~`/academias/24-horas/`~~ | Já respondido: a resposta direta abre com a academia 24 horas; conferido em 18/11 |
 | Vivere Alpha, academia terapêutica e fisioterapia (REL de "personal trainer para iniciantes alphaville", 18/11) | ficha nova | Só com fonte oficial do lugar |
+| ~~"Quais os tipos de academias que existem?" (PAA de "ironberg ou nitrogym", 18/11)~~ | ~~`/guias/como-escolher-academia/`~~ | Feito em 18/11: seção "Que tipo de academia você procura" |
+| Black Belt Club, Calçada das Orquídeas (orgânico de "musculação alphaville", 18/11) | ficha nova | Só com fonte oficial do lugar |
 | "primeira vez na academia", "o que devo saber antes de entrar na academia" (PAA de 18/11) | `/ferramentas/checklist/` | FAQ feita; artigo próprio só se aparecer busca local |
 
 ## 3. Materiais para baixar
@@ -61,8 +63,8 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 | ~~1~~ | ~~2026-11-13~~ | ~~`/guias/academia-ou-personal/`~~ | ~~Academia ou personal trainer: como decidir~~ (revisado em 16/11, slug `academia-ou-personal`; título novo aprovado: "Academia ou personal trainer: diferença e quando vale a pena") |
 | ~~2~~ | ~~2026-11-13~~ | ~~`/guias/como-escolher-academia/`~~ | ~~Como escolher academia em Alphaville: 7 critérios~~ (revisado em 17/11, slug `como-escolher-academia`; título: proposta aguardando aprovação) |
 | ~~3~~ | ~~2026-11-13~~ | ~~`/guias/smart-fit-ou-gavioes/`~~ | ~~Smart Fit ou Gaviões em Alphaville: qual escolher~~ (revisado em 17/11, slug `smart-fit-ou-gavioes`; título mantido) |
-| 4 | 2026-11-13 | `/modalidades/musculacao/` | Musculação em Alphaville: onde treinar |
-| 5 | 2026-11-14 | `/guias/ironberg-ou-nitrogym/` | Ironberg ou NitroGym em Alphaville: qual escolher |
+| ~~4~~ | ~~2026-11-13~~ | ~~`/modalidades/musculacao/`~~ | ~~Musculação em Alphaville: onde treinar~~ (revisado em 18/11, SerpApi) |
+| ~~5~~ | ~~2026-11-14~~ | ~~`/guias/ironberg-ou-nitrogym/`~~ | ~~Ironberg ou NitroGym em Alphaville: qual escolher~~ (revisado em 18/11, SerpApi) |
 | 6 | 2026-11-15 | `/academias/perto-de/` | Academia perto do Iguatemi, Shopping Tamboré e estações |
 | 7 | 2026-11-15 | `/guias/academias-premium-alphaville/` | Academias premium em Alphaville: o que o preço maior compra |
 | 8 | 2026-11-15 | `/guias/categorias-do-hyrox/` | Categorias do Hyrox: Open, Pro, Doubles e Relay |
