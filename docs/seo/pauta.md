@@ -147,11 +147,11 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 
 | # | Página | Busca principal a testar |
 |---|---|---|
-| F1 | `/ferramentas/comparador/` | "comparar academias alphaville" |
-| F2 | `/ferramentas/qual-academia/` | "qual academia escolher" (São Paulo, assunto geral) |
-| F3 | `/ferramentas/checklist/` | "o que observar ao visitar academia" (São Paulo) |
-| F4 | `/mapa/` | "academias alphaville mapa" |
-| F5 | `/ferramentas/` | "ferramentas para escolher academia" (provável busca fraca; verificar antes de gastar) |
+| ~~F1~~ | ~~`/ferramentas/comparador/`~~ | ~~"comparar academias alphaville"~~ (feito 18/11) |
+| ~~F2~~ | ~~`/ferramentas/qual-academia/`~~ | ~~"qual academia escolher" (São Paulo, assunto geral)~~ (feito 18/11) |
+| ~~F3~~ | ~~`/ferramentas/checklist/`~~ | ~~"o que observar ao visitar academia" (São Paulo)~~ (feito 18/11) |
+| ~~F4~~ | ~~`/mapa/`~~ | ~~"academias alphaville mapa"~~ (feito 18/11) |
+| ~~F5~~ | ~~`/ferramentas/`~~ | ~~"ferramentas para escolher academia" (provável busca fraca; verificar antes de gastar)~~ (sem busca real, não pesquisada) |
 | ~~F6~~ | ~~`/ferramentas/academias-que-aceitam-personal-externo/`~~ | ~~criada com pesquisa em 17/11 (2 buscas)~~ |
 | ~~F7~~ | ~~`/academias/wellhub-totalpass/` (buscador)~~ | ~~refeita com pesquisa em 17/11 (2 buscas)~~ |
 | ~~F0~~ | ~~`/ferramentas/custo-para-treinar-em-alphaville/`~~ | ~~pesquisada em 17/11 (3 buscas)~~ |
