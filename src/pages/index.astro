@@ -1,6 +1,8 @@
 ---
 import { comDestaque as __comDestaque, academias as __academias } from '../lib/dados';
 import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import fotoCapa from '../assets/montinho/montinho-capa-home.jpg';
 import CartaoAcademia from '../components/CartaoAcademia.astro';
 import Ferramentas from '../components/Ferramentas.astro';
 import Mantem from '../components/Mantem.astro';
@@ -16,6 +18,8 @@ const porRegiao = (r: string) => todas.filter((a) => a.data.regiao === r).length
 // Data real da última conferência entre todas as fichas: é a prova da promessa "com fonte e data".
 const ultima = new Date(Math.max(...todas.flatMap((x) => x.data.proveniencia.map((pv) => pv.conferido_em.getTime()))));
 const ultimaIso = ultima.toISOString().slice(0, 10);
+// Capa com foto do Montinho (publicada em 18/11/2026, a pedido do Renato). PUBLIC_CAPA_COM_FOTO=false volta à capa só tipográfica.
+const CAPA_COM_FOTO = import.meta.env.PUBLIC_CAPA_COM_FOTO !== 'false';
 const ultimaCurta = ultimaIso.split('-').reverse().join('.');
 const mods = [...new Set(todas.flatMap((a) => a.data.modalidades))];
 const abs = (u: string) => new URL(u, Astro.site).href;
@@ -38,9 +42,10 @@ const __cartoesDestaque = __comDestaque(cartoes.filter((x): x is NonNullable<typ
 ---
 <Base titulo="Guia Fitness Alphaville: academias com fonte e data" descricao="Guia local de academias em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Endereço, horários e planos de cada uma, com a fonte e a data de conferência." schema={schema} semSufixo>
   <!-- Capa: cartaz tipográfico. A promessa do guia ("com fonte e data") vira o desenho: data real da última conferência e índice das regiões em números. -->
-  <section class="capa" aria-labelledby="capa-t">
+  <section class:list={['capa', { 'com-foto': CAPA_COM_FOTO }]} aria-labelledby="capa-t">
     <div class="wrap">
       <p class="capa-topo"><span>Guia local de academias</span><span class="capa-data">Conferido em <time datetime={ultimaIso}>{ultimaCurta}</time></span></p>
+      {CAPA_COM_FOTO && <figure class="capa-foto"><Image src={fotoCapa} alt="Montinho, personal trainer que mantém o guia, segurando um par de halteres na sala de musculação" widths={[480, 760, 1100]} sizes="(max-width: 899px) 100vw, 520px" loading="eager" fetchpriority="high" /><figcaption>Montinho, personal trainer que mantém este guia</figcaption></figure>}
       <h1 id="capa-t"><span>Onde treinar</span> <span>em Alphaville,</span> <em>com fonte e&nbsp;data.</em></h1>
       <div class="capa-meio">
         <p class="capa-sub">{todas.length} academias, boxes e estúdios em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Cada endereço, horário e plano mostra de onde veio e quando foi conferido.</p>
@@ -96,6 +101,15 @@ const __cartoesDestaque = __comDestaque(cartoes.filter((x): x is NonNullable<typ
     .capa-indice a:hover strong { text-decoration: underline; text-decoration-color: #FF6A00; text-underline-offset: 5px; }
     .capa-indice a:focus-visible { outline: 3px solid #FF6A00; outline-offset: -3px; }
     .capa-filtro { padding-top: 28px; padding-bottom: 28px; }
+    /* Versão com foto: preto e branco, sangrando à direita, com o título por cima. */
+    .com-foto .wrap { position: relative; }
+    .capa-foto { position: relative; margin: 0 -20px; height: 60vw; max-height: 360px; overflow: hidden; }
+    .capa-foto :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: 50% 10%; filter: grayscale(1) contrast(1.18) brightness(.92); display: block; }
+    .capa-foto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16,27,45,.15) 0%, rgba(16,27,45,0) 35%, rgba(16,27,45,.82) 78%, #101B2D 100%); }
+    .capa-foto figcaption { position: absolute; z-index: 2; left: 20px; top: 10px; font: 700 10px/1.2 var(--display); letter-spacing: .14em; text-transform: uppercase; color: #F5F1E8; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+    .com-foto .capa-topo { position: relative; z-index: 2; }
+    .com-foto h1 { position: relative; z-index: 2; margin-top: -1.3em; }
+    .com-foto .capa-meio, .com-foto .capa-indice { position: relative; z-index: 2; }
     @media (min-width: 900px) {
       .capa { padding-top: 30px; }
       .capa-meio { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: end; }
@@ -106,6 +120,15 @@ const __cartoesDestaque = __comDestaque(cartoes.filter((x): x is NonNullable<typ
       .capa-indice b { grid-area: n; font-size: clamp(84px, 8vw, 112px); }
       .capa-indice a > span { grid-area: t; }
       .capa-indice i { grid-area: s; font-size: 34px; }
+      .capa-foto { position: absolute; margin: 0; right: calc(50% - 50vw); top: 38px; width: calc(42% + 50vw - 50%); height: auto; bottom: 0; max-height: none; }
+      .capa-foto :global(img) { object-position: 50% 8%; }
+      .capa-foto::after { background: linear-gradient(90deg, #101B2D 0%, rgba(16,27,45,.55) 28%, rgba(16,27,45,0) 60%), linear-gradient(180deg, rgba(16,27,45,0) 55%, rgba(16,27,45,.9) 88%, #101B2D 100%); }
+      .capa-foto figcaption { left: 18px; top: 14px; white-space: nowrap; }
+      .com-foto h1 { margin-top: clamp(20px, 2.6vw, 34px); margin-bottom: clamp(16px, 2vw, 26px); font-size: clamp(42px, 13.2vw, 108px); }
+      .com-foto .capa-sub { font-size: 18px; }
+      .com-foto .capa-meio { padding-bottom: 26px; }
+      .com-foto .capa-busca { max-width: 520px; }
+      .com-foto .capa-meio { grid-template-columns: minmax(0, 1fr); max-width: 56%; gap: 18px; }
     }
     @media (prefers-reduced-motion: reduce) { .capa-indice i { transition: none; } }
   </style>
