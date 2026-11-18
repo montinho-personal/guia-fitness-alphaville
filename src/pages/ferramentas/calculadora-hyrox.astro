@@ -4,6 +4,7 @@
 import Base from '../../layouts/Base.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import { WHATSAPP, academias, urlAcademia, linkMontinho } from '../../lib/dados';
 import { carga, plano, porExtenso, relogio, FORMATOS, type DadosHyrox, type Divisao } from '../../lib/hyrox';
 import D0 from '../../data/hyrox.json';
@@ -152,6 +153,8 @@ const schema = [{ '@type': 'WebApplication', name: 'Calculadora Hyrox: pesos por
       <h2>Onde treinar para o Hyrox em Alphaville e região</h2>
       <p>Treinar para o Hyrox pede três coisas: lugar para correr, sala de força e os aparelhos das estações, como trenó, remo e SkiErg. {boxes.length > 0 && <>No guia, {boxes.length === 1 ? 'tem aula no formato da prova' : 'têm aula no formato da prova'}: {boxes.map((a, i) => <>{i > 0 && ', '}<a href={urlAcademia(a)}>{a.data.nome}</a></>)}. </>}As opções por lugar estão em <a href="/guias/hyrox-alphaville/">Hyrox em Alphaville</a>, <a href="/guias/hyrox-tambore/">no Tamboré</a> e <a href="/guias/hyrox-barueri/">em Barueri</a>. Para testar um box antes de fechar, veja quem tem <a href="/ferramentas/academias-diaria-aula-experimental-alphaville/?modo=teste" data-evento="clique_ferramenta" data-ref="diaria:calculadora-hyrox">diária e aula experimental</a>. Se a dúvida é por onde começar, leia <a href="/guias/como-treinar-para-o-primeiro-hyrox/">como treinar para o primeiro Hyrox</a>.</p>
     </div>
+
+    <VideoMontinho id="A-sB4wESQBY" titulo="Hyrox em 1 minuto: qual é a parte mais longa da prova?" pagina="calculadora-hyrox" />
 
     <Perguntas itens={perguntas} titulo="Perguntas sobre pesos e tempo do Hyrox" />
     <LeiaTambem url={URL_PAG} />

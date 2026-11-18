@@ -27,8 +27,8 @@ fontes:
   - titulo: "Site oficial da Crosslift Blacksheep (tabela de planos)"
     url: "https://www.crossliftblacksheep.com.br/"
 video:
-  id: CgPDOWBXh8k
-  titulo: "Eu pesava 40 kg a mais e achava que ia ser pra sempre"
+  id: A-sB4wESQBY
+  titulo: "Hyrox em 1 minuto: qual é a parte mais longa da prova?"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

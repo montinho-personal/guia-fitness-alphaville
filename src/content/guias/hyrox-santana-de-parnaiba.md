@@ -27,8 +27,8 @@ fontes:
   - titulo: "BlackSheep Alphaville no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/blacksheep-alphaville-alphaville-industrial-barueri/"
 video:
-  id: DiH1OzIR6Yk
-  titulo: "É impossível isso dar errado"
+  id: A-sB4wESQBY
+  titulo: "Hyrox em 1 minuto: qual é a parte mais longa da prova?"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

@@ -15,8 +15,8 @@ fontes:
   - titulo: "HYROX — The Fitness Race (site oficial)"
     url: "https://hyrox.com/the-fitness-race/"
 video:
-  id: yndKE1GrnUQ
-  titulo: "Toda pessoa com shape tem uma coisa em comum"
+  id: A-sB4wESQBY
+  titulo: "Hyrox em 1 minuto: qual é a parte mais longa da prova?"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa

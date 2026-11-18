@@ -29,8 +29,8 @@ fontes:
   - titulo: "Bodytech Iguatemi Alphaville no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/bodytech-iguatemi-alphaville/"
 video:
-  id: izMrrSoJGBw
-  titulo: "Raiva e sangue no olho"
+  id: A-sB4wESQBY
+  titulo: "Hyrox em 1 minuto: qual é a parte mais longa da prova?"
 status: publicado
 status_fatos: fonte-publica-conferida
 status_originalidade: original-sem-verificacao-externa
