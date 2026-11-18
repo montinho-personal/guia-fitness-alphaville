@@ -23,7 +23,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-17
-atualizado_em: 2026-11-17
+atualizado_em: 2026-11-18
 perguntas:
   - p: "Onde fazer treino funcional em Alphaville?"
     r: "Estúdio dedicado, a 4Perform, na Av. Copacabana, 325, no Empresarial 18 do Forte. Academias com aula de funcional: SkyFit e Gaviões 24h na Av. Juruá, VoiFit no 18 do Forte, Tecfit e BlackSheep na Alameda Araguaia, Jacó Fight Club no Tamboré e Arena 18 no Melville Empresarial."
@@ -37,6 +37,9 @@ perguntas:
     r: "A 4Perform fecha no domingo. Entre as academias com funcional, SkyFit, VoiFit e Arena 18 abrem no domingo, e a Gaviões 24h aparece aberta 24 horas no Wellhub; confira se há aula de funcional nesse dia."
   - p: "Treino funcional serve para iniciantes?"
     r: "Serve, desde que a intensidade e os exercícios sejam ajustados ao seu nível. Em turma grande, o professor tem menos tempo para corrigir cada aluno; em estúdio ou com personal, a correção é mais próxima. Se você tem dor ou lesão, procure orientação médica antes."
+video:
+  id: Mck7dwGz0as
+  titulo: "O aparelho está ocupado? O que fazer no lugar"
 ---
 
 > **Transparência.** Este guia é mantido pelo Montinho, personal trainer que atende em Alphaville, inclusive na Arena 18, citada abaixo. Os demais lugares não têm relação com ele, e o bloco dele no rodapé é publicidade.
@@ -46,6 +49,10 @@ perguntas:
 A [4Perform](/academias/4perform-alphaville/) fica no 1º andar da Av. Copacabana, 325, no Empresarial 18 do Forte, o mesmo prédio da SIX. É estúdio dedicado a treinamento funcional: o TotalPass lista funcional, circuito funcional e treinamento funcional. A estrutura informada é de alto padrão para um estúdio, com sauna, toalhas, manobrista e cadeira de massagem.
 
 Abre das 6h às 21h nos dias úteis e das 9h ao meio-dia no sábado; no domingo, fecha. No TotalPass, entra pelo TP 5, de R$ 399,90 por mês. A mensalidade direta e o formato das aulas, em turma ou individual, não aparecem na fonte; pergunte antes de ir.
+
+![Montinho, personal trainer que mantém este guia, em selfie no espelho da academia](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
+
+*Montinho, personal trainer que mantém este guia. Funcional e musculação se completam: quando o aparelho está ocupado, um movimento livre resolve.*
 
 ## Academias com funcional na grade
 

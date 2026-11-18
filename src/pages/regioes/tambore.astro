@@ -2,6 +2,9 @@
 import FerramentasContexto from '../../components/FerramentasContexto.astro';
 import { ferramentasPara, type RegiaoId } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import VideoMontinho from '../../components/VideoMontinho.astro';
+import fotoCostas from '../../assets/montinho/montinho-personal-trainer-costas.jpg';
 import CartaoAcademia from '../../components/CartaoAcademia.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Mantem from '../../components/Mantem.astro';
@@ -36,6 +39,7 @@ const perguntas = [
 ];
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 const ferramentas = ferramentasPara({ tipo: 'regiao', regiao: 'alphaville', lugar: 'Tamboré' });
+
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Regiões', url: '/regioes/' }, { nome: 'Alphaville e Tamboré', url: '/regioes/alphaville/' }, { nome: 'Tamboré', url: '/regioes/tambore/' }]}>
   <div class="wrap">
@@ -77,6 +81,8 @@ const ferramentas = ferramentasPara({ tipo: 'regiao', regiao: 'alphaville', luga
       <div class="cartoes">{lista.map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
 
+    <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={fotoCostas} alt="Montinho, personal trainer que mantém este guia, de costas em pose de duplo bíceps" widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">O Montinho, personal trainer que mantém este guia e atende no Tamboré. Publicidade da casa.</figcaption></figure>
+    <VideoMontinho id="xb1sP6z01-s" titulo="Não sentiu o músculo? Pump não é hipertrofia" pagina="regiao-tambore" />
     <FerramentasContexto itens={ferramentas} />
 
     <Perguntas itens={perguntas} titulo="Perguntas sobre academia no Tamboré" />

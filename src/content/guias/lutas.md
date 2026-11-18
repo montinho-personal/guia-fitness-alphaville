@@ -21,7 +21,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-16
-atualizado_em: 2026-11-17
+atualizado_em: 2026-11-18
 perguntas:
   - p: "Onde treinar jiu-jitsu em Alphaville?"
     r: "No lado de Alphaville e do Tamboré, as opções com ficha no guia são a Templo Jiu Jitsu Culture, no Mackenzie Mall da Av. Tucunaré; o Jacó Fight Club, na Av. Tucunaré, 955; a VoiFit, no Empresarial 18 do Forte; a 24h Premium, no Alphaville Industrial; e a Academia Scelta, na Av. Andrômeda, cujo jiu-jitsu aparece no TotalPass."
@@ -37,6 +37,9 @@ perguntas:
     r: "Entre os lugares com ficha no guia, o Studio Cathéo Fight, no Engenho Novo, em Barueri, e o Jacó Fight Club, na Av. Tucunaré, no Tamboré, listam MMA."
   - p: "Onde tem judô e krav magá na região?"
     r: "Judô, só no Studio Cathéo Fight, no Engenho Novo, em Barueri. Krav magá e hapkido, só no CT Guerreiros Fight Team, no Jardim Belval."
+video:
+  id: GPuqJs_DRoY
+  titulo: "O poder da disciplina: a sensação de dever feito"
 ---
 
 > **Transparência.** Este guia é mantido pelo Montinho, personal trainer da região. Ele não ensina luta e não tem relação com as escolas citadas; o bloco dele no fim da página é publicidade.
@@ -46,6 +49,10 @@ perguntas:
 São dois tipos de lugar. A **escola de luta** (ou CT) vive do tatame: tem professor da modalidade, turmas por horário e, em geral, graduação por faixa. A **academia completa** tem musculação e coloca a luta como uma aula a mais na grade. Para quem quer competir ou seguir a graduação do jiu-jitsu, a escola costuma ser o caminho. Para quem quer variar o treino e queimar energia duas vezes por semana, a academia resolve e ainda dá acesso à sala de musculação.
 
 Nas escolas, o horário publicado quase sempre é de turma, não de porta aberta. Chegar fora do horário da aula significa encontrar o tatame vazio. Vários cadastros no Wellhub avisam que é preciso agendar.
+
+![Montinho, personal trainer que mantém este guia, de costas em pose de duplo bíceps](../../assets/montinho/montinho-personal-trainer-costas.jpg)
+
+*Montinho, personal trainer que mantém este guia. Ele não dá aula de luta; a musculação costuma entrar como complemento do treino de quem luta.*
 
 ## Jiu-jitsu
 

@@ -29,7 +29,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-17
-atualizado_em: 2026-11-17
+atualizado_em: 2026-11-18
 perguntas:
   - p: "Onde fazer yoga em Alphaville?"
     r: "Estúdios com ficha no guia: Essência Prem, na Praça dos Gerânios, no Centro Comercial Alphaville, e Espaço Renata Sanches, no Alpha Square Mall, na Av. Sagitário. Entre as academias, SIX, Gaviões 24h e 24h Premium têm yoga na grade."
@@ -45,6 +45,9 @@ perguntas:
     r: "Nos estúdios, só de manhã no sábado: Essência Prem das 8h ao meio-dia e Espaço Renata Sanches das 10h ao meio-dia. No domingo, nenhum estúdio conferido tem horário confirmado; a SIX abre das 8h às 14h, mas confira se há aula de yoga."
   - p: "A Yoga Alphaville de Salvador ou de Nova Lima é a mesma?"
     r: "Não. Existem bairros Alphaville em outras cidades, como Salvador, Nova Lima e Florianópolis (Lagoa dos Ingleses). Este guia cobre o Alphaville de Barueri e Santana de Parnaíba, em São Paulo."
+video:
+  id: ILCXLmG2ucQ
+  titulo: "Mobilidade de inferiores: quadril, lombar e joelho"
 ---
 
 > **Transparência.** Este guia é mantido pelo Montinho, personal trainer de Alphaville. Ele não dá aula de yoga nem tem relação com os estúdios citados; o bloco dele no rodapé é publicidade.
@@ -56,6 +59,10 @@ O [Essência Prem](/academias/essencia-prem-alphaville/) fica na Praça dos Ger�
 O [Espaço Renata Sanches](/academias/espaco-renata-sanches-alphaville/) fica numa sala da Torre London, no Alpha Square Mall, na Av. Sagitário, 138, no lado residencial de Alphaville. Abre das 7h às 20h nos dias úteis e das 10h ao meio-dia no sábado, e o Wellhub avisa que é preciso reservar a aula com antecedência.
 
 Em Barueri, o [Yogar Barueri](/academias/yogar-barueri/) fica na Rua Damião Fernandes, 105, perto do centro. Dá aulas de hatha yoga e yoga restaurativa, um estilo mais lento, de segunda a quinta, a partir das 6h30 na terça e na quinta.
+
+![Montinho, personal trainer que mantém este guia, em frente ao espelho](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
+
+*Montinho, personal trainer que mantém este guia. Ele não dá aula de yoga; o vídeo abaixo traz exercícios de mobilidade que conversam com a prática.*
 
 ## Hot yoga e academias com aula de yoga
 
