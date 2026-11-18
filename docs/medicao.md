@@ -65,9 +65,9 @@ A calculadora não envia valores digitados nem dados de contato: só a origem da
 
 ## clique_ferramenta (18/11/2026)
 
-Clique nos atalhos e cartões de ferramenta dos artigos. `ref` = `<ferramenta>:atalho` ou `<ferramenta>:bloco` (ferramentas: custo, personal, beneficio, teste, comparador, checklist, mapa, abertas, diaria, preco, formato); `pagina` = caminho do artigo. Para ver no GA4 qual artigo mais leva às ferramentas, registre `ref` como dimensão personalizada.
+Clique nos atalhos e cartões de ferramenta dos artigos. `ref` = `<ferramenta>:atalho` ou `<ferramenta>:bloco` (ferramentas: custo, personal, beneficio, teste, comparador, checklist, mapa, abertas, diaria, preco, formato, hyrox); `pagina` = caminho do artigo. Para ver no GA4 qual artigo mais leva às ferramentas, registre `ref` como dimensão personalizada.
 
-Fora dos artigos: `ref` = `menu:diaria` (item em destaque no menu, celular e computador), `home:diaria` e `home:diaria-teste` (faixa logo abaixo da capa) e `rodape:<ferramenta>` (coluna Ferramentas do rodapé: diaria, abertas, preco, formato, comparador).
+Fora dos artigos: `ref` = `menu:diaria` (item em destaque no menu, celular e computador), `home:diaria` e `home:diaria-teste` (faixa logo abaixo da capa) e `rodape:<ferramenta>` (coluna Ferramentas do rodapé: diaria, abertas, preco, formato, hyrox, comparador).
 
 ## Academias abertas (18/11/2026)
 
@@ -108,3 +108,14 @@ Fora dos artigos: `ref` = `menu:diaria` (item em destaque no menu, celular e com
 | `formato_personal_refazer` | Clique em "Refazer o teste" | — |
 | `clique_whatsapp` | WhatsApp do Montinho no resultado (intenção de contato) | `ref` = `presencial-ou-online:<resultado>`; as respostas não são enviadas |
 | `clique_ferramenta` | Próximos passos (preço, personal externo, aula experimental) | `ref` = `preco:presencial-ou-online` etc. |
+
+## Calculadora Hyrox (18/11/2026)
+
+| Evento | Quando | Parâmetros |
+|---|---|---|
+| `hyrox_inicio` | Primeira interação com o formulário | — |
+| `hyrox_categoria` | Troca de formato ou divisão | `categoria` (id da divisão, ex.: `open-f`) |
+| `hyrox_plano` | Plano montado | `categoria`, `meta_min`, `ritmo_seg`, `personalizado` (0 ou 1) |
+| `hyrox_copiar`, `hyrox_imprimir` | Botões do resultado | — |
+| `clique_whatsapp` | WhatsApp do Montinho (intenção de contato) | `ref` = `calculadora-hyrox:plano` (depois do plano) ou `calculadora-hyrox:bloco` (cartão fixo) |
+| `clique_montinho` | Link para a página de preparação no site do Montinho | `ref` = `calculadora-hyrox` |

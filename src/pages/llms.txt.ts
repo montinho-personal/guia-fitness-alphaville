@@ -28,6 +28,7 @@ export const GET: APIRoute = async ({ site }) => {
 - [Beach tennis e futevôlei em Alphaville](${u('/guias/beach-tennis-futevolei-alphaville/')})
 - [Academias com diária e aula experimental: onde treinar sem matrícula e onde testar antes de contratar](${u('/ferramentas/academias-diaria-aula-experimental-alphaville/')})
 - [Calculadora de preço de personal trainer em Alphaville: faixa de referência editorial por aula e por mês](${u('/ferramentas/calculadora-preco-personal-alphaville/')})
+- [Calculadora Hyrox: pesos oficiais por categoria (Open, Pro, dupla, revezamento) e plano de prova por trecho](${u('/ferramentas/calculadora-hyrox/')})
 - [Personal trainer presencial ou online: teste de 9 perguntas com resultado explicado](${u('/ferramentas/personal-presencial-ou-online/')})
 - [Academias abertas aos domingos e 24h: buscador por dia, hora e duração do treino](${u('/ferramentas/academias-abertas-alphaville/')})
 - [Buscador de academias com Wellhub (Gympass) e TotalPass](${u('/academias/wellhub-totalpass/')})

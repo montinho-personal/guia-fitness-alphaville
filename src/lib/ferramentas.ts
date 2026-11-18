@@ -2,7 +2,7 @@
 // o próximo passo de quem está lendo, já abertas com o que a página sabe (academia, região, modalidade).
 // Lógica pura, sem Astro, para servir a GuiaPagina e às páginas .astro.
 
-export type FerramentaId = 'custo' | 'personal' | 'beneficio' | 'teste' | 'comparador' | 'checklist' | 'mapa' | 'abertas' | 'diaria' | 'preco' | 'formato';
+export type FerramentaId = 'custo' | 'personal' | 'beneficio' | 'teste' | 'comparador' | 'checklist' | 'mapa' | 'abertas' | 'diaria' | 'preco' | 'formato' | 'hyrox';
 export type RegiaoId = 'alphaville' | 'barueri' | 'santana-de-parnaiba';
 
 export interface Ferramenta { id: FerramentaId; titulo: string; texto: string; href: string; rotulo: string; }
@@ -18,6 +18,7 @@ const BASE: Record<FerramentaId, { path: string; rotulo: string }> = {
   abertas: { path: '/ferramentas/academias-abertas-alphaville/', rotulo: 'Academias abertas' },
   preco: { path: '/ferramentas/calculadora-preco-personal-alphaville/', rotulo: 'Preço de personal' },
   formato: { path: '/ferramentas/personal-presencial-ou-online/', rotulo: 'Presencial ou online' },
+  hyrox: { path: '/ferramentas/calculadora-hyrox/', rotulo: 'Calculadora Hyrox' },
   diaria: { path: '/ferramentas/academias-diaria-aula-experimental-alphaville/', rotulo: 'Diária e aula experimental' },
 };
 
@@ -108,6 +109,7 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       ];
     case 'modalidade': {
       const r: Ferramenta[] = [];
+      if (mod === 'hyrox') r.push(f('hyrox', 'Calculadora Hyrox: pesos e plano de prova', 'A carga de cada estação na sua categoria e o tempo que a sua meta deixa para cada trecho.'));
       if (mod && MODS_BUSCADOR.has(mod)) r.push(f('beneficio', `${c.modalidadeNome} pelo Wellhub ou TotalPass`, `Veja quais lugares liberam ${modN} no seu plano e o plano mínimo de cada um.`, { mod, reg: c.regiao }));
       if (mod && MODS_TESTE.has(mod)) r.push(f('teste', `Onde fazer ${modN} no seu horário`, `O teste já abre com ${modN} marcado: responda o resto e veja a lista.`, { modalidade: mod, regiao: c.regiao }));
       if (mod && MODS_DIARIA.has(mod)) r.push(diaria(`${c.modalidadeNome} sem matrícula: diária e aula experimental`, `Onde dá para fazer ${modN} pagando só o dia ou numa aula de teste, com o canal de cada lugar.`, { modo: 'teste' }));
@@ -117,9 +119,9 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
     }
     case 'hyrox':
       return [
+        f('hyrox', 'Calculadora Hyrox: pesos e plano de prova', 'Veja a carga de cada estação na sua categoria e quanto tempo a sua meta deixa para cada trecho.'),
         f('teste', `Onde treinar para o Hyrox${em}`, 'O teste abre com Hyrox marcado e cruza com horário e região.', { modalidade: 'hyrox', regiao: c.regiao }),
         diaria('Teste um box antes de fechar a preparação', 'Aula experimental, drop-in e diária nos boxes e academias da região, com preço e regras.', { modo: 'teste' }),
-        f('custo', 'Quanto custa a preparação por mês', 'Box, academia, personal e deslocamento no mesmo cálculo.', { de: 'artigo' }),
       ];
     case 'como-escolher':
       return [

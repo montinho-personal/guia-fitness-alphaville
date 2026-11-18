@@ -1,0 +1,28 @@
+{
+  "nota": "Cargas e distâncias das estações do HYROX, por divisão, como publicadas no site oficial. Alturas do alvo do Wall Ball, faixas etárias e divisões Pro de duplas não estavam na página conferida e por isso não entram.",
+  "fonte": "HYROX, The Fitness Race (site oficial)",
+  "url": "https://hyrox.com/the-fitness-race/",
+  "conferido_em": "2026-11-18",
+  "estacoes": [
+    { "id": "ski", "nome": "SkiErg", "medida": "1.000 m" },
+    { "id": "push", "nome": "Sled Push (empurrar o trenó)", "medida": "50 m (2 × 25 m)" },
+    { "id": "pull", "nome": "Sled Pull (puxar o trenó)", "medida": "50 m (2 × 25 m)" },
+    { "id": "burpee", "nome": "Burpee Broad Jump", "medida": "80 m" },
+    { "id": "remo", "nome": "Remo", "medida": "1.000 m" },
+    { "id": "farmers", "nome": "Farmers Carry", "medida": "200 m" },
+    { "id": "lunges", "nome": "Sandbag Lunges (avanço com saco)", "medida": "100 m" },
+    { "id": "wall", "nome": "Wall Balls", "medida": "100 repetições" }
+  ],
+  "divisoes": [
+    { "id": "open-f", "formato": "individual", "nome": "Open feminino", "push": "102 kg", "pull": "78 kg", "farmers": "2 × 16 kg", "lunges": "10 kg", "wall": "4 kg" },
+    { "id": "open-m", "formato": "individual", "nome": "Open masculino", "push": "152 kg", "pull": "103 kg", "farmers": "2 × 24 kg", "lunges": "20 kg", "wall": "6 kg" },
+    { "id": "pro-f", "formato": "individual", "nome": "Pro feminino", "push": "152 kg", "pull": "103 kg", "farmers": "2 × 24 kg", "lunges": "20 kg", "wall": "6 kg" },
+    { "id": "pro-m", "formato": "individual", "nome": "Pro masculino", "push": "202 kg", "pull": "153 kg", "farmers": "2 × 32 kg", "lunges": "30 kg", "wall": "9 kg" },
+    { "id": "dupla-f", "formato": "dupla", "nome": "Dupla feminina", "push": "102 kg", "pull": "78 kg", "farmers": "2 × 16 kg", "lunges": "10 kg", "wall": "4 kg" },
+    { "id": "dupla-m", "formato": "dupla", "nome": "Dupla masculina", "push": "152 kg", "pull": "103 kg", "farmers": "2 × 24 kg", "lunges": "20 kg", "wall": "6 kg" },
+    { "id": "dupla-mista", "formato": "dupla", "nome": "Dupla mista", "push": "152 kg", "pull": "103 kg", "farmers": "2 × 24 kg", "lunges": "20 kg", "wall": "6 kg" },
+    { "id": "rev-f", "formato": "revezamento", "nome": "Revezamento feminino", "push": "102 kg", "pull": "78 kg", "farmers": "2 × 16 kg", "lunges": "10 kg", "wall": "4 kg" },
+    { "id": "rev-m", "formato": "revezamento", "nome": "Revezamento masculino", "push": "152 kg", "pull": "103 kg", "farmers": "2 × 24 kg", "lunges": "20 kg", "wall": "6 kg" },
+    { "id": "rev-misto", "formato": "revezamento", "nome": "Revezamento misto", "push": "102 kg (mulheres) ou 152 kg (homens)", "pull": "78 kg (mulheres) ou 103 kg (homens)", "farmers": "2 × 16 kg (mulheres) ou 2 × 24 kg (homens)", "lunges": "10 kg (mulheres) ou 20 kg (homens)", "wall": "4 kg (mulheres) ou 6 kg (homens)" }
+  ]
+}
