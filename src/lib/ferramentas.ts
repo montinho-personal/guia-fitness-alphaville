@@ -2,7 +2,7 @@
 // o próximo passo de quem está lendo, já abertas com o que a página sabe (academia, região, modalidade).
 // Lógica pura, sem Astro, para servir a GuiaPagina e às páginas .astro.
 
-export type FerramentaId = 'custo' | 'personal' | 'beneficio' | 'teste' | 'comparador' | 'checklist' | 'mapa' | 'abertas' | 'diaria';
+export type FerramentaId = 'custo' | 'personal' | 'beneficio' | 'teste' | 'comparador' | 'checklist' | 'mapa' | 'abertas' | 'diaria' | 'preco';
 export type RegiaoId = 'alphaville' | 'barueri' | 'santana-de-parnaiba';
 
 export interface Ferramenta { id: FerramentaId; titulo: string; texto: string; href: string; rotulo: string; }
@@ -16,6 +16,7 @@ const BASE: Record<FerramentaId, { path: string; rotulo: string }> = {
   checklist: { path: '/ferramentas/checklist/', rotulo: 'Checklist' },
   mapa: { path: '/mapa/', rotulo: 'Mapa' },
   abertas: { path: '/ferramentas/academias-abertas-alphaville/', rotulo: 'Academias abertas' },
+  preco: { path: '/ferramentas/calculadora-preco-personal-alphaville/', rotulo: 'Preço de personal' },
   diaria: { path: '/ferramentas/academias-diaria-aula-experimental-alphaville/', rotulo: 'Diária e aula experimental' },
 };
 
@@ -53,6 +54,9 @@ export interface Contexto {
 /** Até 3 ferramentas, a primeira é a principal (vai também no atalho do topo). */
 export function ferramentasPara(c: Contexto): Ferramenta[] {
   const em = c.lugar ? ` ${['Tamboré'].includes(c.lugar) ? 'no' : c.lugar === 'Aldeia da Serra' ? 'na' : 'em'} ${c.lugar}` : '';
+  const LOCAL_PRECO: Record<string, string> = { Alphaville: 'alphaville', 'Tamboré': 'tambore', Barueri: 'barueri-centro', 'Santana de Parnaíba': 'santana-de-parnaiba', 'Aldeia da Serra': 'aldeia-da-serra' };
+  const localPreco = c.lugar ? LOCAL_PRECO[c.lugar] : undefined;
+  const preco = (formato?: string) => f('preco', `Quanto custa personal trainer${em}: calcule a faixa`, 'Faixa de referência por aula e por mês, com a conta aberta linha a linha.', { local: localPreco, formato });
   const mod = c.modalidade, modN = (c.modalidadeNome ?? '').toLowerCase();
   const pub = c.publico;
   switch (c.tipo) {
@@ -68,8 +72,8 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
     case 'personal-cidade':
       return [
         f('personal', `Academias${em} que aceitam personal externo`, 'Unidade por unidade: quem aceita, o que pede de cadastro e quem paga a taxa.', { reg: c.regiao }),
-        f('custo', 'Quanto custa treinar com personal por mês', 'Junte a mensalidade da academia e as aulas para ver o total real, sem surpresa.', { personal: '1', de: 'artigo' }),
-        f('teste', `Qual academia${em} combina com a sua rotina`, 'Cinco perguntas sobre horário, modalidade e estrutura, com o porquê de cada resultado.', { regiao: c.regiao }),
+        preco(),
+        f('custo', 'Some a mensalidade da academia', 'Junte a mensalidade da academia e as aulas para ver o total real, sem surpresa.', { personal: '1', de: 'artigo' }),
       ];
     case 'personal-publico': {
       const extra: Record<string, Ferramenta> = {
@@ -82,21 +86,21 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       };
       return [
         f('personal', `Onde o personal pode dar aula${em}`, 'As academias da região que aceitam profissional de fora, com cadastro e taxa conferidos.', { reg: c.regiao }),
-        f('custo', 'Simule o custo mensal: academia + personal', 'Mensalidade, taxas e aulas no mesmo cálculo, para comparar propostas.', { personal: '1', de: 'artigo' }),
+        preco(),
         extra[pub ?? ''] ?? f('teste', `Qual academia${em} combina com você`, 'Cinco perguntas e uma lista curta para visitar.', { regiao: c.regiao }),
       ];
     }
     case 'domicilio':
       return [
+        preco('domicilio'),
         f('custo', 'Aula em casa ou academia: compare o custo', 'Ponha lado a lado o personal em casa e a academia com personal, com deslocamento e taxas.', { personal: '1', de: 'artigo' }),
         f('personal', `Prefere uma academia${em}? Veja quais aceitam personal`, 'Se faltar espaço ou aparelho em casa, estas academias deixam o seu profissional atender.', { reg: c.regiao }),
-        f('mapa', `Academias perto de você${em}`, 'O mapa e a lista de endereços por região, para achar a mais próxima.'),
       ];
     case 'condominio':
       return [
+        preco('condominio'),
         f('custo', 'Condomínio ou academia: quanto custa cada um', 'A calculadora tem a opção de treinar no condomínio e compara com academias da região.', { personal: '1', de: 'artigo' }),
         f('personal', `Academias${em} que aceitam o seu personal`, 'Para os dias em que o espaço do prédio não basta: quem aceita, cadastro e taxa.', { reg: c.regiao }),
-        f('teste', `Qual academia${em} complementa o treino do prédio`, 'Escolha por horário, modalidade e estacionamento.', { regiao: c.regiao }),
       ];
     case 'modalidade': {
       const r: Ferramenta[] = [];
@@ -120,9 +124,9 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       ];
     case 'academia-ou-personal':
       return [
+        preco(),
         f('custo', 'Academia sozinho ou com personal: quanto muda', 'Simule as duas situações e veja a diferença por mês e por treino.', { personal: '1', de: 'artigo' }),
         f('personal', 'Quais academias aceitam personal de fora', 'Antes de contratar, confira se a sua academia deixa o profissional atender.'),
-        f('teste', 'Qual academia combina com a sua rotina', 'Se a decisão for treinar sozinho, comece por uma academia no seu caminho.'),
       ];
     case 'premium':
       return [

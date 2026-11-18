@@ -1,0 +1,199 @@
+---
+// Calculadora de preço de personal trainer em Alphaville e região.
+// Conta em src/lib/precoPersonal.ts; faixas de referência editorial em src/data/preco-personal.json.
+// Regras e origem dos números: docs/calculadora-preco-personal.md.
+import Base from '../../layouts/Base.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import Mantem from '../../components/Mantem.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import { academias, urlAcademia, dataLonga } from '../../lib/dados';
+import { calcular, faixaTxt, sessoesMes, FORMATOS, type Dados, type Formato } from '../../lib/precoPersonal';
+import { link } from '../../lib/ferramentas';
+import D0 from '../../data/preco-personal.json';
+
+const D = D0 as unknown as Dados;
+const URL_PAG = '/ferramentas/calculadora-preco-personal-alphaville/';
+const todas = await academias();
+// Taxas de personal externo com valor confirmado nas fichas (fonte oficial ou declarada na ficha).
+const taxas = todas.filter((a) => a.data.personal_externo?.taxa?.situacao === 'confirmada' && a.data.personal_externo.taxa.valor)
+  .map((a) => ({ a, t: a.data.personal_externo!.taxa!, pe: a.data.personal_externo! }));
+const ex = calcular(D, 'alphaville', 'condominio', 3);
+const freqs = [1, 2, 3, 4, 5];
+const revisado = new Date(`${D0.registrado_em}T12:00:00Z`);
+const titulo = 'Calculadora de preço de personal trainer em Alphaville';
+const descricao = 'Calcule a faixa de preço de personal trainer em Alphaville, Tamboré, Barueri e Santana de Parnaíba por aula e por mês, no condomínio, na academia, em casa ou online.';
+const perguntas = [
+  { p: 'Quanto custa treinar com personal em Alphaville?', r: `Pela referência editorial usada nesta calculadora, a aula avulsa fica entre ${faixaTxt(ex.avulsa!)} e o pacote mensal de 2 a 3 vezes por semana, entre ${faixaTxt(ex.mes)}. É uma ordem de grandeza por perfil de cidade, não uma pesquisa de preços: o valor real depende do profissional, do local e do que está incluído.` },
+  { p: 'Quanto custa um personal trainer 3 vezes por semana?', r: `Três vezes por semana dão cerca de ${sessoesMes(3)} sessões no mês (3 × 52 ÷ 12). Em Alphaville, a faixa de referência do pacote é de ${faixaTxt(ex.mes)} por mês. Em Barueri e Santana de Parnaíba, de ${faixaTxt(calcular(D, 'barueri-centro', 'academia', 3).mes)}.` },
+  { p: 'Personal trainer no condomínio custa mais caro?', r: 'A referência não separa condomínio de academia. O que muda é a conta em volta: no condomínio você não paga mensalidade de academia nem taxa de personal externo, mas o prédio pode exigir cadastro do profissional e ter regra de uso da sala. Confirme na administração antes de fechar.' },
+  { p: 'A academia cobra taxa do meu personal?', r: `Depende da academia. ${taxas.map((x) => `A ${x.a.data.nome} cobra ${x.t.valor} por mês, pagos pelo profissional`).join('; ')}. A taxa é do profissional, mas pode entrar no preço da aula: pergunte. A lista completa está na página de academias que aceitam personal externo.` },
+  { p: 'Personal online é mais barato que presencial?', r: `Costuma ser, e a cobrança é mensal, não por aula: ${faixaTxt(D.bases.alphaville.online)} por mês na referência de Alphaville. Não é o mesmo serviço: o presencial acompanha cada treino; o online entrega planejamento, ajustes e acompanhamento a distância.` },
+  { p: 'Vale a pena pagar um personal trainer?', r: 'Costuma valer para quem está começando, voltando de lesão, travado nos resultados ou sem constância. Para quem já treina com segurança e mantém a rotina, uma consultoria online ou revisões periódicas podem bastar. O guia academia ou personal ajuda a decidir.' },
+  { p: 'Quanto custa personal trainer na Smart Fit?', r: 'A Smart Fit não publica preço de personal. Pelas normas da rede, o profissional de fora precisa de autorização, cadastro e contrato com a rede, e só atende alunos matriculados. O valor da aula é combinado com o profissional.' },
+];
+const schema = [{ '@type': 'WebApplication', name: titulo, url: new URL(URL_PAG, Astro.site).href, applicationCategory: 'HealthApplication', operatingSystem: 'Web', inLanguage: 'pt-BR', offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' } }];
+---
+<Base titulo={titulo} descricao={descricao} schema={schema} migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Preço de personal', url: URL_PAG }]}>
+  <div class="wrap pp">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Ferramenta · faixa de referência editorial</span>
+      <h1>Calculadora de preço de personal trainer em Alphaville e região</h1>
+      <p class="linha-fina">Escolha o local, o formato e quantas vezes por semana. A calculadora mostra a faixa por aula e por mês e abre a conta, linha a linha. Sem cadastro.</p>
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Em Alphaville, a faixa de referência para personal trainer é de {faixaTxt(ex.avulsa!)} por aula avulsa e de {faixaTxt(ex.mes)} por mês no pacote de 2 a 3 vezes por semana; online, de {faixaTxt(D.bases.alphaville.online)} por mês. São referências editoriais por perfil de cidade, não preços pesquisados: servem para saber se uma proposta está dentro do esperado.</p>
+    </div>
+
+    <form class="pp-form nao-imprime" id="pp-form" aria-label="Calcular preço de personal">
+      <fieldset><legend class="rotulo">Onde</legend>
+        <div class="pp-ops">{D.locais.map((l, i) => <label class="pp-op"><input type="radio" name="local" value={l.id} checked={i === 0}><span>{l.nome}</span></label>)}</div>
+      </fieldset>
+      <fieldset><legend class="rotulo">Formato</legend>
+        <div class="pp-ops">{(Object.entries(FORMATOS) as [Formato, string][]).map(([k, v], i) => <label class="pp-op"><input type="radio" name="formato" value={k} checked={i === 0}><span>{v}</span></label>)}</div>
+      </fieldset>
+      <fieldset><legend class="rotulo">Vezes por semana</legend>
+        <div class="pp-ops">{freqs.map((f) => <label class="pp-op pp-op-n"><input type="radio" name="freq" value={f} checked={f === 3}><span>{f}×</span></label>)}</div>
+      </fieldset>
+      <noscript><p class="caixa">A calculadora precisa de JavaScript. As tabelas abaixo trazem as mesmas faixas.</p></noscript>
+    </form>
+
+    <section class="pp-res" id="pp-res" aria-live="polite" aria-labelledby="pp-res-t">
+      <h2 id="pp-res-t" class="pp-res-t">{ex.local.nome}, {FORMATOS[ex.formato].toLowerCase()}, {ex.freq}× por semana</h2>
+      <p class="pp-fonte" id="pp-origem">Referência editorial de {ex.base.nome}. Não é preço médio nem pesquisa de campo.</p>
+      <div class="pp-cartoes">
+        <div class="pp-cartao"><span class="rotulo">Por mês</span><strong id="pp-mes">{faixaTxt(ex.mes)}</strong><span id="pp-mes-n">cerca de {ex.sessoes} sessões no mês</span></div>
+        <div class="pp-cartao" id="pp-c-aula"><span class="rotulo">Por aula no pacote</span><strong id="pp-aula">{faixaTxt(ex.aulaPacote!)}</strong><span>dentro do pacote mensal</span></div>
+        <div class="pp-cartao" id="pp-c-avulsa"><span class="rotulo">Aula avulsa</span><strong id="pp-avulsa">{faixaTxt(ex.avulsa!)}</strong><span>sem pacote</span></div>
+      </div>
+      <p class="pp-aviso" id="pp-aviso" hidden></p>
+      <ul class="pp-volta" id="pp-volta">
+        <li>No condomínio não há mensalidade de academia nem taxa de personal externo. Confirme na administração se o profissional precisa de cadastro e se há regra de horário na sala.</li>
+      </ul>
+      <details class="pp-mem"><summary>Ver a conta, linha a linha</summary><ol id="pp-mem">{ex.memoria.map((l) => <li>{l}</li>)}</ol></details>
+      <p class="pp-acoes nao-imprime"><a class="btn peq" id="pp-custo" href={link('custo', { personal: '1', de: 'preco-personal' })} data-evento="clique_ferramenta" data-ref="custo:preco-personal">Somar com a mensalidade da academia</a> <a href={link('personal')} data-evento="clique_ferramenta" data-ref="personal:preco-personal">Academias que aceitam personal externo</a></p>
+    </section>
+
+    <section class="bloco fino"><Mantem pagina="preco-personal" compacta titulo="Quer o valor de verdade? Pergunte ao Montinho" texto="A calculadora dá a ordem de grandeza. O Montinho Personal Trainer, que mantém este guia, atende em Alphaville, Tamboré, Barueri e Santana de Parnaíba, no condomínio, em casa, na Arena 18 e online. O valor depende da frequência e do local: ele passa na conversa." /></section>
+
+    <div class="prosa">
+      <h2>Faixas de referência por local</h2>
+      <div class="rolagem" tabindex="0" role="region" aria-label="Faixas de referência por local">
+        <table class="dados pp-t">
+          <caption>Referência editorial registrada em {dataLonga(revisado)}. Presencial: pacote de 2 a 3 vezes por semana.</caption>
+          <thead><tr><th scope="col">Local</th><th scope="col">Aula avulsa</th><th scope="col">Pacote mensal</th><th scope="col">Online por mês</th><th scope="col">Faixa usada</th></tr></thead>
+          <tbody>{D.locais.map((l) => { const b = D.bases[l.base]; return <tr><th scope="row">{l.nome}</th><td>{faixaTxt(b.avulsa)}</td><td>{faixaTxt(b.mensal)}</td><td>{faixaTxt(b.online)}</td><td>{l.motivo ? `Referência de ${b.nome}: ${l.motivo}` : `Própria (${b.nome})`}</td></tr>; })}</tbody>
+        </table>
+      </div>
+
+      <h2>Quanto custa treinar 1, 2, 3, 4 ou 5 vezes por semana em Alphaville</h2>
+      <div class="rolagem" tabindex="0" role="region" aria-label="Faixa mensal por frequência em Alphaville">
+        <table class="dados pp-t">
+          <thead><tr><th scope="col">Frequência</th><th scope="col">Sessões no mês</th><th scope="col">Faixa por mês</th><th scope="col">Como foi calculado</th></tr></thead>
+          <tbody>{freqs.map((f) => { const r = calcular(D, 'alphaville', 'academia', f); return <tr><th scope="row">{f}× por semana</th><td>cerca de {r.sessoes}</td><td>{faixaTxt(r.mes)}</td><td>{r.extrapolado ? 'Extrapolação: aula no pacote × sessões' : 'Faixa do pacote'}</td></tr>; })}</tbody>
+        </table>
+      </div>
+      <p>Frequência alta multiplica a conta depressa. Antes de fechar 5 vezes por semana, veja se a sua agenda sustenta: pagar por 22 sessões e ir a 10 é o pior negócio.</p>
+
+      <h2>O que muda a conta em Alphaville</h2>
+      <h3>Personal no condomínio</h3>
+      <p>Quando o residencial tem sala de ginástica, treinar ali corta a mensalidade de academia e o deslocamento. O que varia é a regra de cada condomínio: cadastro do profissional na portaria, horário de uso e limite de pessoas na sala. O guia não tem fonte pública com taxa de condomínio para personal, então não publica valor: pergunte na administração. Veja também <a href="/guias/personal-trainer-em-condominio-alphaville/">personal trainer em condomínio em Alphaville</a>.</p>
+      <h3>Personal na academia: a taxa de personal externo</h3>
+      <p>Algumas academias cobram do profissional uma taxa para atender lá dentro. Com valor confirmado nas fichas do guia:</p>
+      <ul>{taxas.map((x) => <li><a href={urlAcademia(x.a)}>{x.a.data.nome}</a>: {x.t.valor} por mês, {x.t.quem_paga === 'profissional' ? 'pagos pelo profissional' : 'pagos pelo aluno'}. Fonte: {x.pe.fonte}.</li>)}</ul>
+      <p>Mesmo paga pelo profissional, a taxa pode aparecer no preço da aula. Some também a mensalidade da academia: a <a href={link('custo', { personal: '1', de: 'preco-personal' })}>calculadora de custo</a> junta tudo. As regras das outras unidades estão em <a href="/ferramentas/academias-que-aceitam-personal-externo/">academias que aceitam personal externo</a>.</p>
+      <h3>Personal a domicílio e o deslocamento entre residenciais</h3>
+      <p>Na aula em casa, o profissional gasta tempo de trânsito entre um residencial e outro, com portaria e identificação em cada entrada. Esse tempo costuma entrar no preço. Horários fora do pico e aulas em sequência no mesmo residencial ajudam na negociação.</p>
+      <h3>Horários</h3>
+      <p>Antes do expediente e no começo da noite, a agenda dos profissionais costuma ser mais disputada. Se você pode treinar no meio da manhã ou da tarde, vale perguntar se há condição diferente para esses horários.</p>
+
+      <h2>Como comparar duas propostas</h2>
+      <p>Compare o total do mês, não o preço da aula. Pergunte a duração da sessão, se há avaliação, o que acontece quando você falta, se a taxa da academia está incluída e se há ajuste do treino entre as aulas. Duas propostas com o mesmo valor podem entregar coisas bem diferentes.</p>
+
+      <h2>De onde vêm as faixas</h2>
+      <p>As faixas desta calculadora <strong>não são pesquisa de preços praticados</strong>. São estimativas editoriais por perfil de cidade, as mesmas do portal <a href={D0.url} rel="noopener">Personal por Perto</a>, registradas aqui em {dataLonga(revisado)}. Não existe amostra, por isso a ferramenta não fala em "preço médio" e nunca dá valor exato. O guia ainda não coletou preços reais de profissionais da região; quando coletar, esta seção dirá quantos são, de quando e de que fonte.</p>
+      <p>A conta é aberta: sessões por mês = vezes por semana × 52 ÷ 12, arredondado; para 2 e 3 vezes por semana vale a faixa do pacote; para 1, 4 e 5 vezes, a aula dentro do pacote (faixa mensal ÷ {D.sessoes_base_pacote}) é multiplicada pelas sessões, e o resultado aparece como extrapolação; o arredondamento é para a dezena até R$ 1.000 e para a cinquentena acima disso. Tamboré e Aldeia da Serra não têm faixa própria e usam a referência de Barueri, com aviso na tela. A referência não distingue aula de 30 e de 60 minutos, aula em dupla nem experiência do profissional.</p>
+      <p>Mora em outra cidade? Use a <a href={D0.url} rel="noopener">calculadora do Personal por Perto</a>, que cobre o resto do país.</p>
+    </div>
+
+    <Perguntas itens={perguntas} titulo="Perguntas sobre preço de personal trainer em Alphaville" />
+    <LeiaTambem url={URL_PAG} />
+  </div>
+
+  <script type="application/json" id="pp-dados" set:html={JSON.stringify({ D, taxas: taxas.map((x) => ({ nome: x.a.data.nome, valor: x.t.valor })) })}></script>
+  <script>
+    import { calcular, faixaTxt, FORMATOS, type Formato } from '../../lib/precoPersonal';
+    const J = JSON.parse(document.getElementById('pp-dados')!.textContent!);
+    const ev = (n: string, d: Record<string, string | number> = {}) => { const w = window as any; if (typeof w.otaEvento === 'function') w.otaEvento(n, d); };
+    const f = document.getElementById('pp-form') as HTMLFormElement;
+    const $ = (id: string) => document.getElementById(id)!;
+    const val = (n: string) => (f.querySelector(`input[name="${n}"]:checked`) as HTMLInputElement).value;
+    const marca = (n: string, v: string | null) => { const el = v && f.querySelector<HTMLInputElement>(`input[name="${n}"][value="${CSS.escape(v)}"]`); if (el) el.checked = true; };
+    const VOLTA: Record<Formato, string[]> = {
+      condominio: ['No condomínio não há mensalidade de academia nem taxa de personal externo. Confirme na administração se o profissional precisa de cadastro e se há regra de horário na sala.'],
+      academia: ['Some a mensalidade da academia: a calculadora de custo faz essa conta.', `Algumas academias cobram taxa do personal externo (${J.taxas.map((t: any) => `${t.nome}: ${t.valor} por mês, pagos pelo profissional`).join('; ')}). Pergunte se ela está no preço da aula.`],
+      domicilio: ['O deslocamento entre residenciais e a espera na portaria costumam entrar no preço. Horários fora do pico ajudam.', 'Você precisa de espaço e de algum material; combine quem leva o quê.'],
+      online: ['Online é acompanhamento a distância: planejamento, ajustes e suporte, sem o profissional ao seu lado no treino.', 'Você ainda paga o lugar onde treina, se for academia.'],
+    };
+    function render(origem: string) {
+      const formato = val('formato') as Formato, r = calcular(J.D, val('local'), formato, Number(val('freq')));
+      $('pp-res-t').textContent = formato === 'online' ? `${r.local.nome}, online` : `${r.local.nome}, ${FORMATOS[formato].toLowerCase()}, ${r.freq}× por semana`;
+      $('pp-origem').textContent = (r.fallback ? `Referência de ${r.base.nome}: ${r.local.motivo}.` : `Referência editorial de ${r.base.nome}.`) + ' Não é preço médio nem pesquisa de campo.';
+      $('pp-mes').textContent = faixaTxt(r.mes);
+      $('pp-mes-n').textContent = formato === 'online' ? 'mensalidade do acompanhamento' : `cerca de ${r.sessoes} sessões no mês`;
+      ($('pp-c-aula') as HTMLElement).hidden = !r.aulaPacote; ($('pp-c-avulsa') as HTMLElement).hidden = !r.avulsa;
+      if (r.aulaPacote) $('pp-aula').textContent = faixaTxt(r.aulaPacote);
+      if (r.avulsa) $('pp-avulsa').textContent = faixaTxt(r.avulsa);
+      const av = $('pp-aviso') as HTMLElement, avisos: string[] = [];
+      if (r.extrapolado) avisos.push(`Extrapolação: a referência é definida para 2 a 3 vezes por semana; para ${r.freq}× o valor foi estimado pela aula no pacote.`);
+      if (formato !== 'online' && r.freq >= 4) avisos.push('Frequência alta multiplica o custo: confira se a sua agenda sustenta antes de fechar.');
+      if (formato === 'online') avisos.push('No online, a frequência não muda o valor.');
+      av.textContent = avisos.join(' '); av.hidden = !avisos.length;
+      $('pp-volta').innerHTML = VOLTA[formato].map((t) => `<li>${t}</li>`).join('');
+      $('pp-mem').innerHTML = r.memoria.map((l: string) => `<li>${l}</li>`).join('');
+      f.querySelectorAll<HTMLInputElement>('input[name="freq"]').forEach((i) => { i.closest('label')!.classList.toggle('pp-off', formato === 'online'); });
+      const q = new URLSearchParams({ local: r.local.id, formato, freq: String(r.freq) }); history.replaceState(null, '', `?${q}`);
+      if (origem !== 'inicio') ev('preco_personal_calculo', { local: r.local.id, formato, freq: r.freq, fallback: r.fallback ? 1 : 0 });
+    }
+    f.addEventListener('change', () => render('escolha'));
+    document.querySelector('.pp-mem')!.addEventListener('toggle', (e) => { if ((e.target as HTMLDetailsElement).open) ev('preco_personal_memoria'); });
+    const p = new URLSearchParams(location.search);
+    marca('local', p.get('local')); marca('formato', p.get('formato')); marca('freq', p.get('freq'));
+    if ([...p.keys()].length) render('inicio');
+  </script>
+</Base>
+
+<style is:global>
+  .pp .pp-form { margin: 22px 0 14px; padding: 18px; border: 1px solid var(--linha, #d8dee8); border-radius: 14px; background: #fff; display: grid; gap: 16px; }
+  .pp .pp-form fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .pp .pp-form legend { margin-bottom: 8px; }
+  .pp .pp-ops { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pp .pp-op { position: relative; }
+  .pp .pp-op input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+  .pp .pp-op span { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 8px 14px; border-radius: 999px; border: 1.5px solid #111827; background: #fff; font-weight: 600; }
+  .pp .pp-op-n span { min-width: 52px; }
+  .pp .pp-op input:checked + span { background: #111827; color: #fff; }
+  .pp .pp-op input:focus-visible + span { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .pp .pp-off span { opacity: .45; }
+  .pp .pp-res { padding: 20px 18px; border-radius: 14px; background: #111827; color: #F5F1E8; }
+  .pp .pp-res-t { color: #fff; font-size: 22px; margin: 0 0 4px; }
+  .pp .pp-fonte { font-size: 14px; color: #cfd5df; margin: 0 0 14px; }
+  .pp .pp-cartoes { display: grid; gap: 10px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 720px) { .pp .pp-cartoes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .pp .pp-cartao { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 12px; background: #1b2434; border: 1px solid #2c3850; min-width: 0; }
+  .pp .pp-cartao[hidden] { display: none; }
+  .pp .pp-cartao .rotulo { color: #FFB066; }
+  .pp .pp-cartao strong { font-size: 26px; line-height: 1.15; color: #fff; }
+  .pp .pp-cartao span:last-child { font-size: 14px; color: #cfd5df; }
+  .pp .pp-aviso { margin: 12px 0 0; padding: 10px 12px; border-left: 4px solid #FF6A00; background: #1b2434; font-size: 15px; }
+  .pp .pp-volta { margin: 12px 0 0; padding-left: 20px; font-size: 15px; }
+  .pp .pp-volta li { margin: 4px 0; }
+  .pp .pp-mem { margin-top: 12px; }
+  .pp .pp-mem summary { cursor: pointer; font-weight: 700; min-height: 36px; }
+  .pp .pp-mem ol { margin: 8px 0 0; padding-left: 22px; font-size: 15px; }
+  .pp .pp-acoes { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin: 14px 0 0; }
+  .pp .pp-acoes a:not(.btn) { color: #FFB066; }
+  .pp .pp-res a:focus-visible, .pp .pp-mem summary:focus-visible { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .pp table.dados.pp-t { min-width: 560px; }
+</style>

@@ -87,3 +87,12 @@ Clique nos atalhos e cartões de ferramenta dos artigos. `ref` = `<ferramenta>:a
 | `clique_acesso_academia` | Botão para o canal oficial da academia (comprar, consultar, agendar) | `ref` = `<tipo>:<id>` (com `:ficha` quando vem da ficha) |
 | `clique_ferramenta` | Calculadora, horários e checklist a partir da ferramenta; link da ficha para a ferramenta | `ref` = `custo:diaria`, `abertas:diaria`, `checklist:experimental`, `diaria:ficha` |
 | `clique_whatsapp` | WhatsApp do Montinho no card de aula experimental (intenção de contato) | `ref` = `acesso-experimental` ou `acesso-experimental-unidade`; o texto da mensagem não é enviado |
+
+## Calculadora de preço de personal (18/11/2026)
+
+| Evento | Quando | Parâmetros |
+|---|---|---|
+| `preco_personal_calculo` | Troca de local, formato ou frequência | `local`, `formato`, `freq`, `fallback` |
+| `preco_personal_memoria` | Abertura de "Ver a conta, linha a linha" | — |
+| `clique_ferramenta` | Links para a calculadora de custo e para personal externo | `ref` = `custo:preco-personal`, `personal:preco-personal` |
+| `clique_whatsapp` / `clique_montinho` | Chamada do Montinho abaixo do resultado | `ref` = `preco-personal` |
