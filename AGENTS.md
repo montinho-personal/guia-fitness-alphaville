@@ -64,3 +64,12 @@ Uma conta para todos os sites do Renato, em plano pago (1.000 buscas por mês). 
 ## Capas
 
 O site não tem capa por artigo: todas as páginas usam `public/og.png`. Não criar capa improvisada. Se um dia houver padrão de capa e faltar crédito para fazer no padrão, publicar sem capa e anotar em "Capas pendentes" na pauta.
+
+## Destaque da casa (regra do Renato, 18/11/2026)
+
+A academia com `montinho_atende: true` na ficha (hoje a Arena 18) vem sempre em primeiro nas listas de academias e nos resultados das ferramentas, sempre com o selo "Destaque · publicidade da casa".
+- **Ordem:** a ordem padrão sai de `academias()` (`ordemComDestaque` em `src/lib/dados.ts`).
+- **Listas de cartões:** usam `comDestaque()`.
+- **Ferramentas:** cada uma põe o destaque na frente da sua própria ordenação.
+- **Dados:** as ferramentas só mostram a academia como aberta, compatível ou dentro do plano quando os dados confirmam; o destaque muda a ordem, não os dados.
+- **Transparência:** a exceção está declarada em `/sobre/`, `/metodologia/`, `/politica-editorial/` e no teste.

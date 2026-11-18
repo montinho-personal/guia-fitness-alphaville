@@ -1,4 +1,5 @@
 ---
+import { comDestaque as __comDestaque, academias as __academias } from '../../lib/dados';
 import fotoMontinho from '../../assets/montinho/montinho-ironberg-abdominal-fones.jpg';
 import { Image } from 'astro:assets';
 import FerramentasContexto from '../../components/FerramentasContexto.astro';
@@ -47,6 +48,7 @@ const titulo = 'Ironberg ou NitroGym em Alphaville: qual escolher';
 const descricao = 'Ironberg Alphaville ou NitroGym Tamboré: preço publicado, custo do primeiro ano, horário, estacionamento, TotalPass e regra para personal, lado a lado.';
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'ironberg-alphaville', nome: 'Ironberg' }, { id: 'nitrogym-tambore', nome: 'NitroGym' }] });
+const __todasDestaque = await __academias();
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Ironberg ou NitroGym', url: '/guias/ironberg-ou-nitrogym/' }]}>
   <div class="wrap">
@@ -119,7 +121,7 @@ const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'ir
 
     <section class="bloco fino" aria-labelledby="fichas-t">
       <div class="cab"><h2 id="fichas-t">As duas fichas</h2><a class="link-forte" href="/academias/?regiao=alphaville">Outras academias de Alphaville</a></div>
-      <div class="cartoes">{[ib, ng].map((a) => <CartaoAcademia a={a} />)}</div>
+      <div class="cartoes">{__comDestaque([ib, ng], __todasDestaque).map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
 
     <VideoMontinho id="izMrrSoJGBw" titulo="Raiva e sangue no olho" pagina="ironberg-ou-nitrogym" />

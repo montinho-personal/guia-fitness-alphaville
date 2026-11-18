@@ -1,4 +1,5 @@
 ---
+import { comDestaque as __comDestaque, academias as __academias } from '../../lib/dados';
 import FerramentasContexto from '../../components/FerramentasContexto.astro';
 import { ferramentasPara, type RegiaoId } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
@@ -35,6 +36,7 @@ const perguntas = [
 ];
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 const ferramentas = ferramentasPara({ tipo: 'rede', academia: { id: 'smart-fit-barueri-centro', nome: 'Smart Fit' }, regiao: 'barueri', lugar: 'Barueri' });
+const __todasDestaque = await __academias();
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Smart Fit em Barueri', url: '/academias/smart-fit-barueri/' }]}>
   <div class="wrap">
@@ -85,7 +87,7 @@ const ferramentas = ferramentasPara({ tipo: 'rede', academia: { id: 'smart-fit-b
 
     <section class="bloco fino" aria-labelledby="fichas-t">
       <div class="cab"><h2 id="fichas-t">As 5 fichas</h2><a class="link-forte" href="/regioes/barueri/">Academias em Barueri</a></div>
-      <div class="cartoes">{sf.map((a) => <CartaoAcademia a={a} />)}</div>
+      <div class="cartoes">{__comDestaque(sf, __todasDestaque).map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
 
     <VideoMontinho id="DiH1OzIR6Yk" titulo="É impossível isso dar errado" pagina="smart-fit-barueri" />

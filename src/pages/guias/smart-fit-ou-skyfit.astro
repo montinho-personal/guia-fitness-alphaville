@@ -1,4 +1,5 @@
 ---
+import { comDestaque as __comDestaque, academias as __academias } from '../../lib/dados';
 import VideoMontinho from '../../components/VideoMontinho.astro';
 import fotoMontinho from '../../assets/montinho/montinho-personal-trainer-costas.jpg';
 import { Image } from 'astro:assets';
@@ -48,6 +49,7 @@ const perguntas = [
 ];
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'smart-fit-sodimac-alphaville', nome: 'Smart Fit' }, { id: 'skyfit-alphaville', nome: 'SkyFit' }] });
+const __todasDestaque = await __academias();
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Smart Fit ou SkyFit', url: '/guias/smart-fit-ou-skyfit/' }]}>
   <div class="wrap">
@@ -101,7 +103,7 @@ const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'sm
 
     <section class="bloco fino" aria-labelledby="fichas-t">
       <div class="cab"><h2 id="fichas-t">As fichas</h2><a class="link-forte" href="/academias/?regiao=alphaville">Outras academias de Alphaville</a></div>
-      <div class="cartoes">{[sf, sk, ...outrasSK].map((a) => <CartaoAcademia a={a} />)}</div>
+      <div class="cartoes">{__comDestaque([sf, sk, ...outrasSK], __todasDestaque).map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
 
     <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={fotoMontinho} alt="Montinho, personal trainer que mantém este guia, de costas, em pose de duplo bíceps" widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">O Montinho, personal trainer que mantém este guia. Publicidade da casa.</figcaption></figure>

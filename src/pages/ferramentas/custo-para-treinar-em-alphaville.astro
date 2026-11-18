@@ -8,7 +8,7 @@ import { calcular, cenarioVazio, planosMensais, reais, type Cenario } from '../.
 import { politicaPE, prefillTaxa, STATUS_PE } from '../../lib/personal';
 
 const URL_PAG = '/ferramentas/custo-para-treinar-em-alphaville/';
-const todas = (await academias()).sort((a, b) => a.data.nome.localeCompare(b.data.nome, 'pt-BR'));
+const todas = await academias(); // já vem com o destaque da casa em primeiro
 
 // Dados para a calculadora: nome, unidade, ficha e, quando houver, os planos mensais publicados com fonte e data.
 const fonteMensalidade = (a: (typeof todas)[number]) => a.data.proveniencia.find((p) => p.campos.includes('mensalidade'));

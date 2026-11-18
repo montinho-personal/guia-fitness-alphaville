@@ -15,7 +15,7 @@ const lista = (await academias())
     const p = politicaPE(a.data.personal_externo);
     return { a, p, r: respostasPE(p) };
   })
-  .sort((x, y) => STATUS_PE[x.p.status].ordem - STATUS_PE[y.p.status].ordem || ORDEM_REG[x.a.data.regiao] - ORDEM_REG[y.a.data.regiao] || x.a.data.nome.localeCompare(y.a.data.nome, 'pt-BR'));
+  .sort((x, y) => Number(!!y.a.data.montinho_atende) - Number(!!x.a.data.montinho_atende) || STATUS_PE[x.p.status].ordem - STATUS_PE[y.p.status].ordem || ORDEM_REG[x.a.data.regiao] - ORDEM_REG[y.a.data.regiao] || x.a.data.nome.localeCompare(y.a.data.nome, 'pt-BR'));
 
 const conta = (s: StatusPE) => lista.filter((x) => x.p.status === s).length;
 const aceitam = lista.filter((x) => x.p.status === 'aceita' || x.p.status === 'aceita-com-condicoes');
@@ -71,7 +71,7 @@ const schema = [{ '@type': 'ItemList', name: titulo, numberOfItems: lista.length
           const pendente = p.status === 'a-confirmar' || p.taxa.situacao === 'pendente';
           const canal = p.canal || d.telefone;
           return (
-            <li class={`pe-item st-${p.status}`} data-id={a.id} data-reg={d.regiao} data-st={p.status} data-q={`${d.nome} ${d.bairro} ${REGIOES[d.regiao].nome} ${d.rede ?? ''}`.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')}>
+            <li class={`pe-item st-${p.status}${d.montinho_atende ? ' cartao-destaque' : ''}`} data-id={a.id} data-reg={d.regiao} data-st={p.status} data-q={`${d.nome} ${d.bairro} ${REGIOES[d.regiao].nome} ${d.rede ?? ''}`.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')}>{d.montinho_atende && <span class="selo-destaque">Destaque · publicidade da casa</span>}
               <div class="pe-cab">
                 <h3><a href={urlAcademia(a)} data-evento="clique_academia" data-ref="personal-externo">{d.nome}</a></h3>
                 <span class="pe-local">{d.bairro} · {REGIOES[d.regiao].nome}</span>

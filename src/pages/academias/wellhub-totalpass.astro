@@ -23,7 +23,7 @@ const linhas = BENEFICIOS.flatMap((ben) => todas.flatMap((a) => {
   const e = ents(a).find((x) => x.nome === ben); if (!e) return [];
   const pe = politicaPE(a.data.personal_externo);
   return [{ a, ben, e, acessam: planosQueAcessam(e, ORDEM[ben]) ?? [], mods: Object.keys(MODS_BEN).filter((m) => cobreModalidade(e, m) === true), rank: ORDEM[ben].indexOf(e.plano_minimo), pe }];
-})).sort((x, y) => x.rank - y.rank || ORDEM_REG[x.a.data.regiao] - ORDEM_REG[y.a.data.regiao] || x.a.data.nome.localeCompare(y.a.data.nome, 'pt-BR'));
+})).sort((x, y) => Number(!!y.a.data.montinho_atende) - Number(!!x.a.data.montinho_atende) || x.rank - y.rank || ORDEM_REG[x.a.data.regiao] - ORDEM_REG[y.a.data.regiao] || x.a.data.nome.localeCompare(y.a.data.nome, 'pt-BR'));
 
 const conta = (ben: Beneficio, mod?: string, reg?: string) => linhas.filter((l) => l.ben === ben && (!mod || l.mods.includes(mod)) && (!reg || l.a.data.regiao === reg)).length;
 const academiasMusc = todas.filter((a) => a.data.tipo === 'academia');
@@ -96,7 +96,7 @@ const urlPE = (nome: string) => `/ferramentas/academias-que-aceitam-personal-ext
                 const d = l.a.data;
                 const peAceita = l.pe.status === 'aceita' || l.pe.status === 'aceita-com-condicoes';
                 return (
-                  <li class="bn-item" data-ben={ben} data-reg={d.regiao} data-planos={l.acessam.join('|')} data-mods={l.mods.join(' ')} data-id={l.a.id}>
+                  <li class={`bn-item${l.a.data.montinho_atende ? ' cartao-destaque' : ''}`} data-ben={ben} data-reg={d.regiao} data-planos={l.acessam.join('|')} data-mods={l.mods.join(' ')} data-id={l.a.id}>{l.a.data.montinho_atende && <span class="selo-destaque">Destaque · publicidade da casa</span>}
                     <div class="bn-cab">
                       <h4><a href={urlAcademia(l.a)} data-evento="clique_academia" data-ref="beneficios">{d.nome}</a></h4>
                       <span class="bn-local">{d.bairro} · {REGIOES[d.regiao].nome}</span>

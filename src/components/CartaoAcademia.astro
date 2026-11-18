@@ -7,7 +7,8 @@ const d = a.data;
 const T = nivel;
 const ags = d.agregadores.map((g) => g.nome).join(', ');
 ---
-<article class="cartao" data-academia={a.id}>
+<article class={`cartao${d.montinho_atende ? ' cartao-destaque' : ''}`} data-academia={a.id}>
+  {d.montinho_atende && <span class="selo-destaque">Destaque · publicidade da casa</span>}
   <span class="rotulo cor-marca">{REGIOES[d.regiao].nome} · {d.bairro}</span>
   <T><a href={urlAcademia(a)} data-evento="clique_academia" data-ref={a.id}>{d.nome}</a></T>
   <ul class="tags">
