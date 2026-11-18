@@ -25,6 +25,8 @@ const BASE: Record<FerramentaId, { path: string; rotulo: string }> = {
 const MODS_BUSCADOR = new Set(['musculacao', 'funcional', 'lutas', 'pilates', 'yoga', 'crossfit', 'danca', 'bike', 'esportes-de-areia']);
 /** Modalidades que o teste aceita no campo "o que você quer treinar". */
 const MODS_TESTE = new Set(['musculacao', 'crossfit', 'cross-training', 'funcional', 'lutas', 'danca', 'bike', 'pilates', 'hiit', 'hyrox', 'eletroestimulacao', 'yoga', 'corrida', 'natacao', 'esportes-de-areia']);
+// Modalidades com ao menos uma oferta de diária ou aula experimental nas fichas (acesso_avulso).
+const MODS_DIARIA = new Set(['musculacao', 'crossfit', 'cross-training', 'hyrox', 'lutas', 'eletroestimulacao']);
 
 export function link(id: FerramentaId, params: Record<string, string | undefined> = {}): string {
   const q = new URLSearchParams();
@@ -58,6 +60,7 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
   const LOCAL_PRECO: Record<string, string> = { Alphaville: 'alphaville', 'Tamboré': 'tambore', Barueri: 'barueri-centro', 'Santana de Parnaíba': 'santana-de-parnaiba', 'Aldeia da Serra': 'aldeia-da-serra' };
   const localPreco = c.lugar ? LOCAL_PRECO[c.lugar] : undefined;
   const preco = (formato?: string) => f('preco', `Quanto custa personal trainer${em}: calcule a faixa`, 'Faixa de referência por aula e por mês, com a conta aberta linha a linha.', { local: localPreco, formato });
+  const diaria = (t: string, d: string, p: Record<string, string | undefined> = {}) => f('diaria', t, d, { regiao: c.regiao, ...p });
   const mod = c.modalidade, modN = (c.modalidadeNome ?? '').toLowerCase();
   const pub = c.publico;
   switch (c.tipo) {
@@ -74,7 +77,7 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       return [
         f('personal', `Academias${em} que aceitam personal externo`, 'Unidade por unidade: quem aceita, o que pede de cadastro e quem paga a taxa.', { reg: c.regiao }),
         preco(),
-        f('custo', 'Some a mensalidade da academia', 'Junte a mensalidade da academia e as aulas para ver o total real, sem surpresa.', { personal: '1', de: 'artigo' }),
+        f('formato', 'Presencial ou online: qual combina com você', 'Nove perguntas sobre experiência, rotina e local de treino, com o resultado explicado.'),
       ];
     case 'personal-publico': {
       const extra: Record<string, Ferramenta> = {
@@ -88,14 +91,14 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       return [
         f('personal', `Onde o personal pode dar aula${em}`, 'As academias da região que aceitam profissional de fora, com cadastro e taxa conferidos.', { reg: c.regiao }),
         preco(),
-        extra[pub ?? ''] ?? f('teste', `Qual academia${em} combina com você`, 'Cinco perguntas e uma lista curta para visitar.', { regiao: c.regiao }),
+        extra[pub ?? ''] ?? f('formato', 'Presencial ou online: qual combina com você', 'Nove perguntas sobre experiência, rotina e local de treino, com o resultado explicado.'),
       ];
     }
     case 'domicilio':
       return [
         preco('domicilio'),
         f('custo', 'Aula em casa ou academia: compare o custo', 'Ponha lado a lado o personal em casa e a academia com personal, com deslocamento e taxas.', { personal: '1', de: 'artigo' }),
-        f('personal', `Prefere uma academia${em}? Veja quais aceitam personal`, 'Se faltar espaço ou aparelho em casa, estas academias deixam o seu profissional atender.', { reg: c.regiao }),
+        f('formato', 'Em casa ou online: faça o teste', 'Nove perguntas sobre rotina, espaço e experiência para saber se o presencial em casa vale a pena para você.'),
       ];
     case 'condominio':
       return [
@@ -107,6 +110,7 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       const r: Ferramenta[] = [];
       if (mod && MODS_BUSCADOR.has(mod)) r.push(f('beneficio', `${c.modalidadeNome} pelo Wellhub ou TotalPass`, `Veja quais lugares liberam ${modN} no seu plano e o plano mínimo de cada um.`, { mod, reg: c.regiao }));
       if (mod && MODS_TESTE.has(mod)) r.push(f('teste', `Onde fazer ${modN} no seu horário`, `O teste já abre com ${modN} marcado: responda o resto e veja a lista.`, { modalidade: mod, regiao: c.regiao }));
+      if (mod && MODS_DIARIA.has(mod)) r.push(diaria(`${c.modalidadeNome} sem matrícula: diária e aula experimental`, `Onde dá para fazer ${modN} pagando só o dia ou numa aula de teste, com o canal de cada lugar.`, { modo: 'teste' }));
       r.push(f('custo', `Quanto custa fazer ${modN} por mês`, 'Compare mensalidade, matrícula, deslocamento e benefício entre dois ou três lugares.', { de: 'artigo' }));
       if (r.length < 3) r.push(f('comparador', 'Compare os lugares lado a lado', 'Horário, estrutura e planos de benefício, com a data de cada dado.'));
       return r.slice(0, 3);
@@ -114,7 +118,7 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
     case 'hyrox':
       return [
         f('teste', `Onde treinar para o Hyrox${em}`, 'O teste abre com Hyrox marcado e cruza com horário e região.', { modalidade: 'hyrox', regiao: c.regiao }),
-        f('comparador', 'Compare boxes e academias para a preparação', 'Horário, modalidades e estrutura de cada lugar, lado a lado.'),
+        diaria('Teste um box antes de fechar a preparação', 'Aula experimental, drop-in e diária nos boxes e academias da região, com preço e regras.', { modo: 'teste' }),
         f('custo', 'Quanto custa a preparação por mês', 'Box, academia, personal e deslocamento no mesmo cálculo.', { de: 'artigo' }),
       ];
     case 'como-escolher':
@@ -133,19 +137,19 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       return [
         f('comparador', 'Compare as academias premium lado a lado', 'Ironberg, NitroGym e Bodytech com horário, estrutura e planos.', { a: 'ironberg-alphaville', b: 'nitrogym-tambore', c: 'bodytech-iguatemi-alphaville' }),
         f('custo', 'Quanto custa o primeiro ano em cada uma', 'Mensalidade, matrícula e personal somados, com os preços publicados.', { a: 'ironberg-alphaville', b: 'nitrogym-tambore', de: 'artigo' }),
-        f('beneficio', 'Quais premium entram no seu Wellhub ou TotalPass', 'O plano mínimo de cada unidade, conferido no catálogo do benefício.', { reg: 'alphaville' }),
+        diaria('Treine um dia numa premium antes de assinar', 'Day use, aula avulsa e visita guiada nas premium da região, com preço publicado e regras.', { regiao: 'alphaville' }),
       ];
     case 'regiao':
       return [
         f('teste', `Qual academia${em} combina com você`, 'O teste já abre com a região marcada.', { regiao: c.regiao }),
-        f('mapa', `Mapa das academias${em}`, 'Todas as fichas no mapa, com a lista de endereços por região.'),
+        diaria(`Diária e aula experimental${em}`, 'Treine hoje sem matrícula ou teste antes de assinar: preço, regras e o canal de cada academia.'),
         f('beneficio', `Wellhub e TotalPass${em}: quem aceita`, 'Plano mínimo e modalidades de cada unidade da região.', { reg: c.regiao }),
       ];
     case 'precos':
       return [
         f('custo', 'Calcule o custo real, não só a mensalidade', 'Matrícula, anuidade, estacionamento e personal, por mês e por treino.', { exemplo: '1', de: 'artigo' }),
         f('beneficio', 'Sai mais barato pelo Wellhub ou TotalPass?', 'Veja o plano mínimo que libera cada academia.'),
-        f('comparador', 'Compare até três academias', 'Preço publicado, horário e estrutura lado a lado.'),
+        diaria('Antes da matrícula, pague só um dia', 'Diária, day use e aula experimental: quanto custa testar cada academia antes de assinar.'),
       ];
     case '24h':
       return [
@@ -163,14 +167,14 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       return [
         f('mapa', 'Veja todas as academias no mapa', 'Para pontos que não estão nesta lista, o mapa mostra a mais próxima.'),
         f('teste', 'Filtre por horário e modalidade', 'Perto não basta: o teste confere se abre no seu horário.'),
-        f('comparador', 'Compare as que ficam no seu caminho', 'Até três academias lado a lado.'),
+        diaria('De passagem? Treine com diária', 'Onde dá para pagar só o dia ou fazer aula experimental perto de onde você está.'),
       ];
     case 'comparativo': {
       const [x, y] = c.academias ?? [];
       return [
         f('beneficio', `${x.nome} e ${y.nome} no mesmo plano?`, 'Veja se um plano de Wellhub ou TotalPass cobre as duas e qual é o menor.', { modo: 'par', a: x.id, b: y.id }),
         f('personal', 'Treina com personal? Veja a regra de cada uma', 'Cadastro, taxa e quem paga, unidade por unidade.'),
-        f('checklist', 'Visite as duas com o checklist', 'O que observar no seu horário, da recepção ao vestiário.'),
+        diaria('Teste as duas antes de escolher', 'Quem tem diária, aula experimental ou visita guiada, com preço, regras e o canal de cada uma.', { modo: 'teste' }),
       ];
     }
     case 'rede': {
@@ -178,7 +182,7 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       return [
         f('custo', `Quanto custa treinar na ${a.nome}${em}`, 'Plano, matrícula e deslocamento por mês e por treino.', { a: a.id, de: 'artigo' }),
         f('personal', `${a.nome} aceita personal de fora?`, 'Regra da rede, cadastro e taxa.', { q: a.nome }),
-        f('beneficio', 'Unidades da região no Wellhub e no TotalPass', 'Plano mínimo de cada unidade.', { reg: c.regiao }),
+        diaria(`Dá para testar a ${a.nome} antes?`, 'Diária, passe do dia e aula experimental na região, com o que cada unidade informa.'),
       ];
     }
   }

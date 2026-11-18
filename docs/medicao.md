@@ -65,7 +65,9 @@ A calculadora não envia valores digitados nem dados de contato: só a origem da
 
 ## clique_ferramenta (18/11/2026)
 
-Clique nos atalhos e cartões de ferramenta dos artigos. `ref` = `<ferramenta>:atalho` ou `<ferramenta>:bloco` (ferramentas: custo, personal, beneficio, teste, comparador, checklist, mapa); `pagina` = caminho do artigo. Para ver no GA4 qual artigo mais leva às ferramentas, registre `ref` como dimensão personalizada.
+Clique nos atalhos e cartões de ferramenta dos artigos. `ref` = `<ferramenta>:atalho` ou `<ferramenta>:bloco` (ferramentas: custo, personal, beneficio, teste, comparador, checklist, mapa, abertas, diaria, preco, formato); `pagina` = caminho do artigo. Para ver no GA4 qual artigo mais leva às ferramentas, registre `ref` como dimensão personalizada.
+
+Fora dos artigos: `ref` = `menu:diaria` (item em destaque no menu, celular e computador), `home:diaria` e `home:diaria-teste` (faixa logo abaixo da capa) e `rodape:<ferramenta>` (coluna Ferramentas do rodapé: diaria, abertas, preco, formato, comparador).
 
 ## Academias abertas (18/11/2026)
 
