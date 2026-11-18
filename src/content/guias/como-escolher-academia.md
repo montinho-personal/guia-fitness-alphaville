@@ -21,7 +21,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-13
-atualizado_em: 2026-11-17
+atualizado_em: 2026-11-18
 perguntas:
   - p: "Qual o principal critério para escolher uma academia?"
     r: "A distância. Uma academia no caminho entre casa e trabalho é a que você continua frequentando depois do primeiro mês. Em seguida vem o horário: ela precisa estar aberta em todos os dias e horas em que você pode treinar."
@@ -35,6 +35,16 @@ perguntas:
     r: "Não existe uma melhor para todo mundo. A melhor é a que fica no seu trajeto, abre no seu horário e tem a estrutura que você vai usar. O teste qual academia combina com você e o comparador do guia cruzam esses critérios com os dados de cada academia da região."
 
 ---
+
+## Que tipo de academia você procura
+
+Antes dos critérios, vale saber em que tipo de lugar você quer treinar. Na região, as fichas do guia se dividem assim:
+
+- **Academia de baixo custo**, como Smart Fit e SkyFit: mensalidade mais baixa, muitas unidades e horário amplo, com menos professores por aluno. Veja a [tabela de preços](/academias/precos/).
+- **Academia premium**, como Ironberg, NitroGym e Bodytech: mensalidade maior, mais espaço e mais serviços. Veja [academias premium de Alphaville](/guias/academias-premium-alphaville/).
+- **Academia 24 horas**, como Gaviões 24h e Ironberg: para quem treina de madrugada. Veja [academias 24 horas](/academias/24-horas/).
+- **Box de CrossFit ou cross training**: aula em grupo com horário marcado, sem treino livre na sala. Veja [CrossFit](/modalidades/crossfit/).
+- **Estúdio**, de pilates, funcional, lutas ou yoga: turma pequena e uma modalidade principal. Veja as páginas de [modalidades](/modalidades/).
 
 ## 1. Distância e caminho
 

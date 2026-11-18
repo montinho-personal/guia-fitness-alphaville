@@ -5,9 +5,10 @@ import Fontes from '../../components/Fontes.astro';
 import VideoMontinho from '../../components/VideoMontinho.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
 import CartaoAcademia from '../../components/CartaoAcademia.astro';
+import Perguntas from '../../components/Perguntas.astro';
 import { academias, agregador, urlAcademia, dataLonga, dataIso, horasSemana } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-14'), atualizado: new Date('2026-11-14') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-14'), atualizado: new Date('2026-11-18') };
 const todas = await academias();
 const ib = todas.find((a) => a.id === 'ironberg-alphaville')!;
 const ng = todas.find((a) => a.id === 'nitrogym-tambore')!;
@@ -29,7 +30,13 @@ const linhas: [string, string, string][] = [
   ['Estacionamento', 'Gratuito, mais de 1.000 vagas', 'Do shopping, incluso por até 3 horas'],
   ['TotalPass', `a partir do ${tpIb.plano_minimo} (${tpIb.preco_plano})`, `a partir do ${tpNg.plano_minimo} (${tpNg.preco_plano})`],
   ['Wellhub', 'Não consta', 'Não consta'],
-  ['Personal de fora', 'Aceito, com valor fixo pago à academia (valor só na unidade)', 'Regra não publicada'],
+  ['Personal de fora', 'Aceito, com cadastro e taxa de R$ 1.000 por mês paga pelo profissional', 'Regra não publicada'],
+];
+const perguntas = [
+  { p: 'Quanto custa treinar na Ironberg Alphaville?', r: 'Pela tabela publicada pela rede: R$ 399 por mês no plano de 12 meses, R$ 499 no de 6 meses e R$ 599 no recorrente sem fidelidade, todos com matrícula de R$ 120. A aula avulsa é vendida só na recepção, sem valor publicado.' },
+  { p: 'Qual a mensalidade da NitroGym Tamboré?', r: 'Pelo site da NitroGym: R$ 389 por mês no plano de 12 meses, R$ 489 no de 6 meses e R$ 589 no mensal. Há diária de R$ 90 e plano só de fim de semana a R$ 289 por mês. A tabela não menciona matrícula; confirme na recepção.' },
+  { p: 'A NitroGym Tamboré funciona 24 horas?', r: 'Não. Pelo site da rede, a unidade do Shopping Tamboré abre às 5h e fecha à meia-noite nos dias úteis, e funciona das 6h às 22h no sábado, no domingo e nos feriados. Entre as duas, só a Ironberg é 24 horas.' },
+  { p: 'Qual a marca dos equipamentos da Ironberg?', r: 'O site da Ironberg não lista as marcas. Ele descreve a unidade de Alphaville como climatizada, organizada por grupos musculares e com equipamentos importados. Se a marca de um aparelho importa para o seu treino, confira na visita.' },
 ];
 const abs = (u: string) => new URL(u, Astro.site).href;
 const titulo = 'Ironberg ou NitroGym em Alphaville: qual escolher';
@@ -59,6 +66,9 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
     </div>
 
     <div class="prosa">
+      <h2>A proposta de cada uma</h2>
+      <p>A Ironberg se apresenta como centro de treinamento de musculação: o site da rede fala em equipamentos importados, ambiente climatizado e salão organizado por grupos musculares, e a unidade de Alphaville declara 32 mil m². É o lugar de quem treina pesado e quer espaço e variedade de aparelhos. A NitroGym se apresenta como academia premium de musculação dentro de um shopping: climatizada, com professores na sala e estacionamento incluso por até 3 horas. Serve a quem quer musculação de bom padrão no meio do caminho entre casa, trabalho e compras.</p>
+
       <h2>Quanto custa o primeiro ano</h2>
       <p>Comparar só a mensalidade esconde a matrícula. Somando tudo com os preços publicados:</p>
       <ul>
@@ -81,7 +91,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <p>Nenhuma das duas aparece no Wellhub. No TotalPass, a NitroGym entra a partir do {tpNg.plano_minimo}, de {tpNg.preco_plano}, e a Ironberg só a partir do {tpIb.plano_minimo}, de {tpIb.preco_plano}. Se o seu plano for o {tpNg.plano_minimo}, só a NitroGym está liberada. Veja todos os planos em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
 
       <h2>Quem treina com personal</h2>
-      <p>A Ironberg informa que personal de fora pode atender lá pagando um valor fixo à academia, e não por aula ou por aluno; segundo o Montinho, que mantém este guia, são R$ 1.000 por mês, pagos pelo profissional, com cadastro na unidade. A NitroGym não publica regra; pergunte antes de combinar o local com o profissional. Mais sobre o assunto em <a href="/guias/personal-trainer-alphaville/">personal trainer em Alphaville</a> e <a href="/guias/personal-trainer-tambore/">no Tamboré</a>.</p>
+      <p>A Ironberg informa que personal de fora pode atender lá pagando um valor fixo à academia, e não por aula ou por aluno; segundo o Montinho, que mantém este guia, são R$ 1.000 por mês, pagos pelo profissional, com cadastro na unidade. A NitroGym não publica regra; pergunte antes de combinar o local com o profissional. A regra de cada academia da região está em <a href="/ferramentas/academias-que-aceitam-personal-externo/">academias que aceitam personal externo</a>; veja também <a href="/guias/personal-trainer-alphaville/">personal trainer em Alphaville</a> e <a href="/guias/personal-trainer-tambore/">no Tamboré</a>.</p>
 
       <h2>Resumo por perfil</h2>
       <ul>
@@ -95,6 +105,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       </ul>
       <p>Visite as duas no horário em que você vai treinar. O <a href="/ferramentas/checklist/">checklist de visita</a> ajuda, e o <a href={`/ferramentas/comparador/?a=${ib.id}&b=${ng.id}`}>comparador</a> mostra as duas fichas completas lado a lado. Para outras opções de padrão parecido, veja a <a href="/academias/precos/">tabela de preços</a>.</p>
     </div>
+
+    <Perguntas itens={perguntas} titulo="Perguntas sobre Ironberg e NitroGym" />
 
     <section class="bloco fino" aria-labelledby="fichas-t">
       <div class="cab"><h2 id="fichas-t">As duas fichas</h2><a class="link-forte" href="/academias/?regiao=alphaville">Outras academias de Alphaville</a></div>
