@@ -9,6 +9,7 @@ No mesmo espírito da calculadora do Personal por Perto, escrita para Alphaville
 |---|---|---|
 | Faixas de Alphaville, Barueri e Santana de Parnaíba (avulsa, pacote mensal, online) | Estimativas editoriais por perfil de cidade do Personal por Perto, informadas pelo Renato em 18/11/2026. **Não há amostra.** | "Referência editorial"; nunca "preço médio", nunca valor exato |
 | Teto da aula avulsa (R$ 300) e piso do online (R$ 110 por mês) em Alphaville, Tamboré, Aldeia da Serra e Santana de Parnaíba; Centro de Barueri com a faixa original | Ajuste informado pelo Montinho em 18/11/2026 | Dentro da mesma "referência editorial"; a página diz que os dois limites vieram dele |
+| Aula dentro do pacote: R$ 50 a R$ 300 (Alphaville, Tamboré, Aldeia da Serra) e R$ 40 a R$ 250 (Barueri, Santana de Parnaíba) | Informado pelo Montinho em 18/11/2026. Passou a ser o dado-base: total do mês = aula no pacote × sessões (antes era a faixa mensal do Personal por Perto) | "Referência editorial"; a página diz que veio dele |
 | Tamboré e Aldeia da Serra | Sem faixa própria: usam a referência de Barueri | Aviso na tela ("Referência de Barueri: …") |
 | Taxa de personal externo (Ironberg R$ 1.000/mês, Arena 18 R$ 400/mês, pagas pelo profissional) | Campo `personal_externo` das fichas, com a fonte de cada uma | Texto e pergunta frequente; não entra na faixa |
 | Preços reais de personais da região | O guia não tem nenhum coletado | A seção "De onde vêm as faixas" diz isso |
@@ -24,7 +25,7 @@ Ficou de fora por falta de fonte: taxa de condomínio para personal, preço de p
 ## Regras da conta
 
 - Sessões por mês = vezes por semana × 52 ÷ 12, arredondado (1× ≈ 4, 2× ≈ 9, 3× ≈ 13, 4× ≈ 17, 5× ≈ 22).
-- 2 e 3 vezes por semana: vale a faixa do pacote. 1, 4 e 5 vezes: aula no pacote (mensal ÷ 11) × sessões, marcada como extrapolação.
+- Total do mês = aula dentro do pacote × sessões, para qualquer frequência (desde o ajuste de 18/11; não há mais extrapolação).
 - Arredondamento único: dezena até R$ 1.000; cinquentena acima.
 - Online é mensal e não muda com a frequência.
 - A referência não distingue condomínio, academia e domicílio. O formato muda os avisos sobre custos em volta, não a faixa.

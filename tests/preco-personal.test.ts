@@ -12,27 +12,25 @@ test('arredondamento único: dezena até R$ 1.000, cinquentena acima', () => {
   assert.equal(arredonda(182), 180); assert.equal(arredonda(545), 550); assert.equal(arredonda(1000), 1000);
   assert.equal(arredonda(2318), 2300); assert.equal(arredonda(1024), 1000); assert.equal(arredonda(1026), 1050);
 });
-test('2 e 3 vezes usam a faixa do pacote direto; resultado é sempre faixa', () => {
-  for (const f of [2, 3]) { const r = calcular(D, 'alphaville', 'condominio', f); assert.deepEqual(r.mes, [500, 1500]); assert.equal(r.extrapolado, false); assert.ok(r.mes[0] < r.mes[1]); }
+test('total do mês = aula no pacote × sessões; resultado é sempre faixa', () => {
+  const r = calcular(D, 'alphaville', 'condominio', 3);
+  assert.deepEqual(r.aulaPacote, [50, 300]); assert.deepEqual(r.mes, [650, 3900]); assert.ok(r.mes[0] < r.mes[1]);
+  assert.deepEqual(calcular(D, 'alphaville', 'academia', 2).mes, [450, 2700]);
+  assert.deepEqual(calcular(D, 'alphaville', 'domicilio', 1).mes, [200, 1200]);
+  assert.deepEqual(calcular(D, 'alphaville', 'domicilio', 5).mes, [1100, 6600]);
   assert.deepEqual(calcular(D, 'alphaville', 'academia', 3).avulsa, [100, 300]);
-  assert.deepEqual(calcular(D, 'alphaville', 'academia', 3).aulaPacote, [50, 140]);
 });
-test('1, 4 e 5 vezes são extrapolação marcada', () => {
-  assert.deepEqual(calcular(D, 'alphaville', 'domicilio', 1).mes, [180, 550]);
-  assert.deepEqual(calcular(D, 'alphaville', 'domicilio', 4).mes, [770, 2300]);
-  const r = calcular(D, 'alphaville', 'domicilio', 5); assert.deepEqual(r.mes, [1000, 3000]); assert.equal(r.extrapolado, true);
-  assert.ok(r.memoria.some((l) => /extrapolação/.test(l)));
+test('Barueri e Santana de Parnaíba: aula no pacote de 40 a 250', () => {
+  for (const l of ['barueri-centro', 'santana-de-parnaiba']) { const r = calcular(D, l, 'academia', 3); assert.deepEqual(r.aulaPacote, [40, 250]); assert.deepEqual(r.mes, [520, 3250]); }
+  assert.deepEqual(calcular(D, 'barueri-centro', 'academia', 2).avulsa, [90, 220]);
 });
 test('online é mensal e não muda com a frequência', () => {
   const a = calcular(D, 'alphaville', 'online', 1), b = calcular(D, 'alphaville', 'online', 5);
   assert.deepEqual(a.mes, [110, 550]); assert.deepEqual(b.mes, a.mes); assert.equal(a.avulsa, null);
-  assert.deepEqual(calcular(D, 'santana-de-parnaiba', 'online', 3).mes, [110, 500]);
+  assert.deepEqual(calcular(D, 'barueri-centro', 'online', 3).mes, [200, 500]);
 });
-test('fallback nunca é silencioso: Tamboré e Aldeia usam a referência de Barueri e dizem isso', () => {
-  for (const l of ['tambore', 'aldeia-da-serra']) { const r = calcular(D, l, 'condominio', 3); assert.equal(r.fallback, true); assert.deepEqual(r.mes, [450, 1300]); assert.match(r.memoria[0], /referência de Barueri/); }
-  const c = calcular(D, 'barueri-centro', 'academia', 2); assert.deepEqual(c.mes, [450, 1300]);
-  assert.deepEqual(c.avulsa, [90, 220]); assert.deepEqual(calcular(D, 'barueri-centro', 'online', 2).mes, [200, 500]);
-  assert.deepEqual(calcular(D, 'tambore', 'academia', 2).avulsa, [90, 300]); assert.deepEqual(calcular(D, 'tambore', 'online', 2).mes, [110, 500]);
+test('fallback nunca é silencioso: Tamboré e Aldeia dizem de onde vem a faixa', () => {
+  for (const l of ['tambore', 'aldeia-da-serra']) { const r = calcular(D, l, 'condominio', 3); assert.equal(r.fallback, true); assert.deepEqual(r.aulaPacote, [50, 300]); assert.match(r.memoria[0], /referência de Barueri/); assert.match(r.memoria[0], /informados pelo Montinho/); }
   assert.equal(calcular(D, 'alphaville', 'academia', 2).fallback, false);
 });
 test('memória de cálculo sai linha a linha', () => {

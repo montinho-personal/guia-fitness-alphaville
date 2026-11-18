@@ -1,13 +1,8 @@
 {
-  "nota": "Faixas de REFERÊNCIA EDITORIAL, não pesquisa de preços praticados. Origem: estimativas editoriais por perfil de cidade do portal Personal por Perto (personalporperto.com.br/ferramentas/calculadora-preco-personal/), informadas pelo Renato em 18/11/2026. Não há amostra. Nunca chamar de preço médio. Quando o guia coletar preços reais (com data e fonte), trocar aqui e dizer quantos são e de quando. Ajuste de 18/11/2026, informado pelo Montinho Personal Trainer (que atende na região): teto da aula avulsa em R$ 300 e piso do online em R$ 110 por mês em Alphaville, Tamboré, Aldeia da Serra e Santana de Parnaíba. O Centro de Barueri ficou com a faixa original, a pedido dele.",
-  "origem": "Personal por Perto (estimativa editorial por perfil de cidade), com teto da aula avulsa e piso do online ajustados pelo Montinho Personal Trainer",
+  "nota": "Faixas de REFERÊNCIA EDITORIAL, não pesquisa de preços praticados. Origem: estimativas editoriais por perfil de cidade do portal Personal por Perto (personalporperto.com.br/ferramentas/calculadora-preco-personal/), informadas pelo Renato em 18/11/2026. Não há amostra. Nunca chamar de preço médio. Quando o guia coletar preços reais (com data e fonte), trocar aqui e dizer quantos são e de quando. Ajuste de 18/11/2026, informado pelo Montinho Personal Trainer (que atende na região): teto da aula avulsa em R$ 300 e piso do online em R$ 110 por mês em Alphaville, Tamboré, Aldeia da Serra e Santana de Parnaíba. O Centro de Barueri ficou com a faixa original, a pedido dele. Segundo ajuste de 18/11/2026, também informado pelo Montinho: a aula dentro do pacote passa a ser dado direto (R$ 50 a R$ 300 em Alphaville, Tamboré e Aldeia da Serra; R$ 40 a R$ 250 em Barueri e Santana de Parnaíba) e o total do mês é aula no pacote × sessões.",
+  "origem": "Personal por Perto (estimativa editorial por perfil de cidade) para aula avulsa e online; aula dentro do pacote, teto da avulsa e piso do online informados pelo Montinho Personal Trainer",
   "url": "https://www.personalporperto.com.br/ferramentas/calculadora-preco-personal/",
   "registrado_em": "2026-11-18",
-  "pacote_frequencias": [
-    2,
-    3
-  ],
-  "sessoes_base_pacote": 11,
   "bases": {
     "alphaville": {
       "nome": "Alphaville",
@@ -15,13 +10,13 @@
         100,
         300
       ],
-      "mensal": [
-        500,
-        1500
-      ],
       "online": [
         110,
         550
+      ],
+      "aula_pacote": [
+        50,
+        300
       ]
     },
     "barueri": {
@@ -30,13 +25,13 @@
         90,
         220
       ],
-      "mensal": [
-        450,
-        1300
-      ],
       "online": [
         200,
         500
+      ],
+      "aula_pacote": [
+        40,
+        250
       ]
     },
     "santana-de-parnaiba": {
@@ -45,13 +40,13 @@
         90,
         300
       ],
-      "mensal": [
-        450,
-        1300
-      ],
       "online": [
         110,
         500
+      ],
+      "aula_pacote": [
+        40,
+        250
       ]
     },
     "barueri-entorno": {
@@ -60,13 +55,13 @@
         90,
         300
       ],
-      "mensal": [
-        450,
-        1300
-      ],
       "online": [
         110,
         500
+      ],
+      "aula_pacote": [
+        50,
+        300
       ]
     }
   },
@@ -80,13 +75,13 @@
       "id": "tambore",
       "nome": "Tamboré",
       "base": "barueri-entorno",
-      "motivo": "sem faixa própria; Tamboré fica em Barueri. Aula avulsa até R$ 300 e online a partir de R$ 110, limites informados pelo Montinho"
+      "motivo": "sem faixa própria; Tamboré fica em Barueri. Aula no pacote de R$ 50 a R$ 300, aula avulsa até R$ 300 e online a partir de R$ 110, limites informados pelo Montinho"
     },
     {
       "id": "aldeia-da-serra",
       "nome": "Aldeia da Serra",
       "base": "barueri-entorno",
-      "motivo": "sem faixa própria; a Aldeia da Serra se divide entre Barueri e Santana de Parnaíba, que têm a mesma faixa presencial. Aula avulsa até R$ 300 e online a partir de R$ 110, limites informados pelo Montinho"
+      "motivo": "sem faixa própria; a Aldeia da Serra se divide entre Barueri e Santana de Parnaíba. Aula no pacote de R$ 50 a R$ 300, aula avulsa até R$ 300 e online a partir de R$ 110, limites informados pelo Montinho"
     },
     {
       "id": "barueri-centro",
