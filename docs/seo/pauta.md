@@ -41,6 +41,7 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | "crossfit kids", "crossfit infantil" | `/modalidades/crossfit/` | Já respondido (Unika CF) |
 | "academia mais cara de alphaville", "mensalidade ironberg/scelta alphaville" (busca de 18/11) | `/academias/precos/` e `/guias/academias-premium-alphaville/` | Só com mensalidade confirmada na fonte; hoje sem valor publicado |
 | "academia 24h alphaville" (REL de 18/11) | `/academias/24-horas/` | Conferir na próxima revisão se a página responde no lead |
+| Vivere Alpha, academia terapêutica e fisioterapia (REL de "personal trainer para iniciantes alphaville", 18/11) | ficha nova | Só com fonte oficial do lugar |
 | "primeira vez na academia", "o que devo saber antes de entrar na academia" (PAA de 18/11) | `/ferramentas/checklist/` | FAQ feita; artigo próprio só se aparecer busca local |
 
 ## 3. Materiais para baixar
@@ -107,7 +108,7 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 | 49 | 2026-11-15 | `/guias/personal-trainer-olympia-fitness-polvilho/` | Personal trainer na Olympia Fitness, no Polvilho |
 | 50 | 2026-11-15 | `/guias/personal-trainer-panobianco-barueri-centro/` | Personal trainer na Panobianco Barueri Centro: custo e regras |
 | 51 | 2026-11-15 | `/guias/personal-trainer-para-emagrecer-aldeia-da-serra/` | Personal trainer para emagrecer na Aldeia da Serra |
-| 52 | 2026-11-15 | `/guias/personal-trainer-para-emagrecer-alphaville/` | Personal trainer para emagrecer em Alphaville: como escolher |
+| ~~52~~ | ~~2026-11-15~~ | ~~`/guias/personal-trainer-para-emagrecer-alphaville/`~~ | ~~Personal trainer para emagrecer em Alphaville: como escolher~~ (revisado em 18/11, SerpApi) |
 | 53 | 2026-11-15 | `/guias/personal-trainer-para-emagrecer-barueri/` | Emagrecer com personal trainer em Barueri: um guia prático |
 | 54 | 2026-11-15 | `/guias/personal-trainer-para-emagrecer-santana-de-parnaiba/` | Emagrecimento com personal em Santana de Parnaíba: onde treinar |
 | 55 | 2026-11-15 | `/guias/personal-trainer-para-emagrecer-tambore/` | Personal para emagrecer no Tamboré: constância antes de tudo |
@@ -127,7 +128,7 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 | 69 | 2026-11-15 | `/guias/personal-trainer-para-idosos-santana-de-parnaiba/` | Personal trainer para idosos em Santana de Parnaíba |
 | 70 | 2026-11-15 | `/guias/personal-trainer-para-idosos-tambore/` | Personal trainer para idosos no Tamboré: condomínio ou academia |
 | 71 | 2026-11-15 | `/guias/personal-trainer-para-iniciantes-aldeia-da-serra/` | Personal trainer para iniciantes na Aldeia da Serra |
-| 72 | 2026-11-15 | `/guias/personal-trainer-para-iniciantes-alphaville/` | Personal trainer para iniciantes em Alphaville: como começar |
+| ~~72~~ | ~~2026-11-15~~ | ~~`/guias/personal-trainer-para-iniciantes-alphaville/`~~ | ~~Personal trainer para iniciantes em Alphaville: como começar~~ (revisado em 18/11, SerpApi) |
 | 73 | 2026-11-15 | `/guias/personal-trainer-para-iniciantes-barueri/` | Personal trainer para iniciantes em Barueri: por onde começar |
 | 74 | 2026-11-15 | `/guias/personal-trainer-para-iniciantes-santana-de-parnaiba/` | Personal trainer para iniciantes em Santana de Parnaíba |
 | 75 | 2026-11-15 | `/guias/personal-trainer-para-iniciantes-tambore/` | Personal trainer para iniciantes no Tamboré: por onde começar |
