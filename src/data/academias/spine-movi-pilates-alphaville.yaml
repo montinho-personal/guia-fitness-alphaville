@@ -1,0 +1,70 @@
+nome: Spine Movi Pilates
+titulo_seo: 'Spine Movi Pilates Alphaville: horário e Wellhub'
+regiao: alphaville
+bairro: Alphaville Industrial
+tipo: estudio
+resumo: 'Estúdio de pilates climatizado na Alameda Grajaú, no mesmo endereço da Clínica Health Body, aberto de segunda a sexta das 8h às 21h.'
+endereco: 'Alameda Grajaú, 60 - Alphaville Industrial, Barueri - SP, 06454-050'
+geo:
+  lat: -23.4979843
+  lng: -46.8462495
+horario:
+  seg:
+  - 08:00-21:00
+  ter:
+  - 08:00-21:00
+  qua:
+  - 08:00-21:00
+  qui:
+  - 08:00-21:00
+  sex:
+  - 08:00-21:00
+  sab: []
+  dom: []
+modalidades:
+- pilates
+atividades_listadas:
+- Pilates
+comodidades:
+- Armários
+- Vestiário
+agregadores:
+- nome: Wellhub
+  situacao: confirmada
+  atividades: ["Pilates"]
+  musculacao: false
+  conferido_em: '2026-11-18'
+  plano_minimo: Platinum
+  preco_plano: R$ 599,99
+  url: https://wellhub.com/pt-br/search/partners/spine-movi-pilates/
+mensalidade: null
+site: https://spinemovipilates.com
+telefone: '(11) 98281-6756'
+proveniencia:
+- campos:
+  - endereco
+  - geo
+  - horario
+  - modalidades
+  - comodidades
+  - agregadores
+  fonte: Página do estúdio no Wellhub
+  url: https://wellhub.com/pt-br/search/partners/spine-movi-pilates/
+  conferido_em: '2026-11-18'
+  nivel: fonte-publica
+divergencias:
+- 'Mesmo endereço e mesmas coordenadas da Clínica Health Body Pilates e Fisioterapia no Wellhub, mas com telefone, horário, site e plano próprios; as páginas não dizem se dividem o espaço.'
+pendencias:
+- Mensalidade direta
+- Tamanho das turmas
+- Site oficial não abriu na conferência
+analise:
+- 'Estúdio de pilates na Alameda Grajaú, no Alphaville Industrial. A página no Wellhub o descreve como climatizado e com atendimento direcionado ao objetivo de cada aluno.'
+- 'Funciona das 8h às 21h de segunda a sexta. No Wellhub, só entra a partir do Platinum, um dos planos mais altos; a Clínica Health Body, no mesmo endereço, entra a partir do Gold.'
+status: publicado
+status_fatos: fonte-publica-conferida
+status_originalidade: original-sem-verificacao-externa
+autor: Redação do Guia Fitness Alphaville
+revisor: null
+publicado_em: '2026-11-18'
+atualizado_em: '2026-11-18'

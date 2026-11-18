@@ -21,10 +21,10 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-16
-atualizado_em: 2026-11-16
+atualizado_em: 2026-11-18
 perguntas:
   - p: "Onde fazer pilates em Alphaville?"
-    r: "Estúdios com ficha no guia: Studio Vitalle e Studio Physio Pilates, na Calçada das Violetas; Inspire Pilates, na Praça Flor de Linho; Pilates Gaviões, na Av. Juruá; e Clínica Health Body, na Alameda Grajaú. Academias como Bodytech Iguatemi, VoiFit, Scelta e SkyFit também listam pilates."
+    r: "Estúdios com ficha no guia: Studio Vitalle e Studio Physio Pilates, na Calçada das Violetas; Inspire Pilates, na Praça Flor de Linho; Pilates Gaviões, na Av. Juruá; Clínica Health Body e Spine Movi Pilates, na Alameda Grajaú; e Clínica de Fisioterapia Araguaia, na Alameda Araguaia. Academias como Bodytech Iguatemi, VoiFit, Scelta e SkyFit também listam pilates."
   - p: "Quanto custa 1 mês de pilates em Alphaville?"
     r: "Nenhum dos estúdios conferidos publica mensalidade nas fontes que o guia conseguiu ler. Pelos agregadores, a entrada vai do Silver do Wellhub, de R$ 149,99 por mês, no Inspire e no Pilates Gaviões, até o Platinum, de R$ 599,99, no Studio Vitalle."
   - p: "Tem pilates reformer em Alphaville?"
@@ -41,7 +41,7 @@ perguntas:
 
 ## Dois polos: Centro Comercial e Alphaville Industrial
 
-Os estúdios se concentram em dois pontos. No **Centro Comercial**, perto do Iguatemi, ficam o [Studio Vitalle](/academias/studio-vitalle-pilates-alphaville/) e o [Studio Physio Pilates](/academias/studio-physio-pilates-alphaville/), ambos na Calçada das Violetas, e o [Inspire Pilates](/academias/inspire-pilates-alphaville/), na Praça Flor de Linho. No **Alphaville Industrial**, o [Pilates Gaviões](/academias/pilates-gavioes-alphaville/) funciona no mesmo número da Gaviões 24h, na Av. Juruá, e a [Clínica Health Body](/academias/health-body-pilates-alphaville/) fica na Alameda Grajaú.
+Os estúdios se concentram em dois pontos. No **Centro Comercial**, perto do Iguatemi, ficam o [Studio Vitalle](/academias/studio-vitalle-pilates-alphaville/) e o [Studio Physio Pilates](/academias/studio-physio-pilates-alphaville/), ambos na Calçada das Violetas, e o [Inspire Pilates](/academias/inspire-pilates-alphaville/), na Praça Flor de Linho. No **Alphaville Industrial**, o [Pilates Gaviões](/academias/pilates-gavioes-alphaville/) funciona no mesmo número da Gaviões 24h, na Av. Juruá, a [Clínica Health Body](/academias/health-body-pilates-alphaville/) e o [Spine Movi Pilates](/academias/spine-movi-pilates-alphaville/) dividem o endereço na Alameda Grajaú, e a [Clínica de Fisioterapia Araguaia](/academias/fisio-araguaia-pilates-alphaville/) fica na Alameda Araguaia. No Wellhub, a Araguaia e a Health Body entram a partir do Gold; o Spine Movi, só a partir do Platinum.
 
 ## Estúdio ou aula na academia
 
