@@ -1,4 +1,6 @@
 ---
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara, type RegiaoId } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
 import CartaoAcademia from '../../components/CartaoAcademia.astro';
 import Assinatura from '../../components/Assinatura.astro';
@@ -33,6 +35,7 @@ const perguntas = [
   { p: 'A Arena Tamboré fica na Granja Viana?', r: 'Não. A Arena Tamboré com ficha no guia fica na Alameda América, 440, no Centro Empresarial Tamboré, do lado de Santana de Parnaíba. É arena de beach tennis, futevôlei e vôlei, não academia de musculação.' },
 ];
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const ferramentas = ferramentasPara({ tipo: 'regiao', regiao: 'alphaville', lugar: 'Tamboré' });
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Regiões', url: '/regioes/' }, { nome: 'Alphaville e Tamboré', url: '/regioes/alphaville/' }, { nome: 'Tamboré', url: '/regioes/tambore/' }]}>
   <div class="wrap">
@@ -46,6 +49,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
     <div class="resposta"><span class="rotulo">Em resumo</span>
       <p>No Tamboré, a academia de musculação é a <a href="/academias/nitrogym-tambore/">NitroGym</a>, no Shopping Tamboré, a opção premium do bairro, e a <a href="/academias/bluefit-tambore/">Bluefit Tamboré</a>, na Av. Tucunaré, a de rede. Para lutas, há a Templo e o Jacó Fight Club na Av. Tucunaré e a G13 no Tamboré III. A Smart Fit mais perto é a do Carrefour Hiper Tamboré, em Alphaville Industrial.</p>
     </div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
 
     <div class="prosa">
       <h2>Shopping Tamboré e Av. Tucunaré</h2>
@@ -72,6 +76,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <div class="cab"><h2 id="lista-t">Fichas do Tamboré e arredores</h2><a class="link-forte" href="/mapa/">Ver no mapa</a></div>
       <div class="cartoes">{lista.map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
+
+    <FerramentasContexto itens={ferramentas} />
 
     <Perguntas itens={perguntas} titulo="Perguntas sobre academia no Tamboré" />
 

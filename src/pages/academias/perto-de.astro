@@ -1,4 +1,6 @@
 ---
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
@@ -19,6 +21,7 @@ const abs = (u: string) => new URL(u, Astro.site).href;
 const titulo = 'Academia perto do Iguatemi, Shopping Tamboré e estações';
 const descricao = 'Academias perto do Iguatemi Alphaville, Shopping Tamboré, 18 do Forte, Parque Shopping Barueri e estações da CPTM, com distância em linha reta e horário.';
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const ferramentas = ferramentasPara({ tipo: 'perto-de' });
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: 'Perto de você', url: '/academias/perto-de/' }]}>
   <div class="wrap">
@@ -33,6 +36,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <span class="rotulo">Resposta direta</span>
       <p>A maior concentração de academias fica entre o Iguatemi Alphaville, o Centro Comercial e o Alphaville Industrial, na Av. Juruá e na Alameda Araguaia. O Shopping Tamboré tem a NitroGym dentro do próprio prédio. Em Barueri, a Smart Fit fica dentro do Parque Shopping, a cerca de 300 metros em linha reta da estação Antônio João da CPTM. As distâncias abaixo são em linha reta: o trajeto real a pé ou de carro é maior.</p>
     </div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
 
     <nav class="prosa" aria-label="Pontos de referência">
       <p><strong>Ir para:</strong> {pontos.map((p, i) => <>{i > 0 && ' · '}<a href={`#${p.id}`}>{p.nome}</a></>)}</p>
@@ -52,6 +56,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <p>Perto nem sempre é prático. Uma academia a 800 metros do outro lado de uma avenida movimentada pode tomar mais tempo que outra a 2 km no seu caminho de casa. Antes de assinar, faça o trajeto no horário em que você vai treinar e confira estacionamento e horário de domingo na ficha. Para ver tudo no mapa, use o <a href="/mapa/">mapa do guia</a>; para comparar preços, a <a href="/academias/precos/">tabela de preços</a>.</p>
       <p>Algumas posições no mapa são aproximadas, como a da Fábrica Premium, informada na ficha. As coordenadas dos pontos de referência vêm do OpenStreetMap.</p>
     </div>
+
+    <FerramentasContexto itens={ferramentas} />
 
     <VideoMontinho id="DiH1OzIR6Yk" titulo="É impossível isso dar errado" pagina="perto-de" />
     <LeiaTambem url="/academias/perto-de/" />

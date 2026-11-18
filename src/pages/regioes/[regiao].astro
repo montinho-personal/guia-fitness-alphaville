@@ -1,4 +1,6 @@
 ---
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
 import CartaoAcademia from '../../components/CartaoAcademia.astro';
 import Assinatura from '../../components/Assinatura.astro';
@@ -80,6 +82,7 @@ const schema = [
   { '@type': 'Article', headline: m.h1, description: m.descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } },
   { '@type': 'ItemList', name: m.h1, numberOfItems: xs.length, itemListElement: xs.map((a, i) => ({ '@type': 'ListItem', position: i + 1, name: a.data.nome, url: abs(urlAcademia(a)) })) },
 ];
+const ferramentas = ferramentasPara({ tipo: 'regiao', regiao: regiao as RegiaoId, lugar: REGIOES[regiao as RegiaoId].nome });
 ---
 <Base titulo={m.titulo} descricao={m.descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Regiões', url: '/regioes/' }, { nome: r.titulo, url: urlRegiao(regiao) }]}>
   <div class="wrap">
@@ -194,6 +197,7 @@ const schema = [
         {regiao === 'santana-de-parnaiba' && <><li><a href="/guias/personal-trainer-santana-de-parnaiba/">Personal trainer em Santana de Parnaíba</a></li><li><a href="/guias/personal-trainer-aldeia-da-serra/">Personal trainer na Aldeia da Serra</a></li></>}
       </ul>
     </section>
+    <FerramentasContexto itens={ferramentas} />
     <Perguntas itens={perguntasAlpha} titulo="Perguntas frequentes sobre academias em Alphaville" />
     <Perguntas itens={perguntasBarueri} titulo="Perguntas frequentes sobre academias em Barueri" id="perguntas-barueri" />
     {regiao === 'alphaville' && <section class="bloco fino"><Mantem pagina={`regiao-${regiao}`} compacta titulo="Converse com um personal em Alphaville" texto="O Montinho Personal Trainer, que mantém este guia, atende presencialmente em academias e condomínios de Alphaville e Tamboré." /></section>}

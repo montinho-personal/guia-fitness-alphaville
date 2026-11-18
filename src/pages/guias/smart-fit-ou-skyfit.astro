@@ -1,4 +1,6 @@
 ---
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
 import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
@@ -42,6 +44,7 @@ const perguntas = [
   { p: 'SkyFit ou Bluefit?', r: 'As duas não publicam mensalidade por unidade em Alphaville. A SkyFit fica na Av. Juruá e lista mais aulas; a Bluefit tem unidades na Alameda Amazonas e no Tamboré. Compare horário e plano mínimo nas fichas.' },
 ];
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'smart-fit-sodimac-alphaville', nome: 'Smart Fit' }, { id: 'skyfit-alphaville', nome: 'SkyFit' }] });
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Smart Fit ou SkyFit', url: '/guias/smart-fit-ou-skyfit/' }]}>
   <div class="wrap">
@@ -56,6 +59,7 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <span class="rotulo">Resposta direta</span>
       <p>Se você quer saber o preço antes de ir e treinar em mais unidades da região, a Smart Fit é a escolha mais previsível: publica {sf.data.mensalidade?.valor} por mês na Sodimac e tem {redeSF.length} unidades com ficha no guia. Se você quer aulas variadas, como cross training, muay thai, zumba e pilates, ou usa agregador, a SkyFit atende melhor: entra a partir do {tsk?.plano_minimo} no TotalPass e do {wsk?.plano_minimo} no Wellhub.</p>
     </div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
 
     <div class="rolagem" tabindex="0" role="region" aria-label="Smart Fit e SkyFit lado a lado" style="margin:24px 0">
       <table class="dados">
@@ -96,6 +100,8 @@ const schema = [{ '@type': 'Article', headline: titulo, description: descricao, 
       <div class="cab"><h2 id="fichas-t">As fichas</h2><a class="link-forte" href="/academias/?regiao=alphaville">Outras academias de Alphaville</a></div>
       <div class="cartoes">{[sf, sk, ...outrasSK].map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
+
+    <FerramentasContexto itens={ferramentas} />
 
     <Perguntas itens={perguntas} titulo="Perguntas sobre Smart Fit e SkyFit" />
     <LeiaTambem url="/guias/smart-fit-ou-skyfit/" />

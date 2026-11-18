@@ -9,8 +9,10 @@ import VideoMontinho from './VideoMontinho.astro';
 import LeiaTambem from './LeiaTambem.astro';
 import Vitrine from './Vitrine.astro';
 import Perguntas from './Perguntas.astro';
+import FerramentasContexto from './FerramentasContexto.astro';
+import { ferramentasPara, type Contexto, type RegiaoId } from '../lib/ferramentas';
 import { CIDADES_PT, TEMAS_PT, urlTema, COMPARATIVOS, personalDaRegiao } from '../lib/artigos';
-import { REGIOES } from '../lib/dados';
+import { REGIOES, MODALIDADES } from '../lib/dados';
 import { academias, guias, dataIso, dataLonga, type Guia } from '../lib/dados';
 interface Props { g: Guia }
 const { g } = Astro.props;
@@ -27,6 +29,26 @@ const leiaAcad = acad ? [personalDaRegiao(acad.data.regiao, acad.data.bairro), C
 const cidadeMae = Object.keys(CIDADES_PT).find((c) => g.id === `personal-trainer-${c}`);
 const temasCidade = cidadeMae ? Object.keys(TEMAS_PT).filter((t) => idsGuias.has(`personal-trainer-${t}-${cidadeMae}`)) : [];
 const lista = d.lista_ids.length ? d.lista_ids.map((id) => { const a = todas.find((x) => x.id === id); if (!a) throw new Error(`lista_ids: ficha ${id} não existe`); return a; }) : todas.filter((a) => (d.lista_modalidades.length && d.lista_modalidades.some((m) => a.data.modalidades.includes(m))) || (d.lista_tipos.length && d.lista_tipos.includes(a.data.tipo)));
+// Ferramentas do contexto: tipo da página, lugar, região e modalidade saem do slug e do frontmatter.
+const REG_DA_CIDADE: Record<string, RegiaoId | undefined> = { alphaville: 'alphaville', tambore: 'alphaville', barueri: 'barueri', 'santana-de-parnaiba': 'santana-de-parnaiba', 'aldeia-da-serra': undefined };
+const cidadeDoSlug = Object.keys(CIDADES_PT).sort((x, y) => y.length - x.length).find((c) => g.id.endsWith(`-${c}`) || g.id === c);
+const ctxBase = { lugar: cidadeDoSlug ? CIDADES_PT[cidadeDoSlug].nome : undefined, regiao: cidadeDoSlug ? REG_DA_CIDADE[cidadeDoSlug] : undefined };
+const temaDoSlug = Object.keys(TEMAS_PT).find((t) => g.id.startsWith(`personal-trainer-${t}-`));
+const modDaPagina = d.lista_modalidades[0];
+const ctx: Contexto | null =
+  acad ? { tipo: 'personal-academia', academia: { id: acad.id, nome: acad.data.nome }, regiao: acad.data.regiao as RegiaoId }
+  : temaDoSlug === 'a-domicilio' ? { tipo: 'domicilio', ...ctxBase }
+  : temaDoSlug === 'em-condominio' ? { tipo: 'condominio', ...ctxBase }
+  : temaDoSlug ? { tipo: 'personal-publico', publico: temaDoSlug.replace(/^para-/, ''), ...ctxBase }
+  : cidadeMae ? { tipo: 'personal-cidade', ...ctxBase }
+  : g.id.includes('hyrox') ? { tipo: 'hyrox', ...ctxBase }
+  : g.id === 'como-escolher-academia' ? { tipo: 'como-escolher' }
+  : g.id === 'academia-ou-personal' ? { tipo: 'academia-ou-personal' }
+  : g.id === 'academias-premium-alphaville' ? { tipo: 'premium' }
+  : modDaPagina ? { tipo: 'modalidade', modalidade: modDaPagina, modalidadeNome: MODALIDADES[modDaPagina] ?? modDaPagina, ...ctxBase }
+  : /jiu-jitsu|lutas/.test(g.id) ? { tipo: 'modalidade', modalidade: 'lutas', modalidadeNome: 'Lutas', ...ctxBase }
+  : null;
+const ferramentas = ctx ? ferramentasPara(ctx) : [];
 const abs = (u: string) => new URL(u, Astro.site).href;
 const video = d.video?.publicado_em ? [{ '@type': 'VideoObject', name: d.video.titulo, description: `${d.video.titulo} — vídeo do Montinho Personal Trainer.`, uploadDate: dataIso(d.video.publicado_em!), thumbnailUrl: `https://i.ytimg.com/vi/${d.video.id}/hqdefault.jpg`, embedUrl: `https://www.youtube-nocookie.com/embed/${d.video.id}`, contentUrl: `https://www.youtube.com/shorts/${d.video.id}` }] : [];
 const schema = [...video, { '@type': 'Article', headline: d.h1, description: d.descricao, inLanguage: 'pt-BR', datePublished: dataIso(d.publicado_em), dateModified: dataIso(d.atualizado_em), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') }, mainEntityOfPage: { '@id': `${abs(url)}#pagina` } }];
@@ -39,7 +61,9 @@ const schema = [...video, { '@type': 'Article', headline: d.h1, description: d.d
       <Assinatura autor={d.autor} revisor={d.revisor} publicado={d.publicado_em} atualizado={d.atualizado_em} />
     </header>
     <div class="resposta"><span class="rotulo">Resposta direta</span><p>{d.resposta}</p></div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
     <article class="prosa"><Content /></article>
+    <FerramentasContexto itens={ferramentas} />
 
     {lista.length > 0 && (
       <section class="bloco fino" aria-labelledby="lista-t">

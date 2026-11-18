@@ -58,6 +58,13 @@ const planosWh = ORDEM_WELLHUB.filter((p) => todas.some((a) => a.data.agregadore
       var J = JSON.parse(document.getElementById('dados').textContent), D = J.dados, M = J.mods;
       var f = document.getElementById('quiz'), sec = document.getElementById('resultado'), lista = document.getElementById('res-lista'), resumo = document.getElementById('res-resumo');
       function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+      // Pré-preenchimento vindo de artigos: ?regiao=&modalidade=&quando=cedo,domingo&precisa=estacionamento
+      (function () {
+        var p = new URLSearchParams(location.search);
+        function sel(nome, v) { if (v && f.elements[nome] && Array.prototype.some.call(f.elements[nome].options, function (o) { return o.value === v; })) f.elements[nome].value = v; }
+        sel('regiao', p.get('regiao')); sel('modalidade', p.get('modalidade'));
+        ['quando', 'precisa'].forEach(function (k) { (p.get(k) || '').split(',').forEach(function (v) { var el = f.querySelector('input[name="' + k + '"][value="' + v + '"]'); if (el) el.checked = true; }); });
+      })();
       var ROT = { cedo: 'Abre antes das 6h', tarde: 'Fecha depois das 22h', h24: 'Funciona 24 horas', domingo: 'Abre aos domingos', estacionamento: 'Estacionamento informado', acessivel: 'Itens de acessibilidade informados' };
       f.addEventListener('submit', function (e) {
         e.preventDefault();

@@ -155,6 +155,12 @@ const schema = [{ '@type': 'ItemList', name: titulo, numberOfItems: lista.length
     chips('reg', (v) => { reg = v; });
     chips('st', (v) => { st = v; });
     q.addEventListener('input', () => { aplicar(); clearTimeout(tBusca); tBusca = window.setTimeout(() => ev('personal_externo_filtro', { filtro: 'busca' }), 1200); });
+    const reg0 = new URLSearchParams(location.search).get('reg');
+    if (reg0 && document.querySelector(`button[data-reg="${CSS.escape(reg0)}"]`)) {
+      reg = reg0;
+      document.querySelectorAll('button[data-reg]').forEach((x) => x.setAttribute('aria-pressed', String((x as HTMLElement).dataset.reg === reg0)));
+      aplicar();
+    }
     if (q0) aplicar();
     document.getElementById('pe-limpar')!.addEventListener('click', () => {
       q.value = ''; reg = ''; st = '';
