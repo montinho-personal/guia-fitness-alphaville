@@ -149,7 +149,7 @@ const dadosJson = JSON.stringify({ U, feriados, pendentesMunicipais: FER.municip
       <h2>Feriados: como funcionam as exceções</h2>
       <p>Para cada data, o buscador segue esta ordem: primeiro o horário oficial publicado para aquela data; depois, a grade genérica de feriados da academia, mostrada como "horário padrão de feriados" e marcada como a confirmar; sem nenhuma das duas, "Horário do feriado a confirmar". Hoje {comPadraoFeriado.length} unidades publicam grade de feriados: {comPadraoFeriado.map((x) => `${x.nome} (${faixasTexto(x.horario_feriados!.faixas.map(faixaMin))})`).join('; ')}.</p>
       {proximoFeriado && <p>O próximo feriado no calendário do guia é {proximoFeriado.nome.toLowerCase().startsWith('dia') ? 'o ' : ''}{proximoFeriado.nome}, em {new Date(proximoFeriado.data + 'T12:00:00Z').toLocaleDateString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'long' })}. Use o atalho "Feriados" para ver o que cada academia informa.</p>}
-      <p>Os feriados municipais de Barueri e de Santana de Parnaíba entram no buscador quando o calendário oficial de cada prefeitura for conferido. Até lá, num feriado municipal, confirme o horário direto com a academia.</p>
+      <p>Feriados municipais: o calendário de Barueri para 2026 (Decreto nº 10.264/2025) foi conferido, e não há mais feriado municipal no ano; o de 2027 entra quando a prefeitura publicar o decreto. O calendário de Santana de Parnaíba ainda não pôde ser conferido. Num feriado municipal ainda não listado, confirme o horário direto com a academia.</p>
     </div>
 
     <VideoMontinho id="DiH1OzIR6Yk" titulo="Proteja o seu objetivo: a brecha que te faz recomeçar" pagina="academias-abertas" />

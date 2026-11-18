@@ -50,17 +50,16 @@ Regras:
 |---|---|---|
 | Arena 18 | Aula experimental de musculação grátis com o Montinho, sem diária (`responsavel: montinho`; botão abre o WhatsApp dele) | Confirmada pelo Montinho em 18/11 (relação comercial declarada) |
 | NitroGym Tamboré | Day use R$ 90, musculação, pago no local | Confirmada (site oficial); janela de entrada a confirmar |
-| Ironberg Alphaville | Aula avulsa, musculação, valor na recepção, sem agendamento | Confirmada (site oficial); valor a consultar |
-| Smart Fit (Sodimac, Carrefour Tamboré, Av. Zélia, Centro, Parque Shopping) | Passe diário | A confirmar: a central de ajuda da rede não abriu aqui |
+| Ironberg Alphaville | Day Pass R$ 120: musculação, Hyrox e Ironbike, válido até 23h59, usar em até 7 dias da compra | Confirmada no site da unidade (alphaville.ironberg.com.br), 18/11 à noite; o site da rede ainda diz "valor na unidade" |
+| Smart Fit (Sodimac, Carrefour Tamboré, Av. Zélia, Centro, Parque Shopping) | Passe diário a partir de R$ 24,90 (outro artigo da central diz R$ 29,90), pelo app ou totem; a rede não tem aula experimental | Confirmada (central de ajuda, 18/11 à noite); valor por unidade a consultar |
 | CrossFit Barueri | Aula experimental de CrossFit, grátis, separada da turma | Confirmada (site oficial) |
 | G13 Alphaville | Aula experimental de lutas, grátis | Confirmada (site oficial, 17/11) |
 | BlackSheep Alphaville | Aula experimental de Hybrid; drop in R$ 75 e mês teste R$ 400 na tabela da rede | Confirmada (site oficial, 13/11; site fora do ar em 18/11) |
 | Tecfit Alphaville | Experiência de eletroestimulação, agendada | Confirmada (site oficial); preço a consultar |
 | SIX e Fábrica Premium | Visita agendada (não é treino) | Confirmada (site oficial) |
-| Scelta | Aula experimental pelo link do Instagram | A confirmar: modalidade e preço; o site não abriu |
+| Scelta | Aula experimental agendada pelo WhatsApp do site | Confirmada (site oficial, 18/11 à noite); preço e modalidade não publicados |
 
 Pendentes de fonte:
-- **On Force Barueri:** sem ficha no guia, e o site não abriu.
-- **Scelta:** `academiascelta.com.br` não abriu.
-- **Smart Fit:** `ajuda.smartfit.com.br` não abriu.
+- **On Force Barueri:** sem ficha no guia. O site (aberto em 18/11 à noite) anuncia primeira aula experimental grátis, musculação, lutas e funcional, seg a sex 5h30 às 23h e sáb e feriados 8h às 14h. Entra quando a ficha for criada.
+- **Alliance Alphaville (jiu-jítsu):** sem ficha no guia. O site anuncia aula de introdução ("introclass") agendada; Av. Netuno, 19, Centro de Apoio I, Santana de Parnaíba; seg a sex 7h às 21h30, sáb 9h às 12h.
 - **Bluefit, Bodytech, SkyFit, Gaviões e VoiFit:** não publicam diária nem aula experimental nas páginas que abrem aqui.

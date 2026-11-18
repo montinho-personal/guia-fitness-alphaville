@@ -73,7 +73,7 @@ agregadores:
   preco_plano: R$ 299,90
   url: https://totalpass.com/br/academias/scelta-academia/
 mensalidade: null
-site: https://www.instagram.com/sceltaacademia/
+site: https://www.academiascelta.com.br/
 telefone: (11) 97500-6370
 proveniencia:
 - campos:
@@ -115,9 +115,10 @@ acesso_avulso:
   modalidades: []
   musculacao: false
   preco: { situacao: a-consultar }
-  regras: ['Agendamento pelo link do perfil no Instagram.']
-  destino: { tipo: reserva, url: 'https://www.instagram.com/sceltaacademia/' }
-  situacao: a-confirmar
-  fonte: Instagram oficial da Scelta (post visto na busca do Google; o site não abriu na conferência)
+  regras: ['Agendamento pelo WhatsApp da academia, no botão "Agendar aula experimental" do site.']
+  destino: { tipo: reserva, url: 'https://www.academiascelta.com.br/', canal: WhatsApp }
+  situacao: confirmada
+  fonte: Site oficial da Scelta
+  url: https://www.academiascelta.com.br/
   conferido_em: '2026-11-18'
   pendencias: ['Modalidade incluída (musculação ou aula coletiva).', 'Preço e regras de primeira visita.']
