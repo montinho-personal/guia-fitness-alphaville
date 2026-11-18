@@ -253,3 +253,6 @@ footer .nota{color:var(--cinza);max-width:34em;font-size:15px;margin-top:12px}
 
 .topo-acoes{display:flex;align-items:center;gap:10px;margin-left:auto}
 @media(min-width:900px){.topo-acoes{margin-left:0}}
+/* Destaque da casa (academia onde o Montinho atende): sempre primeiro e sempre identificado como publicidade */
+.cartao-destaque{border:2px solid #FF6A00 !important;box-shadow:0 6px 20px rgba(255,106,0,.18);position:relative}
+.selo-destaque{display:inline-block;align-self:flex-start;margin:0 0 8px;padding:3px 9px;border-radius:6px;background:#FF6A00;color:#111827;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}

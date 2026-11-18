@@ -13,7 +13,7 @@ import FerramentasContexto from './FerramentasContexto.astro';
 import { ferramentasPara, type Contexto, type RegiaoId } from '../lib/ferramentas';
 import { CIDADES_PT, TEMAS_PT, urlTema, COMPARATIVOS, personalDaRegiao } from '../lib/artigos';
 import { REGIOES, MODALIDADES } from '../lib/dados';
-import { academias, guias, dataIso, dataLonga, type Guia } from '../lib/dados';
+import { academias, guias, dataIso, dataLonga, destaquePrimeiro, eDestaque, type Guia } from '../lib/dados';
 interface Props { g: Guia }
 const { g } = Astro.props;
 const d = g.data;
@@ -68,7 +68,7 @@ const schema = [...video, { '@type': 'Article', headline: d.h1, description: d.d
     {lista.length > 0 && (
       <section class="bloco fino" aria-labelledby="lista-t">
         <div class="cab"><h2 id="lista-t">{d.lista_titulo ?? `${lista.length} ${lista.length === 1 ? 'opção' : 'opções'} com ficha no guia`}</h2><a class="link-forte" href="/academias/">Abrir o guia com filtros</a></div>
-        <div class="cartoes">{lista.map((a) => <CartaoAcademia a={a} />)}</div>
+        <div class="cartoes">{(lista.some(eDestaque) ? destaquePrimeiro(lista, (x) => x) : [...todas.filter(eDestaque), ...lista]).map((a) => <CartaoAcademia a={a} />)}</div>
       </section>
     )}
 

@@ -1,4 +1,5 @@
 ---
+import { eDestaque as __eDestaque, academias as __academias } from '../../lib/dados';
 import FerramentasContexto from '../../components/FerramentasContexto.astro';
 import { ferramentasPara } from '../../lib/ferramentas';
 import Base from '../../layouts/Base.astro';
@@ -94,6 +95,7 @@ const MIDIA = {
   'santana-de-parnaiba': { foto: fotoSelfie, alt: 'Montinho, personal trainer que mantém este guia, em selfie no espelho da academia', legenda: 'O Montinho, personal trainer que mantém este guia e atende em Santana de Parnaíba. Publicidade da casa.', video: { id: 'yndKE1GrnUQ', titulo: 'Toda pessoa com shape tem uma coisa em comum' } },
 } as const;
 const midia = MIDIA[regiao as keyof typeof MIDIA];
+const __destaqueReg = (await __academias()).filter(__eDestaque);
 ---
 <Base titulo={m.titulo} descricao={m.descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Regiões', url: '/regioes/' }, { nome: r.titulo, url: urlRegiao(regiao) }]}>
   <div class="wrap">
@@ -188,10 +190,11 @@ const midia = MIDIA[regiao as keyof typeof MIDIA];
 
     <section class="bloco fino" aria-labelledby="lista-t">
       <div class="cab"><h2 id="lista-t">Academias de {r.titulo}, por bairro</h2><a class="link-forte" href={`/academias/?regiao=${regiao}`}>Abrir no guia com filtros</a></div>
-      {bairros.map(({ b, as }) => (
+      {__destaqueReg.length > 0 && <><h3 style="font-size:20px;margin:22px 0 12px">Destaque</h3><div class="cartoes">{__destaqueReg.map((a) => <CartaoAcademia a={a} nivel="h4" />)}</div></>}
+      {bairros.filter(({ as }) => as.some((a) => !__destaqueReg.includes(a))).map(({ b, as }) => (
         <>
           <h3 style="font-size:20px;margin:22px 0 12px">{b} <span style="color:var(--cinza);font-weight:500">· {as.length}</span></h3>
-          <div class="cartoes">{as.map((a) => <CartaoAcademia a={a} nivel="h4" />)}</div>
+          <div class="cartoes">{as.filter((a) => !__destaqueReg.includes(a)).map((a) => <CartaoAcademia a={a} nivel="h4" />)}</div>
         </>
       ))}
     </section>

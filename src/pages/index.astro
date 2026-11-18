@@ -1,4 +1,5 @@
 ---
+import { comDestaque as __comDestaque, academias as __academias } from '../lib/dados';
 import Base from '../layouts/Base.astro';
 import CartaoAcademia from '../components/CartaoAcademia.astro';
 import Ferramentas from '../components/Ferramentas.astro';
@@ -28,6 +29,8 @@ const lista = [
   { url: '/academias/wellhub-totalpass/', t: 'Academias com Wellhub e TotalPass', p: 'O plano mínimo que cada academia exige em cada agregador, e quanto esse plano custa.' },
   ...gs.filter((g) => g.data.secao === 'guias' && !g.id.startsWith('personal-trainer-') && !/hyrox/.test(g.id)).map((g) => ({ url: `/guias/${g.id}/`, t: g.data.h1, p: g.data.descricao })),
 ];
+const __todasDestaque = await __academias();
+const __cartoesDestaque = __comDestaque(cartoes.filter((x): x is NonNullable<typeof x> => !!x), __todasDestaque);
 ---
 <Base titulo="Guia Fitness Alphaville: academias com fonte e data" descricao="Guia local de academias em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Endereço, horários e planos de cada uma, com a fonte e a data de conferência." schema={schema} semSufixo>
   <section class="bloco" style="padding-bottom:36px">
@@ -74,7 +77,7 @@ const lista = [
         <div><span class="rotulo cor-marca">Guia de academias</span><h2>{todas.length} academias com ficha</h2></div>
         <a class="link-forte" href="/academias/">Ver todas, com filtros</a>
       </div>
-      <div class="cartoes">{cartoes.map((a) => <CartaoAcademia a={a!} />)}</div>
+      <div class="cartoes">{__cartoesDestaque.map((a) => <CartaoAcademia a={a} />)}</div>
     </div>
   </section>
 

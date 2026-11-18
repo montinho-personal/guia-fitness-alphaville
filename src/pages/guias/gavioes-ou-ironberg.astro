@@ -1,4 +1,5 @@
 ---
+import { comDestaque as __comDestaque, academias as __academias } from '../../lib/dados';
 import fotoMontinho from '../../assets/montinho/montinho-ironberg-abdominal-paralelas.jpg';
 import { Image } from 'astro:assets';
 import FerramentasContexto from '../../components/FerramentasContexto.astro';
@@ -34,6 +35,7 @@ const titulo = 'Gaviões 24h ou Ironberg: qual academia 24 horas escolher';
 const descricao = 'Gaviões 24h Alphaville ou Ironberg Alphaville: as duas academias 24 horas do guia comparadas em preço, aulas, estrutura, estacionamento e regra para personal.';
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'gavioes-24h-alphaville', nome: 'Gaviões 24h' }, { id: 'ironberg-alphaville', nome: 'Ironberg' }] });
+const __todasDestaque = await __academias();
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Gaviões ou Ironberg', url: '/guias/gavioes-ou-ironberg/' }]}>
   <div class="wrap">
@@ -89,7 +91,7 @@ const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'ga
 
     <section class="bloco fino" aria-labelledby="fichas-t">
       <div class="cab"><h2 id="fichas-t">As duas fichas</h2><a class="link-forte" href="/ferramentas/academias-abertas-alphaville/">Academias 24 horas</a></div>
-      <div class="cartoes">{[gv, ib].map((a) => <CartaoAcademia a={a} />)}</div>
+      <div class="cartoes">{__comDestaque([gv, ib], __todasDestaque).map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
 
     <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={fotoMontinho} alt="Montinho fazendo elevação de pernas no aparelho de paralelas da Ironberg" widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">O Montinho treinando na Ironberg. Foto dele, tirada na academia. Publicidade da casa.</figcaption></figure>

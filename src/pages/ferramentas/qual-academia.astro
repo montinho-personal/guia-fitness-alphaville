@@ -47,7 +47,7 @@ const planosWh = ORDEM_WELLHUB.filter((p) => todas.some((a) => a.data.agregadore
       <h2>Qual academia escolher: os critérios que mais pesam</h2>
       <p>Quem pergunta qual academia escolher costuma resolver a dúvida com poucos critérios, e o teste usa os que dá para conferir nas fichas: a academia fica perto de casa ou do trabalho, abre no horário em que você treina, tem a modalidade que você quer, oferece estacionamento e aceita o seu Wellhub. O que o teste não mede, como limpeza, lotação e atenção dos professores, fica para a visita. O passo a passo completo está em <a href="/guias/como-escolher-academia/">como escolher uma academia</a>.</p>
       <h2>Como o resultado é calculado</h2>
-      <p>Cada resposta vira um critério. Para cada academia, o teste confere se o dado da ficha atende ao critério e soma um ponto quando atende. Não há pesos escondidos. O Montinho Personal Trainer, que mantém o guia, não aparece entre os resultados.</p>
+      <p>Cada resposta vira um critério. Para cada academia, o teste confere se o dado da ficha atende ao critério e soma um ponto quando atende. Não há pesos escondidos. O Montinho Personal Trainer, que mantém o guia, não aparece entre os resultados. A Arena 18, onde ele dá aulas, aparece sempre em primeiro, marcada como destaque e publicidade da casa, com a sua pontuação real de critérios.</p>
       <p>O teste usa só o que está nas fichas, e as fichas ainda não têm mensalidade nem lotação. Trate o resultado como uma lista curta para visitar, não como veredito. Leve o <a href="/ferramentas/checklist/">checklist</a>.</p>
     </div>
     <VideoMontinho id="yndKE1GrnUQ" titulo="Toda transformação começa com uma decisão" pagina="quiz" />
@@ -78,13 +78,15 @@ const planosWh = ORDEM_WELLHUB.filter((p) => todas.some((a) => a.data.agregadore
         if (!crit.length) { resumo.textContent = 'Você não marcou nenhum critério. Marque ao menos um, ou veja todas as academias no guia.'; lista.innerHTML = ''; sec.hidden = false; sec.focus(); return; }
         var xs = D.map(function (d) { var rs = crit.map(function (c) { return [c[0], c[1](d)]; }); return { d: d, rs: rs, n: rs.filter(function (x) { return x[1]; }).length }; })
           .sort(function (a, b) { return b.n - a.n || a.d.nome.localeCompare(b.d.nome); });
+        var dest = xs.filter(function (x) { return x.d.destaque; })[0];
         var todos = xs.filter(function (x) { return x.n === crit.length; });
         var mostra = (todos.length ? todos : xs.filter(function (x) { return x.n === xs[0].n && x.n > 0; })).slice(0, 6);
         resumo.textContent = todos.length
           ? todos.length + (todos.length === 1 ? ' academia atende' : ' academias atendem') + ' a todos os ' + crit.length + ' critérios' + (todos.length > 6 ? '. Estas são as 6 primeiras em ordem alfabética.' : '.')
           : (mostra.length ? 'Nenhuma academia atende a todos os ' + crit.length + ' critérios. Estas são as que chegam mais perto.' : 'Nenhuma academia com ficha atende a algum dos critérios marcados.');
+        if (dest) mostra = [dest].concat(mostra.filter(function (x) { return x !== dest; }));
         lista.innerHTML = mostra.map(function (x) {
-          return '<article class="cartao"><span class="rotulo cor-marca">' + esc(x.d.regiaoNome + ' · ' + x.d.bairro) + '</span><h3><a href="' + x.d.url + '">' + esc(x.d.nome) + '</a></h3>' +
+          return '<article class="cartao' + (x.d.destaque ? ' cartao-destaque' : '') + '">' + (x.d.destaque ? '<span class="selo-destaque">Destaque · publicidade da casa</span>' : '') + '<span class="rotulo cor-marca">' + esc(x.d.regiaoNome + ' · ' + x.d.bairro) + '</span><h3><a href="' + x.d.url + '">' + esc(x.d.nome) + '</a></h3>' +
             '<p style="margin:0;font-family:var(--display);font-weight:700">' + x.n + ' de ' + crit.length + ' critérios</p><ul style="list-style:none;padding:0;margin:0;font-size:16px">' +
             x.rs.map(function (r2) { return '<li class="' + (r2[1] ? 'sim-l' : 'nao-l') + '">' + (r2[1] ? '✓ ' : '✗ ') + esc(r2[0]) + '</li>'; }).join('') +
             '</ul><p class="selo" style="margin-top:auto;padding-left:0">Conferido em ' + esc(x.d.conferido) + '</p></article>';

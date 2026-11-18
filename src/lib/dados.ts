@@ -19,7 +19,22 @@ const visivel = (status: string) => MOSTRAR_EM_REVISAO || APROVADOS.includes(sta
 export async function academias(): Promise<Academia[]> {
   const todas = await getCollection('academias', ({ data }) => visivel(data.status));
   if (todas.length === 0) throw new Error('Nenhuma ficha aprovada para publicar. Aprove conteúdo (status "aprovado") ou use PUBLIC_MOSTRAR_EM_REVISAO=true para pré-visualizar.');
-  return todas.sort((a, b) => a.data.nome.localeCompare(b.data.nome, 'pt-BR'));
+  return todas.sort(ordemComDestaque);
+}
+/**
+ * Destaque da casa: a academia onde o Montinho atende (campo montinho_atende, hoje a Arena 18) vem
+ * sempre em primeiro nas listas, marcada como "Destaque · publicidade da casa". Pedido do Renato, 18/11/2026.
+ * As demais seguem a ordem própria de cada lista.
+ */
+export const eDestaque = (a: { data: { montinho_atende?: boolean } }) => !!a.data.montinho_atende;
+export const ordemComDestaque = (a: Academia, b: Academia) => Number(eDestaque(b)) - Number(eDestaque(a)) || a.data.nome.localeCompare(b.data.nome, 'pt-BR');
+/** Lista de cartões com o destaque da casa em primeiro: reordena se ele já está na lista; senão, entra na frente. */
+export function comDestaque(xs: Academia[], todas: Academia[]): Academia[] {
+  return xs.some(eDestaque) ? destaquePrimeiro(xs, (x) => x) : [...todas.filter(eDestaque), ...xs];
+}
+/** Põe a academia em destaque na frente, mantendo a ordem do resto. */
+export function destaquePrimeiro<T>(xs: T[], acad: (x: T) => { data: { montinho_atende?: boolean } }): T[] {
+  return [...xs.filter((x) => eDestaque(acad(x))), ...xs.filter((x) => !eDestaque(acad(x)))];
 }
 export async function guias(): Promise<Guia[]> {
   return getCollection('guias', ({ data }) => visivel(data.status));
@@ -139,6 +154,7 @@ export function paraFerramentas(lista: Academia[]) {
   return lista.map((a) => ({
     id: a.id,
     nome: a.data.nome,
+    destaque: eDestaque(a),
     url: urlAcademia(a),
     regiao: a.data.regiao,
     regiaoNome: REGIOES[a.data.regiao].nome,

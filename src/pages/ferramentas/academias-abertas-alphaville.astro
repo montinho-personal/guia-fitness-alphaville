@@ -27,7 +27,7 @@ const U = todas.map((a) => {
   const f = fonteHorario(a);
   const d = a.data;
   return {
-    id: a.id, nome: d.nome, url: urlAcademia(a), lugar: lugar(a), regiao: d.regiao, municipio: municipio(a), telefone: d.telefone ?? '',
+    id: a.id, nome: d.nome, destaque: !!d.montinho_atende, url: urlAcademia(a), lugar: lugar(a), regiao: d.regiao, municipio: municipio(a), telefone: d.telefone ?? '',
     horario: d.horario, horario_status: d.horario_status ?? {}, ultima_entrada: d.ultima_entrada ?? {},
     horario_feriados: d.horario_feriados ? { faixas: d.horario_feriados.faixas } : null,
     horario_excecoes: d.horario_excecoes.map((e) => ({ ...e, conferido_em: dataIsoCurta(e.conferido_em) })),
@@ -39,7 +39,7 @@ const U = todas.map((a) => {
 });
 type Un = (typeof U)[number];
 const feriados = FER.feriados as Feriado[];
-const ord = (xs: Un[], dia: string) => xs.slice().sort((x, y) => Number(y.e24) - Number(x.e24) || (Math.max(...y.horario[dia as 'dom'].map((s) => faixaMin(s)[1])) - Math.max(...x.horario[dia as 'dom'].map((s) => faixaMin(s)[1]))) || x.nome.localeCompare(y.nome));
+const ord = (xs: Un[], dia: string) => xs.slice().sort((x, y) => Number(y.destaque) - Number(x.destaque) || Number(y.e24) - Number(x.e24) || (Math.max(...y.horario[dia as 'dom'].map((s) => faixaMin(s)[1])) - Math.max(...x.horario[dia as 'dom'].map((s) => faixaMin(s)[1]))) || x.nome.localeCompare(y.nome));
 const abreNoDia = (x: Un, dia: string) => x.horario_status[dia as 'dom'] !== 'a-confirmar' && x.horario[dia as 'dom'].length > 0;
 const domingo = ord(U.filter((x) => abreNoDia(x, 'dom')), 'dom');
 const domPendente = U.filter((x) => !abreNoDia(x, 'dom') && x.horario_status.dom !== 'fechado');
@@ -113,7 +113,8 @@ const dadosJson = JSON.stringify({ U, feriados, pendentesMunicipais: FER.municip
       <p class="ab-aviso">O horário é o geral da unidade. Ele não confirma o acesso pelo Wellhub, pelo TotalPass ou com personal externo, que podem ter outra janela.</p>
       <ul class="ab-lista" id="ab-lista">
         {domingo.map((x) => (
-          <li class="ab-item" data-id={x.id}>
+          <li class={`ab-item${x.destaque ? ' ab-destaque' : ''}`} data-id={x.id}>
+            {x.destaque && <span class="selo-destaque">Destaque · publicidade da casa</span>}
             <div class="ab-topo"><a class="ab-nome" href={x.url} data-evento="clique_academia" data-ref={`abertas:${x.id}`}>{x.nome}</a>{x.e24 ? <span class="ab-selo">24h todos os dias</span> : null}</div>
             <p class="ab-local">{x.lugar === x.municipio ? x.lugar : `${x.lugar} · ${x.municipio}`}</p>
             <p class="ab-hor"><strong>Domingo:</strong> {faixaDia(x, 'dom')}. <span class="ab-ok">{x.e24 ? 'Aberta o dia todo.' : `Aberta até ${fechaDia(x, 'dom')}.`}</span></p>
@@ -187,7 +188,7 @@ const dadosJson = JSON.stringify({ U, feriados, pendentesMunicipais: FER.municip
     const selo = (x: any) => (x.e24 ? '<span class="ab-selo">24h todos os dias</span>' : x.d24.length ? `<span class="ab-selo ab-selo-p">24h ${x.d24.length === 6 && x.d24[5] === 'sab' ? 'de seg a sáb' : x.d24.length === 5 && x.d24[4] === 'sex' ? 'de seg a sex' : 'em ' + x.d24.join(', ')}</span>` : '');
     const fonte = (x: any) => `<p class="ab-fonte">Fonte: ${x.fonteUrl ? `<a href="${esc(x.fonteUrl)}" rel="nofollow noopener" target="_blank">${esc(x.fonte)}</a>` : esc(x.fonte)}, conferida em ${esc(x.conferido)}.</p>`;
     function cartao(x: any, corpo: string) {
-      return `<li class="ab-item" data-id="${x.id}"><div class="ab-topo"><a class="ab-nome" href="${x.url}" data-evento="clique_academia" data-ref="abertas:${x.id}">${esc(x.nome)}</a>${selo(x)}</div><p class="ab-local">${x.lugar === x.municipio ? esc(x.lugar) : `${esc(x.lugar)} · ${esc(x.municipio)}`}</p>${corpo}${fonte(x)}${links(x)}</li>`;
+      return `<li class="ab-item${x.destaque ? ' ab-destaque' : ''}" data-id="${x.id}">${x.destaque ? '<span class="selo-destaque">Destaque · publicidade da casa</span>' : ''}<div class="ab-topo"><a class="ab-nome" href="${x.url}" data-evento="clique_academia" data-ref="abertas:${x.id}">${esc(x.nome)}</a>${selo(x)}</div><p class="ab-local">${x.lugar === x.municipio ? esc(x.lugar) : `${esc(x.lugar)} · ${esc(x.municipio)}`}</p>${corpo}${fonte(x)}${links(x)}</li>`;
     }
     function itemPend(x: any, motivo: string) {
       return `<li><a href="${x.url}">${esc(x.nome)}</a> · ${esc(x.lugar)} · <span class="ab-pend-m">${esc(motivo)}</span>${x.telefone ? ` · <a href="tel:${x.telefone.replace(/\D/g, '')}">${esc(x.telefone)}</a>` : ''}</li>`;
@@ -200,27 +201,27 @@ const dadosJson = JSON.stringify({ U, feriados, pendentesMunicipais: FER.municip
       if (ids.length) xs = xs.filter((x) => ids.includes(x.id));
       const dia = diaDaSemana(data);
       const fer = FER.find((x) => x.data === data);
-      let ok: string[] = []; const okF: [number, string][] = [], pendentes: string[] = [], padrao: string[] = []; let fechadas = 0, incomp = 0;
+      let ok: string[] = []; const okF: [number, string, number][] = [], pendentes: string[] = [], padrao: string[] = []; let fechadas = 0, incomp = 0;
       const titDia = `${dataLonga(data)}${fer ? ` · ${fer.nome}` : ''}`;
       if (!horaV) {
         for (const x of xs) {
           const s = situacaoNoDia(x, data, FER);
-          if (s.tipo === 'aberta') { const fecha = Math.max(...s.faixas.map((z) => z[1])); okF.push([fecha, cartao(x, `<p class="ab-hor"><strong>${esc(NOME[dia][0].toUpperCase() + NOME[dia].slice(1))}${s.origem === 'excecao' ? ' (horário especial da data)' : ''}:</strong> ${faixasTexto(s.faixas)}. <span class="ab-ok">${s.faixas.some(([a0, b0]) => a0 <= 0 && b0 >= 1440) ? 'Aberta o dia todo.' : aberta(fecha)}</span>${s.entrada !== undefined ? ` Última entrada às ${hora(s.entrada)}.` : ''}</p>`)]); }
+          if (s.tipo === 'aberta') { const fecha = Math.max(...s.faixas.map((z) => z[1])); okF.push([fecha, cartao(x, `<p class="ab-hor"><strong>${esc(NOME[dia][0].toUpperCase() + NOME[dia].slice(1))}${s.origem === 'excecao' ? ' (horário especial da data)' : ''}:</strong> ${faixasTexto(s.faixas)}. <span class="ab-ok">${s.faixas.some(([a0, b0]) => a0 <= 0 && b0 >= 1440) ? 'Aberta o dia todo.' : aberta(fecha)}</span>${s.entrada !== undefined ? ` Última entrada às ${hora(s.entrada)}.` : ''}</p>`), x.destaque ? 1 : 0]); }
           else if (s.tipo === 'fechada') fechadas++;
           else (s.motivo === 'feriado-padrao' ? padrao : pendentes).push(itemPend(x, textoMotivo(s.motivo) + (s.faixas?.length ? ` (${faixasTexto(s.faixas)})` : '')));
         }
-        ok = okF.sort((a, b) => b[0] - a[0]).map((z) => z[1]);
+        ok = okF.sort((a, b) => b[2] - a[2] || b[0] - a[0]).map((z) => z[1]);
       titulo.textContent = `Abertas: ${titDia}`;
         resumo.textContent = ok.length ? `${ok.length} ${ok.length === 1 ? 'academia aberta' : 'academias abertas'} neste dia, com horário confirmado. Informe a hora em que você chega para saber se dá tempo de treinar.` : 'Nenhuma academia com horário confirmado para este dia.';
       } else {
         const ini = min(horaV); const fimTxt = hora(ini + dur);
         for (const x of xs) {
           const r: Resultado = avaliar(x, data, ini, dur, FER);
-          if (r.tipo === 'compativel') okF.push([r.fecha, cartao(x, `<p class="ab-hor"><strong>Horário do dia:</strong> ${faixasTexto(r.horarioDia) || 'continua do dia anterior'}.</p><p class="ab-ok">${aberta(r.fecha)} Seu treino termina às ${hora(r.termina)}${r.termina > 1440 ? ' do dia seguinte' : ''}.${r.entrada !== undefined ? ` Última entrada às ${hora(r.entrada)}.` : ''}</p>`)]);
+          if (r.tipo === 'compativel') okF.push([r.fecha, cartao(x, `<p class="ab-hor"><strong>Horário do dia:</strong> ${faixasTexto(r.horarioDia) || 'continua do dia anterior'}.</p><p class="ab-ok">${aberta(r.fecha)} Seu treino termina às ${hora(r.termina)}${r.termina > 1440 ? ' do dia seguinte' : ''}.${r.entrada !== undefined ? ` Última entrada às ${hora(r.entrada)}.` : ''}</p>`), x.destaque ? 1 : 0]);
           else if (r.tipo === 'a-confirmar') (r.motivo === 'feriado-padrao' ? padrao : pendentes).push(itemPend(x, textoMotivo(r.motivo) + (r.faixas?.length ? ` (${faixasTexto(r.faixas)})` : '')));
           else if (r.motivo === 'fechada') fechadas++; else incomp++;
         }
-        ok = okF.sort((a, b) => b[0] - a[0]).map((z) => z[1]);
+        ok = okF.sort((a, b) => b[2] - a[2] || b[0] - a[0]).map((z) => z[1]);
         titulo.textContent = `Abertas: ${titDia}, das ${hora(ini)} às ${fimTxt}`;
         resumo.textContent = ok.length ? `${ok.length} ${ok.length === 1 ? 'academia fica aberta' : 'academias ficam abertas'} do começo ao fim do seu treino.${incomp ? ` Outras ${incomp} abrem nesse dia, mas não ficam abertas durante todo o treino.` : ''}` : `Nenhuma academia confirmada fica aberta das ${hora(ini)} às ${fimTxt}.`;
       }
@@ -293,6 +294,7 @@ const dadosJson = JSON.stringify({ U, feriados, pendentesMunicipais: FER.municip
   .ab .ab-dica { font-size: 14px; color: var(--cinza, #4b5563); margin: 10px 0 14px; }
   .ab .ab-resumo { font-size: 16px; margin: 0 0 14px; }
   .ab .ab-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .ab .ab-destaque { border: 2px solid #FF6A00 !important; box-shadow: 0 6px 20px rgba(255,106,0,.18); }
   .ab .ab-item { padding: 16px 18px; border: 1px solid var(--linha, #d8dee8); border-radius: 12px; background: #fff; }
   .ab .ab-topo { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
   .ab .ab-nome { font-weight: 700; font-size: 18px; }

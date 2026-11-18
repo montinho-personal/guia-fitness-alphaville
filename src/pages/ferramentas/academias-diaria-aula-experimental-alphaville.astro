@@ -29,8 +29,8 @@ const itens = todas.flatMap((a) => a.data.acesso_avulso.map((o, i) => ({ a, o: o
 const diariasMusc = itens.filter((x) => x.o.tipo === 'diaria' && x.o.musculacao);
 const diariasOutras = itens.filter((x) => x.o.tipo === 'diaria' && !x.o.musculacao);
 const testes = itens.filter((x) => x.o.tipo !== 'diaria');
-const ordem = (xs: typeof itens) => xs.slice().sort((x, y) => Number(y.o.situacao === 'confirmada') - Number(x.o.situacao === 'confirmada') || Number(eGratis(y.o)) - Number(eGratis(x.o)) || x.a.data.nome.localeCompare(y.a.data.nome));
-const unidades = todas.filter((a) => a.data.modalidades.includes('musculacao')).sort((x, y) => x.data.nome.localeCompare(y.data.nome));
+const ordem = (xs: typeof itens) => xs.slice().sort((x, y) => Number(!!y.a.data.montinho_atende) - Number(!!x.a.data.montinho_atende) || Number(y.o.situacao === 'confirmada') - Number(x.o.situacao === 'confirmada') || Number(eGratis(y.o)) - Number(eGratis(x.o)) || x.a.data.nome.localeCompare(y.a.data.nome));
+const unidades = todas.filter((a) => a.data.modalidades.includes('musculacao')).sort((x, y) => Number(!!y.data.montinho_atende) - Number(!!x.data.montinho_atende) || x.data.nome.localeCompare(y.data.nome));
 const msgGeral = mensagemWhatsapp();
 
 const dados = {
@@ -140,7 +140,8 @@ const dataBR = (d: Date) => dataLonga(d);
       </div>
       <ul class="av-lista" id="av-lista-teste">
         {ordem(testes).map(({ a, o, k }) => (
-          <li class="av-item" data-k={k} data-musc={o.musculacao ? '1' : '0'}>
+          <li class={`av-item${a.data.montinho_atende ? ' av-destaque' : ''}`} data-k={k} data-musc={o.musculacao ? '1' : '0'}>
+            {a.data.montinho_atende && <span class="selo-destaque">Destaque · publicidade da casa</span>}
             <div class="av-topo"><a class="av-nome" href={urlAcademia(a)} data-evento="clique_academia" data-ref={`acesso:${a.id}`}>{a.data.nome}</a>{eGratis(o) && <span class="av-selo av-gratis">Grátis</span>}{o.responsavel === 'montinho' && <span class="av-selo av-mt-selo">Atendimento do Montinho</span>}<span class={`av-selo ${o.situacao === 'confirmada' ? 'av-selo-t' : 'av-selo-p'}`}>{o.situacao === 'confirmada' ? TIPO_NOME[o.tipo] : `${TIPO_NOME[o.tipo]} a confirmar`}</span></div>
             <p class="av-local">{local(a)}</p>
             <dl class="av-dl">
@@ -275,6 +276,7 @@ const dataBR = (d: Date) => dataLonga(d);
   .av .av-resumo { font-size: 16px; }
   .av .av-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
   .av .av-item { padding: 16px 18px; border: 1px solid var(--linha, #d8dee8); border-radius: 12px; background: #fff; min-width: 0; }
+  .av .av-destaque { border: 2px solid #FF6A00 !important; box-shadow: 0 6px 20px rgba(255,106,0,.18); }
   .av .av-item-c { font-size: 15px; }
   .av .av-topo { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
   .av .av-nome { font-weight: 700; font-size: 18px; }

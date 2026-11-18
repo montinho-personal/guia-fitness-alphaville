@@ -1,4 +1,5 @@
 ---
+import { comDestaque as __comDestaque, academias as __academias } from '../../lib/dados';
 import fotoMontinho from '../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg';
 import { Image } from 'astro:assets';
 import FerramentasContexto from '../../components/FerramentasContexto.astro';
@@ -38,6 +39,7 @@ const titulo = 'Smart Fit ou Gaviões em Alphaville: qual escolher';
 const descricao = 'Smart Fit Sodimac ou Gaviões 24h em Alphaville: horário, preço, modalidades, estacionamento e agregadores lado a lado, para escolher conforme a sua rotina.';
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'smart-fit-sodimac-alphaville', nome: 'Smart Fit' }, { id: 'gavioes-24h-alphaville', nome: 'Gaviões 24h' }] });
+const __todasDestaque = await __academias();
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Smart Fit ou Gaviões', url: '/guias/smart-fit-ou-gavioes/' }]}>
   <div class="wrap">
@@ -98,7 +100,7 @@ const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'sm
 
     <section class="bloco fino" aria-labelledby="fichas-t">
       <div class="cab"><h2 id="fichas-t">As duas fichas</h2><a class="link-forte" href="/academias/?regiao=alphaville">Outras academias de Alphaville</a></div>
-      <div class="cartoes">{[sf, gv].map((a) => <CartaoAcademia a={a} />)}</div>
+      <div class="cartoes">{__comDestaque([sf, gv], __todasDestaque).map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
 
 
