@@ -45,6 +45,14 @@ const servicos = [
   { nome: 'Pacote flexível', url: '/consultoria#modalidades' },
   { nome: 'Revisão de execução grátis', url: '/revisao-de-execucao' },
 ];
+// Ferramentas no rodapé: as que respondem a decisões de hoje (onde treinar agora, quanto custa o personal).
+const ferrRodape = [
+  { ref: 'diaria', nome: 'Diária e aula experimental', url: '/ferramentas/academias-diaria-aula-experimental-alphaville/' },
+  { ref: 'abertas', nome: 'Academias abertas agora', url: '/ferramentas/academias-abertas-alphaville/' },
+  { ref: 'preco', nome: 'Preço de personal', url: '/ferramentas/calculadora-preco-personal-alphaville/' },
+  { ref: 'formato', nome: 'Personal presencial ou online', url: '/ferramentas/personal-presencial-ou-online/' },
+  { ref: 'comparador', nome: 'Comparador de academias', url: '/ferramentas/comparador/' },
+];
 const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(u) ? 'page' : undefined);
 ---
 <!DOCTYPE html>
@@ -86,14 +94,14 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
     <div class="wrap">
       <a class="marca" href="/"><Marca /></a>
       <nav class="principal so-desktop" aria-label="Principal">
-        <ul>{nav.map((n) => <li><a href={n.url} aria-current={atual(n.url)}>{n.nome}</a></li>)}<li class="nav-montinho"><a href="/montinho/" aria-current={atual('/montinho/')}>Treine com o Montinho</a></li></ul>
+        <ul>{nav.map((n) => <li><a href={n.url} aria-current={atual(n.url)}>{n.nome}</a></li>)}<li class="nav-destaque"><a href="/ferramentas/academias-diaria-aula-experimental-alphaville/" aria-current={atual('/ferramentas/academias-diaria-aula-experimental-alphaville/')} data-evento="clique_ferramenta" data-ref="menu:diaria">Diária e aula experimental</a></li><li class="nav-montinho"><a href="/montinho/" aria-current={atual('/montinho/')}>Treine com o Montinho</a></li></ul>
       </nav>
       <div class="topo-acoes">
       <Busca />
       <details class="menu-m so-movel">
         <summary>Menu</summary>
         <nav class="principal" aria-label="Principal (celular)">
-          <ul>{nav.map((n) => <li><a href={n.url} aria-current={atual(n.url)}>{n.nome}</a></li>)}<li class="nav-montinho"><a href="/montinho/" aria-current={atual('/montinho/')}>Treine com o Montinho</a></li></ul>
+          <ul>{nav.map((n) => <li><a href={n.url} aria-current={atual(n.url)}>{n.nome}</a></li>)}<li class="nav-destaque"><a href="/ferramentas/academias-diaria-aula-experimental-alphaville/" aria-current={atual('/ferramentas/academias-diaria-aula-experimental-alphaville/')} data-evento="clique_ferramenta" data-ref="menu:diaria">Diária e aula experimental</a></li><li class="nav-montinho"><a href="/montinho/" aria-current={atual('/montinho/')}>Treine com o Montinho</a></li></ul>
         </nav>
       </details>
       </div>
@@ -117,6 +125,10 @@ const atual = (u: string): 'page' | undefined => (Astro.url.pathname.startsWith(
           <p style="margin-top:12px"><Instagram pagina="rodape" texto="Siga o Montinho: @montinho_personal" /></p>
         </div>
         <div><h2>Guia</h2><ul>{nav.map((n) => <li><a href={n.url}>{n.nome}</a></li>)}<li><a href="/mapa/">Mapa</a></li></ul></div>
+        <div><h2>Ferramentas</h2><ul>
+          {ferrRodape.map((x) => <li><a href={x.url} data-evento="clique_ferramenta" data-ref={`rodape:${x.ref}`}>{x.ref === 'diaria' ? <strong>{x.nome}</strong> : x.nome}</a></li>)}
+          <li><a href="/ferramentas/">Todas as ferramentas</a></li>
+        </ul></div>
         <div><h2>Treine com o Montinho</h2><ul>
           {servicos.map((sv) => <li><a href={linkMontinho(sv.url, 'rodape', 'site')} rel="nofollow" data-evento="clique_montinho" data-ref="rodape">{sv.nome}</a></li>)}
           <li><a href="/montinho/"><strong>Todos os serviços</strong></a></li>

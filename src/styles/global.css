@@ -38,6 +38,12 @@ nav.principal ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;font-f
 nav.principal a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;display:block}
 nav.principal a:hover,nav.principal a[aria-current]{border-color:var(--sinal)}
 nav.principal .nav-montinho a{color:#C24E00;font-weight:800}
+nav.principal .nav-destaque a{font-weight:800}
+nav.principal .nav-destaque a::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:#1F8A4C;margin-right:7px;vertical-align:1px}
+@media(min-width:1000px){.topo nav.principal.so-desktop ul{gap:18px;white-space:nowrap;align-items:center}}
+/* Desktop: logo e busca na primeira linha, menu inteiro na segunda (o menu com os dois destaques não cabe ao lado do logo). */
+@media(min-width:1000px){.topo .wrap{flex-wrap:wrap;row-gap:0;padding-bottom:0}.topo .marca{flex:none}.topo nav.principal.so-desktop{order:3;flex:0 0 100%;border-top:1px solid var(--linha,#E3DED3);padding:8px 0}.topo nav.principal.so-desktop ul{justify-content:flex-start}.topo nav.principal.so-desktop .nav-destaque{margin-left:auto}}
+@media(min-width:900px){nav.principal .nav-destaque a{border:1.5px solid var(--tinta);border-radius:999px;padding:5px 13px}nav.principal .nav-destaque a:hover,nav.principal .nav-destaque a[aria-current]{background:var(--tinta);color:var(--papel)}}
 @media(min-width:900px){nav.principal .nav-montinho a{background:#FF6A00;color:#111827;border:0;border-radius:999px;padding:6px 14px}nav.principal .nav-montinho a:hover,nav.principal .nav-montinho a[aria-current]{background:#E55F00}}
 .menu-m{font-family:var(--display)}
 .menu-m summary{list-style:none;cursor:pointer;font-weight:700;font-size:14px;border:1.5px solid var(--tinta);border-radius:var(--raio);padding:9px 14px}
@@ -177,6 +183,7 @@ select{padding-right:36px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='
 .ferramenta svg{display:block;margin-bottom:14px}
 .ferramenta h3{font-size:22px;font-weight:700;margin-bottom:6px}
 .ferramenta p{margin:0;font-size:16px;color:#C9D3E2;line-height:1.4}
+.ferramenta.ferr-destaque{background:#14532D;box-shadow:inset 0 0 0 2px #4ADE80}.ferramenta.ferr-destaque:hover{background:#166534}.ferramenta.ferr-destaque .rotulo{color:#BBF7D0}
 .ferramenta .rotulo{color:#F4B9A6;display:block;margin-top:14px;font-size:11px}
 
 /* lista editorial */
@@ -228,11 +235,12 @@ footer .nota{color:var(--cinza);max-width:34em;font-size:15px;margin-top:12px}
   .confianca li{border:0;padding:20px 0}
   .cartoes{grid-template-columns:repeat(2,1fr)}
   .grade-ferr{grid-template-columns:repeat(2,1fr)}
-  footer .cols{grid-template-columns:2fr 1fr 1fr 1fr}
+  footer .cols{grid-template-columns:repeat(3,1fr)}footer .cols>div:first-child{grid-column:1/-1}
   .mantem{padding:36px}
 }
 @media(min-width:1000px){
   .so-desktop{display:block}.so-movel{display:none}
+  footer .cols{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr}footer .cols>div:first-child{grid-column:auto}
   .cartoes{grid-template-columns:repeat(3,1fr)}
   .grade-ferr{grid-template-columns:repeat(4,1fr)}
   .mantem:not(.compacta){grid-template-columns:1.6fr 1fr;align-items:end}
