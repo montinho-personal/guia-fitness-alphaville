@@ -13,6 +13,10 @@ const gs = await guias();
 const destaque = ['arena-18-alphaville', 'gavioes-24h-alphaville', 'ironberg-alphaville', 'nitrogym-tambore', 'smart-fit-barueri-av-zelia', 'six-alphaville'];
 const cartoes = destaque.map((id) => todas.find((a) => a.id === id)).filter(Boolean);
 const porRegiao = (r: string) => todas.filter((a) => a.data.regiao === r).length;
+// Data real da última conferência entre todas as fichas: é a prova da promessa "com fonte e data".
+const ultima = new Date(Math.max(...todas.flatMap((x) => x.data.proveniencia.map((pv) => pv.conferido_em.getTime()))));
+const ultimaIso = ultima.toISOString().slice(0, 10);
+const ultimaCurta = ultimaIso.split('-').reverse().join('.');
 const mods = [...new Set(todas.flatMap((a) => a.data.modalidades))];
 const abs = (u: string) => new URL(u, Astro.site).href;
 const schema = [
@@ -33,33 +37,78 @@ const __todasDestaque = await __academias();
 const __cartoesDestaque = __comDestaque(cartoes.filter((x): x is NonNullable<typeof x> => !!x), __todasDestaque);
 ---
 <Base titulo="Guia Fitness Alphaville: academias com fonte e data" descricao="Guia local de academias em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Endereço, horários e planos de cada uma, com a fonte e a data de conferência." schema={schema} semSufixo>
-  <section class="bloco" style="padding-bottom:36px">
-    <div class="wrap" style="display:grid;gap:36px" id="abertura">
-      <div>
-        <h1 style="font-size:clamp(44px,11vw,78px);font-weight:800;letter-spacing:-.045em;line-height:.92">Onde treinar em Alphaville, <span class="cor-marca" style="display:block">com fonte e data.</span></h1>
-        <p style="max-width:34em;margin:22px 0 28px;font-size:20px;color:var(--texto2)">Academias, boxes e estúdios em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Cada endereço, horário e plano mostra de onde veio e quando foi conferido.</p>
-        <div style="margin:0 0 18px"><CampoBusca id="busca-home" placeholder="Busque: Gaviões, personal no Tamboré, Hyrox, 24 horas…" /></div>
-        <form class="painel" action="/academias/" method="get" aria-label="Encontrar academias">
-          <div class="campos c3">
-            <label class="campo"><span class="rotulo">Região</span>
-              <select name="regiao"><option value="">Toda a região</option>{Object.entries(REGIOES).map(([id, r]) => <option value={id}>{r.titulo}</option>)}</select></label>
-            <label class="campo"><span class="rotulo">Modalidade</span>
-              <select name="modalidade"><option value="">Qualquer uma</option>{mods.map((m) => <option value={m}>{MODALIDADES[m]}</option>)}</select></label>
-            <label class="campo"><span class="rotulo">Precisa de</span>
-              <select name="filtro"><option value="">Sem exigência</option><option value="h24">Aberta 24 horas</option><option value="domingo">Aberta aos domingos</option><option value="cedo">Abrir antes das 6h</option><option value="estacionamento">Estacionamento</option></select></label>
-          </div>
-          <button class="btn" type="submit" style="margin-top:14px">Ver academias <i aria-hidden="true"></i></button>
-          <p style="margin:12px 0 0;font-size:15px;color:var(--cinza)">Sem cadastro. O resultado abre no guia, já filtrado.</p>
-        </form>
+  <!-- Capa: cartaz tipográfico. A promessa do guia ("com fonte e data") vira o desenho: data real da última conferência e índice das regiões em números. -->
+  <section class="capa" aria-labelledby="capa-t">
+    <div class="wrap">
+      <p class="capa-topo"><span>Guia local de academias</span><span class="capa-data">Conferido em <time datetime={ultimaIso}>{ultimaCurta}</time></span></p>
+      <h1 id="capa-t"><span>Onde treinar</span> <span>em Alphaville,</span> <em>com fonte e&nbsp;data.</em></h1>
+      <div class="capa-meio">
+        <p class="capa-sub">{todas.length} academias, boxes e estúdios em Alphaville, Tamboré, Barueri e Santana de Parnaíba. Cada endereço, horário e plano mostra de onde veio e quando foi conferido.</p>
+        <div class="capa-busca"><CampoBusca id="busca-home" placeholder="Gaviões, personal no Tamboré, 24 horas…" /></div>
       </div>
-      <nav class="placas" aria-label="Regiões">
-        <span class="rotulo cor-marca">Comece pela sua região</span>
-        {Object.entries(REGIOES).map(([id, r]) => <a class="placa" href={urlRegiao(id)}><b>{r.titulo}</b><small>{porRegiao(id)} com ficha</small></a>)}
-        <p style="font-size:14px;color:var(--cinza);margin:4px 0 0">18 do Forte e Tamboré estão na página de Alphaville. Aldeia da Serra entra quando houver dados conferidos.</p>
+      <nav class="capa-indice" aria-label="Comece pela sua região">
+        {Object.entries(REGIOES).map(([id, r]) => (
+          <a href={urlRegiao(id)} data-evento="clique_regiao" data-ref={`capa:${id}`}>
+            <b aria-hidden="true">{porRegiao(id)}</b>
+            <span><strong>{r.titulo}</strong><small><span class="so-leitor">{porRegiao(id)} </span>com ficha</small></span>
+            <i aria-hidden="true">→</i>
+          </a>
+        ))}
       </nav>
     </div>
   </section>
-  <style>@media(min-width:1000px){#abertura{grid-template-columns:1.55fr 1fr;gap:56px!important;align-items:end}}</style>
+
+  <section class="bloco capa-filtro" aria-label="Encontrar academias">
+    <div class="wrap">
+      <form class="painel" action="/academias/" method="get" aria-label="Encontrar academias">
+        <span class="rotulo cor-marca" style="display:block;margin-bottom:12px">Ou filtre pelo que você precisa</span>
+        <div class="campos c3">
+          <label class="campo"><span class="rotulo">Região</span>
+            <select name="regiao"><option value="">Toda a região</option>{Object.entries(REGIOES).map(([id, r]) => <option value={id}>{r.titulo}</option>)}</select></label>
+          <label class="campo"><span class="rotulo">Modalidade</span>
+            <select name="modalidade"><option value="">Qualquer uma</option>{mods.map((m) => <option value={m}>{MODALIDADES[m]}</option>)}</select></label>
+          <label class="campo"><span class="rotulo">Precisa de</span>
+            <select name="filtro"><option value="">Sem exigência</option><option value="h24">Aberta 24 horas</option><option value="domingo">Aberta aos domingos</option><option value="cedo">Abrir antes das 6h</option><option value="estacionamento">Estacionamento</option></select></label>
+        </div>
+        <button class="btn" type="submit" style="margin-top:14px">Ver academias <i aria-hidden="true"></i></button>
+        <p style="margin:12px 0 0;font-size:15px;color:var(--cinza)">Sem cadastro. O resultado abre no guia, já filtrado. 18 do Forte e Tamboré estão na página de Alphaville; Aldeia da Serra entra quando houver dados conferidos.</p>
+      </form>
+    </div>
+  </section>
+  <style>
+    .capa { background: #101B2D; color: #F5F1E8; padding: 22px 0 0; overflow: hidden; }
+    .capa-topo { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 0; padding-bottom: 14px; border-bottom: 1px solid rgba(245,241,232,.28); font: 700 11px/1.3 var(--display); letter-spacing: .16em; text-transform: uppercase; }
+    .capa-data { color: #FF6A00; }
+    .capa h1 { margin: clamp(22px, 3.4vw, 44px) 0 clamp(20px, 3vw, 36px); font-size: clamp(42px, 13.2vw, 118px); font-weight: 800; letter-spacing: -.055em; line-height: .88; color: #F5F1E8; text-wrap: balance; }
+    .capa h1 span { display: block; }
+    .capa h1 em { display: block; font-style: normal; color: #FF6A00; }
+    .capa-meio { display: grid; gap: 18px; padding-bottom: clamp(24px, 3vw, 36px); }
+    .capa-sub { margin: 0; max-width: 30em; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.5; color: #D9DEE7; }
+    .capa-busca :global(.campo-busca) { border-color: #F5F1E8; max-width: none; }
+    .capa-indice { display: grid; border-top: 1px solid rgba(245,241,232,.28); }
+    .capa-indice a { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 16px; padding: 16px 0; color: #F5F1E8; text-decoration: none; border-bottom: 1px solid rgba(245,241,232,.28); }
+    .capa-indice a:last-child { border-bottom: 0; }
+    .capa-indice b { font: 800 clamp(54px, 15vw, 64px)/.85 var(--display); letter-spacing: -.06em; color: #FF6A00; min-width: 1.25em; font-variant-numeric: tabular-nums; }
+    .capa-indice strong { display: block; font: 700 clamp(19px, 5vw, 22px)/1.15 var(--display); letter-spacing: -.02em; }
+    .capa-indice small { display: block; margin-top: 4px; font: 700 11px/1 var(--display); letter-spacing: .16em; text-transform: uppercase; color: #AEB7C6; }
+    .capa-indice i { font: 400 26px/1 var(--display); font-style: normal; color: #FF6A00; transition: transform .18s; }
+    .capa-indice a:hover i, .capa-indice a:focus-visible i { transform: translateX(6px); }
+    .capa-indice a:hover strong { text-decoration: underline; text-decoration-color: #FF6A00; text-underline-offset: 5px; }
+    .capa-indice a:focus-visible { outline: 3px solid #FF6A00; outline-offset: -3px; }
+    .capa-filtro { padding-top: 28px; padding-bottom: 28px; }
+    @media (min-width: 900px) {
+      .capa { padding-top: 30px; }
+      .capa-meio { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: end; }
+      .capa-indice { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .capa-indice a { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "n n" "t s"; align-items: end; gap: 6px 12px; padding: 20px 28px 26px 0; border-bottom: 0; border-right: 1px solid rgba(245,241,232,.28); }
+      .capa-indice a + a { padding-left: 28px; }
+      .capa-indice a:last-child { border-right: 0; padding-right: 0; }
+      .capa-indice b { grid-area: n; font-size: clamp(84px, 8vw, 112px); }
+      .capa-indice a > span { grid-area: t; }
+      .capa-indice i { grid-area: s; font-size: 34px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .capa-indice i { transition: none; } }
+  </style>
 
   <section class="confianca" aria-label="Como o guia funciona">
     <div class="wrap">
