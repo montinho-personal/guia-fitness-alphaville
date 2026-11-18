@@ -195,7 +195,7 @@ ol.guias p{margin:6px 0 0;font-size:17px;color:var(--texto2);grid-column:2}
 .confianca li b{font-family:var(--display);display:block;font-size:16px;margin-bottom:2px}
 
 /* ficha */
-.ficha{display:grid;gap:32px}
+.ficha{display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
 .ficha aside{display:grid;gap:16px;align-content:start}
 .horarios{width:100%;border-collapse:collapse;font-size:16px}
 .horarios th{text-align:left;font-family:var(--display);font-weight:600;font-size:14px;color:var(--cinza);padding:6px 12px 6px 0;white-space:nowrap;vertical-align:top}

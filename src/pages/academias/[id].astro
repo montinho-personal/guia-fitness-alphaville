@@ -7,8 +7,24 @@ import Mantem from '../../components/Mantem.astro';
 import Vitrine from '../../components/Vitrine.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import { Image } from 'astro:assets';
+import fotoIbParalelas from '../../assets/montinho/montinho-ironberg-abdominal-paralelas.jpg';
+import fotoIbEspelho from '../../assets/montinho/montinho-ironberg-espelho.jpg';
+import fotoIbFones from '../../assets/montinho/montinho-ironberg-abdominal-fones.jpg';
+import fotoIbCostas from '../../assets/montinho/montinho-ironberg-costas.jpg';
 import fotoArena18 from '../../assets/montinho/montinho-personal-trainer-arena-18.jpg';
-const FOTO_MONTINHO: Record<string, { src: typeof fotoArena18; alt: string }> = { 'arena-18-alphaville': { src: fotoArena18, alt: 'Montinho, personal trainer, em selfie no espelho da sala de musculação da Arena 18, em Alphaville' } };
+// Fotos tiradas pelo próprio Montinho dentro da academia (nunca fotos do site, do Google ou do Instagram da academia).
+const FOTO_MONTINHO: Record<string, { fotos: { src: typeof fotoArena18; alt: string }[]; legenda: string }> = {
+  'arena-18-alphaville': { fotos: [{ src: fotoArena18, alt: 'Montinho, personal trainer, em selfie no espelho da sala de musculação da Arena 18, em Alphaville' }], legenda: 'O Montinho na Arena 18, onde atende alunos. Publicidade da casa.' },
+  'ironberg-alphaville': {
+    fotos: [
+      { src: fotoIbParalelas, alt: 'Montinho fazendo elevação de pernas no aparelho vermelho de paralelas da Ironberg, com o painel de luz em X no teto' },
+      { src: fotoIbEspelho, alt: 'Montinho em frente aos espelhos da área de treino da Ironberg, com paredes de bloco preto e piso claro' },
+      { src: fotoIbFones, alt: 'Montinho de fone de ouvido no aparelho de elevação de pernas da Ironberg, com o logo da academia na parede de vidro' },
+      { src: fotoIbCostas, alt: 'Montinho de costas, em pose de duplo bíceps diante do espelho da Ironberg' },
+    ],
+    legenda: 'O Montinho treinando na Ironberg. Fotos dele, tiradas na academia. Publicidade da casa.',
+  },
+};
 import { ARTIGOS, COMPARATIVOS, personalDaRegiao } from '../../lib/artigos';
 import { abreDomingo, guias } from '../../lib/dados';
 import { politicaPE, respostasPE, STATUS_PE } from '../../lib/personal';
@@ -163,7 +179,9 @@ const hojeIso = new Date().toISOString().slice(0, 10);
     {d.montinho_atende && (
       <section class="bloco fino"><Mantem pagina={`ficha-${a.id}`} compacta titulo={`Treine na ${d.nome} com acompanhamento`} texto={`O Montinho Personal Trainer, que mantém este guia, atende alunos presencialmente na ${d.nome}. Este bloco é publicidade da casa; a ficha acima segue os mesmos critérios das demais.`} /></section>
     )}
-    {FOTO_MONTINHO[a.id] && <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={FOTO_MONTINHO[a.id].src} alt={FOTO_MONTINHO[a.id].alt} widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">O Montinho na Arena 18, onde atende alunos. Publicidade da casa.</figcaption></figure>}
+    {FOTO_MONTINHO[a.id] && (FOTO_MONTINHO[a.id].fotos.length === 1
+      ? <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={FOTO_MONTINHO[a.id].fotos[0].src} alt={FOTO_MONTINHO[a.id].fotos[0].alt} widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">{FOTO_MONTINHO[a.id].legenda}</figcaption></figure>
+      : <figure class="bloco fino galeria-montinho" style="margin:28px auto 0;max-width:760px"><div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">{FOTO_MONTINHO[a.id].fotos.map((f, i) => <Image src={f.src} alt={f.alt} widths={[360, 720]} sizes="(max-width: 780px) 46vw, 370px" style="width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:12px" />)}</div><figcaption style="font-size:14px;text-align:center;margin-top:8px">{FOTO_MONTINHO[a.id].legenda}</figcaption></figure>)}
     {d.montinho_atende && <Vitrine pagina={`ficha-${a.id}`} destaque="natalia-nascimento" intro={`O Montinho atende alunos na ${d.nome}, mas a vitrine abaixo não informa onde cada pessoa treinou. São resultados de emagrecimento de alunos dele, publicados no site montinhopersonal.com.br.`} />}
     <Perguntas itens={d.perguntas} titulo={`Perguntas sobre a ${d.nome}`} />
     <section class="bloco fino prosa" aria-labelledby="perto-t">
