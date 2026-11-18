@@ -1,0 +1,251 @@
+---
+// Simulador "treino na academia do condomínio": marque o que o espaço tem e veja o que dá para treinar.
+// Regras em src/lib/treinoCondominio.ts (editoriais, determinísticas, no navegador). Doc: docs/treino-condominio.md.
+import Base from '../../layouts/Base.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import { WHATSAPP } from '../../lib/dados';
+import { link } from '../../lib/ferramentas';
+import { EQUIPAMENTOS, EXERCICIOS, PADROES, NOME_EQUIP, avaliar, DIAS_OK } from '../../lib/treinoCondominio';
+
+const URL_PAG = '/ferramentas/treino-academia-do-condominio/';
+const titulo = 'Treino na academia do condomínio: monte com o que o prédio tem';
+const descricao = 'Marque os equipamentos da academia do seu condomínio ou de casa e veja o que dá para treinar, o que falta e como dividir a semana. Grátis e sem cadastro.';
+const grupos = [...new Set(EQUIPAMENTOS.map((e) => e.grupo))];
+const LOCAIS = [['Alphaville', 'alphaville'], ['Tamboré', 'tambore'], ['Aldeia da Serra', 'aldeia-da-serra'], ['Barueri', 'barueri'], ['Santana de Parnaíba', 'santana-de-parnaiba']];
+// Tabela "o que dá para fazer com cada equipamento": só exercícios que usam aquele equipamento.
+const porEquip = EQUIPAMENTOS.map((e) => ({ e, xs: EXERCICIOS.filter((x) => x.requer.includes(e.id)).map((x) => x.nome + (x.requer.length > 1 ? ` (com ${x.requer.filter((r) => r !== e.id).map((r) => NOME_EQUIP[r].toLowerCase()).join(' e ')})` : '')) }));
+const soHalteres = avaliar(['halteres'], 3, 'treina'), halteresBanco = avaliar(['halteres', 'banco'], 3, 'treina'), semNada = avaliar([], 3, 'treina');
+const exHalteres = soHalteres.cobertura.filter((c) => c.padrao !== 'cardio').map((c) => c.exercicios[0].toLowerCase());
+const perguntas = [
+  { p: 'Dá para ter resultado treinando na academia do condomínio?', r: 'Depende mais da constância e da progressão do que do tamanho da sala. Uma academia de prédio com halteres, banco e um aparelho de cardio já permite treinar o corpo inteiro. O limite costuma aparecer nas pernas e nas costas, quando os pesos ficam leves; aí entram as adaptações ou um complemento em academia.' },
+  { p: 'Que treino fazer na academia do condomínio?', r: 'Organize por movimento, não por aparelho: um exercício de empurrar, um de puxar, um de agachar, um de levantar do chão, um de abdômen e um pouco de cardio. Com 2 ou 3 dias na semana, faça o corpo inteiro em cada dia; com 4 ou 5, alterne parte de cima e pernas. O simulador mostra os exercícios possíveis com o que o seu prédio tem.' },
+  { p: 'Dá para treinar o corpo todo só com halteres?', r: `Dá. Só com halteres há exercício para os cinco grupos de força: ${exHalteres.join(', ')}. Com um banco, as opções aumentam. O que os halteres não resolvem é o cardio, que fica por conta de caminhada, corrida ou corda.` },
+  { p: 'O que não pode faltar numa academia de condomínio?', r: 'Pelo critério do guia, o que mais amplia o treino é um jogo de halteres com várias cargas, um banco regulável e uma estação com polia. Depois vêm um aparelho de cardio e colchonetes. Aparelhos de perna entram quando há espaço, porque é nas pernas que os halteres ficam leves primeiro.' },
+  { p: 'O que fazer quando os pesos do prédio ficam leves?', r: 'Antes de desistir da sala: faça o exercício com uma perna ou um braço de cada vez, desça mais devagar, diminua o descanso e aumente as repetições. Quando nem isso resolver, vale complementar com uma academia, nem que seja uma ou duas vezes por semana.' },
+  { p: 'Personal trainer pode dar aula na academia do condomínio?', r: 'Quem decide é o condomínio, pelo regimento interno ou por regra do síndico: alguns pedem cadastro do profissional, outros limitam horário. Pergunte na administração antes de contratar. As páginas de personal em condomínio do guia explicam o que conferir em cada região.' },
+  { p: 'Treino em casa sem equipamento funciona?', r: 'Funciona para começar: agachamento, flexão, elevação de quadril e prancha cobrem bastante coisa. Só não há como treinar o movimento de puxar, que trabalha as costas, sem um elástico, uma fita de suspensão, uma barra fixa ou um par de halteres.' },
+];
+const schema = [{ '@type': 'WebApplication', name: 'Simulador de treino na academia do condomínio', url: new URL(URL_PAG, Astro.site).href, applicationCategory: 'HealthApplication', operatingSystem: 'Web', inLanguage: 'pt-BR', offers: { '@type': 'Offer', price: '0', priceCurrency: 'BRL' } }];
+---
+<Base titulo={titulo} descricao={descricao} schema={schema} migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Treino no condomínio', url: URL_PAG }]}>
+  <div class="wrap tc">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Ferramenta · 1 minuto · sem cadastro</span>
+      <h1>Treino na academia do condomínio: o que dá para fazer com o que você tem</h1>
+      <p class="linha-fina">Marque os equipamentos da academia do prédio ou de casa. O simulador mostra quais movimentos dá para treinar, o que falta e como dividir a semana.</p>
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Uma academia de condomínio com halteres, banco e um aparelho de cardio já permite treinar o corpo inteiro. Pense em seis grupos de movimento: empurrar, puxar, agachar, levantar do chão, abdômen e cardio. Só com halteres, os cinco grupos de força ficam cobertos. Sem equipamento nenhum, o único que não tem saída é puxar, que trabalha as costas. O que costuma limitar primeiro é a carga para as pernas.</p>
+    </div>
+
+    <form class="tc-form nao-imprime" id="tc-form" aria-label="Simulador de treino no condomínio">
+      <fieldset class="tc-bloco">
+        <legend><span class="tc-n">1</span> O que tem no espaço?</legend>
+        <p class="tc-ajuda">Marque tudo o que existe e está funcionando. Não marcou nada? O resultado mostra o que dá para fazer só com o peso do corpo.</p>
+        {grupos.map((g) => (
+          <div class="tc-grupo">
+            <span class="rotulo">{g}</span>
+            <div class="tc-ops">{EQUIPAMENTOS.filter((e) => e.grupo === g).map((e) => <label class="tc-op"><input type="checkbox" name="eq" value={e.id}><span><b>{e.nome}</b>{e.ajuda && <small>{e.ajuda}</small>}</span></label>)}</div>
+          </div>
+        ))}
+      </fieldset>
+      <fieldset class="tc-bloco">
+        <legend><span class="tc-n">2</span> Sua rotina</legend>
+        <div class="tc-grupo"><span class="rotulo" id="tc-dias-r">Quantos dias por semana</span>
+          <div class="tc-ops tc-curto" role="radiogroup" aria-labelledby="tc-dias-r">{DIAS_OK.map((d) => <label class="tc-op"><input type="radio" name="dias" value={d} checked={d === 3}><span><b>{d} dias</b></span></label>)}</div></div>
+        <div class="tc-grupo"><span class="rotulo" id="tc-exp-r">Experiência</span>
+          <div class="tc-ops tc-curto" role="radiogroup" aria-labelledby="tc-exp-r">
+            <label class="tc-op"><input type="radio" name="exp" value="comecando" checked><span><b>Estou começando</b></span></label>
+            <label class="tc-op"><input type="radio" name="exp" value="treina"><span><b>Já treino</b></span></label></div></div>
+        <div class="campos c2">
+          <label class="campo"><span class="rotulo">Onde</span><select name="local" id="tc-local"><option value="condominio">Na academia do condomínio</option><option value="casa">Em casa</option></select></label>
+          <label class="campo"><span class="rotulo">Região (opcional)</span><select name="regiao" id="tc-regiao"><option value="">Prefiro não dizer</option>{LOCAIS.map(([n]) => <option value={n}>{n}</option>)}</select></label>
+        </div>
+        <button class="btn" type="submit">Ver o que dá para treinar <i aria-hidden="true"></i></button>
+        <p class="tc-nota">A análise acontece no seu navegador. Nada do que você marca é enviado.</p>
+        <noscript><p class="caixa">O simulador precisa de JavaScript. A tabela abaixo mostra o que dá para fazer com cada equipamento.</p></noscript>
+      </fieldset>
+    </form>
+
+    <section class="tc-res" id="tc-res" tabindex="-1" aria-labelledby="tc-res-t" hidden>
+      <span class="rotulo">Seu resultado</span>
+      <h2 id="tc-res-t"></h2>
+      <p id="tc-resumo"></p>
+      <div class="tc-cob" id="tc-cob"></div>
+      <div id="tc-avisos"></div>
+      <div id="tc-ajuda"></div>
+      <h3>Como dividir a semana</h3>
+      <div class="tc-sem" id="tc-sem"></div>
+      <p class="tc-aviso">Isto mostra o que o espaço permite, não é um treino prescrito para você. Carga, séries, repetições e a escolha final dos exercícios dependem do seu nível, do seu objetivo e de como o seu corpo responde: é o que um profissional ajusta.</p>
+      <aside class="tc-mt nao-imprime" aria-labelledby="tc-mt-t">
+        <span class="rotulo">Atendimento do Montinho Personal Trainer · publicidade da casa</span>
+        <h3 id="tc-mt-t">Quer esse treino montado e acompanhado?</h3>
+        <p>O Montinho, que mantém este guia, atende em condomínios e em casa em Alphaville e região. Mande o que o seu espaço tem: ele responde pelo WhatsApp e diz como trabalharia com isso.</p>
+        <a class="btn tc-wa" id="tc-wa" href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="nofollow noopener" data-evento="clique_whatsapp" data-ref="treino-condominio:resultado">Enviar minha lista ao Montinho no WhatsApp</a>
+      </aside>
+      <div id="tc-prox"></div>
+      <p class="nao-imprime tc-acoes"><button type="button" class="tc-bt" id="tc-refazer">Mudar os equipamentos</button> <button type="button" class="tc-bt" id="tc-imprimir">Imprimir</button></p>
+    </section>
+
+    <aside class="tc-mt tc-mt-claro nao-imprime" aria-labelledby="tc-mt2-t">
+      <span class="rotulo">Atendimento do Montinho Personal Trainer · publicidade da casa</span>
+      <h2 id="tc-mt2-t">Personal trainer no seu condomínio</h2>
+      <p>Treino na academia do prédio ou em casa, com o equipamento que existe. O Montinho, que mantém este guia, atende em Alphaville e região.</p>
+      <p class="tc-mt-bts"><a class="btn tc-wa" href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('Olá, Montinho! Vi o simulador de treino em condomínio no Guia Fitness Alphaville e quero saber como funciona o atendimento no meu condomínio.')}`} target="_blank" rel="nofollow noopener" data-evento="clique_whatsapp" data-ref="treino-condominio:bloco">Falar com o Montinho no WhatsApp</a>
+        <a href={link('preco', { formato: 'condominio' })} data-evento="clique_ferramenta" data-ref="preco:treino-condominio">Ver a faixa de preço de personal em condomínio</a></p>
+    </aside>
+
+    <div class="prosa">
+      <h2>O que dá para fazer com cada equipamento</h2>
+      <p>A lista é a mesma que o simulador usa. Entre parênteses, o que o exercício pede além daquele equipamento.</p>
+      <div class="rolagem" tabindex="0" role="region" aria-label="Exercícios por equipamento">
+        <table class="dados tc-t">
+          <thead><tr><th scope="col">Equipamento</th><th scope="col">Exercícios</th></tr></thead>
+          <tbody>{porEquip.map(({ e, xs }) => <tr><th scope="row">{e.nome}</th><td>{xs.join('; ')}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p>Sem equipamento nenhum, ficam: {semNada.cobertura.flatMap((c) => c.exercicios).map((x) => x.toLowerCase()).join('; ')}.</p>
+
+      <h2>Treino só com halteres: até onde vai</h2>
+      <p>Um par de halteres resolve mais do que parece. No critério do simulador, só com eles os cinco grupos de força ficam cobertos: {exHalteres.join(', ')}. Com um banco, entram {halteresBanco.cobertura.find((c) => c.padrao === 'empurrar')!.exercicios[0].toLowerCase()} e {halteresBanco.cobertura.find((c) => c.padrao === 'puxar')!.exercicios[0].toLowerCase()}, que deixam o treino de cima mais estável.</p>
+      <p>O limite aparece quando existe uma carga só, ou quando o halter mais pesado do prédio fica leve. As pernas chegam lá primeiro, porque aguentam mais peso que os braços. Antes de trocar de lugar, dá para ganhar tempo com exercícios de uma perna de cada vez, descida mais lenta e menos descanso.</p>
+
+      <h2>Como dividir a semana</h2>
+      <p>Com 2 ou 3 dias, o simulador sugere treinar o corpo inteiro em cada dia: assim cada grupo de movimento aparece mais de uma vez na semana, mesmo se você faltar um dia. Com 4 ou 5, ele alterna parte de cima e pernas, e no de 5 reserva um dia para o cardio. É um esqueleto, não uma prescrição: a ordem, a carga e o volume mudam conforme o seu nível e o seu objetivo.</p>
+
+      <h2>Quando a academia do prédio não basta</h2>
+      <p>Três sinais: os pesos ficaram leves e as adaptações acabaram; o espaço vive cheio no único horário em que você pode; ou você quer uma modalidade que o prédio não tem, como natação, lutas ou aula coletiva. Nesses casos, dá para manter parte do treino no condomínio e complementar fora. Para escolher, use o <a href="/ferramentas/qual-academia/" data-evento="clique_ferramenta" data-ref="teste:treino-condominio">teste de qual academia combina com você</a>, veja <a href="/ferramentas/academias-diaria-aula-experimental-alphaville/" data-evento="clique_ferramenta" data-ref="diaria:treino-condominio">onde dá para treinar com diária</a>, sem matrícula, e compare o gasto na <a href="/ferramentas/custo-para-treinar-em-alphaville/" data-evento="clique_ferramenta" data-ref="custo:treino-condominio">calculadora de custo</a>, que tem a opção de treinar no condomínio.</p>
+
+      <h2>Personal trainer no condomínio em Alphaville e região</h2>
+      <p>Em condomínio, o profissional vai até você e monta o treino com o que a sala tem, o que resolve a dúvida de "o que fazer com esses aparelhos". Quem define se ele pode entrar é o condomínio: confira o regimento ou pergunte ao síndico se há cadastro, horário ou taxa. O guia tem uma página por região, com o que conferir em cada uma: {LOCAIS.map(([n, s], i) => <>{i > 0 && (i === LOCAIS.length - 1 ? ' e ' : ', ')}<a href={`/guias/personal-trainer-em-condominio-${s}/`}>{n}</a></>)}. Para ter uma ideia de valor, a <a href={link('preco', { formato: 'condominio' })}>calculadora de preço de personal</a> mostra a faixa de referência, e o <a href={link('formato')}>teste presencial ou online</a> ajuda a decidir o formato.</p>
+
+      <h2>Como o simulador decide</h2>
+      <p>Cada exercício da lista pede um conjunto de equipamentos e pertence a um grupo de movimento. Um grupo fica "bem coberto" quando há ao menos um exercício em que dá para aumentar a carga com o tempo; "dá para adaptar" quando só há saída com o peso do corpo ou elástico; e "falta equipamento" quando não há nenhum. A sugestão do que acrescentar testa cada equipamento que você não marcou e mostra os que mais melhoram a cobertura. São critérios editoriais do guia, iguais para todo mundo: o simulador não conhece o seu histórico nem avalia a sua execução.</p>
+    </div>
+
+    <Perguntas itens={perguntas} titulo="Perguntas sobre treino em condomínio e em casa" />
+    <LeiaTambem url={URL_PAG} />
+  </div>
+
+  <script type="application/json" id="tc-dados" set:html={JSON.stringify({ whats: WHATSAPP, slugs: Object.fromEntries(LOCAIS) })}></script>
+  <script>
+    import { avaliar, mensagemCondominio, NIVEL_ROTULO, NOME_PADRAO, NOME_EQUIP, PADROES, type EquipId, type PadraoId } from '../../lib/treinoCondominio';
+    const J = JSON.parse(document.getElementById('tc-dados')!.textContent!) as { whats: string; slugs: Record<string, string> };
+    const ev = (n: string, d: Record<string, string | number> = {}) => { const w = window as any; if (typeof w.otaEvento === 'function') w.otaEvento(n, d); };
+    const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
+    const f = $<HTMLFormElement>('tc-form'), res = $('tc-res');
+    const TREINA = Object.fromEntries(PADROES.map((p) => [p.id, p.treina])) as Record<PadraoId, string>;
+    const lista = (xs: string[]) => (xs.length <= 1 ? xs.join('') : `${xs.slice(0, -1).join(', ')} e ${xs[xs.length - 1]}`);
+    let iniciou = false;
+    f.addEventListener('change', () => { if (!iniciou) { iniciou = true; ev('treino_condominio_inicio'); } });
+
+    function calcular(rolar: boolean) {
+      const fd = new FormData(f), eq = fd.getAll('eq').map(String) as EquipId[], dias = Number(fd.get('dias')), exp = String(fd.get('exp')) as 'comecando' | 'treina';
+      const local = String(fd.get('local')) as 'condominio' | 'casa', regiao = String(fd.get('regiao') || '');
+      const r = avaliar(eq, dias, exp);
+      res.dataset.v = r.veredito;
+      $('tc-res-t').textContent = r.titulo; $('tc-resumo').textContent = r.resumo;
+      $('tc-cob').innerHTML = r.cobertura.map((c) => `<div class="tc-c" data-n="${c.nivel}"><div class="tc-c-t"><strong>${NOME_PADRAO[c.padrao]}</strong><span>${NIVEL_ROTULO[c.nivel]}</span></div><small>${TREINA[c.padrao]}</small>${c.exercicios.length ? `<ul>${c.exercicios.slice(0, 3).map((x) => `<li>${x}</li>`).join('')}</ul>` : '<p>Nenhum exercício possível com o que você marcou.</p>'}</div>`).join('');
+      $('tc-avisos').innerHTML = r.avisos.map((a) => `<p class="tc-av">${a}</p>`).join('');
+      $('tc-ajuda').innerHTML = r.ajuda.length ? `<h3>O que mais ajudaria ${local === 'casa' ? 'ter em casa' : 'pedir ao condomínio'}</h3><ul class="tc-aj">${r.ajuda.map((a) => `<li><strong>${NOME_EQUIP[a.id]}</strong>: melhora ${lista(a.melhora.map((p) => NOME_PADRAO[p].toLowerCase()))}.</li>`).join('')}</ul>` : '';
+      $('tc-sem').innerHTML = r.semana.map((d) => `<div class="tc-d"><strong>${d.nome}</strong><ul>${d.itens.map((i) => `<li><span>${NOME_PADRAO[i.padrao]}</span>${i.exercicio ?? '<em>sem equipamento para este movimento</em>'}</li>`).join('')}</ul></div>`).join('');
+      const slug = J.slugs[regiao];
+      const prox: string[] = [];
+      if (r.veredito !== 'completo') prox.push('<a href="/ferramentas/academias-diaria-aula-experimental-alphaville/" data-evento="clique_ferramenta" data-ref="diaria:treino-condominio-res">Complementar com diária em uma academia, sem matrícula</a>');
+      prox.push(`<a href="/ferramentas/calculadora-preco-personal-alphaville/?formato=${local === 'casa' ? 'domicilio' : 'condominio'}" data-evento="clique_ferramenta" data-ref="preco:treino-condominio-res">Ver a faixa de preço de personal ${local === 'casa' ? 'em casa' : 'em condomínio'}</a>`);
+      prox.push(`<a href="/guias/personal-trainer-${local === 'casa' ? 'a-domicilio' : 'em-condominio'}-${slug ?? 'alphaville'}/">Personal ${local === 'casa' ? 'em casa' : 'em condomínio'}${regiao ? ` ${regiao === 'Tamboré' ? 'no' : regiao === 'Aldeia da Serra' ? 'na' : 'em'} ${regiao}` : ''}: o que conferir antes</a>`);
+      $('tc-prox').innerHTML = `<h3>Próximos passos</h3><ul class="tc-aj">${prox.map((p) => `<li>${p}</li>`).join('')}</ul>`;
+      const wa = $<HTMLAnchorElement>('tc-wa'); wa.href = `https://wa.me/${J.whats}?text=${encodeURIComponent(mensagemCondominio(eq, dias, local, regiao))}`; wa.dataset.ref = `treino-condominio:${r.veredito}`;
+      res.hidden = false;
+      const q = new URLSearchParams(); if (eq.length) q.set('eq', eq.join(',')); q.set('dias', String(dias)); if (local === 'casa') q.set('local', 'casa');
+      history.replaceState(null, '', `${location.pathname}?${q}`);
+      if (rolar) { res.focus({ preventScroll: true }); res.scrollIntoView({ block: 'start', behavior: 'smooth' }); ev('treino_condominio_resultado', { resultado: r.veredito, equipamentos: eq.length, dias, local }); }
+    }
+    f.addEventListener('submit', (e) => { e.preventDefault(); calcular(true); });
+    $('tc-refazer').addEventListener('click', () => { f.scrollIntoView({ block: 'start', behavior: 'smooth' }); ev('treino_condominio_refazer'); });
+    $('tc-imprimir').addEventListener('click', () => { ev('treino_condominio_imprimir'); window.print(); });
+
+    // Link com estado: ?eq=halteres,banco&dias=3&local=casa (links dos artigos e resultado compartilhado).
+    const p0 = new URLSearchParams(location.search);
+    if (p0.has('eq') || p0.has('dias')) {
+      const marcados = new Set((p0.get('eq') || '').split(','));
+      f.querySelectorAll<HTMLInputElement>('input[name="eq"]').forEach((i) => { i.checked = marcados.has(i.value); });
+      const d = f.querySelector<HTMLInputElement>(`input[name="dias"][value="${p0.get('dias')}"]`); if (d) d.checked = true;
+      if (p0.get('local') === 'casa') $<HTMLSelectElement>('tc-local').value = 'casa';
+      calcular(false);
+    } else if (p0.get('local') === 'casa') $<HTMLSelectElement>('tc-local').value = 'casa';
+  </script>
+</Base>
+
+<style is:global>
+  .tc .tc-form { margin: 22px 0 14px; display: grid; gap: 16px; }
+  .tc .tc-bloco { margin: 0; padding: 18px 16px; border: 1px solid var(--linha, #d8dee8); border-radius: 14px; background: #fff; min-width: 0; display: grid; gap: 14px; }
+  .tc .tc-bloco legend { font: 800 21px/1.2 var(--display); padding: 0 4px; }
+  .tc .tc-n { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #FF6A00; color: #111827; font-size: 16px; margin-right: 4px; }
+  .tc .tc-ajuda, .tc .tc-nota { font-size: 14.5px; color: var(--cinza, #4b5563); margin: 0; }
+  .tc .tc-grupo { display: grid; gap: 8px; grid-template-columns: minmax(0, 1fr); }
+  .tc .tc-bloco > * { min-width: 0; }
+  .tc .tc-ops { display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .tc .tc-ops.tc-curto { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); max-width: 620px; }
+  .tc .tc-op { position: relative; display: block; }
+  .tc .tc-op input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+  .tc .tc-op span { display: flex; flex-direction: column; justify-content: center; min-height: 54px; height: 100%; padding: 8px 12px 8px 40px; border-radius: 10px; border: 1.5px solid #9aa3b2; background: #fff; position: relative; }
+  .tc .tc-op span::before { content: ''; position: absolute; left: 12px; top: 50%; width: 18px; height: 18px; margin-top: -10px; border: 2px solid #6b7280; border-radius: 5px; background: #fff; }
+  .tc .tc-op input[type="radio"] + span::before { border-radius: 50%; }
+  .tc .tc-op b { font-size: 15.5px; line-height: 1.25; }
+  .tc .tc-op small { font-size: 12.5px; color: var(--cinza, #4b5563); line-height: 1.3; }
+  .tc .tc-op input:checked + span { border-color: #111827; background: #111827; color: #fff; }
+  .tc .tc-op input:checked + span small { color: #C9D3E2; }
+  .tc .tc-op input:checked + span::before { border-color: #FF6A00; background: #FF6A00 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%23111827' stroke-width='2.4'/%3E%3C/svg%3E") center/14px no-repeat; }
+  .tc .tc-op input:focus-visible + span, .tc .tc-bt:focus-visible { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .tc .campo select { min-height: 48px; font-size: 16px; }
+  .tc .tc-res { margin: 8px 0 18px; padding: 22px 18px; border-radius: 14px; background: #111827; color: #F5F1E8; scroll-margin-top: 12px; }
+  .tc .tc-res[hidden] { display: none; }
+  .tc .tc-res:focus { outline: none; }
+  .tc .tc-res > .rotulo { color: #FFB066; }
+  .tc .tc-res h2 { color: #fff; margin: 6px 0 8px; font-size: clamp(24px, 6vw, 32px); }
+  .tc .tc-res h3 { color: #fff; font-size: 18px; margin: 18px 0 8px; }
+  .tc .tc-res a { color: #FFB066; }
+  .tc .tc-cob { display: grid; gap: 8px; grid-template-columns: minmax(0, 1fr); margin-top: 12px; }
+  .tc .tc-c { background: #1b2434; border-radius: 10px; padding: 12px; border-left: 6px solid #4ADE80; min-width: 0; }
+  .tc .tc-c[data-n="adaptado"] { border-left-color: #FBBF24; }
+  .tc .tc-c[data-n="falta"] { border-left-color: #F87171; }
+  .tc .tc-c-t { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+  .tc .tc-c-t strong { font: 800 18px/1.2 var(--display); color: #fff; }
+  .tc .tc-c-t span { font: 700 11px/1.3 var(--display); letter-spacing: .08em; text-transform: uppercase; color: #86EFAC; }
+  .tc .tc-c[data-n="adaptado"] .tc-c-t span { color: #FCD34D; }
+  .tc .tc-c[data-n="falta"] .tc-c-t span { color: #FCA5A5; }
+  .tc .tc-c small { color: #AEB7C6; font-size: 13.5px; }
+  .tc .tc-c ul, .tc .tc-d ul { margin: 6px 0 0; padding-left: 18px; font-size: 15px; }
+  .tc .tc-c p { margin: 6px 0 0; font-size: 15px; }
+  .tc .tc-av, .tc .tc-aviso { margin: 12px 0 0; padding: 10px 12px; border-left: 4px solid #FF6A00; background: #1b2434; font-size: 15px; }
+  .tc .tc-aj { margin: 0; padding-left: 20px; font-size: 16px; }
+  .tc .tc-aj li { margin: 5px 0; }
+  .tc .tc-sem { display: grid; gap: 8px; grid-template-columns: minmax(0, 1fr); }
+  .tc .tc-d { background: #1b2434; border-radius: 10px; padding: 12px; min-width: 0; }
+  .tc .tc-d strong { font: 800 16px/1.2 var(--display); color: #FF8A33; }
+  .tc .tc-d ul { list-style: none; padding: 0; }
+  .tc .tc-d li { padding: 6px 0; border-top: 1px solid #2a3547; }
+  .tc .tc-d li:first-child { border-top: 0; }
+  .tc .tc-d li span { display: block; font: 700 11px/1.3 var(--display); letter-spacing: .08em; text-transform: uppercase; color: #AEB7C6; }
+  .tc .tc-d em { color: #FCA5A5; font-style: normal; }
+  .tc .tc-mt { margin: 18px 0 4px; padding: 16px; border-radius: 12px; background: #1b2434; border-left: 6px solid #25D366; }
+  .tc .tc-mt .rotulo { color: #9ff0bf; }
+  .tc .tc-mt h3, .tc .tc-mt h2 { margin: 6px 0 6px; font-size: 20px; color: #fff; }
+  .tc .tc-mt p { margin: 0 0 4px; }
+  .tc .tc-wa { display: flex; justify-content: center; text-align: center; margin-top: 10px; min-height: 50px; background: #25D366; color: #0b2b17 !important; border-color: #25D366; font-weight: 800; }
+  .tc .tc-mt-claro { background: #F0FBF4; color: var(--tinta, #111827); margin: 20px 0; }
+  .tc .tc-mt-claro .rotulo { color: #14532D; }
+  .tc .tc-mt-claro h2 { color: var(--tinta, #111827); }
+  .tc .tc-mt-bts { display: grid; gap: 10px; }
+  .tc .tc-mt-bts a:not(.btn) { font-weight: 700; }
+  .tc .tc-acoes { margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tc .tc-bt { min-height: 44px; padding: 8px 14px; border-radius: 10px; border: 1.5px solid #F5F1E8; background: transparent; color: #F5F1E8; font: inherit; cursor: pointer; }
+  .tc table.dados.tc-t { min-width: 520px; }
+  @media (min-width: 720px) { .tc .tc-cob { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tc .tc-sem { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); } .tc .tc-mt-bts { grid-template-columns: auto 1fr; align-items: center; gap: 18px; } .tc .tc-wa { display: inline-flex; padding-left: 22px; padding-right: 22px; } }
+  @media (min-width: 1000px) { .tc .tc-cob { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media print { .tc .tc-res { background: #fff; color: #000; padding: 0; } .tc .tc-res h2, .tc .tc-res h3, .tc .tc-c-t strong, .tc .tc-d strong { color: #000; } .tc .tc-c, .tc .tc-d, .tc .tc-av, .tc .tc-aviso { background: #fff; border: 1px solid #999; } .tc .tc-c small, .tc .tc-c-t span, .tc .tc-d li span { color: #333 !important; } .tc .resposta, .tc .prosa, .tc .perguntas, .tc .leia-tambem, .tc .cab-pag .linha-fina { display: none; } }
+</style>
