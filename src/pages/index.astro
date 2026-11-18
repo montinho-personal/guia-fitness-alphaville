@@ -18,8 +18,8 @@ const porRegiao = (r: string) => todas.filter((a) => a.data.regiao === r).length
 // Data real da última conferência entre todas as fichas: é a prova da promessa "com fonte e data".
 const ultima = new Date(Math.max(...todas.flatMap((x) => x.data.proveniencia.map((pv) => pv.conferido_em.getTime()))));
 const ultimaIso = ultima.toISOString().slice(0, 10);
-// Versão da capa com foto do Montinho. false = capa só tipográfica (no ar desde 18/11/2026).
-const CAPA_COM_FOTO = import.meta.env.PUBLIC_CAPA_COM_FOTO === 'true';
+// Capa com foto do Montinho (publicada em 18/11/2026, a pedido do Renato). PUBLIC_CAPA_COM_FOTO=false volta à capa só tipográfica.
+const CAPA_COM_FOTO = import.meta.env.PUBLIC_CAPA_COM_FOTO !== 'false';
 const ultimaCurta = ultimaIso.split('-').reverse().join('.');
 const mods = [...new Set(todas.flatMap((a) => a.data.modalidades))];
 const abs = (u: string) => new URL(u, Astro.site).href;
