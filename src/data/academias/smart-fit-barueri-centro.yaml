@@ -121,3 +121,16 @@ horario_feriados:
   fonte: 'Site oficial da Smart Fit (página da unidade) — "Dom/Feriados 8h - 14h"'
   url: https://www.smartfit.com.br/academias/barueri-centro
   conferido_em: '2026-11-18'
+acesso_avulso:
+- tipo: diaria
+  nome: Passe diário
+  modalidades: [musculacao]
+  musculacao: true
+  preco: { situacao: a-consultar }
+  regras: []
+  destino: { tipo: pagina, url: 'https://www.smartfit.com.br/academias/barueri-centro' }
+  situacao: a-confirmar
+  fonte: Central de ajuda da Smart Fit (artigo "A Smart Fit possui passe diário?", citado pela busca do Google); a página não abriu aqui
+  url: https://ajuda.smartfit.com.br/hc/pt-br/articles/360051874051-A-Smart-Fit-possui-passe-di%C3%A1rio
+  conferido_em: '2026-11-18'
+  pendencias: ['Regra, preço e forma de compra do passe diário: a central de ajuda da rede não abriu na conferência.', 'Se o passe vale para esta unidade.']

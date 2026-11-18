@@ -67,3 +67,15 @@ autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: '2026-11-17'
 atualizado_em: '2026-11-17'
+acesso_avulso:
+- tipo: aula-experimental
+  nome: Aula experimental de lutas
+  modalidades: [lutas]
+  musculacao: false
+  preco: { situacao: gratis }
+  regras: []
+  destino: { tipo: pagina, url: 'https://g13alphaville.com.br/' }
+  situacao: confirmada
+  fonte: Site oficial da G13 Alphaville
+  url: https://g13alphaville.com.br/
+  conferido_em: '2026-11-17'

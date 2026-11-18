@@ -40,6 +40,21 @@ const academias = defineCollection({
     horario_feriados: z.object({ faixas: z.array(faixa), fonte: z.string(), url: z.string().url().optional(), conferido_em: data }).optional(),
     // Horário oficial de uma data específica (feriado, fechamento temporário). Prevalece sobre a grade e os feriados.
     horario_excecoes: z.array(z.object({ data: z.string().regex(/^\d{4}-\d\d-\d\d$/), faixas: z.array(faixa), situacao: z.enum(['confirmada', 'a-confirmar']), motivo: z.string(), fonte: z.string(), url: z.string().url().optional(), conferido_em: data })).default([]),
+    // Diária, aula ou treino experimental e visita guiada (docs/acesso-avulso.md e src/lib/acesso.ts).
+    acesso_avulso: z.array(z.object({
+      tipo: z.enum(['diaria', 'aula-experimental', 'treino-experimental', 'visita-guiada']),
+      nome: z.string(),
+      modalidades: z.array(z.string()).default([]),
+      musculacao: z.boolean(),
+      preco: z.object({ situacao: z.enum(['gratis', 'valor', 'a-partir-de', 'referencia-rede', 'a-consultar']), valor: z.string().optional(), centavos: z.number().int().optional() }),
+      regras: z.array(z.string()).default([]),
+      horario_acesso: z.string().optional(),
+      horario_acesso_confirmado: z.boolean().default(false),
+      destino: z.object({ tipo: z.enum(['compra', 'reserva', 'contato', 'pagina']), url: z.string().url(), canal: z.string().optional() }),
+      situacao: z.enum(['confirmada', 'a-confirmar']),
+      fonte: z.string(), url: z.string().url().optional(), conferido_em: data,
+      pendencias: z.array(z.string()).default([]),
+    })).default([]),
     modalidades: z.array(z.enum(MODALIDADES)).min(1),
     atividades_listadas: z.array(z.string()).default([]),
     comodidades: z.array(z.string()).default([]),

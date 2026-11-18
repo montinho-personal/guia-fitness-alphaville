@@ -7,6 +7,7 @@ import Mantem from '../../components/Mantem.astro';
 import Vitrine from '../../components/Vitrine.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import { Image } from 'astro:assets';
+import { TIPO_NOME, precoTexto, rotuloBotao, eGratis, type Oferta } from '../../lib/acesso';
 import fotoIbRemada from '../../assets/montinho/montinho-ironberg-remada-maquina.jpg';
 import fotoVfRosca from '../../assets/montinho/montinho-voifit-rosca-halteres.jpg';
 import fotoVfHalteres from '../../assets/montinho/montinho-voifit-halteres-sala.jpg';
@@ -166,6 +167,19 @@ const hojeIso = new Date().toISOString().slice(0, 10);
           {d.modalidades.includes('musculacao') && <p style="font-size:16px"><a class="link-forte" href={`/ferramentas/academias-abertas-alphaville/?agora=1&regiao=${d.regiao}`} data-evento="clique_ferramenta" data-ref="abertas:ficha">Ver academias abertas neste horário</a></p>}
 
         </div>
+        {d.acesso_avulso.length > 0 && (
+          <div class="caixa">
+            <h2>Diária e aula experimental</h2>
+            {(d.acesso_avulso as unknown as (Oferta & { fonte: string; url?: string })[]).map((o) => (
+              <div style="margin:0 0 12px">
+                <p style="margin:0 0 4px"><strong>{TIPO_NOME[o.tipo]}{o.situacao === 'a-confirmar' ? ' (a confirmar)' : ''}:</strong> {o.nome}{eGratis(o) ? ' · grátis' : ''}.</p>
+                <p style="margin:0 0 4px;font-size:15px">{o.musculacao ? 'Inclui musculação.' : o.tipo === 'visita-guiada' ? 'Visita ao espaço, não é treino.' : o.modalidades.length ? `Modalidade: ${o.modalidades.map((m) => MODALIDADES[m] ?? m).join(', ')}; não é musculação.` : 'Modalidade a confirmar.'} Preço: {precoTexto(o)}.{o.regras.length ? ` ${o.regras.join(' ')}` : ''}</p>
+                <p style="margin:0;font-size:15px"><a href={o.destino.url} rel="nofollow noopener" target="_blank" data-evento="clique_acesso_academia" data-ref={`${o.tipo}:${a.id}:ficha`}>{rotuloBotao(o)}</a> · <span style="color:var(--cinza)">{o.fonte}</span></p>
+              </div>
+            ))}
+            <p style="font-size:16px;margin:0"><a class="link-forte" href={`/ferramentas/academias-diaria-aula-experimental-alphaville/?regiao=${d.regiao}${d.acesso_avulso.some((o) => o.tipo === 'diaria') ? '' : '&modo=teste'}`} data-evento="clique_ferramenta" data-ref="diaria:ficha">Ver outras academias com diária e aula experimental</a></p>
+          </div>
+        )}
         {d.agregadores.length > 0 && (
           <div class="caixa">
             <h2>Agregadores</h2>

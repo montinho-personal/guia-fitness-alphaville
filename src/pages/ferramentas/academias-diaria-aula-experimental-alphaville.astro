@@ -1,0 +1,307 @@
+---
+// Buscador "Academias com diária e aula experimental em Alphaville e região".
+// Ofertas: campo acesso_avulso das fichas. Regras: src/lib/acesso.ts. Horários e feriados: src/lib/horarios.ts.
+import Base from '../../layouts/Base.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import { academias, REGIOES, urlAcademia, dataLonga, MODALIDADES, WHATSAPP, type Academia } from '../../lib/dados';
+import { TIPO_NOME, precoTexto, rotuloBotao, eGratis, mensagemWhatsapp, linkWhatsappMontinho, type Oferta } from '../../lib/acesso';
+import { paraCentavos } from '../../lib/custo';
+import { link } from '../../lib/ferramentas';
+import FER from '../../data/feriados.json';
+
+const todas = await academias();
+const municipio = (a: Academia) => (/Santana de Parna[íi]ba/.test(a.data.endereco) ? 'Santana de Parnaíba' : 'Barueri');
+const lugar = (a: Academia) => (/Tambor[ée]/.test(a.data.bairro) ? 'Tamboré' : a.data.regiao === 'alphaville' || /Alphaville/.test(a.data.bairro) ? 'Alphaville' : REGIOES[a.data.regiao].nome);
+const local = (a: Academia) => (lugar(a) === municipio(a) ? lugar(a) : `${lugar(a)} · ${municipio(a)}`);
+const nomeMod = (m: string) => MODALIDADES[m] ?? m;
+// Plano mensal sem fidelidade (o mesmo período de um mês) e a matrícula, quando publicados.
+const mensalDe = (a: Academia) => {
+  const pl = a.data.mensalidade?.planos ?? [];
+  const p = pl.find((x) => /^mensal$|recorr|sem fidelidade/i.test(x.nome)) ?? null;
+  const c = p ? paraCentavos(p.preco.replace(/\/m[eê]s.*/i, '').replace(/[^\d,]/g, '')) : null;
+  const tx = a.data.mensalidade?.resumo?.match(/matr[íi]cula de R\$ ?([\d.,]+)/i);
+  const t = tx ? paraCentavos(tx[1]) : 0;
+  return p && typeof c === 'number' ? { nome: p.nome, centavos: c, taxa: typeof t === 'number' ? t : 0 } : null;
+};
+
+const itens = todas.flatMap((a) => a.data.acesso_avulso.map((o, i) => ({ a, o: o as unknown as Oferta & { fonte: string; url?: string; conferido_em: Date }, k: `${a.id}-${i}` })));
+const diariasMusc = itens.filter((x) => x.o.tipo === 'diaria' && x.o.musculacao);
+const diariasOutras = itens.filter((x) => x.o.tipo === 'diaria' && !x.o.musculacao);
+const testes = itens.filter((x) => x.o.tipo !== 'diaria');
+const ordem = (xs: typeof itens) => xs.slice().sort((x, y) => Number(y.o.situacao === 'confirmada') - Number(x.o.situacao === 'confirmada') || Number(eGratis(y.o)) - Number(eGratis(x.o)) || x.a.data.nome.localeCompare(y.a.data.nome));
+const unidades = todas.filter((a) => a.data.modalidades.includes('musculacao')).sort((x, y) => x.data.nome.localeCompare(y.data.nome));
+const msgGeral = mensagemWhatsapp();
+
+const dados = {
+  U: Object.fromEntries([...new Set(itens.map((x) => x.a))].map((a) => [a.id, { horario: a.data.horario, horario_status: a.data.horario_status ?? {}, ultima_entrada: a.data.ultima_entrada ?? {}, horario_feriados: a.data.horario_feriados ? { faixas: a.data.horario_feriados.faixas } : null, horario_excecoes: a.data.horario_excecoes.map((e) => ({ ...e, conferido_em: '' })), municipio: municipio(a), regiao: a.data.regiao }])),
+  O: Object.fromEntries(itens.map((x) => [x.k, x.o])),
+  feriados: FER.feriados,
+  personal: Object.fromEntries(unidades.map((a) => [a.id, { nome: a.data.nome, personal: a.data.personal_externo?.status }])),
+  whats: WHATSAPP,
+};
+const confirmadas = diariasMusc.filter((x) => x.o.situacao === 'confirmada');
+const titulo = 'Academias com diária e aula experimental em Alphaville';
+const descricao = 'Onde fazer musculação pagando só uma diária e onde testar antes de contratar em Alphaville, Tamboré e Barueri: preço, regras, reserva e o canal de cada academia.';
+const perguntas = [
+  { p: 'Tem academia com diária em Alphaville?', r: `Sim. Com diária de musculação confirmada na fonte oficial: ${confirmadas.map((x) => `${x.a.data.nome} (${precoTexto(x.o)})`).join('; ')}. A Smart Fit tem passe diário segundo a central de ajuda da rede, mas a regra e o preço por unidade ainda estão a confirmar.` },
+  { p: 'Quanto custa a diária da NitroGym Tamboré?', r: 'R$ 90 pelo day use, com pagamento direto no local e acesso a todas as áreas da academia, segundo o site da NitroGym. O estacionamento do shopping fica incluso por até 3 horas.' },
+  { p: 'A Ironberg Alphaville vende diária?', r: 'Vende aula avulsa, contratada no dia do treino, só na recepção da unidade, sem agendamento. O valor não é publicado: é informado na unidade.' },
+  { p: 'Tem day use na Smart Fit?', r: 'A central de ajuda da Smart Fit trata do passe diário, mas o guia não conseguiu ler a página na conferência. Confirme no aplicativo da rede ou na recepção da unidade antes de ir, inclusive o preço, que pode variar por unidade.' },
+  { p: 'Como é uma aula experimental na academia?', r: 'Depende do lugar. Em box de CrossFit, costuma ser uma aula guiada, às vezes separada da turma, para aprender os movimentos. Em academia premium, muitas vezes é uma visita com apresentação do espaço. Antes de ir, pergunte se dá para treinar musculação, quanto tempo dura e se precisa reservar.' },
+  { p: 'Diária ou mensalidade: o que compensa?', r: 'Some as diárias do mês e compare com o plano mensal sem fidelidade. Na NitroGym, por exemplo, 7 diárias de R$ 90 já passam do plano mensal de R$ 589. A ferramenta faz essa conta para a quantidade de idas que você escolher; a matrícula, quando existe, pesa só no primeiro mês.' },
+];
+const schema = [{ '@type': 'ItemList', name: 'Academias com diária de musculação em Alphaville e região', itemListElement: diariasMusc.map((x, i) => ({ '@type': 'ListItem', position: i + 1, name: x.a.data.nome, url: new URL(urlAcademia(x.a), Astro.site).href })) }];
+const dataBR = (d: Date) => dataLonga(d);
+---
+<Base titulo={titulo} descricao={descricao} schema={schema} migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Diária e aula experimental', url: '/ferramentas/academias-diaria-aula-experimental-alphaville/' }]}>
+  <div class="wrap av">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Ferramenta · ofertas conferidas</span>
+      <h1>Academias com diária e aula experimental em Alphaville e região</h1>
+      <p class="linha-fina">Treinar hoje pagando só uma diária, ou experimentar antes de assinar: o que está incluído, o preço, quando dá para entrar e como reservar, com o canal oficial de cada academia.</p>
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Para musculação com diária, a <a href={urlAcademia(confirmadas.find((x) => x.a.id === 'nitrogym-tambore')!.a)}>NitroGym Tamboré</a> cobra R$ 90 pelo day use, pago no local, e a <a href="/academias/ironberg-alphaville/">Ironberg Alphaville</a> vende aula avulsa na recepção, com valor a consultar. As unidades da Smart Fit têm passe diário a confirmar. Para experimentar outras modalidades, o CrossFit Barueri e a G13 publicam aula experimental grátis.</p>
+    </div>
+
+    <div class="av-modos nao-imprime" role="group" aria-label="O que você quer fazer">
+      <button type="button" data-modo="diaria" aria-pressed="true">Quero treinar hoje</button>
+      <button type="button" data-modo="teste" aria-pressed="false">Quero testar antes de contratar</button>
+    </div>
+
+    <!-- Caminho 1: diária -->
+    <section class="bloco fino av-sec" id="av-diaria" aria-labelledby="av-diaria-t">
+      <h2 id="av-diaria-t">Quero treinar hoje: academias com diária</h2>
+      <form class="av-form nao-imprime" id="av-form" aria-label="Filtrar diárias">
+        <div class="av-campos">
+          <label class="campo"><span class="rotulo">Região</span><select name="regiao"><option value="">Todas</option>{Object.entries(REGIOES).map(([k, v]) => <option value={k}>{k === 'alphaville' ? 'Alphaville e Tamboré' : v.nome}</option>)}</select></label>
+          <label class="campo"><span class="rotulo">Data</span><input type="date" name="data"></label>
+          <label class="campo"><span class="rotulo">Chego às</span><input type="time" name="hora" step="900"></label>
+          <label class="campo"><span class="rotulo">Idas no mês</span><select name="idas"><option value="1">1</option><option value="4" selected>4</option><option value="8">8</option><option value="12">12</option></select></label>
+        </div>
+        <label class="av-check"><input type="checkbox" name="preco"> Só com preço confirmado</label>
+      </form>
+      <p class="av-resumo" id="av-resumo" aria-live="polite">{diariasMusc.length} diárias de musculação. Escolha a data e a hora para conferir se a academia está aberta.</p>
+      <ul class="av-lista" id="av-lista-diaria">
+        {ordem(diariasMusc).map(({ a, o, k }) => {
+          const m = mensalDe(a);
+          return (
+            <li class="av-item" data-k={k} data-id={a.id} data-reg={a.data.regiao} data-preco={o.preco.situacao === 'valor' ? '1' : '0'} data-cent={o.preco.centavos ?? ''} data-mensal={m?.centavos ?? ''} data-taxa={m?.taxa ?? ''} data-plano={m?.nome ?? ''}>
+              <div class="av-topo"><a class="av-nome" href={urlAcademia(a)} data-evento="clique_academia" data-ref={`acesso:${a.id}`}>{a.data.nome}</a><span class={`av-selo ${o.situacao === 'confirmada' ? '' : 'av-selo-p'}`}>{o.situacao === 'confirmada' ? TIPO_NOME[o.tipo] : `${TIPO_NOME[o.tipo]} a confirmar`}</span></div>
+              <p class="av-local">{local(a)}</p>
+              <dl class="av-dl">
+                <div><dt>Inclui</dt><dd>Musculação{o.regras.find((r) => /todas as áreas/i.test(r)) ? ', com acesso a todas as áreas' : ''}</dd></div>
+                <div><dt>Preço</dt><dd class={o.preco.situacao === 'valor' ? 'av-ok' : ''}>{precoTexto(o)}</dd></div>
+                <div><dt>Quando entrar</dt><dd class="av-quando">{o.horario_acesso_confirmado && o.horario_acesso ? o.horario_acesso : 'Dentro do horário da academia; confirme o acesso com a unidade.'}</dd></div>
+                <div><dt>Como</dt><dd>{o.regras.filter((r) => !/todas as áreas/i.test(r)).join(' ') || 'Consulte a unidade.'}</dd></div>
+              </dl>
+              {o.pendencias.length > 0 && <p class="av-pend">A confirmar: {o.pendencias.join(' ')}</p>}
+              <p class="av-comp" data-comp></p>
+              <p class="av-fonte">Fonte: {o.url ? <a href={o.url} rel="nofollow noopener" target="_blank">{o.fonte}</a> : o.fonte}, {o.situacao === 'confirmada' ? 'conferida' : 'anotada'} em {dataBR(o.conferido_em)}.</p>
+              <p class="av-acoes">
+                <a class="btn peq" href={o.destino.url} rel="nofollow noopener" target="_blank" data-evento="clique_acesso_academia" data-ref={`diaria:${a.id}`}>{rotuloBotao(o)}</a>
+                <a href={link('custo', { a: a.id, de: 'diaria' })} data-evento="clique_ferramenta" data-ref="custo:diaria">Comparar com a mensalidade</a>
+                <a href={link('abertas', { ids: a.id })} data-evento="clique_ferramenta" data-ref="abertas:diaria">Horários</a>
+                <a href={urlAcademia(a)}>Ficha</a>
+                <a href="/mapa/">Mapa</a>
+              </p>
+            </li>
+          );
+        })}
+      </ul>
+      <p class="av-vazio" id="av-vazio" hidden>Nenhuma diária com esses filtros. <button type="button" data-aj="limpar">Ver todas</button></p>
+      {diariasOutras.length > 0 && <>
+        <h3>Diária de outras modalidades</h3>
+        <p class="av-nota">Não entram no filtro de musculação.</p>
+        <ul class="av-lista">{diariasOutras.map(({ a, o }) => <li class="av-item av-item-c"><a class="av-nome" href={urlAcademia(a)}>{a.data.nome}</a> · {o.nome} ({o.modalidades.map(nomeMod).join(', ')}) · {precoTexto(o)} · <a href={o.destino.url} rel="nofollow noopener" target="_blank" data-evento="clique_acesso_academia" data-ref={`diaria:${a.id}`}>{rotuloBotao(o)}</a></li>)}</ul>
+      </>}
+    </section>
+
+    <!-- Caminho 2: aula ou treino experimental -->
+    <section class="bloco fino av-sec" id="av-teste" aria-labelledby="av-teste-t">
+      <h2 id="av-teste-t">Quero testar antes de contratar</h2>
+
+      <aside class="av-montinho" aria-labelledby="av-mt">
+        <span class="rotulo">Atendimento do Montinho Personal Trainer</span>
+        <h3 id="av-mt">Quer experimentar um treino com o Montinho?</h3>
+        <p>Me conta onde você treina ou quer começar. A gente conversa sobre seu objetivo e vê onde dá para marcar uma aula experimental em Alphaville e região.</p>
+        <label class="campo"><span class="rotulo">Onde você quer treinar?</span>
+          <select id="av-onde"><option value="">Ainda não sei / outro lugar</option>{unidades.map((a) => <option value={a.id}>{a.data.nome}</option>)}</select></label>
+        <a class="btn av-wa" id="av-wa" href={linkWhatsappMontinho(WHATSAPP, msgGeral)} target="_blank" rel="nofollow noopener" data-evento="clique_whatsapp" data-ref="acesso-experimental">Consultar aula experimental no WhatsApp</a>
+        <p class="av-nota">Abre o WhatsApp com a mensagem pronta para você revisar e enviar. É uma consulta de disponibilidade: local, horário e valor são combinados na conversa.</p>
+      </aside>
+
+      <div class="av-filtro nao-imprime" role="group" aria-label="Modalidade">
+        <button type="button" data-mod="" aria-pressed="true">Todas as modalidades</button>
+        <button type="button" data-mod="musculacao" aria-pressed="false">Só musculação</button>
+      </div>
+      <ul class="av-lista" id="av-lista-teste">
+        {ordem(testes).map(({ a, o, k }) => (
+          <li class="av-item" data-k={k} data-musc={o.musculacao ? '1' : '0'}>
+            <div class="av-topo"><a class="av-nome" href={urlAcademia(a)} data-evento="clique_academia" data-ref={`acesso:${a.id}`}>{a.data.nome}</a>{eGratis(o) && <span class="av-selo av-gratis">Grátis</span>}<span class={`av-selo ${o.situacao === 'confirmada' ? 'av-selo-t' : 'av-selo-p'}`}>{o.situacao === 'confirmada' ? TIPO_NOME[o.tipo] : `${TIPO_NOME[o.tipo]} a confirmar`}</span></div>
+            <p class="av-local">{local(a)}</p>
+            <dl class="av-dl">
+              <div><dt>Inclui</dt><dd>{o.tipo === 'visita-guiada' ? 'Visita ao espaço (não é treino)' : o.modalidades.length ? o.modalidades.map(nomeMod).join(', ') : 'Modalidade a confirmar'}{o.musculacao ? '' : o.tipo !== 'visita-guiada' && o.modalidades.length ? ' (não é musculação)' : ''}</dd></div>
+              <div><dt>Preço</dt><dd class={eGratis(o) ? 'av-ok' : ''}>{precoTexto(o)}</dd></div>
+              <div><dt>Reserva</dt><dd>{o.destino.tipo === 'reserva' ? 'Precisa agendar' : 'Consulte a academia'}</dd></div>
+              {o.regras.length > 0 && <div><dt>Regras</dt><dd>{o.regras.join(' ')}</dd></div>}
+            </dl>
+            {o.pendencias.length > 0 && <p class="av-pend">A confirmar: {o.pendencias.join(' ')}</p>}
+            <p class="av-fonte">Fonte: {o.url ? <a href={o.url} rel="nofollow noopener" target="_blank">{o.fonte}</a> : o.fonte}, {o.situacao === 'confirmada' ? 'conferida' : 'anotada'} em {dataBR(o.conferido_em)}.</p>
+            <p class="av-acoes"><a class="btn peq" href={o.destino.url} rel="nofollow noopener" target="_blank" data-evento="clique_acesso_academia" data-ref={`${o.tipo}:${a.id}`}>{rotuloBotao(o)}</a><a href={urlAcademia(a)}>Ficha</a></p>
+          </li>
+        ))}
+        {diariasMusc.filter((x) => x.o.situacao === 'confirmada').map(({ a, o, k }) => (
+          <li class="av-item" data-k={`t-${k}`} data-musc="1">
+            <div class="av-topo"><a class="av-nome" href={urlAcademia(a)} data-evento="clique_academia" data-ref={`acesso:${a.id}`}>{a.data.nome}</a><span class="av-selo av-selo-t">Diária para testar a musculação</span></div>
+            <p class="av-local">{local(a)}</p>
+            <dl class="av-dl"><div><dt>Inclui</dt><dd>Musculação</dd></div><div><dt>Preço</dt><dd>{precoTexto(o)}</dd></div><div><dt>Como</dt><dd>{o.regras.join(' ')}</dd></div></dl>
+            <p class="av-acoes"><a class="btn peq" href={o.destino.url} rel="nofollow noopener" target="_blank" data-evento="clique_acesso_academia" data-ref={`diaria:${a.id}`}>{rotuloBotao(o)}</a><a href={urlAcademia(a)}>Ficha</a></p>
+          </li>
+        ))}
+      </ul>
+      <p class="av-nota">Nenhuma academia com ficha no guia publica, até a conferência, aula experimental de musculação. Para testar a sala de musculação, as opções confirmadas são as diárias acima.</p>
+      <p><a class="link-forte" href="/ferramentas/checklist/" data-evento="clique_ferramenta" data-ref="checklist:experimental">Abrir checklist de visita</a></p>
+    </section>
+
+    <div class="prosa">
+      <h2>Como comprar uma diária</h2>
+      <p>Cada academia faz de um jeito. Na NitroGym Tamboré, o day use é pago direto no local. Na Ironberg, a aula avulsa é contratada na recepção, no dia do treino, sem agendamento, e o valor só é informado na unidade. Leve documento e, se for de carro, confira a regra do estacionamento. Antes de sair, confirme se a diária vale no horário em que você pretende chegar: o site das academias nem sempre diz se a entrada avulsa segue todo o horário de funcionamento. Para ver o horário de cada unidade, use o <a href="/ferramentas/academias-abertas-alphaville/">buscador de academias abertas</a>.</p>
+
+      <h2>O que pode estar incluído numa aula experimental</h2>
+      <p>"Aula experimental" quer dizer coisas diferentes. No CrossFit Barueri, é uma aula grátis, separada da turma, para aprender os movimentos. Na BlackSheep Alphaville, é uma aula de Hybrid agendada pelo WhatsApp. Na SIX e na Fábrica Premium, o que existe é uma visita agendada para conhecer o espaço, que não é a mesma coisa que treinar. Pergunte sempre: dá para treinar musculação, quanto tempo dura, quem acompanha e se há custo.</p>
+
+      <h2>Quando é preciso reservar</h2>
+      <p>Aula experimental em box e estúdio quase sempre precisa de horário marcado, porque a turma tem limite de vagas. Diária em academia de musculação costuma dispensar reserva. Feriados mudam a regra: confira o <a href="/ferramentas/academias-abertas-alphaville/?atalho=feriado">horário de feriado</a> e confirme com a unidade.</p>
+    </div>
+
+    <Perguntas itens={perguntas} titulo="Perguntas sobre diária, day use e aula experimental" />
+    <LeiaTambem url="/ferramentas/academias-diaria-aula-experimental-alphaville/" />
+  </div>
+
+  <script type="application/json" id="av-dados" set:html={JSON.stringify(dados)}></script>
+  <script>
+    import { disponibilidade, mensagemWhatsapp, linkWhatsappMontinho, compararDiaria } from '../../lib/acesso';
+    import { min, hora } from '../../lib/horarios';
+    const J = JSON.parse(document.getElementById('av-dados')!.textContent!);
+    const ev = (n: string, d: Record<string, string | number> = {}) => { const w = window as any; if (typeof w.otaEvento === 'function') w.otaEvento(n, d); };
+    const brl = (c: number) => (c / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }).replace(/\s/g, ' ');
+    const agoraSP = () => { const p = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date()).map((x) => [x.type, x.value])); return { data: `${p.year}-${p.month}-${p.day}`, min: Number(p.hour) * 60 + Number(p.minute) }; };
+
+    // Modos
+    const secD = document.getElementById('av-diaria')!, secT = document.getElementById('av-teste')!;
+    function modo(m: string, registrar = true) {
+      document.querySelectorAll<HTMLButtonElement>('[data-modo]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.modo === m)));
+      secD.hidden = m !== 'diaria'; secT.hidden = m !== 'teste';
+      if (registrar) ev('acesso_modo', { modo: m });
+      const q = new URLSearchParams(location.search); q.set('modo', m); history.replaceState(null, '', `?${q}`);
+    }
+    document.querySelectorAll<HTMLButtonElement>('[data-modo]').forEach((b) => b.addEventListener('click', () => modo(b.dataset.modo!)));
+
+    // Diária: filtros, disponibilidade e comparação
+    const f = document.getElementById('av-form') as HTMLFormElement;
+    const el = (n: string) => f.elements.namedItem(n) as HTMLInputElement;
+    const itens = [...document.querySelectorAll<HTMLLIElement>('#av-lista-diaria .av-item')];
+    const resumo = document.getElementById('av-resumo')!, vazio = document.getElementById('av-vazio')!;
+    function aplicar(origem = 'filtro') {
+      const reg = el('regiao').value, data = el('data').value, horaV = el('hora').value, idas = Number(el('idas').value), soPreco = (el('preco') as HTMLInputElement).checked;
+      let n = 0, abertas = 0;
+      for (const li of itens) {
+        const o = J.O[li.dataset.k!], u = J.U[li.dataset.id!];
+        const ok = (!reg || li.dataset.reg === reg) && (!soPreco || li.dataset.preco === '1');
+        li.hidden = !ok; if (!ok) continue; n++;
+        const q = li.querySelector('.av-quando')!;
+        if (data && horaV) {
+          const d = disponibilidade(u, o, data, min(horaV), 60, J.feriados);
+          const ate = (f2: number) => (f2 >= 2880 ? 'aberta 24 horas' : f2 > 1440 ? `aberta até ${hora(f2)} do dia seguinte` : `aberta até ${hora(f2)}`);
+          q.textContent = d.tipo === 'ok' ? `Academia ${ate(d.fecha)}; diária válida nesse horário.` : d.tipo === 'confirme-acesso' ? `Academia ${ate(d.fecha)}. Confirme o acesso com a unidade.` : d.tipo === 'fechada' ? 'Fechada nesse horário ou fecha antes de 1 hora de treino.' : 'Horário desse dia a confirmar com a unidade.';
+          if (d.tipo === 'ok' || d.tipo === 'confirme-acesso') abertas++;
+        } else q.textContent = o.horario_acesso_confirmado && o.horario_acesso ? o.horario_acesso : 'Dentro do horário da academia; confirme o acesso com a unidade.';
+        const comp = li.querySelector<HTMLElement>('[data-comp]')!, cent = Number(li.dataset.cent), mensal = Number(li.dataset.mensal), taxa = Number(li.dataset.taxa || 0);
+        if (cent && mensal) {
+          const r = compararDiaria(cent, idas, mensal, taxa);
+          comp.textContent = `Com ${idas} ${idas === 1 ? 'ida' : 'idas'} no mês: ${brl(r.diarias)} em diárias contra ${brl(r.mensal)} no plano ${li.dataset.plano!.toLowerCase()}${taxa ? ` (mais ${brl(taxa)} de matrícula no primeiro mês)` : ''}. ${r.compensaDiaria ? 'A diária sai mais em conta.' : 'O plano mensal sai mais em conta.'} A partir de ${r.idasParaEmpatar} idas, o plano compensa.`;
+        } else comp.textContent = '';
+      }
+      resumo.textContent = data && horaV ? `${n} ${n === 1 ? 'diária' : 'diárias'} de musculação; ${abertas} em academia aberta nesse horário.` : `${n} ${n === 1 ? 'diária' : 'diárias'} de musculação.`;
+      vazio.hidden = n > 0;
+      if (origem !== 'inicio') ev('acesso_diaria_busca', { regiao: reg || 'todas', com_hora: data && horaV ? 1 : 0, so_preco: soPreco ? 1 : 0, idas, resultados: n });
+    }
+    f.addEventListener('change', () => aplicar());
+    f.addEventListener('submit', (e) => { e.preventDefault(); aplicar(); });
+    vazio.addEventListener('click', (e) => { if ((e.target as HTMLElement).closest('[data-aj]')) { el('regiao').value = ''; (el('preco') as HTMLInputElement).checked = false; aplicar(); } });
+
+    // Teste: filtro de modalidade
+    const itensT = [...document.querySelectorAll<HTMLLIElement>('#av-lista-teste .av-item')];
+    document.querySelectorAll<HTMLButtonElement>('[data-mod]').forEach((b) => b.addEventListener('click', () => {
+      document.querySelectorAll('[data-mod]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      itensT.forEach((li) => { li.hidden = !!b.dataset.mod && li.dataset.musc !== '1'; });
+      ev('acesso_teste_filtro', { modalidade: b.dataset.mod || 'todas' });
+    }));
+
+    // WhatsApp do Montinho: mensagem muda com a unidade escolhida (nada do texto vai para o analytics)
+    const onde = document.getElementById('av-onde') as HTMLSelectElement, wa = document.getElementById('av-wa') as HTMLAnchorElement;
+    onde.addEventListener('change', () => {
+      const u = J.personal[onde.value];
+      wa.href = linkWhatsappMontinho(J.whats, mensagemWhatsapp(u ? { nome: u.nome, personal: u.personal } : undefined));
+      wa.dataset.ref = u ? 'acesso-experimental-unidade' : 'acesso-experimental';
+    });
+
+    // Estado inicial: hoje, sem hora; ?modo=teste abre o segundo caminho.
+    const p = new URLSearchParams(location.search);
+    el('data').value = agoraSP().data; el('data').min = agoraSP().data;
+    if (p.get('regiao')) el('regiao').value = p.get('regiao')!;
+    modo(p.get('modo') === 'teste' ? 'teste' : 'diaria', false);
+    aplicar('inicio');
+  </script>
+</Base>
+
+<style is:global>
+  .av .av-modos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 22px 0 6px; }
+  .av .av-modos button, .av .av-filtro button { min-height: 52px; padding: 10px 12px; border-radius: 12px; border: 1.5px solid #111827; background: #fff; font: inherit; font-weight: 700; cursor: pointer; }
+  .av .av-modos button[aria-pressed="true"], .av .av-filtro button[aria-pressed="true"] { background: #111827; color: #fff; }
+  .av button:focus-visible, .av a:focus-visible, .av select:focus-visible, .av input:focus-visible { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .av .av-filtro { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 12px; }
+  .av .av-filtro button { min-height: 44px; font-weight: 600; }
+  .av .av-form { margin: 10px 0 12px; padding: 16px; border: 1px solid var(--linha, #d8dee8); border-radius: 14px; background: #fff; }
+  .av .av-campos { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (min-width: 760px) { .av .av-campos { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .av .av-campos input, .av .av-campos select, .av .av-montinho select { width: 100%; min-height: 44px; font: inherit; font-size: 16px; padding: 8px 10px; border: 1.5px solid #9aa3b2; border-radius: 10px; background: #fff; box-sizing: border-box; }
+  .av .av-check { display: flex; gap: 8px; align-items: center; margin-top: 12px; min-height: 32px; font-size: 16px; }
+  .av .av-check input { width: 20px; height: 20px; }
+  .av .av-resumo { font-size: 16px; }
+  .av .av-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .av .av-item { padding: 16px 18px; border: 1px solid var(--linha, #d8dee8); border-radius: 12px; background: #fff; min-width: 0; }
+  .av .av-item-c { font-size: 15px; }
+  .av .av-topo { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .av .av-nome { font-weight: 700; font-size: 18px; }
+  .av .av-selo { font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; background: #111827; color: #fff; padding: 3px 8px; border-radius: 6px; }
+  .av .av-selo-t { background: #fff; color: #111827; border: 1.5px solid #111827; }
+  .av .av-selo-p { background: #fff; color: #8a4b00; border: 1.5px dashed #8a4b00; }
+  .av .av-gratis { background: #0f6b3a; }
+  .av .av-local { margin: 4px 0 8px; color: var(--cinza, #4b5563); font-size: 15px; }
+  .av .av-dl { margin: 0; display: grid; gap: 6px; }
+  .av .av-dl div { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 8px; font-size: 16px; }
+  .av .av-dl dt { font-weight: 700; }
+  .av .av-dl dd { margin: 0; }
+  .av .av-ok { color: #0f6b3a; font-weight: 700; }
+  .av .av-pend { font-size: 14px; color: #8a4b00; margin: 8px 0 0; }
+  .av .av-comp { font-size: 15px; margin: 8px 0 0; }
+  .av .av-comp:empty { display: none; }
+  .av .av-fonte { font-size: 13px; color: var(--cinza, #4b5563); margin: 8px 0; }
+  .av .av-acoes { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 10px 0 0; font-size: 15px; }
+  .av .av-acoes a:not(.btn) { min-height: 32px; display: inline-flex; align-items: center; }
+  .av .av-nota { font-size: 14px; color: var(--cinza, #4b5563); }
+  .av .av-vazio button { min-height: 44px; padding: 6px 12px; border-radius: 10px; border: 1.5px solid #111827; background: #fff; font: inherit; }
+  .av .av-montinho { margin: 8px 0 14px; padding: 18px; border-radius: 14px; background: #111827; color: #F5F1E8; border-left: 6px solid #25D366; }
+  .av .av-montinho .rotulo { color: #9ff0bf; }
+  .av .av-montinho h3 { color: #fff; margin: 6px 0 8px; font-size: 21px; }
+  .av .av-montinho p { color: #F5F1E8; }
+  .av .av-montinho .campo .rotulo { color: #F5F1E8; }
+  .av .av-montinho .av-nota { color: #cfd5df; font-size: 13px; margin-bottom: 0; }
+  .av .av-wa { display: flex; justify-content: center; margin-top: 12px; background: #25D366; color: #0b2b17; border-color: #25D366; font-weight: 700; min-height: 48px; text-align: center; }
+  .av .av-sec[hidden] { display: none; }
+</style>
