@@ -1,7 +1,7 @@
 // Diária, aula experimental, CTA do Montinho e comparação diária x mensalidade. Rodar com: npm test
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { eGratis, precoTexto, rotuloBotao, disponibilidade, mensagemWhatsapp, linkWhatsappMontinho, compararDiaria, MENSAGEM_BASE, type Oferta } from '../src/lib/acesso.ts';
+import { eGratis, precoTexto, rotuloBotao, disponibilidade, mensagemWhatsapp, linkWhatsappMontinho, compararDiaria, destinoOferta, MENSAGEM_BASE, type Oferta } from '../src/lib/acesso.ts';
 import { min, type UnidadeHorario } from '../src/lib/horarios.ts';
 
 const base: Oferta = { tipo: 'diaria', nome: 'Diária', modalidades: ['musculacao'], musculacao: true, preco: { situacao: 'valor', valor: 'R$ 90', centavos: 9000 }, regras: [], horario_acesso_confirmado: false, destino: { tipo: 'compra', url: 'https://exemplo.com/comprar' }, situacao: 'confirmada', pendencias: [] };
@@ -54,4 +54,13 @@ test('diárias x mensalidade no mesmo mês, matrícula separada', () => {
   assert.equal(r.diarias, 36000); assert.equal(r.compensaDiaria, true); assert.equal(r.primeiroMes, 70900);
   assert.equal(compararDiaria(9000, 8, 58900).compensaDiaria, false);
   assert.equal(compararDiaria(9000, 1, 58900).idasParaEmpatar, 7);
+});
+
+test('aula experimental do Montinho: botão e destino vão para o WhatsApp dele, com a unidade', () => {
+  const o: Oferta = { ...base, tipo: 'aula-experimental', preco: { situacao: 'gratis' }, destino: { tipo: 'reserva', url: 'https://www.montinhopersonal.com.br/' }, responsavel: 'montinho' };
+  assert.equal(rotuloBotao(o), 'Agendar com o Montinho no WhatsApp');
+  const d = destinoOferta(o, 'Arena 18', '5511981063409');
+  assert.equal(d.evento, 'clique_whatsapp');
+  assert.match(decodeURIComponent(d.href), /wa\.me\/5511981063409\?text=.*Quero treinar na Arena 18\./);
+  assert.equal(destinoOferta({ ...o, responsavel: 'academia' }, 'X', '1').href, 'https://www.montinhopersonal.com.br/');
 });

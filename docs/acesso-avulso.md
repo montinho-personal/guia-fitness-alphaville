@@ -29,6 +29,7 @@ acesso_avulso:
 ```
 
 Regras:
+- **Atendimento do Montinho no local:** `responsavel: montinho`. O selo diz "Atendimento do Montinho", e o botão abre o WhatsApp dele com o nome da unidade (`destinoOferta()` em `src/lib/acesso.ts`).
 - **Selo "Grátis":** só aparece com `preco.situacao: gratis` e `situacao: confirmada`.
 - **Preço da rede:** vai como `referencia-rede`, e a página diz que o valor da unidade é a consultar.
 - **Visita guiada e aula de outra modalidade:** aparecem identificadas, mas ficam fora do filtro de musculação.
@@ -47,6 +48,7 @@ Regras:
 
 | Unidade | Oferta | Situação |
 |---|---|---|
+| Arena 18 | Aula experimental de musculação grátis com o Montinho, sem diária (`responsavel: montinho`; botão abre o WhatsApp dele) | Confirmada pelo Montinho em 18/11 (relação comercial declarada) |
 | NitroGym Tamboré | Day use R$ 90, musculação, pago no local | Confirmada (site oficial); janela de entrada a confirmar |
 | Ironberg Alphaville | Aula avulsa, musculação, valor na recepção, sem agendamento | Confirmada (site oficial); valor a consultar |
 | Smart Fit (Sodimac, Carrefour Tamboré, Av. Zélia, Centro, Parque Shopping) | Passe diário | A confirmar: a central de ajuda da rede não abriu aqui |

@@ -7,7 +7,7 @@ import Mantem from '../../components/Mantem.astro';
 import Vitrine from '../../components/Vitrine.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import { Image } from 'astro:assets';
-import { TIPO_NOME, precoTexto, rotuloBotao, eGratis, type Oferta } from '../../lib/acesso';
+import { TIPO_NOME, precoTexto, rotuloBotao, eGratis, destinoOferta, type Oferta } from '../../lib/acesso';
 import fotoIbRemada from '../../assets/montinho/montinho-ironberg-remada-maquina.jpg';
 import fotoVfRosca from '../../assets/montinho/montinho-voifit-rosca-halteres.jpg';
 import fotoVfHalteres from '../../assets/montinho/montinho-voifit-halteres-sala.jpg';
@@ -47,7 +47,7 @@ import { ARTIGOS, COMPARATIVOS, personalDaRegiao } from '../../lib/artigos';
 import { abreDomingo, guias } from '../../lib/dados';
 import { politicaPE, respostasPE, STATUS_PE } from '../../lib/personal';
 import { e24hTodos } from '../../lib/horarios';
-import { academias, REGIOES, MODALIDADES, TIPOS, DIAS, DIAS_NOME, faixasDia, horarioResumo, e24h, conferidoEm, dataCurta, dataLonga, dataIso, nivelVerificacao, urlAcademia, urlRegiao, type Academia } from '../../lib/dados';
+import { WHATSAPP, academias, REGIOES, MODALIDADES, TIPOS, DIAS, DIAS_NOME, faixasDia, horarioResumo, e24h, conferidoEm, dataCurta, dataLonga, dataIso, nivelVerificacao, urlAcademia, urlRegiao, type Academia } from '../../lib/dados';
 
 export async function getStaticPaths() {
   const todas = await academias();
@@ -174,7 +174,7 @@ const hojeIso = new Date().toISOString().slice(0, 10);
               <div style="margin:0 0 12px">
                 <p style="margin:0 0 4px"><strong>{TIPO_NOME[o.tipo]}{o.situacao === 'a-confirmar' ? ' (a confirmar)' : ''}:</strong> {o.nome}{eGratis(o) ? ' · grátis' : ''}.</p>
                 <p style="margin:0 0 4px;font-size:15px">{o.musculacao ? 'Inclui musculação.' : o.tipo === 'visita-guiada' ? 'Visita ao espaço, não é treino.' : o.modalidades.length ? `Modalidade: ${o.modalidades.map((m) => MODALIDADES[m] ?? m).join(', ')}; não é musculação.` : 'Modalidade a confirmar.'} Preço: {precoTexto(o)}.{o.regras.length ? ` ${o.regras.join(' ')}` : ''}</p>
-                <p style="margin:0;font-size:15px"><a href={o.destino.url} rel="nofollow noopener" target="_blank" data-evento="clique_acesso_academia" data-ref={`${o.tipo}:${a.id}:ficha`}>{rotuloBotao(o)}</a> · <span style="color:var(--cinza)">{o.fonte}</span></p>
+                <p style="margin:0;font-size:15px"><a href={destinoOferta(o, d.nome, WHATSAPP).href} rel="nofollow noopener" target="_blank" data-evento={destinoOferta(o, d.nome, WHATSAPP).evento} data-ref={o.responsavel === 'montinho' ? `experimental-montinho:${a.id}:ficha` : `${o.tipo}:${a.id}:ficha`}>{rotuloBotao(o)}</a> · <span style="color:var(--cinza)">{o.responsavel === 'montinho' ? 'Atendimento do Montinho, que mantém este guia (publicidade da casa)' : o.fonte}</span></p>
               </div>
             ))}
             <p style="font-size:16px;margin:0"><a class="link-forte" href={`/ferramentas/academias-diaria-aula-experimental-alphaville/?regiao=${d.regiao}${d.acesso_avulso.some((o) => o.tipo === 'diaria') ? '' : '&modo=teste'}`} data-evento="clique_ferramenta" data-ref="diaria:ficha">Ver outras academias com diária e aula experimental</a></p>

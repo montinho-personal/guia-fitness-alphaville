@@ -10,6 +10,8 @@ export interface Oferta {
   regras: string[]; horario_acesso?: string; horario_acesso_confirmado: boolean;
   destino: { tipo: 'compra' | 'reserva' | 'contato' | 'pagina'; url: string; canal?: string };
   situacao: 'confirmada' | 'a-confirmar'; pendencias: string[];
+  /** 'montinho': atendimento do Montinho no local; o botão leva ao WhatsApp dele, não ao canal da academia. */
+  responsavel?: 'academia' | 'montinho';
 }
 
 export const TIPO_NOME: Record<TipoAcesso, string> = {
@@ -31,6 +33,7 @@ export function precoTexto(o: Oferta): string {
 
 /** Texto do botão que leva ao canal oficial da unidade. */
 export function rotuloBotao(o: Oferta): string {
+  if (o.responsavel === 'montinho') return 'Agendar com o Montinho no WhatsApp';
   if (o.tipo === 'diaria') return o.destino.tipo === 'compra' ? 'Comprar diária' : 'Consultar diária';
   if (o.tipo === 'visita-guiada') return o.destino.tipo === 'reserva' ? 'Agendar visita com a academia' : 'Consultar visita';
   return o.destino.tipo === 'reserva' ? 'Agendar com a academia' : 'Consultar aula experimental';
@@ -77,4 +80,10 @@ export function compararDiaria(diariaCentavos: number, idasNoMes: number, mensal
   const primeiroMes = mensalCentavos + taxaInicialCentavos;
   const empate = Math.ceil(mensalCentavos / diariaCentavos);
   return { diarias, mensal: mensalCentavos, primeiroMes, diferenca: diarias - mensalCentavos, compensaDiaria: diarias < mensalCentavos, idasParaEmpatar: empate };
+}
+
+/** Destino do botão: canal oficial da academia ou, no atendimento do Montinho, o WhatsApp dele com a unidade na mensagem. */
+export function destinoOferta(o: Oferta, unidade: string, numeroMontinho: string): { href: string; evento: string } {
+  if (o.responsavel === 'montinho') return { href: linkWhatsappMontinho(numeroMontinho, mensagemWhatsapp({ nome: unidade, personal: 'aceita' })), evento: 'clique_whatsapp' };
+  return { href: o.destino.url, evento: 'clique_acesso_academia' };
 }
