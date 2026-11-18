@@ -73,4 +73,4 @@ Nenhuma das três funciona no domingo. Para quem mora nesses bairros e quer trei
 
 ## Próximos passos
 
-Veja as academias em volta da sua casa no [mapa](/mapa/) e quem abre aos domingos na página [academias com domingo](/academias/domingo/). Para os outros formatos de treino na cidade, abra [personal trainer em Santana de Parnaíba](/guias/personal-trainer-santana-de-parnaiba/). A decisão entre treinar só ou acompanhado é o assunto central de [academia ou personal trainer](/guias/academia-ou-personal/).
+Veja as academias em volta da sua casa no [mapa](/mapa/) e quem abre aos domingos na página [academias com domingo](/ferramentas/academias-abertas-alphaville/). Para os outros formatos de treino na cidade, abra [personal trainer em Santana de Parnaíba](/guias/personal-trainer-santana-de-parnaiba/). A decisão entre treinar só ou acompanhado é o assunto central de [academia ou personal trainer](/guias/academia-ou-personal/).

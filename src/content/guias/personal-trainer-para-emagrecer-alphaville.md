@@ -98,6 +98,6 @@ Arena 18, Bluefit Alphaville, Smart Fit Sodimac e Academia 24h Premium informam 
 
 ## Fim de semana conta
 
-Sábado e domingo são os dias em que a rotina mais escorrega. Várias academias da região abrem no domingo pela manhã, como Smart Fit Sodimac e VoiFit; a Arena 18 vai até as 18h. Confira as demais na [lista de domingo do guia](/academias/domingo/).
+Sábado e domingo são os dias em que a rotina mais escorrega. Várias academias da região abrem no domingo pela manhã, como Smart Fit Sodimac e VoiFit; a Arena 18 vai até as 18h. Confira as demais na [lista de domingo do guia](/ferramentas/academias-abertas-alphaville/).
 
 Ainda sem certeza de que precisa de alguém acompanhando? A comparação [vale mais a academia sozinho ou o personal?](/guias/academia-ou-personal/) ajuda a decidir, e o retrato geral da região fica na [página de personal em Alphaville](/guias/personal-trainer-alphaville/). Para pôr na conta a mensalidade, o deslocamento e o personal, use a [calculadora de custo](/ferramentas/custo-para-treinar-em-alphaville/?personal=1).

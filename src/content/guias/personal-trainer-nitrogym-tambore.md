@@ -65,7 +65,7 @@ A segunda unidade do plano anual ainda não foi identificada pelo guia. Pelo Tot
 
 ## Cedo, tarde e no fim de semana
 
-Pelo site oficial, a academia funciona das 5h até a meia-noite nos dias úteis. Nos fins de semana e feriados, funciona das 6h às 22h. O TotalPass mostra outra janela nos dias úteis, das 6h às 23h40, talvez só a válida para quem entra pelo agregador. Para as sessões no limite do horário, confirme qual vale no seu caso. O plano de fim de semana pode fazer sentido para quem só treina acompanhado no sábado e no domingo; veja também as [academias abertas no domingo](/academias/domingo/).
+Pelo site oficial, a academia funciona das 5h até a meia-noite nos dias úteis. Nos fins de semana e feriados, funciona das 6h às 22h. O TotalPass mostra outra janela nos dias úteis, das 6h às 23h40, talvez só a válida para quem entra pelo agregador. Para as sessões no limite do horário, confirme qual vale no seu caso. O plano de fim de semana pode fazer sentido para quem só treina acompanhado no sábado e no domingo; veja também as [academias abertas no domingo](/ferramentas/academias-abertas-alphaville/).
 
 ![Montinho, personal trainer no Tamboré, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
 

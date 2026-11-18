@@ -15,8 +15,7 @@ export const ARTIGOS: Record<string, { titulo: string; resumo: string }> = {
   '/academias/precos/': { titulo: 'Quanto custa academia na região', resumo: 'Mensalidades publicadas, com fonte e data.' },
   '/ferramentas/academias-que-aceitam-personal-externo/': { titulo: 'Academias que aceitam personal externo', resumo: 'Quem aceita, cadastro e quem paga a taxa.' },
   '/ferramentas/custo-para-treinar-em-alphaville/': { titulo: 'Calculadora de custo para treinar', resumo: 'Mensalidade, estacionamento e personal por mês e por ida.' },
-  '/academias/24-horas/': { titulo: 'Academias 24 horas', resumo: 'Quem abre de madrugada e quem só tem 24h no nome.' },
-  '/academias/domingo/': { titulo: 'Academias abertas no domingo', resumo: 'Quem abre, até que horas, e onde treinar à tarde.' },
+  '/ferramentas/academias-abertas-alphaville/': { titulo: 'Academias abertas aos domingos e 24h', resumo: 'Quem abre domingo, 24 horas, cedo ou tarde, e se dá tempo de treinar.' },
   '/academias/wellhub-totalpass/': { titulo: 'Buscador Wellhub e TotalPass', resumo: 'Onde seu plano entra e qual plano cobre duas academias.' },
   '/modalidades/musculacao/': { titulo: 'Musculação na região', resumo: 'Onde treinar musculação e o que observar no salão.' },
   '/modalidades/crossfit/': { titulo: 'CrossFit e cross training', resumo: 'Boxes da região e como funciona a aula.' },
@@ -49,7 +48,7 @@ const A = '/guias/como-escolher-academia/', B = '/guias/academia-ou-personal/';
 const PA = '/guias/personal-trainer-alphaville/', PT = '/guias/personal-trainer-tambore/', PB = '/guias/personal-trainer-barueri/';
 const PS = '/guias/personal-trainer-santana-de-parnaiba/', PD = '/guias/personal-trainer-aldeia-da-serra/';
 const SG = '/guias/smart-fit-ou-gavioes/', IN = '/guias/ironberg-ou-nitrogym/';
-const PR = '/academias/precos/', H24 = '/academias/24-horas/', DOM = '/academias/domingo/', WT = '/academias/wellhub-totalpass/';
+const PR = '/academias/precos/', H24 = '/ferramentas/academias-abertas-alphaville/', DOM = '/ferramentas/academias-abertas-alphaville/', WT = '/academias/wellhub-totalpass/';
 const MU = '/modalidades/musculacao/', CF = '/modalidades/crossfit/';
 
 export const RELACIONADOS: Record<string, string[]> = {
@@ -65,8 +64,7 @@ export const RELACIONADOS: Record<string, string[]> = {
   ['/regioes/tambore/']: [IN, PT, '/guias/jiu-jitsu-alphaville/', '/regioes/alphaville/'],
   [IN]: [SG, PT, PR, H24],
   [PR]: [IN, SG, WT, PB],
-  [H24]: [DOM, '/guias/gavioes-ou-ironberg/', IN, SG],
-  [DOM]: [H24, PS, PT, SG],
+  [H24]: ['/guias/gavioes-ou-ironberg/', PR, IN, SG],
   [WT]: [PR, SG, CF, A],
   [MU]: [IN, PA, H24, B],
   '/guias/gavioes-ou-ironberg/': [H24, IN, SG, '/guias/academias-premium-alphaville/'],

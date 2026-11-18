@@ -57,7 +57,7 @@ As modalidades listadas são musculação, dança, pilates e HIIT. Entre as ativ
 
 ## Sete dias na semana, com fim de semana curto
 
-Nos dias úteis, a Scelta abre às 5h30 e fecha às 23h. Aos sábados, 8h às 16h; aos domingos, 9h às 14h. Isso dá espaço para encaixar sessões cedo, antes do expediente, ou no domingo de manhã. Para comparar com as vizinhas, confira o [levantamento de domingo](/academias/domingo/).
+Nos dias úteis, a Scelta abre às 5h30 e fecha às 23h. Aos sábados, 8h às 16h; aos domingos, 9h às 14h. Isso dá espaço para encaixar sessões cedo, antes do expediente, ou no domingo de manhã. Para comparar com as vizinhas, confira o [levantamento de domingo](/ferramentas/academias-abertas-alphaville/).
 
 ## Plano Gold e mensalidade em aberto
 

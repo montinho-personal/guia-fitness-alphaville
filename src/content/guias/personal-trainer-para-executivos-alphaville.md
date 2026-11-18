@@ -54,7 +54,7 @@ No 18 do Forte, a opção é treinar no próprio eixo comercial. Antes de planej
 
 ## Quando a reunião invade a noite
 
-Há semanas em que nada cabe antes das 21h. Para elas, existem duas academias de funcionamento contínuo: a [Gaviões 24h](/academias/gavioes-24h-alphaville/), no número 253 da Avenida Juruá, e a [Ironberg](/academias/ironberg-alphaville/), à beira da Estrada da Aldeinha. A segunda cobra do profissional externo uma taxa fixa, cujo valor só é passado presencialmente. A lista completa está na página de [academias 24 horas](/academias/24-horas/).
+Há semanas em que nada cabe antes das 21h. Para elas, existem duas academias de funcionamento contínuo: a [Gaviões 24h](/academias/gavioes-24h-alphaville/), no número 253 da Avenida Juruá, e a [Ironberg](/academias/ironberg-alphaville/), à beira da Estrada da Aldeinha. A segunda cobra do profissional externo uma taxa fixa, cujo valor só é passado presencialmente. A lista completa está na página de [academias 24 horas](/ferramentas/academias-abertas-alphaville/).
 
 ## O benefício que talvez a empresa já pague
 

@@ -43,7 +43,7 @@ Quando quase toda academia oferece a mesma modalidade, os nomes dos aparelhos di
 
 **Lotação no seu horário.** Uma academia vazia às 15h pode ter fila em todos os aparelhos às 19h. Visite no horário em que você pretende treinar. Este guia ainda não tem dados de lotação; quando tiver, virão de observação no local, com data.
 
-**Horário real.** Se você treina antes das 6h ou depois das 22h, a lista encolhe. O recorte de [academias 24 horas e de horário estendido](/academias/24-horas/) mostra quais abrem mais cedo e fecham mais tarde.
+**Horário real.** Se você treina antes das 6h ou depois das 22h, a lista encolhe. O recorte de [academias 24 horas e de horário estendido](/ferramentas/academias-abertas-alphaville/) mostra quais abrem mais cedo e fecham mais tarde.
 
 **Orientação na sala.** Academias de baixo custo costumam ter poucos professores para muitos alunos. Para quem já treina há anos, isso pesa pouco. Para quem está começando, pesa muito.
 

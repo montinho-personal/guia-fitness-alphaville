@@ -26,8 +26,7 @@ export const GET: APIRoute = async ({ site }) => {
 - [Lutas em Alphaville e região](${u('/modalidades/lutas/')})
 - [Academias premium em Alphaville](${u('/guias/academias-premium-alphaville/')})
 - [Beach tennis e futevôlei em Alphaville](${u('/guias/beach-tennis-futevolei-alphaville/')})
-- [Academias 24 horas e de horário estendido](${u('/academias/24-horas/')})
-- [Academias abertas no domingo](${u('/academias/domingo/')})
+- [Academias abertas aos domingos e 24h: buscador por dia, hora e duração do treino](${u('/ferramentas/academias-abertas-alphaville/')})
 - [Buscador de academias com Wellhub (Gympass) e TotalPass](${u('/academias/wellhub-totalpass/')})
 ${Object.entries(REGIOES).map(([id, r]) => `- [Onde treinar em ${r.titulo}](${u(`/regioes/${id}/`)})`).join('\n')}
 - [Academias no Tamboré](${u('/regioes/tambore/')})

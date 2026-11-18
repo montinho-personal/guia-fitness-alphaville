@@ -62,7 +62,7 @@ A ficha registra ainda climatização, vestiários, lounge, itens de acessibilid
 
 ## Treinar de madrugada, em feriado ou no domingo
 
-Pelo site oficial, a academia funciona 24 horas todos os dias, feriados incluídos. Com isso, a sessão pode cair às 5h, às 23h ou num domingo à tarde, conforme a agenda de aluno e profissional. Uma ressalva: no TotalPass aparece uma janela das 0h às 0h30, que tem cara de erro de cadastro. A lista de [academias abertas 24 horas](/academias/24-horas/) e a de [academias que abrem no domingo](/academias/domingo/) ajudam a comparar.
+Pelo site oficial, a academia funciona 24 horas todos os dias, feriados incluídos. Com isso, a sessão pode cair às 5h, às 23h ou num domingo à tarde, conforme a agenda de aluno e profissional. Uma ressalva: no TotalPass aparece uma janela das 0h às 0h30, que tem cara de erro de cadastro. A lista de [academias abertas 24 horas](/ferramentas/academias-abertas-alphaville/) e a de [academias que abrem no domingo](/ferramentas/academias-abertas-alphaville/) ajudam a comparar.
 
 ## Somando tudo
 

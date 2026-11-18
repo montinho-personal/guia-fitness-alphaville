@@ -64,7 +64,7 @@ Fora do treino, a lista inclui banheira de gelo (crioterapia), nutricionista e n
 | Sábado | 8h às 16h |
 | Domingos e feriados | 8h às 14h |
 
-Entre as academias de Santana de Parnaíba com ficha, é a única com horário de domingo. Isso ajuda quem só tem o fim de semana livre para as sessões. Há outras na [seleção dominical do guia](/academias/domingo/).
+Entre as academias de Santana de Parnaíba com ficha, é a única com horário de domingo. Isso ajuda quem só tem o fim de semana livre para as sessões. Há outras na [seleção dominical do guia](/ferramentas/academias-abertas-alphaville/).
 
 ## O que ainda depende de pergunta
 

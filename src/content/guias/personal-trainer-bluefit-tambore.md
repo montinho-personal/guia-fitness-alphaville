@@ -52,7 +52,7 @@ A Bluefit responde no próprio site que o aluno pode levar o seu personal: o pro
 
 ## Horário que muda no fim de semana
 
-Segunda a sexta: 5h às 23h59. Sábado: 8h às 17h. Domingo: 8h às 14h. A janela de domingo é curta, então sessões nesse dia precisam ser marcadas de manhã. Outras academias que funcionam aos domingos estão [nesta página](/academias/domingo/).
+Segunda a sexta: 5h às 23h59. Sábado: 8h às 17h. Domingo: 8h às 14h. A janela de domingo é curta, então sessões nesse dia precisam ser marcadas de manhã. Outras academias que funcionam aos domingos estão [nesta página](/ferramentas/academias-abertas-alphaville/).
 
 ## Custo: Wellhub mais barato que na Alphaville
 

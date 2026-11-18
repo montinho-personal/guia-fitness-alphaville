@@ -64,7 +64,7 @@ Leve esta lista para a recepção:
 - **Sábado:** 8h às 13h.
 - **Domingo:** sem horário listado.
 
-Se a sua agenda livre é o sábado, sobra só a manhã. Domingo exige outra academia: confira [quais abrem nesse dia](/academias/domingo/).
+Se a sua agenda livre é o sábado, sobra só a manhã. Domingo exige outra academia: confira [quais abrem nesse dia](/ferramentas/academias-abertas-alphaville/).
 
 ## Custos e um endereço com dois números
 

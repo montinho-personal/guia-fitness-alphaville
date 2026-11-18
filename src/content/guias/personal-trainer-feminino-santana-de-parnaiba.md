@@ -58,7 +58,7 @@ Longe de Alphaville, as três unidades catalogadas seguem lógicas diferentes:
 - **Forth Academia** (Jardim São Luís): banheiro e vagas acessíveis, ambiente preparado para cadeirantes e secador de cabelo no vestiário.
 - **Olympia Fitness** (Polvilho): vagas acessíveis, produtos de higiene e adaptações voltadas a pessoas autistas. Atenção ao intervalo: no meio do dia útil, a academia faz uma pausa de duas horas a partir do meio-dia.
 
-Aos domingos, as três ficam fechadas. Quem só tem esse dia livre encontra alternativas em [academias que funcionam no domingo](/academias/domingo/).
+Aos domingos, as três ficam fechadas. Quem só tem esse dia livre encontra alternativas em [academias que funcionam no domingo](/ferramentas/academias-abertas-alphaville/).
 
 ![Montinho, personal trainer feminino em Santana de Parnaíba, de regata e óculos escuros em selfie no elevador](../../assets/montinho/montinho-personal-trainer-elevador.jpg)
 

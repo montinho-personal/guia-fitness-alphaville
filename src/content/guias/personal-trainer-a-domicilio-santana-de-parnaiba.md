@@ -70,4 +70,4 @@ O guia não encontrou, em nenhuma delas, regra publicada sobre profissional exte
 
 ## Para continuar
 
-O quadro geral está na [página sobre personal no município](/guias/personal-trainer-santana-de-parnaiba/). Procura onde treinar no domingo? Consulte [academias abertas no domingo](/academias/domingo/). Contratar ou não? A análise [academia ou personal trainer](/guias/academia-ou-personal/) lista os dois caminhos.
+O quadro geral está na [página sobre personal no município](/guias/personal-trainer-santana-de-parnaiba/). Procura onde treinar no domingo? Consulte [academias abertas no domingo](/ferramentas/academias-abertas-alphaville/). Contratar ou não? A análise [academia ou personal trainer](/guias/academia-ou-personal/) lista os dois caminhos.

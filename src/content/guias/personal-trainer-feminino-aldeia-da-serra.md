@@ -66,6 +66,6 @@ Um bom profissional responde a todas sem desconforto, inclusive à última. Resp
 
 ## E se eu quiser uma academia?
 
-Os nomes parecidos confundem: a [Ironberg](/academias/ironberg-alphaville/) está no bairro Aldeinha, em Barueri, fora dos limites da Aldeia da Serra. Funciona dia e noite e divulga como recebe treinadores de fora, mediante uma quantia fixa paga à própria academia, cujo valor só a unidade informa. Outras opções estão no [mapa](/mapa/) e na lista de [academias 24 horas](/academias/24-horas/).
+Os nomes parecidos confundem: a [Ironberg](/academias/ironberg-alphaville/) está no bairro Aldeinha, em Barueri, fora dos limites da Aldeia da Serra. Funciona dia e noite e divulga como recebe treinadores de fora, mediante uma quantia fixa paga à própria academia, cujo valor só a unidade informa. Outras opções estão no [mapa](/mapa/) e na lista de [academias 24 horas](/ferramentas/academias-abertas-alphaville/).
 
 Uma última palavra de honestidade: o Montinho é homem. Caso uma treinadora traga mais tranquilidade, vá atrás dela. Há ainda a página-mãe da região, [personal trainer na Aldeia da Serra](/guias/personal-trainer-aldeia-da-serra/). Se você nem sabe ainda se quer acompanhamento, leia [academia ou personal](/guias/academia-ou-personal/).

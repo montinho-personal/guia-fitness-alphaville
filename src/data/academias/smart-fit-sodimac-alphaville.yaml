@@ -113,3 +113,12 @@ personal_externo:
   url: https://www.smartfit.com.br/files/store/0675ce6c1b7f8c722cd91f29a31e12c06cfb4c78f8d85e60831103d96815.pdf
   conferido_em: 2026-11-17
   nota: Regra das Normas de Utilização, que valem para as unidades da rede. A página desta unidade não traz regra própria.
+horario_fonte:
+  fonte: 'Site oficial da Smart Fit (página da unidade)'
+  url: https://www.smartfit.com.br/academias/sodimac-alphaville
+  conferido_em: '2026-11-18'
+horario_feriados:
+  faixas: ['08:00-17:00']
+  fonte: 'Site oficial da Smart Fit (página da unidade) — "Sáb/Feriados 8h - 17h"'
+  url: https://www.smartfit.com.br/academias/sodimac-alphaville
+  conferido_em: '2026-11-18'

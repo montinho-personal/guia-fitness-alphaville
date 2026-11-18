@@ -66,7 +66,7 @@ Nenhuma delas publica preço de aula ou de aluguel de quadra nas fontes que o gu
 
 ## Horários para jogar
 
-Pelas fontes da ficha, a Arena 18 abre das 5h às 23h nos dias úteis. No fim de semana, o site oficial informa das 8h às 23h no sábado e das 8h às 18h no domingo; os agregadores mostram o sábado só até as 18h. Antes de marcar um jogo no sábado à noite, confirme o horário com a academia. Ela aparece também na lista de [academias abertas no domingo](/academias/domingo/).
+Pelas fontes da ficha, a Arena 18 abre das 5h às 23h nos dias úteis. No fim de semana, o site oficial informa das 8h às 23h no sábado e das 8h às 18h no domingo; os agregadores mostram o sábado só até as 18h. Antes de marcar um jogo no sábado à noite, confirme o horário com a academia. Ela aparece também na lista de [academias abertas no domingo](/ferramentas/academias-abertas-alphaville/).
 
 ## O que o guia ainda não sabe
 

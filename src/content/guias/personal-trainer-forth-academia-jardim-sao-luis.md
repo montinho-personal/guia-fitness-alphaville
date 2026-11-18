@@ -35,7 +35,7 @@ atualizado_em: 2026-11-15
 
 O traço mais forte da [Forth Academia](/academias/forth-academia-jardim-sao-luis/) é o relógio. De segunda a sexta, a porta abre às 5h e fecha só às 23h59. Nenhuma outra academia de Santana de Parnaíba reunida no guia fica aberta até tão tarde.
 
-Para o treino acompanhado, isso amplia as opções. A sessão pode ficar na madrugada, no meio do dia ou depois de um jantar tardio. No sábado, o horário encurta: das 9h às 15h. Domingo não tem horário listado, então quem depende desse dia deve procurar [outra opção dominical](/academias/domingo/).
+Para o treino acompanhado, isso amplia as opções. A sessão pode ficar na madrugada, no meio do dia ou depois de um jantar tardio. No sábado, o horário encurta: das 9h às 15h. Domingo não tem horário listado, então quem depende desse dia deve procurar [outra opção dominical](/ferramentas/academias-abertas-alphaville/).
 
 ![Antes e depois do Montinho, personal trainer em Santana de Parnaíba: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
 

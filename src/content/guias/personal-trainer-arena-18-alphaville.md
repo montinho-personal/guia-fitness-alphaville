@@ -59,7 +59,7 @@ A estrutura de apoio também conta: sauna, banho de gelo, spa e massagem, fisiot
 
 ## Quando dá para marcar
 
-De segunda a sexta, das 5h às 23h. No domingo, das 8h às 18h. O sábado tem divergência: o site oficial diz das 8h às 23h; Wellhub e TotalPass mostram até as 18h, talvez só a janela de quem entra pelos agregadores. Veja também as [academias abertas no domingo](/academias/domingo/).
+De segunda a sexta, das 5h às 23h. No domingo, das 8h às 18h. O sábado tem divergência: o site oficial diz das 8h às 23h; Wellhub e TotalPass mostram até as 18h, talvez só a janela de quem entra pelos agregadores. Veja também as [academias abertas no domingo](/ferramentas/academias-abertas-alphaville/).
 
 ## O que entra no orçamento
 

@@ -1,0 +1,314 @@
+---
+// Buscador "Academias abertas aos domingos e 24h em Alphaville".
+// Mesma fonte das fichas (src/data/academias/*.yaml); regras de horário em src/lib/horarios.ts; feriados em src/data/feriados.json.
+import Base from '../../layouts/Base.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { academias, REGIOES, urlAcademia, dataLonga, type Academia } from '../../lib/dados';
+import { DIAS, faixaMin, faixasTexto, hora, e24hTodos, dias24h, type Feriado } from '../../lib/horarios';
+import { link } from '../../lib/ferramentas';
+import FER from '../../data/feriados.json';
+
+const todas = (await academias()).filter((a) => a.data.modalidades.includes('musculacao'));
+const municipio = (a: Academia) => (/Santana de Parna[íi]ba/.test(a.data.endereco) ? 'Santana de Parnaíba' : 'Barueri');
+const lugar = (a: Academia) => (/Tambor[ée]/.test(a.data.bairro) ? 'Tamboré' : a.data.regiao === 'alphaville' || /Alphaville/.test(a.data.bairro) ? 'Alphaville' : REGIOES[a.data.regiao].nome);
+const fonteHorario = (a: Academia) => {
+  if (a.data.horario_fonte) return { fonte: a.data.horario_fonte.fonte, url: a.data.horario_fonte.url, data: a.data.horario_fonte.conferido_em };
+  const p = a.data.proveniencia.find((x) => x.campos.includes('horario')) ?? a.data.proveniencia[0];
+  return { fonte: p.fonte, url: p.url, data: p.conferido_em };
+};
+const dataIsoCurta = (d: Date) => d.toISOString().slice(0, 10);
+const NOME_DIA: Record<string, string> = { seg: 'seg', ter: 'ter', qua: 'qua', qui: 'qui', sex: 'sex', sab: 'sáb', dom: 'dom' };
+const diasTexto = (ds: string[]) => (ds.length === 7 ? 'todos os dias' : ds.length && ds.join() === DIAS.slice(0, ds.length).join() ? `de seg a ${NOME_DIA[ds[ds.length - 1]]}` : ds.map((d) => NOME_DIA[d]).join(', '));
+
+const U = todas.map((a) => {
+  const f = fonteHorario(a);
+  const d = a.data;
+  return {
+    id: a.id, nome: d.nome, url: urlAcademia(a), lugar: lugar(a), regiao: d.regiao, municipio: municipio(a), telefone: d.telefone ?? '',
+    horario: d.horario, horario_status: d.horario_status ?? {}, ultima_entrada: d.ultima_entrada ?? {},
+    horario_feriados: d.horario_feriados ? { faixas: d.horario_feriados.faixas } : null,
+    horario_excecoes: d.horario_excecoes.map((e) => ({ ...e, conferido_em: dataIsoCurta(e.conferido_em) })),
+    fonte: f.fonte, fonteUrl: f.url ?? '', conferido: dataLonga(f.data),
+    e24: e24hTodos({ horario: d.horario as any, horario_status: d.horario_status as any }), d24: dias24h({ horario: d.horario as any, horario_status: d.horario_status as any }),
+    beneficio: d.agregadores.some((g) => g.situacao !== 'nao-aceita' && g.musculacao !== false),
+    personal: !!d.personal_externo && d.personal_externo.status !== 'a-confirmar',
+  };
+});
+type Un = (typeof U)[number];
+const feriados = FER.feriados as Feriado[];
+const ord = (xs: Un[], dia: string) => xs.slice().sort((x, y) => Number(y.e24) - Number(x.e24) || (Math.max(...y.horario[dia as 'dom'].map((s) => faixaMin(s)[1])) - Math.max(...x.horario[dia as 'dom'].map((s) => faixaMin(s)[1]))) || x.nome.localeCompare(y.nome));
+const abreNoDia = (x: Un, dia: string) => x.horario_status[dia as 'dom'] !== 'a-confirmar' && x.horario[dia as 'dom'].length > 0;
+const domingo = ord(U.filter((x) => abreNoDia(x, 'dom')), 'dom');
+const domPendente = U.filter((x) => !abreNoDia(x, 'dom') && x.horario_status.dom !== 'fechado');
+const h24todos = U.filter((x) => x.e24);
+const h24parcial = U.filter((x) => !x.e24 && x.d24.length);
+const uteis = ['seg', 'ter', 'qua', 'qui', 'sex'] as const;
+const abreAntes6 = U.filter((x) => !x.d24.length && uteis.every((d) => abreNoDia(x, d) && Math.min(...x.horario[d].map((s) => faixaMin(s)[0])) < 360));
+const fechaDepois22 = U.filter((x) => !x.d24.length && uteis.every((d) => abreNoDia(x, d) && Math.max(...x.horario[d].map((s) => faixaMin(s)[1])) > 1320));
+const maisTarde = domingo.filter((x) => !x.e24 && Math.max(...x.horario.dom.map((s) => faixaMin(s)[1])) > 900).slice(0, 3);
+const comPadraoFeriado = U.filter((x) => x.horario_feriados);
+const proximoFeriado = feriados.find((f) => f.data >= '2026-11-18');
+const lista = (xs: Un[]) => xs.map((x) => x.nome).join(', ').replace(/, ([^,]*)$/, ' e $1');
+const faixaDia = (x: Un, dia: string) => faixasTexto(x.horario[dia as 'dom'].map(faixaMin));
+const fechaDia = (x: Un, dia: string) => hora(Math.max(...x.horario[dia as 'dom'].map((s) => faixaMin(s)[1])));
+const porLugar = (xs: Un[]) => ['Alphaville', 'Tamboré', 'Barueri', 'Santana de Parnaíba'].map((l) => [l, xs.filter((x) => x.lugar === l)] as const).filter(([, v]) => v.length);
+
+const titulo = 'Academias abertas aos domingos e 24h em Alphaville';
+const descricao = 'Veja quais academias de Alphaville, Tamboré e Barueri abrem domingo, 24 horas, cedo ou tarde e se dá tempo de terminar o treino no horário que você tem.';
+const perguntas = [
+  { p: 'Quais academias abrem domingo em Alphaville?', r: `Com horário de domingo publicado e conferido, em Alphaville e Tamboré: ${lista(domingo.filter((x) => x.lugar === 'Alphaville' || x.lugar === 'Tamboré'))}. O horário mais comum é das 8h às 14h.` },
+  { p: 'Quais academias abrem domingo em Barueri?', r: `Na cidade de Barueri, fora de Alphaville: ${lista(domingo.filter((x) => x.lugar === 'Barueri')) || 'nenhuma com ficha no guia'}. As unidades da Smart Fit do Centro e do Parque Shopping abrem das 8h às 14h.` },
+  { p: 'Existe academia 24 horas em Alphaville?', r: `${h24todos.length ? `Com 24 horas confirmadas nos sete dias da grade: ${lista(h24todos)}.` : 'Nenhuma unidade tem 24 horas confirmadas nos sete dias.'}${h24parcial.length ? ` ${lista(h24parcial)} ${h24parcial.length === 1 ? 'funciona' : 'funcionam'} 24 horas só em parte da semana: ${h24parcial.map((x) => `${x.nome}, ${diasTexto(x.d24)}`).join('; ')}.` : ''}` },
+  { p: 'Tem academia 24 horas em Barueri?', r: 'As opções 24 horas ficam no lado de Alphaville, que pertence a Barueri: a Ironberg, na Estrada da Aldeinha, e a Gaviões 24h, na Av. Juruá. Na cidade de Barueri fora de Alphaville, nenhuma academia com ficha tem horário de 24 horas.' },
+  { p: 'Academia abre em feriado?', r: `Depende da unidade. ${comPadraoFeriado.length} academias publicam uma grade genérica para feriados (${lista(comPadraoFeriado)}), que o buscador mostra como "horário padrão de feriados". Ela não garante o horário de uma data específica: confirme na véspera. Nas demais, o horário do feriado fica a confirmar.` },
+  { p: 'Como saber se dá tempo de terminar o treino antes de a academia fechar?', r: 'Escolha a data, a hora em que você chega e quanto tempo vai treinar. O buscador só mostra como compatível a academia que fica aberta do começo ao fim do treino, sem fechar no meio, e respeita a última entrada quando ela é publicada.' },
+  { p: 'A academia 24h Premium da Alameda Grajaú abre 24 horas?', r: 'Não, apesar do nome. Pelo horário publicado no Wellhub, ela fecha à noite e tem horário reduzido no fim de semana; veja a ficha para os horários de cada dia.' },
+];
+const ferr = [
+  { id: 'teste' as const, titulo: 'Qual academia combina com a sua rotina', texto: 'Além do horário: modalidade, estacionamento e Wellhub, com o porquê de cada resultado.', href: link('teste'), rotulo: 'Teste' },
+  { id: 'beneficio' as const, titulo: 'Abertas no domingo e no seu Wellhub ou TotalPass', texto: 'Confira o plano mínimo que libera cada unidade.', href: link('beneficio', { mod: 'musculacao' }), rotulo: 'Wellhub e TotalPass' },
+  { id: 'personal' as const, titulo: 'Vai treinar com personal no fim de semana?', texto: 'Veja quais academias aceitam profissional de fora e em que condições.', href: link('personal'), rotulo: 'Personal externo' },
+];
+const schema = [
+  { '@type': 'ItemList', name: 'Academias de musculação abertas aos domingos em Alphaville e região', itemListElement: domingo.map((x, i) => ({ '@type': 'ListItem', position: i + 1, name: x.nome, url: new URL(x.url, Astro.site).href })) },
+];
+const dadosJson = JSON.stringify({ U, feriados, pendentesMunicipais: FER.municipais_pendentes, regioes: Object.fromEntries(Object.entries(REGIOES).map(([k, v]) => [k, v.nome])) });
+---
+<Base titulo={titulo} descricao={descricao} schema={schema} migalhas={[{ nome: 'Ferramentas', url: '/ferramentas/' }, { nome: 'Academias abertas', url: '/ferramentas/academias-abertas-alphaville/' }]}>
+  <div class="wrap ab">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Ferramenta · horários conferidos</span>
+      <h1>Academias abertas aos domingos e 24h em Alphaville</h1>
+      <p class="linha-fina">Diga o dia, a hora em que você chega e quanto tempo vai treinar. A lista mostra só as academias de musculação que ficam abertas até o fim do seu treino, com a fonte do horário.</p>
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Aos domingos, {domingo.length} academias de musculação com ficha no guia têm horário publicado, a maioria das 8h às 14h. {maisTarde.length ? <>Fecham mais tarde: {maisTarde.map((x) => `${x.nome}, até ${fechaDia(x, 'dom')}`).join('; ')}. </> : null}{h24todos.length ? <>Com 24 horas confirmadas nos sete dias, só a {lista(h24todos)}.</> : null} {h24parcial.map((x) => <>A {x.nome} funciona 24 horas {diasTexto(x.d24)}; o domingo está a confirmar. </>)}</p>
+    </div>
+
+    <form class="ab-form nao-imprime" id="ab-form" aria-label="Buscar academias abertas">
+      <fieldset class="ab-atalhos">
+        <legend class="rotulo">Atalhos</legend>
+        {[['domingo', 'Domingo'], ['cedo', 'Antes das 6h'], ['tarde', 'Depois das 22h'], ['h24', '24 horas'], ['feriado', 'Feriados']].map(([v, t]) => <button type="button" data-atalho={v} aria-pressed={v === 'domingo' ? 'true' : 'false'}>{t}</button>)}
+      </fieldset>
+      <div class="ab-campos">
+        <label class="campo"><span class="rotulo">Região</span>
+          <select name="regiao"><option value="">Todas</option>{Object.entries(REGIOES).map(([k, v]) => <option value={k}>{k === 'alphaville' ? 'Alphaville e Tamboré' : v.nome}</option>)}</select></label>
+        <label class="campo"><span class="rotulo">Data</span><input type="date" name="data" required></label>
+        <label class="campo"><span class="rotulo">Chego às</span><input type="time" name="hora" step="900"></label>
+        <label class="campo"><span class="rotulo">Vou treinar</span>
+          <select name="dur"><option value="30">30 min</option><option value="45">45 min</option><option value="60" selected>1 hora</option><option value="75">1h15</option><option value="90">1h30</option><option value="120">2 horas</option></select></label>
+      </div>
+      <p class="ab-dica" id="ab-dica">Só com a data, você vê o horário de cada academia naquele dia. Com a hora, o buscador confere se dá tempo de terminar o treino.</p>
+      <button class="btn" type="submit">Ver academias abertas <i aria-hidden="true"></i></button>
+    </form>
+
+    <section class="bloco fino" aria-labelledby="ab-res-t" id="ab-res">
+      <div class="cab"><h2 id="ab-res-t">Abertas aos domingos</h2></div>
+      <p class="ab-resumo" id="ab-resumo" aria-live="polite">{domingo.length} academias de musculação com horário de domingo publicado. Escolha uma data para conferir feriados e exceções.</p>
+      <p class="ab-aviso">O horário é o geral da unidade. Ele não confirma o acesso pelo Wellhub, pelo TotalPass ou com personal externo, que podem ter outra janela.</p>
+      <ul class="ab-lista" id="ab-lista">
+        {domingo.map((x) => (
+          <li class="ab-item" data-id={x.id}>
+            <div class="ab-topo"><a class="ab-nome" href={x.url} data-evento="clique_academia" data-ref={`abertas:${x.id}`}>{x.nome}</a>{x.e24 ? <span class="ab-selo">24h todos os dias</span> : null}</div>
+            <p class="ab-local">{x.lugar === x.municipio ? x.lugar : `${x.lugar} · ${x.municipio}`}</p>
+            <p class="ab-hor"><strong>Domingo:</strong> {faixaDia(x, 'dom')}. <span class="ab-ok">{x.e24 ? 'Aberta o dia todo.' : `Aberta até ${fechaDia(x, 'dom')}.`}</span></p>
+            <p class="ab-fonte">Fonte: {x.fonteUrl ? <a href={x.fonteUrl} rel="nofollow noopener" target="_blank">{x.fonte}</a> : x.fonte}, conferida em {x.conferido}.</p>
+            <p class="ab-links"><a href={x.url} data-evento="clique_academia" data-ref={`abertas:${x.id}`}>Ficha</a> <a href="/mapa/">Mapa</a>{x.beneficio && <a href={link('beneficio', { mod: 'musculacao', reg: x.regiao })} data-evento="clique_ferramenta" data-ref="beneficio:abertas">Ver acesso por Wellhub ou TotalPass</a>}{x.personal && <a href={link('personal', { q: x.nome })} data-evento="clique_ferramenta" data-ref="personal:abertas">Ver regras para personal externo</a>}<a href={link('custo', { a: x.id, de: 'abertas' })} data-evento="clique_ferramenta" data-ref="custo:abertas">Quanto custa</a></p>
+          </li>
+        ))}
+      </ul>
+      <details class="ab-pend" id="ab-pend" open={false}>
+        <summary id="ab-pend-t">{domPendente.length} academias sem horário de domingo confirmado: consulte direto</summary>
+        <ul id="ab-pend-lista">{domPendente.map((x) => <li><a href={x.url}>{x.nome}</a> · {x.lugar}{x.telefone && <> · <a href={`tel:${x.telefone.replace(/\D/g, '')}`}>{x.telefone}</a></>}</li>)}</ul>
+      </details>
+      <noscript><p class="caixa">Sem JavaScript, a lista acima mostra a grade de domingo. Os horários de cada dia estão na ficha de cada academia.</p></noscript>
+    </section>
+
+    <div class="prosa">
+      <h2>Academias 24 horas: o que está confirmado</h2>
+      {h24todos.length ? <p>Com 24 horas nos sete dias da grade semanal: {h24todos.map((x, i) => <>{i > 0 && ', '}<a href={x.url}>{x.nome}</a></>)}. A rede informa no site que a academia fica aberta "inclusive nos feriados", mas essa é uma regra geral da rede; para uma data específica, o buscador mostra o horário como padrão de feriados, a confirmar.</p> : null}
+      {h24parcial.map((x) => <p>A <a href={x.url}>{x.nome}</a> tem 24 horas {diasTexto(x.d24)}. No domingo, as fontes divergem: o Wellhub mostra a unidade aberta e o TotalPass diz que ela não abre. Por isso ela não leva o selo "24h todos os dias".</p>)}
+      <p>Nome com "24h" não garante horário de madrugada. A Academia 24h Premium, na Alameda Grajaú, fecha à noite segundo o horário publicado.</p>
+
+      <h2>Abrem antes das 6h e fecham depois das 22h</h2>
+      {abreAntes6.length ? <p><strong>Abrem antes das 6h em todos os dias úteis:</strong> {abreAntes6.map((x, i) => <>{i > 0 && ', '}<a href={x.url}>{x.nome}</a> ({hora(Math.min(...x.horario.seg.map((s) => faixaMin(s)[0])))})</>)}.</p> : null}
+      {fechaDepois22.length ? <p><strong>Fecham depois das 22h em todos os dias úteis:</strong> {fechaDepois22.map((x, i) => <>{i > 0 && ', '}<a href={x.url}>{x.nome}</a> ({fechaDia(x, 'seg')})</>)}.</p> : null}
+
+      <h2>Domingo por região</h2>
+      {porLugar(domingo).map(([l, xs]) => <p><strong>{l}:</strong> {xs.map((x) => `${x.nome} (${faixaDia(x, 'dom')})`).join('; ')}.</p>)}
+
+      <h2>Como confirmar o horário de domingo</h2>
+      <p>O horário de domingo é o que mais muda: reduz no verão, em datas comemorativas e quando a unidade passa por reforma. Antes de sair de casa, abra a página oficial da unidade ou o aplicativo da rede no próprio dia. Na Smart Fit, a página de cada unidade mostra também a ocupação. Se você entra pelo Wellhub ou pelo TotalPass, confira no aplicativo do benefício: a janela liberada para o plano pode ser menor que o horário da academia.</p>
+
+      <h2>Feriados: como funcionam as exceções</h2>
+      <p>Para cada data, o buscador segue esta ordem: primeiro o horário oficial publicado para aquela data; depois, a grade genérica de feriados da academia, mostrada como "horário padrão de feriados" e marcada como a confirmar; sem nenhuma das duas, "Horário do feriado a confirmar". Hoje {comPadraoFeriado.length} unidades publicam grade de feriados: {comPadraoFeriado.map((x) => `${x.nome} (${faixasTexto(x.horario_feriados!.faixas.map(faixaMin))})`).join('; ')}.</p>
+      {proximoFeriado && <p>O próximo feriado no calendário do guia é {proximoFeriado.nome.toLowerCase().startsWith('dia') ? 'o ' : ''}{proximoFeriado.nome}, em {new Date(proximoFeriado.data + 'T12:00:00Z').toLocaleDateString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'long' })}. Use o atalho "Feriados" para ver o que cada academia informa.</p>}
+      <p>Os feriados municipais de Barueri e de Santana de Parnaíba entram no buscador quando o calendário oficial de cada prefeitura for conferido. Até lá, num feriado municipal, confirme o horário direto com a academia.</p>
+    </div>
+
+    <FerramentasContexto itens={ferr} />
+    <Perguntas itens={perguntas} titulo="Perguntas sobre academia aberta no domingo, 24 horas e feriados" />
+    <LeiaTambem url="/ferramentas/academias-abertas-alphaville/" />
+  </div>
+
+  <script type="application/json" id="ab-dados" set:html={dadosJson}></script>
+  <script>
+    import { avaliar, situacaoNoDia, diaDaSemana, faixasTexto, hora, textoMotivo, min, type Feriado, type Resultado } from '../../lib/horarios';
+    const J = JSON.parse(document.getElementById('ab-dados')!.textContent!);
+    const U = J.U as any[], FER = J.feriados as Feriado[];
+    const ev = (n: string, d: Record<string, string | number> = {}) => { const w = window as any; if (typeof w.otaEvento === 'function') w.otaEvento(n, d); };
+    const f = document.getElementById('ab-form') as HTMLFormElement;
+    const el = (n: string) => f.elements.namedItem(n) as HTMLInputElement;
+    const lista = document.getElementById('ab-lista')!, resumo = document.getElementById('ab-resumo')!, titulo = document.getElementById('ab-res-t')!;
+    const pend = document.getElementById('ab-pend') as HTMLDetailsElement, pendT = document.getElementById('ab-pend-t')!, pendL = document.getElementById('ab-pend-lista')!;
+    const esc = (s: string) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]!));
+    const NOME = { seg: 'segunda', ter: 'terça', qua: 'quarta', qui: 'quinta', sex: 'sexta', sab: 'sábado', dom: 'domingo' } as Record<string, string>;
+    // "Hoje" e "agora" no fuso da região, não no do aparelho.
+    const agoraSP = () => { const p = Object.fromEntries(new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date()).map((x) => [x.type, x.value])); return { data: `${p.year}-${p.month}-${p.day}`, min: Number(p.hour) * 60 + Number(p.minute) }; };
+    const somaDias = (d: string, n: number) => { const [y, m, dd] = d.split('-').map(Number); return new Date(Date.UTC(y, m - 1, dd + n)).toISOString().slice(0, 10); };
+    const proximo = (pred: (d: string) => boolean) => { let d = agoraSP().data; for (let i = 0; i < 400 && !pred(d); i++) d = somaDias(d, 1); return d; };
+    const dataLonga = (d: string) => new Date(d + 'T12:00:00Z').toLocaleDateString('pt-BR', { timeZone: 'UTC', weekday: 'long', day: 'numeric', month: 'long' });
+    let ids: string[] = [];
+    const aberta = (fecha: number) => (fecha >= 2880 ? 'Aberta 24 horas.' : fecha > 1440 ? `Aberta até ${hora(fecha)} do dia seguinte.` : `Aberta até ${hora(fecha)}.`);
+
+    function links(x: any) {
+      const q = (o: Record<string, string>) => new URLSearchParams(o).toString();
+      return `<p class="ab-links"><a href="${x.url}" data-evento="clique_academia" data-ref="abertas:${x.id}">Ficha</a> <a href="/mapa/">Mapa</a>`
+        + (x.beneficio ? `<a href="/academias/wellhub-totalpass/?${q({ mod: 'musculacao', reg: x.regiao })}" data-evento="clique_ferramenta" data-ref="beneficio:abertas">Ver acesso por Wellhub ou TotalPass</a>` : '')
+        + (x.personal ? `<a href="/ferramentas/academias-que-aceitam-personal-externo/?${q({ q: x.nome })}" data-evento="clique_ferramenta" data-ref="personal:abertas">Ver regras para personal externo</a>` : '')
+        + `<a href="/ferramentas/custo-para-treinar-em-alphaville/?${q({ a: x.id, de: 'abertas' })}" data-evento="clique_ferramenta" data-ref="custo:abertas">Quanto custa</a></p>`;
+    }
+    const selo = (x: any) => (x.e24 ? '<span class="ab-selo">24h todos os dias</span>' : x.d24.length ? `<span class="ab-selo ab-selo-p">24h ${x.d24.length === 6 && x.d24[5] === 'sab' ? 'de seg a sáb' : x.d24.length === 5 && x.d24[4] === 'sex' ? 'de seg a sex' : 'em ' + x.d24.join(', ')}</span>` : '');
+    const fonte = (x: any) => `<p class="ab-fonte">Fonte: ${x.fonteUrl ? `<a href="${esc(x.fonteUrl)}" rel="nofollow noopener" target="_blank">${esc(x.fonte)}</a>` : esc(x.fonte)}, conferida em ${esc(x.conferido)}.</p>`;
+    function cartao(x: any, corpo: string) {
+      return `<li class="ab-item" data-id="${x.id}"><div class="ab-topo"><a class="ab-nome" href="${x.url}" data-evento="clique_academia" data-ref="abertas:${x.id}">${esc(x.nome)}</a>${selo(x)}</div><p class="ab-local">${x.lugar === x.municipio ? esc(x.lugar) : `${esc(x.lugar)} · ${esc(x.municipio)}`}</p>${corpo}${fonte(x)}${links(x)}</li>`;
+    }
+    function itemPend(x: any, motivo: string) {
+      return `<li><a href="${x.url}">${esc(x.nome)}</a> · ${esc(x.lugar)} · <span class="ab-pend-m">${esc(motivo)}</span>${x.telefone ? ` · <a href="tel:${x.telefone.replace(/\D/g, '')}">${esc(x.telefone)}</a>` : ''}</li>`;
+    }
+
+    function buscar(origem: string) {
+      const data = el('data').value, horaV = el('hora').value, dur = Number(el('dur').value), reg = el('regiao').value;
+      if (!data) { el('data').focus(); return; }
+      let xs = U.filter((x) => !reg || x.regiao === reg);
+      if (ids.length) xs = xs.filter((x) => ids.includes(x.id));
+      const dia = diaDaSemana(data);
+      const fer = FER.find((x) => x.data === data);
+      let ok: string[] = []; const okF: [number, string][] = [], pendentes: string[] = [], padrao: string[] = []; let fechadas = 0, incomp = 0;
+      const titDia = `${dataLonga(data)}${fer ? ` · ${fer.nome}` : ''}`;
+      if (!horaV) {
+        for (const x of xs) {
+          const s = situacaoNoDia(x, data, FER);
+          if (s.tipo === 'aberta') { const fecha = Math.max(...s.faixas.map((z) => z[1])); okF.push([fecha, cartao(x, `<p class="ab-hor"><strong>${esc(NOME[dia][0].toUpperCase() + NOME[dia].slice(1))}${s.origem === 'excecao' ? ' (horário especial da data)' : ''}:</strong> ${faixasTexto(s.faixas)}. <span class="ab-ok">${s.faixas.some(([a0, b0]) => a0 <= 0 && b0 >= 1440) ? 'Aberta o dia todo.' : aberta(fecha)}</span>${s.entrada !== undefined ? ` Última entrada às ${hora(s.entrada)}.` : ''}</p>`)]); }
+          else if (s.tipo === 'fechada') fechadas++;
+          else (s.motivo === 'feriado-padrao' ? padrao : pendentes).push(itemPend(x, textoMotivo(s.motivo) + (s.faixas?.length ? ` (${faixasTexto(s.faixas)})` : '')));
+        }
+        ok = okF.sort((a, b) => b[0] - a[0]).map((z) => z[1]);
+      titulo.textContent = `Abertas: ${titDia}`;
+        resumo.textContent = ok.length ? `${ok.length} ${ok.length === 1 ? 'academia aberta' : 'academias abertas'} neste dia, com horário confirmado. Informe a hora em que você chega para saber se dá tempo de treinar.` : 'Nenhuma academia com horário confirmado para este dia.';
+      } else {
+        const ini = min(horaV); const fimTxt = hora(ini + dur);
+        for (const x of xs) {
+          const r: Resultado = avaliar(x, data, ini, dur, FER);
+          if (r.tipo === 'compativel') okF.push([r.fecha, cartao(x, `<p class="ab-hor"><strong>Horário do dia:</strong> ${faixasTexto(r.horarioDia) || 'continua do dia anterior'}.</p><p class="ab-ok">${aberta(r.fecha)} Seu treino termina às ${hora(r.termina)}${r.termina > 1440 ? ' do dia seguinte' : ''}.${r.entrada !== undefined ? ` Última entrada às ${hora(r.entrada)}.` : ''}</p>`)]);
+          else if (r.tipo === 'a-confirmar') (r.motivo === 'feriado-padrao' ? padrao : pendentes).push(itemPend(x, textoMotivo(r.motivo) + (r.faixas?.length ? ` (${faixasTexto(r.faixas)})` : '')));
+          else if (r.motivo === 'fechada') fechadas++; else incomp++;
+        }
+        ok = okF.sort((a, b) => b[0] - a[0]).map((z) => z[1]);
+        titulo.textContent = `Abertas: ${titDia}, das ${hora(ini)} às ${fimTxt}`;
+        resumo.textContent = ok.length ? `${ok.length} ${ok.length === 1 ? 'academia fica aberta' : 'academias ficam abertas'} do começo ao fim do seu treino.${incomp ? ` Outras ${incomp} abrem nesse dia, mas não ficam abertas durante todo o treino.` : ''}` : `Nenhuma academia confirmada fica aberta das ${hora(ini)} às ${fimTxt}.`;
+      }
+      lista.innerHTML = ok.join('') || `<li class="ab-vazio"><p>Tente um ajuste:</p><p class="ab-ajustes">${horaV ? '<button type="button" data-aj="cedo">Chegar 1 hora antes</button><button type="button" data-aj="curto">Treino de 45 min</button><button type="button" data-aj="sem-hora">Ver o horário do dia</button>' : '<button type="button" data-aj="amanha">Dia seguinte</button>'}${reg ? '<button type="button" data-aj="todas">Todas as regiões</button>' : ''}${ids.length ? '<button type="button" data-aj="todas-acad">Todas as academias</button>' : ''}</p></li>`;
+      const avisoPadrao = padrao.length ? ` ${padrao.length} ${padrao.length === 1 ? 'publica' : 'publicam'} horário padrão de feriados: veja abaixo e confirme a data com a academia.` : '';
+      resumo.textContent += avisoPadrao;
+      pendentes.unshift(...padrao);
+      pendT.textContent = pendentes.length ? `${pendentes.length} ${pendentes.length === 1 ? 'academia' : 'academias'} com horário a confirmar para esta busca: consulte direto` : 'Nenhuma academia com horário a confirmar nesta busca';
+      pendL.innerHTML = pendentes.join('');
+      pend.hidden = !pendentes.length; if (!ok.length && pendentes.length) pend.open = true;
+      const q = new URLSearchParams(); q.set('data', data); if (horaV) { q.set('hora', horaV); q.set('dur', String(dur)); } if (reg) q.set('regiao', reg); if (ids.length) q.set('ids', ids.join(','));
+      history.replaceState(null, '', `?${q}`);
+      ev('abertas_busca', { origem, dia, com_hora: horaV ? 1 : 0, regiao: reg || 'todas', resultados: ok.length, a_confirmar: pendentes.length, feriado: fer ? 1 : 0 });
+    }
+
+    function atalho(v: string, registrar = true) {
+      f.querySelectorAll<HTMLButtonElement>('[data-atalho]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.atalho === v)));
+      const hoje = agoraSP().data, util = (d: string) => !['sab', 'dom'].includes(diaDaSemana(d)) && !FER.some((x) => x.data === d);
+      if (v === 'domingo') { el('data').value = proximo((d) => diaDaSemana(d) === 'dom'); el('hora').value = ''; }
+      if (v === 'cedo') { el('data').value = proximo(util); el('hora').value = '05:00'; el('dur').value = '60'; }
+      if (v === 'tarde') { el('data').value = proximo(util); el('hora').value = '22:00'; el('dur').value = '60'; }
+      if (v === 'h24') { el('data').value = proximo(util); el('hora').value = '02:00'; el('dur').value = '60'; }
+      if (v === 'feriado') { const p = FER.find((x) => x.data >= hoje); el('data').value = p ? p.data : hoje; el('hora').value = ''; }
+      if (registrar) ev('abertas_atalho', { atalho: v });
+      buscar('atalho:' + v);
+    }
+    f.querySelectorAll<HTMLButtonElement>('[data-atalho]').forEach((b) => b.addEventListener('click', () => atalho(b.dataset.atalho!)));
+    f.addEventListener('submit', (e) => { e.preventDefault(); f.querySelectorAll('[data-atalho]').forEach((b) => b.setAttribute('aria-pressed', 'false')); buscar('formulario'); document.getElementById('ab-res')!.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    lista.addEventListener('click', (e) => {
+      const b = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-aj]'); if (!b) return;
+      const aj = b.dataset.aj;
+      if (aj === 'cedo') { const m = Math.max(0, min(el('hora').value) - 60); el('hora').value = `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`; }
+      if (aj === 'curto') el('dur').value = '45';
+      if (aj === 'sem-hora') el('hora').value = '';
+      if (aj === 'amanha') el('data').value = somaDias(el('data').value, 1);
+      if (aj === 'todas') el('regiao').value = '';
+      if (aj === 'todas-acad') ids = [];
+      ev('abertas_ajuste', { ajuste: aj! });
+      buscar('ajuste');
+    });
+
+    // Estado inicial: domingo já está no HTML. Parâmetros de links (ficha, comparador, artigos) refazem a busca.
+    const p = new URLSearchParams(location.search);
+    el('data').min = agoraSP().data;
+    if (p.get('regiao') && el('regiao').querySelector(`option[value="${CSS.escape(p.get('regiao')!)}"]`)) el('regiao').value = p.get('regiao')!;
+    ids = (p.get('ids') || ['a', 'b', 'c'].map((k) => p.get(k)).filter(Boolean).join(',')).split(',').filter((x) => U.some((u) => u.id === x));
+    if (p.get('agora') === '1') {
+      const a = agoraSP(); const m15 = Math.ceil(a.min / 15) * 15;
+      el('data').value = a.data; el('hora').value = m15 >= 1440 ? '23:45' : `${String((m15 / 60) | 0).padStart(2, '0')}:${String(m15 % 60).padStart(2, '0')}`;
+      f.querySelectorAll('[data-atalho]').forEach((b) => b.setAttribute('aria-pressed', 'false'));
+      buscar('link:agora');
+    } else if (p.get('atalho')) atalho(p.get('atalho')!, false);
+    else if (p.get('data')) { el('data').value = p.get('data')!; if (p.get('hora')) el('hora').value = p.get('hora')!; if (p.get('dur')) el('dur').value = p.get('dur')!; f.querySelectorAll('[data-atalho]').forEach((b) => b.setAttribute('aria-pressed', 'false')); buscar('link'); }
+    else if (ids.length) { el('data').value = agoraSP().data; buscar('link:comparador'); }
+    else el('data').value = proximo((d) => diaDaSemana(d) === 'dom');
+  </script>
+</Base>
+
+<style is:global>
+  .ab .ab-form { margin: 22px 0 8px; padding: 18px; border: 1px solid var(--linha, #d8dee8); border-radius: 14px; background: #fff; }
+  .ab .ab-atalhos { border: 0; padding: 0; margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .ab .ab-atalhos legend { width: 100%; margin-bottom: 8px; }
+  .ab .ab-atalhos button { min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 1.5px solid #111827; background: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+  .ab .ab-atalhos button[aria-pressed="true"] { background: #111827; color: #fff; }
+  .ab .ab-atalhos button:focus-visible, .ab .ab-ajustes button:focus-visible { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .ab .ab-campos { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (min-width: 760px) { .ab .ab-campos { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .ab .ab-campos .campo { min-width: 0; }
+  .ab .ab-campos input, .ab .ab-campos select { width: 100%; min-height: 44px; font: inherit; font-size: 16px; padding: 8px 10px; border: 1.5px solid #9aa3b2; border-radius: 10px; background: #fff; box-sizing: border-box; }
+  .ab .ab-dica { font-size: 14px; color: var(--cinza, #4b5563); margin: 10px 0 14px; }
+  .ab .ab-resumo { font-size: 16px; margin: 0 0 14px; }
+  .ab .ab-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .ab .ab-item { padding: 16px 18px; border: 1px solid var(--linha, #d8dee8); border-radius: 12px; background: #fff; }
+  .ab .ab-topo { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .ab .ab-nome { font-weight: 700; font-size: 18px; }
+  .ab .ab-selo { font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; background: #FF6A00; color: #fff; padding: 3px 8px; border-radius: 6px; }
+  .ab .ab-selo-p { background: #fff; color: #C24E00; border: 1.5px solid #C24E00; }
+  .ab .ab-local { margin: 4px 0 8px; color: var(--cinza, #4b5563); font-size: 15px; }
+  .ab .ab-hor, .ab .ab-ok { margin: 4px 0; font-size: 16px; }
+  .ab .ab-ok { color: #0f6b3a; font-weight: 600; }
+  .ab .ab-aviso { font-size: 14px; color: var(--cinza, #4b5563); margin: -6px 0 12px; }
+  .ab .ab-fonte { font-size: 13px; color: var(--cinza, #4b5563); margin: 8px 0; }
+  .ab .ab-links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 8px 0 0; font-size: 15px; }
+  .ab .ab-links a { min-height: 32px; display: inline-flex; align-items: center; }
+  .ab .ab-pend { margin-top: 14px; padding: 12px 16px; border: 1px dashed #9aa3b2; border-radius: 12px; background: #fffdf8; }
+  .ab .ab-pend summary { cursor: pointer; font-weight: 600; min-height: 32px; }
+  .ab .ab-pend ul { margin: 10px 0 0; padding-left: 18px; }
+  .ab .ab-pend li { margin: 6px 0; font-size: 15px; }
+  .ab .ab-pend-m { color: #8a4b00; }
+  .ab .ab-vazio { padding: 16px; border: 1px solid var(--linha, #d8dee8); border-radius: 12px; background: #fff; }
+  .ab .ab-ajustes { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ab .ab-ajustes button { min-height: 44px; padding: 8px 14px; border-radius: 10px; border: 1.5px solid #111827; background: #fff; font: inherit; cursor: pointer; }
+</style>

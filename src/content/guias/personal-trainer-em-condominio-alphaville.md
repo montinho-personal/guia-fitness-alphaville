@@ -69,7 +69,7 @@ Se o seu objetivo pede cargas que a sala do condomínio não oferece, dá para c
 - [Gaviões 24h](/academias/gavioes-24h-alphaville/), na Avenida Juruá: funciona 24 horas de segunda a sábado; no domingo, as fontes divergem.
 - [Arena 18](/academias/arena-18-alphaville/), no Melville Empresarial: abre até as 18h no domingo. **Relação comercial:** o Montinho atende alunos lá.
 
-Na Gaviões e na Arena 18, confirme a política para profissional externo antes de fechar qualquer combinado. A lista completa de [academias 24 horas](/academias/24-horas/) mostra outras alternativas.
+Na Gaviões e na Arena 18, confirme a política para profissional externo antes de fechar qualquer combinado. A lista completa de [academias 24 horas](/ferramentas/academias-abertas-alphaville/) mostra outras alternativas.
 
 ![Montinho, personal trainer em condomínio em Alphaville, em selfie no espelho da academia depois do treino](../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg)
 

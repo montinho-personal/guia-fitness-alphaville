@@ -94,3 +94,12 @@ personal_externo:
   fonte: Site oficial da Fábrica Premium, sem regra publicada
   url: https://fabricapremiumalphaville.com.br/
   conferido_em: 2026-11-17
+horario_fonte:
+  fonte: 'Site oficial da Fábrica Premium Alphaville'
+  url: https://fabricapremiumalphaville.com.br/
+  conferido_em: '2026-11-18'
+horario_feriados:
+  faixas: ['08:00-14:00']
+  fonte: 'Site oficial da Fábrica Premium Alphaville — "Domingos e feriados: 08:00 às 14:00"'
+  url: https://fabricapremiumalphaville.com.br/
+  conferido_em: '2026-11-18'

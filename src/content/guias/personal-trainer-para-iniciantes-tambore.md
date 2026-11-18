@@ -58,7 +58,7 @@ Observe três coisas: se os aparelhos que você usaria estão livres, se o profe
 
 ## Sábado e domingo contam
 
-Para quem trabalha a semana toda, o fim de semana costuma ser o momento mais calmo para aprender. A NitroGym funciona nos dois dias do fim de semana entre 6h e 22h. Na Bluefit Tamboré, o sábado vai das 8h às 17h e o domingo termina às 14h, com início às 8h. Há outras alternativas na página de [treino aos domingos](/academias/domingo/).
+Para quem trabalha a semana toda, o fim de semana costuma ser o momento mais calmo para aprender. A NitroGym funciona nos dois dias do fim de semana entre 6h e 22h. Na Bluefit Tamboré, o sábado vai das 8h às 17h e o domingo termina às 14h, com início às 8h. Há outras alternativas na página de [treino aos domingos](/ferramentas/academias-abertas-alphaville/).
 
 ![Montinho, personal trainer para iniciantes no Tamboré, em selfie no espelho de um restaurante de praia](../../assets/montinho/montinho-personal-trainer-praia-espelho.jpg)
 
