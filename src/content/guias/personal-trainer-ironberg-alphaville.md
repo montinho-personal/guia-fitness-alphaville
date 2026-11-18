@@ -30,7 +30,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
-atualizado_em: 2026-11-15
+atualizado_em: 2026-11-18
 ---
 
 > **Transparência.** O Montinho, personal com atendimento em Alphaville, é o dono deste guia, e o anúncio que fecha a página é dele. Tudo o que se afirma sobre a Ironberg foi conferido na [ficha da academia](/academias/ironberg-alphaville/), com fonte e data.
@@ -74,9 +74,9 @@ Os preços valem para todas as unidades da rede e sempre têm matrícula única 
 
 Quem usa TotalPass precisa do TP 6, de R$ 599,90. A aula avulsa só é vendida na recepção, com valor a consultar. Ao orçamento somam-se o valor do profissional e a taxa fixa que ele paga à Ironberg; pergunte se ela já está embutida no preço dele. O estacionamento não pesa: é gratuito, com mais de mil vagas. Fica na Estrada da Aldeinha, fora dos bairros residenciais, com acesso pela rodovia. Compare em [preços das academias](/academias/precos/) e [Wellhub e TotalPass](/academias/wellhub-totalpass/).
 
-![Montinho, personal trainer em Alphaville, de boné em frente ao espelho de uma academia](../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg)
+![Montinho, personal trainer em Alphaville, fazendo elevação de pernas no aparelho de paralelas da Ironberg](../../assets/montinho/montinho-ironberg-abdominal-paralelas.jpg)
 
-*Montinho, personal trainer que mantém este guia e atende em Alphaville.*
+*O Montinho treinando na Ironberg. Foto dele, tirada na academia.*
 
 ## Se a Ironberg não encaixar
 

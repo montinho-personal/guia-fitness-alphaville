@@ -1,5 +1,5 @@
 ---
-import fotoMontinho from '../../assets/montinho/montinho-personal-trainer-elevador.jpg';
+import fotoMontinho from '../../assets/montinho/montinho-ironberg-abdominal-paralelas.jpg';
 import { Image } from 'astro:assets';
 import FerramentasContexto from '../../components/FerramentasContexto.astro';
 import { ferramentasPara } from '../../lib/ferramentas';
@@ -92,7 +92,7 @@ const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'ga
       <div class="cartoes">{[gv, ib].map((a) => <CartaoAcademia a={a} />)}</div>
     </section>
 
-    <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={fotoMontinho} alt="Montinho, personal trainer que mantém este guia, no elevador a caminho do treino" widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">O Montinho, personal trainer que mantém este guia. Publicidade da casa.</figcaption></figure>
+    <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={fotoMontinho} alt="Montinho fazendo elevação de pernas no aparelho de paralelas da Ironberg" widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">O Montinho treinando na Ironberg. Foto dele, tirada na academia. Publicidade da casa.</figcaption></figure>
     <FerramentasContexto itens={ferramentas} />
 
     <VideoMontinho id="izMrrSoJGBw" titulo="Raiva e sangue no olho" pagina="gavioes-ou-ironberg" />
