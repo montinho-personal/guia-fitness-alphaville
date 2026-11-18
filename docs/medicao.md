@@ -96,3 +96,13 @@ Clique nos atalhos e cartões de ferramenta dos artigos. `ref` = `<ferramenta>:a
 | `preco_personal_memoria` | Abertura de "Ver a conta, linha a linha" | — |
 | `clique_ferramenta` | Links para a calculadora de custo e para personal externo | `ref` = `custo:preco-personal`, `personal:preco-personal` |
 | `clique_whatsapp` / `clique_montinho` | Chamada do Montinho abaixo do resultado | `ref` = `preco-personal` |
+
+## Teste presencial ou online (18/11/2026)
+
+| Evento | Quando | Parâmetros |
+|---|---|---|
+| `formato_personal_inicio` | Primeira resposta marcada | — |
+| `formato_personal_resultado` | Resultado exibido | `resultado` (`presencial`, `online`, `hibrido`, `ambos`), `conflitos` |
+| `formato_personal_refazer` | Clique em "Refazer o teste" | — |
+| `clique_whatsapp` | WhatsApp do Montinho no resultado (intenção de contato) | `ref` = `presencial-ou-online:<resultado>`; as respostas não são enviadas |
+| `clique_ferramenta` | Próximos passos (preço, personal externo, aula experimental) | `ref` = `preco:presencial-ou-online` etc. |
