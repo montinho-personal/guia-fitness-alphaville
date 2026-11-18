@@ -31,6 +31,15 @@ const academias = defineCollection({
     endereco: z.string(),
     geo: z.object({ lat: z.number(), lng: z.number() }),
     horario: z.object(Object.fromEntries(DIAS.map((d) => [d, z.array(faixa)])) as Record<(typeof DIAS)[number], z.ZodArray<z.ZodString>>),
+    // Detalhes do horário para o buscador de academias abertas (docs/horarios.md e src/lib/horarios.ts).
+    // Dia com lista vazia em "horario" é "sem horário listado"; vira fechado só com horario_status.<dia> = 'fechado'.
+    horario_status: z.object(Object.fromEntries(DIAS.map((d) => [d, z.enum(['fechado', 'a-confirmar']).optional()]))).partial().optional(),
+    ultima_entrada: z.object(Object.fromEntries(DIAS.map((d) => [d, z.string().regex(/^\d\d:\d\d$/).optional()]))).partial().optional(),
+    horario_fonte: z.object({ fonte: z.string(), url: z.string().url().optional(), conferido_em: data }).optional(),
+    // Grade oficial genérica de feriados: aparece como "horário padrão de feriados" e nunca como resultado confirmado.
+    horario_feriados: z.object({ faixas: z.array(faixa), fonte: z.string(), url: z.string().url().optional(), conferido_em: data }).optional(),
+    // Horário oficial de uma data específica (feriado, fechamento temporário). Prevalece sobre a grade e os feriados.
+    horario_excecoes: z.array(z.object({ data: z.string().regex(/^\d{4}-\d\d-\d\d$/), faixas: z.array(faixa), situacao: z.enum(['confirmada', 'a-confirmar']), motivo: z.string(), fonte: z.string(), url: z.string().url().optional(), conferido_em: data })).default([]),
     modalidades: z.array(z.enum(MODALIDADES)).min(1),
     atividades_listadas: z.array(z.string()).default([]),
     comodidades: z.array(z.string()).default([]),

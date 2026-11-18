@@ -70,4 +70,4 @@ Não há mensalidade direta divulgada. No Wellhub, o piso é o Silver, de R$ 149
 
 ## Quando o domingo pesa na escolha
 
-A [Academia Scelta](/academias/scelta-alphaville/), no Alphaville Empresarial, abre domingo das 9h às 14h ([personal na Scelta](/guias/personal-trainer-scelta-alphaville/)). A [Arena 18](/academias/arena-18-alphaville/), no Melville Empresarial, é onde o Montinho atende, por relação comercial ([personal na Arena 18](/guias/personal-trainer-arena-18-alphaville/)). Mais caminhos em [personal trainer em Alphaville](/guias/personal-trainer-alphaville/) e em [academias abertas no domingo](/academias/domingo/).
+A [Academia Scelta](/academias/scelta-alphaville/), no Alphaville Empresarial, abre domingo das 9h às 14h ([personal na Scelta](/guias/personal-trainer-scelta-alphaville/)). A [Arena 18](/academias/arena-18-alphaville/), no Melville Empresarial, é onde o Montinho atende, por relação comercial ([personal na Arena 18](/guias/personal-trainer-arena-18-alphaville/)). Mais caminhos em [personal trainer em Alphaville](/guias/personal-trainer-alphaville/) e em [academias abertas no domingo](/ferramentas/academias-abertas-alphaville/).

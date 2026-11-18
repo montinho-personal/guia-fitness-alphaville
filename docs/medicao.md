@@ -66,3 +66,13 @@ A calculadora não envia valores digitados nem dados de contato: só a origem da
 ## clique_ferramenta (18/11/2026)
 
 Clique nos atalhos e cartões de ferramenta dos artigos. `ref` = `<ferramenta>:atalho` ou `<ferramenta>:bloco` (ferramentas: custo, personal, beneficio, teste, comparador, checklist, mapa); `pagina` = caminho do artigo. Para ver no GA4 qual artigo mais leva às ferramentas, registre `ref` como dimensão personalizada.
+
+## Academias abertas (18/11/2026)
+
+| Evento | Quando | Parâmetros |
+|---|---|---|
+| `abertas_atalho` | Clique num atalho (Domingo, Antes das 6h, Depois das 22h, 24 horas, Feriados) | `atalho` |
+| `abertas_busca` | Busca concluída (atalho, formulário, ajuste ou link) | `origem`, `dia`, `com_hora`, `regiao`, `resultados`, `a_confirmar`, `feriado` |
+| `abertas_ajuste` | Clique num ajuste sugerido quando não há resultado | `ajuste` |
+| `clique_academia` | Abertura da ficha a partir do resultado | `ref` = `abertas:<id>` |
+| `clique_ferramenta` | Links para Wellhub e TotalPass, personal externo e calculadora; link da ficha e do comparador para o buscador | `ref` = `beneficio:abertas`, `personal:abertas`, `custo:abertas`, `abertas:ficha`, `abertas:comparador` |

@@ -12,6 +12,7 @@ const FOTO_MONTINHO: Record<string, { src: typeof fotoArena18; alt: string }> = 
 import { ARTIGOS, COMPARATIVOS, personalDaRegiao } from '../../lib/artigos';
 import { abreDomingo, guias } from '../../lib/dados';
 import { politicaPE, respostasPE, STATUS_PE } from '../../lib/personal';
+import { e24hTodos } from '../../lib/horarios';
 import { academias, REGIOES, MODALIDADES, TIPOS, DIAS, DIAS_NOME, faixasDia, horarioResumo, e24h, conferidoEm, dataCurta, dataLonga, dataIso, nivelVerificacao, urlAcademia, urlRegiao, type Academia } from '../../lib/dados';
 
 export async function getStaticPaths() {
@@ -22,7 +23,7 @@ const { a, todas } = Astro.props as { a: Academia; todas: Academia[] };
 const d = a.data;
 const regiao = REGIOES[d.regiao];
 const temPersonal = (await guias()).some((x) => x.id === `personal-trainer-${a.id}`);
-const guiasRel = [COMPARATIVOS[a.id] ?? (d.tipo === 'box' ? '/modalidades/crossfit/' : d.modalidades.includes('musculacao') ? '/modalidades/musculacao/' : null), personalDaRegiao(d.regiao, d.bairro), e24h(d.horario) ? '/academias/24-horas/' : null, abreDomingo(d.horario) ? '/academias/domingo/' : null, d.mensalidade ? '/academias/precos/' : null, d.agregadores.length ? '/academias/wellhub-totalpass/' : null].filter((u): u is string => !!u && !!ARTIGOS[u]).slice(0, 4);
+const guiasRel = [COMPARATIVOS[a.id] ?? (d.tipo === 'box' ? '/modalidades/crossfit/' : d.modalidades.includes('musculacao') ? '/modalidades/musculacao/' : null), personalDaRegiao(d.regiao, d.bairro), e24h(d.horario) ? '/ferramentas/academias-abertas-alphaville/' : null, abreDomingo(d.horario) ? '/ferramentas/academias-abertas-alphaville/' : null, d.mensalidade ? '/academias/precos/' : null, d.agregadores.length ? '/academias/wellhub-totalpass/' : null].filter((u): u is string => !!u && !!ARTIGOS[u]).slice(0, 4);
 const vizinhas = todas.filter((o) => o.id !== a.id && o.data.regiao === d.regiao).sort((x, y) => Number(y.data.bairro === d.bairro) - Number(x.data.bairro === d.bairro)).slice(0, 5);
 const conf = conferidoEm(a);
 const nivel = nivelVerificacao(a);
@@ -40,6 +41,7 @@ const schema = [{
   about: { '@type': 'Place', name: d.nome, address: d.endereco },
 }];
 const eSite = d.site && !/instagram\.com/.test(d.site);
+const hojeIso = new Date().toISOString().slice(0, 10);
 ---
 <Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Academias', url: '/academias/' }, { nome: d.nome, url: urlAcademia(a) }]}>
   <div class="wrap">
@@ -120,11 +122,15 @@ const eSite = d.site && !/instagram\.com/.test(d.site);
         </div>
         <div class="caixa">
           <h2>Horário de funcionamento</h2>
-          {e24h(d.horario) ? <p><strong>24 horas, todos os dias</strong>, segundo a fonte.</p> : (
+          {e24hTodos({ horario: d.horario as any, horario_status: d.horario_status as any }) ? <p><strong>24 horas, todos os dias</strong>, segundo a fonte.</p> : (
             <table class="horarios">
-              <tbody>{DIAS.map((dia) => <tr><th scope="row">{DIAS_NOME[dia]}</th><td>{d.horario[dia].length ? faixasDia(d.horario[dia]) : <span class="incerto">sem horário listado</span>}</td></tr>)}</tbody>
+              <tbody>{DIAS.map((dia) => <tr><th scope="row">{DIAS_NOME[dia]}</th><td>{d.horario_status?.[dia] === 'a-confirmar' ? <span class="incerto">a confirmar{d.horario[dia].length ? ` (as fontes divergem; uma informa ${faixasDia(d.horario[dia])})` : ''}</span> : d.horario[dia].length ? <>{faixasDia(d.horario[dia])}{d.ultima_entrada?.[dia] && <> · última entrada {d.ultima_entrada[dia]}</>}</> : d.horario_status?.[dia] === 'fechado' ? 'Fechado' : <span class="incerto">sem horário listado</span>}</td></tr>)}</tbody>
             </table>
           )}
+          {d.horario_feriados && <p style="font-size:15px"><strong>Feriados (horário padrão publicado):</strong> {faixasDia(d.horario_feriados.faixas)}. É uma regra geral da academia; confirme a data.</p>}
+          {d.horario_excecoes.filter((e) => e.data >= hojeIso).map((e) => <p style="font-size:15px"><strong>{e.data.split('-').reverse().join('/')}:</strong> {e.faixas.length ? faixasDia(e.faixas) : 'fechada'} ({e.motivo}{e.situacao === 'a-confirmar' ? ', a confirmar' : ''}).</p>)}
+          {d.horario_fonte && <p style="font-size:14px;color:var(--cinza)">Horário conferido em {dataLonga(d.horario_fonte.conferido_em)}: {d.horario_fonte.url ? <a href={d.horario_fonte.url} rel="nofollow noopener">{d.horario_fonte.fonte}</a> : d.horario_fonte.fonte}.</p>}
+          {d.modalidades.includes('musculacao') && <p style="font-size:16px"><a class="link-forte" href={`/ferramentas/academias-abertas-alphaville/?agora=1&regiao=${d.regiao}`} data-evento="clique_ferramenta" data-ref="abertas:ficha">Ver academias abertas neste horário</a></p>}
 
         </div>
         {d.agregadores.length > 0 && (

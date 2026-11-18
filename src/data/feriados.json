@@ -1,0 +1,22 @@
+{
+  "nota": "Feriados usados pelo buscador de academias abertas. Nacionais: Lei 662/1949 (redação da Lei 10.607/2002), Lei 6.802/1980 (12 de outubro) e Lei 14.759/2023 (20 de novembro). Estadual de SP: Lei estadual 9.497/1997 (9 de julho). Carnaval e Corpus Christi são ponto facultativo, não feriado nacional. Feriados municipais (inclusive Sexta-feira Santa, que é feriado religioso definido pelo município) só entram com o calendário oficial da prefeitura.",
+  "conferido_em": "2026-11-18",
+  "feriados": [
+    { "data": "2026-11-20", "nome": "Dia Nacional de Zumbi e da Consciência Negra", "abrangencia": "nacional" },
+    { "data": "2026-12-25", "nome": "Natal", "abrangencia": "nacional" },
+    { "data": "2027-01-01", "nome": "Confraternização Universal", "abrangencia": "nacional" },
+    { "data": "2027-04-21", "nome": "Tiradentes", "abrangencia": "nacional" },
+    { "data": "2027-05-01", "nome": "Dia do Trabalho", "abrangencia": "nacional" },
+    { "data": "2027-07-09", "nome": "Revolução Constitucionalista", "abrangencia": "estadual" },
+    { "data": "2027-09-07", "nome": "Independência do Brasil", "abrangencia": "nacional" },
+    { "data": "2027-10-12", "nome": "Nossa Senhora Aparecida", "abrangencia": "nacional" },
+    { "data": "2027-11-02", "nome": "Finados", "abrangencia": "nacional" },
+    { "data": "2027-11-15", "nome": "Proclamação da República", "abrangencia": "nacional" },
+    { "data": "2027-11-20", "nome": "Dia Nacional de Zumbi e da Consciência Negra", "abrangencia": "nacional" },
+    { "data": "2027-12-25", "nome": "Natal", "abrangencia": "nacional" }
+  ],
+  "municipais_pendentes": [
+    { "municipio": "Barueri", "motivo": "Calendário oficial da prefeitura não pôde ser aberto na conferência de 18/11/2026." },
+    { "municipio": "Santana de Parnaíba", "motivo": "Calendário oficial da prefeitura não pôde ser aberto na conferência de 18/11/2026." }
+  ]
+}

@@ -58,7 +58,7 @@ Se o seu empregador oferece agregador, cada academia do bairro aceita um diferen
 
 ## Fim de semana como reserva
 
-Para executivos, o sábado e o domingo muitas vezes são o único espaço livre de verdade. A NitroGym mantém o horário longo também no fim de semana, das 6h às 22h. Se a terça foi engolida por uma reunião, dá para repor ali. Para comparar com outras casas que funcionam no domingo, use o [levantamento de domingo](/academias/domingo/).
+Para executivos, o sábado e o domingo muitas vezes são o único espaço livre de verdade. A NitroGym mantém o horário longo também no fim de semana, das 6h às 22h. Se a terça foi engolida por uma reunião, dá para repor ali. Para comparar com outras casas que funcionam no domingo, use o [levantamento de domingo](/ferramentas/academias-abertas-alphaville/).
 
 ![Montinho, personal trainer para executivos no Tamboré, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
 

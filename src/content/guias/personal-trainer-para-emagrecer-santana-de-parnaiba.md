@@ -59,7 +59,7 @@ As três aceitam Wellhub em planos de entrada, o que barateia a parte da academi
 
 ## Domingo e as academias de bairro
 
-Nenhuma das três abre aos domingos. Para quem usa o fim de semana como dia de treino, há duas saídas: uma sessão na sala de casa ou na academia do residencial, planejada com o personal para o equipamento disponível, ou uma academia aberta no domingo do lado de Alphaville. Quem abre no domingo aparece na [página de domingo](/academias/domingo/).
+Nenhuma das três abre aos domingos. Para quem usa o fim de semana como dia de treino, há duas saídas: uma sessão na sala de casa ou na academia do residencial, planejada com o personal para o equipamento disponível, ou uma academia aberta no domingo do lado de Alphaville. Quem abre no domingo aparece na [página de domingo](/ferramentas/academias-abertas-alphaville/).
 
 ![Montinho, personal trainer para emagrecer em Santana de Parnaíba, de costas, em pose de duplo bíceps diante do espelho](../../assets/montinho/montinho-personal-trainer-costas.jpg)
 

@@ -67,7 +67,7 @@ Para quem tem escritório no próprio 18 do Forte, há uma vantagem óbvia: a se
 | Sábado | 8h às 15h |
 | Domingo | 8h às 14h |
 
-O fim de semana é curto, então quem quer duas ou três sessões semanais tende a concentrá-las nos dias úteis. Compare com outras [academias que abrem no domingo](/academias/domingo/).
+O fim de semana é curto, então quem quer duas ou três sessões semanais tende a concentrá-las nos dias úteis. Compare com outras [academias que abrem no domingo](/ferramentas/academias-abertas-alphaville/).
 
 ## Preço: só o que saiu na imprensa
 

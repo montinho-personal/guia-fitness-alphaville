@@ -42,7 +42,7 @@ Antes dos critérios, vale saber em que tipo de lugar você quer treinar. Na reg
 
 - **Academia de baixo custo**, como Smart Fit e SkyFit: mensalidade mais baixa, muitas unidades e horário amplo, com menos professores por aluno. Veja a [tabela de preços](/academias/precos/).
 - **Academia premium**, como Ironberg, NitroGym e Bodytech: mensalidade maior, mais espaço e mais serviços. Veja [academias premium de Alphaville](/guias/academias-premium-alphaville/).
-- **Academia 24 horas**, como Gaviões 24h e Ironberg: para quem treina de madrugada. Veja [academias 24 horas](/academias/24-horas/).
+- **Academia 24 horas**, como Gaviões 24h e Ironberg: para quem treina de madrugada. Veja [academias 24 horas](/ferramentas/academias-abertas-alphaville/).
 - **Box de CrossFit ou cross training**: aula em grupo com horário marcado, sem treino livre na sala. Veja [CrossFit](/modalidades/crossfit/).
 - **Estúdio**, de pilates, funcional, lutas ou yoga: turma pequena e uma modalidade principal. Veja as páginas de [modalidades](/modalidades/).
 
@@ -54,7 +54,7 @@ Pergunta útil: em um dia ruim, de chuva e trânsito, você ainda chegaria lá?
 
 ## 2. Horário de funcionamento
 
-Confira o horário de todos os dias em que você pretende treinar, não só o de segunda a sexta. Várias academias da região não abrem ou fecham cedo aos domingos; veja [quais abrem no domingo](/academias/domingo/). Quem depende de madrugada tem pouquíssimas opções: veja [academias 24 horas](/academias/24-horas/).
+Confira o horário de todos os dias em que você pretende treinar, não só o de segunda a sexta. Várias academias da região não abrem ou fecham cedo aos domingos; veja [quais abrem no domingo](/ferramentas/academias-abertas-alphaville/). Quem depende de madrugada tem pouquíssimas opções: veja [academias 24 horas](/ferramentas/academias-abertas-alphaville/).
 
 ## 3. Lotação no seu horário
 

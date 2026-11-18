@@ -138,3 +138,12 @@ personal_externo:
   url: https://www.ironberg.com.br/planos.html
   conferido_em: 2026-11-17
   nota: Valor e cadastro informados pelo Montinho Personal Trainer, que mantém este guia; a página da rede confirma que o personal paga um valor fixo.
+horario_fonte:
+  fonte: 'Site oficial da Ironberg (página inicial da rede: 24 horas por dia, inclusive nos feriados)'
+  url: https://www.ironberg.com.br/
+  conferido_em: '2026-11-18'
+horario_feriados:
+  faixas: ['00:00-23:59']
+  fonte: 'Site oficial da Ironberg (página inicial da rede: 24 horas por dia, inclusive nos feriados) — "sempre aberta, inclusive nos feriados"'
+  url: https://www.ironberg.com.br/
+  conferido_em: '2026-11-18'

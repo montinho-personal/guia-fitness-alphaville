@@ -37,7 +37,7 @@ atualizado_em: 2026-11-15
 
 A Gaviões 24h aparece no Wellhub aberta 24 horas, de segunda a domingo; no TotalPass, a unidade aparece 24 horas de segunda a sábado e fechada no domingo. Confirme o domingo antes de marcar sessões. No guia, só ela e a Ironberg Alphaville têm esse horário publicado. Para quem trabalha em turno, viaja muito ou só consegue treinar antes de amanhecer, isso pesa mais do que qualquer outra característica.
 
-Duas coisas, porém, continuam sem confirmação: se as 24 horas valem também nos feriados e como fica a equipe de madrugada. Em academias desse formato, é comum o período noturno ter menos gente trabalhando. Se a ideia é marcar sessões às 5h ou às 23h, confirme as duas antes. A lista de [academias 24 horas](/academias/24-horas/) mostra as opções da região.
+Duas coisas, porém, continuam sem confirmação: se as 24 horas valem também nos feriados e como fica a equipe de madrugada. Em academias desse formato, é comum o período noturno ter menos gente trabalhando. Se a ideia é marcar sessões às 5h ou às 23h, confirme as duas antes. A lista de [academias 24 horas](/ferramentas/academias-abertas-alphaville/) mostra as opções da região.
 
 ![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
 

@@ -49,7 +49,7 @@ No estúdio, a aula costuma ser em turma pequena, com aparelhos como reformer, c
 
 ## Horário: quase tudo de segunda a sexta
 
-O pilates de estúdio em Alphaville é um serviço de dia útil. Studio Vitalle, Inspire, Pilates Gaviões e Health Body não abrem no fim de semana. A exceção é o Studio Physio, que atende no sábado das 8h ao meio-dia. Para quem só tem o fim de semana, a alternativa é o pilates de solo de uma academia que abra no sábado; veja [academias abertas no domingo](/academias/domingo/).
+O pilates de estúdio em Alphaville é um serviço de dia útil. Studio Vitalle, Inspire, Pilates Gaviões e Health Body não abrem no fim de semana. A exceção é o Studio Physio, que atende no sábado das 8h ao meio-dia. Para quem só tem o fim de semana, a alternativa é o pilates de solo de uma academia que abra no sábado; veja [academias abertas no domingo](/ferramentas/academias-abertas-alphaville/).
 
 ## Wellhub e TotalPass
 

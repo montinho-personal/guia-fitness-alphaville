@@ -60,7 +60,7 @@ A lista de atividades traz musculação, alongamento, abdominais, HIIT, Smart Bo
 
 ## Janela de treino: 6h às 23h
 
-Entre segunda e sexta, as portas ficam abertas das 6h às 23h. No sábado e em feriados, das 8h às 17h. No domingo, das 8h às 14h. Quem precisa treinar antes das 6h terá de olhar outra unidade, porque esta abre uma hora depois das Smart Fit de Barueri. Para o fim de semana, confira a lista de [academias que abrem aos domingos](/academias/domingo/).
+Entre segunda e sexta, as portas ficam abertas das 6h às 23h. No sábado e em feriados, das 8h às 17h. No domingo, das 8h às 14h. Quem precisa treinar antes das 6h terá de olhar outra unidade, porque esta abre uma hora depois das Smart Fit de Barueri. Para o fim de semana, confira a lista de [academias que abrem aos domingos](/ferramentas/academias-abertas-alphaville/).
 
 ## Plano Smart, Plano Black ou TotalPass
 

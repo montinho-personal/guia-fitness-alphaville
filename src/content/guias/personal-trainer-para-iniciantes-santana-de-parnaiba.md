@@ -50,7 +50,7 @@ Mattos, Olympia e Forth funcionam de jeitos bem diferentes, e isso decide qual s
 - **Olympia Fitness**, no Polvilho: interrompe o expediente das 12h às 14h nos dias úteis, então não serve a quem só tem o almoço livre.
 - **Forth**, no Jardim São Luís: nos dias de semana, funciona das 5h até 23h59.
 
-Domingo é dia fechado nas três. Se o fim de semana é o seu único tempo livre, consulte as [academias com horário no domingo](/academias/domingo/).
+Domingo é dia fechado nas três. Se o fim de semana é o seu único tempo livre, consulte as [academias com horário no domingo](/ferramentas/academias-abertas-alphaville/).
 
 ## Ambiente para quem chega sem experiência
 

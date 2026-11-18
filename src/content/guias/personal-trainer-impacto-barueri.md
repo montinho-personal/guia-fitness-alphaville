@@ -33,7 +33,7 @@ atualizado_em: 2026-11-15
 
 ## Abre às 5h: dá para treinar antes do expediente?
 
-Dá. Nos dias úteis, a Impacto abre das 5h às 22h. Uma sessão bem cedo deixa a manhã livre para o trabalho, e o fim do dia também está coberto. No sábado, o horário vai das 8h às 14h. A [ficha da Academia Impacto](/academias/impacto-barueri/) não traz horário de domingo; quem só treina nesse dia pode consultar a [relação de academias com domingo](/academias/domingo/).
+Dá. Nos dias úteis, a Impacto abre das 5h às 22h. Uma sessão bem cedo deixa a manhã livre para o trabalho, e o fim do dia também está coberto. No sábado, o horário vai das 8h às 14h. A [ficha da Academia Impacto](/academias/impacto-barueri/) não traz horário de domingo; quem só treina nesse dia pode consultar a [relação de academias com domingo](/ferramentas/academias-abertas-alphaville/).
 
 ![Antes e depois do Montinho, personal trainer em Barueri: adolescente acima do peso e, anos depois, com o físico de quem treina musculação](../../assets/montinho/montinho-antes-depois-adolescencia.jpg)
 

@@ -56,7 +56,7 @@ Entre as atividades listadas há aulas como Body Pump, RPM, Power Bike, Body Jam
 
 ## Sexta mais curta, fim de semana mais longo
 
-O horário tem um detalhe que pesa na agenda. De segunda a quinta, a academia vai das 5h às 23h59. Na sexta, fecha às 22h. Já no sábado e no domingo abre das 7h às 19h, a janela de fim de semana mais ampla entre as Bluefit do guia. Para comparar opções de domingo, veja [quais academias abrem nesse dia](/academias/domingo/).
+O horário tem um detalhe que pesa na agenda. De segunda a quinta, a academia vai das 5h às 23h59. Na sexta, fecha às 22h. Já no sábado e no domingo abre das 7h às 19h, a janela de fim de semana mais ampla entre as Bluefit do guia. Para comparar opções de domingo, veja [quais academias abrem nesse dia](/ferramentas/academias-abertas-alphaville/).
 
 ## A conta mensal
 
@@ -71,6 +71,6 @@ A ficha registra estacionamento, mas as regras e o custo ainda não foram confir
 ## Outras opções no Alphaville Industrial
 
 - [Smart Fit Sodimac Alphaville](/academias/smart-fit-sodimac-alphaville/), na Alameda Araguaia, tem preço publicado: Plano Smart a R$ 149,90 com fidelidade. Veja também o [artigo sobre personal nessa unidade](/guias/personal-trainer-smart-fit-sodimac-alphaville/).
-- [Gaviões 24h Alphaville](/academias/gavioes-24h-alphaville/), na Av. Juruá, publica funcionamento 24 horas. Leia o [texto sobre personal na Gaviões](/guias/personal-trainer-gavioes-24h-alphaville/) e a lista de [academias 24 horas](/academias/24-horas/).
+- [Gaviões 24h Alphaville](/academias/gavioes-24h-alphaville/), na Av. Juruá, publica funcionamento 24 horas. Leia o [texto sobre personal na Gaviões](/guias/personal-trainer-gavioes-24h-alphaville/) e a lista de [academias 24 horas](/ferramentas/academias-abertas-alphaville/).
 
 Para um panorama da região, a página [personal trainer em Alphaville](/guias/personal-trainer-alphaville/) reúne os formatos de treino acompanhado.

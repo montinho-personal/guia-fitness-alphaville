@@ -41,7 +41,7 @@ Antes de montar uma agenda de treino com personal, vale olhar o horário que a p
 | Sábado | 7h às 15h |
 | Domingo (manhã e começo da tarde) | 8h às 14h |
 
-Ou seja: não há madrugada listada. O guia registra isso como divergência e deixou pendente a confirmação de um possível funcionamento 24 horas para quem é aluno direto. Se a sua sessão ideal é às 3h, pergunte à academia antes de fechar qualquer pacote. A boa notícia é o domingo aberto até as 14h; compare na lista de [academias que abrem no domingo](/academias/domingo/).
+Ou seja: não há madrugada listada. O guia registra isso como divergência e deixou pendente a confirmação de um possível funcionamento 24 horas para quem é aluno direto. Se a sua sessão ideal é às 3h, pergunte à academia antes de fechar qualquer pacote. A boa notícia é o domingo aberto até as 14h; compare na lista de [academias que abrem no domingo](/ferramentas/academias-abertas-alphaville/).
 
 ![Antes e depois do Montinho, personal trainer em Alphaville: acima do peso na juventude e, hoje, com o corpo definido pela musculação](../../assets/montinho/montinho-antes-depois-praia-academia.jpg)
 
@@ -71,4 +71,4 @@ Valor de mensalidade direta: não divulgado. Pelo Wellhub, a entrada exige o Gol
 
 ## Se a madrugada for indispensável
 
-Duas academias do guia aparecem listadas como 24 horas: a [Gaviões 24h Alphaville](/academias/gavioes-24h-alphaville/), na Av. Juruá ([personal na Gaviões](/guias/personal-trainer-gavioes-24h-alphaville/)), e a [Ironberg Alphaville](/academias/ironberg-alphaville/), na Estrada da Aldeinha ([personal na Ironberg](/guias/personal-trainer-ironberg-alphaville/)), que publica regra para personal externo. Veja todas em [academias 24 horas](/academias/24-horas/) e o panorama em [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).
+Duas academias do guia aparecem listadas como 24 horas: a [Gaviões 24h Alphaville](/academias/gavioes-24h-alphaville/), na Av. Juruá ([personal na Gaviões](/guias/personal-trainer-gavioes-24h-alphaville/)), e a [Ironberg Alphaville](/academias/ironberg-alphaville/), na Estrada da Aldeinha ([personal na Ironberg](/guias/personal-trainer-ironberg-alphaville/)), que publica regra para personal externo. Veja todas em [academias 24 horas](/ferramentas/academias-abertas-alphaville/) e o panorama em [personal trainer em Alphaville](/guias/personal-trainer-alphaville/).

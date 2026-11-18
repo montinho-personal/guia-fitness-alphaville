@@ -8,8 +8,7 @@ export async function GET() {
   // Palavras que as pessoas digitam e que não estão no título.
   const EXTRA: Record<string, string> = {
     '/academias/precos/': 'preço preços mensalidade valor quanto custa barata barato mais barata',
-    '/academias/24-horas/': '24h madrugada noite aberta 24 horas',
-    '/academias/domingo/': 'domingo fim de semana feriado aberta hoje',
+    '/ferramentas/academias-abertas-alphaville/': '24h madrugada noite aberta 24 horas domingo fim de semana feriado aberta hoje agora horario',
     '/academias/wellhub-totalpass/': 'gympass wellhub totalpass agregador plano empresa buscador plano comum tp silver',
     '/academias/perto-de/': 'perto de mim próximo próxima perto iguatemi shopping tamboré estação trem cptm 18 do forte',
     '/academias/smart-fit-barueri/': 'smartfit smart fit barueri centro zelia zélia parque shopping sodimac carrefour hiper tamboré alphaville horário endereço telefone preço diária totalpass',
@@ -49,6 +48,7 @@ export async function GET() {
     { t: 'Qual academia combina com você', u: '/ferramentas/qual-academia/', c: 'Ferramenta', d: 'Teste de cinco perguntas.', k: 'teste quiz escolher' },
     { t: 'Academias que aceitam personal externo', u: '/ferramentas/academias-que-aceitam-personal-externo/', c: 'Ferramenta', d: 'Quem aceita, cadastro e quem paga a taxa, por academia.', k: 'personal externo levar meu personal taxa cadastro aceita' },
     { t: 'Calculadora de custo para treinar', u: '/ferramentas/custo-para-treinar-em-alphaville/', c: 'Ferramenta', d: 'Mensalidade, estacionamento e personal por mês e por ida.', k: 'quanto custa preço gasto calculadora simulador personal condomínio' },
+    { t: 'Academias abertas aos domingos e 24h', u: '/ferramentas/academias-abertas-alphaville/', c: 'Ferramenta', d: 'Quem abre domingo, 24 horas, cedo, tarde e em feriados, com a duração do treino.', k: 'domingo 24h 24 horas madrugada feriado aberta hoje agora horário fim de semana' },
     { t: 'Checklist de visita à academia', u: '/ferramentas/checklist/', c: 'Ferramenta', d: '27 pontos para conferir na visita.', k: 'checklist visita' },
     { t: 'Modalidades', u: '/modalidades/', c: 'Página', d: 'Musculação, CrossFit, Hyrox, lutas, dança e outras.', k: 'modalidade aula' },
     { t: 'Todos os guias', u: '/guias/', c: 'Página', d: 'Guias de decisão, personal trainer por região, tema e academia.', k: 'artigos blog' },

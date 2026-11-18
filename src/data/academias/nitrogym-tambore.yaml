@@ -132,3 +132,12 @@ personal_externo:
   url: https://www.nitrogymacademia.com.br/unidades/unidade-tambore
   conferido_em: 2026-11-17
   canal: (11) 98643-0468
+horario_fonte:
+  fonte: 'Site oficial da NitroGym (página da unidade)'
+  url: https://nitrogymacademia.com.br/unidades/unidade-tambore
+  conferido_em: '2026-11-18'
+horario_feriados:
+  faixas: ['06:00-22:00']
+  fonte: 'Site oficial da NitroGym (página da unidade) — "Sábado, Domingo e Feriados: das 06h às 22h"'
+  url: https://nitrogymacademia.com.br/unidades/unidade-tambore
+  conferido_em: '2026-11-18'

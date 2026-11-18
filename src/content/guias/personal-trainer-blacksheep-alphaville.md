@@ -60,7 +60,7 @@ Na lista de atividades do BlackSheep estão cross training, [treino funcional](/
 
 ## Das 6h às 20h30, com janela curta no fim de semana
 
-Nos quatro primeiros dias úteis, o box opera das 6h às 20h30; na sexta, termina às 19h30. Aos sábados e domingos, só entre 9h e 10h30. Por isso aparece entre as [academias com horário no domingo](/academias/domingo/), mas sobra pouco espaço para encaixar uma sessão. A programação de turmas da unidade ainda não foi conferida pelo guia.
+Nos quatro primeiros dias úteis, o box opera das 6h às 20h30; na sexta, termina às 19h30. Aos sábados e domingos, só entre 9h e 10h30. Por isso aparece entre as [academias com horário no domingo](/ferramentas/academias-abertas-alphaville/), mas sobra pouco espaço para encaixar uma sessão. A programação de turmas da unidade ainda não foi conferida pelo guia.
 
 ## A tabela da rede e o Wellhub
 
