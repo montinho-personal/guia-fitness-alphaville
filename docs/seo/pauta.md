@@ -39,6 +39,9 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | Escolas de natação (Mori, Cubo d'Água, clubes) | `/modalidades/natacao/` | Sem fonte que confirme |
 | 24 Wellness / 24 Health Club | `/academias/24-horas/` | Site bloqueado |
 | "crossfit kids", "crossfit infantil" | `/modalidades/crossfit/` | Já respondido (Unika CF) |
+| "academia mais cara de alphaville", "mensalidade ironberg/scelta alphaville" (busca de 18/11) | `/academias/precos/` e `/guias/academias-premium-alphaville/` | Só com mensalidade confirmada na fonte; hoje sem valor publicado |
+| "academia 24h alphaville" (REL de 18/11) | `/academias/24-horas/` | Conferir na próxima revisão se a página responde no lead |
+| "primeira vez na academia", "o que devo saber antes de entrar na academia" (PAA de 18/11) | `/ferramentas/checklist/` | FAQ feita; artigo próprio só se aparecer busca local |
 
 ## 3. Materiais para baixar
 
