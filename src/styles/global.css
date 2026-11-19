@@ -301,3 +301,10 @@ dialog.sel-folha[open]{display:flex;align-items:flex-end;justify-content:center}
 @media(min-width:720px){dialog.sel-folha[open]{align-items:center}.sel-caixa{max-width:460px;max-height:min(76vh,640px);border-radius:16px;animation-name:sel-surge}}
 @keyframes sel-surge{from{transform:scale(.97);opacity:0}to{transform:none;opacity:1}}
 @media print{.sel-btn{background-image:none}}
+
+/* Tabelas escritas em Markdown nos guias: mesmo desenho de table.dados, rolando dentro da própria tabela no celular. */
+article.prosa>table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-collapse:collapse;margin:18px 0;font-size:16px;line-height:1.35;border:1px solid var(--linha);border-radius:var(--raio);background:var(--cartao)}
+article.prosa>table th,article.prosa>table td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--linha);vertical-align:top}
+article.prosa>table thead th{font-family:var(--display);font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:var(--tinta);color:var(--papel)}
+article.prosa>table tbody td:first-child{font-family:var(--display);font-weight:700}
+article.prosa>table tbody tr:last-child td{border-bottom:0}

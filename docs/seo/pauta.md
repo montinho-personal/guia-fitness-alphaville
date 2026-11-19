@@ -26,6 +26,7 @@ Atualizada em 16/11/2026. Junta o que estava em `docs/pauta-blog.md`, em `docs/p
 | 14 | PFT do Hyrox: o que é o teste físico oficial e como fazer | PAA "O que é o PFT da HYROX?" (18/11) | não medido | Fonte oficial (página "Test Your Fitness" da HYROX); pode virar um segundo modo da calculadora |
 | 15 | Academia de condomínio: regras de uso, horário, crianças e visitantes | AC "academia de condominio é 24h", "abre que horas", "tem horario", "crianças em academia de condomínio", "precisa pagar" (simulador de condomínio, 18/11) | não medido | Só o que é do regimento e da convenção, dito como "depende do seu condomínio"; a pergunta "precisa de professor" exige lei e conselho profissional, que o guia não cita: fica de fora |
 | 16 | Treino com halteres por parte do corpo (costas, ombro, braço) | AC "treino com halteres para costas", "ombro", "biceps", "triceps", "braço" (18/11) | não medido | Conteúdo de exercício, sem recorte local: só vale como apoio do simulador, com vídeo do Montinho; sem vídeo, não recomendo |
+| 17 | Hyrox por idade: faixas etárias e idade mínima | AC "categorias hyrox idade" (revisão de categorias, 19/11) | não medido | Só com o regulamento oficial, que está em sites bloqueados na rede (`hyroxbrazil.com`, `maintain.hyrox.com`); até lá, o artigo de categorias manda conferir na inscrição |
 
 Itens antigos da pauta que **já existem** e saíram desta lista: academia barata (→ `/academias/precos/`), domingo, piscina e natação (`/modalidades/natacao/`), perto de..., Santana de Parnaíba (`/regioes/santana-de-parnaiba/`), Hyrox, beach tennis, lutas e jiu-jitsu, CrossFit, Ironberg ou NitroGym, premium. Aldeia da Serra como página de academias: não há academia com ficha no bairro; fica coberta pelas páginas de personal.
 
@@ -36,14 +37,16 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | ~~"academia barata barueri", "academia mais barata alphaville"~~ | ~~`/academias/precos/`~~ | Já respondido na seção "Qual a academia mais barata de Alphaville e Barueri?" (conferido em 18/11) |
 | ~~"academia 18 do forte", "academia iguatemi alphaville", "academia shopping tamboré"~~ | ~~`/academias/perto-de/`~~ | Já respondido: a página tem uma seção por ponto (Iguatemi, Shopping Tamboré, Empresarial 18 do Forte); conferido em 18/11 |
 | ~~"pode ir 2x por dia na academia"~~ | ~~`/guias/como-escolher-academia/`~~ | Já respondido na página (conferido em 18/11) |
-| PAA "Como evoluir no HYROX?" (calculadora Hyrox, 18/11) | `/guias/como-treinar-para-o-primeiro-hyrox/` | Entra na revisão do artigo (é o próximo da fila), com link para a calculadora |
+| ~~PAA "Como evoluir no HYROX?" (calculadora Hyrox, 18/11)~~ | ~~`/guias/como-treinar-para-o-primeiro-hyrox/`~~ | Feito em 19/11, na revisão do artigo: seção "Progrida em degraus" e link para a calculadora |
 | Tempo médio de prova por categoria (visão de IA em "tempo médio hyrox", 18/11) | `/ferramentas/calculadora-hyrox/` | Só com resultados oficiais conferidos; hoje a visão de IA cita blogs. Sem fonte, não publicar número |
 | Altura do alvo do Wall Balls, faixas etárias e duplas Pro | `/ferramentas/calculadora-hyrox/`, `/guias/categorias-do-hyrox/` | Estão nos regulamentos em PDF (`hyroxbrazil.com`, `maintain.hyrox.com`), bloqueados na rede |
 | PAA "Quanto custa uma academia de condomínio?"; REL "Montar academia em condominio" (simulador, 18/11) | `/ferramentas/treino-academia-do-condominio/` | Só com preço de fonte conferida (loja ou fabricante); sem isso, não publicar número |
 | AC "treino com halteres pdf", "feminino", "para emagrecer" (18/11) | `/ferramentas/treino-academia-do-condominio/` | PDF: o botão de imprimir já gera; "feminino" e "emagrecer" pedem promessa de resultado, não entram |
-| AC "academia perto de mim valores", "barata"; PAA "Como pagar academia mais barata?" (academia no caminho, 19/11) | `/ferramentas/academia-perto-de-casa-ou-do-trabalho/`, `/academias/precos/` | Mostrar no cartão a mensalidade publicada (quando houver) e um filtro "com preço publicado"; a pergunta já está respondida em preços |
-| PAA "Quanto custa uma diária na Ironberg SP?" (19/11) | `/academias/ironberg-alphaville/` | Já respondida na ficha (Day Pass R$ 120); conferir se a pergunta frequente usa essas palavras |
+| ~~AC "academia perto de mim valores", "barata"; PAA "Como pagar academia mais barata?" (academia no caminho, 19/11)~~ | ~~`/ferramentas/academia-perto-de-casa-ou-do-trabalho/`~~ | Feito em 19/11: mensalidade publicada no cartão, filtro "Só com mensalidade publicada" e pergunta frequente com as 9 fichas que divulgam preço |
+| ~~PAA "Quanto custa uma diária na Ironberg SP?" (19/11)~~ | ~~`/academias/ironberg-alphaville/`~~ | Feito em 19/11: a pergunta da ficha já usava essas palavras, mas a resposta começava com "Vende"; agora abre com o valor (R$ 120) |
 | Texfit (Barueri) no mapa do Google em duas buscas (19/11) | fichas | Sem ficha no guia: criar só com fonte oficial da academia |
+| PAA "Qual a diferença entre Hyrox e funcional?" (categorias, 19/11) | `/guias/hyrox-ou-crossfit/` | Cabe como pergunta frequente na revisão desse artigo (está na fila, nº 15) |
+| AC "como treinar corrida para hyrox" (como treinar, 19/11) | `/guias/como-treinar-para-o-primeiro-hyrox/` | Entrou como pergunta e parágrafo; um artigo próprio só com vídeo do Montinho sobre corrida |
 | Hyrox Training Club da CrossFit Barueri, OBox | `/guias/hyrox-barueri/`, `/modalidades/crossfit/` | Só com fonte; o site do CrossFit Barueri não cita Hyrox (18/11) e o da OBox não abriu |
 | Gracie Barra, Alliance (G13 já entrou na página e tem ficha; conferido em 18/11) | `/guias/jiu-jitsu-alphaville/` (fichas) | Esperando liberar os sites (lembrete agendado) |
 | SESI Santana de Parnaíba | `/regioes/santana-de-parnaiba/` (ficha) | Site oficial bloqueado aqui |
@@ -80,8 +83,8 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 | ~~5~~ | ~~2026-11-14~~ | ~~`/guias/ironberg-ou-nitrogym/`~~ | ~~Ironberg ou NitroGym em Alphaville: qual escolher~~ (revisado em 18/11, SerpApi) |
 | ~~6~~ | ~~2026-11-15~~ | ~~`/academias/perto-de/`~~ | ~~Academia perto do Iguatemi, Shopping Tamboré e estações~~ (revisado em 18/11, SerpApi) |
 | ~~7~~ | ~~2026-11-15~~ | ~~`/guias/academias-premium-alphaville/`~~ | ~~Academias premium em Alphaville: o que o preço maior compra~~ (revisado em 18/11, SerpApi) |
-| 8 | 2026-11-15 | `/guias/categorias-do-hyrox/` | Categorias do Hyrox: Open, Pro, Doubles e Relay |
-| 9 | 2026-11-15 | `/guias/como-treinar-para-o-primeiro-hyrox/` | Como treinar para o primeiro Hyrox: princípios gerais |
+| ~~8~~ | 2026-11-15 | ~~`/guias/categorias-do-hyrox/`~~ | Revisado em 19/11 (`categorias-do-hyrox`): tabela de cargas por categoria, duplas e revezamento, 6 perguntas |
+| ~~9~~ | 2026-11-15 | ~~`/guias/como-treinar-para-o-primeiro-hyrox/`~~ | Revisado em 19/11 (`como-treinar-para-o-primeiro-hyrox`): seção academia, condomínio e casa, corrida, 6 perguntas |
 | 10 | 2026-11-15 | `/guias/estacoes-do-hyrox/` | Estações do Hyrox: as 8 provas explicadas uma a uma |
 | 11 | 2026-11-15 | `/guias/gavioes-ou-ironberg/` | Gaviões 24h ou Ironberg: qual academia 24 horas escolher |
 | 12 | 2026-11-15 | `/guias/hyrox-aldeia-da-serra/` | Hyrox na Aldeia da Serra: treinar em casa, no condomínio e na rua |

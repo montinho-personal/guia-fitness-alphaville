@@ -26,6 +26,7 @@ const U = todas.map((a) => {
     horario_excecoes: d.horario_excecoes.map((e) => ({ ...e, conferido_em: isoCurta(e.conferido_em) })),
     e24: e24hTodos({ horario: d.horario as any, horario_status: d.horario_status as any }),
     beneficios: d.agregadores.filter((x) => x.situacao !== 'nao-aceita').map((x) => x.nome),
+    preco: d.mensalidade?.valor ?? '',
   };
 });
 type PontoRef = { id: string; nome: string; grupo: string; lat: number; lng: number };
@@ -41,6 +42,7 @@ const ex = analisar(pt('alphaville-10'), pt('iguatemi-alphaville'), U.filter((u)
 const exN = ex.casa.length + ex.trabalho.length + ex.caminho.length;
 const nomes = (xs: { lugar: { nome: string } }[], n = 3) => xs.slice(0, n).map((x) => x.lugar.nome).join(', ');
 const n24 = U.filter((u) => u.e24).length, nBen = U.filter((u) => u.beneficios.length).length;
+const comPreco = U.filter((u) => u.preco);
 const titulo = 'Academia perto de casa ou do trabalho em Alphaville e Barueri';
 const descricao = 'Diga onde você mora e onde trabalha em Alphaville, Tamboré, Barueri ou Santana de Parnaíba e veja as academias perto de cada ponto e no caminho, com horário.';
 const perguntas = [
@@ -49,6 +51,7 @@ const perguntas = [
   { p: 'Como a distância é calculada?', r: 'Em linha reta entre as coordenadas, sem considerar ruas, trânsito ou portarias. Na região, com residenciais fechados e avenidas de mão única, o caminho real costuma ser mais longo. Use a distância para montar uma lista curta e confira o trajeto no seu aplicativo de mapas antes de decidir.' },
   { p: 'Tem academia 24 horas perto de mim em Alphaville?', r: `O guia tem ${n24} academias com ficha que funcionam 24 horas todos os dias. Escolha o seu ponto e marque um horário: a busca só mostra as que estão abertas naquele dia e hora. Para madrugada e feriados, use também o buscador de academias abertas.` },
   { p: 'Quais academias perto de mim aceitam Wellhub ou TotalPass?', r: `Das ${U.length} fichas do guia, ${nBen} informam plano do Wellhub (antigo Gympass) ou do TotalPass. Marque a opção "Aceita Wellhub ou TotalPass" para ver só essas. O plano mínimo de cada uma está na página de Wellhub e TotalPass.` },
+  { p: 'A busca mostra o valor da mensalidade das academias perto de mim?', r: `Mostra quando a academia publica o preço. Hoje são ${comPreco.length} das ${U.length} fichas: ${comPreco.map((u) => `${u.nome} (${u.preco})`).join('; ')}. Marque "Só com mensalidade publicada" para ver apenas essas. As demais não divulgam valor no site; a página de preços reúne o que cada uma informa e os planos de benefício que dão acesso.` },
   { p: 'Posso usar a minha localização?', r: 'Pode. O botão "Usar minha localização" pede a permissão do navegador e usa a posição só para calcular as distâncias no seu aparelho. Ela não é enviada nem guardada. Se preferir, escolha um ponto da lista.' },
   { p: 'O meu bairro não está na lista. E agora?', r: 'Escolha o ponto mais próximo, como um shopping, uma estação ou o residencial vizinho, ou use a sua localização. O mapa do guia mostra todas as academias com ficha, e a página "perto de você" lista as mais próximas dos pontos de referência.' },
 ];
@@ -90,6 +93,7 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
       </div>
       <label class="cm-check"><input type="checkbox" id="cm-musc" name="musc" checked><span>Só academias com musculação (sem boxes e estúdios)</span></label>
       <label class="cm-check"><input type="checkbox" id="cm-ben" name="ben"><span>Aceita Wellhub ou TotalPass</span></label>
+      <label class="cm-check"><input type="checkbox" id="cm-preco" name="preco"><span>Só com mensalidade publicada</span></label>
       <p class="cm-erro" id="cm-erro" role="alert" hidden></p>
       <button class="btn" type="submit">Buscar academias <i aria-hidden="true"></i></button>
       <p class="cm-nota">Distâncias em linha reta, calculadas no seu navegador. Nada é enviado.</p>
@@ -122,7 +126,7 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
 
       <h2>Perto de casa, perto do trabalho ou no caminho: como escolher</h2>
       <p>A conta que importa não é a distância, é quantas vezes por semana você consegue ir. Perto do trabalho funciona para quem treina antes do expediente, no almoço ou logo depois, e some nos dias de home office e no fim de semana. Perto de casa funciona nos sete dias, mas exige sair de novo depois de chegar. No caminho é o meio-termo: você passa por ela de qualquer jeito, e o treino vira uma parada, não uma viagem.</p>
-      <p>Em Alphaville e no Tamboré isso pesa mais, porque os residenciais ficam afastados das avenidas comerciais e quase todo deslocamento é de carro. Antes de fechar, confira três coisas na ficha: se a academia abre no horário em que você passa por ali, se tem estacionamento e, para quem usa benefício, se o seu plano entra. O <a href="/ferramentas/academias-abertas-alphaville/" data-evento="clique_ferramenta" data-ref="abertas:academia-no-caminho">buscador de academias abertas</a> confere o horário até o fim do treino, e a <a href="/academias/wellhub-totalpass/" data-evento="clique_ferramenta" data-ref="beneficio:academia-no-caminho">página de Wellhub e TotalPass</a> mostra o plano mínimo de cada uma.</p>
+      <p>Em Alphaville e no Tamboré isso pesa mais, porque os residenciais ficam afastados das avenidas comerciais e quase todo deslocamento é de carro. Antes de fechar, confira três coisas na ficha: se a academia abre no horário em que você passa por ali, se tem estacionamento e, para quem usa benefício, se o seu plano entra. O <a href="/ferramentas/academias-abertas-alphaville/" data-evento="clique_ferramenta" data-ref="abertas:academia-no-caminho">buscador de academias abertas</a> confere o horário até o fim do treino, a <a href="/academias/wellhub-totalpass/" data-evento="clique_ferramenta" data-ref="beneficio:academia-no-caminho">página de Wellhub e TotalPass</a> mostra o plano mínimo de cada uma, e a de <a href="/academias/precos/">preços</a> reúne as mensalidades publicadas.</p>
 
       <h2>Como a busca funciona</h2>
       <p>Cada academia recebe três medidas em linha reta: a distância até o primeiro ponto, a distância até o segundo e o desvio, que é quanto o trajeto casa, academia, trabalho passa do trajeto direto casa, trabalho. A busca começa só com as academias de musculação; desmarque a opção para incluir boxes e estúdios. Entram em "perto de casa" e "perto do trabalho" as que ficam dentro da distância escolhida; em "no caminho", as demais com desvio dentro do mesmo limite. Nenhuma aparece em dois grupos. Com horário marcado, só ficam as que estão abertas pelo menos uma hora a partir dali; as de horário não confirmado aparecem com aviso.</p>
@@ -137,7 +141,7 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
   <script>
     import { analisar, distKm, distTexto, mensagemCaminho, type Item, type Lugar } from '../../lib/caminho';
     import { avaliar, diaDaSemana, somaDias, hora, textoMotivo, type Feriado, type UnidadeHorario } from '../../lib/horarios';
-    type Un = Lugar & UnidadeHorario & { url: string; tipo: string; musc: boolean; bairro: string; lugar: string; e24: boolean; beneficios: string[] };
+    type Un = Lugar & UnidadeHorario & { url: string; tipo: string; preco: string; musc: boolean; bairro: string; lugar: string; e24: boolean; beneficios: string[] };
     const J = JSON.parse(document.getElementById('cm-dados')!.textContent!) as { U: Un[]; pontos: (Lugar)[]; feriados: Feriado[]; whats: string };
     const ev = (n: string, d: Record<string, string | number> = {}) => { const w = window as any; if (typeof w.otaEvento === 'function') w.otaEvento(n, d); };
     const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -169,12 +173,13 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
       const A = ponto(selA.value), B = ponto(selB.value);
       if (!A) { erro.textContent = 'Escolha de onde você sai, ou use a sua localização.'; erro.hidden = false; res.hidden = true; selA.focus(); return; }
       if (B && B.id === A.id) { erro.textContent = 'Os dois pontos são iguais. Troque o segundo ou deixe em branco.'; erro.hidden = false; res.hidden = true; selB.focus(); return; }
-      const raio = Number($<HTMLSelectElement>('cm-r').value), q = quando($<HTMLSelectElement>('cm-q').value), ben = $<HTMLInputElement>('cm-ben').checked, musc = $<HTMLInputElement>('cm-musc').checked;
+      const raio = Number($<HTMLSelectElement>('cm-r').value), q = quando($<HTMLSelectElement>('cm-q').value), ben = $<HTMLInputElement>('cm-ben').checked, musc = $<HTMLInputElement>('cm-musc').checked, soPreco = $<HTMLInputElement>('cm-preco').checked;
       let foraHorario = 0;
       const status = new Map<string, string>();
       const cand = J.U.filter((u) => {
         if (musc && !u.musc) return false;
         if (ben && !u.beneficios.length) return false;
+        if (soPreco && !u.preco) return false;
         if (!q) return true;
         const r = avaliar(u, q.data, q.ini, 60, J.feriados);
         if (r.tipo === 'incompativel') { foraHorario++; return false; }
@@ -190,7 +195,7 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
         if (B) ds.push(grupo === 'trabalho' ? `<b>${distTexto(x.dTrabalho!)}</b> de onde você vai` : `${distTexto(x.dTrabalho!)} de onde você vai`);
         if (grupo === 'trabalho') ds.reverse();
         const tags = [u.tipo, u.e24 ? '24 horas' : '', ...u.beneficios].filter(Boolean).map((t) => `<span>${esc(t)}</span>`).join('');
-        return `<li class="cm-item${u.destaque ? ' cm-destaque' : ''}">${u.destaque ? '<span class="selo-destaque">Destaque · publicidade da casa</span>' : ''}<a class="cm-nome" href="${u.url}" data-evento="clique_academia" data-ref="academia-no-caminho:${u.id}">${esc(u.nome)}</a><p class="cm-onde">${esc(u.bairro)}${u.bairro.includes(u.lugar) ? '' : ` · ${esc(u.lugar)}`}</p><p class="cm-dist">${ds.join(' · ')}</p>${status.get(u.id) ? `<p class="cm-hor">${status.get(u.id)}</p>` : ''}<p class="cm-tags">${tags}</p></li>`;
+        return `<li class="cm-item${u.destaque ? ' cm-destaque' : ''}">${u.destaque ? '<span class="selo-destaque">Destaque · publicidade da casa</span>' : ''}<a class="cm-nome" href="${u.url}" data-evento="clique_academia" data-ref="academia-no-caminho:${u.id}">${esc(u.nome)}</a><p class="cm-onde">${esc(u.bairro)}${u.bairro.includes(u.lugar) ? '' : ` · ${esc(u.lugar)}`}</p><p class="cm-dist">${ds.join(' · ')}</p>${status.get(u.id) ? `<p class="cm-hor">${status.get(u.id)}</p>` : ''}${u.preco ? `<p class="cm-preco">Mensalidade publicada: <b>${esc(u.preco)}</b></p>` : ''}<p class="cm-tags">${tags}</p></li>`;
       };
       const bloco = (t: string, sub: string, xs: Item<Un>[], g: string) => (xs.length ? `<section class="cm-g"><h3>${t} <small>${xs.length}</small></h3><p class="cm-sub">${sub}</p><ol class="cm-lista">${xs.slice(0, 8).map((x) => cartao(x, g)).join('')}</ol>${xs.length > 8 ? `<p class="cm-mais">E mais ${xs.length - 8}: diminua a distância para ver só as mais próximas.</p>` : ''}</section>` : '');
       $('cm-res-t').textContent = total ? `${total} ${total === 1 ? (musc ? 'academia' : 'lugar') : musc ? 'academias' : 'lugares'} ${B ? 'na sua rota' : 'perto do ponto escolhido'}` : 'Nenhuma academia dentro dessa distância';
@@ -198,6 +203,7 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
       if (q) partes.push(`Horário: ${q.texto}, com 1 hora de treino.${foraHorario ? ` ${foraHorario} ${foraHorario === 1 ? 'ficou' : 'ficaram'} de fora por estar${foraHorario === 1 ? '' : 'em'} fechada${foraHorario === 1 ? '' : 's'} nesse horário.` : ''}`);
       if (ben) partes.push('Só as que informam plano do Wellhub ou do TotalPass.');
       if (!musc) partes.push('Inclui boxes e estúdios.');
+      if (soPreco) partes.push('Só as que publicam a mensalidade.');
       if (!total && an.maisPertoCasa) partes.push(`A mais próxima de onde você sai é ${an.maisPertoCasa.lugar.nome}, a cerca de ${distTexto(an.maisPertoCasa.dCasa)}. Aumente a distância para vê-la.`);
       $('cm-resumo').textContent = partes.join(' ');
       $('cm-grupos').innerHTML = bloco(B ? 'Perto de onde você sai' : 'As mais próximas', `Até ${distTexto(raio)} em linha reta.`, an.casa, 'casa') + bloco('Perto de onde você vai', `Até ${distTexto(raio)} em linha reta.`, an.trabalho, 'trabalho') + bloco('No caminho', `Desvio de até ${distTexto(raio)} em relação ao trajeto direto.`, an.caminho, 'caminho');
@@ -206,7 +212,7 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
       const nA = A.id === 'geo' ? '' : A.nome, nB = B ? (B.id === 'geo' ? '' : B.nome) : '';
       $<HTMLAnchorElement>('cm-wa').href = `https://wa.me/${J.whats}?text=${encodeURIComponent(mensagemCaminho(nA, nB))}`;
       res.hidden = false;
-      if (A.id !== 'geo' && (!B || B.id !== 'geo')) { const p = new URLSearchParams({ a: A.id }); if (B) p.set('b', B.id); if (raio !== 1.6) p.set('r', String(raio)); const qv = $<HTMLSelectElement>('cm-q').value; if (qv) p.set('q', qv); if (ben) p.set('ben', '1'); if (!musc) p.set('tudo', '1'); history.replaceState(null, '', `${location.pathname}?${p}`); }
+      if (A.id !== 'geo' && (!B || B.id !== 'geo')) { const p = new URLSearchParams({ a: A.id }); if (B) p.set('b', B.id); if (raio !== 1.6) p.set('r', String(raio)); const qv = $<HTMLSelectElement>('cm-q').value; if (qv) p.set('q', qv); if (ben) p.set('ben', '1'); if (!musc) p.set('tudo', '1'); if (soPreco) p.set('preco', '1'); history.replaceState(null, '', `${location.pathname}?${p}`); }
       if (rolar) { res.focus({ preventScroll: true }); res.scrollIntoView({ block: 'start', behavior: 'smooth' }); ev('academia_caminho_busca', { modo: B ? 'dois-pontos' : 'um-ponto', origem: A.id, destino: B ? B.id : '', raio_km: raio, quando: $<HTMLSelectElement>('cm-q').value || 'qualquer', resultados: total }); }
     }
     f.addEventListener('submit', (e) => { e.preventDefault(); buscar(true); });
@@ -231,6 +237,7 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
       const q = $<HTMLSelectElement>('cm-q'); if (p0.get('q') && [...q.options].some((o) => o.value === p0.get('q'))) q.value = p0.get('q')!;
       if (p0.get('ben') === '1') $<HTMLInputElement>('cm-ben').checked = true;
       if (p0.get('tudo') === '1') $<HTMLInputElement>('cm-musc').checked = false;
+      if (p0.get('preco') === '1') $<HTMLInputElement>('cm-preco').checked = true;
       buscar(false);
     }
   </script>
@@ -264,6 +271,7 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
   .cm .cm-onde { margin: 2px 0 0; font-size: 14.5px; color: var(--cinza, #4b5563); }
   .cm .cm-dist { margin: 8px 0 0; font-size: 15.5px; }
   .cm .cm-dist b { color: #C24E00; }
+  .cm .cm-preco { margin: 6px 0 0; font-size: 14.5px; }
   .cm .cm-hor { margin: 6px 0 0; font-size: 14.5px; font-weight: 700; }
   .cm .cm-ok { color: #14532D; }
   .cm .cm-pend { color: #8A4B12; }
