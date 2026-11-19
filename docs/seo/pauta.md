@@ -13,7 +13,7 @@ Atualizada em 16/11/2026. Junta o que estava em `docs/pauta-blog.md`, em `docs/p
 | ~~1~~ | ~~Academias no Tamboré (página própria)~~ | publicado em 17/11, `/regioes/tambore/` | | |
 | ~~2~~ | ~~Yoga em Alphaville e Barueri~~ | publicado em 17/11, `/modalidades/yoga/` | | |
 | ~~3~~ | ~~Treino funcional em Alphaville~~ | publicado em 17/11, `/modalidades/funcional/` | | |
-| 4 | Academia com estacionamento em Alphaville | pauta B15 | não medido | Só com regra publicada (grátis, pago, tempo); hoje há dado em ~15 fichas |
+| ~~4~~ | ~~Academia com estacionamento em Alphaville~~ | busca de 19/11 | | **Não fazer:** o site do Montinho já está em 3º lugar com "Academia com Estacionamento em Alphaville" (regra de não disputar busca com ele). O estacionamento segue nas fichas e na busca perto de casa ou do trabalho |
 | 5 | Academia para iniciantes na região | pauta B24 | não medido | Não canibalizar `personal-trainer-para-iniciantes-*` (aqui o foco é a academia, não o personal) |
 | 6 | Academia para idosos na região | pauta B25 | não medido | Idem com `personal-trainer-para-idosos-*`; liberação médica sempre |
 | 7 | Academia feminina ou com área para mulheres | pauta B26; "academia para mulheres barueri" | ATP 210 (Bing) + 10 | Só se houver casos reais confirmados na região; sem isso, não escrever |
@@ -21,12 +21,14 @@ Atualizada em 16/11/2026. Junta o que estava em `docs/pauta-blog.md`, em `docs/p
 | 9 | Academia menos cheia | pauta B27 | não medido | Só com dado público (ocupação informada pela rede); sem achismo |
 | ~~10~~ | ~~Smart Fit ou SkyFit em Alphaville (comparativo)~~ | publicado em 17/11, `/guias/smart-fit-ou-skyfit/` | | |
 | 11 | Panobianco ou Gaviões (comparativo) | Orgânico TikTok "qual melhor academia panobianco ou gaviões" e REL "Panobianco" em "smart fit ou gaviões" (17/11) | não medido | Unidades em lados diferentes (Panobianco em Barueri, Gaviões em Alphaville): só vale se a busca local confirmar interesse; buscar antes |
-| 12 | Smart Fit ou Bluefit / SkyFit ou Bluefit (comparativo) | AC "sky fit ou bluefit", REL "smart fit ou bluefit qual o melhor" em "smart fit ou skyfit" (17/11) | não medido | As três têm ficha em Alphaville; mesmo molde dos comparativos. Bluefit não publica mensalidade |
+| ~~12~~ | ~~Smart Fit ou Bluefit / SkyFit ou Bluefit (comparativo)~~ | publicado em 19/11, `/guias/skyfit-ou-bluefit/` | | Smart Fit ou Bluefit não foi feito: o site do Montinho tem esse comparativo e é citado na visão de IA; o guia linka para ele |
 | 13 | Hyrox São Paulo: datas, inscrição e como se preparar saindo de Alphaville | AC "tempo hyrox sao paulo", "tempo hyrox sp" (calculadora Hyrox, 18/11) | não medido | Só com o site oficial da HYROX Brasil, que não abre na rede do ambiente (liberar `hyroxbrazil.com`); datas mudam a cada temporada |
 | 14 | PFT do Hyrox: o que é o teste físico oficial e como fazer | PAA "O que é o PFT da HYROX?" (18/11) | não medido | Fonte oficial (página "Test Your Fitness" da HYROX); pode virar um segundo modo da calculadora |
-| 15 | Academia de condomínio: regras de uso, horário, crianças e visitantes | AC "academia de condominio é 24h", "abre que horas", "tem horario", "crianças em academia de condomínio", "precisa pagar" (simulador de condomínio, 18/11) | não medido | Só o que é do regimento e da convenção, dito como "depende do seu condomínio"; a pergunta "precisa de professor" exige lei e conselho profissional, que o guia não cita: fica de fora |
+| ~~15~~ | ~~Academia de condomínio: regras de uso, horário, crianças e visitantes~~ | publicado em 19/11, `/guias/academia-de-condominio-regras/` | | Com o Código Civil (arts. 1.334, 1.335, 1.336 e 1.348); sem a questão do profissional obrigatório |
 | 16 | Treino com halteres por parte do corpo (costas, ombro, braço) | AC "treino com halteres para costas", "ombro", "biceps", "triceps", "braço" (18/11) | não medido | Conteúdo de exercício, sem recorte local: só vale como apoio do simulador, com vídeo do Montinho; sem vídeo, não recomendo |
 | 17 | Hyrox por idade: faixas etárias e idade mínima | AC "categorias hyrox idade" (revisão de categorias, 19/11) | não medido | Só com o regulamento oficial, que está em sites bloqueados na rede (`hyroxbrazil.com`, `maintain.hyrox.com`); até lá, o artigo de categorias manda conferir na inscrição |
+| 18 | Bluefit ou Panobianco / Bluefit ou Gaviões (comparativos) | AC "bluefit ou panobianco", "bluefit ou gavioes" (19/11) | não medido | Unidades em lugares diferentes (Panobianco em Barueri, Gaviões em Alphaville); só se a busca local confirmar interesse |
+| 19 | Lei de academia de condomínio (profissional obrigatório) | Orgânicos "Lei polêmica dificulta funcionamento de academias de condomínios", "Lei: condomínios passam a ter regras" (19/11) | não medido | **Não recomendo:** depende de lei estadual e municipal e de conselho profissional, que o guia não cita |
 
 Itens antigos da pauta que **já existem** e saíram desta lista: academia barata (→ `/academias/precos/`), domingo, piscina e natação (`/modalidades/natacao/`), perto de..., Santana de Parnaíba (`/regioes/santana-de-parnaiba/`), Hyrox, beach tennis, lutas e jiu-jitsu, CrossFit, Ironberg ou NitroGym, premium. Aldeia da Serra como página de academias: não há academia com ficha no bairro; fica coberta pelas páginas de personal.
 
@@ -47,6 +49,9 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | Texfit (Barueri) no mapa do Google em duas buscas (19/11) | fichas | Sem ficha no guia: criar só com fonte oficial da academia |
 | PAA "Qual a diferença entre Hyrox e funcional?" (categorias, 19/11) | `/guias/hyrox-ou-crossfit/` | Cabe como pergunta frequente na revisão desse artigo (está na fila, nº 15) |
 | AC "como treinar corrida para hyrox" (como treinar, 19/11) | `/guias/como-treinar-para-o-primeiro-hyrox/` | Entrou como pergunta e parágrafo; um artigo próprio só com vídeo do Montinho sobre corrida |
+| AC "bluefit wellhub ou totalpass", "bluefit totalpass ou gympass"; PAA "A Smart Fit aceita Gympass?" (19/11) | `/academias/wellhub-totalpass/` | Conferir se a página responde com o nome Gympass e com a Bluefit (hoje só Wellhub) |
+| PAA "Quanto custa montar uma academia de condomínio?" (19/11) | `/guias/academia-de-condominio-regras/` | Só com preço de fonte conferida |
+| AC "academia com estacionamento gratuito", "coberto" (19/11) | `/ferramentas/academia-perto-de-casa-ou-do-trabalho/` | Filtro "com estacionamento" quando as fichas tiverem a regra conferida (hoje várias estão a confirmar) |
 | Hyrox Training Club da CrossFit Barueri, OBox | `/guias/hyrox-barueri/`, `/modalidades/crossfit/` | Só com fonte; o site do CrossFit Barueri não cita Hyrox (18/11) e o da OBox não abriu |
 | Gracie Barra, Alliance (G13 já entrou na página e tem ficha; conferido em 18/11) | `/guias/jiu-jitsu-alphaville/` (fichas) | Esperando liberar os sites (lembrete agendado) |
 | SESI Santana de Parnaíba | `/regioes/santana-de-parnaiba/` (ficha) | Site oficial bloqueado aqui |

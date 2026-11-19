@@ -1,0 +1,134 @@
+---
+import { comDestaque as __comDestaque, academias as __academias } from '../../lib/dados';
+import VideoMontinho from '../../components/VideoMontinho.astro';
+import fotoMontinho from '../../assets/montinho/montinho-personal-trainer-espelho-academia.jpg';
+import { Image } from 'astro:assets';
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara } from '../../lib/ferramentas';
+import Base from '../../layouts/Base.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import CartaoAcademia from '../../components/CartaoAcademia.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import { academias, MODALIDADES, agregador, urlAcademia, dataLonga, dataIso, horasSemana, linkMontinho, type Academia } from '../../lib/dados';
+import { distKm, distTexto } from '../../lib/caminho';
+
+// Comparativo pedido pelas buscas "bluefit ou skyfit" e "skyfit ou bluefit" (SerpApi, 19/11/2026). Ver docs/pesquisa/serp/skyfit-ou-bluefit-2026-11-19.json.
+// "Smart Fit ou Bluefit" não entra aqui: o site do Montinho já tem esse comparativo, e o guia linka para ele.
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-19'), atualizado: new Date('2026-11-19') };
+const todas = await academias();
+const sk = todas.find((a) => a.id === 'skyfit-alphaville')!;
+const bf = todas.find((a) => a.id === 'bluefit-alphaville')!;
+const redeSK = todas.filter((a) => a.data.rede === 'SkyFit');
+const redeBF = todas.filter((a) => a.data.rede === 'Bluefit');
+const outrasSK = redeSK.filter((a) => a.id !== sk.id), outrasBF = redeBF.filter((a) => a.id !== bf.id);
+const hFmt = (f: string) => f.replace('23:59', '24:00').replace(/:00/g, 'h').replace(/(^|-)0(\d)/g, '$1$2').replace('-', ' às ').replace('24h', 'meia-noite');
+const hora = (a: Academia, d: 'seg' | 'sex' | 'sab' | 'dom') => (a.data.horario[d].length ? a.data.horario[d].map(hFmt).join(', ') : 'fechada');
+const ag = (a: Academia, n: 'Wellhub' | 'TotalPass') => { const g = agregador(a, n); return g && g.situacao !== 'nao-aceita' ? `${g.plano_minimo} (${g.preco_plano})` : 'não consta'; };
+const mods = (a: Academia) => a.data.modalidades.map((m) => MODALIDADES[m]).join(', ');
+const peTxt = (a: Academia) => { const s = a.data.personal_externo?.status; return s === 'aceita' || s === 'aceita-com-condicoes' ? 'Aceita, com condições da rede' : s === 'nao-aceita' ? 'Não aceita' : 'A confirmar'; };
+const dist = distKm(sk.data.geo as any, bf.data.geo as any);
+const wsk = agregador(sk, 'Wellhub')!, tsk = agregador(sk, 'TotalPass')!, wbf = agregador(bf, 'Wellhub')!, tbf = agregador(bf, 'TotalPass');
+const ativ = (a: Academia, re: RegExp) => a.data.atividades_listadas.filter((x) => re.test(x)).join(', ').toLowerCase().replace(/, ([^,]*)$/, ' e $1');
+const linhas: [string, string, string][] = [
+  ['Onde fica', sk.data.endereco.split(' - ')[0], bf.data.endereco.split(' - ')[0]],
+  ['Segunda a quinta', hora(sk, 'seg'), hora(bf, 'seg')],
+  ['Sexta', hora(sk, 'sex'), hora(bf, 'sex')],
+  ['Sábado', hora(sk, 'sab'), hora(bf, 'sab')],
+  ['Domingo', hora(sk, 'dom'), hora(bf, 'dom')],
+  ['Horas abertas por semana', String(horasSemana(sk.data.horario)), String(horasSemana(bf.data.horario))],
+  ['Mensalidade', sk.data.mensalidade ? sk.data.mensalidade.valor : 'não publicada por unidade', bf.data.mensalidade ? bf.data.mensalidade.valor : 'não publicada por unidade'],
+  ['Modalidades', mods(sk), mods(bf)],
+  ['Wellhub', ag(sk, 'Wellhub'), ag(bf, 'Wellhub')],
+  ['TotalPass', ag(sk, 'TotalPass'), ag(bf, 'TotalPass')],
+  ['Personal de fora', peTxt(sk), peTxt(bf)],
+  ['Unidades com ficha no guia', String(redeSK.length), String(redeBF.length)],
+];
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = 'SkyFit ou Bluefit em Alphaville: qual escolher';
+const descricao = 'SkyFit Alphaville ou Bluefit Alphaville: horário, aulas, Wellhub e TotalPass lado a lado, a regra para personal e as outras unidades em Barueri e Tamboré.';
+const perguntas = [
+  { p: 'Qual é melhor, SkyFit ou Bluefit?', r: `Depende de como você treina. Em Alphaville, a SkyFit tem grade de aulas com lutas, cross training e pilates e entra mais barato nos agregadores: ${wsk.plano_minimo} no Wellhub e ${tsk.plano_minimo} no TotalPass. A Bluefit fica aberta até a meia-noite de segunda a quinta, abre até as 19h no fim de semana e tem aulas de bike e dança. As duas ficam a ${distTexto(dist)} uma da outra, em linha reta, no Alphaville Industrial.` },
+  { p: 'Qual a mensalidade da SkyFit e da Bluefit em Alphaville?', r: 'Nenhuma das duas publica o valor da unidade de Alphaville no site: a SkyFit mostra os planos só no fluxo de matrícula, e a Bluefit, só na contratação. O guia não publica número que não confere na fonte. Peça o valor na recepção de cada uma, ou compare pelo plano mínimo do Wellhub e do TotalPass.' },
+  { p: 'A Bluefit aceita TotalPass?', r: `${tbf && tbf.situacao !== 'nao-aceita' ? `Sim: a Bluefit Alphaville aparece no TotalPass a partir do ${tbf.plano_minimo} e no Wellhub a partir do ${wbf.plano_minimo}.` : `Pelas fichas do guia, a Bluefit Alphaville aparece só no Wellhub, a partir do ${wbf.plano_minimo} (${wbf.preco_plano}). Ela não consta no catálogo do TotalPass conferido pelo guia.`} A SkyFit Alphaville aparece nos dois: ${wsk.plano_minimo} no Wellhub (${wsk.preco_plano}) e ${tsk.plano_minimo} no TotalPass (${tsk.preco_plano}).` },
+  { p: 'A SkyFit aceita Gympass (Wellhub)?', r: `Sim. A SkyFit Alphaville entra no Wellhub a partir do ${wsk.plano_minimo}, de ${wsk.preco_plano} por mês. No TotalPass, a partir do ${tsk.plano_minimo}, de ${tsk.preco_plano}.` },
+  { p: 'Posso levar meu personal na Bluefit ou na SkyFit?', r: 'Na Bluefit, sim, com as condições da rede: o personal faz cadastro na unidade, contrata o plano da Bluefit para personal e usa o uniforme oficial. Na SkyFit, o guia ainda não confirmou a regra. A ferramenta de personal externo mostra a regra conferida de cada unidade.' },
+  { p: 'Qual abre até mais tarde, SkyFit ou Bluefit?', r: `A Bluefit Alphaville vai até a meia-noite de segunda a quinta e até as 22h na sexta. A SkyFit fecha às 23h de segunda a quinta e às 22h na sexta. No sábado, a Bluefit abre das 7h às 19h e a SkyFit das 7h às 17h; no domingo, a Bluefit das 7h às 19h e a SkyFit das 8h às 14h.` },
+  { p: 'Smart Fit ou Bluefit?', r: 'É outra comparação frequente. O site do Montinho, que mantém este guia, tem um comparativo próprio entre Smart Fit e Bluefit. Para Smart Fit e SkyFit em Alphaville, veja o guia Smart Fit ou SkyFit.' },
+];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'skyfit-alphaville', nome: 'SkyFit' }, { id: 'bluefit-alphaville', nome: 'Bluefit' }] });
+const __todasDestaque = await __academias();
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'SkyFit ou Bluefit', url: '/guias/skyfit-ou-bluefit/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Guias de decisão · comparativo</span>
+      <h1>SkyFit ou Bluefit em Alphaville: qual escolher</h1>
+      <p class="linha-fina">As duas são redes de academia com musculação e aulas coletivas no mesmo bairro: a SkyFit na Av. Juruá e a Bluefit na Alameda Amazonas, a {distTexto(dist)} uma da outra no Alphaville Industrial. Nenhuma publica a mensalidade da unidade, então a escolha passa por horário, aulas, agregador e personal.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Escolha a SkyFit se você quer aulas de luta, cross training e pilates, ou se usa TotalPass: ela entra a partir do {tsk.plano_minimo} ({tsk.preco_plano}) e, no Wellhub, do {wsk.plano_minimo}. Escolha a Bluefit se você treina tarde da noite, até a meia-noite de segunda a quinta, ou no fim de semana à tarde, até as 19h, ou se quer levar o seu personal: a rede aceita, com cadastro e plano próprio para o profissional. A Bluefit Alphaville não aparece no TotalPass, e no Wellhub pede o {wbf.plano_minimo}.</p>
+    </div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
+
+    <div class="rolagem" tabindex="0" role="region" aria-label="SkyFit e Bluefit lado a lado" style="margin:24px 0">
+      <table class="dados">
+        <caption>Dados das fichas do guia. Abra cada ficha para ver as fontes e a data de conferência.</caption>
+        <thead><tr><th scope="col">Critério</th><th scope="col"><a href={urlAcademia(sk)} style="color:inherit">{sk.data.nome}</a></th><th scope="col"><a href={urlAcademia(bf)} style="color:inherit">{bf.data.nome}</a></th></tr></thead>
+        <tbody>{linhas.map(([c, a, b]) => <tr><th scope="row">{c}</th><td>{a}</td><td>{b}</td></tr>)}</tbody>
+      </table>
+    </div>
+
+    <div class="prosa">
+      <h2>Preço: nenhuma das duas publica</h2>
+      <p>A SkyFit diz no site que trabalha com planos sem fidelidade, mas o valor da unidade de Alphaville só aparece no fluxo de matrícula. A Bluefit também não mostra o preço da unidade antes da contratação. Por isso o guia não traz mensalidade nesta comparação: peça o valor na recepção das duas, no mesmo dia, e pergunte sobre taxa de matrícula, anuidade e fidelidade.</p>
+      <p>Pelos agregadores, a diferença aparece. A SkyFit está no TotalPass a partir do {tsk.plano_minimo}, de {tsk.preco_plano} por mês, e no Wellhub a partir do {wsk.plano_minimo}, de {wsk.preco_plano}. A Bluefit Alphaville está só no Wellhub, a partir do {wbf.plano_minimo}, de {wbf.preco_plano}. Quem paga pelo benefício da empresa gasta menos na SkyFit. Os valores de cada plano estão em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
+
+      <h2>Aulas: lutas e cross de um lado, bike e dança do outro</h2>
+      <p>A SkyFit Alphaville lista {sk.data.atividades_listadas.length} atividades, entre elas {ativ(sk, /Cross|Muay|Zumba|Pilates|Bounce|dance/i)}. A Bluefit Alphaville lista {bf.data.atividades_listadas.length}, com aulas como {ativ(bf, /Body|RPM|Power Bike|Indoor|Zumba/i)}. Na prática: a SkyFit tem mais opção de luta e treino funcional em grupo; a Bluefit, de bike indoor e coreografias.</p>
+      <p>Na estrutura informada, a Bluefit lista área de pesos livres, área de treino funcional, balança de bioimpedância, secador de cabelo e estacionamento. A SkyFit lista vestiário com chuveiro, armários, Wi-Fi e estacionamento, grátis e pago segundo o TotalPass. Nenhuma das duas publica a lista de aparelhos; confira na visita os que você mais usa.</p>
+
+      <h2>Horário: a Bluefit fica aberta mais tempo</h2>
+      <p>De segunda a quinta, as duas abrem às 5h; a SkyFit fecha às 23h e a Bluefit à meia-noite. Na sexta, as duas fecham às 22h. No fim de semana, a diferença cresce: a Bluefit abre das 7h às 19h no sábado e no domingo, e a SkyFit das 7h às 17h no sábado e das 8h às 14h no domingo. Somando a semana, a Bluefit fica aberta {horasSemana(bf.data.horario)} horas e a SkyFit {horasSemana(sk.data.horario)}. Para madrugada, nenhuma resolve: use o <a href="/ferramentas/academias-abertas-alphaville/" data-evento="clique_ferramenta" data-ref="abertas:skyfit-ou-bluefit">buscador de academias abertas</a>.</p>
+
+      <h2>Personal trainer: a Bluefit tem regra publicada</h2>
+      <p>A Bluefit aceita personal de fora com as condições da rede: o profissional faz cadastro na unidade, contrata o plano da Bluefit para personal e usa o uniforme oficial. O valor desse plano não é publicado. Na SkyFit, o guia ainda não conseguiu confirmar se a unidade aceita personal externo. Antes de contratar um profissional, confira na <a href="/ferramentas/academias-que-aceitam-personal-externo/" data-evento="clique_ferramenta" data-ref="personal:skyfit-ou-bluefit">lista de academias que aceitam personal externo</a>.</p>
+
+      <h2>Outras unidades na região</h2>
+      <p>A Bluefit tem {redeBF.length} unidades com ficha no guia: além de Alphaville, {outrasBF.map((a, i) => <>{i > 0 && ' e '}<a href={urlAcademia(a)}>{a.data.nome}</a></>)}. A do Tamboré fica aberta até a meia-noite também na sexta; a de Barueri, no Bethaville, tem jiu-jítsu e muay thai na grade. Os planos e o Wellhub variam por unidade.</p>
+      {outrasSK.length > 0 && <p>A SkyFit tem também {outrasSK.map((a, i) => <>{i > 0 && ', '}<a href={urlAcademia(a)}>{a.data.nome}</a></>)}, em Barueri, mais focada em musculação e cardio, que entra pelo TotalPass a partir do {agregador(outrasSK[0], 'TotalPass')?.plano_minimo}.</p>}
+
+      <h2>Resumo por perfil</h2>
+      <ul>
+        <li><strong>Usa TotalPass:</strong> SkyFit (a Bluefit Alphaville não aparece no TotalPass).</li>
+        <li><strong>Usa Wellhub:</strong> as duas; a SkyFit pede o plano mais barato.</li>
+        <li><strong>Treina depois das 23h ou no fim de semana à tarde:</strong> Bluefit.</li>
+        <li><strong>Quer luta, cross training ou pilates:</strong> SkyFit. <strong>Quer bike indoor ou coreografia:</strong> Bluefit.</li>
+        <li><strong>Vai treinar com personal de fora:</strong> Bluefit, que tem a regra publicada.</li>
+      </ul>
+      <p>Visite as duas no horário em que você vai treinar: o <a href="/ferramentas/checklist/">checklist de visita</a> ajuda, e o <a href={`/ferramentas/comparador/?a=${sk.id}&b=${bf.id}`} data-evento="clique_ferramenta" data-ref="comparador:skyfit-ou-bluefit">comparador</a> mostra os dados completos lado a lado. A dúvida é com a Smart Fit? Leia <a href="/guias/smart-fit-ou-skyfit/">Smart Fit ou SkyFit</a> e, entre Smart Fit e Bluefit, o <a href={linkMontinho('/blog/smart-fit-vs-bluefit', 'comparativo', 'skyfit-ou-bluefit')} rel="nofollow" data-evento="clique_montinho" data-ref="skyfit-ou-bluefit">comparativo do site do Montinho</a>.</p>
+    </div>
+
+    <section class="bloco fino" aria-labelledby="fichas-t">
+      <div class="cab"><h2 id="fichas-t">As fichas</h2><a class="link-forte" href="/academias/?regiao=alphaville">Outras academias de Alphaville</a></div>
+      <div class="cartoes">{__comDestaque([sk, bf, ...outrasBF, ...outrasSK], __todasDestaque).map((a) => <CartaoAcademia a={a} />)}</div>
+    </section>
+
+    <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={fotoMontinho} alt="Montinho, personal trainer que mantém este guia, diante do espelho numa sala de musculação" widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">O Montinho, personal trainer que mantém este guia. Publicidade da casa.</figcaption></figure>
+    <VideoMontinho id="RvapDDClRXY" titulo="O melhor exercício é o que você mantém" pagina="skyfit-ou-bluefit" />
+    <FerramentasContexto itens={ferramentas} />
+
+    <Perguntas itens={perguntas} titulo="Perguntas sobre SkyFit e Bluefit" />
+    <LeiaTambem url="/guias/skyfit-ou-bluefit/" />
+    <div style="margin-top:28px"><Fontes fontes={[
+      ...sk.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${sk.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
+      ...bf.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${bf.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
+      { titulo: 'Site oficial da SkyFit (planos sem fidelidade)', url: 'https://skyfitacademia.com/', data: dataLonga(new Date('2026-11-17')) },
+    ]} /></div>
+  </div>
+</Base>

@@ -1,0 +1,96 @@
+[
+ {
+  "busca": "academia com estacionamento alphaville",
+  "data": "2026-11-19",
+  "aparelho": "mobile",
+  "local": "Barueri, SP",
+  "autocompletar_de": "academia com estacionamento",
+  "autocompletar": [
+   "academia com estacionamento coberto",
+   "academia com estacionamento perto de mim",
+   "academia com estacionamento tijuca",
+   "academia com estacionamento bh",
+   "academia com estacionamento niteroi",
+   "academia com estacionamento porto alegre",
+   "academia com estacionamento rj",
+   "academia.com estacionamento juiz de fora",
+   "academia com estacionamento gratuito",
+   "academia com estacionamento curitiba",
+   "academia com estacionamento zona sul",
+   "academia gavioes com estacionamento",
+   "academia pratique com estacionamento",
+   "academia estacionamento assai ribeirão preto",
+   "academia estacionamento assai"
+  ],
+  "perguntas": [
+   "Quem treina na Smart Fit paga estacionamento?",
+   "Qual a academia mais cara de Alphaville, SP?",
+   "Qual é o valor da mensalidade da Ironberg Alphaville?",
+   "Pode ir 2x por dia na academia?"
+  ],
+  "outras_pesquisas": [
+   "Academia alphaville 24 horas",
+   "Smart fit alphaville carrefour",
+   "Academias em alphaville",
+   "Smart fit alphaville sodimac",
+   "Academia smart fit alphaville",
+   "Academia alphaville ironberg"
+  ],
+  "visao_ia": {
+   "situacao": "não apareceu",
+   "texto": [],
+   "fontes": []
+  },
+  "mapa": [
+   {
+    "nome": "Skyfit Alphaville",
+    "endereco": "Barueri - SP"
+   },
+   {
+    "nome": "Scelta Academia Alphaville",
+    "endereco": "Barueri - SP"
+   },
+   {
+    "nome": "Academia BlueFit Alphaville",
+    "endereco": "Barueri - SP"
+   }
+  ],
+  "organicos": [
+   {
+    "posicao": 1,
+    "titulo": "Academia Smart Fit Sodimac Alphaville | Barueri - SP",
+    "link": "https://www.smartfit.com.br/academias/sodimac-alphaville"
+   },
+   {
+    "posicao": 2,
+    "titulo": "Ironberg Alphaville | Centro de Treinamento Ironberg | O maior do Brasil!",
+    "link": "https://ironberg.com.br/alphaville.html"
+   },
+   {
+    "posicao": 3,
+    "titulo": "Academia com Estacionamento em Alphaville: Guia",
+    "link": "https://www.montinhopersonal.com.br/blog/academia-com-estacionamento-alphaville"
+   },
+   {
+    "posicao": 4,
+    "titulo": "VoiFit Academia - Alphaville - Pinheiros"
+   },
+   {
+    "posicao": 5,
+    "titulo": "A 24 Health Club, tradicional academia com 13 anos de história em Alphaville, está ..."
+   },
+   {
+    "posicao": 6,
+    "titulo": "Alphaville"
+   },
+   {
+    "posicao": 7,
+    "titulo": "Unidade Alphaville"
+   },
+   {
+    "posicao": 8,
+    "titulo": "Academias em Barueri - SP"
+   }
+  ]
+ }
+]

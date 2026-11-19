@@ -14,6 +14,7 @@ const temas = Object.keys(TEMAS_PT).filter((t) => ORDEM.some((c) => publicados.h
 const itens = [
   ...gs.map((g) => ({ url: `/guias/${g.id}/`, t: g.data.h1, p: g.data.descricao })),
   { url: '/guias/smart-fit-ou-gavioes/', t: 'Smart Fit ou Gaviões em Alphaville: qual escolher', p: 'Horário, preço, modalidades e agregadores das duas academias lado a lado.' },
+  { url: '/guias/skyfit-ou-bluefit/', t: 'SkyFit ou Bluefit em Alphaville: qual escolher', p: 'Horário, aulas, plano mínimo no Wellhub e no TotalPass e a regra para personal das duas redes.' },
   { url: '/guias/smart-fit-ou-skyfit/', t: 'Smart Fit ou SkyFit em Alphaville: qual escolher', p: 'Preço publicado, aulas, horário e plano mínimo no Wellhub e no TotalPass das duas redes.' },
   { url: '/guias/ironberg-ou-nitrogym/', t: 'Ironberg ou NitroGym em Alphaville: qual escolher', p: 'Custo do primeiro ano, horário, estacionamento, TotalPass e regra para personal nas duas academias de musculação premium.' },
   { url: '/guias/gavioes-ou-ironberg/', t: 'Gaviões 24h ou Ironberg: qual academia 24 horas escolher', p: 'As duas únicas 24 horas do guia comparadas em preço, aulas, estrutura e regra para personal.' },
