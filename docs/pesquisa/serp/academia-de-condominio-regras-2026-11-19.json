@@ -1,0 +1,59 @@
+[
+ {
+  "busca": "regras academia de condomínio",
+  "data": "2026-11-19",
+  "aparelho": "mobile",
+  "local": "Barueri, SP",
+  "autocompletar_de": "regras academia de condominio",
+  "autocompletar": [
+   "regras para academia de condominio",
+   "regras academia condomínio"
+  ],
+  "perguntas": [
+   "Quem fiscaliza academia de musculação?",
+   "O que o condomínio não pode proibir?",
+   "Quanto custa montar uma academia de condomínio?",
+   "Qual a carga horária de um personal trainer na academia?"
+  ],
+  "outras_pesquisas": [],
+  "visao_ia": {
+   "situacao": "existe, não aberta (pedido extra não feito)",
+   "texto": [],
+   "fontes": []
+  },
+  "mapa": [],
+  "organicos": [
+   {
+    "posicao": 1,
+    "titulo": "Lei: Condomínios passam a ter regras acerca de treinamentos físicos em área comum",
+    "link": "https://www.jornalgrandourados.com.br/noticia/5919/lei-condominios-passam-a-ter-regras-acerca-de-treinamentos-fisicos-em-area-comum"
+   },
+   {
+    "posicao": 2,
+    "titulo": "E na academia do condomínio o que pode e o que não pode? Compartilha com quem gosta de treinar no condomínio! E já segue o Daniel Argeu De Oliveira Alves para não pe",
+    "link": "https://www.facebook.com/61584675325609/videos/e-na-academia-do-condom%C3%ADnio-o-que-pode-e-o-que-n%C3%A3o-podecompartilha-com-quem-gost/2136505477294880/"
+   },
+   {
+    "posicao": 3,
+    "titulo": "Equipamentos Academia Condomínio: 7 Critérios para 2026",
+    "link": "https://blog.lionfitness.com.br/category/equipamentos-academia-condominio"
+   },
+   {
+    "posicao": 4,
+    "titulo": "5 REGRAS PARA ACADEMIAS EM CONDOMÍNIOS Estabelecer regras para o uso da ..."
+   },
+   {
+    "posicao": 5,
+    "titulo": "Regulamento Academia de Ginastica | PDF | Ginástica | Condomínio"
+   },
+   {
+    "posicao": 6,
+    "titulo": "Exercícios ao ar livre, em academia, no condomínio: como se proteger"
+   },
+   {
+    "posicao": 7,
+    "titulo": "Lei polêmica dificulta funcionamento de academias de condomínios"
+   }
+  ]
+ }
+]

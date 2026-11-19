@@ -45,6 +45,7 @@ const ctx: Contexto | null =
   : g.id === 'como-escolher-academia' ? { tipo: 'como-escolher' }
   : g.id === 'academia-ou-personal' ? { tipo: 'academia-ou-personal' }
   : g.id === 'academias-premium-alphaville' ? { tipo: 'premium' }
+  : g.id === 'academia-de-condominio-regras' ? { tipo: 'condominio' }
   : modDaPagina ? { tipo: 'modalidade', modalidade: modDaPagina, modalidadeNome: MODALIDADES[modDaPagina] ?? modDaPagina, ...ctxBase }
   : /jiu-jitsu|lutas/.test(g.id) ? { tipo: 'modalidade', modalidade: 'lutas', modalidadeNome: 'Lutas', ...ctxBase }
   : null;

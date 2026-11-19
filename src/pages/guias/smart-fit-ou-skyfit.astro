@@ -45,7 +45,7 @@ const perguntas = [
   { p: 'Qual o valor da Smart Fit em Alphaville?', r: `Na Smart Fit Sodimac Alphaville, o site oficial mostra ${sf.data.mensalidade?.planos.map((x) => `${x.nome} a ${x.preco}`).join(' e ')}. No Carrefour Hiper Tamboré, o Plano Fit sai por R$ 129,90.` },
   { p: 'A SkyFit aceita Gympass (Wellhub) e TotalPass?', r: `Sim. A SkyFit Alphaville aparece no Wellhub a partir do ${wsk?.plano_minimo} e no TotalPass a partir do ${tsk?.plano_minimo}. A Smart Fit da Sodimac aparece só no TotalPass, a partir do ${tsf?.plano_minimo}${wsf ? ` e no Wellhub a partir do ${wsf.plano_minimo}` : ''}.` },
   { p: 'Qual é a concorrente da Smart Fit em Alphaville?', r: 'Entre as redes com ficha no guia, disputam o mesmo público SkyFit, Bluefit e Panobianco, além da Gaviões 24h, que tem horário de 24 horas. Compare o preço publicado e o plano mínimo nos agregadores.' },
-  { p: 'SkyFit ou Bluefit?', r: 'As duas não publicam mensalidade por unidade em Alphaville. A SkyFit fica na Av. Juruá e lista mais aulas; a Bluefit tem unidades na Alameda Amazonas e no Tamboré. Compare horário e plano mínimo nas fichas.' },
+  { p: 'SkyFit ou Bluefit?', r: 'As duas não publicam mensalidade por unidade em Alphaville. A SkyFit fica na Av. Juruá e lista mais aulas; a Bluefit tem unidades na Alameda Amazonas e no Tamboré. O comparativo completo está no guia SkyFit ou Bluefit.' },
 ];
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'smart-fit-sodimac-alphaville', nome: 'Smart Fit' }, { id: 'skyfit-alphaville', nome: 'SkyFit' }] });
@@ -98,7 +98,7 @@ const __todasDestaque = await __academias();
         <li><strong>Usa Wellhub:</strong> SkyFit. <strong>Usa TotalPass:</strong> as duas; a SkyFit pede o plano mais barato.</li>
         <li><strong>Treina cedo, antes das 6h:</strong> SkyFit, que abre às 5h.</li>
       </ul>
-      <p>Visite as duas no horário em que você vai treinar. O <a href="/ferramentas/checklist/">checklist de visita</a> ajuda, e o <a href={`/ferramentas/comparador/?a=${sf.id}&b=${sk.id}`}>comparador</a> mostra os dados completos lado a lado. Se a dúvida é entre Smart Fit e uma academia 24 horas, leia <a href="/guias/smart-fit-ou-gavioes/">Smart Fit ou Gaviões</a>.</p>
+      <p>Visite as duas no horário em que você vai treinar. O <a href="/ferramentas/checklist/">checklist de visita</a> ajuda, e o <a href={`/ferramentas/comparador/?a=${sf.id}&b=${sk.id}`}>comparador</a> mostra os dados completos lado a lado. Se a dúvida é entre Smart Fit e uma academia 24 horas, leia <a href="/guias/smart-fit-ou-gavioes/">Smart Fit ou Gaviões</a>; entre SkyFit e Bluefit, <a href="/guias/skyfit-ou-bluefit/">SkyFit ou Bluefit</a>.</p>
     </div>
 
     <section class="bloco fino" aria-labelledby="fichas-t">
