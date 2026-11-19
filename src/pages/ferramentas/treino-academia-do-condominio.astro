@@ -2,6 +2,7 @@
 // Simulador "treino na academia do condomínio": marque o que o espaço tem e veja o que dá para treinar.
 // Regras em src/lib/treinoCondominio.ts (editoriais, determinísticas, no navegador). Doc: docs/treino-condominio.md.
 import Base from '../../layouts/Base.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
 import { WHATSAPP } from '../../lib/dados';
@@ -125,6 +126,9 @@ const schema = [{ '@type': 'WebApplication', name: 'Simulador de treino na acade
       <h2>Como o simulador decide</h2>
       <p>Cada exercício da lista pede um conjunto de equipamentos e pertence a um grupo de movimento. Um grupo fica "bem coberto" quando há ao menos um exercício em que dá para aumentar a carga com o tempo; "dá para adaptar" quando só há saída com o peso do corpo ou elástico; e "falta equipamento" quando não há nenhum. A sugestão do que acrescentar testa cada equipamento que você não marcou e mostra os que mais melhoram a cobertura. São critérios editoriais do guia, iguais para todo mundo: o simulador não conhece o seu histórico nem avalia a sua execução.</p>
     </div>
+
+    <VideoMontinho id="Mck7dwGz0as" titulo="O aparelho está ocupado? O que fazer no lugar" pagina="treino-academia-do-condominio" />
+
 
     <Perguntas itens={perguntas} titulo="Perguntas sobre treino em condomínio e em casa" />
     <LeiaTambem url={URL_PAG} />

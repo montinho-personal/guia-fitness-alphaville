@@ -3,6 +3,7 @@
 // Distância em linha reta (src/lib/caminho.ts); horário pelo mesmo motor do buscador de abertas (src/lib/horarios.ts).
 // Pontos: src/data/pontos-caminho.json e src/data/referencias.json (OpenStreetMap). Doc: docs/academia-no-caminho.md.
 import Base from '../../layouts/Base.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
 import { WHATSAPP, academias, urlAcademia, REGIOES, TIPOS, type Academia } from '../../lib/dados';
@@ -132,6 +133,9 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
       <p>Cada academia recebe três medidas em linha reta: a distância até o primeiro ponto, a distância até o segundo e o desvio, que é quanto o trajeto casa, academia, trabalho passa do trajeto direto casa, trabalho. A busca começa só com as academias de musculação; desmarque a opção para incluir boxes e estúdios. Entram em "perto de casa" e "perto do trabalho" as que ficam dentro da distância escolhida; em "no caminho", as demais com desvio dentro do mesmo limite. Nenhuma aparece em dois grupos. Com horário marcado, só ficam as que estão abertas pelo menos uma hora a partir dali; as de horário não confirmado aparecem com aviso.</p>
       <p>Para ver tudo de uma vez, abra o <a href="/mapa/">mapa do guia</a>. Para pontos de referência como o Iguatemi e as estações da CPTM, há a página <a href="/academias/perto-de/">academia perto de você</a>. E, para decidir entre duas ou três finalistas, use o <a href="/ferramentas/comparador/" data-evento="clique_ferramenta" data-ref="comparador:academia-no-caminho">comparador</a> ou teste antes com <a href="/ferramentas/academias-diaria-aula-experimental-alphaville/?modo=teste" data-evento="clique_ferramenta" data-ref="diaria:academia-no-caminho">diária ou aula experimental</a>.</p>
     </div>
+
+    <VideoMontinho id="RvapDDClRXY" titulo="O melhor exercício é o que você mantém" pagina="academia-perto-de-casa-ou-do-trabalho" />
+
 
     <Perguntas itens={perguntas} titulo="Perguntas sobre academia perto de casa e do trabalho" />
     <LeiaTambem url={URL_PAG} />
