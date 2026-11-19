@@ -65,9 +65,9 @@ A calculadora não envia valores digitados nem dados de contato: só a origem da
 
 ## clique_ferramenta (18/11/2026)
 
-Clique nos atalhos e cartões de ferramenta dos artigos. `ref` = `<ferramenta>:atalho` ou `<ferramenta>:bloco` (ferramentas: custo, personal, beneficio, teste, comparador, checklist, mapa, abertas, diaria, preco, formato, hyrox, condominio); `pagina` = caminho do artigo. Para ver no GA4 qual artigo mais leva às ferramentas, registre `ref` como dimensão personalizada.
+Clique nos atalhos e cartões de ferramenta dos artigos. `ref` = `<ferramenta>:atalho` ou `<ferramenta>:bloco` (ferramentas: custo, personal, beneficio, teste, comparador, checklist, mapa, abertas, diaria, preco, formato, hyrox, condominio, caminho); `pagina` = caminho do artigo. Para ver no GA4 qual artigo mais leva às ferramentas, registre `ref` como dimensão personalizada.
 
-Fora dos artigos: `ref` = `menu:diaria` (item em destaque no menu, celular e computador), `home:diaria` e `home:diaria-teste` (faixa logo abaixo da capa) e `rodape:<ferramenta>` (coluna Ferramentas do rodapé: diaria, abertas, preco, formato, condominio, hyrox, comparador).
+Fora dos artigos: `ref` = `menu:diaria` (item em destaque no menu, celular e computador), `home:diaria` e `home:diaria-teste` (faixa logo abaixo da capa) e `rodape:<ferramenta>` (coluna Ferramentas do rodapé: diaria, abertas, preco, formato, caminho, condominio, hyrox, comparador).
 
 ## Academias abertas (18/11/2026)
 
@@ -129,3 +129,13 @@ Fora dos artigos: `ref` = `menu:diaria` (item em destaque no menu, celular e com
 | `treino_condominio_refazer`, `treino_condominio_imprimir` | Botões do resultado | — |
 | `clique_whatsapp` | WhatsApp do Montinho (intenção de contato) | `ref` = `treino-condominio:<resultado>` (depois do resultado) ou `treino-condominio:bloco` (cartão fixo); a lista de equipamentos vai só na mensagem, não no analytics |
 | `clique_ferramenta` | Links para preço, diária, teste e custo | `ref` = `preco:treino-condominio`, `diaria:treino-condominio`, `teste:treino-condominio`, `custo:treino-condominio` (e `-res` nos próximos passos) |
+
+## Academia perto de casa ou do trabalho (19/11/2026)
+
+| Evento | Quando | Parâmetros |
+|---|---|---|
+| `academia_caminho_busca` | Busca feita | `modo` (`um-ponto`, `dois-pontos`), `origem` e `destino` (id do ponto da lista, ou `geo`; nunca coordenadas), `raio_km`, `quando`, `resultados` |
+| `academia_caminho_geo` | Clique em "Usar minha localização" | `resultado` (`ok`, `negada`, `fora`); a posição não é enviada |
+| `clique_academia` | Clique numa academia do resultado | `ref` = `academia-no-caminho:<id>` |
+| `clique_whatsapp` | WhatsApp do Montinho depois do resultado | `ref` = `academia-no-caminho:resultado` |
+| `clique_ferramenta` | Links para abertas, Wellhub e TotalPass, comparador e diária | `ref` = `abertas:academia-no-caminho` etc. |

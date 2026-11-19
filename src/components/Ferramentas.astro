@@ -1,54 +1,30 @@
+---
+// Grade de ferramentas. `max` limita a quantidade (a home mostra só as primeiras e manda para /ferramentas/).
+interface Props { max?: number }
+const { max } = Astro.props;
+const TODAS = [
+  { cls: "ferramenta ferr-destaque", href: "/ferramentas/academias-diaria-aula-experimental-alphaville/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><rect x=\"5\" y=\"9\" width=\"26\" height=\"18\" rx=\"3\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M5 15h26\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M11 21h6\" stroke=\"#FF6A00\" stroke-width=\"2.4\" stroke-linecap=\"round\"/></svg>", t: "Diária e aula experimental", p: "Onde treinar pagando só uma diária e onde testar antes de contratar, com o canal de cada academia.", r: "Sem matrícula" },
+  { cls: "ferramenta", href: "/ferramentas/academia-perto-de-casa-ou-do-trabalho/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><circle cx=\"7\" cy=\"27\" r=\"3.5\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><circle cx=\"29\" cy=\"9\" r=\"3.5\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M10 25c6-2 4-10 10-12l5-2.500\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\" stroke-dasharray=\"3 3\"/><circle cx=\"17\" cy=\"19\" r=\"3\" fill=\"#FF6A00\"/></svg>", t: "Perto de casa ou do trabalho", p: "Diga de onde você sai e para onde vai: as academias perto de cada ponto e as que ficam no caminho.", r: "Com distância e horário" },
+  { cls: "ferramenta", href: "/ferramentas/academias-abertas-alphaville/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><circle cx=\"18\" cy=\"18\" r=\"14\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M18 10v8l5 4\" fill=\"none\" stroke=\"#FF6A00\" stroke-width=\"2.4\" stroke-linecap=\"round\"/></svg>", t: "Academias abertas", p: "Domingo, 24 horas, cedo, tarde e feriados: quem fica aberta até o fim do seu treino.", r: "Por dia e hora" },
+  { cls: "ferramenta", href: "/ferramentas/qual-academia/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><circle cx=\"18\" cy=\"18\" r=\"14\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M13.5 14.5a4.5 4.5 0 1 1 6.6 4c-1.3.7-2.1 1.5-2.1 3\" fill=\"none\" stroke=\"#E2502A\" stroke-width=\"2.2\"/><circle cx=\"18\" cy=\"25.6\" r=\"1.4\" fill=\"#E2502A\"/></svg>", t: "Qual academia combina com você", p: "Cinco perguntas. O resultado mostra, critério por critério, por que cada academia apareceu.", r: "2 minutos" },
+  { cls: "ferramenta", href: "/ferramentas/custo-para-treinar-em-alphaville/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><rect x=\"7\" y=\"4\" width=\"22\" height=\"28\" rx=\"2\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><rect x=\"11\" y=\"8\" width=\"14\" height=\"6\" fill=\"none\" stroke=\"#E2502A\" stroke-width=\"2\"/><path d=\"M12 19h2M17 19h2M22 19h2M12 24h2M17 24h2M22 24h2\" stroke=\"#F5F1E8\" stroke-width=\"2\"/></svg>", t: "Calculadora de custo", p: "Quanto custa treinar de verdade: mensalidade, estacionamento e personal, por mês e por ida.", r: "Até três cenários" },
+  { cls: "ferramenta", href: "/ferramentas/calculadora-preco-personal-alphaville/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><circle cx=\"18\" cy=\"18\" r=\"14\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M18 9v18M22.5 13.5c-1-1.4-2.6-2-4.5-2-2.6 0-4.5 1.3-4.5 3.3 0 4.4 9 2 9 6.4 0 2-1.9 3.3-4.5 3.3-2 0-3.700-.7-4.7-2.200\" fill=\"none\" stroke=\"#FF6A00\" stroke-width=\"2.200\" stroke-linecap=\"round\"/></svg>", t: "Preço de personal", p: "Faixa de referência por aula e por mês, no condomínio, na academia, em casa ou online.", r: "Com a conta aberta" },
+  { cls: "ferramenta", href: "/ferramentas/treino-academia-do-condominio/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><path d=\"M5 31V11l13-7 13 7v20\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M11 21h14M13 17v8M23 17v8M9 19v4M27 19v4\" fill=\"none\" stroke=\"#FF6A00\" stroke-width=\"2.200\" stroke-linecap=\"round\"/></svg>", t: "Treino no condomínio", p: "Marque o que a academia do prédio tem e veja o que dá para treinar, o que falta e como dividir a semana.", r: "Condomínio ou em casa" },
+  { cls: "ferramenta", href: "/ferramentas/calculadora-hyrox/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><circle cx=\"18\" cy=\"20\" r=\"12\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M18 20v-7M14 4h8M18 4v4\" fill=\"none\" stroke=\"#FF6A00\" stroke-width=\"2.4\" stroke-linecap=\"round\"/></svg>", t: "Calculadora Hyrox", p: "Pesos oficiais da sua categoria e plano de prova, com ritmo de corrida e tempo por estação.", r: "Open, Pro, dupla e revezamento" },
+  { cls: "ferramenta", href: "/ferramentas/comparador/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><rect x=\"3\" y=\"6\" width=\"12\" height=\"24\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><rect x=\"21\" y=\"6\" width=\"12\" height=\"24\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M6 13h6M6 18h6M24 13h6M24 18h6\" stroke=\"#E2502A\" stroke-width=\"2\"/></svg>", t: "Comparador", p: "Coloque até três academias lado a lado: local, horários, estrutura e agregadores.", r: "Sem cadastro" },
+  { cls: "ferramenta", href: "/academias/wellhub-totalpass/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><rect x=\"4\" y=\"9\" width=\"28\" height=\"18\" rx=\"3\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M4 15h28\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M9 22h7\" stroke=\"#E2502A\" stroke-width=\"2.4\"/></svg>", t: "Wellhub e TotalPass", p: "Onde o seu plano entra e qual plano cobre duas academias, como a de casa e a do trabalho.", r: "Busca por plano" },
+  { cls: "ferramenta", href: "/ferramentas/academias-que-aceitam-personal-externo/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><circle cx=\"13\" cy=\"11\" r=\"5\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M4 30c0-6 4-10 9-10s9 4 9 10\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M22 17l3 3 7-7\" fill=\"none\" stroke=\"#E2502A\" stroke-width=\"2.4\"/></svg>", t: "Personal externo", p: "Quais academias aceitam seu personal, o cadastro exigido e quem paga a taxa.", r: "Com fonte e data" },
+  { cls: "ferramenta", href: "/ferramentas/personal-presencial-ou-online/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><rect x=\"4\" y=\"8\" width=\"13\" height=\"20\" rx=\"2\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><rect x=\"21\" y=\"6\" width=\"11\" height=\"24\" rx=\"2.5\" fill=\"none\" stroke=\"#FF6A00\" stroke-width=\"2\"/><path d=\"M25 26h3\" stroke=\"#FF6A00\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>", t: "Presencial ou online?", p: "Nove perguntas para saber qual formato de personal combina com a sua rotina.", r: "1 minuto" },
+  { cls: "ferramenta", href: "/ferramentas/checklist/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><rect x=\"7\" y=\"4\" width=\"22\" height=\"28\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M11.5 12l2 2 3.5-4M11.5 20l2 2 3.5-4\" fill=\"none\" stroke=\"#E2502A\" stroke-width=\"2\"/><path d=\"M20.5 13h5M20.5 21h5\" stroke=\"#F5F1E8\" stroke-width=\"2\"/></svg>", t: "Checklist de visita", p: "O que observar na academia, no horário em que você vai treinar. Para levar no celular.", r: "Para imprimir ou compartilhar" },
+  { cls: "ferramenta", href: "/mapa/", svg: "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" aria-hidden=\"true\"><path d=\"M4 9l9-3 10 3 9-3v21l-9 3-10-3-9 3z\" fill=\"none\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><path d=\"M13 6v21M23 9v21\" stroke=\"#F5F1E8\" stroke-width=\"2\"/><circle cx=\"18\" cy=\"17\" r=\"3\" fill=\"#E2502A\"/></svg>", t: "Mapa", p: "As academias com ficha no mapa, com link para cada uma.", r: "Carrega só quando você abre" }
+];
+const itens = max ? TODAS.slice(0, max) : TODAS;
+---
 <div class="grade-ferr">
-  <a class="ferramenta ferr-destaque" href="/ferramentas/academias-diaria-aula-experimental-alphaville/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect x="5" y="9" width="26" height="18" rx="3" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M5 15h26" stroke="#F5F1E8" stroke-width="2"/><path d="M11 21h6" stroke="#FF6A00" stroke-width="2.4" stroke-linecap="round"/></svg>
-    <h3>Diária e aula experimental</h3><p>Onde treinar pagando só uma diária e onde testar antes de contratar, com o canal de cada academia.</p><span class="rotulo">Sem matrícula</span>
-  </a>
-  <a class="ferramenta" href="/ferramentas/comparador/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect x="3" y="6" width="12" height="24" fill="none" stroke="#F5F1E8" stroke-width="2"/><rect x="21" y="6" width="12" height="24" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M6 13h6M6 18h6M24 13h6M24 18h6" stroke="#E2502A" stroke-width="2"/></svg>
-    <h3>Comparador</h3><p>Coloque até três academias lado a lado: local, horários, estrutura e agregadores.</p><span class="rotulo">Sem cadastro</span>
-  </a>
-  <a class="ferramenta" href="/ferramentas/qual-academia/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M13.5 14.5a4.5 4.5 0 1 1 6.6 4c-1.3.7-2.1 1.5-2.1 3" fill="none" stroke="#E2502A" stroke-width="2.2"/><circle cx="18" cy="25.6" r="1.4" fill="#E2502A"/></svg>
-    <h3>Qual academia combina com você</h3><p>Cinco perguntas. O resultado mostra, critério por critério, por que cada academia apareceu.</p><span class="rotulo">2 minutos</span>
-  </a>
-  <a class="ferramenta" href="/ferramentas/custo-para-treinar-em-alphaville/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect x="7" y="4" width="22" height="28" rx="2" fill="none" stroke="#F5F1E8" stroke-width="2"/><rect x="11" y="8" width="14" height="6" fill="none" stroke="#E2502A" stroke-width="2"/><path d="M12 19h2M17 19h2M22 19h2M12 24h2M17 24h2M22 24h2" stroke="#F5F1E8" stroke-width="2"/></svg>
-    <h3>Calculadora de custo</h3><p>Quanto custa treinar de verdade: mensalidade, estacionamento e personal, por mês e por ida.</p><span class="rotulo">Até três cenários</span>
-  </a>
-  <a class="ferramenta" href="/academias/wellhub-totalpass/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect x="4" y="9" width="28" height="18" rx="3" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M4 15h28" stroke="#F5F1E8" stroke-width="2"/><path d="M9 22h7" stroke="#E2502A" stroke-width="2.4"/></svg>
-    <h3>Wellhub e TotalPass</h3><p>Onde o seu plano entra e qual plano cobre duas academias, como a de casa e a do trabalho.</p><span class="rotulo">Busca por plano</span>
-  </a>
-  <a class="ferramenta" href="/ferramentas/academias-que-aceitam-personal-externo/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><circle cx="13" cy="11" r="5" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M4 30c0-6 4-10 9-10s9 4 9 10" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M22 17l3 3 7-7" fill="none" stroke="#E2502A" stroke-width="2.4"/></svg>
-    <h3>Personal externo</h3><p>Quais academias aceitam seu personal, o cadastro exigido e quem paga a taxa.</p><span class="rotulo">Com fonte e data</span>
-  </a>
-  <a class="ferramenta" href="/ferramentas/academias-abertas-alphaville/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M18 10v8l5 4" fill="none" stroke="#FF6A00" stroke-width="2.4" stroke-linecap="round"/></svg>
-    <h3>Academias abertas</h3><p>Domingo, 24 horas, cedo, tarde e feriados: quem fica aberta até o fim do seu treino.</p><span class="rotulo">Por dia e hora</span>
-  </a>
-  <a class="ferramenta" href="/ferramentas/calculadora-preco-personal-alphaville/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="14" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M18 9v18M22.5 13.5c-1-1.4-2.6-2-4.5-2-2.6 0-4.5 1.3-4.5 3.3 0 4.4 9 2 9 6.4 0 2-1.9 3.3-4.5 3.3-2 0-3.700-.7-4.7-2.200" fill="none" stroke="#FF6A00" stroke-width="2.200" stroke-linecap="round"/></svg>
-    <h3>Preço de personal</h3><p>Faixa de referência por aula e por mês, no condomínio, na academia, em casa ou online.</p><span class="rotulo">Com a conta aberta</span>
-  </a>
-  <a class="ferramenta" href="/ferramentas/personal-presencial-ou-online/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect x="4" y="8" width="13" height="20" rx="2" fill="none" stroke="#F5F1E8" stroke-width="2"/><rect x="21" y="6" width="11" height="24" rx="2.5" fill="none" stroke="#FF6A00" stroke-width="2"/><path d="M25 26h3" stroke="#FF6A00" stroke-width="2" stroke-linecap="round"/></svg>
-    <h3>Presencial ou online?</h3><p>Nove perguntas para saber qual formato de personal combina com a sua rotina.</p><span class="rotulo">1 minuto</span>
-  </a>
-  <a class="ferramenta" href="/ferramentas/treino-academia-do-condominio/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><path d="M5 31V11l13-7 13 7v20" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M11 21h14M13 17v8M23 17v8M9 19v4M27 19v4" fill="none" stroke="#FF6A00" stroke-width="2.200" stroke-linecap="round"/></svg>
-    <h3>Treino no condomínio</h3><p>Marque o que a academia do prédio tem e veja o que dá para treinar, o que falta e como dividir a semana.</p><span class="rotulo">Condomínio ou em casa</span>
-  </a>
-  <a class="ferramenta" href="/ferramentas/calculadora-hyrox/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="20" r="12" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M18 20v-7M14 4h8M18 4v4" fill="none" stroke="#FF6A00" stroke-width="2.4" stroke-linecap="round"/></svg>
-    <h3>Calculadora Hyrox</h3><p>Pesos oficiais da sua categoria e plano de prova, com ritmo de corrida e tempo por estação.</p><span class="rotulo">Open, Pro, dupla e revezamento</span>
-  </a>
-  <a class="ferramenta" href="/ferramentas/checklist/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect x="7" y="4" width="22" height="28" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M11.5 12l2 2 3.5-4M11.5 20l2 2 3.5-4" fill="none" stroke="#E2502A" stroke-width="2"/><path d="M20.5 13h5M20.5 21h5" stroke="#F5F1E8" stroke-width="2"/></svg>
-    <h3>Checklist de visita</h3><p>O que observar na academia, no horário em que você vai treinar. Para levar no celular.</p><span class="rotulo">Para imprimir ou compartilhar</span>
-  </a>
-  <a class="ferramenta" href="/mapa/">
-    <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><path d="M4 9l9-3 10 3 9-3v21l-9 3-10-3-9 3z" fill="none" stroke="#F5F1E8" stroke-width="2"/><path d="M13 6v21M23 9v21" stroke="#F5F1E8" stroke-width="2"/><circle cx="18" cy="17" r="3" fill="#E2502A"/></svg>
-    <h3>Mapa</h3><p>As academias com ficha no mapa, com link para cada uma.</p><span class="rotulo">Carrega só quando você abre</span>
-  </a>
+  {itens.map((f) => (
+    <a class={f.cls} href={f.href}>
+      <Fragment set:html={f.svg} />
+      <h3>{f.t}</h3><p>{f.p}</p><span class="rotulo">{f.r}</span>
+    </a>
+  ))}
 </div>

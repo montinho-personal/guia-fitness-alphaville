@@ -41,6 +41,9 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | Altura do alvo do Wall Balls, faixas etárias e duplas Pro | `/ferramentas/calculadora-hyrox/`, `/guias/categorias-do-hyrox/` | Estão nos regulamentos em PDF (`hyroxbrazil.com`, `maintain.hyrox.com`), bloqueados na rede |
 | PAA "Quanto custa uma academia de condomínio?"; REL "Montar academia em condominio" (simulador, 18/11) | `/ferramentas/treino-academia-do-condominio/` | Só com preço de fonte conferida (loja ou fabricante); sem isso, não publicar número |
 | AC "treino com halteres pdf", "feminino", "para emagrecer" (18/11) | `/ferramentas/treino-academia-do-condominio/` | PDF: o botão de imprimir já gera; "feminino" e "emagrecer" pedem promessa de resultado, não entram |
+| AC "academia perto de mim valores", "barata"; PAA "Como pagar academia mais barata?" (academia no caminho, 19/11) | `/ferramentas/academia-perto-de-casa-ou-do-trabalho/`, `/academias/precos/` | Mostrar no cartão a mensalidade publicada (quando houver) e um filtro "com preço publicado"; a pergunta já está respondida em preços |
+| PAA "Quanto custa uma diária na Ironberg SP?" (19/11) | `/academias/ironberg-alphaville/` | Já respondida na ficha (Day Pass R$ 120); conferir se a pergunta frequente usa essas palavras |
+| Texfit (Barueri) no mapa do Google em duas buscas (19/11) | fichas | Sem ficha no guia: criar só com fonte oficial da academia |
 | Hyrox Training Club da CrossFit Barueri, OBox | `/guias/hyrox-barueri/`, `/modalidades/crossfit/` | Só com fonte; o site do CrossFit Barueri não cita Hyrox (18/11) e o da OBox não abriu |
 | Gracie Barra, Alliance (G13 já entrou na página e tem ficha; conferido em 18/11) | `/guias/jiu-jitsu-alphaville/` (fichas) | Esperando liberar os sites (lembrete agendado) |
 | SESI Santana de Parnaíba | `/regioes/santana-de-parnaiba/` (ficha) | Site oficial bloqueado aqui |

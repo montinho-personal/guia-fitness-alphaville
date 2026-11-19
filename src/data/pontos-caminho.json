@@ -1,0 +1,264 @@
+{
+ "nota": "Pontos de partida e chegada da ferramenta \"academia perto de casa ou do trabalho\". Coordenada = ponto central que o OpenStreetMap devolve para o nome; num residencial grande, a portaria pode ficar a centenas de metros dali. Os shoppings, estações e centros comerciais vêm de src/data/referencias.json.",
+ "fonte": "OpenStreetMap (Nominatim)",
+ "url": "https://www.openstreetmap.org/",
+ "conferido_em": "2026-11-19",
+ "pontos": [
+  {
+   "id": "alphaville-1",
+   "nome": "Alphaville Residencial 1",
+   "grupo": "Residenciais de Alphaville",
+   "lat": -23.487278,
+   "lng": -46.846091,
+   "osm": "Alphaville Residencial 1, Barueri, São Paulo, Região Sudeste, 06472-001, Brasil"
+  },
+  {
+   "id": "alphaville-2",
+   "nome": "Alphaville Residencial 2",
+   "grupo": "Residenciais de Alphaville",
+   "lat": -23.49372,
+   "lng": -46.858246,
+   "osm": "Alphaville Residencial 2, Barueri, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "alphaville-3",
+   "nome": "Alphaville Residencial 3",
+   "grupo": "Residenciais de Alphaville",
+   "lat": -23.478292,
+   "lng": -46.861916,
+   "osm": "Alphaville Residencial 3, Residencial Alphaville 3, Santana de Parnaíba, São Paulo, Região Sudeste, 06542-001, Brasil"
+  },
+  {
+   "id": "alphaville-4",
+   "nome": "Alphaville Residencial 4",
+   "grupo": "Residenciais de Alphaville",
+   "lat": -23.475096,
+   "lng": -46.871391,
+   "osm": "Alphaville Residencial 4, Residencial Alphaville 4, Santana de Parnaíba, São Paulo, Região Sudeste, 06541-038, Brasil"
+  },
+  {
+   "id": "alphaville-5",
+   "nome": "Alphaville Residencial 5",
+   "grupo": "Residenciais de Alphaville",
+   "lat": -23.467698,
+   "lng": -46.874757,
+   "osm": "Residencial Alphaville 5, Santana de Parnaíba, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "alphaville-6",
+   "nome": "Alphaville Residencial 6",
+   "grupo": "Residenciais de Alphaville",
+   "lat": -23.465156,
+   "lng": -46.881475,
+   "osm": "Residencial Alphaville 6, Santana de Parnaíba, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "alphaville-8",
+   "nome": "Alphaville Residencial 8",
+   "grupo": "Residenciais de Alphaville",
+   "lat": -23.459312,
+   "lng": -46.870833,
+   "osm": "Residencial Alphaville 8, Santana de Parnaíba, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "alphaville-9",
+   "nome": "Alphaville Residencial 9",
+   "grupo": "Residenciais de Alphaville",
+   "lat": -23.457133,
+   "lng": -46.878402,
+   "osm": "Residencial Alphaville 9, Santana de Parnaíba, São Paulo, Região Sudeste, 06517-310, Brasil"
+  },
+  {
+   "id": "alphaville-10",
+   "nome": "Alphaville Residencial 10",
+   "grupo": "Residenciais de Alphaville",
+   "lat": -23.449235,
+   "lng": -46.881182,
+   "osm": "Residencial Alphaville 10, Santana de Parnaíba, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "alphaville-11",
+   "nome": "Alphaville Residencial 11",
+   "grupo": "Residenciais de Alphaville",
+   "lat": -23.453605,
+   "lng": -46.886092,
+   "osm": "Residencial Alphaville 11, Santana de Parnaíba, São Paulo, Região Sudeste, 06540-395, Brasil"
+  },
+  {
+   "id": "alphaville-12",
+   "nome": "Alphaville Residencial 12",
+   "grupo": "Residenciais de Alphaville",
+   "lat": -23.462508,
+   "lng": -46.887423,
+   "osm": "Residencial Alphaville 12, Santana de Parnaíba, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "tambore-1",
+   "nome": "Tamboré 1",
+   "grupo": "Residenciais do Tamboré",
+   "lat": -23.490058,
+   "lng": -46.820233,
+   "osm": "Tamboré 1 Residencial, Barueri, São Paulo, Região Sudeste, 06460-120, Brasil"
+  },
+  {
+   "id": "tambore-2",
+   "nome": "Tamboré 2",
+   "grupo": "Residenciais do Tamboré",
+   "lat": -23.474192,
+   "lng": -46.854487,
+   "osm": "Residencial Tamboré 2, Santana de Parnaíba, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "tambore-3",
+   "nome": "Tamboré 3",
+   "grupo": "Residenciais do Tamboré",
+   "lat": -23.470935,
+   "lng": -46.864655,
+   "osm": "Residencial Tamboré 3, Santana de Parnaíba, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "tambore-10",
+   "nome": "Tamboré 10",
+   "grupo": "Residenciais do Tamboré",
+   "lat": -23.461287,
+   "lng": -46.852514,
+   "osm": "Residencial Tamboré 10, Santana de Parnaíba, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "tambore-11",
+   "nome": "Tamboré 11",
+   "grupo": "Residenciais do Tamboré",
+   "lat": -23.459558,
+   "lng": -46.831125,
+   "osm": "Residencial Tamboré 11, Santana de Parnaíba, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "aldeia-da-serra",
+   "nome": "Aldeia da Serra (praça central)",
+   "grupo": "Barueri",
+   "lat": -23.497897,
+   "lng": -46.949142,
+   "osm": "Praça da Aldeia da Serra 2, Barueri, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "alameda-rio-negro",
+   "nome": "Alameda Rio Negro (escritórios)",
+   "grupo": "Barueri",
+   "lat": -23.495563,
+   "lng": -46.848897,
+   "osm": "Alameda Rio Negro, Alphaville Residencial 1, Alphaville, Barueri, São Paulo, Região Sudeste, 06453-046, Brasil"
+  },
+  {
+   "id": "barueri-centro",
+   "nome": "Centro de Barueri",
+   "grupo": "Barueri",
+   "lat": -23.51146,
+   "lng": -46.874575,
+   "osm": "Centro, Barueri, São Paulo, Região Sudeste, 06401-120, Brasil"
+  },
+  {
+   "id": "jardim-silveira",
+   "nome": "Jardim Silveira",
+   "grupo": "Barueri",
+   "lat": -23.535856,
+   "lng": -46.885617,
+   "osm": "Jardim Silveira, Barueri, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "engenho-novo",
+   "nome": "Vila Engenho Novo",
+   "grupo": "Barueri",
+   "lat": -23.489948,
+   "lng": -46.891608,
+   "osm": "Vila Engenho Novo - Gleba B, Barueri, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "parque-viana",
+   "nome": "Parque Viana",
+   "grupo": "Barueri",
+   "lat": -23.542943,
+   "lng": -46.868611,
+   "osm": "Parque Viana, Aldeia, Barueri, São Paulo, Região Sudeste, 06449-120, Brasil"
+  },
+  {
+   "id": "jardim-dos-camargos",
+   "nome": "Jardim dos Camargos",
+   "grupo": "Barueri",
+   "lat": -23.502426,
+   "lng": -46.866834,
+   "osm": "Jardim dos Camargos, Barueri, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "bethaville",
+   "nome": "Bethaville",
+   "grupo": "Barueri",
+   "lat": -23.506383,
+   "lng": -46.866944,
+   "osm": "Bethaville I e II, Barueri, São Paulo, Região Sudeste, 06404-250, Brasil"
+  },
+  {
+   "id": "vila-sao-silvestre",
+   "nome": "Vila São Silvestre",
+   "grupo": "Barueri",
+   "lat": -23.485752,
+   "lng": -46.884522,
+   "osm": "Vila São Silvestre, Barueri, São Paulo, Região Sudeste, 06417-100, Brasil"
+  },
+  {
+   "id": "santana-centro",
+   "nome": "Centro de Santana de Parnaíba",
+   "grupo": "Santana de Parnaíba e arredores",
+   "lat": -23.445283,
+   "lng": -46.914769,
+   "osm": "Centro, Santana de Parnaíba, São Paulo, Região Sudeste, 06501-045, Brasil"
+  },
+  {
+   "id": "fazendinha",
+   "nome": "Fazendinha",
+   "grupo": "Santana de Parnaíba e arredores",
+   "lat": -23.407734,
+   "lng": -46.889631,
+   "osm": "Fazendinha, Santana de Parnaíba, São Paulo, Região Sudeste, 06534-030, Brasil"
+  },
+  {
+   "id": "polvilho",
+   "nome": "Polvilho (Cajamar)",
+   "grupo": "Santana de Parnaíba e arredores",
+   "lat": -23.41087,
+   "lng": -46.847221,
+   "osm": "Polvilho, Cajamar, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "cidade-sao-pedro",
+   "nome": "Cidade São Pedro",
+   "grupo": "Santana de Parnaíba e arredores",
+   "lat": -23.423868,
+   "lng": -46.858796,
+   "osm": "Cidade São Pedro Gleba A, Santana de Parnaíba, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "colinas-da-anhanguera",
+   "nome": "Colinas da Anhanguera",
+   "grupo": "Santana de Parnaíba e arredores",
+   "lat": -23.428921,
+   "lng": -46.826741,
+   "osm": "Colinas da Anhanguera, Santana de Parnaíba, São Paulo, Região Sudeste, Brasil"
+  },
+  {
+   "id": "jardim-sao-luis",
+   "nome": "Jardim São Luís",
+   "grupo": "Santana de Parnaíba e arredores",
+   "lat": -23.443594,
+   "lng": -46.929977,
+   "osm": "Jardim São Luis, Santana de Parnaíba, São Paulo, Região Sudeste, 06502-210, Brasil"
+  },
+  {
+   "id": "estacao-jardim-silveira",
+   "nome": "Estação Jardim Silveira (CPTM)",
+   "grupo": "Barueri",
+   "lat": -23.523495,
+   "lng": -46.893527,
+   "osm": "Jardim Silveira - Leo Madeiras, Rua Lourival Marques dos Santos, Jardim Tupã, Jardim Silveira, Barueri, São Paulo, Região Sudeste, 06433-190, Brasil"
+  }
+ ]
+}
