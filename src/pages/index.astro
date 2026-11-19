@@ -126,13 +126,13 @@ const __cartoesDestaque = __comDestaque(cartoes.filter((x): x is NonNullable<typ
     .capa-filtro { padding-top: 28px; padding-bottom: 28px; }
     /* Versão com foto: preto e branco, sangrando à direita, com o título por cima. */
     .com-foto .wrap { position: relative; }
-    .capa-foto { position: relative; margin: 0 -20px; height: 60vw; max-height: 360px; overflow: hidden; }
-    .capa-foto :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: 50% 10%; filter: grayscale(1) contrast(1.18) brightness(.92); display: block; }
-    .capa-foto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16,27,45,.15) 0%, rgba(16,27,45,0) 35%, rgba(16,27,45,.82) 78%, #101B2D 100%); }
+    .capa-foto { position: relative; margin: 0 -20px; height: 104vw; max-height: 560px; overflow: hidden; }
+    .capa-foto :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; filter: grayscale(1) contrast(1.18) brightness(.98); display: block; }
+    .capa-foto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16,27,45,.1) 0%, rgba(16,27,45,0) 30%, rgba(16,27,45,0) 66%, rgba(16,27,45,.85) 90%, #101B2D 100%); }
     /* No celular, a legenda fica só para leitor de tela: em cima da foto, ela disputava com o título. */
     .capa-foto figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
     .com-foto .capa-topo { position: relative; z-index: 2; }
-    .com-foto h1 { position: relative; z-index: 2; margin-top: -1.3em; }
+    .com-foto h1 { position: relative; z-index: 2; margin-top: -.75em; }
     .com-foto .capa-meio, .com-foto .capa-indice { position: relative; z-index: 2; }
     @media (min-width: 900px) {
       .capa { padding-top: 30px; }
