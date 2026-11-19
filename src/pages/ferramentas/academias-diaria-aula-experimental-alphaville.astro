@@ -2,6 +2,7 @@
 // Buscador "Academias com diária e aula experimental em Alphaville e região".
 // Ofertas: campo acesso_avulso das fichas. Regras: src/lib/acesso.ts. Horários e feriados: src/lib/horarios.ts.
 import Base from '../../layouts/Base.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
 import { academias, REGIOES, urlAcademia, dataLonga, MODALIDADES, WHATSAPP, type Academia } from '../../lib/dados';
@@ -178,6 +179,9 @@ const dataBR = (d: Date) => dataLonga(d);
       <h2>Quando é preciso reservar</h2>
       <p>Aula experimental em box e estúdio quase sempre precisa de horário marcado, porque a turma tem limite de vagas. Diária em academia de musculação costuma dispensar reserva. Feriados mudam a regra: confira o <a href="/ferramentas/academias-abertas-alphaville/?atalho=feriado">horário de feriado</a> e confirme com a unidade.</p>
     </div>
+
+    <VideoMontinho id="yndKE1GrnUQ" titulo="Toda transformação começa com uma decisão" pagina="academias-diaria-aula-experimental-alphaville" />
+
 
     <Perguntas itens={perguntas} titulo="Perguntas sobre diária, day use e aula experimental" />
     <LeiaTambem url="/ferramentas/academias-diaria-aula-experimental-alphaville/" />

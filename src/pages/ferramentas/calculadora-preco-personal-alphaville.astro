@@ -3,6 +3,7 @@
 // Conta em src/lib/precoPersonal.ts; faixas de referência editorial em src/data/preco-personal.json.
 // Regras e origem dos números: docs/calculadora-preco-personal.md.
 import Base from '../../layouts/Base.astro';
+import VideoMontinho from '../../components/VideoMontinho.astro';
 import Perguntas from '../../components/Perguntas.astro';
 import Mantem from '../../components/Mantem.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
@@ -118,6 +119,9 @@ const schema = [{ '@type': 'WebApplication', name: titulo, url: new URL(URL_PAG,
       <p>A conta é aberta: sessões por mês = vezes por semana × 52 ÷ 12, arredondado; total do mês = aula dentro do pacote × sessões; o arredondamento é para a dezena até R$ 1.000 e para a cinquentena acima disso. Tamboré e Aldeia da Serra não têm faixa própria e partem da referência de Barueri, com os limites informados pelo Montinho e aviso na tela. A referência não distingue aula de 30 e de 60 minutos, aula em dupla nem experiência do profissional, e por isso a faixa é larga.</p>
       <p>Mora em outra cidade? Use a <a href={D0.url} rel="noopener">calculadora do Personal por Perto</a>, que cobre o resto do país.</p>
     </div>
+
+    <VideoMontinho id="yqPAYRVTe0E" titulo="Pare de copiar o treino do influencer" pagina="calculadora-preco-personal-alphaville" />
+
 
     <Perguntas itens={perguntas} titulo="Perguntas sobre preço de personal trainer em Alphaville" />
     <LeiaTambem url={URL_PAG} />
