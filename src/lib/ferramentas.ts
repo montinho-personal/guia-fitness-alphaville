@@ -2,7 +2,7 @@
 // o próximo passo de quem está lendo, já abertas com o que a página sabe (academia, região, modalidade).
 // Lógica pura, sem Astro, para servir a GuiaPagina e às páginas .astro.
 
-export type FerramentaId = 'custo' | 'personal' | 'beneficio' | 'teste' | 'comparador' | 'checklist' | 'mapa' | 'abertas' | 'diaria' | 'preco' | 'formato' | 'hyrox' | 'condominio';
+export type FerramentaId = 'custo' | 'personal' | 'beneficio' | 'teste' | 'comparador' | 'checklist' | 'mapa' | 'abertas' | 'diaria' | 'preco' | 'formato' | 'hyrox' | 'condominio' | 'caminho';
 export type RegiaoId = 'alphaville' | 'barueri' | 'santana-de-parnaiba';
 
 export interface Ferramenta { id: FerramentaId; titulo: string; texto: string; href: string; rotulo: string; }
@@ -19,6 +19,7 @@ const BASE: Record<FerramentaId, { path: string; rotulo: string }> = {
   preco: { path: '/ferramentas/calculadora-preco-personal-alphaville/', rotulo: 'Preço de personal' },
   formato: { path: '/ferramentas/personal-presencial-ou-online/', rotulo: 'Presencial ou online' },
   hyrox: { path: '/ferramentas/calculadora-hyrox/', rotulo: 'Calculadora Hyrox' },
+  caminho: { path: '/ferramentas/academia-perto-de-casa-ou-do-trabalho/', rotulo: 'Perto de casa ou do trabalho' },
   condominio: { path: '/ferramentas/treino-academia-do-condominio/', rotulo: 'Treino no condomínio' },
   diaria: { path: '/ferramentas/academias-diaria-aula-experimental-alphaville/', rotulo: 'Diária e aula experimental' },
 };
@@ -146,7 +147,7 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       return [
         f('teste', `Qual academia${em} combina com você`, 'O teste já abre com a região marcada.', { regiao: c.regiao }),
         diaria(`Diária e aula experimental${em}`, 'Treine hoje sem matrícula ou teste antes de assinar: preço, regras e o canal de cada academia.'),
-        f('beneficio', `Wellhub e TotalPass${em}: quem aceita`, 'Plano mínimo e modalidades de cada unidade da região.', { reg: c.regiao }),
+        f('caminho', 'Qual fica no seu caminho', 'Diga de onde você sai e para onde vai: as academias perto de cada ponto e as do trajeto.'),
       ];
     case 'precos':
       return [
@@ -168,7 +169,7 @@ export function ferramentasPara(c: Contexto): Ferramenta[] {
       ];
     case 'perto-de':
       return [
-        f('mapa', 'Veja todas as academias no mapa', 'Para pontos que não estão nesta lista, o mapa mostra a mais próxima.'),
+        f('caminho', 'Academia perto de casa, do trabalho ou no caminho', 'Escolha os dois pontos da sua rotina e veja as mais próximas de cada um, com horário.'),
         f('teste', 'Filtre por horário e modalidade', 'Perto não basta: o teste confere se abre no seu horário.'),
         diaria('De passagem? Treine com diária', 'Onde dá para pagar só o dia ou fazer aula experimental perto de onde você está.'),
       ];

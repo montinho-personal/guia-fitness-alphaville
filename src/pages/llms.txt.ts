@@ -29,6 +29,7 @@ export const GET: APIRoute = async ({ site }) => {
 - [Academias com diária e aula experimental: onde treinar sem matrícula e onde testar antes de contratar](${u('/ferramentas/academias-diaria-aula-experimental-alphaville/')})
 - [Calculadora de preço de personal trainer em Alphaville: faixa de referência editorial por aula e por mês](${u('/ferramentas/calculadora-preco-personal-alphaville/')})
 - [Treino na academia do condomínio: simulador do que dá para treinar com os equipamentos do prédio ou de casa](${u('/ferramentas/treino-academia-do-condominio/')})
+- [Academia perto de casa ou do trabalho: academias perto de dois pontos e no caminho, com distância em linha reta e horário](${u('/ferramentas/academia-perto-de-casa-ou-do-trabalho/')})
 - [Calculadora Hyrox: pesos oficiais por categoria (Open, Pro, dupla, revezamento) e plano de prova por trecho](${u('/ferramentas/calculadora-hyrox/')})
 - [Personal trainer presencial ou online: teste de 9 perguntas com resultado explicado](${u('/ferramentas/personal-presencial-ou-online/')})
 - [Academias abertas aos domingos e 24h: buscador por dia, hora e duração do treino](${u('/ferramentas/academias-abertas-alphaville/')})
