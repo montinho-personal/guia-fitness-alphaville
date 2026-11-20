@@ -1,0 +1,126 @@
+---
+import { comDestaque as __comDestaque, academias as __academias } from '../../lib/dados';
+import VideoMontinho from '../../components/VideoMontinho.astro';
+import fotoMontinho from '../../assets/montinho/montinho-personal-trainer-selfie-academia.jpg';
+import { Image } from 'astro:assets';
+import FerramentasContexto from '../../components/FerramentasContexto.astro';
+import { ferramentasPara } from '../../lib/ferramentas';
+import Base from '../../layouts/Base.astro';
+import Assinatura from '../../components/Assinatura.astro';
+import Fontes from '../../components/Fontes.astro';
+import LeiaTambem from '../../components/LeiaTambem.astro';
+import CartaoAcademia from '../../components/CartaoAcademia.astro';
+import Perguntas from '../../components/Perguntas.astro';
+import { MODALIDADES, agregador, urlAcademia, dataLonga, dataIso, horasSemana, type Academia } from '../../lib/dados';
+import { distKm, distTexto } from '../../lib/caminho';
+
+// Comparativo de três redes pedido pelas buscas "panobianco ou bluefit", "panobianco ou gavioes" e "academia gavioes ou panobianco"
+// (SerpApi, 20/11/2026; docs/pesquisa/serp/panobianco-bluefit-ou-gavioes-2026-11-20.json). Uma página só, em vez de dois comparativos finos.
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-20'), atualizado: new Date('2026-11-20') };
+const todas = await __academias();
+const pb = todas.find((a) => a.id === 'panobianco-barueri-centro')!;
+const pc = todas.find((a) => a.id === 'panobianco-capitao-francisco')!;
+const bf = todas.find((a) => a.id === 'bluefit-barueri')!;
+const gv = todas.find((a) => a.id === 'gavioes-24h-alphaville')!;
+const T = [pb, bf, gv];
+const hFmt = (f: string) => (f === '00:00-23:59' ? '24 horas' : f.replace('23:59', '24:00').replace(/:00/g, 'h').replace(/(^|-)0(\d)/g, '$1$2').replace('-', ' às ').replace('24h', 'meia-noite'));
+const hora = (a: Academia, d: 'seg' | 'sex' | 'sab' | 'dom') => (a.data.horario_status?.[d] === 'a-confirmar' ? 'a confirmar' : a.data.horario[d].length ? a.data.horario[d].map(hFmt).join(', ') : 'fechada');
+const ag = (a: Academia, n: 'Wellhub' | 'TotalPass') => { const g = agregador(a, n); return g && g.situacao !== 'nao-aceita' ? `${g.plano_minimo} (${g.preco_plano})` : 'não consta'; };
+const mods = (a: Academia) => a.data.modalidades.map((m) => MODALIDADES[m]).join(', ');
+const pe = (a: Academia) => { const s = a.data.personal_externo?.status; return s === 'aceita' ? 'Aceita; regras na unidade' : s === 'aceita-com-condicoes' ? 'Aceita, com cadastro e plano do personal' : 'A confirmar'; };
+const d = (a: Academia, b: Academia) => distTexto(distKm(a.data.geo as any, b.data.geo as any));
+const linhas: [string, ...string[]][] = [
+  ['Onde fica', ...T.map((a) => `${a.data.endereco.split(' - ')[0]}, ${a.data.bairro}`)],
+  ['Segunda a quinta', ...T.map((a) => hora(a, 'seg'))],
+  ['Sexta', ...T.map((a) => hora(a, 'sex'))],
+  ['Sábado', ...T.map((a) => hora(a, 'sab'))],
+  ['Domingo', ...T.map((a) => hora(a, 'dom'))],
+  ['Horas abertas por semana', ...T.map((a) => String(horasSemana(a.data.horario)))],
+  ['Mensalidade', ...T.map((a) => (a.data.mensalidade ? a.data.mensalidade.valor : 'não publicada'))],
+  ['Modalidades', ...T.map(mods)],
+  ['Wellhub', ...T.map((a) => ag(a, 'Wellhub'))],
+  ['TotalPass', ...T.map((a) => ag(a, 'TotalPass'))],
+  ['Personal de fora', ...T.map(pe)],
+];
+const wpb = agregador(pb, 'Wellhub')!, wbf = agregador(bf, 'Wellhub')!, wgv = agregador(gv, 'Wellhub')!, tgv = agregador(gv, 'TotalPass')!;
+const planos = pb.data.mensalidade?.planos ?? [];
+const abs = (u: string) => new URL(u, Astro.site).href;
+const titulo = 'Panobianco, Bluefit ou Gaviões em Barueri e Alphaville';
+const descricao = 'Panobianco, Bluefit ou Gaviões: preço, horário, aulas, Wellhub e TotalPass das unidades de Barueri e Alphaville lado a lado, e qual combina com a sua rotina.';
+const perguntas = [
+  { p: 'Qual é melhor, Panobianco ou Bluefit?', r: `Em Barueri, a Panobianco do Centro é a única das duas que publica preço: ${planos.map((x) => `${x.nome} a ${x.preco}`).join(' e ')}, valores da rede. Também entra mais barato no Wellhub, pelo ${wpb.plano_minimo}. A Bluefit do Bethaville fica aberta até a meia-noite também na sexta e tem jiu-jítsu e muay thai na grade. As duas ficam a ${d(pb, bf)} uma da outra, em linha reta.` },
+  { p: 'Qual é melhor, Panobianco ou Gaviões?', r: `Depende de onde e quando você treina. A Gaviões fica em Alphaville, na Av. Juruá, e funciona 24 horas de segunda a sábado; a Panobianco mais próxima fica no centro de Barueri, a ${d(pb, gv)} em linha reta, e fecha à meia-noite. A Panobianco publica o preço e entra pelo ${wpb.plano_minimo} no Wellhub; a Gaviões não publica mensalidade e pede o ${wgv.plano_minimo} no Wellhub ou o ${tgv.plano_minimo} no TotalPass.` },
+  { p: 'Quanto custa a Panobianco em Barueri?', r: `O site da rede anuncia ${planos.map((x) => `${x.nome} a ${x.preco} (${x.condicoes.split('.')[0].toLowerCase()})`).join(' e ')}. São preços da rede: confirme na unidade se valem para Barueri.` },
+  { p: 'A Panobianco aceita Wellhub e TotalPass?', r: `As duas unidades de Barueri aparecem no Wellhub a partir do ${wpb.plano_minimo} (${wpb.preco_plano}). No catálogo do TotalPass conferido pelo guia, elas não aparecem.` },
+  { p: 'A Gaviões de Alphaville é 24 horas?', r: 'Sim, de segunda a sábado, segundo as fontes conferidas. O funcionamento no domingo e nos feriados está a confirmar. Para treinar de madrugada, use o buscador de academias abertas para checar o dia.' },
+  { p: 'Posso levar meu personal nessas academias?', r: 'Na Bluefit, sim: o personal faz cadastro, contrata o plano da Bluefit para personal e usa o uniforme oficial. Na Panobianco, a rede aceita e pede para verificar as regras na unidade; se há taxa, não é publicado. Na Gaviões de Alphaville, a regra ainda está a confirmar.' },
+];
+const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
+const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: pb.id, nome: 'Panobianco' }, { id: bf.id, nome: 'Bluefit' }] });
+---
+<Base titulo={titulo} descricao={descricao} tipo="article" schema={schema} migalhas={[{ nome: 'Guias', url: '/guias/' }, { nome: 'Panobianco, Bluefit ou Gaviões', url: '/guias/panobianco-bluefit-ou-gavioes/' }]}>
+  <div class="wrap">
+    <header class="cab-pag">
+      <span class="rotulo cor-marca">Guias de decisão · comparativo</span>
+      <h1>Panobianco, Bluefit ou Gaviões: qual escolher em Barueri e Alphaville</h1>
+      <p class="linha-fina">Três redes de academia com unidade na região. A Panobianco e a Bluefit ficam em Barueri, a {d(pb, bf)} uma da outra; a Gaviões fica em Alphaville e funciona 24 horas. A escolha passa por preço, horário e o que você treina.</p>
+      <Assinatura {...gov} />
+    </header>
+
+    <div class="resposta">
+      <span class="rotulo">Resposta direta</span>
+      <p>Se você quer saber o preço antes de ir, a Panobianco é a única das três que publica: a rede anuncia planos a partir de {planos[0]?.preco}, e no Wellhub entra pelo {wpb.plano_minimo}, o mais barato das três. Se você treina tarde ou de madrugada, a Gaviões de Alphaville funciona 24 horas de segunda a sábado e é a única com TotalPass. A Bluefit de Barueri fica no meio: aberta até a meia-noite todos os dias úteis, com jiu-jítsu e muay thai, e regra publicada para quem leva o próprio personal.</p>
+    </div>
+    <FerramentasContexto itens={ferramentas} modo="atalho" />
+
+    <div class="rolagem" tabindex="0" role="region" aria-label="Panobianco, Bluefit e Gaviões lado a lado" style="margin:24px 0">
+      <table class="dados">
+        <caption>Dados das fichas do guia. Abra cada ficha para ver as fontes e a data de conferência.</caption>
+        <thead><tr><th scope="col">Critério</th>{T.map((a) => <th scope="col"><a href={urlAcademia(a)} style="color:inherit">{a.data.nome}</a></th>)}</tr></thead>
+        <tbody>{linhas.map(([c, ...xs]) => <tr><th scope="row">{c}</th>{xs.map((x) => <td>{x}</td>)}</tr>)}</tbody>
+      </table>
+    </div>
+
+    <div class="prosa">
+      <h2>Preço: só a Panobianco publica</h2>
+      <p>O site da Panobianco anuncia {planos.map((x) => `o ${x.nome} a ${x.preco}`).join(' e ')}. {planos.map((x) => `${x.nome}: ${x.condicoes}`).join(' ')} São preços da rede; a ficha do guia ainda confere se a unidade de Barueri pratica os mesmos valores. A Bluefit e a Gaviões não publicam a mensalidade das unidades da região: peça o valor na recepção e pergunte sobre matrícula, anuidade e fidelidade.</p>
+      <p>Pelos agregadores, a ordem fica clara. A Panobianco entra no Wellhub pelo {wpb.plano_minimo}, de {wpb.preco_plano} por mês. A Bluefit Barueri e a Gaviões pedem o {wbf.plano_minimo}, de {wbf.preco_plano}. No TotalPass, só a Gaviões aparece, a partir do {tgv.plano_minimo}, de {tgv.preco_plano}. Os valores de cada plano estão em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
+
+      <h2>Horário: a Gaviões não fecha</h2>
+      <p>A Gaviões de Alphaville funciona 24 horas de segunda a sábado; no domingo e nos feriados, o horário está a confirmar. A Bluefit Barueri abre às 5h e fecha à meia-noite de segunda a sexta. A Panobianco Barueri Centro também abre às 5h e vai até a meia-noite de segunda a quinta, fechando às 23h na sexta. No fim de semana, a Panobianco abre das 8h às 17h no sábado e das 8h às 14h no domingo; a Bluefit, das 8h às 16h no sábado e das 10h às 16h no domingo. Para conferir um dia e horário específicos, use o <a href="/ferramentas/academias-abertas-alphaville/" data-evento="clique_ferramenta" data-ref="abertas:panobianco-bluefit-ou-gavioes">buscador de academias abertas</a>.</p>
+
+      <h2>Aulas e estrutura</h2>
+      <p>A Panobianco Barueri Centro tem a grade mais variada das três em dança e aeróbica, com aulas como body jam, fitness dance, bounce e aeropower, além de muay thai. Lista também área infantil, cadeira de massagem e nutricionista. A Bluefit Barueri puxa para lutas e treino intenso: jiu-jítsu, muay thai, GRIT e cross training. A Gaviões de Alphaville tem a lista mais ampla de modalidades, com bike indoor, pilates, yoga, boxe e muay thai, e informa rooftop com máquinas, toalhas, manobrista e estacionamento grátis segundo o TotalPass.</p>
+
+      <h2>Personal trainer de fora</h2>
+      <p>A Bluefit tem a regra mais clara: o personal faz cadastro na unidade, contrata o plano da rede para personal e usa o uniforme oficial. A Panobianco aceita e pede para verificar as regras na unidade; se há taxa, a rede não publica. Na Gaviões de Alphaville, a regra ainda está a confirmar. A situação de cada unidade está na <a href="/ferramentas/academias-que-aceitam-personal-externo/" data-evento="clique_ferramenta" data-ref="personal:panobianco-bluefit-ou-gavioes">lista de academias que aceitam personal externo</a>.</p>
+
+      <h2>A outra Panobianco de Barueri</h2>
+      <p>A rede tem também a <a href={urlAcademia(pc)}>{pc.data.nome}</a>, na Vila Pindorama, mais enxuta: musculação, bike e aulas de aeropower e body jam, aberta das 5h à meia-noite de segunda a quinta. Ela entra no Wellhub pelo mesmo {agregador(pc, 'Wellhub')?.plano_minimo} e, no plano Platinum anunciado pela rede, dá para usar as duas unidades.</p>
+
+      <h2>Resumo por perfil</h2>
+      <ul>
+        <li><strong>Quer saber o preço antes de ir:</strong> Panobianco.</li>
+        <li><strong>Usa Wellhub e quer o plano mais barato:</strong> Panobianco ({wpb.plano_minimo}).</li>
+        <li><strong>Usa TotalPass:</strong> Gaviões.</li>
+        <li><strong>Treina de madrugada:</strong> Gaviões, 24 horas de segunda a sábado.</li>
+        <li><strong>Quer luta (jiu-jítsu, muay thai):</strong> Bluefit ou Gaviões. <strong>Quer aulas de dança e aeróbica:</strong> Panobianco.</li>
+        <li><strong>Vai treinar com personal de fora:</strong> Bluefit, que tem a regra publicada.</li>
+      </ul>
+      <p>Mora num ponto e trabalha em outro? A <a href="/ferramentas/academia-perto-de-casa-ou-do-trabalho/" data-evento="clique_ferramenta" data-ref="caminho:panobianco-bluefit-ou-gavioes">busca de academia perto de casa ou do trabalho</a> mostra qual fica no seu caminho. Para comparar outras redes, veja <a href="/guias/skyfit-ou-bluefit/">SkyFit ou Bluefit</a>, <a href="/guias/smart-fit-ou-gavioes/">Smart Fit ou Gaviões</a> e <a href="/guias/gavioes-ou-ironberg/">Gaviões ou Ironberg</a>.</p>
+    </div>
+
+    <section class="bloco fino" aria-labelledby="fichas-t">
+      <div class="cab"><h2 id="fichas-t">As fichas</h2><a class="link-forte" href="/regioes/barueri/">Outras academias de Barueri</a></div>
+      <div class="cartoes">{__comDestaque([pb, bf, gv, pc], todas).map((a) => <CartaoAcademia a={a} />)}</div>
+    </section>
+
+    <figure class="bloco fino" style="margin:28px auto 0;max-width:420px"><Image src={fotoMontinho} alt="Montinho, personal trainer que mantém este guia, em selfie numa academia" widths={[420, 840]} sizes="(max-width: 460px) 100vw, 420px" style="width:100%;height:auto;border-radius:12px" /><figcaption style="font-size:14px;text-align:center;margin-top:6px">O Montinho, personal trainer que mantém este guia. Publicidade da casa.</figcaption></figure>
+    <VideoMontinho id="GPuqJs_DRoY" titulo="O poder da disciplina: a sensação de dever feito" pagina="panobianco-bluefit-ou-gavioes" />
+    <FerramentasContexto itens={ferramentas} />
+
+    <Perguntas itens={perguntas} titulo="Perguntas sobre Panobianco, Bluefit e Gaviões" />
+    <LeiaTambem url="/guias/panobianco-bluefit-ou-gavioes/" />
+    <div style="margin-top:28px"><Fontes fontes={T.flatMap((a) => a.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${a.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })))} /></div>
+  </div>
+</Base>
