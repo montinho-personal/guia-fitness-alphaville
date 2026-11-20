@@ -27,7 +27,7 @@ const hora = (a: Academia, d: 'seg' | 'sab' | 'dom') => (a.data.horario[d].lengt
 const ag = (a: Academia, n: 'Wellhub' | 'TotalPass') => { const g = agregador(a, n); return g && g.situacao !== 'nao-aceita' ? `${g.plano_minimo} (${g.preco_plano})` : 'não consta'; };
 const planos = (a: Academia) => a.data.mensalidade?.planos ?? [];
 const diaria = (a: Academia) => { const o = a.data.acesso_avulso.find((x) => x.tipo === 'diaria'); return o?.preco.valor ? `${o.preco.situacao === 'a-partir-de' ? 'a partir de ' : ''}${o.preco.valor}` : 'não publicada'; };
-const pe = (a: Academia) => { const p = a.data.personal_externo; if (!p) return 'A confirmar'; const t = p.taxa; return t.situacao === 'confirmada' && t.valor ? `Aceita; o personal paga ${t.valor} por ${t.periodicidade === 'mes' ? 'mês' : t.periodicidade} à academia` : 'Aceita, com contrato do profissional; valor não publicado'; };
+const pe = (a: Academia) => { const p = a.data.personal_externo; if (!p) return 'A confirmar'; const t = p.taxa; return t.situacao === 'confirmada' && t.valor ? `Aceita, com valor fixo pago pelo profissional (${t.valor} por ${t.periodicidade === 'mes' ? 'mês' : t.periodicidade}, segundo o Montinho)` : 'Aceita, com contrato do profissional; valor não publicado'; };
 const dist = distTexto(distKm(ib.data.geo as any, sf.data.geo as any));
 const tib = agregador(ib, 'TotalPass')!, tsf = agregador(sf, 'TotalPass')!;
 const linhas: [string, string, string][] = [
@@ -52,7 +52,7 @@ const perguntas = [
   { p: 'Por que a Ironberg é mais cara que a Smart Fit?', r: `São propostas diferentes. A Ironberg Alphaville tem 32 mil m², funciona 24 horas, oferece estacionamento grátis com mais de mil vagas, lounge e heliponto, e é dedicada à musculação. A Smart Fit é uma rede de baixo custo, com unidades menores e padronizadas. A diferença na mensalidade da região passa de R$ 249 por mês no plano mais barato de cada uma.` },
   { p: 'A Ironberg aceita Gympass (Wellhub) ou TotalPass?', r: `Pela ficha do guia, a Ironberg Alphaville aparece no TotalPass a partir do ${tib.plano_minimo}, de ${tib.preco_plano} por mês, e não consta no Wellhub. A Smart Fit Sodimac aparece no TotalPass a partir do ${tsf.plano_minimo}, de ${tsf.preco_plano}.` },
   { p: 'Quanto custa a diária na Ironberg e na Smart Fit?', r: `A Ironberg Alphaville vende o Day Pass a ${diaria(ib)} no site da unidade, válido até 23h59 do dia de uso. A Smart Fit tem passe diário ${diaria(sf)}, segundo a central de ajuda da rede, comprado no app ou no totem.` },
-  { p: 'Posso levar meu personal na Ironberg?', r: 'Pode. A Ironberg aceita personal de fora, e o profissional paga um valor fixo de R$ 1.000 por mês à academia, não por aula nem por aluno. Na Smart Fit, o personal faz um contrato de uso das instalações; o valor não é publicado.' },
+  { p: 'Posso levar meu personal na Ironberg?', r: 'Pode. O site da Ironberg informa que o personal de fora paga um valor fixo à academia, não por aula nem por aluno; segundo o Montinho, que mantém este guia, esse valor é de R$ 1.000 por mês na unidade de Alphaville. Na Smart Fit, o personal faz um contrato de uso das instalações; o valor não é publicado.' },
   { p: 'A Smart Fit de Alphaville é 24 horas?', r: 'Não. A Smart Fit Sodimac abre das 6h às 23h nos dias úteis, das 8h às 17h no sábado e das 8h às 14h no domingo. Na região, a Ironberg e a Gaviões 24h funcionam 24 horas.' },
 ];
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
@@ -97,7 +97,7 @@ const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: ib.
       <p>No TotalPass, a Smart Fit Sodimac entra pelo {tsf.plano_minimo}, de {tsf.preco_plano} por mês, e a Ironberg pelo {tib.plano_minimo}, de {tib.preco_plano}. No Wellhub, nenhuma das duas consta. Para testar antes, a Ironberg vende o Day Pass a {diaria(ib)}, e a Smart Fit tem passe diário {diaria(sf)}; compare as duas e outras opções em <a href="/ferramentas/academias-diaria-aula-experimental-alphaville/" data-evento="clique_ferramenta" data-ref="diaria:ironberg-ou-smart-fit">diária e aula experimental</a>.</p>
 
       <h2>Personal trainer</h2>
-      <p>A Ironberg tem a regra mais clara da região: aceita personal de fora, e o profissional paga R$ 1.000 por mês à academia, um valor fixo, não por aula. Esse custo costuma estar embutido no preço que o personal cobra. Na Smart Fit, o personal faz um contrato de uso das instalações com a rede, sem valor publicado.</p>
+      <p>A Ironberg tem a regra mais clara da região: aceita personal de fora, e o site da rede informa que o profissional paga um valor fixo à academia, não por aula. Na unidade de Alphaville, segundo o Montinho, que mantém este guia e atende na região, esse valor é de R$ 1.000 por mês. Esse custo costuma estar embutido no preço que o personal cobra. Na Smart Fit, o personal faz um contrato de uso das instalações com a rede, sem valor publicado.</p>
 
       <h2>Resumo por perfil</h2>
       <ul>
@@ -106,7 +106,7 @@ const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: ib.
         <li><strong>Quer o menor preço com fidelidade:</strong> Smart Fit (o Plano Fit do Carrefour Tamboré é o mais barato).</li>
         <li><strong>Usa TotalPass:</strong> Smart Fit, que pede o plano mais barato.</li>
         <li><strong>Quer treinar em várias cidades:</strong> Smart Fit, no Plano Black.</li>
-        <li><strong>Vai contratar personal:</strong> Ironberg, que tem a regra e o valor publicados.</li>
+        <li><strong>Vai contratar personal:</strong> Ironberg, que tem a regra publicada.</li>
       </ul>
       <p>Visite as duas no horário em que você vai treinar. O <a href={`/ferramentas/comparador/?a=${ib.id}&b=${sf.id}`} data-evento="clique_ferramenta" data-ref="comparador:ironberg-ou-smart-fit">comparador</a> mostra os dados completos lado a lado. Para outras comparações com a Ironberg, veja <a href="/guias/ironberg-ou-nitrogym/">Ironberg ou NitroGym</a> e <a href="/guias/gavioes-ou-ironberg/">Gaviões ou Ironberg</a>; com a Smart Fit, <a href="/guias/smart-fit-ou-skyfit/">Smart Fit ou SkyFit</a> e <a href="/guias/smart-fit-ou-gavioes/">Smart Fit ou Gaviões</a>.</p>
     </div>

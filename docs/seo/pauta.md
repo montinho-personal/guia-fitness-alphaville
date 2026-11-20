@@ -56,12 +56,12 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | Texfit (Barueri) no mapa do Google em duas buscas (19/11) | fichas | Sem ficha no guia: criar só com fonte oficial da academia |
 | PAA "Qual a diferença entre Hyrox e funcional?" (categorias, 19/11) | `/guias/hyrox-ou-crossfit/` | Cabe como pergunta frequente na revisão desse artigo (está na fila, nº 15) |
 | AC "como treinar corrida para hyrox" (como treinar, 19/11) | `/guias/como-treinar-para-o-primeiro-hyrox/` | Entrou como pergunta e parágrafo; um artigo próprio só com vídeo do Montinho sobre corrida |
-| AC "bluefit wellhub ou totalpass", "bluefit totalpass ou gympass"; PAA "A Smart Fit aceita Gympass?" (19/11) | `/academias/wellhub-totalpass/` | Conferir se a página responde com o nome Gympass e com a Bluefit (hoje só Wellhub) |
+| ~~AC "bluefit wellhub ou totalpass", "bluefit totalpass ou gympass"; PAA "A Smart Fit aceita Gympass?" (19/11)~~ | ~~`/academias/wellhub-totalpass/`~~ | Feito em 20/11: perguntas sobre Bluefit, Smart Fit e Gaviões com o nome Gympass, geradas das fichas |
 | PAA "Quanto custa montar uma academia de condomínio?" (19/11) | `/guias/academia-de-condominio-regras/` | Só com preço de fonte conferida |
 | AC "academia com estacionamento gratuito", "coberto" (19/11) | `/ferramentas/academia-perto-de-casa-ou-do-trabalho/` | Filtro "com estacionamento" quando as fichas tiverem a regra conferida (hoje várias estão a confirmar) |
 | PAA "Quanto custa uma aula de pilates em Barueri?" (academia gratuita, 20/11) | `/modalidades/pilates/` | Só com preço publicado pelos estúdios; o pilates gratuito da Prefeitura já está na página de academia gratuita |
-| REL "Academia panobianco aceita totalpass", "Panobianco planos", "Panobianco unidades" (20/11) | `/academias/panobianco-barueri-centro/` | Conferir se a ficha responde com essas palavras (TotalPass: não consta) |
-| AC "panobianco ou smartfit", "panobianco ou skyfit" (20/11) | `/guias/panobianco-bluefit-ou-gavioes/` | Cabe como pergunta frequente na próxima revisão do comparativo |
+| ~~REL "Academia panobianco aceita totalpass", "Panobianco planos", "Panobianco unidades" (20/11)~~ | ~~`/academias/panobianco-barueri-centro/`~~ | Já respondido na ficha (perguntas sobre TotalPass, planos e as duas unidades); conferido em 20/11 |
+| ~~AC "panobianco ou smartfit", "panobianco ou skyfit" (20/11)~~ | ~~`/guias/panobianco-bluefit-ou-gavioes/`~~ | Feito em 20/11: duas perguntas frequentes com os dados das fichas |
 | Dance Studio Alphaville, Stage Dance Center, Andressa Rodrigues Escola de Dança, aulas do Alphaville Tênis Clube (mapa e orgânicos de "aula de dança alphaville", 20/11) | fichas novas, `/modalidades/danca/` | Só com fonte própria do lugar; o Dance Studio tem página no Wellhub e o ATC no site do clube |
 | Black Belt Club Alphaville, Studio Fight Alpha (SFA), SOU Alphaville (mapa e orgânicos de "muay thai alphaville", 20/11) | fichas novas, `/guias/muay-thai-alphaville-barueri/` | Só com fonte própria do lugar |
 | AC "muay thai feminino barueri", "muay thai parque viana", "engenho novo" (20/11) | `/guias/muay-thai-alphaville-barueri/` | Já respondido (Double Dragon, Team Cruz, Studio Cathéo); conferir na próxima revisão se há mais lugares |
@@ -69,6 +69,10 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | PAA "Qual é a diária da Academia Gaviões Alphaville?" (20/11) | `/academias/gavioes-24h-alphaville/` | Só quando a Gaviões publicar diária; hoje a ficha diz que não publica |
 | AC "bioimpedância inbody barueri" (20/11) | `/guias/bioimpedancia-alphaville-barueri/` | Só se alguma academia ou clínica informar o modelo do aparelho |
 | Clínica VTX e clínicas de medicina esportiva (orgânicos de 20/11) | `/guias/bioimpedancia-alphaville-barueri/` | O guia não tem fichas de clínicas; citadas sem preço |
+| AC "gavioes alphaville aulas", "horarios", "telefone", "tem aula experimental", "diaria", "preço" (revisão de gaviões ou ironberg, 20/11) | `/academias/gavioes-24h-alphaville/` | Conferir se a ficha responde com essas palavras; diária e preço só quando publicados |
+| Endereço da Gaviões: post de terceiro fala em "novo endereço: Av. Juruá, 301" e "Fast Treino, novo empreendimento da Gaviões" no mesmo número (20/11) | `/academias/gavioes-24h-alphaville/` | Conferir no site oficial da Gaviões; a ficha usa Av. Juruá, 253 |
+| PAA "Quais lugares tem Ironberg?" (20/11) | `/academias/ironberg-alphaville/` | Só com a lista de unidades do site da rede |
+| Roxzone (orgânico de "estações do hyrox", 20/11) | `/guias/estacoes-do-hyrox/`, calculadora | Só com o regulamento oficial (site bloqueado) |
 | Hyrox Training Club da CrossFit Barueri, OBox | `/guias/hyrox-barueri/`, `/modalidades/crossfit/` | Só com fonte; o site do CrossFit Barueri não cita Hyrox (18/11) e o da OBox não abriu |
 | Gracie Barra, Alliance (G13 já entrou na página e tem ficha; conferido em 18/11) | `/guias/jiu-jitsu-alphaville/` (fichas) | Esperando liberar os sites (lembrete agendado) |
 | SESI Santana de Parnaíba | `/regioes/santana-de-parnaiba/` (ficha) | Site oficial bloqueado aqui |
@@ -107,8 +111,8 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 | ~~7~~ | ~~2026-11-15~~ | ~~`/guias/academias-premium-alphaville/`~~ | ~~Academias premium em Alphaville: o que o preço maior compra~~ (revisado em 18/11, SerpApi) |
 | ~~8~~ | 2026-11-15 | ~~`/guias/categorias-do-hyrox/`~~ | Revisado em 19/11 (`categorias-do-hyrox`): tabela de cargas por categoria, duplas e revezamento, 6 perguntas |
 | ~~9~~ | 2026-11-15 | ~~`/guias/como-treinar-para-o-primeiro-hyrox/`~~ | Revisado em 19/11 (`como-treinar-para-o-primeiro-hyrox`): seção academia, condomínio e casa, corrida, 6 perguntas |
-| 10 | 2026-11-15 | `/guias/estacoes-do-hyrox/` | Estações do Hyrox: as 8 provas explicadas uma a uma |
-| 11 | 2026-11-15 | `/guias/gavioes-ou-ironberg/` | Gaviões 24h ou Ironberg: qual academia 24 horas escolher |
+| ~~10~~ | 2026-11-15 | ~~`/guias/estacoes-do-hyrox/`~~ | Revisado em 20/11 (`estacoes-do-hyrox`): tabela de ordem e cargas, resposta direta no formato da visão de IA, 6 perguntas |
+| ~~11~~ | 2026-11-15 | ~~`/guias/gavioes-ou-ironberg/`~~ | Revisado em 20/11 (`gavioes-ou-ironberg`): diária, regra de personal com a fonte certa, 6 perguntas |
 | 12 | 2026-11-15 | `/guias/hyrox-aldeia-da-serra/` | Hyrox na Aldeia da Serra: treinar em casa, no condomínio e na rua |
 | 13 | 2026-11-15 | `/guias/hyrox-alphaville/` | Hyrox em Alphaville: onde treinar corrida, força e estações |
 | 14 | 2026-11-15 | `/guias/hyrox-barueri/` | Hyrox em Barueri: academias que ajudam e quanto custa montar |

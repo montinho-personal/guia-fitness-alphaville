@@ -9,10 +9,11 @@ import Assinatura from '../../components/Assinatura.astro';
 import Fontes from '../../components/Fontes.astro';
 import CartaoAcademia from '../../components/CartaoAcademia.astro';
 import VideoMontinho from '../../components/VideoMontinho.astro';
+import Perguntas from '../../components/Perguntas.astro';
 import LeiaTambem from '../../components/LeiaTambem.astro';
 import { academias, MODALIDADES, agregador, urlAcademia, dataLonga, dataIso } from '../../lib/dados';
 
-const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-15'), atualizado: new Date('2026-11-15') };
+const gov = { autor: 'Redação do Guia Fitness Alphaville', revisor: null, publicado: new Date('2026-11-15'), atualizado: new Date('2026-11-20') };
 const todas = await academias();
 const gv = todas.find((a) => a.id === 'gavioes-24h-alphaville')!;
 const ib = todas.find((a) => a.id === 'ironberg-alphaville')!;
@@ -23,12 +24,21 @@ const linhas: [string, string, string][] = [
   ['Onde fica', 'Av. Juruá, 253, Alphaville Industrial', 'Estrada da Aldeinha, 181, Jardim Santa Cecília'],
   ['Horário', '24 horas de segunda a sábado; domingo diverge entre as fontes', '24 horas, todos os dias, inclusive feriados (site da rede)'],
   ['Mensalidade', 'Não publicada', 'A partir de R$ 399/mês no plano de 12 meses + matrícula de R$ 120'],
+  ['Diária', 'Não publicada', 'Day Pass de R$ 120 no site da unidade'],
   ['Wellhub', wGv ? `a partir do ${wGv.plano_minimo} (${wGv.preco_plano})` : 'Não consta', 'Não consta'],
   ['TotalPass', tGv ? `a partir do ${tGv.plano_minimo} (${tGv.preco_plano})` : 'Não consta', tIb ? `a partir do ${tIb.plano_minimo} (${tIb.preco_plano})` : 'Não consta'],
   ['Modalidades', mods(gv.data.modalidades), mods(ib.data.modalidades)],
   ['Estrutura destacada', 'Rooftop com máquinas; acessibilidade (banheiro, vaga e portas adaptadas)', '32 mil m² declarados; lounge; acessibilidade; heliponto'],
   ['Estacionamento', 'Grátis, com manobrista, segundo o TotalPass', 'Gratuito, mais de 1.000 vagas'],
-  ['Personal de fora', 'Regra não publicada', 'Aceito, com valor fixo pago à academia (valor só na unidade)'],
+  ['Personal de fora', 'Regra não publicada', 'Aceito, com valor fixo pago pelo profissional (R$ 1.000 por mês, segundo o Montinho)'],
+];
+const perguntas = [
+  { p: 'Qual é melhor, Gaviões ou Ironberg?', r: 'As duas funcionam 24 horas. A Gaviões 24h Alphaville tem grade de aulas variada (lutas, dança, bike, pilates, yoga) e entra no Wellhub e no TotalPass. A Ironberg é só musculação, em 32 mil m², com preço publicado e estacionamento grátis para mais de mil carros. Para aulas e agregador, a Gaviões; para musculação e preço conhecido, a Ironberg.' },
+  { p: 'A Gaviões Alphaville aceita Gympass (Wellhub) e TotalPass?', r: `Aceita os dois. Pela ficha do guia, a Gaviões 24h Alphaville entra no Wellhub, o antigo Gympass, a partir do ${wGv?.plano_minimo} (${wGv?.preco_plano}) e no TotalPass a partir do ${tGv?.plano_minimo} (${tGv?.preco_plano}). A Ironberg aparece só no TotalPass, a partir do ${tIb?.plano_minimo} (${tIb?.preco_plano}).` },
+  { p: 'Quanto custa a mensalidade da Gaviões em Alphaville?', r: 'A Gaviões não publica a mensalidade da unidade de Alphaville; o site leva a uma plataforma de matrícula. Peça o valor na recepção. Para comparar, a Ironberg publica R$ 399 por mês no plano de 12 meses, mais matrícula de R$ 120.' },
+  { p: 'A Gaviões Alphaville tem diária ou aula experimental?', r: 'As fontes conferidas pelo guia não publicam diária nem aula experimental da Gaviões Alphaville. Pergunte na recepção. A Ironberg vende o Day Pass a R$ 120 no site da unidade.' },
+  { p: 'Qual o horário da Gaviões Alphaville?', r: 'A Gaviões 24h Alphaville funciona 24 horas de segunda a sábado. No domingo e nos feriados, as fontes divergem: o Wellhub mostra 24 horas e o TotalPass diz que ela não abre. Confirme antes de ir. A Ironberg publica 24 horas todos os dias.' },
+  { p: 'Posso levar meu personal na Gaviões ou na Ironberg?', r: 'Na Ironberg, sim: o site da rede informa que o personal de fora paga um valor fixo à academia, e o Montinho, que mantém este guia, informa que esse valor é de R$ 1.000 por mês na unidade de Alphaville. Na Gaviões Alphaville, a regra não é publicada; pergunte na recepção.' },
 ];
 const abs = (u: string) => new URL(u, Astro.site).href;
 const titulo = 'Gaviões 24h ou Ironberg: qual academia 24 horas escolher';
@@ -65,7 +75,7 @@ const __todasDestaque = await __academias();
       <p>Quem trabalha em turno, volta tarde de viagem ou só consegue treinar antes das 5h tem, no guia, só estas duas opções. No domingo, as fontes da Gaviões divergem: o Wellhub mostra 24 horas e o TotalPass diz que ela não abre. Nenhuma das fontes diz como é o atendimento de madrugada; em academias 24 horas é comum a equipe ser menor nesse período. Se você vai treinar nesse horário, pergunte quem fica na sala e como funciona a entrada. Mais detalhes em <a href="/ferramentas/academias-abertas-alphaville/">academias 24 horas</a>.</p>
 
       <h2>Preço: um lado publicado, outro não</h2>
-      <p>A Ironberg publica a tabela da rede: R$ 399 por mês no plano de 12 meses, R$ 499 no de 6 meses e R$ 599 no recorrente, sempre com matrícula de R$ 120. A Gaviões não publica mensalidade nem diária; a página da unidade leva a uma plataforma de matrícula. Para comparar de verdade, peça o valor na recepção da Gaviões.</p>
+      <p>A Ironberg publica a tabela da rede: R$ 399 por mês no plano de 12 meses, R$ 499 no de 6 meses e R$ 599 no recorrente, sempre com matrícula de R$ 120. A Gaviões não publica mensalidade nem diária; a página da unidade leva a uma plataforma de matrícula. Para comparar de verdade, peça o valor na recepção da Gaviões. Para testar antes de assinar, a Ironberg vende o Day Pass a R$ 120 no site da unidade, válido até 23h59 do dia de uso; veja outras opções em <a href="/ferramentas/academias-diaria-aula-experimental-alphaville/" data-evento="clique_ferramenta" data-ref="diaria:gavioes-ou-ironberg">diária e aula experimental</a>.</p>
       <p>Com agregador, a lógica muda: a Gaviões aparece no Wellhub a partir do {wGv?.plano_minimo} e no TotalPass a partir do {tGv?.plano_minimo}; a Ironberg só aparece no TotalPass, a partir do {tIb?.plano_minimo}. Para quem tem TotalPass, a Gaviões exige um plano mais barato. Veja os planos em <a href="/academias/wellhub-totalpass/">Wellhub e TotalPass</a>.</p>
 
       <h2>Aulas contra espaço</h2>
@@ -75,7 +85,7 @@ const __todasDestaque = await __academias();
       <p>A Gaviões fica na Av. Juruá, no Alphaville Industrial, no mesmo número do Fast Treino e perto da SkyFit. A Ironberg fica na Estrada da Aldeinha, fora dos bairros residenciais, com estacionamento gratuito para mais de mil carros. Na Gaviões, a página do TotalPass lista estacionamento grátis e manobrista; confirme se vale para todos os planos.</p>
 
       <h2>Quem treina com personal</h2>
-      <p>A Ironberg informa que personal de fora pode atender lá pagando um valor fixo à academia; o valor é passado na unidade. A Gaviões não publica regra. Os guias <a href="/guias/personal-trainer-ironberg-alphaville/">personal trainer na Ironberg</a> e <a href="/guias/personal-trainer-gavioes-24h-alphaville/">personal trainer na Gaviões</a> listam o que perguntar.</p>
+      <p>A Ironberg aceita personal de fora: o site da rede informa que o profissional paga um valor fixo à academia, não por aula nem por aluno. Na unidade de Alphaville, segundo o Montinho, que mantém este guia e atende na região, esse valor é de R$ 1.000 por mês. Esse custo costuma estar embutido no preço que o personal cobra. A Gaviões não publica regra. Os guias <a href="/guias/personal-trainer-ironberg-alphaville/">personal trainer na Ironberg</a> e <a href="/guias/personal-trainer-gavioes-24h-alphaville/">personal trainer na Gaviões</a> listam o que perguntar.</p>
 
       <h2>Resumo por perfil</h2>
       <ul>
@@ -86,7 +96,7 @@ const __todasDestaque = await __academias();
         <li><strong>Treina com personal de fora:</strong> Ironberg, que publica a regra.</li>
         <li><strong>Trabalha no Alphaville Industrial:</strong> Gaviões, na Av. Juruá.</li>
       </ul>
-      <p>Compare também com <a href="/guias/ironberg-ou-nitrogym/">Ironberg ou NitroGym</a> e <a href="/guias/smart-fit-ou-gavioes/">Smart Fit ou Gaviões</a>. O <a href={`/ferramentas/comparador/?a=${gv.id}&b=${ib.id}`}>comparador</a> mostra as duas fichas completas lado a lado.</p>
+      <p>Compare também com <a href="/guias/ironberg-ou-nitrogym/">Ironberg ou NitroGym</a>, <a href="/guias/ironberg-ou-smart-fit/">Ironberg ou Smart Fit</a>, <a href="/guias/smart-fit-ou-gavioes/">Smart Fit ou Gaviões</a> e <a href="/guias/panobianco-bluefit-ou-gavioes/">Panobianco, Bluefit ou Gaviões</a>. O <a href={`/ferramentas/comparador/?a=${gv.id}&b=${ib.id}`}>comparador</a> mostra as duas fichas completas lado a lado.</p>
     </div>
 
     <section class="bloco fino" aria-labelledby="fichas-t">
@@ -98,6 +108,7 @@ const __todasDestaque = await __academias();
     <FerramentasContexto itens={ferramentas} />
 
     <VideoMontinho id="izMrrSoJGBw" titulo="Raiva e sangue no olho" pagina="gavioes-ou-ironberg" />
+    <Perguntas itens={perguntas} titulo="Perguntas sobre Gaviões e Ironberg" />
     <LeiaTambem url="/guias/gavioes-ou-ironberg/" />
     <div style="margin-top:28px"><Fontes fontes={[
       ...gv.data.proveniencia.map((p) => ({ titulo: `${p.fonte} — ${gv.data.nome}`, url: p.url, data: dataLonga(p.conferido_em) })),
