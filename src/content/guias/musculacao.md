@@ -57,6 +57,27 @@ No mapa do Google para "musculação alphaville", três academias aparecem prime
 
 Para quem quer musculação de padrão premium, a comparação [Ironberg ou NitroGym](/guias/ironberg-ou-nitrogym/) põe lado a lado preço, horário e estacionamento; para as de baixo custo, veja [Smart Fit ou SkyFit](/guias/smart-fit-ou-skyfit/) e [Smart Fit ou Gaviões](/guias/smart-fit-ou-gavioes/).
 
+## Academias que informam área de pesos livres
+
+Para quem treina musculação a sério, barras, anilhas, halteres e bancos contam mais que a aula coletiva. Estas academias informam, na página da unidade no Wellhub, uma área de pesos livres separada da área de musculação:
+
+| Academia | Onde fica | Segunda a sexta | Wellhub a partir de |
+|---|---|---|---|
+| [Bluefit Alphaville](/academias/bluefit-alphaville/) | Alameda Amazonas, 388, Alphaville Industrial | 5h à meia-noite (sexta até 22h) | Silver+ |
+| [Bluefit Tamboré](/academias/bluefit-tambore/) | Av. Tucunaré, 1498, Tamboré | 5h à meia-noite | Silver |
+| [Academia 24h Premium](/academias/24h-premium-alphaville/) | Alameda Grajaú, 525, Alphaville Industrial | 5h às 23h | Gold+ |
+| [Bluefit Barueri](/academias/bluefit-barueri/) | Av. Trindade, 344, Bethaville | 5h à meia-noite | Silver+ |
+| [Panobianco Barueri Centro](/academias/panobianco-barueri-centro/) | R. José Maria Balieiro, 267, Centro | 5h à meia-noite (sexta até 23h) | Basic |
+| [Forth Academia](/academias/forth-academia-jardim-sao-luis/) | R. Prof. Edgar de Moraes, 528, Jardim São Luís | 5h à meia-noite | Basic+ |
+| [Allp Fit](/academias/allp-fit-fazendinha/) | Av. Ten. Marques, 5751, Fazendinha | 5h às 23h | Basic+ |
+| [Academia Ale Fitness](/academias/ale-fitness-fazendinha/) | R. Beta, 415, Fazendinha | 6h às 22h | Basic |
+
+A lista mostra quem declara o espaço, não quem tem mais aparelhos. A [Ironberg](/academias/ironberg-alphaville/), por exemplo, é dedicada à musculação e não usa esse rótulo na fonte conferida. Para comparar a Ironberg com a opção mais barata da região, veja [Ironberg ou Smart Fit](/guias/ironberg-ou-smart-fit/).
+
+## Musculação em Barueri e em Santana de Parnaíba
+
+Em Barueri, o guia tem 10 academias com musculação, entre elas as três unidades da Smart Fit, as duas da Panobianco e a Bluefit do Bethaville; a lista completa, por bairro, está na [página de Barueri](/regioes/barueri/). A Prefeitura também oferece musculação de graça em duas academias próprias: veja [academia gratuita em Barueri](/guias/academia-gratuita-barueri/). Em Santana de Parnaíba, são 11 academias com musculação, concentradas na Fazendinha, no Jardim São Luís e na Cidade São Pedro; a lista está na [página de Santana de Parnaíba](/regioes/santana-de-parnaiba/).
+
 ## Quantas vezes por semana
 
 As diretrizes da Organização Mundial da Saúde recomendam que adultos façam atividades de fortalecimento muscular, envolvendo os principais grupos musculares, em dois ou mais dias por semana. É um piso de saúde, não um plano de treino. A frequência ideal depende do objetivo e da rotina de cada pessoa, e deve ser definida com um profissional de educação física.
@@ -69,4 +90,4 @@ Quem nunca treinou, quem volta depois de uma lesão ou quem parou de evoluir ten
 
 ## Comparar antes de visitar
 
-Use o [comparador](/ferramentas/comparador/) para colocar duas ou três academias lado a lado, e leve o [checklist de visita](/ferramentas/checklist/) no celular.
+Para começar com números, veja onde fazer [bioimpedância](/guias/bioimpedancia-alphaville-barueri/). Use o [comparador](/ferramentas/comparador/) para colocar duas ou três academias lado a lado, e leve o [checklist de visita](/ferramentas/checklist/) no celular.

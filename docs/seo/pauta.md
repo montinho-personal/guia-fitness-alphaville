@@ -32,6 +32,10 @@ Atualizada em 16/11/2026. Junta o que estava em `docs/pauta-blog.md`, em `docs/p
 | ~~20~~ | ~~Dança em Alphaville e Barueri~~ | publicado em 20/11, `/modalidades/danca/` | | 17 academias com aula de dança |
 | ~~21~~ | ~~Muay thai e boxe em Alphaville e Barueri~~ | publicado em 20/11, `/guias/muay-thai-alphaville-barueri/` | | 22 lugares; link na seção de muay thai de /modalidades/lutas/ |
 | 22 | Escolinha de futebol gratuita em Barueri | PAA "Onde posso encontrar uma escolinha de futebol gratuita em Barueri?" (20/11) | não medido | Fora do tema de academia; só se o Renato quiser abrir esporte infantil |
+| ~~23~~ | ~~Bioimpedância em Alphaville e Barueri~~ | publicado em 20/11, `/guias/bioimpedancia-alphaville-barueri/` | | No lugar de "avaliação física alphaville", em que o site do Montinho ocupa 4 dos 9 primeiros lugares |
+| ~~24~~ | ~~Ironberg ou Smart Fit~~ | publicado em 20/11, `/guias/ironberg-ou-smart-fit/` | | |
+| 25 | Ironberg ou Bodytech (comparativo) | AC "ironberg ou bodytech" (20/11) | não medido | As duas têm ficha; a Bodytech não publica mensalidade. O site do Montinho tem "Smart Fit vs Bodytech", não esta |
+| 26 | Academia com peso livre (página própria) | Busca de 20/11 sem procura local | | **Não fazer:** virou seção da página de musculação |
 
 Itens antigos da pauta que **já existem** e saíram desta lista: academia barata (→ `/academias/precos/`), domingo, piscina e natação (`/modalidades/natacao/`), perto de..., Santana de Parnaíba (`/regioes/santana-de-parnaiba/`), Hyrox, beach tennis, lutas e jiu-jitsu, CrossFit, Ironberg ou NitroGym, premium. Aldeia da Serra como página de academias: não há academia com ficha no bairro; fica coberta pelas páginas de personal.
 
@@ -62,6 +66,9 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | Black Belt Club Alphaville, Studio Fight Alpha (SFA), SOU Alphaville (mapa e orgânicos de "muay thai alphaville", 20/11) | fichas novas, `/guias/muay-thai-alphaville-barueri/` | Só com fonte própria do lugar |
 | AC "muay thai feminino barueri", "muay thai parque viana", "engenho novo" (20/11) | `/guias/muay-thai-alphaville-barueri/` | Já respondido (Double Dragon, Team Cruz, Studio Cathéo); conferir na próxima revisão se há mais lugares |
 | PAA "Qual o valor de aula de dança?", "Quanto custa treinar muay thai por mês?" (20/11) | as duas páginas | Respondido com o que é publicado; atualizar quando escolas publicarem preço |
+| PAA "Qual é a diária da Academia Gaviões Alphaville?" (20/11) | `/academias/gavioes-24h-alphaville/` | Só quando a Gaviões publicar diária; hoje a ficha diz que não publica |
+| AC "bioimpedância inbody barueri" (20/11) | `/guias/bioimpedancia-alphaville-barueri/` | Só se alguma academia ou clínica informar o modelo do aparelho |
+| Clínica VTX e clínicas de medicina esportiva (orgânicos de 20/11) | `/guias/bioimpedancia-alphaville-barueri/` | O guia não tem fichas de clínicas; citadas sem preço |
 | Hyrox Training Club da CrossFit Barueri, OBox | `/guias/hyrox-barueri/`, `/modalidades/crossfit/` | Só com fonte; o site do CrossFit Barueri não cita Hyrox (18/11) e o da OBox não abriu |
 | Gracie Barra, Alliance (G13 já entrou na página e tem ficha; conferido em 18/11) | `/guias/jiu-jitsu-alphaville/` (fichas) | Esperando liberar os sites (lembrete agendado) |
 | SESI Santana de Parnaíba | `/regioes/santana-de-parnaiba/` (ficha) | Site oficial bloqueado aqui |

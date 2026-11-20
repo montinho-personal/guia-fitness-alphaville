@@ -22,6 +22,7 @@ export const GET: APIRoute = async ({ site }) => {
     ['/guias/ironberg-ou-nitrogym/', ultAcad],
     ['/guias/smart-fit-ou-skyfit/', ultAcad],
     ['/guias/skyfit-ou-bluefit/', ultAcad],
+    ['/guias/ironberg-ou-smart-fit/', ultAcad],
     ['/guias/panobianco-bluefit-ou-gavioes/', ultAcad],
     ['/guias/gavioes-ou-ironberg/', ultAcad],
     ['/academias/perto-de/', ultAcad],

@@ -1,0 +1,87 @@
+[
+ {
+  "busca": "avaliação física alphaville",
+  "data": "2026-11-20",
+  "aparelho": "mobile",
+  "local": "Barueri, SP",
+  "autocompletar": {
+   "avaliação física alphaville": [],
+   "bioimpedância barueri": [
+    "exame de bioimpedância barueri",
+    "bioimpedância inbody barueri",
+    "bioimpedancia barueri"
+   ]
+  },
+  "perguntas": [
+   "Onde posso fazer o exame de bioimpedância em Alphaville?",
+   "Como é uma avaliação física?",
+   "Qual é a diária da Academia Gaviões Alphaville?",
+   "Qual a academia mais cara de Alphaville, SP?"
+  ],
+  "outras_pesquisas": [],
+  "visao_ia": {
+   "situacao": "existe, não aberta (pedido extra não feito)"
+  },
+  "mapa": [
+   {
+    "nome": "Alpha Personal Health & Trainning"
+   },
+   {
+    "nome": "Espaço PULSE - Saúde Integrativa (Treinos EMS e Fisioterapia) - Alphaville/Barueri"
+   },
+   {
+    "nome": "Flow Sports Clinic"
+   }
+  ],
+  "organicos": [
+   {
+    "posicao": 1,
+    "titulo": "Clínicas de Medicina esportiva em Alphaville Industrial, Barueri",
+    "site": "https://www.doctoralia.com.br",
+    "link": "https://www.doctoralia.com.br/clinicas/medicina-esportiva/barueri/alphaville-industrial"
+   },
+   {
+    "posicao": 2,
+    "titulo": "Personal Trainer em Condomínio Alphaville",
+    "site": "https://www.montinhopersonal.com.br",
+    "link": "https://www.montinhopersonal.com.br/blog/personal-trainer-em-condominio-alphaville"
+   },
+   {
+    "posicao": 3,
+    "titulo": "Personal Trainer Christian Athayde em Alphaville",
+    "site": "https://guiadeservicosalphaville.com.br",
+    "link": "https://guiadeservicosalphaville.com.br/comercios/personal-trainer-christian-athayde/"
+   },
+   {
+    "posicao": 4,
+    "titulo": "24 Wellness Alphaville: Análise Completa | Montinho",
+    "site": "https://www.montinhopersonal.com.br"
+   },
+   {
+    "posicao": 5,
+    "titulo": "Personal Trainer Alphaville | Montinho",
+    "site": "https://www.montinhopersonal.com.br"
+   },
+   {
+    "posicao": 6,
+    "titulo": "Bioimpedancia-Alphaville-Clinica VTX | Exame de Bioimpedância",
+    "site": "https://www.bioimpedancia.sampa.br"
+   },
+   {
+    "posicao": 7,
+    "titulo": "Academia da Face Alphaville (@academiadafacealphaville) · Barueri, SP",
+    "site": "Mais de 22 mil seguidores"
+   },
+   {
+    "posicao": 8,
+    "titulo": "Treinador Particular Alphaville | Montinho Personal Trainer",
+    "site": "https://www.montinhopersonal.com.br"
+   },
+   {
+    "posicao": 9,
+    "titulo": "Musculação",
+    "site": "https://novo.alphavilletenisclube.com.br"
+   }
+  ]
+ }
+]
