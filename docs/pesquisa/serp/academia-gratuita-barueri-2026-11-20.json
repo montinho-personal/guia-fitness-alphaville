@@ -1,0 +1,66 @@
+[
+ {
+  "busca": "academia gratuita barueri",
+  "data": "2026-11-20",
+  "aparelho": "mobile",
+  "local": "Barueri, SP",
+  "autocompletar_de": "academia gratuita barueri",
+  "autocompletar": [
+   "academia de graça em barueri",
+   "academia barueri perto de mim"
+  ],
+  "perguntas": [
+   "Quais cursos gratuitos estão disponíveis em Barueri em 2026?",
+   "Quanto custa uma aula de pilates em Barueri?",
+   "Onde posso encontrar uma escolinha de futebol gratuita em Barueri?",
+   "Há algum show gratuito em Barueri?"
+  ],
+  "outras_pesquisas": [],
+  "visao_ia": {
+   "situacao": "existe, não aberta (pedido extra não feito)"
+  },
+  "mapa": [
+   {
+    "nome": "Ginásio de Esportes Francisco Pedro César",
+    "endereco": "Barueri - SP"
+   },
+   {
+    "nome": "ACM Barueri - Alphaville",
+    "endereco": "Barueri - SP"
+   },
+   {
+    "nome": "Complexo Esportivo Jardim Silveira \"Amaro Lopes Billafon\"",
+    "endereco": "Barueri - SP"
+   }
+  ],
+  "organicos": [
+   {
+    "posicao": 1,
+    "titulo": "Aulas das Escolas de Esportes de Barueri retornam em todos os polos da cidade",
+    "link": "https://folhadejandira.com.br/noticia/1003/aulas-das-escolas-de-esportes-de-barueri-retornam-em-todos-os-polos-da-cidade/amp"
+   },
+   {
+    "posicao": 2,
+    "titulo": "Secretaria de esportes de Barueri abriu inscrições gratuitas para mais de 25 ...",
+    "link": "https://maiscidadania.com.br/2026/10/secretaria-de-esportes-de-barueri-abriu-inscricoes-gratuitas-para-mais-de-25-atividades-fisicas-e-esportivas/"
+   },
+   {
+    "posicao": 3,
+    "titulo": "Academia Corpo em Movimento Barueri",
+    "link": "https://www.facebook.com/academiacorpoemmovimentobarueri/"
+   },
+   {
+    "posicao": 4,
+    "titulo": "Gremio Recreativo Barueri - Academias - Home"
+   },
+   {
+    "posicao": 5,
+    "titulo": "Barueri: Aulas das Escolas de Esportes retornam em todos os polos da cidade"
+   },
+   {
+    "posicao": 6,
+    "titulo": "https://portal.barueri.sp.gov.br/bet-educar.shtml"
+   }
+  ]
+ }
+]
