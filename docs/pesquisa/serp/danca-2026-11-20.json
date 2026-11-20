@@ -1,0 +1,87 @@
+[
+ {
+  "busca": "aula de dança alphaville",
+  "data": "2026-11-20",
+  "aparelho": "mobile",
+  "local": "Barueri, SP",
+  "autocompletar": {
+   "aula de dança alphaville": [
+    "aula de dança centro comercial alphaville"
+   ],
+   "zumba barueri": [
+    "aula de zumba barueri",
+    "dança zumba barueri",
+    "zumbalada barueri",
+    "zumba aldeia de barueri"
+   ]
+  },
+  "perguntas": [
+   "Qual o valor de aula de dança?",
+   "Quais são os 4 tipos de dança?",
+   "Onde posso encontrar cursos gratuitos de dança em São Paulo em 2026?",
+   "Quais são as melhores escolas de dança do Brasil?"
+  ],
+  "outras_pesquisas": [
+   "Dance studio alphaville fotos",
+   "Stage dance center",
+   "Escola de dança barueri centro",
+   "Andressa rodrigues escola de dança",
+   "Beth ballet"
+  ],
+  "visao_ia": {
+   "situacao": "não apareceu"
+  },
+  "mapa": [
+   {
+    "nome": "Dance Studio Alphaville"
+   },
+   {
+    "nome": "Stage Dance Center"
+   },
+   {
+    "nome": "Andressa Rodrigues Escola de Dança"
+   }
+  ],
+  "organicos": [
+   {
+    "posicao": 1,
+    "titulo": "Dance Studio Alphaville (@dancestudioalphaville)",
+    "link": "https://www.instagram.com/dancestudioalphaville/"
+   },
+   {
+    "posicao": 2,
+    "titulo": "Aulas de Dança (Turmas abertas)",
+    "link": "https://alphavilletenisclube.com.br/eventos/756-aulas-de-danca-turmas-abertas"
+   },
+   {
+    "posicao": 3,
+    "titulo": "Dance Studio Alphaville - Melville Empresarial II",
+    "link": "https://wellhub.com/pt-br/search/partners/dance-studio-alphaville-e874fef5-23d1-42af-8923-1f974109a037/"
+   },
+   {
+    "posicao": 4,
+    "titulo": "Escola de Dança de Salão Luciana Ciarallo"
+   },
+   {
+    "posicao": 5,
+    "titulo": "Ballet Paula Castro: Aulas de dança em São Paulo"
+   },
+   {
+    "posicao": 6,
+    "titulo": "Dance Studio Alphaville"
+   },
+   {
+    "posicao": 7,
+    "titulo": "Dance Studio Alphaville | Barueri SP"
+   },
+   {
+    "posicao": 8,
+    "titulo": "Favoritos 2019: 4 escolas de dança em Alphaville e região"
+   },
+   {
+    "posicao": 9,
+    "titulo": "Aulas De Ballet - GabrielaRenaEscolaDeDança"
+   }
+  ]
+ }
+]

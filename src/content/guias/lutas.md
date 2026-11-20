@@ -60,6 +60,8 @@ No lado de Alphaville, as escolas de luta são a [Templo Jiu Jitsu Culture](/aca
 
 ## Muay thai e boxe
 
+A lista completa, com turmas femininas e infantis e os planos de Wellhub e TotalPass de cada centro de luta, está em [muay thai e boxe em Alphaville e Barueri](/guias/muay-thai-alphaville-barueri/).
+
 São as lutas mais espalhadas da região. Aparecem em redes como Gaviões 24h, SkyFit e Bodytech Iguatemi, e em centros como o [CT Don Combat](/academias/ct-don-combat-barueri/), perto do centro de Barueri, e o [Double Dragon](/academias/double-dragon-barueri/), que tem turma de muay thai só para mulheres. Para boxe puro, o [Alemão Boxing Club](/academias/alemao-boxing-fazendinha/), na Fazendinha, tem duas turmas por dia útil.
 
 ## Modalidades menos comuns

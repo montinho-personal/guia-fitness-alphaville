@@ -22,7 +22,7 @@ const cont = Object.keys(MODALIDADES).map((m) => ({ m, n: todas.filter((a) => a.
           <tbody>{cont.map(({ m, n }) => <tr><th scope="row">{MODALIDADES[m]}</th><td>{n} de {todas.length}</td><td><a href={`/academias/?modalidade=${m}`}>Filtrar no guia</a></td></tr>)}</tbody>
         </table>
       </div>
-      <div class="prosa" style="margin-top:24px"><p>Musculação, CrossFit, Hyrox, lutas, pilates, <a href="/modalidades/yoga/">yoga</a>, <a href="/modalidades/funcional/">treino funcional</a> e natação têm página própria, porque são as modalidades com procura local que conseguimos observar. Para jiu-jitsu, veja também as páginas de <a href="/guias/jiu-jitsu-alphaville/">Alphaville</a> e <a href="/guias/jiu-jitsu-barueri/">Barueri</a>. As demais modalidades aparecem como filtro no <a href="/academias/">guia de academias</a>.</p></div>
+      <div class="prosa" style="margin-top:24px"><p>Musculação, CrossFit, Hyrox, lutas, pilates, <a href="/modalidades/yoga/">yoga</a>, <a href="/modalidades/funcional/">treino funcional</a>, <a href="/modalidades/danca/">dança</a> e natação têm página própria, porque são as modalidades com procura local que conseguimos observar. Para jiu-jitsu, veja também as páginas de <a href="/guias/jiu-jitsu-alphaville/">Alphaville</a> e <a href="/guias/jiu-jitsu-barueri/">Barueri</a>; para <a href="/guias/muay-thai-alphaville-barueri/">muay thai e boxe</a>, a página própria. As demais modalidades aparecem como filtro no <a href="/academias/">guia de academias</a>.</p></div>
     </section>
   </div>
 </Base>
