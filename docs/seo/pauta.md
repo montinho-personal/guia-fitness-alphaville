@@ -111,8 +111,8 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 | ~~7~~ | ~~2026-11-15~~ | ~~`/guias/academias-premium-alphaville/`~~ | ~~Academias premium em Alphaville: o que o preço maior compra~~ (revisado em 18/11, SerpApi) |
 | ~~8~~ | 2026-11-15 | ~~`/guias/categorias-do-hyrox/`~~ | Revisado em 19/11 (`categorias-do-hyrox`): tabela de cargas por categoria, duplas e revezamento, 6 perguntas |
 | ~~9~~ | 2026-11-15 | ~~`/guias/como-treinar-para-o-primeiro-hyrox/`~~ | Revisado em 19/11 (`como-treinar-para-o-primeiro-hyrox`): seção academia, condomínio e casa, corrida, 6 perguntas |
-| ~~10~~ | 2026-11-15 | ~~`/guias/estacoes-do-hyrox/`~~ | Revisado em 20/11 (`estacoes-do-hyrox`): tabela de ordem e cargas, resposta direta no formato da visão de IA, 6 perguntas |
-| ~~11~~ | 2026-11-15 | ~~`/guias/gavioes-ou-ironberg/`~~ | Revisado em 20/11 (`gavioes-ou-ironberg`): diária, regra de personal com a fonte certa, 6 perguntas |
+| ~~10~~ | 2026-11-15 | ~~`/guias/estacoes-do-hyrox/`~~ | Revisado em 20/11 (`estacoes-do-hyrox`): tabela de ordem e cargas, resposta direta no formato da visão de IA, 6 perguntas. Título aprovado pelo Renato em 20/11. Mantida junto com o artigo do site do Montinho (decisão dele), com link para ele |
+| ~~11~~ | 2026-11-15 | ~~`/guias/gavioes-ou-ironberg/`~~ | Revisado em 20/11 (`gavioes-ou-ironberg`): diária, regra de personal com a fonte certa, 6 perguntas. Título aprovado pelo Renato em 20/11 |
 | 12 | 2026-11-15 | `/guias/hyrox-aldeia-da-serra/` | Hyrox na Aldeia da Serra: treinar em casa, no condomínio e na rua |
 | 13 | 2026-11-15 | `/guias/hyrox-alphaville/` | Hyrox em Alphaville: onde treinar corrida, força e estações |
 | 14 | 2026-11-15 | `/guias/hyrox-barueri/` | Hyrox em Barueri: academias que ajudam e quanto custa montar |

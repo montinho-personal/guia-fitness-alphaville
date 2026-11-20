@@ -41,7 +41,7 @@ const perguntas = [
   { p: 'Posso levar meu personal na Gaviões ou na Ironberg?', r: 'Na Ironberg, sim: o site da rede informa que o personal de fora paga um valor fixo à academia, e o Montinho, que mantém este guia, informa que esse valor é de R$ 1.000 por mês na unidade de Alphaville. Na Gaviões Alphaville, a regra não é publicada; pergunte na recepção.' },
 ];
 const abs = (u: string) => new URL(u, Astro.site).href;
-const titulo = 'Gaviões 24h ou Ironberg: qual academia 24 horas escolher';
+const titulo = 'Gaviões ou Ironberg em Alphaville: qual academia 24h escolher';
 const descricao = 'Gaviões 24h Alphaville ou Ironberg Alphaville: as duas academias 24 horas do guia comparadas em preço, aulas, estrutura, estacionamento e regra para personal.';
 const schema = [{ '@type': 'Article', headline: titulo, description: descricao, inLanguage: 'pt-BR', datePublished: dataIso(gov.publicado), dateModified: dataIso(gov.atualizado), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') } }];
 const ferramentas = ferramentasPara({ tipo: 'comparativo', academias: [{ id: 'gavioes-24h-alphaville', nome: 'Gaviões 24h' }, { id: 'ironberg-alphaville', nome: 'Ironberg' }] });
@@ -51,7 +51,7 @@ const __todasDestaque = await __academias();
   <div class="wrap">
     <header class="cab-pag">
       <span class="rotulo cor-marca">Guias de decisão · comparativo</span>
-      <h1>Gaviões 24h ou Ironberg: qual academia 24 horas escolher em Alphaville</h1>
+      <h1>Gaviões ou Ironberg em Alphaville: qual academia 24 horas escolher</h1>
       <p class="linha-fina">São as duas únicas academias do guia com horário publicado de 24 horas, e ficam a cerca de {km} km uma da outra em linha reta. O horário empata; o resto, não.</p>
       <Assinatura {...gov} />
     </header>

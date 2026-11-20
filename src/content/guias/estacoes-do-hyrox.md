@@ -1,5 +1,5 @@
 ---
-titulo: "Estações do Hyrox: as 8 provas explicadas uma a uma"
+titulo: "Estações do Hyrox: as 8 provas, a ordem e os pesos"
 descricao: "SkiErg, trenó, burpee, remo, carregamento, avanço com saco e wall ball: o que cada estação do Hyrox pede do corpo e como praticar sem o aparelho."
 h1: "As 8 estações do Hyrox, uma por uma"
 resposta: "O Hyrox alterna 1 km de corrida com uma estação, oito vezes, sempre nesta ordem: SkiErg (1.000 m), Sled Push (50 m), Sled Pull (50 m), Burpee Broad Jump (80 m), remo (1.000 m), Farmers Carry (200 m), Sandbag Lunges (100 m) e Wall Balls (100 repetições). As cargas mudam com a categoria: no Open masculino, o trenó de empurrar pesa 152 kg e a bola 6 kg; no Open feminino, 102 kg e 4 kg."
@@ -83,6 +83,8 @@ O Pro feminino usa as cargas do Open masculino. As cargas de dupla e revezamento
 **7. Sandbag Lunges (100 m).** Avanços sucessivos com um saco de areia apoiado nos ombros, de 10 kg no Open feminino e 20 kg no masculino. Pernas e glúteos sofrem, e o equilíbrio conta. Sem sandbag, peça ao professor uma carga equivalente que caiba no seu nível.
 
 **8. Wall Balls (100 repetições).** Agachar segurando uma bola e lançá-la contra um alvo na parede, de novo e de novo. A bola pesa 4 kg no Open feminino, 6 kg no Open masculino e no Pro feminino, e 9 kg no Pro masculino. São 100 repetições em todas as categorias. Junta pernas, ombros e respiração.
+
+Para dicas de técnica e de treino de cada estação, o Montinho, personal que mantém este guia, tem um [artigo sobre as estações do Hyrox no site dele](https://www.montinhopersonal.com.br/blog/estacoes-do-hyrox?utm_source=guiafitnessalphaville&utm_medium=referral&utm_campaign=texto&utm_content=estacoes-do-hyrox). Esta página fica com os dados oficiais: ordem, distâncias e cargas por categoria.
 
 ## Qual estação costuma assustar?
 
