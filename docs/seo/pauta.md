@@ -29,8 +29,8 @@ Atualizada em 16/11/2026. Junta o que estava em `docs/pauta-blog.md`, em `docs/p
 | 17 | Hyrox por idade: faixas etárias e idade mínima | AC "categorias hyrox idade" (revisão de categorias, 19/11) | não medido | Só com o regulamento oficial, que está em sites bloqueados na rede (`hyroxbrazil.com`, `maintain.hyrox.com`); até lá, o artigo de categorias manda conferir na inscrição |
 | ~~18~~ | ~~Bluefit ou Panobianco / Bluefit ou Gaviões (comparativos)~~ | publicado em 20/11, `/guias/panobianco-bluefit-ou-gavioes/` | | |
 | 19 | Lei de academia de condomínio (profissional obrigatório) | Orgânicos "Lei polêmica dificulta funcionamento de academias de condomínios", "Lei: condomínios passam a ter regras" (19/11) | não medido | **Não recomendo:** depende de lei estadual e municipal e de conselho profissional, que o guia não cita |
-| 20 | Dança em Alphaville e Barueri (zumba, ritmos, fitness dance) | 16 fichas com dança; sem página no guia nem no site do Montinho (20/11) | não medido | Mesmo molde das páginas de modalidade (pilates, yoga) |
-| 21 | Muay thai e boxe em Alphaville e Barueri | Grade de várias fichas (SkyFit, Bluefit Barueri, Gaviões, Panobianco); sem página própria (20/11) | não medido | Não canibalizar /modalidades/lutas/: página só de muay thai e boxe |
+| ~~20~~ | ~~Dança em Alphaville e Barueri~~ | publicado em 20/11, `/modalidades/danca/` | | 17 academias com aula de dança |
+| ~~21~~ | ~~Muay thai e boxe em Alphaville e Barueri~~ | publicado em 20/11, `/guias/muay-thai-alphaville-barueri/` | | 22 lugares; link na seção de muay thai de /modalidades/lutas/ |
 | 22 | Escolinha de futebol gratuita em Barueri | PAA "Onde posso encontrar uma escolinha de futebol gratuita em Barueri?" (20/11) | não medido | Fora do tema de academia; só se o Renato quiser abrir esporte infantil |
 
 Itens antigos da pauta que **já existem** e saíram desta lista: academia barata (→ `/academias/precos/`), domingo, piscina e natação (`/modalidades/natacao/`), perto de..., Santana de Parnaíba (`/regioes/santana-de-parnaiba/`), Hyrox, beach tennis, lutas e jiu-jitsu, CrossFit, Ironberg ou NitroGym, premium. Aldeia da Serra como página de academias: não há academia com ficha no bairro; fica coberta pelas páginas de personal.
@@ -58,6 +58,10 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | PAA "Quanto custa uma aula de pilates em Barueri?" (academia gratuita, 20/11) | `/modalidades/pilates/` | Só com preço publicado pelos estúdios; o pilates gratuito da Prefeitura já está na página de academia gratuita |
 | REL "Academia panobianco aceita totalpass", "Panobianco planos", "Panobianco unidades" (20/11) | `/academias/panobianco-barueri-centro/` | Conferir se a ficha responde com essas palavras (TotalPass: não consta) |
 | AC "panobianco ou smartfit", "panobianco ou skyfit" (20/11) | `/guias/panobianco-bluefit-ou-gavioes/` | Cabe como pergunta frequente na próxima revisão do comparativo |
+| Dance Studio Alphaville, Stage Dance Center, Andressa Rodrigues Escola de Dança, aulas do Alphaville Tênis Clube (mapa e orgânicos de "aula de dança alphaville", 20/11) | fichas novas, `/modalidades/danca/` | Só com fonte própria do lugar; o Dance Studio tem página no Wellhub e o ATC no site do clube |
+| Black Belt Club Alphaville, Studio Fight Alpha (SFA), SOU Alphaville (mapa e orgânicos de "muay thai alphaville", 20/11) | fichas novas, `/guias/muay-thai-alphaville-barueri/` | Só com fonte própria do lugar |
+| AC "muay thai feminino barueri", "muay thai parque viana", "engenho novo" (20/11) | `/guias/muay-thai-alphaville-barueri/` | Já respondido (Double Dragon, Team Cruz, Studio Cathéo); conferir na próxima revisão se há mais lugares |
+| PAA "Qual o valor de aula de dança?", "Quanto custa treinar muay thai por mês?" (20/11) | as duas páginas | Respondido com o que é publicado; atualizar quando escolas publicarem preço |
 | Hyrox Training Club da CrossFit Barueri, OBox | `/guias/hyrox-barueri/`, `/modalidades/crossfit/` | Só com fonte; o site do CrossFit Barueri não cita Hyrox (18/11) e o da OBox não abriu |
 | Gracie Barra, Alliance (G13 já entrou na página e tem ficha; conferido em 18/11) | `/guias/jiu-jitsu-alphaville/` (fichas) | Esperando liberar os sites (lembrete agendado) |
 | SESI Santana de Parnaíba | `/regioes/santana-de-parnaiba/` (ficha) | Site oficial bloqueado aqui |

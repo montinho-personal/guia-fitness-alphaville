@@ -23,6 +23,8 @@ export const GET: APIRoute = async ({ site }) => {
 - [Smart Fit em Barueri](${u('/academias/smart-fit-barueri/')})
 - [Pilates em Alphaville](${u('/modalidades/pilates/')})
 - [Yoga em Alphaville e Barueri](${u('/modalidades/yoga/')})
+- [Aula de dança em Alphaville e Barueri](${u('/modalidades/danca/')})
+- [Muay thai e boxe em Alphaville e Barueri](${u('/guias/muay-thai-alphaville-barueri/')})
 - [Treino funcional em Alphaville](${u('/modalidades/funcional/')})
 - [Natação em Alphaville e Barueri](${u('/modalidades/natacao/')})
 - [Lutas em Alphaville e região](${u('/modalidades/lutas/')})

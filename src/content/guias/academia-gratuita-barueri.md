@@ -66,7 +66,7 @@ Em fevereiro de 2026, a Prefeitura informou que as Escolas de Esportes atendem c
 | Esportes coletivos | Basquete, futebol, futsal, handebol, vôlei |
 | Outros esportes | Atletismo, bocha, ginástica artística, skate, tênis |
 
-O agrupamento é do guia; a lista de modalidades é a da Prefeitura.
+O agrupamento é do guia; a lista de modalidades é a da Prefeitura. Para comparar com as opções pagas, veja os guias de [dança](/modalidades/danca/), [muay thai e boxe](/guias/muay-thai-alphaville-barueri/), [pilates](/modalidades/pilates/) e [yoga](/modalidades/yoga/).
 
 ## Como se inscrever
 
