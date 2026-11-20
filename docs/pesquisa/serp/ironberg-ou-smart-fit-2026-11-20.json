@@ -1,0 +1,83 @@
+[
+ {
+  "busca": "ironberg ou smart fit",
+  "data": "2026-11-20",
+  "aparelho": "mobile",
+  "local": "Barueri, SP",
+  "autocompletar": {
+   "ironberg ou": [
+    "ironberg ouro branco",
+    "ironberg ou smart fit",
+    "ironberg ou bodytech",
+    "academia ironberg ouro branco",
+    "ironberg aceita gympass ou totalpass",
+    "ironberg aceita wellhub ou totalpass",
+    "ironberg o que é",
+    "ironberg o que significa"
+   ]
+  },
+  "perguntas": [
+   "Qual a maior concorrente da Smart Fit?",
+   "Qual Gympass aceita na Ironberg?",
+   "Quais são as 3 maiores redes de academia do Brasil?",
+   "Qual é melhor, BlueFit ou Smart Fit?"
+  ],
+  "outras_pesquisas": [
+   "Melhores academias de sp gympass",
+   "Ironberg sp",
+   "Bodytech",
+   "Melhores academias são paulo sp",
+   "Smart fit perto de mim",
+   "Ironberg academia"
+  ],
+  "visao_ia": {
+   "situacao": "existe, não aberta (pedido extra não feito)"
+  },
+  "mapa": [
+   {
+    "nome": "Academia Smart Fit - Barueri Centro"
+   },
+   {
+    "nome": "Ironberg Alphaville"
+   },
+   {
+    "nome": "Academia Smart Fit - Parque Shopping Barueri"
+   }
+  ],
+  "organicos": [
+   {
+    "posicao": 1,
+    "titulo": "Melhor academia de São Paulo? Não importa o preço : r/saopaulo",
+    "site": "Mais de 30 comentários",
+    "link": "https://www.reddit.com/r/saopaulo/comments/1qhmypz/melhor_academia_de_s%C3%A3o_paulo_n%C3%A3o_importa_o_pre%C3%A7o/"
+   },
+   {
+    "posicao": 2,
+    "titulo": "neymarjr fala sobre a Ironberg! “Melhor que a Smart Fit!” A musculação está cada ...",
+    "site": "Instagram · fisiculturismonewsonline",
+    "link": "https://www.instagram.com/reel/DGf2_0wxq-C/"
+   },
+   {
+    "posicao": 3,
+    "titulo": "Pra quem gosta de variedade de máquinas IronBerg e Gaviões tem ótimos aparelhos ...",
+    "site": "1 marcação \"Gostei\"",
+    "link": "https://www.threads.com/@treinadormateussantos/post/DG14wwjtyNU/pra-quem-gosta-de-variedade-de-m%C3%A1quinas-ironberg-e-gavi%C3%B5es-tem-%C3%B3timos-aparelhos-?hl=pt-br"
+   },
+   {
+    "posicao": 4,
+    "titulo": "Maiores redes de academias do Brasil, ranking e números atuais",
+    "site": "https://blog.sistemapacto.com.br"
+   },
+   {
+    "posicao": 5,
+    "titulo": "Ironberg ou Bodytech? 🏋🏼‍♀️ (Deixei nos comentários meu relato como cliente)",
+    "site": "Mais de 16,3 mil marcações \"Gostei\""
+   },
+   {
+    "posicao": 6,
+    "titulo": "Ironberg vs Smartfit: Por que a Ironberg é mais cara? | Daniel Aragão",
+    "site": "TikTok · Daniel Aragão"
+   }
+  ]
+ }
+]
