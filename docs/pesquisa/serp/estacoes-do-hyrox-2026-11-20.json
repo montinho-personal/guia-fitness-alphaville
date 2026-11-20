@@ -1,0 +1,91 @@
+[
+ {
+  "busca": "estações do hyrox",
+  "data": "2026-11-20",
+  "aparelho": "mobile",
+  "local": "São Paulo, SP",
+  "autocompletar": [
+   "8 estacoes do hyrox",
+   "quais estacoes do hyrox",
+   "estacoes hyrox ordem",
+   "estacoes hyrox oficial",
+   "quais as 8 estações do.hyrox",
+   "como sao as estacoes do hyrox",
+   "exercicios do hyrox",
+   "hyrox stations",
+   "exercícios do hyrox",
+   "hyrox stages"
+  ],
+  "perguntas": [
+   "Qual a ordem dos exercícios do HYROX?",
+   "O que é mais barato, crossfit ou academia?",
+   "Qual a melhor estação para musculação?",
+   "Onde tem treino de HYROX?"
+  ],
+  "outras_pesquisas": [],
+  "visao_ia": {
+   "situacao": "texto na página",
+   "texto": [
+    "O HYROX é uma competição de fitness que alterna 1 km de corrida com 1 estação de exercício funcional, repetidas 8 vezes (totalizando 8 km de corrida e 8 estações).",
+    "A sequência oficial e fixa de cada prova é a seguinte:",
+    "- SkiErg (1.000 metros) – Simulador de esqui indoor que exige esforço de corpo inteiro e eleva a frequência cardíaca.",
+    "- Sled Push (50 metros) – Empurrar um trenó pesado pelo chão.",
+    "- Sled Pull (50 metros) – Puxar o trenó com uma corda até você.",
+    "- Burpee Broad Jumps (80 metros) – Burpee completo seguido de um salto em distância.",
+    "- RowErg (1.000 metros) – Remo ergômetro (trabalho de pernas, core e braços).",
+    "- Farmer’s Carry (200 metros) – Caminhada carregando kettlebells em cada uma das mãos.",
+    "- Sandbag Lunges (100 metros) – Avanços (passadas) com um saco de areia (sandbag) apoiado nos ombros.",
+    "- Wall Balls (75 ou 100 repetições) – Agachamento profundo seguido do arremesso de uma bola medicinal em um alvo na parede.",
+    "Mais detalhes sobre as regras e orientações oficiais podem ser conferidos no site da HYROX Brazil.",
+    "Gostaria de saber mais sobre as cargas de peso específicas para cada categoria (Open ou Pro) ou dicas de como treinar para alguma estação em particular?"
+   ],
+   "fontes": [
+    {
+     "titulo": "Equipamentos para Hyrox: as 8 estações e as cargas oficiais | D1Fitness",
+     "site": "D1Fitness"
+    },
+    {
+     "titulo": "As 8 Estações: Cargas, Técnica e Tempos - HyCoach",
+     "site": "hycoach.ai"
+    },
+    {
+     "titulo": "HYROX: tudo o que você precisa saber - HugoCross - Notícias sobre CrossFit",
+     "site": "HugoCross"
+    },
+    {
+     "titulo": "O que é HYROX",
+     "site": "hyroxbrazil.com"
+    }
+   ]
+  },
+  "organicos": [
+   {
+    "posicao": 1,
+    "titulo": "Como montar sua semana de treino para o HYROX: dividindo corrida, força e estações",
+    "link": "https://www.theyard.com.br/blog/semana-de-treino-hyrox-como-montar/"
+   },
+   {
+    "posicao": 2,
+    "titulo": "Quanto tempo leva um HYROX: tempos médios por estação e como estimar o seu ...",
+    "link": "https://www.theyard.com.br/blog/hyrox-tempo-medio-por-estacao/"
+   },
+   {
+    "posicao": 3,
+    "titulo": "Afinal o que é o HYROX?! O HYROX combina estações de corrida e treino funcional, ...",
+    "link": "https://www.facebook.com/stepbystepcrossfit/posts/afinal-o-que-%C3%A9-o-hyroxo-hyrox-combina-esta%C3%A7%C3%B5es-de-corrida-e-treino-funcional-ond/1334477525352466/"
+   },
+   {
+    "posicao": 4,
+    "titulo": "Roxzone: a estação invisível do HYROX e quanto tempo você perde nela"
+   },
+   {
+    "posicao": 5,
+    "titulo": "Melhores Recursos para Dicas e Técnicas por Estação : r/hyrox"
+   },
+   {
+    "posicao": 6,
+    "titulo": "Como é uma prova de HYROX? São 8 km de corrida + 8 estações de exercícios ..."
+   }
+  ]
+ }
+]
