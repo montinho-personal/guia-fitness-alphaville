@@ -57,7 +57,7 @@ const ferramentas = ctx ? ferramentasPara(ctx) : [];
 const ESPECIFICAS: [RegExp, RegExp][] = [[/muay-thai/, /muay/i], [/jiu-jitsu/, /jiu/i], [/boxe/, /box/i], [/pilates/, /pilates/i], [/yoga/, /yoga/i], [/natacao/, /nata/i], [/crossfit/, /crossfit/i], [/danca/, /dan|samba|zumba|ritmo/i]];
 const atividadeDaPagina = ESPECIFICAS.find(([slug]) => slug.test(g.id))?.[1];
 const ofereceAqui = (a: (typeof todas)[number]) =>
-  ctx?.tipo !== 'modalidade' || (a.data.modalidades.includes(ctx.modalidade) && (!atividadeDaPagina || (a.data.atividades_listadas ?? []).some((x) => atividadeDaPagina.test(x))));
+  ctx?.tipo !== 'modalidade' || ((a.data.modalidades as string[]).includes(ctx.modalidade) && (!atividadeDaPagina || (a.data.atividades_listadas ?? []).some((x) => atividadeDaPagina.test(x))));
 const listaFinal = lista.some(eDestaque) ? destaquePrimeiro(lista, (x) => x) : [...todas.filter(eDestaque).filter(ofereceAqui), ...lista];
 const abs = (u: string) => new URL(u, Astro.site).href;
 const video = d.video?.publicado_em ? [{ '@type': 'VideoObject', name: d.video.titulo, description: `${d.video.titulo} — vídeo do Montinho Personal Trainer.`, uploadDate: dataIso(d.video.publicado_em!), thumbnailUrl: `https://i.ytimg.com/vi/${d.video.id}/hqdefault.jpg`, embedUrl: `https://www.youtube-nocookie.com/embed/${d.video.id}`, contentUrl: `https://www.youtube.com/shorts/${d.video.id}` }] : [];
