@@ -2,7 +2,7 @@
 titulo: "Hyrox na Aldeia da Serra: treinar em casa, no condomínio e na rua"
 descricao: "Sem academia com ficha na Aldeia da Serra, o treino para o Hyrox começa em casa, no espaço fitness do condomínio e nas ruas internas. Veja o que dá e o que não dá."
 h1: "Como treinar para o Hyrox morando na Aldeia da Serra"
-resposta: "A Aldeia da Serra não tem nenhuma academia catalogada pelo guia, então a base do treino para o Hyrox fica em casa, no espaço fitness do condomínio e nas ruas internas para a corrida. SkiErg, remo e trenó dificilmente estão nesses lugares; para praticar as estações, é preciso sair do bairro e procurar um box."
+resposta: "Para o Hyrox, a base do treino de quem mora na Aldeia da Serra cabe no bairro: corrida nas ruas internas, força em casa ou no espaço fitness do condomínio e as academias do bairro. O guia ainda não tem ficha delas, mas Area Fitness, The One, Aldeia Fitness e Ecofitness aparecem nas buscas. SkiErg, remo e trenó, que a prova pede, raramente estão nesses lugares; para praticar as estações, o caminho é um box ou o Day Pass da Ironberg, na Estrada da Aldeinha."
 cluster: B
 secao: guias
 palavra_chave: hyrox aldeia da serra
@@ -27,14 +27,23 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
-atualizado_em: 2026-11-15
+atualizado_em: 2026-11-21
+perguntas:
+  - p: "Tem academia na Aldeia da Serra?"
+    r: "Tem. Nas buscas e no mapa do Google aparecem Area Fitness, na Av. dos Patos, The One Aldeia da Serra, WFIT Pilates e Musculação, Aldeia Fitness e Performance e Ecofitness Aldeia, estas duas no TotalPass. O guia ainda não tem ficha delas, com horário e preço conferidos na fonte de cada uma; confirme direto com a academia."
+  - p: "Onde treinar para o Hyrox perto da Aldeia da Serra?"
+    r: "Para as estações que pedem aparelho, como trenó, SkiErg e remo, os lugares mais próximos com ficha no guia ficam em Alphaville: a BlackSheep lista treino no formato da prova, e o Day Pass da Ironberg, na Estrada da Aldeinha, inclui aulas de Hyrox onde houver, com check-in no app. Corrida e força dá para treinar no bairro."
+  - p: "Dá para treinar para o Hyrox em casa ou no condomínio?"
+    r: "Dá para treinar boa parte: corrida, burpee broad jump, avanço com peso, carregamento com halteres e agachamento. O que pede aparelho específico (trenó, SkiErg e remo) precisa de um box ou de uma academia que tenha. O simulador de treino no condomínio mostra o que dá para fazer com os equipamentos do seu prédio."
+  - p: "Quais são as estações do Hyrox?"
+    r: "Oito, sempre nesta ordem, cada uma depois de 1 km de corrida: SkiErg, Sled Push, Sled Pull, Burpee Broad Jump, remo, Farmers Carry, Sandbag Lunges e Wall Balls."
 ---
 
 > **Transparência.** Por trás deste guia está o Montinho, personal que vai até moradores da Aldeia da Serra. A recomendação que aparece no fim leva ao serviço dele e é publicidade.
 
 ## O bairro e a prova
 
-Formada por residenciais em meio à mata, a Aldeia da Serra se divide entre Barueri e Santana de Parnaíba, e nenhuma academia tem ficha aqui dentro. A Ironberg fica na Estrada da Aldeinha, cujo nome lembra o do bairro, mas não está nele. Quem quer correr um Hyrox precisa, então, distinguir o que se resolve no bairro do que exige equipamento de box.
+Formada por residenciais em meio à mata, a Aldeia da Serra se divide entre Barueri e Santana de Parnaíba. O bairro tem academias: nas buscas e no mapa do Google aparecem Area Fitness, na Av. dos Patos, The One Aldeia da Serra, WFIT Pilates e Musculação, Aldeia Fitness e Performance e Ecofitness Aldeia, estas duas com página no TotalPass. O guia ainda não tem ficha delas, com horário, preço e equipamento conferidos na fonte de cada uma; até lá, pergunte direto. A Ironberg fica na Estrada da Aldeinha, cujo nome lembra o do bairro, mas não está nele. Quem quer correr um Hyrox precisa, então, distinguir o que se resolve no bairro do que exige equipamento de box.
 
 A prova pede oito trechos de corrida, cada um com 1 km, e ao fim de cada trecho há uma estação. Pela ordem: SkiErg, sled push, sled pull, burpee broad jump, row, farmers carry, sandbag lunges e wall balls. A página de [Hyrox](/modalidades/hyrox/) detalha distâncias e categorias.
 
@@ -44,7 +53,7 @@ A prova pede oito trechos de corrida, cada um com 1 km, e ao fim de cada trecho 
 
 ## O que cabe em casa e no condomínio
 
-Boa parte da preparação não depende de aparelho especial. Correr, saltar e fazer avanços pede pouco espaço. Se o espaço fitness do condomínio tiver halteres ou kettlebells, eles servem para trabalhar a pegada e o carregamento. Um treino de força geral, com agachamento e exercícios de puxar, também cabe ali. A diferença entre condomínios está no acesso: confirme com a administração em que horário o espaço abre e se um profissional de fora pode acompanhar você lá dentro.
+Boa parte da preparação não depende de aparelho especial. Correr, saltar e fazer avanços pede pouco espaço. Se o espaço fitness do condomínio tiver halteres ou kettlebells, eles servem para trabalhar a pegada e o carregamento. Um treino de força geral, com agachamento e exercícios de puxar, também cabe ali. A diferença entre condomínios está no acesso: confirme com a administração em que horário o espaço abre e se um profissional de fora pode acompanhar você lá dentro. As regras mais comuns estão no guia de [academia de condomínio](/guias/academia-de-condominio-regras/).
 
 ## As ruas internas como pista
 
@@ -52,7 +61,7 @@ A corrida é metade da prova, e a Aldeia oferece ruas internas para treiná-la a
 
 ## O que vai faltar
 
-SkiErg, remo ergômetro, trenó e bola de wall ball raramente fazem parte de uma sala de condomínio, e nenhuma ficha do guia confirma esses itens em academia alguma. Para conhecer a técnica, a alternativa é sair do bairro. Entre todas as fichas, só a [BlackSheep Alphaville](/academias/blacksheep-alphaville/), de Alphaville Industrial, inclui Hyrox, e ela vende aula avulsa. Pelo que a marca divulga, a filial reconhecida como Training Club fica em Moema. Boxes de [CrossFit](/modalidades/crossfit/) são outra ponte para o condicionamento. Ligue antes e pergunte pelos aparelhos.
+SkiErg, remo ergômetro, trenó e bola de wall ball raramente fazem parte de uma sala de condomínio, e nenhuma ficha do guia confirma esses itens em academia alguma. Nas academias do bairro, pergunte antes. Para conhecer a técnica, a alternativa mais segura é sair do bairro. A [BlackSheep Alphaville](/academias/blacksheep-alphaville/), em Alphaville Industrial, lista treino no formato da prova e vende aula avulsa, e o Day Pass da [Ironberg Alphaville](/academias/ironberg-alphaville/), de R$ 120, inclui aulas de Hyrox onde houver, com check-in prévio no app. Pelo que a marca divulga, a filial reconhecida como Training Club fica em Moema. Boxes de [CrossFit](/modalidades/crossfit/) são outra ponte para o condicionamento. Ligue antes e pergunte pelos aparelhos. Para testar antes de matricular, veja as academias com [diária e aula experimental](/ferramentas/academias-diaria-aula-experimental-alphaville/).
 
 ![Montinho, personal trainer que prepara para o Hyrox na Aldeia da Serra, na sala de musculação da Arena 18, em Alphaville](../../assets/montinho/montinho-personal-trainer-arena-18.jpg)
 
@@ -61,3 +70,5 @@ SkiErg, remo ergômetro, trenó e bola de wall ball raramente fazem parte de uma
 ## Começar pelo revezamento
 
 Quem está longe de dominar as oito estações pode olhar para as categorias em grupo. No Relay, um time de quatro divide a prova: cada pessoa corre 2 km e faz uma estação. No Doubles, a dupla corre junta e reparte as estações como preferir. O questionário Find my Level, no site oficial, sugere uma categoria, mas a escolha é livre. Para saber quais academias são clubes oficiais, consulte a [busca oficial de Training Clubs](https://hyrox-training-finder.hyrox.com/). E, se quiser treino acompanhado sem sair de casa, veja [personal trainer na Aldeia da Serra](/guias/personal-trainer-aldeia-da-serra/).
+
+Para montar o plano de prova, a [calculadora do Hyrox](/ferramentas/calculadora-hyrox/) mostra as cargas da sua categoria e o tempo de cada trecho, e o [simulador de treino no condomínio](/ferramentas/treino-academia-do-condominio/) mostra o que dá para treinar com os equipamentos do prédio. O Montinho, que mantém este guia, também escreveu sobre [treinar para o Hyrox na Aldeia da Serra no site dele](https://www.montinhopersonal.com.br/blog/hyrox-aldeia-da-serra?utm_source=guiafitnessalphaville&utm_medium=referral&utm_campaign=texto&utm_content=hyrox-aldeia-da-serra).
