@@ -25,6 +25,7 @@ export async function academias(): Promise<Academia[]> {
  * Destaque da casa: a academia onde o Montinho atende (campo montinho_atende, hoje a Arena 18) vem
  * sempre em primeiro nas listas, marcada como "Destaque · publicidade da casa". Pedido do Renato, 18/11/2026.
  * As demais seguem a ordem própria de cada lista.
+ * Exceção (Renato, 21/11/2026): em lista de modalidade, ela só entra se oferece a modalidade (ver GuiaPagina.astro).
  */
 export const eDestaque = (a: { data: { montinho_atende?: boolean } }) => !!a.data.montinho_atende;
 export const ordemComDestaque = (a: Academia, b: Academia) => Number(eDestaque(b)) - Number(eDestaque(a)) || a.data.nome.localeCompare(b.data.nome, 'pt-BR');

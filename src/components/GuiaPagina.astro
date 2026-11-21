@@ -52,6 +52,13 @@ const ctx: Contexto | null =
   : /jiu-jitsu|lutas|muay-thai/.test(g.id) ? { tipo: 'modalidade', modalidade: 'lutas', modalidadeNome: 'Lutas', ...ctxBase }
   : null;
 const ferramentas = ctx ? ferramentasPara(ctx) : [];
+// Destaque da casa (Arena 18) só entra na frente de lista de modalidade que ela oferece: a modalidade na ficha e,
+// em página de uma luta ou aula específica, a atividade listada. Pedido do Renato, 21/11/2026.
+const ESPECIFICAS: [RegExp, RegExp][] = [[/muay-thai/, /muay/i], [/jiu-jitsu/, /jiu/i], [/boxe/, /box/i], [/pilates/, /pilates/i], [/yoga/, /yoga/i], [/natacao/, /nata/i], [/crossfit/, /crossfit/i], [/danca/, /dan|samba|zumba|ritmo/i]];
+const atividadeDaPagina = ESPECIFICAS.find(([slug]) => slug.test(g.id))?.[1];
+const ofereceAqui = (a: (typeof todas)[number]) =>
+  ctx?.tipo !== 'modalidade' || ((a.data.modalidades as string[]).includes(ctx.modalidade) && (!atividadeDaPagina || (a.data.atividades_listadas ?? []).some((x) => atividadeDaPagina.test(x))));
+const listaFinal = lista.some(eDestaque) ? destaquePrimeiro(lista, (x) => x) : [...todas.filter(eDestaque).filter(ofereceAqui), ...lista];
 const abs = (u: string) => new URL(u, Astro.site).href;
 const video = d.video?.publicado_em ? [{ '@type': 'VideoObject', name: d.video.titulo, description: `${d.video.titulo} — vídeo do Montinho Personal Trainer.`, uploadDate: dataIso(d.video.publicado_em!), thumbnailUrl: `https://i.ytimg.com/vi/${d.video.id}/hqdefault.jpg`, embedUrl: `https://www.youtube-nocookie.com/embed/${d.video.id}`, contentUrl: `https://www.youtube.com/shorts/${d.video.id}` }] : [];
 const schema = [...video, { '@type': 'Article', headline: d.h1, description: d.descricao, inLanguage: 'pt-BR', datePublished: dataIso(d.publicado_em), dateModified: dataIso(d.atualizado_em), author: { '@type': 'Organization', name: 'Guia Fitness Alphaville', url: abs('/sobre/') }, publisher: { '@id': abs('/#org') }, mainEntityOfPage: { '@id': `${abs(url)}#pagina` } }];
@@ -71,7 +78,7 @@ const schema = [...video, { '@type': 'Article', headline: d.h1, description: d.d
     {lista.length > 0 && (
       <section class="bloco fino" aria-labelledby="lista-t">
         <div class="cab"><h2 id="lista-t">{d.lista_titulo ?? `${lista.length} ${lista.length === 1 ? 'opção' : 'opções'} com ficha no guia`}</h2><a class="link-forte" href="/academias/">Abrir o guia com filtros</a></div>
-        <div class="cartoes">{(lista.some(eDestaque) ? destaquePrimeiro(lista, (x) => x) : [...todas.filter(eDestaque), ...lista]).map((a) => <CartaoAcademia a={a} />)}</div>
+        <div class="cartoes">{listaFinal.map((a) => <CartaoAcademia a={a} />)}</div>
       </section>
     )}
 
