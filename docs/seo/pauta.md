@@ -69,9 +69,13 @@ Itens antigos da pauta que **já existem** e saíram desta lista: academia barat
 | PAA "Qual é a diária da Academia Gaviões Alphaville?" (20/11) | `/academias/gavioes-24h-alphaville/` | Só quando a Gaviões publicar diária; hoje a ficha diz que não publica |
 | AC "bioimpedância inbody barueri" (20/11) | `/guias/bioimpedancia-alphaville-barueri/` | Só se alguma academia ou clínica informar o modelo do aparelho |
 | Clínica VTX e clínicas de medicina esportiva (orgânicos de 20/11) | `/guias/bioimpedancia-alphaville-barueri/` | O guia não tem fichas de clínicas; citadas sem preço |
-| AC "gavioes alphaville aulas", "horarios", "telefone", "tem aula experimental", "diaria", "preço" (revisão de gaviões ou ironberg, 20/11) | `/academias/gavioes-24h-alphaville/` | Conferir se a ficha responde com essas palavras; diária e preço só quando publicados |
+| ~~AC "gavioes alphaville aulas", "horarios", "telefone", "tem aula experimental" (revisão de gaviões ou ironberg, 20/11)~~ | ~~`/academias/gavioes-24h-alphaville/`~~ | Feito em 21/11: perguntas sobre aulas, aula experimental e telefone (o horário já estava). Diária e preço continuam só quando publicados |
 | Endereço da Gaviões: post de terceiro fala em "novo endereço: Av. Juruá, 301" e "Fast Treino, novo empreendimento da Gaviões" no mesmo número (20/11) | `/academias/gavioes-24h-alphaville/` | Conferir no site oficial da Gaviões; a ficha usa Av. Juruá, 253 |
-| PAA "Quais lugares tem Ironberg?" (20/11) | `/academias/ironberg-alphaville/` | Só com a lista de unidades do site da rede |
+| ~~PAA "Quais lugares tem Ironberg?" (20/11)~~ | ~~`/academias/ironberg-alphaville/`~~ | Feito em 21/11: pergunta com as 12 unidades abertas e as 2 "em breve" do site da rede |
+| **Prioridade:** fichas da Aldeia da Serra: Area Fitness (Av. dos Patos), The One Aldeia da Serra, WFIT Pilates e Musculação, Aldeia Fitness e Performance, Ecofitness Aldeia, Smart Fit Shopping Aldeia da Serra (mapa, orgânicos e autocompletar de "academia aldeia da serra", 21/11) | fichas novas, `/regioes/aldeia-da-serra/`, `/guias/hyrox-aldeia-da-serra/` | Só com fonte própria de cada lugar (TotalPass/Wellhub servem). Scelta: o site oficial lista só a Av. Andrômeda; conferir se há unidade na Aldeia |
+| OBox Training Club Alphaville (visão de IA e orgânicos de "hyrox alphaville", 21/11) | ficha nova, `/guias/hyrox-alphaville/` | Hoje citada só como "aparece nas buscas"; ficha só com fonte própria (página do Wellhub ou site) |
+| AC "hyrox rio de janeiro", "hyrox rj", "hyrox abc", "aldeia hyrox salvador", "hyrox são paulo", "hyrox em sp", "hyrox perto de mim", "hyrox adaptado" (21/11) | — | Não recomendo: outras cidades, prova de SP é tema do site do Montinho, "perto de mim" já é atendido pelas páginas de bairro, adaptado sem fonte oficial |
+| PAA "É possível ver resultados com 1 mês de academia?", "Tem academia ao ar livre?" (academia aldeia da serra, 21/11) | — | Não recomendo: o primeiro é tema de treino do site do Montinho; o segundo cabe em `/guias/academia-gratuita-barueri/` (academias ao ar livre da Prefeitura) na próxima revisão |
 | Roxzone (orgânico de "estações do hyrox", 20/11) | `/guias/estacoes-do-hyrox/`, calculadora | Só com o regulamento oficial (site bloqueado) |
 | Hyrox Training Club da CrossFit Barueri, OBox | `/guias/hyrox-barueri/`, `/modalidades/crossfit/` | Só com fonte; o site do CrossFit Barueri não cita Hyrox (18/11) e o da OBox não abriu |
 | Gracie Barra, Alliance (G13 já entrou na página e tem ficha; conferido em 18/11) | `/guias/jiu-jitsu-alphaville/` (fichas) | Esperando liberar os sites (lembrete agendado) |
@@ -113,8 +117,8 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 | ~~9~~ | 2026-11-15 | ~~`/guias/como-treinar-para-o-primeiro-hyrox/`~~ | Revisado em 19/11 (`como-treinar-para-o-primeiro-hyrox`): seção academia, condomínio e casa, corrida, 6 perguntas |
 | ~~10~~ | 2026-11-15 | ~~`/guias/estacoes-do-hyrox/`~~ | Revisado em 20/11 (`estacoes-do-hyrox`): tabela de ordem e cargas, resposta direta no formato da visão de IA, 6 perguntas. Título aprovado pelo Renato em 20/11. Mantida junto com o artigo do site do Montinho (decisão dele), com link para ele |
 | ~~11~~ | 2026-11-15 | ~~`/guias/gavioes-ou-ironberg/`~~ | Revisado em 20/11 (`gavioes-ou-ironberg`): diária, regra de personal com a fonte certa, 6 perguntas. Título aprovado pelo Renato em 20/11 |
-| 12 | 2026-11-15 | `/guias/hyrox-aldeia-da-serra/` | Hyrox na Aldeia da Serra: treinar em casa, no condomínio e na rua |
-| 13 | 2026-11-15 | `/guias/hyrox-alphaville/` | Hyrox em Alphaville: onde treinar corrida, força e estações |
+| ~~12~~ | 2026-11-15 | ~~`/guias/hyrox-aldeia-da-serra/`~~ | Revisado em 21/11 (`hyrox-aldeia-da-serra`): o bairro tem academias (sem ficha), Day Pass da Ironberg, 4 perguntas. Título: proposta aguardando aprovação |
+| ~~13~~ | 2026-11-15 | ~~`/guias/hyrox-alphaville/`~~ | Revisado em 21/11 (`hyrox-alphaville`): BlackSheep e Ironberg, seção da OBox, 5 perguntas. Título: proposta aguardando aprovação |
 | 14 | 2026-11-15 | `/guias/hyrox-barueri/` | Hyrox em Barueri: academias que ajudam e quanto custa montar |
 | 15 | 2026-11-15 | `/guias/hyrox-ou-crossfit/` | Hyrox ou CrossFit: diferenças de formato e de treino |
 | 16 | 2026-11-15 | `/guias/hyrox-santana-de-parnaiba/` | Hyrox em Santana de Parnaíba: o que cada academia oferece |
