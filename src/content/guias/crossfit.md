@@ -11,6 +11,8 @@ lista_tipos: [box]
 fontes:
   - titulo: "CrossFit — site oficial da marca"
     url: "https://www.crossfit.com/"
+  - titulo: "Busca de Hyrox do Wellhub em Barueri (lida em 23/11/2026)"
+    url: "https://wellhub.com/pt-br/search/sp/barueri/hyrox/?term=hyrox"
   - titulo: "Páginas das unidades no Wellhub e no TotalPass, listadas em cada ficha"
     url: "https://wellhub.com/pt-br/"
 video:
@@ -37,7 +39,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-13
-atualizado_em: 2026-11-18
+atualizado_em: 2026-11-23
 ---
 
 > **Transparência.** O guia é mantido pelo Montinho, personal trainer de Alphaville. Ele não é coach de CrossFit nem tem relação com os boxes citados; o bloco dele no rodapé é publicidade.
@@ -80,7 +82,7 @@ Se a ideia é treino em circuito, sem levantamento olímpico, veja [treino funci
 
 ## E o Hyrox?
 
-O BlackSheep informa no site que, em Alphaville, oferece o Hybrid, um treino voltado à prova, e que as aulas de Hyrox propriamente ditas ficam na unidade de Moema, em São Paulo. O formato da prova e as opções da região estão em [Hyrox: o que é e como funciona](/modalidades/hyrox/) e em [Hyrox ou CrossFit](/guias/hyrox-ou-crossfit/).
+O BlackSheep informa no site que, em Alphaville, oferece o Hybrid, um treino voltado à prova, e que as aulas de Hyrox propriamente ditas ficam na unidade de Moema, em São Paulo. Já a busca de Hyrox do Wellhub, lida em 23/11/2026, lista Hyrox entre as atividades do BlackSheep Alphaville (a partir do Gold+) e da OBox, na Av. dos Parques, 329, do lado de Alphaville em Santana de Parnaíba (a partir do Gold), que ainda não tem ficha no guia. O [CrossFit Barueri](/academias/crossfit-barueri/) divulga aulas de Hyrox e se diz Training Club oficial em posts do próprio box no Instagram; o site dele não cita a prova, e o guia não conseguiu conferir na busca oficial. As opções por bairro estão em [Hyrox em Barueri](/guias/hyrox-barueri/) e [Hyrox em Santana de Parnaíba](/guias/hyrox-santana-de-parnaiba/). O formato da prova e as opções da região estão em [Hyrox: o que é e como funciona](/modalidades/hyrox/) e em [Hyrox ou CrossFit](/guias/hyrox-ou-crossfit/).
 
 ## Como escolher um box
 
