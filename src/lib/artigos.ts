@@ -20,6 +20,7 @@ export const ARTIGOS: Record<string, { titulo: string; resumo: string }> = {
   '/guias/smart-fit-ou-skyfit/': { titulo: 'Smart Fit ou SkyFit', resumo: 'Preço publicado contra aulas variadas e agregador mais barato.' },
   '/regioes/tambore/': { titulo: 'Academias no Tamboré', resumo: 'Shopping Tamboré, Av. Tucunaré e Tamboré III.' },
   '/guias/ironberg-ou-nitrogym/': { titulo: 'Ironberg ou NitroGym', resumo: 'Quanto custa o primeiro ano nas duas academias premium.' },
+  '/guias/ironberg-ou-bodytech/': { titulo: 'Ironberg ou Bodytech', resumo: 'Musculação 24 horas contra grade de mais de 30 aulas no Iguatemi.' },
   '/academias/precos/': { titulo: 'Quanto custa academia na região', resumo: 'Mensalidades publicadas, com fonte e data.' },
   '/ferramentas/academias-que-aceitam-personal-externo/': { titulo: 'Academias que aceitam personal externo', resumo: 'Quem aceita, cadastro e quem paga a taxa.' },
   '/ferramentas/custo-para-treinar-em-alphaville/': { titulo: 'Calculadora de custo para treinar', resumo: 'Mensalidade, estacionamento e personal por mês e por ida.' },
@@ -96,6 +97,7 @@ export const RELACIONADOS: Record<string, string[]> = {
   [WT]: [PR, SG, CF, A],
   [MU]: [IN, PA, H24, B],
   '/guias/gavioes-ou-ironberg/': [H24, IN, SG, '/guias/academias-premium-alphaville/'],
+  '/guias/ironberg-ou-bodytech/': [IN, '/guias/gavioes-ou-ironberg/', '/guias/academias-premium-alphaville/', WT],
   '/guias/academias-premium-alphaville/': [IN, '/guias/gavioes-ou-ironberg/', '/guias/beach-tennis-futevolei-alphaville/', PR],
   '/guias/beach-tennis-futevolei-alphaville/': ['/guias/academias-premium-alphaville/', PA, DOM, WT],
   '/academias/perto-de/': [PR, DOM, H24, A],
@@ -129,7 +131,7 @@ export const personalDaRegiao = (regiao: string, bairro: string) =>
 
 export const COMPARATIVOS: Record<string, string> = {
   'smart-fit-sodimac-alphaville': SG, 'gavioes-24h-alphaville': SG,
-  'ironberg-alphaville': IN, 'nitrogym-tambore': IN,
+  'ironberg-alphaville': IN, 'nitrogym-tambore': IN, 'bodytech-iguatemi-alphaville': '/guias/ironberg-ou-bodytech/',
 };
 
 // Artigos de personal por tema e cidade (personal-trainer-<tema>-<cidade>).

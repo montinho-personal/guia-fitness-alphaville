@@ -15,6 +15,7 @@ export const GET: APIRoute = async ({ site }) => {
 - [Academias que aceitam personal externo em Alphaville](${u('/ferramentas/academias-que-aceitam-personal-externo/')})
 - [Smart Fit ou Gaviões em Alphaville](${u('/guias/smart-fit-ou-gavioes/')})
 - [Ironberg ou NitroGym em Alphaville](${u('/guias/ironberg-ou-nitrogym/')})
+- [Ironberg ou Bodytech em Alphaville](${u('/guias/ironberg-ou-bodytech/')})
 - [Smart Fit ou SkyFit em Alphaville](${u('/guias/smart-fit-ou-skyfit/')})
 - [SkyFit ou Bluefit em Alphaville](${u('/guias/skyfit-ou-bluefit/')})
 - [Ironberg ou Smart Fit em Alphaville](${u('/guias/ironberg-ou-smart-fit/')})
