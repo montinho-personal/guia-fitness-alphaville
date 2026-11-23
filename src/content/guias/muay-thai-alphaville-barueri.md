@@ -14,6 +14,8 @@ cta_destino: /personal-trainer-alphaville
 lista_titulo: "Onde tem muay thai ou boxe na região"
 lista_ids: [jaco-fight-club-alphaville, templo-jiu-jitsu-tambore, g13-alphaville-tambore, gavioes-24h-alphaville, skyfit-alphaville, bodytech-iguatemi-alphaville, voifit-alphaville, 24h-premium-alphaville, scelta-alphaville, six-alphaville, ct-don-combat-barueri, ct-fuinha-parque-dos-camargos, double-dragon-barueri, studio-catheo-fight-barueri, team-cruz-parque-viana, bluefit-barueri, panobianco-barueri-centro, impacto-barueri, alemao-boxing-fazendinha, meta-fit-jardim-sao-luis, mattos-fitness-fazendinha, nova-fitness-cidade-sao-pedro]
 fontes:
+  - titulo: "Busca de muay thai do Wellhub em Barueri (lida em 23/11/2026)"
+    url: "https://wellhub.com/pt-br/search/sp/barueri/muay-thai/?term=muay-thai"
   - titulo: "Jacó Fight Club Alphaville no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/jaco-fight-club-alphaville-alphaville/"
   - titulo: "Prefeitura de Barueri: Escolas de Esportes, 23 modalidades gratuitas (12/02/2026)"
@@ -42,7 +44,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-20
-atualizado_em: 2026-11-20
+atualizado_em: 2026-11-23
 ---
 
 > **Transparência.** Este guia é mantido pelo Montinho, personal trainer de Alphaville. Ele não dá aula de luta nem tem relação com os lugares citados; o bloco dele no rodapé é publicidade.
@@ -68,6 +70,25 @@ Barueri concentra os centros de luta da região. O [CT Don Combat](/academias/ct
 Nas academias, a [Bluefit Barueri](/academias/bluefit-barueri/), no Bethaville, a [Panobianco Barueri Centro](/academias/panobianco-barueri-centro/) e a [Academia Impacto](/academias/impacto-barueri/), que também tem boxe, listam muay thai.
 
 Quem quer treinar sem pagar tem o muay thai das Escolas de Esportes da Prefeitura, uma das 23 modalidades gratuitas da cidade. Veja como se inscrever em [academia gratuita em Barueri](/guias/academia-gratuita-barueri/).
+
+### Outros lugares de Barueri na busca do Wellhub
+
+A busca de muay thai do Wellhub em Barueri, lida em 23/11/2026, mostra mais centros de luta que ainda não têm ficha no guia. Ficam espalhados pelos bairros, o que ajuda quem procura aula perto de casa:
+
+| Lugar | Bairro | Wellhub a partir de |
+|---|---|---|
+| WarLab | Jardim São Pedro | Basic+, R$ 99,99 |
+| CT Challenge School | Vila São Luiz (Valparaíso) | Basic+, R$ 99,99 |
+| Centro de Treinamento Cícero Costha | Jardim Regina Alice | Silver, R$ 149,99 |
+| Academia de Lutas RFT | Jardim Paraíso | Silver, R$ 149,99 |
+| Studio RR Lutas | Vila Universal | Silver, R$ 149,99 |
+| Studio Team Silverio | Jardim Mutinga | Basic, R$ 69,99 |
+| Academia Imperius Fitness | Parque Imperial | Basic, R$ 69,99 |
+| Academia Seven Life | Vila Militar | Basic, R$ 69,99 |
+| The Bravus Academia | Jardim Paulista | Basic, R$ 69,99 |
+| Soul Warriors, Chute Boxe United Barueri | Vila Boa Vista | Gold+, R$ 439,99 |
+
+O plano indicado é o de entrada do lugar no Wellhub; a aula de muay thai pode exigir um plano acima. Confira no aplicativo e, na primeira visita, pergunte a grade de horários e se há turma feminina ou para iniciantes.
 
 ## Santana de Parnaíba
 
