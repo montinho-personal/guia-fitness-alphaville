@@ -20,6 +20,7 @@ export const GET: APIRoute = async ({ site }) => {
     ...gs.map((g) => [`/${g.data.secao}/${g.id}/`, dataIso(g.data.atualizado_em)] as [string, string]),
     ['/guias/smart-fit-ou-gavioes/', ultAcad],
     ['/guias/ironberg-ou-nitrogym/', ultAcad],
+    ['/guias/ironberg-ou-bodytech/', ultAcad],
     ['/guias/smart-fit-ou-skyfit/', ultAcad],
     ['/guias/skyfit-ou-bluefit/', ultAcad],
     ['/guias/ironberg-ou-smart-fit/', ultAcad],

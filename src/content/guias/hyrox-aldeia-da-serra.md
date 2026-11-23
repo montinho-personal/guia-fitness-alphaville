@@ -27,10 +27,10 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
-atualizado_em: 2026-11-21
+atualizado_em: 2026-11-23
 perguntas:
   - p: "Tem academia na Aldeia da Serra?"
-    r: "Tem. Nas buscas e no mapa do Google aparecem Area Fitness, na Av. dos Patos, The One Aldeia da Serra, WFIT Pilates e Musculação, Aldeia Fitness e Performance e Ecofitness Aldeia, estas duas no TotalPass. O guia ainda não tem ficha delas, com horário e preço conferidos na fonte de cada uma; confirme direto com a academia."
+    r: "Tem. Nas buscas e no mapa do Google aparecem Area Fitness, na Av. dos Patos, The One Aldeia da Serra, WFIT Pilates e Musculação, Aldeia Fitness e Performance e Ecofitness Aldeia. O guia ainda não tem ficha delas, com horário e preço conferidos na fonte de cada uma; confirme direto com a academia."
   - p: "Onde treinar para o Hyrox perto da Aldeia da Serra?"
     r: "Para as estações que pedem aparelho, como trenó, SkiErg e remo, os lugares mais próximos com ficha no guia ficam em Alphaville: a BlackSheep lista treino no formato da prova, e o Day Pass da Ironberg, na Estrada da Aldeinha, inclui aulas de Hyrox onde houver, com check-in no app. Corrida e força dá para treinar no bairro."
   - p: "Dá para treinar para o Hyrox em casa ou no condomínio?"
@@ -43,7 +43,7 @@ perguntas:
 
 ## O bairro e a prova
 
-Formada por residenciais em meio à mata, a Aldeia da Serra se divide entre Barueri e Santana de Parnaíba. O bairro tem academias: nas buscas e no mapa do Google aparecem Area Fitness, na Av. dos Patos, The One Aldeia da Serra, WFIT Pilates e Musculação, Aldeia Fitness e Performance e Ecofitness Aldeia, estas duas com página no TotalPass. O guia ainda não tem ficha delas, com horário, preço e equipamento conferidos na fonte de cada uma; até lá, pergunte direto. A Ironberg fica na Estrada da Aldeinha, cujo nome lembra o do bairro, mas não está nele. Quem quer correr um Hyrox precisa, então, distinguir o que se resolve no bairro do que exige equipamento de box.
+Formada por residenciais em meio à mata, a Aldeia da Serra se divide entre Barueri e Santana de Parnaíba. O bairro tem academias: nas buscas e no mapa do Google aparecem Area Fitness, na Av. dos Patos, The One Aldeia da Serra, WFIT Pilates e Musculação, Aldeia Fitness e Performance e Ecofitness Aldeia; as páginas das duas últimas no TotalPass dizem, em 23/11/2026, que elas não fazem mais parte da rede. O guia ainda não tem ficha delas, com horário, preço e equipamento conferidos na fonte de cada uma; até lá, pergunte direto. A Ironberg fica na Estrada da Aldeinha, cujo nome lembra o do bairro, mas não está nele. Quem quer correr um Hyrox precisa, então, distinguir o que se resolve no bairro do que exige equipamento de box.
 
 A prova pede oito trechos de corrida, cada um com 1 km, e ao fim de cada trecho há uma estação. Pela ordem: SkiErg, sled push, sled pull, burpee broad jump, row, farmers carry, sandbag lunges e wall balls. A página de [Hyrox](/modalidades/hyrox/) detalha distâncias e categorias.
 
