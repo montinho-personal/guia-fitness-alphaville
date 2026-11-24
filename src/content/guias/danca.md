@@ -15,6 +15,8 @@ lista_titulo: "Academias com aula de dança na região"
 lista_modalidades: [danca]
 lista_ids: [arena-18-alphaville, bodytech-iguatemi-alphaville, skyfit-alphaville, bluefit-alphaville, 24h-premium-alphaville, scelta-alphaville, six-alphaville, voifit-alphaville, gavioes-24h-alphaville, boa-forma-barueri, xandu-barueri, panobianco-barueri-centro, panobianco-capitao-francisco, impacto-barueri, meta-fit-jardim-sao-luis, allp-fit-fazendinha, mattos-fitness-fazendinha]
 fontes:
+  - titulo: "Busca de dança do Wellhub em Barueri (lida em 24/11/2026)"
+    url: "https://wellhub.com/pt-br/search/sp/barueri/danca/?term=danca"
   - titulo: "Bodytech Iguatemi Alphaville no Wellhub"
     url: "https://wellhub.com/pt-br/search/partners/bodytech-iguatemi-alphaville/"
   - titulo: "Site oficial da Scelta"
@@ -43,7 +45,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-20
-atualizado_em: 2026-11-20
+atualizado_em: 2026-11-24
 ---
 
 > **Transparência.** Este guia é mantido pelo Montinho, personal trainer de Alphaville. Ele não dá aula de dança nem tem relação com as academias citadas; o bloco dele no rodapé é publicidade. A Arena 18, onde ele atende, aparece primeiro na lista como destaque da casa.
@@ -95,3 +97,16 @@ A grade de aulas coletivas muda com frequência, e as fichas registram que a aca
 ## Escolas de dança
 
 Nas buscas por aula de dança em Alphaville aparecem escolas como Dance Studio Alphaville, Stage Dance Center e Andressa Rodrigues Escola de Dança, além das turmas do Alphaville Tênis Clube. O guia ainda não tem fichas delas, com endereço, horário e preço conferidos em fonte própria. Se você faz aula em alguma, conte pelo [formulário de correção](/correcoes/).
+
+### Estúdios de dança e pole no Wellhub
+
+A busca de dança do Wellhub em Barueri, lida em 24/11/2026, mostra estúdios que também ainda não têm ficha no guia. Servem como ponto de partida para quem usa o agregador:
+
+| Estúdio | Onde fica | Aulas listadas | Wellhub a partir de |
+|---|---|---|---|
+| Ocean Pole Studio | Calçada Vitória Régia, 137, Alphaville | pole dance, dança do ventre, lira, mat pilates | Basic+, R$ 99,99 |
+| Polefit Acrobat Training Center | Centro Empresarial Tamboré, Santana de Parnaíba | pole dance, tecido acrobático, circo infantil | Diamond, R$ 699,99 |
+| Studio In Dança | Jardim Silveira, Barueri | fit dance, ballet infantil e clássico, hip-hop, forró, bachata, samba rock | Silver, R$ 149,99 |
+| Ikigai Pole Studio | Vila Boa Vista, Barueri | pole dance e flexibilidade | Gold, R$ 319,99 |
+
+O plano indicado é o de entrada de cada estúdio na busca; uma aula específica pode exigir plano acima. Os horários publicados são de tarde e noite, então confira a grade no aplicativo antes de ir.
