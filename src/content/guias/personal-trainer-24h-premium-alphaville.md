@@ -1,5 +1,5 @@
 ---
-titulo: "Personal trainer na Academia 24h Premium: horário e regras"
+titulo: "Personal na Academia 24h Premium: regra, horário real e custo"
 descricao: "Treinar com personal na Academia 24h Premium, no Alphaville Industrial: horário real publicado, estrutura, plano Gold+ do Wellhub e o que perguntar."
 h1: "Personal trainer na Academia 24h Premium"
 resposta: "A Academia 24h Premium, na Alameda Grajaú, 525, no Alphaville Industrial, não publica regra para personal de fora; a ficha só mostra personal trainer entre os serviços da casa. Apesar do nome, o horário no Wellhub é das 5h às 23h nos dias úteis, das 7h às 15h no sábado e das 8h às 14h no domingo. Para sessões de madrugada, Gaviões 24h e Ironberg publicam 24 horas."
