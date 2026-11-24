@@ -14,6 +14,8 @@ cta_destino: /personal-trainer-alphaville
 lista_titulo: "As cinco academias desta página"
 lista_ids: [six-alphaville, ironberg-alphaville, nitrogym-tambore, arena-18-alphaville, fabrica-premium-alphaville]
 fontes:
+  - titulo: "Busca de bike do Wellhub em Barueri, Soul Ride (lida em 24/11/2026)"
+    url: "https://wellhub.com/pt-br/search/sp/barueri/bike/?term=bike"
   - titulo: "Site oficial da Ironberg (página de planos)"
     url: "https://www.ironberg.com.br/planos.html"
   - titulo: "Site oficial da NitroGym (página da unidade)"
@@ -40,7 +42,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
-atualizado_em: 2026-11-18
+atualizado_em: 2026-11-24
 ---
 
 > **Transparência.** O guia é mantido pelo Montinho, personal trainer que atende alunos na Arena 18, uma das academias desta lista. As outras quatro não têm relação comercial com ele.
@@ -86,6 +88,10 @@ Em academia premium, testar antes faz diferença, porque o contrato costuma ser 
 - **SIX e Fábrica Premium:** visita agendada para conhecer o espaço, o que não é a mesma coisa que treinar.
 
 As regras de cada uma, com o canal para comprar ou agendar, estão em [academias com diária e aula experimental](/ferramentas/academias-diaria-aula-experimental-alphaville/).
+
+## Fora da lista: a Soul Ride
+
+Nas buscas por academia premium em Alphaville aparece também a Soul Ride, que ainda não tem ficha no guia. Pela busca do Wellhub, lida em 24/11/2026, ela fica na Av. Copacabana, 325, no Empresarial 18 do Forte, e é um estúdio de aulas, não uma academia com salão de musculação: bike indoor, power bike, boxe, muay thai, funcional e yoga, das 7h às 20h45, a partir do plano Gold (R$ 319,99). Para quem quer aula em grupo com cara de boutique, é outra opção; para musculação, as cinco acima.
 
 ## Como decidir
 
