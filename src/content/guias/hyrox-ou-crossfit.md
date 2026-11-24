@@ -1,5 +1,5 @@
 ---
-titulo: "Hyrox ou CrossFit: diferenças de formato e de treino"
+titulo: "Hyrox ou CrossFit: diferença, qual escolher e qual emagrece mais"
 descricao: "Hyrox é uma prova padronizada com corrida e oito estações; CrossFit é uma rotina de aulas variadas em box. Veja o que muda e como decidir entre os dois."
 h1: "Hyrox ou CrossFit: o que muda e como escolher"
 resposta: "O Hyrox é uma prova de formato fixo: 1 km de corrida e uma estação, repetidos oito vezes, igual em toda etapa. O CrossFit é um método de aulas em box, com treino que muda todo dia e mais técnica, como levantamento olímpico e ginástica. Escolha o Hyrox se gosta de correr e de meta com data marcada; o CrossFit, se quer variedade e aprender movimentos. Dá para fazer os dois."

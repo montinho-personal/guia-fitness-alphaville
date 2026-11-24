@@ -1,5 +1,5 @@
 ---
-titulo: "Hyrox em Barueri: academias que ajudam e quanto custa montar"
+titulo: "Hyrox em Barueri: onde treinar e quanto custa"
 descricao: "Treino para Hyrox em Barueri: academias com cross training e corrida na cidade, o box com Hyrox no Alphaville Industrial e o custo de combinar os dois."
 h1: "Hyrox em Barueri: como montar a preparação na cidade"
 resposta: "Em Barueri, o treino com o nome Hyrox está em Alphaville Industrial, que pertence ao município. A BlackSheep, na Alameda Araguaia, lista treino no formato da prova; o CrossFit Barueri, na Av. Juruá, divulga aulas de Hyrox no Instagram, embora o site não cite a prova; e o Day Pass da Ironberg, de R$ 120, inclui aulas de Hyrox. No centro e nos bairros, nenhuma ficha lista Hyrox: Bluefit e Impacto têm cross training para a base."

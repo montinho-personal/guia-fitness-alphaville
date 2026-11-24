@@ -1,5 +1,5 @@
 ---
-titulo: "Hyrox no Tamboré: como montar o treino com as academias do bairro"
+titulo: "Hyrox no Tamboré: onde treinar perto do bairro e quanto custa"
 descricao: "Hyrox para quem mora no Tamboré: o que a Bluefit Tamboré e a NitroGym cobrem, o que buscar em Alphaville Industrial e que equipamento confirmar."
 h1: "Hyrox no Tamboré: onde e como treinar"
 resposta: "No Tamboré, nenhuma academia com ficha no guia lista Hyrox: a Bluefit Tamboré ajuda na corrida e no funcional, e a NitroGym, no Shopping Tamboré, na musculação. As aulas da prova mais perto ficam na OBox, do lado de Alphaville em Santana de Parnaíba, e na BlackSheep, em Alphaville Industrial, as duas no Wellhub. O Day Pass da Ironberg, de R$ 120, também inclui aulas de Hyrox."

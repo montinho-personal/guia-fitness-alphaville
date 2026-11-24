@@ -1,5 +1,5 @@
 ---
-titulo: "Hyrox em Santana de Parnaíba: o que cada academia oferece"
+titulo: "Hyrox em Santana de Parnaíba: onde treinar e com qual plano"
 descricao: "Preparação para o Hyrox em Santana de Parnaíba: a pista no rooftop da Fábrica Premium, o funcional dos bairros e onde fica o único box com Hyrox na grade."
 h1: "Hyrox em Santana de Parnaíba: por onde começar"
 resposta: "Em Santana de Parnaíba, o lugar com Hyrox na grade é a OBox, do lado de Alphaville. A busca do Wellhub a lista na Av. dos Parques, 329, com Hyrox e treino híbrido, das 6h às 21h, a partir do plano Gold. No mapa do Google ela aparece como OBox Training Club, no AlphaSítio Mall; confirme o endereço antes de ir. Entre as fichas do guia, a Fábrica Premium tem pista de corrida no rooftop, e a BlackSheep, já em Barueri, lista Hyrox."

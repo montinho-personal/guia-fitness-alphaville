@@ -1,5 +1,5 @@
 ---
-titulo: "Hyrox em Alphaville: onde treinar corrida, força e estações"
+titulo: "Hyrox em Alphaville: onde treinar, BlackSheep e Ironberg"
 descricao: "Onde treinar para o Hyrox em Alphaville: o box que lista a prova, os boxes vizinhos, academias com corrida e o que perguntar sobre SkiErg, trenó e remo."
 h1: "Onde treinar para o Hyrox em Alphaville"
 resposta: "Em Alphaville, duas academias com ficha no guia têm treino de Hyrox: a BlackSheep, na Alameda Araguaia, com aulas no formato da prova, e a Ironberg, na Estrada da Aldeinha, cujo Day Pass inclui aulas de Hyrox com check-in no app. Nas buscas, a OBox Training Club, no AlphaSítio Mall, aparece como Training Club da prova; o guia ainda não conferiu na fonte oficial. Para corrida e força, as academias do bairro ajudam; SkiErg, trenó e remo, pergunte antes."
