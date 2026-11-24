@@ -1,5 +1,5 @@
 ---
-titulo: "Hyrox na Aldeia da Serra: treinar em casa, no condomínio e na rua"
+titulo: "Hyrox na Aldeia da Serra: onde treinar, em casa e no condomínio"
 descricao: "Sem academia com ficha na Aldeia da Serra, o treino para o Hyrox começa em casa, no espaço fitness do condomínio e nas ruas internas. Veja o que dá e o que não dá."
 h1: "Como treinar para o Hyrox morando na Aldeia da Serra"
 resposta: "Para o Hyrox, a base do treino de quem mora na Aldeia da Serra cabe no bairro: corrida nas ruas internas, força em casa ou no espaço fitness do condomínio e as academias do bairro. O guia ainda não tem ficha delas, mas Area Fitness, The One, Aldeia Fitness e Ecofitness aparecem nas buscas. SkiErg, remo e trenó, que a prova pede, raramente estão nesses lugares; para praticar as estações, o caminho é um box ou o Day Pass da Ironberg, na Estrada da Aldeinha."
