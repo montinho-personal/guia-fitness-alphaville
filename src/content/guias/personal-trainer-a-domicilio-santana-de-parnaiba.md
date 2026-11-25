@@ -22,7 +22,16 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-15
-atualizado_em: 2026-11-15
+atualizado_em: 2026-11-25
+perguntas:
+  - p: "Quanto custa um personal trainer em casa em Santana de Parnaíba?"
+    r: "Não há tabela oficial. A calculadora de preço de personal do guia mostra uma faixa de referência editorial para o município, por aula e por mês. Como os trajetos são longos, pergunte se há cobrança extra pela viagem."
+  - p: "Quanto custa um personal 2 vezes por semana?"
+    r: "Duas vezes por semana dão cerca de 9 sessões no mês (2 × 52 ÷ 12). O total é o valor da aula no pacote vezes as sessões; a calculadora do guia faz essa conta com a faixa de referência de Santana de Parnaíba."
+  - p: "O treino em casa é eficaz?"
+    r: "Pode ser, se tiver progressão ao longo das semanas. A falta de aparelhos limita cargas altas; quando isso pesar, dá para combinar a aula em casa com a sala do condomínio ou uma academia, inclusive no domingo, quando muitas academias de bairro fecham."
+  - p: "Vale a pena pagar um personal trainer?"
+    r: "Vale mais para quem está começando, voltando de lesão, tem objetivo específico ou não consegue manter a regularidade sozinho. Em casa, soma-se a vantagem de não perder tempo no trânsito. O guia compara os formatos em academia ou personal trainer."
 ---
 
 > **Transparência.** Este material sai das mãos do Montinho, personal que dá aula na casa de alunos em Santana de Parnaíba. A propaganda dele fica reservada ao encerramento.
@@ -70,4 +79,4 @@ O guia não encontrou, em nenhuma delas, regra publicada sobre profissional exte
 
 ## Para continuar
 
-O quadro geral está na [página sobre personal no município](/guias/personal-trainer-santana-de-parnaiba/). Procura onde treinar no domingo? Consulte [academias abertas no domingo](/ferramentas/academias-abertas-alphaville/). Contratar ou não? A análise [academia ou personal trainer](/guias/academia-ou-personal/) lista os dois caminhos.
+Para ter uma ideia de preço antes da conversa, a [calculadora de preço de personal](/ferramentas/calculadora-preco-personal-alphaville/) mostra a faixa de referência para aula em casa em Santana de Parnaíba, por aula e por mês. O Montinho, que mantém este guia, explica como atende em casa no município em [personal trainer a domicílio em Santana de Parnaíba](https://www.montinhopersonal.com.br/blog/personal-trainer-a-domicilio-santana-de-parnaiba?utm_source=guiafitnessalphaville&utm_medium=referral&utm_campaign=texto&utm_content=personal-trainer-a-domicilio-santana-de-parnaiba), no site dele. O quadro geral está na [página sobre personal no município](/guias/personal-trainer-santana-de-parnaiba/). Procura onde treinar no domingo? Consulte [academias abertas no domingo](/ferramentas/academias-abertas-alphaville/). Contratar ou não? A análise [academia ou personal trainer](/guias/academia-ou-personal/) lista os dois caminhos.
