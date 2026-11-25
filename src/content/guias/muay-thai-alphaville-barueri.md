@@ -32,7 +32,7 @@ perguntas:
   - p: "Tem muay thai infantil em Alphaville?"
     r: "O Jacó Fight Club, no Tamboré, lista muay thai infantil. Pergunte a idade mínima e os horários da turma na escola."
   - p: "Quanto custa treinar muay thai por mês?"
-    r: "Os centros de luta da região não publicam mensalidade nas fontes conferidas. Pelo Wellhub, o plano mínimo vai do Basic+ (R$ 99,99), no Double Dragon e na Team Cruz, ao Platinum (R$ 599,99), no Jacó Fight Club. No TotalPass, a Team Cruz entra pelo TP 1+ (R$ 89,90). Nas academias, a aula entra na mensalidade."
+    r: "Os centros de luta da região não publicam mensalidade nas fontes conferidas. Pelo Wellhub, o plano mínimo vai do Basic+ (R$ 99,99), no Double Dragon e na Team Cruz, ao Platinum (R$ 599,99), no Jacó Fight Club. No TotalPass, a Team Cruz entra pelo TP 1+ (R$ 89,90). Na busca de muay thai do Wellhub em Barueri, lida em 23/11/2026, há centros de luta sem ficha no guia a partir do Basic (R$ 69,99), como o Studio Team Silverio, no Jardim Mutinga, e a Imperius, no Parque Imperial; confira se a aula de luta exige plano acima. Nas academias, a aula entra na mensalidade."
   - p: "Onde treinar boxe em Alphaville e Barueri?"
     r: "Em Alphaville e no Tamboré, têm boxe o Jacó Fight Club, a Templo, a G13, a Gaviões 24h, a Bodytech Iguatemi, a 24h Premium e a SIX. Em Barueri, o CT Don Combat, o Studio Cathéo Fight, a Team Cruz e a Impacto. Em Santana de Parnaíba, o Alemão Boxing Club, na Fazendinha, é só de boxe."
 video:
@@ -44,7 +44,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-20
-atualizado_em: 2026-11-23
+atualizado_em: 2026-11-25
 ---
 
 > **Transparência.** Este guia é mantido pelo Montinho, personal trainer de Alphaville. Ele não dá aula de luta nem tem relação com os lugares citados; o bloco dele no rodapé é publicidade.

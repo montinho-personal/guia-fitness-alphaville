@@ -31,7 +31,7 @@ perguntas:
   - p: "Tem aula de dança pelo Wellhub ou TotalPass em Alphaville?"
     r: "Tem. A SkyFit Alphaville é a mais barata nos dois: Silver no Wellhub e TP 1+ no TotalPass. A Bodytech Iguatemi entra pelo Silver do Wellhub, e a Scelta pelo Gold do Wellhub ou pelo TP 4 do TotalPass. O valor de cada plano está na página de Wellhub e TotalPass."
   - p: "Qual o valor de uma aula de dança?"
-    r: "Nas academias da lista, a aula de dança entra na mensalidade ou no plano de benefício, sem cobrança à parte. Das academias com dança, só a Panobianco publica preço: a rede anuncia planos de R$ 119,90 e R$ 139,90 por mês. Escolas de dança cobram por turma; o guia ainda não conferiu os preços delas."
+    r: "Nas academias da lista, a aula de dança entra na mensalidade ou no plano de benefício, sem cobrança à parte. Das academias com dança, só a Panobianco publica preço: a rede anuncia planos de R$ 119,90 e R$ 139,90 por mês. Escolas de dança cobram por turma; o guia ainda não conferiu os preços delas. Pelo Wellhub, na busca de dança em Barueri lida em 24/11/2026, os estúdios entram a partir do Basic+ (R$ 99,99), no Ocean Pole Studio, em Alphaville, até o Diamond (R$ 699,99), no Polefit, no Tamboré."
   - p: "Tem aula de dança de graça em Barueri?"
     r: "Tem. A zumba está entre as 23 modalidades gratuitas das Escolas de Esportes da Prefeitura de Barueri. A inscrição é online, pelo portal de matrícula, com novas vagas todo terceiro dia útil do mês."
   - p: "Zumba, ritmos ou fitness dance: qual a diferença?"
@@ -45,7 +45,7 @@ status_originalidade: original-sem-verificacao-externa
 autor: Redação do Guia Fitness Alphaville
 revisor: null
 publicado_em: 2026-11-20
-atualizado_em: 2026-11-24
+atualizado_em: 2026-11-25
 ---
 
 > **Transparência.** Este guia é mantido pelo Montinho, personal trainer de Alphaville. Ele não dá aula de dança nem tem relação com as academias citadas; o bloco dele no rodapé é publicidade. A Arena 18, onde ele atende, aparece primeiro na lista como destaque da casa.
