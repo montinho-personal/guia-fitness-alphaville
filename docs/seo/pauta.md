@@ -136,7 +136,7 @@ Já revisados com pesquisa (prints ou SerpApi, 16/11): `/regioes/alphaville/`, `
 | ~~18~~ | 2026-11-15 | ~~`/guias/personal-trainer-24h-premium-alphaville/`~~ | Revisado em 24/11 (`personal-trainer-24h-premium-alphaville`): resposta com horário real e endereço, 24 Health Club/24 Wellness, calculadora de personal, 4 perguntas. Título novo aprovado pelo Renato em 24/11 |
 | ~~19~~ | 2026-11-15 | ~~`/guias/personal-trainer-a-domicilio-aldeia-da-serra/`~~ | Revisado em 24/11 (`personal-trainer-a-domicilio-aldeia-da-serra`): o bairro tem academias sem ficha, calculadora, link para o artigo do Montinho, 5 perguntas. Título: mantido |
 | ~~20~~ | 2026-11-15 | ~~`/guias/personal-trainer-a-domicilio-barueri/`~~ | Revisado em 25/11 (`personal-trainer-a-domicilio-barueri`): calculadora, link para o artigo do Montinho, 4 perguntas. Título: mantido |
-| ~~21~~ | 2026-11-15 | ~~`/guias/personal-trainer-a-domicilio-santana-de-parnaiba/`~~ | Revisado em 25/11 (`personal-trainer-a-domicilio-santana-de-parnaiba`): calculadora, link para o artigo do Montinho, 4 perguntas. Título: proposta aguardando aprovação |
+| ~~21~~ | 2026-11-15 | ~~`/guias/personal-trainer-a-domicilio-santana-de-parnaiba/`~~ | Revisado em 25/11 (`personal-trainer-a-domicilio-santana-de-parnaiba`): calculadora, link para o artigo do Montinho, 4 perguntas. Título novo aprovado pelo Renato em 25/11 |
 | 22 | 2026-11-15 | `/guias/personal-trainer-a-domicilio-tambore/` | Personal trainer a domicílio no Tamboré: aulas em casa |
 | 23 | 2026-11-15 | `/guias/personal-trainer-arena-18-alphaville/` | Personal trainer na Arena 18: treino, areia e horários |
 | 24 | 2026-11-15 | `/guias/personal-trainer-blacksheep-alphaville/` | Personal trainer no BlackSheep Alphaville: aula, Hyrox e custo |
