@@ -51,6 +51,24 @@ Toda ferramenta (calculadora, comparador, teste, checklist, mapa, simulador) é 
 
 **Ferramentas nos artigos (18/11/2026):** todo artigo leva às ferramentas do próximo passo, já preenchidas com o contexto da página. Regras e tabela em `docs/ferramentas-nos-artigos.md`; a lógica fica em `src/lib/ferramentas.ts`.
 
+## Rotina diária de QA das ferramentas (pedido do Renato, 26/11/2026)
+
+Duas ferramentas por dia, na ordem da fila de `docs/qa/ferramentas.md`. Cada ferramenta passa por três especialistas, que trabalham em paralelo (subagentes, cada um com só o seu papel e os arquivos da ferramenta):
+
+1. **Engenheiro de QA (funcional):** abre a ferramenta no navegador (Playwright, Chromium já instalado) contra o build local (`npx astro build` e `npx astro preview`). Clica em todo botão, preenche todo campo e seletor (o seletor do site abre por `select._selBtn.click()` e depois `.sel-op`), testa valores limite (zero, vazio, negativo, máximo, texto onde vai número), links e o estado da URL. Anota erro de console e de rede.
+2. **Especialista em mobile e acessibilidade:** a mesma ferramenta em celular (Pixel 7 e iPhone 13 do Playwright): nada estoura a largura, botão com área de toque suficiente, teclado numérico em campo de número, contraste, foco visível, rótulos lidos por leitor de tela. Captura de tela só para conferência dele (deviceScaleFactor 1).
+3. **Auditor de cálculos:** refaz as contas à mão, de forma independente, com pelo menos 5 casos (comuns e limites), e confere cada dado usado contra a fonte que a ficha ou o JSON cita (preço, horário, carga oficial, plano). Conta que não bate, arredondamento errado ou dado desatualizado é erro.
+
+Depois:
+
+4. **Executar os testes automatizados** (`npm run verificar`) e comparar com a base (0 erros; avisos conhecidos).
+5. **Corrigir** cada erro achado, com teste novo em `tests/` que falharia antes da correção sempre que o erro for de lógica.
+6. **Repetir** os três testes depois das correções, até tudo passar. Erro que depende de fonte bloqueada ou de decisão do Renato não é "corrigido" no chute: vai para o registro e para a resposta.
+7. **Registrar** a rodada em `docs/qa/ferramentas.md` (data na fila e bloco no registro) e **publicar** como as outras rotinas (PR, merge, deploy de produção, conferir no ar). Rodada sem erro também é registrada.
+8. **Responder em português, curto:** as 2 ferramentas com link, o que cada especialista testou, erros achados e corrigidos (com a prova), o que ficou pendente e por quê.
+
+Sem busca no SerpApi nesta rotina (não é revisão de SEO). Título e descrição: só proposta, como sempre.
+
 ## Cota do SerpApi
 
 Uma conta para todos os sites do Renato, em plano pago (1.000 buscas por mês). A conta do mês está no `CLAUDE.md`: a soma das rotinas passa da cota por decisão do Renato (17/11/2026, "segue tudo para todos"). Esta rotina gasta 2 a 3 créditos por revisão (busca secundária só se a principal vier fraca), cerca de 120 a 180 por mês com 2 revisões por dia. **Quando o SerpApi disser que a cota acabou, parar na hora e avisar o Renato**; ele decide se aumenta o plano ou espera a renovação.
@@ -59,6 +77,7 @@ Uma conta para todos os sites do Renato, em plano pago (1.000 buscas por mês). 
 
 - **Revisão diária**, 10h23 de Brasília (`trig_01Se8d5oL529gaMjSDVo3GPJ`): a rotina descrita acima, 2 artigos por dia.
 - **Monitor mensal de visão de IA e ideias**, dia 16 às 14h42 (`trig_015zdMwMGvRiyPXbkRXT6CGD`): mantém `docs/seo/visao-de-ia.md` e manda as ideias para `docs/seo/pauta.md`.
+- **QA diário das ferramentas**, 15h17 de Brasília (`trig_018xYQi93XqyLtQjSxAMTikA`): a rotina acima, 2 ferramentas por dia (fila em `docs/qa/ferramentas.md`).
 - Uma segunda revisão diária (11h23, `trig_01Vmz6ruQGhFSYELRqq8Jrv4`), criada em 17/11 pela conversa do Direito de Verdade, foi desligada para não duplicar a de 10h23.
 
 ## Capas
