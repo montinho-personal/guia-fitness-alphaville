@@ -36,6 +36,8 @@ export interface Cenario {
   taxaExterno: Situacao | 'pendente';
   taxaExternoModo: 'mes' | 'aula' | 'ida';
   taxaExternoValor: string;
+  /** Plano com o primeiro mês grátis (dado da ficha): a mensalidade não entra no 1º mês e entra 11 vezes no ano. */
+  mesGratis?: boolean;
 }
 
 export const cenarioVazio = (nome = ''): Cenario => ({
@@ -58,6 +60,8 @@ export interface Componente {
   mensal: number | null;
   /** Quanto entra no primeiro ano. null = pendente. */
   ano: number | null;
+  /** Valor mensal antes do arredondamento (itens por ida ou por aula), para o custo por treino não arredondar duas vezes. */
+  mensalExato?: number;
   nota?: string;
 }
 
@@ -91,6 +95,9 @@ export function paraCentavos(txt: string): number | null | 'invalido' {
 }
 
 /** Converte texto em número (frequência, aulas). Aceita vírgula decimal. */
+/** Teto de qualquer valor em dinheiro (R$ 100.000), para barrar número digitado por engano. */
+export const TETO_CENTAVOS = 10_000_000;
+
 export function paraNumero(txt: string): number | null | 'invalido' {
   const s = String(txt ?? '').replace(/\s/g, '').replace(',', '.');
   if (!s) return null;
@@ -115,6 +122,7 @@ export function calcular(c: Cenario): Resultado {
     const v = paraCentavos(txt);
     if (v === 'invalido') { erros.push({ campo, msg: `${rotulo}: use só números, como 149,90.` }); return null; }
     if (v !== null && v < 0) { erros.push({ campo, msg: `${rotulo}: o valor não pode ser negativo.` }); return null; }
+    if (v !== null && v > TETO_CENTAVOS) { erros.push({ campo, msg: `${rotulo}: confira o valor (máximo R$ 100.000).` }); return null; }
     return v;
   };
   const numero = (campo: string, txt: string, rotulo: string, max: number): number | null => {
@@ -140,9 +148,11 @@ export function calcular(c: Cenario): Resultado {
     const v = dinheiro('acessoValor', c.acessoValor, c.acessoModo === 'avista' ? 'Valor pago à vista' : 'Mensalidade');
     if (c.acessoModo === 'mensal') {
       if (v === null) { pend.push('Mensalidade'); comps.push({ chave: 'acesso', rotulo: 'Mensalidade', estado: 'pendente', primeiroMes: null, mensal: null, ano: null }); }
+      else if (c.mesGratis) comps.push({ chave: 'acesso', rotulo: 'Mensalidade (1º mês grátis)', estado: v === 0 ? 'zero' : 'ok', primeiroMes: 0, mensal: v, ano: v * 11, nota: 'O plano dá o primeiro mês grátis: a mensalidade não entra no 1º mês e entra 11 vezes no primeiro ano.' });
       else comps.push({ chave: 'acesso', rotulo: 'Mensalidade', estado: v === 0 ? 'zero' : 'ok', primeiroMes: v, mensal: v, ano: v * 12 });
     } else {
-      const meses = numero('avistaMeses', c.avistaMeses, 'Meses do plano', 36);
+      let meses = numero('avistaMeses', c.avistaMeses, 'Meses do plano', 36);
+      if (meses !== null && meses !== 0 && (meses < 1 || !Number.isInteger(meses))) { erros.push({ campo: 'avistaMeses', msg: 'Meses do plano: use um número inteiro de meses, de 1 a 36.' }); meses = null; }
       if (v === null || !meses) {
         pend.push(v === null ? 'Valor do plano pago à vista' : 'Meses cobertos pelo plano');
         comps.push({ chave: 'acesso', rotulo: 'Plano pago à vista', estado: 'pendente', primeiroMes: v, mensal: null, ano: null });
@@ -185,13 +195,14 @@ export function calcular(c: Cenario): Resultado {
     if (v === null) { pend.push('Estacionamento e deslocamento'); return { chave: 'transporte', rotulo: rot, estado: 'pendente', primeiroMes: null, mensal: null, ano: null }; }
     if (c.transporteModo === 'mes') return { chave: 'transporte', rotulo: rot, estado: v === 0 ? 'zero' : 'ok', primeiroMes: v, mensal: v, ano: v * 12 };
     if (idasMes === null) { pend.push('Frequência (para calcular o estacionamento por ida)'); return { chave: 'transporte', rotulo: rot, estado: 'pendente', primeiroMes: null, mensal: null, ano: null }; }
-    const m = Math.round(v * idasMes);
-    return { chave: 'transporte', rotulo: rot, estado: v === 0 ? 'zero' : 'ok', primeiroMes: m, mensal: m, ano: m * 12, nota: `${reais(v)} × ${fmtNum(idasMes)} idas.` };
+    const x = v * idasMes, m = Math.round(x);
+    return { chave: 'transporte', rotulo: rot, estado: v === 0 ? 'zero' : 'ok', primeiroMes: m, mensal: m, ano: Math.round(x * 12), mensalExato: x, nota: `${reais(v)} × ${fmtNum(idasMes)} idas.` };
   });
 
   // Personal
   let aulasMes: number | null = null;
-  if (c.personal !== 'nao' && String(c.personalAulas ?? '').trim()) {
+  const usaAulas = c.personalModo === 'aula' || c.taxaExternoModo === 'aula';
+  if (c.personal !== 'nao' && usaAulas && String(c.personalAulas ?? '').trim()) {
     const a = numero('personalAulas', c.personalAulas, 'Aulas com personal', c.personalAulasPeriodo === 'semana' ? 14 : 62);
     if (a !== null) aulasMes = porMes(a, c.personalAulasPeriodo);
   }
@@ -205,8 +216,8 @@ export function calcular(c: Cenario): Resultado {
       pend.push(v === null ? 'Valor por aula de personal' : 'Quantidade de aulas com personal');
       return { chave: 'personal', rotulo: 'Personal (por aula)', estado: 'pendente', primeiroMes: null, mensal: null, ano: null };
     }
-    const m = Math.round(v * aulasMes);
-    return { chave: 'personal', rotulo: 'Personal (por aula)', estado: v === 0 ? 'zero' : 'ok', primeiroMes: m, mensal: m, ano: m * 12, nota: `${reais(v)} × ${fmtNum(aulasMes)} aulas por mês.` };
+    const x = v * aulasMes, m = Math.round(x);
+    return { chave: 'personal', rotulo: 'Personal (por aula)', estado: v === 0 ? 'zero' : 'ok', primeiroMes: m, mensal: m, ano: Math.round(x * 12), mensalExato: x, nota: `${reais(v)} × ${fmtNum(aulasMes)} aulas por mês.` };
   });
   if (aulasMes !== null && idasMes !== null && aulasMes > idasMes + 1e-9) {
     erros.push({ campo: 'personalAulas', msg: `Aulas com personal (${fmtNum(aulasMes)} por mês) não podem passar do total de idas (${fmtNum(idasMes)} por mês).` });
@@ -224,8 +235,8 @@ export function calcular(c: Cenario): Resultado {
       if (c.taxaExternoModo === 'mes') return { chave: 'taxaExterno', rotulo: rot, estado: v === 0 ? 'zero' : 'ok', primeiroMes: v, mensal: v, ano: v * 12 };
       const base = c.taxaExternoModo === 'ida' ? idasMes : aulasMes;
       if (base === null) { pend.push(c.taxaExternoModo === 'ida' ? 'Frequência (para a taxa por ida)' : 'Quantidade de aulas com personal (para a taxa por aula)'); return { chave: 'taxaExterno', rotulo: rot, estado: 'pendente', primeiroMes: null, mensal: null, ano: null }; }
-      const m = Math.round(v * base);
-      return { chave: 'taxaExterno', rotulo: rot, estado: v === 0 ? 'zero' : 'ok', primeiroMes: m, mensal: m, ano: m * 12, nota: `${reais(v)} × ${fmtNum(base)} ${c.taxaExternoModo === 'ida' ? 'idas' : 'aulas'} por mês.` };
+      const x = v * base, m = Math.round(x);
+      return { chave: 'taxaExterno', rotulo: rot, estado: v === 0 ? 'zero' : 'ok', primeiroMes: m, mensal: m, ano: Math.round(x * 12), mensalExato: x, nota: `${reais(v)} × ${fmtNum(base)} ${c.taxaExternoModo === 'ida' ? 'idas' : 'aulas'} por mês.` };
     });
   }
 
@@ -241,7 +252,7 @@ export function calcular(c: Cenario): Resultado {
   else if (idasMes === null) motivo = 'Falta informar a frequência de treino.';
   else if (idasMes === 0) motivo = 'Com frequência zero, não há custo por ida.';
   else if (me.total === null) motivo = 'Falta informar um custo do mês típico.';
-  else porIda = Math.round(me.total / idasMes);
+  else porIda = Math.round(comps.reduce((t, x) => t + (x.mensalExato ?? x.mensal ?? 0), 0) / idasMes);
 
   return {
     idasMes, premissaIdas, componentes: comps, erros, pendencias: [...new Set(pend)],
@@ -264,7 +275,7 @@ export function maisBarato(rs: Resultado[], criterio: Criterio): { indices: numb
 
 // ---------- Planos publicados nas fichas ----------
 
-export interface PlanoFicha { nome: string; centavos: number; inicial: number | null; condicoes: string }
+export interface PlanoFicha { nome: string; centavos: number; inicial: number | null; condicoes: string; mesGratis: boolean }
 
 /** Lê os planos mensais de uma ficha. Só entram planos cobrados por mês; diária, pacote e aula avulsa ficam de fora. */
 export function planosMensais(planos: { nome: string; preco: string; condicoes: string }[]): PlanoFicha[] {
@@ -273,6 +284,7 @@ export function planosMensais(planos: { nome: string; preco: string; condicoes: 
     const m = p.condicoes.match(/(?:ades[aã]o|matr[ií]cula(?: [úu]nica)?) de (R\$\s?[\d.,]+)/i);
     const gratis = /ades[aã]o gr[aá]tis|sem taxa de ades[aã]o|sem ades[aã]o/i.test(p.condicoes);
     const ini = m ? paraCentavos(m[1].replace(/[.,]$/, '')) : gratis ? 0 : null;
-    return { nome: p.nome, centavos: typeof v === 'number' ? v : 0, inicial: typeof ini === 'number' ? ini : null, condicoes: p.condicoes };
+    const mesGratis = /primeiro m[eê]s (?:gr[aá]tis|gratuito)/i.test(p.condicoes);
+    return { nome: p.nome, centavos: typeof v === 'number' ? v : 0, inicial: typeof ini === 'number' ? ini : null, condicoes: p.condicoes, mesGratis };
   }).filter((p) => p.centavos > 0);
 }

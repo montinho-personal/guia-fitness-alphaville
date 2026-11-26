@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "auditoria": "node scripts/auditoria.mjs",
     "check": "astro check",
-    "test": "node --experimental-strip-types --test tests/custo.test.ts tests/personal.test.ts tests/beneficios.test.ts tests/horarios.test.ts tests/acesso.test.ts tests/preco-personal.test.ts tests/formato-personal.test.ts tests/hyrox.test.ts tests/treino-condominio.test.ts tests/caminho.test.ts",
+    "test": "node --experimental-strip-types --test tests/custo.test.ts tests/personal.test.ts tests/beneficios.test.ts tests/horarios.test.ts tests/acesso.test.ts tests/preco-personal.test.ts tests/formato-personal.test.ts tests/hyrox.test.ts tests/treino-condominio.test.ts tests/caminho.test.ts tests/qa-ferramentas.test.ts",
     "verificar": "npm test && astro check && astro build && node scripts/auditoria.mjs"
   },
   "dependencies": {
