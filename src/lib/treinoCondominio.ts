@@ -156,7 +156,12 @@ export function avaliar(equip: EquipId[], dias: number, experiencia: 'comecando'
   const resumo = veredito === 'completo'
     ? `O que você marcou cobre ${bons} dos 6 grupos de movimento com exercícios em que dá para aumentar a carga com o tempo.`
     : veredito === 'adaptado'
-      ? `Todos os grupos de movimento têm exercício possível. Em ${nomes(adaptados)}, a saída é o peso do corpo ou o elástico, que funcionam mas têm um teto de carga.`
+      ? (() => {
+          // O cardio adaptado não tem "teto de carga": a saída é caminhar ou correr na rua.
+          const forcaAd = adaptados.filter((p) => p !== 'cardio');
+          const cardio = adaptados.includes('cardio') ? ' No cardio, a saída é caminhar ou correr nas ruas do condomínio.' : '';
+          return `Todos os grupos de movimento têm exercício possível.${forcaAd.length ? ` Em ${nomes(forcaAd)}, a saída é o peso do corpo ou o elástico, que funcionam mas têm um teto de carga.` : ''}${cardio}`;
+        })()
       : `Com o que você marcou, não há exercício para ${nomes(faltam)}. O resto dá para treinar; veja abaixo o que resolveria a falta.`;
   const avisos: string[] = [];
   const pernaComCarga = eq.has('maquinas-perna') || (eq.has('barra') && eq.has('rack'));

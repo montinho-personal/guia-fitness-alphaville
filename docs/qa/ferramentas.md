@@ -11,8 +11,8 @@ achados e o que foi corrigido.
 |---|---|---|---|---|
 | 1 | Calculadora de custo para treinar | `/ferramentas/custo-para-treinar-em-alphaville/` | `tests/custo.test.ts`, `tests/qa-ferramentas.test.ts` | 26/11/2026 |
 | 2 | Calculadora de preço de personal | `/ferramentas/calculadora-preco-personal-alphaville/` | `src/lib/precoPersonal.ts`, `tests/preco-personal.test.ts`, `tests/qa-ferramentas.test.ts` | 26/11/2026 |
-| 3 | Calculadora Hyrox | `/ferramentas/calculadora-hyrox/` | `src/lib/hyrox.ts`, `src/data/hyrox.json`, `tests/hyrox.test.ts` | — |
-| 4 | Treino na academia do condomínio | `/ferramentas/treino-academia-do-condominio/` | `src/lib/treinoCondominio.ts`, `tests/treino-condominio.test.ts` | — |
+| 3 | Calculadora Hyrox | `/ferramentas/calculadora-hyrox/` | `src/lib/hyrox.ts`, `src/data/hyrox.json`, `tests/hyrox.test.ts`, `tests/qa-ferramentas.test.ts` | 26/11/2026 |
+| 4 | Treino na academia do condomínio | `/ferramentas/treino-academia-do-condominio/` | `src/lib/treinoCondominio.ts`, `tests/treino-condominio.test.ts`, `tests/qa-ferramentas.test.ts` | 26/11/2026 |
 | 5 | Academia perto de casa ou do trabalho | `/ferramentas/academia-perto-de-casa-ou-do-trabalho/` | `src/lib/caminho.ts`, `tests/caminho.test.ts` | — |
 | 6 | Buscador Wellhub e TotalPass | `/academias/wellhub-totalpass/` | `tests/beneficios.test.ts` | — |
 | 7 | Academias abertas (domingo e 24h) | `/ferramentas/academias-abertas-alphaville/` | `tests/horarios.test.ts` | — |
@@ -54,3 +54,37 @@ Especialistas: QA funcional (Playwright, desktop), mobile e acessibilidade (Pixe
 **Testes novos:** `tests/qa-ferramentas.test.ts` (5 testes; os de arredondamento e de aulas guardadas falhavam antes da correção). Reteste no navegador nos dois aparelhos: tudo passou, sem erro de JavaScript.
 
 **Pendente (não corrigido nesta rodada):** os valores digitados (mensalidade, frequência, extras) ainda não vão para a URL, então um link compartilhado só leva as academias escolhidas e os parâmetros de entrada; a matrícula aparece como "R$ 120,00 → R$ 0,00/mês" no detalhe, o que pode confundir; as duas calculadoras contam 1×/semana de jeitos diferentes (4,33 idas no custo, 4 sessões no preço de personal, que arredonda as sessões). Fica para a próxima rodada de cada uma.
+
+### Rodada 2 — 26/11/2026: calculadora Hyrox e treino na academia do condomínio
+
+Especialistas: QA funcional (Playwright, desktop), mobile e acessibilidade (Pixel 7 e iPhone 13) e auditor de cálculos (referência independente; varredura das 65.536 combinações de equipamento do simulador).
+
+**Erros achados e corrigidos (Hyrox):**
+- A tabela não fechava com média fracionada: 1:31:00 a 6:00/km dava estações de 5:23 somando 43:04 e o relógio pulando 1 s. Agora as durações são inteiras e fecham com o total.
+- O ritmo-limite da mensagem de erro não descontava os 30 s mínimos por estação (1:30:00 a 11:00/km mandava ficar "abaixo de 11:15"). Agora sai 10:45.
+- Transição grande dava erro culpando a corrida e focava o ritmo: agora o erro cita as transições e foca o campo delas.
+- A leitura do plano usava a meta digitada e não enviada (até "0s" com meta inválida). Agora usa a meta do plano mostrado.
+- O WhatsApp mandava o total como se fosse a meta.
+- O link e o "Copiar plano" perdiam as transições e os tempos por estação; trocar a categoria não atualizava o endereço.
+- "1 30" virava 2h10; `6'15"` era recusado; no teclado numérico do celular não há ":" (agora "6.30" e "6,30" valem 6:30, e "1.30" na meta vale 1h30).
+- Celular: os campos de tempo não tinham `type="text"` e saíam no visual padrão do navegador, estourando a tela no Pixel 7 (441 px em 412) com as estações abertas.
+- Acessibilidade: erro sem `aria-invalid` nem ligação ao campo; "Plano copiado" podia não ser lido; troca de categoria com o plano na tela sem anúncio; contorno de foco 2,87:1; borda das opções não marcadas 2,54:1.
+
+**Erros achados e corrigidos (condomínio):**
+- O link e o recarregamento perdiam a região e a experiência (mudava o aviso, a mensagem do WhatsApp e o link de próximos passos).
+- O resumo dizia que o cardio adaptado tem "teto de carga" (608 combinações).
+- A página falava em "cinco grupos de força" e listava a prancha como exercício só com halteres: agora são quatro grupos, com o exercício que usa halteres.
+- "Mudar os equipamentos" rolava a página sem levar o foco; contorno de foco 2,87:1.
+
+**No site todo:**
+- O seletor próprio agora anuncia o valor escolhido ("Divisão: Open masculino"), como o `<select>` nativo.
+- A borda do seletor ficou mais escura (era 1,51:1).
+- `scroll-padding-bottom` foi para 180 px, porque a barra do WhatsApp tem 164 px no iPhone.
+- A impressão deixa de mostrar a barra do WhatsApp e o bloco de vídeo, e os rótulos laranja saem em cor legível.
+
+**Testes:** 7 testes novos em `tests/qa-ferramentas.test.ts`, que falhavam antes. O teste antigo do ritmo-limite esperava o valor errado (450 s) e passou a esperar 420 s. Reteste nos dois aparelhos: tudo passou, sem erro de JavaScript.
+
+**Pendente:**
+- Não foi possível conferir as cargas no site oficial do Hyrox (bloqueado aqui). O JSON diz "50 m (2 × 25 m)" para os trenós, e o auditor lembra de 4 × 12,5 m no regulamento. Fica para conferir quando o site abrir.
+- Uma estação preenchida com "0:00" ainda é tratada como em branco.
+- A dica de cada campo da Hyrox ainda é lida duas vezes pelo leitor de tela.
