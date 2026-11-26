@@ -79,6 +79,7 @@ const perguntas = [
     <section class="bloco fino" aria-labelledby="calc-t">
       <h2 id="calc-t" class="so-leitor">Calculadora</h2>
       <div id="calc" class="calc" data-url={URL_PAG}>
+        <p id="anuncio-calc" class="so-leitor" aria-live="polite"></p>
         <noscript><p class="caixa">A calculadora precisa de JavaScript. Sem ele, use o exemplo e a tabela de planos publicados abaixo para fazer a conta: mensalidade + estacionamento por ida × idas no mês.</p></noscript>
         <div id="cenarios" class="cen-grade"></div>
         <button type="button" class="add-cen" id="add"><span aria-hidden="true">+</span> Comparar com outra opção</button>
@@ -191,6 +192,7 @@ const perguntas = [
     const ACADS: Acad[] = JSON.parse(document.getElementById('calc-dados')!.textContent!);
     const porId = (id: string) => ACADS.find((a) => a.id === id);
     const raiz = document.getElementById('calc')!;
+    const anuncio = document.getElementById('anuncio-calc')!; let tAnuncio = 0;
     const box = document.getElementById('cenarios')!;
     const ev = (n: string, d: Record<string, string | number> = {}) => { const w = window as any; if (typeof w.otaEvento === 'function') w.otaEvento(n, d); };
     const esc = (s: string) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
@@ -204,9 +206,10 @@ const perguntas = [
 
     const novo = (): Item => ({ tipo: '', acad: '', plano: '', busca: '', c: cenarioVazio() });
     function escolherTipo(it: Item, tipo: Tipo) {
-      const freq = { freqValor: it.c.freqValor, freqPeriodo: it.c.freqPeriodo };
+      // Frequência e personal valem para qualquer lugar: trocar o tipo não apaga (o link ?personal=1 chega antes da escolha).
+      const { freqValor, freqPeriodo, personal, personalModo, personalValor, personalAulas, personalAulasPeriodo } = it.c;
       it.tipo = tipo; it.acad = ''; it.plano = ''; it.busca = '';
-      it.c = { ...cenarioVazio(), ...freq };
+      it.c = { ...cenarioVazio(), freqValor, freqPeriodo, personal, personalModo, personalValor, personalAulas, personalAulasPeriodo };
       if (tipo === 'condominio') { it.c.nome = 'Academia do condomínio'; it.c.acessoModo = 'incluido'; }
     }
     function escolherAcad(it: Item, id: string) {
@@ -214,6 +217,7 @@ const perguntas = [
       it.tipo = 'guia'; it.acad = id; it.busca = ''; it.c.nome = a.nome; it.plano = '';
       it.c.acessoModo = 'mensal'; it.c.acessoValor = ''; it.c.inicial = 'nao'; it.c.inicialValor = '';
       if (a.planos.length) escolherPlano(it, '0');
+      if (it.c.personal !== 'nao') aplicarPE(it);
     }
     // Política de personal externo da ficha: só preenche taxa confirmada e paga pelo aluno; o resto fica pendente ou fora.
     function aplicarPE(it: Item) {
@@ -232,9 +236,9 @@ const perguntas = [
     const seg = (k: string, opts: [string, string][], v: string, rot: string, i: number) =>
       `<div class="seg" role="radiogroup" aria-label="${rot}">${opts.map(([val, t]) => `<button type="button" role="radio" data-k="${k}" data-v="${val}" aria-checked="${val === v}" id="c${i}-${k}-${val}">${t}</button>`).join('')}</div>`;
     const dinheiro = (k: string, v: string, rot: string, i: number, dica = '') =>
-      `<label class="campo-v" data-campo="${k}"><span class="rot">${rot}</span><span class="moeda"><span aria-hidden="true">R$</span><input type="text" inputmode="decimal" autocomplete="off" placeholder="0,00" data-k="${k}" id="c${i}-${k}" value="${esc(v)}"${dica ? ` aria-describedby="c${i}-${k}-d"` : ''}></span>${dica ? `<small class="dica" id="c${i}-${k}-d">${dica}</small>` : ''}<small class="erro" id="c${i}-${k}-e" role="alert"></small></label>`;
+      `<label class="campo-v" data-campo="${k}"><span class="rot" id="c${i}-${k}-r">${rot}</span><span class="moeda"><span aria-hidden="true">R$</span><input type="text" inputmode="decimal" autocomplete="off" placeholder="0,00" data-k="${k}" id="c${i}-${k}" aria-labelledby="c${i}-${k}-r" value="${esc(v)}"${dica ? ` aria-describedby="c${i}-${k}-d"` : ''}></span>${dica ? `<small class="dica" id="c${i}-${k}-d">${dica}</small>` : ''}<small class="erro" id="c${i}-${k}-e" role="alert"></small></label>`;
     const numero = (k: string, v: string, rot: string, i: number, dica = '') =>
-      `<label class="campo-v" data-campo="${k}"><span class="rot">${rot}</span><span class="contador"><button type="button" data-passo="${k}" data-d="-1" aria-label="Menos">−</button><input type="text" inputmode="decimal" autocomplete="off" data-k="${k}" id="c${i}-${k}" value="${esc(v)}"${dica ? ` aria-describedby="c${i}-${k}-d"` : ''}><button type="button" data-passo="${k}" data-d="1" aria-label="Mais">+</button></span>${dica ? `<small class="dica" id="c${i}-${k}-d">${dica}</small>` : ''}<small class="erro" id="c${i}-${k}-e" role="alert"></small></label>`;
+      `<div class="campo-v" data-campo="${k}"><label class="rot" id="c${i}-${k}-r" for="c${i}-${k}">${rot}</label><span class="contador"><button type="button" data-passo="${k}" data-d="-1" aria-label="Menos: ${rot}">−</button><input type="text" inputmode="decimal" autocomplete="off" data-k="${k}" id="c${i}-${k}" aria-labelledby="c${i}-${k}-r" value="${esc(v)}"${dica ? ` aria-describedby="c${i}-${k}-d"` : ''}><button type="button" data-passo="${k}" data-d="1" aria-label="Mais: ${rot}">+</button></span>${dica ? `<small class="dica" id="c${i}-${k}-d">${dica}</small>` : ''}<small class="erro" id="c${i}-${k}-e" role="alert"></small></div>`;
 
     const EXTRAS: { k: 'inicial' | 'transporte' | 'personal' | 'anual'; t: string }[] = [
       { k: 'transporte', t: 'Estacionamento' }, { k: 'personal', t: 'Personal' }, { k: 'inicial', t: 'Matrícula' }, { k: 'anual', t: 'Taxa anual' },
@@ -281,7 +285,7 @@ const perguntas = [
       return `<p class="fonte pe-calc"><strong>${esc(pe.status)}.</strong> ${esc(pe.nota)}${pe.conferido ? ` Verificado em ${pe.conferido}.` : ''}</p>`;
     }
     function blocoExtras(c: Cenario, i: number, it: Item): string {
-      const chips = `<div class="chips">${EXTRAS.map((x) => `<button type="button" class="chip" data-extra="${x.k}" aria-pressed="${c[x.k] !== 'nao'}">${c[x.k] !== 'nao' ? '✓' : '+'} ${x.t}</button>`).join('')}</div>`;
+      const chips = `<div class="chips">${EXTRAS.map((x) => `<button type="button" class="chip" id="c${i}-chip-${x.k}" data-extra="${x.k}" aria-pressed="${c[x.k] !== 'nao'}">${c[x.k] !== 'nao' ? '✓' : '+'} ${x.t}</button>`).join('')}</div>`;
       const caixa = (k: string, titulo: string, corpo: string) => `<div class="extra" data-bloco="${k}"><div class="extra-cab"><strong>${titulo}</strong><button type="button" class="btn-txt" data-extra-sai="${k}" aria-label="Remover ${titulo}">Remover</button></div>${corpo}</div>`;
       const sit = (k: string, s: Situacao, rot: string) => seg(k, [['valor', 'Tenho um valor'], ['incluido', 'Já está incluído']], s, rot, i);
       let h = '';
@@ -313,7 +317,7 @@ const perguntas = [
           <div class="linha2">${numero('freqValor', c.freqValor, 'Treinos', i)}${seg('freqPeriodo', [['semana', 'por semana'], ['mes', 'por mês']], c.freqPeriodo, 'Período', i)}</div>
         </div>
         <div class="etapa"><p class="rot-q">Outros custos</p>${blocoExtras(c, i, it)}</div>
-        <div class="res" id="c${i}-res" aria-live="polite"></div>` : ''}
+        <div class="res" id="c${i}-res"></div>` : ''}
       </article>`;
     }
 
@@ -374,6 +378,15 @@ const perguntas = [
       if (itens.some((it) => it.c.personal !== 'nao')) q.set('personal', '1');
       const benAtivo = itens.find((it) => it.beneficio)?.beneficio; if (benAtivo) q.set('beneficio', benAtivo);
       history.replaceState(null, '', q.toString() ? `?${q}` : location.pathname);
+      // Grupos de rádio: só a opção marcada entra no Tab; as setas trocam a opção.
+      raiz.querySelectorAll('[role="radiogroup"]').forEach((g) => g.querySelectorAll<HTMLElement>('[role="radio"]').forEach((r) => { r.tabIndex = r.getAttribute('aria-checked') === 'true' ? 0 : -1; }));
+      // Anúncio único para leitor de tela (o cartão é redesenhado e perderia a região ao vivo).
+      clearTimeout(tAnuncio);
+      tAnuncio = window.setTimeout(() => {
+        const partes = itens.map((it, i) => { const r = rs[i]; return `${it.c.nome || `Opção ${i + 1}`}: ${r.mensal !== null ? `${reais(r.mensal)} por mês` : 'valor do mês pendente'}${r.porIda !== null ? `, ${reais(r.porIda)} por treino` : ''}.`; });
+        const nota = document.getElementById('resumo-nota')?.textContent?.trim() ?? '';
+        anuncio.textContent = [...partes, itens.length > 1 ? nota : ''].filter(Boolean).join(' ');
+      }, 700);
     }
 
     function desenhar(i?: number, foco?: string) {
@@ -410,8 +423,8 @@ const perguntas = [
       if (b.dataset.acao === 'sem-beneficio') { it.beneficio = undefined; escolherAcad(it, it.acad); desenhar(i, `c${i}-acessoValor`); return; }
       if (b.dataset.acao === 'trocar') { it.acad = ''; it.plano = ''; it.beneficio = undefined; it.c.nome = ''; desenhar(i, `c${i}-busca`); return; }
       if (b.dataset.plano !== undefined) { escolherPlano(it, b.dataset.plano); desenhar(i, `c${i}-acessoValor`); return; }
-      if (b.dataset.extra) { const k = b.dataset.extra as 'inicial' | 'transporte' | 'personal' | 'anual'; it.c[k] = it.c[k] === 'nao' ? 'valor' : 'nao'; if (k === 'personal' && it.c.personal !== 'nao') aplicarPE(it); desenhar(i, it.c[k] === 'nao' ? undefined : `c${i}-${k}Valor`); return; }
-      if (b.dataset.extraSai) { (it.c as any)[b.dataset.extraSai] = 'nao'; desenhar(i); return; }
+      if (b.dataset.extra) { const k = b.dataset.extra as 'inicial' | 'transporte' | 'personal' | 'anual'; it.c[k] = it.c[k] === 'nao' ? 'valor' : 'nao'; if (k === 'personal' && it.c.personal !== 'nao') aplicarPE(it); desenhar(i, it.c[k] === 'nao' ? `c${i}-chip-${k}` : `c${i}-${k}Valor`); return; }
+      if (b.dataset.extraSai) { (it.c as any)[b.dataset.extraSai] = 'nao'; desenhar(i, `c${i}-chip-${b.dataset.extraSai}`); return; }
       if (b.dataset.passo) {
         const k = b.dataset.passo; const atual = parseFloat(String((it.c as any)[k] || '0').replace(',', '.')) || 0;
         (it.c as any)[k] = String(Math.max(0, atual + Number(b.dataset.d))).replace('.', ','); const inp = el.querySelector<HTMLInputElement>(`#c${i}-${k}`); if (inp) inp.value = (it.c as any)[k];
@@ -466,7 +479,7 @@ const perguntas = [
   .calc .cen{background:#fff;border:1px solid var(--c-borda);border-radius:16px;box-shadow:0 8px 24px rgba(16,27,45,.07);overflow:hidden;min-width:0}
   .calc .cen [hidden]{display:none!important}
   .calc .cen-cab{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--c-borda)}
-  .calc .cen-cab .num{flex:none;width:32px;height:32px;border-radius:50%;background:var(--c-laranja);color:#fff;font:800 16px/32px var(--display);text-align:center}
+  .calc .cen-cab .num{flex:none;width:32px;height:32px;border-radius:50%;background:var(--c-laranja);color:#151515;font:800 16px/32px var(--display);text-align:center}
   .calc .cen-cab h3{margin:0;font-size:19px;line-height:1.2;flex:1;min-width:0;overflow-wrap:anywhere}
   .calc .fechar{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--c-borda);background:#fff;font-size:22px;line-height:1;color:var(--cinza);cursor:pointer}
   .calc .fechar:hover{background:var(--c-suave);color:var(--tinta)}
@@ -539,6 +552,7 @@ const perguntas = [
   .calc .res-sec{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.16)}
   .calc .res-sec b{display:block;margin-top:2px;font:700 17px var(--display)}
   .calc .pendv{color:#C9D3E3;font-weight:600;font-size:.75em}
+  .calc #barras .pendv,.calc #resumo .pendv{color:#5A6475}
   .calc .res-prem{margin:12px 0 0;font-size:13px;line-height:1.4;color:#C9D3E3}
   .calc .res-alerta{margin:10px 0 0;font:600 13.5px/1.4 var(--display);color:#FFD6A8}
   .calc .res-comp{margin-top:12px;border-top:1px solid rgba(255,255,255,.16);padding-top:8px}

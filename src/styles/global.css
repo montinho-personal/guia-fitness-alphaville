@@ -6,7 +6,7 @@
   --raio:4px; --max:1180px; --leitura:42rem;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-bottom:140px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--texto);font-size:18px;line-height:1.6}
 img,svg{max-width:100%}
