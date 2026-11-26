@@ -84,7 +84,10 @@ function abre(sel: HTMLSelectElement, btn: HTMLButtonElement) {
 function atualiza(sel: HTMLSelectElement) {
   const btn = (sel as any)._selBtn as HTMLButtonElement | undefined; if (!btn) return;
   const o = sel.selectedOptions[0];
-  btn.querySelector('.sel-valor')!.textContent = o ? o.label || o.text : '';
+  const valor = o ? o.label || o.text : '';
+  btn.querySelector('.sel-valor')!.textContent = valor;
+  // Nome acessível com o rótulo e o valor escolhido, como o <select> nativo anunciava.
+  btn.setAttribute('aria-label', valor ? `${btn.dataset.rot}: ${valor}` : btn.dataset.rot ?? '');
   btn.classList.toggle('sel-vago', !o || o.value === '');
   btn.disabled = sel.disabled;
 }
@@ -97,7 +100,7 @@ function melhora(sel: HTMLSelectElement) {
   btn.innerHTML = '<span class="sel-valor"></span>';
   const rot = rotuloDe(sel);
   // Dentro de <label>, o botão vira o controle do rótulo (vem antes do select). Com <label for>, damos o nome à mão.
-  if (!sel.closest('label')) btn.setAttribute('aria-label', rot);
+  btn.dataset.rot = rot; btn.setAttribute('aria-label', rot);
   (sel as any)._selBtn = btn;
   sel.before(btn); sel.classList.add('sel-nativo'); sel.tabIndex = -1; sel.setAttribute('aria-hidden', 'true');
   btn.addEventListener('click', () => abre(sel, btn));

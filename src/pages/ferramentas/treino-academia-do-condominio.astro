@@ -171,7 +171,7 @@ const schema = [{ '@type': 'WebApplication', name: 'Simulador de treino na acade
       if (rolar) { res.focus({ preventScroll: true }); res.scrollIntoView({ block: 'start', behavior: 'smooth' }); ev('treino_condominio_resultado', { resultado: r.veredito, equipamentos: eq.length, dias, local }); }
     }
     f.addEventListener('submit', (e) => { e.preventDefault(); calcular(true); });
-    $('tc-refazer').addEventListener('click', () => { f.scrollIntoView({ block: 'start', behavior: 'smooth' }); ev('treino_condominio_refazer'); });
+    $('tc-refazer').addEventListener('click', () => { f.scrollIntoView({ block: 'start', behavior: 'smooth' }); f.querySelector<HTMLInputElement>('input[name="eq"]')?.focus({ preventScroll: true }); ev('treino_condominio_refazer'); });
     $('tc-imprimir').addEventListener('click', () => { ev('treino_condominio_imprimir'); window.print(); });
 
     // Link com estado: ?eq=halteres,banco&dias=3&local=casa (links dos artigos e resultado compartilhado).
@@ -209,7 +209,7 @@ const schema = [{ '@type': 'WebApplication', name: 'Simulador de treino na acade
   .tc .tc-op input:checked + span { border-color: #111827; background: #111827; color: #fff; }
   .tc .tc-op input:checked + span small { color: #C9D3E2; }
   .tc .tc-op input:checked + span::before { border-color: #FF6A00; background: #FF6A00 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='%23111827' stroke-width='2.4'/%3E%3C/svg%3E") center/14px no-repeat; }
-  .tc .tc-op input:focus-visible + span, .tc .tc-bt:focus-visible { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .tc .tc-op input:focus-visible + span, .tc .tc-bt:focus-visible { outline: 3px solid #A84300; outline-offset: 2px; }
   .tc .campo select { min-height: 48px; font-size: 16px; }
   .tc .tc-res { margin: 8px 0 18px; padding: 22px 18px; border-radius: 14px; background: #111827; color: #F5F1E8; scroll-margin-top: 12px; }
   .tc .tc-res[hidden] { display: none; }

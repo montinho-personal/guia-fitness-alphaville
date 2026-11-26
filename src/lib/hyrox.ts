@@ -17,6 +17,9 @@ export function paraSegundos(txt: string, padrao: 'prova' | 'ritmo'): number | n
   // Espaço entre números separa as partes ("1 30" = 1:30), em vez de juntar em "130".
   const t = txt.trim().toLowerCase().replace(/(\d)\s+(?=\d)/g, '$1:').replace(/\s+/g, '').replace(',', '.');
   if (!t) return null;
+  // No teclado numérico do celular não há ":"; "6.30" ou "6,30" (dois dígitos depois do separador) vale como 6:30.
+  const dec = t.match(/^(\d{1,2})\.(\d{2})$/);
+  if (dec && Number(dec[2]) < 60) return paraSegundos(`${dec[1]}:${dec[2]}`, padrao);
   const h = t.match(/^(\d{1,2})h(\d{1,2})?(?:m(?:in)?)?$/);
   if (h) return Number(h[1]) * 3600 + Number(h[2] ?? 0) * 60;
   // 6'15" (minutos e segundos com aspas): a aspa final não vira uma parte vazia.

@@ -71,9 +71,9 @@ const schema = [{ '@type': 'WebApplication', name: 'Calculadora Hyrox: pesos por
         <legend><span class="hx-n">2</span> Seu plano de prova</legend>
         <div class="campos c2">
           <label class="campo"><span class="rotulo">Meta de tempo final</span>
-            <input id="hx-meta" name="meta" inputmode="numeric" autocomplete="off" value="1:30:00" aria-describedby="hx-meta-a"><small id="hx-meta-a">Horas:minutos:segundos. Ex.: 1:30:00</small></label>
+            <input id="hx-meta" name="meta" type="text" inputmode="decimal" autocomplete="off" value="1:30:00" aria-describedby="hx-meta-a"><small id="hx-meta-a">Horas:minutos:segundos. Ex.: 1:30:00</small></label>
           <label class="campo"><span class="rotulo">Ritmo de corrida, por km</span>
-            <input id="hx-ritmo" name="ritmo" inputmode="numeric" autocomplete="off" value="6:00" aria-describedby="hx-ritmo-a"><small id="hx-ritmo-a">Minutos:segundos. Ex.: 6:00</small></label>
+            <input id="hx-ritmo" name="ritmo" type="text" inputmode="decimal" autocomplete="off" value="6:00" aria-describedby="hx-ritmo-a"><small id="hx-ritmo-a">Minutos:segundos. Ex.: 6:00</small></label>
         </div>
         <div class="hx-atalhos" aria-label="Metas comuns">
           <span class="rotulo">Metas comuns</span>
@@ -83,9 +83,9 @@ const schema = [{ '@type': 'WebApplication', name: 'Calculadora Hyrox: pesos por
         <details class="hx-det">
           <summary>Ajustar transições e o tempo de cada estação</summary>
           <label class="campo hx-campo"><span class="rotulo">Transições, no total (opcional)</span>
-            <input id="hx-trans" name="trans" inputmode="numeric" autocomplete="off" placeholder="0:00" aria-describedby="hx-trans-a"><small id="hx-trans-a">Tempo que você quer reservar para ir da pista às estações e voltar. Minutos:segundos.</small></label>
+            <input id="hx-trans" name="trans" type="text" inputmode="decimal" autocomplete="off" placeholder="0:00" aria-describedby="hx-trans-a"><small id="hx-trans-a">Tempo que você quer reservar para ir da pista às estações e voltar. Minutos:segundos.</small></label>
           <p class="hx-dica">Já sabe quanto leva em alguma estação? Preencha só as que souber: as outras dividem o tempo que sobrar.</p>
-          <div class="hx-ests">{E.map((e, i) => <label class="campo"><span class="rotulo">{i + 1}. {e.nome.replace(/ \(.*\)/, '')}</span><input class="hx-e" data-i={i} inputmode="numeric" autocomplete="off" placeholder="min:seg" aria-label={`Tempo no ${e.nome}, em minutos e segundos`}></label>)}</div>
+          <div class="hx-ests">{E.map((e, i) => <label class="campo"><span class="rotulo">{i + 1}. {e.nome.replace(/ \(.*\)/, '')}</span><input class="hx-e" type="text" data-i={i} inputmode="decimal" autocomplete="off" placeholder="min:seg" aria-label={`Tempo no ${e.nome}, em minutos e segundos`}></label>)}</div>
         </details>
         <p class="hx-erro" id="hx-erro" role="alert" hidden></p>
         <button class="btn" type="submit">Montar meu plano <i aria-hidden="true"></i></button>
@@ -110,7 +110,7 @@ const schema = [{ '@type': 'WebApplication', name: 'Calculadora Hyrox: pesos por
       <div class="hx-acoes nao-imprime">
         <button type="button" class="hx-bt" id="hx-copiar">Copiar plano</button>
         <button type="button" class="hx-bt" id="hx-imprimir">Imprimir</button>
-        <span class="hx-ok" id="hx-ok" role="status" hidden>Plano copiado.</span>
+        <span class="hx-ok" id="hx-ok" role="status" hidden>Plano copiado.</span><span id="hx-anuncio" class="so-leitor" aria-live="polite"></span>
       </div>
       <aside class="hx-mt nao-imprime" aria-labelledby="hx-mt-t">
         <span class="rotulo">Atendimento do Montinho Personal Trainer · publicidade da casa</span>
@@ -193,7 +193,7 @@ const schema = [{ '@type': 'WebApplication', name: 'Calculadora Hyrox: pesos por
       $('hx-cargas-t').textContent = `Cargas: ${rotuloDivisao(d)}`;
       $('hx-lista').innerHTML = J.estacoes.map((e, i) => `<li><span class="hx-ord">${i + 1}</span><span class="hx-est"><strong>${esc(e.nome)}</strong><small>${esc(e.medida)}</small></span><b>${esc(carga(d, e.id) ?? 'sem carga')}</b></li>`).join('');
       $<HTMLAnchorElement>('hx-wa2').href = wa(d);
-      if (ultimo) { render(); salvaUrl(); }
+      if (ultimo) { render(); salvaUrl(); $('hx-anuncio').textContent = `Plano atualizado: ${$('hx-res-t').textContent}`; }
     }
     function ler(): { p: Plano; ritmo: number; meta: number } | null {
       const m = paraSegundos(meta.value, 'prova'), r = paraSegundos(ritmo.value, 'ritmo');
@@ -205,7 +205,12 @@ const schema = [{ '@type': 'WebApplication', name: 'Calculadora Hyrox: pesos por
       if (!p.ok) { mostraErro(p.erro!, /transições/.test(p.erro!) ? trans : /ritmo/i.test(p.erro!) && !/meta entre/.test(p.erro!) ? ritmo : meta); return null; }
       return { p, ritmo: r!, meta: m! };
     }
-    function mostraErro(t: string, campo: HTMLElement) { erro.textContent = t; erro.hidden = false; res.hidden = true; campo.focus(); }
+    function mostraErro(t: string, campo: HTMLElement) {
+      erro.textContent = t; erro.hidden = false; res.hidden = true;
+      [meta, ritmo, trans, ...ests].forEach((i) => { i.removeAttribute('aria-invalid'); i.setAttribute('aria-describedby', (i.getAttribute('aria-describedby') ?? '').replace(/\s*hx-erro/, '').trim()); });
+      campo.setAttribute('aria-invalid', 'true'); campo.setAttribute('aria-describedby', `${campo.getAttribute('aria-describedby') ?? ''} hx-erro`.trim());
+      campo.focus();
+    }
     function render() {
       if (!ultimo) return;
       const { p, ritmo: r, meta: m } = ultimo, d = divisao();
@@ -237,7 +242,7 @@ const schema = [{ '@type': 'WebApplication', name: 'Calculadora Hyrox: pesos por
       if (!ultimo) return;
       const t = `${textoPlano(ultimo.p, divisao(), ultimo.ritmo)}\n${location.href}`;
       try { await navigator.clipboard.writeText(t); } catch { const a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select(); document.execCommand('copy'); a.remove(); }
-      const ok = $('hx-ok'); ok.hidden = false; setTimeout(() => { ok.hidden = true; }, 2500); ev('hyrox_copiar');
+      const ok = $('hx-ok'); ok.textContent = ''; ok.hidden = false; requestAnimationFrame(() => { ok.textContent = 'Plano copiado.'; }); setTimeout(() => { ok.hidden = true; }, 2500); ev('hyrox_copiar');
     });
     $('hx-imprimir').addEventListener('click', () => { ev('hyrox_imprimir'); window.print(); });
 
@@ -263,7 +268,7 @@ const schema = [{ '@type': 'WebApplication', name: 'Calculadora Hyrox: pesos por
   .hx .hx-op input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
   .hx .hx-op span { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 48px; padding: 10px 12px; border-radius: 10px; border: 1.5px solid #9aa3b2; background: #fff; font-size: 16px; font-weight: 600; }
   .hx .hx-op input:checked + span { border-color: #111827; background: #111827; color: #fff; }
-  .hx .hx-op input:focus-visible + span, .hx .hx-chip:focus-visible, .hx .hx-bt:focus-visible, .hx .hx-det summary:focus-visible { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .hx .hx-op input:focus-visible + span, .hx .hx-chip:focus-visible, .hx .hx-bt:focus-visible, .hx .hx-det summary:focus-visible { outline: 3px solid #A84300; outline-offset: 2px; }
   .hx .hx-campo { max-width: 420px; }
   .hx .campo input, .hx .campo select { min-height: 48px; font-size: 17px; }
   .hx .campo small { display: block; margin-top: 4px; font-size: 13.5px; color: var(--cinza, #4b5563); }

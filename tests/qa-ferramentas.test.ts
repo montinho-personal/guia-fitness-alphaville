@@ -97,3 +97,10 @@ test('condomínio: nunca mostra exercício sem o equipamento marcado; resumo nã
     if (r.veredito === 'adaptado') assert.doesNotMatch(r.resumo, /cardio, a saída é o peso do corpo/, eq.join(','));
   }
 });
+
+test('hyrox: tempo digitado no teclado numérico do celular ("6.30", "6,30", "1.30")', () => {
+  assert.equal(paraSegundos('6.30', 'ritmo'), 390);
+  assert.equal(paraSegundos('6,30', 'ritmo'), 390);
+  assert.equal(paraSegundos('1.30', 'prova'), 5400);
+  assert.equal(paraSegundos('6,5', 'ritmo'), 390); // um dígito: 6,5 minutos
+});
