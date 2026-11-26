@@ -57,7 +57,7 @@ const perguntas = [
   { p: 'A matrícula entra no custo mensal?', r: 'Não. Matrícula e adesão entram no primeiro mês e no primeiro ano, quando são cobradas. O mês típico e o custo por treino mostram só o que se repete todo mês.' },
   { p: 'Como informar o estacionamento?', r: 'Por ida, informe o total de ida e volta de um treino, incluindo estacionamento, combustível ou aplicativo, se quiser. Por mês, informe o valor fechado. Se o estacionamento for grátis, marque o valor zero; se já estiver no plano, escolha "já incluído".' },
   { p: 'Quanto custa personal trainer no condomínio em Alphaville?', r: 'O guia não publica preço de personal, porque o valor muda com a frequência, o formato e o profissional. Informe na calculadora a proposta que você recebeu, por mês ou por aula, e compare com treinar sozinho numa academia.' },
-  { p: 'A academia cobra taxa de personal externo?', r: 'Algumas academias cobram uma taxa para o personal de fora atender lá, e outras não aceitam personal externo. As fichas do guia ainda não confirmam essa regra por unidade; pergunte na recepção. Na calculadora, você informa a taxa e diz se ela já está no valor do personal, para não contar duas vezes.' },
+  { p: 'A academia cobra taxa de personal externo?', r: 'Algumas academias cobram uma taxa para o personal de fora atender lá, e outras não aceitam personal externo. Várias fichas do guia já trazem a regra publicada (a Arena 18 e a Ironberg, por exemplo, cobram um valor fixo por mês, pago pelo profissional); nas outras, pergunte na recepção. Quando você escolhe uma academia do guia, a calculadora preenche a regra da ficha. Na calculadora, você informa a taxa e diz se ela já está no valor do personal, para não contar duas vezes.' },
   { p: 'Quanto custa 1 mês de Smart Fit em Alphaville?', r: `Nas unidades da região com ficha no guia, os planos publicados vão de ${reais(sfMin)} a ${reais(sfMax)} por mês, com fidelidade. Sem fidelidade, a rede informa R$ 20 a mais por mês, e algumas unidades cobram adesão. Escolha a unidade na calculadora para preencher o plano.` },
   { p: 'A taxa do condomínio entra na conta?', r: 'Não. Se o seu residencial tem academia, o acesso já está pago na taxa condominial, que você paga treinando ou não. Na calculadora, escolha "academia do condomínio" e some só o que muda por treinar: personal, taxa de personal externo, se o condomínio cobrar, e equipamentos.' },
   { p: 'Quantas vezes por semana usar na simulação?', r: 'Use quantas vezes você consegue ir de verdade, não a meta. O custo por treino muda muito com a frequência: a mesma mensalidade dividida por 8 idas custa o dobro por treino do que dividida por 16. Se a rotina varia, simule as duas frequências em cenários separados.' },
@@ -79,6 +79,7 @@ const perguntas = [
     <section class="bloco fino" aria-labelledby="calc-t">
       <h2 id="calc-t" class="so-leitor">Calculadora</h2>
       <div id="calc" class="calc" data-url={URL_PAG}>
+        <p id="anuncio-calc" class="so-leitor" aria-live="polite"></p>
         <noscript><p class="caixa">A calculadora precisa de JavaScript. Sem ele, use o exemplo e a tabela de planos publicados abaixo para fazer a conta: mensalidade + estacionamento por ida × idas no mês.</p></noscript>
         <div id="cenarios" class="cen-grade"></div>
         <button type="button" class="add-cen" id="add"><span aria-hidden="true">+</span> Comparar com outra opção</button>
@@ -123,7 +124,7 @@ const perguntas = [
         <li><strong>Primeiro mês:</strong> o que sai do bolso no começo: primeira mensalidade, matrícula, taxa anual e plano pago à vista.</li>
         <li><strong>Mês típico:</strong> o equivalente mensal do que se repete. Plano à vista e taxa anual entram divididos pelos meses que cobrem; matrícula não entra.</li>
         <li><strong>Custo por treino:</strong> mês típico ÷ idas por mês. Sem frequência, ou com frequência zero, fica indisponível.</li>
-        <li><strong>Primeiro ano:</strong> doze meses típicos dos custos recorrentes, mais matrícula e taxa anual uma vez, e o plano à vista uma vez.</li>
+        <li><strong>Primeiro ano:</strong> doze meses típicos dos custos recorrentes, mais matrícula e taxa anual uma vez. O plano à vista entra uma vez se cobre 12 meses ou mais; se cobre menos, entra quantas vezes for preciso para fechar o ano (um plano de 6 meses entra duas vezes).</li>
         <li><strong>Campos vazios não viram zero.</strong> Um custo marcado e sem valor aparece como pendente, e o total vira subtotal identificado. Valor zero é zero; "já incluído" não é cobrado de novo.</li>
         <li><strong>Mais barato:</strong> só entram na comparação os cenários completos no critério escolhido.</li>
       </ul>
@@ -183,7 +184,7 @@ const perguntas = [
   <script>
     import { calcular, cenarioVazio, maisBarato, reais, CRITERIOS, type Cenario, type Criterio, type Resultado, type Situacao } from '../../lib/custo';
 
-    type Plano = { nome: string; centavos: number; inicial: number | null; condicoes: string };
+    type Plano = { nome: string; centavos: number; inicial: number | null; condicoes: string; mesGratis: boolean };
     type Acad = { id: string; nome: string; bairro: string; regiaoNome: string; url: string; planos: Plano[]; fonte: string | null; fonteUrl: string | null; conferido: string; abrangencia: string | null; estacionamento: string[]; ags: { nome: string; plano_minimo: string; preco_plano: string }[]; pe: { status: string; taxaExterno: 'nao' | 'valor' | 'pendente'; taxaExternoModo?: 'mes' | 'aula' | 'ida'; taxaExternoValor?: string; nota: string; conferido: string | null } };
     type Tipo = '' | 'guia' | 'manual' | 'condominio';
     type Item = { tipo: Tipo; acad: string; plano: string; busca: string; c: Cenario; beneficio?: string };
@@ -191,6 +192,7 @@ const perguntas = [
     const ACADS: Acad[] = JSON.parse(document.getElementById('calc-dados')!.textContent!);
     const porId = (id: string) => ACADS.find((a) => a.id === id);
     const raiz = document.getElementById('calc')!;
+    const anuncio = document.getElementById('anuncio-calc')!; let tAnuncio = 0;
     const box = document.getElementById('cenarios')!;
     const ev = (n: string, d: Record<string, string | number> = {}) => { const w = window as any; if (typeof w.otaEvento === 'function') w.otaEvento(n, d); };
     const esc = (s: string) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
@@ -204,9 +206,10 @@ const perguntas = [
 
     const novo = (): Item => ({ tipo: '', acad: '', plano: '', busca: '', c: cenarioVazio() });
     function escolherTipo(it: Item, tipo: Tipo) {
-      const freq = { freqValor: it.c.freqValor, freqPeriodo: it.c.freqPeriodo };
+      // Frequência e personal valem para qualquer lugar: trocar o tipo não apaga (o link ?personal=1 chega antes da escolha).
+      const { freqValor, freqPeriodo, personal, personalModo, personalValor, personalAulas, personalAulasPeriodo } = it.c;
       it.tipo = tipo; it.acad = ''; it.plano = ''; it.busca = '';
-      it.c = { ...cenarioVazio(), ...freq };
+      it.c = { ...cenarioVazio(), freqValor, freqPeriodo, personal, personalModo, personalValor, personalAulas, personalAulasPeriodo };
       if (tipo === 'condominio') { it.c.nome = 'Academia do condomínio'; it.c.acessoModo = 'incluido'; }
     }
     function escolherAcad(it: Item, id: string) {
@@ -214,6 +217,7 @@ const perguntas = [
       it.tipo = 'guia'; it.acad = id; it.busca = ''; it.c.nome = a.nome; it.plano = '';
       it.c.acessoModo = 'mensal'; it.c.acessoValor = ''; it.c.inicial = 'nao'; it.c.inicialValor = '';
       if (a.planos.length) escolherPlano(it, '0');
+      if (it.c.personal !== 'nao') aplicarPE(it);
     }
     // Política de personal externo da ficha: só preenche taxa confirmada e paga pelo aluno; o resto fica pendente ou fora.
     function aplicarPE(it: Item) {
@@ -224,7 +228,7 @@ const perguntas = [
     }
     function escolherPlano(it: Item, idx: string) {
       const p = porId(it.acad)?.planos[Number(idx)]; if (!p) return;
-      it.plano = idx; it.c.acessoModo = 'mensal'; it.c.acessoValor = centParaTxt(p.centavos);
+      it.plano = idx; it.c.acessoModo = 'mensal'; it.c.acessoValor = centParaTxt(p.centavos); it.c.mesGratis = p.mesGratis;
       if (p.inicial !== null) { it.c.inicial = 'valor'; it.c.inicialValor = centParaTxt(p.inicial); } else { it.c.inicial = 'nao'; it.c.inicialValor = ''; }
     }
 
@@ -232,9 +236,9 @@ const perguntas = [
     const seg = (k: string, opts: [string, string][], v: string, rot: string, i: number) =>
       `<div class="seg" role="radiogroup" aria-label="${rot}">${opts.map(([val, t]) => `<button type="button" role="radio" data-k="${k}" data-v="${val}" aria-checked="${val === v}" id="c${i}-${k}-${val}">${t}</button>`).join('')}</div>`;
     const dinheiro = (k: string, v: string, rot: string, i: number, dica = '') =>
-      `<label class="campo-v" data-campo="${k}"><span class="rot">${rot}</span><span class="moeda"><span aria-hidden="true">R$</span><input type="text" inputmode="decimal" autocomplete="off" placeholder="0,00" data-k="${k}" id="c${i}-${k}" value="${esc(v)}"${dica ? ` aria-describedby="c${i}-${k}-d"` : ''}></span>${dica ? `<small class="dica" id="c${i}-${k}-d">${dica}</small>` : ''}<small class="erro" id="c${i}-${k}-e" role="alert"></small></label>`;
+      `<label class="campo-v" data-campo="${k}"><span class="rot" id="c${i}-${k}-r">${rot}</span><span class="moeda"><span aria-hidden="true">R$</span><input type="text" inputmode="decimal" autocomplete="off" placeholder="0,00" data-k="${k}" id="c${i}-${k}" aria-labelledby="c${i}-${k}-r" value="${esc(v)}"${dica ? ` aria-describedby="c${i}-${k}-d"` : ''}></span>${dica ? `<small class="dica" id="c${i}-${k}-d">${dica}</small>` : ''}<small class="erro" id="c${i}-${k}-e" role="alert"></small></label>`;
     const numero = (k: string, v: string, rot: string, i: number, dica = '') =>
-      `<label class="campo-v" data-campo="${k}"><span class="rot">${rot}</span><span class="contador"><button type="button" data-passo="${k}" data-d="-1" aria-label="Menos">−</button><input type="text" inputmode="decimal" autocomplete="off" data-k="${k}" id="c${i}-${k}" value="${esc(v)}"${dica ? ` aria-describedby="c${i}-${k}-d"` : ''}><button type="button" data-passo="${k}" data-d="1" aria-label="Mais">+</button></span>${dica ? `<small class="dica" id="c${i}-${k}-d">${dica}</small>` : ''}<small class="erro" id="c${i}-${k}-e" role="alert"></small></label>`;
+      `<div class="campo-v" data-campo="${k}"><label class="rot" id="c${i}-${k}-r" for="c${i}-${k}">${rot}</label><span class="contador"><button type="button" data-passo="${k}" data-d="-1" aria-label="Menos: ${rot}">−</button><input type="text" inputmode="decimal" autocomplete="off" data-k="${k}" id="c${i}-${k}" aria-labelledby="c${i}-${k}-r" value="${esc(v)}"${dica ? ` aria-describedby="c${i}-${k}-d"` : ''}><button type="button" data-passo="${k}" data-d="1" aria-label="Mais: ${rot}">+</button></span>${dica ? `<small class="dica" id="c${i}-${k}-d">${dica}</small>` : ''}<small class="erro" id="c${i}-${k}-e" role="alert"></small></div>`;
 
     const EXTRAS: { k: 'inicial' | 'transporte' | 'personal' | 'anual'; t: string }[] = [
       { k: 'transporte', t: 'Estacionamento' }, { k: 'personal', t: 'Personal' }, { k: 'inicial', t: 'Matrícula' }, { k: 'anual', t: 'Taxa anual' },
@@ -281,7 +285,7 @@ const perguntas = [
       return `<p class="fonte pe-calc"><strong>${esc(pe.status)}.</strong> ${esc(pe.nota)}${pe.conferido ? ` Verificado em ${pe.conferido}.` : ''}</p>`;
     }
     function blocoExtras(c: Cenario, i: number, it: Item): string {
-      const chips = `<div class="chips">${EXTRAS.map((x) => `<button type="button" class="chip" data-extra="${x.k}" aria-pressed="${c[x.k] !== 'nao'}">${c[x.k] !== 'nao' ? '✓' : '+'} ${x.t}</button>`).join('')}</div>`;
+      const chips = `<div class="chips">${EXTRAS.map((x) => `<button type="button" class="chip" id="c${i}-chip-${x.k}" data-extra="${x.k}" aria-pressed="${c[x.k] !== 'nao'}">${c[x.k] !== 'nao' ? '✓' : '+'} ${x.t}</button>`).join('')}</div>`;
       const caixa = (k: string, titulo: string, corpo: string) => `<div class="extra" data-bloco="${k}"><div class="extra-cab"><strong>${titulo}</strong><button type="button" class="btn-txt" data-extra-sai="${k}" aria-label="Remover ${titulo}">Remover</button></div>${corpo}</div>`;
       const sit = (k: string, s: Situacao, rot: string) => seg(k, [['valor', 'Tenho um valor'], ['incluido', 'Já está incluído']], s, rot, i);
       let h = '';
@@ -313,7 +317,7 @@ const perguntas = [
           <div class="linha2">${numero('freqValor', c.freqValor, 'Treinos', i)}${seg('freqPeriodo', [['semana', 'por semana'], ['mes', 'por mês']], c.freqPeriodo, 'Período', i)}</div>
         </div>
         <div class="etapa"><p class="rot-q">Outros custos</p>${blocoExtras(c, i, it)}</div>
-        <div class="res" id="c${i}-res" aria-live="polite"></div>` : ''}
+        <div class="res" id="c${i}-res"></div>` : ''}
       </article>`;
     }
 
@@ -369,7 +373,20 @@ const perguntas = [
       (document.getElementById('add') as HTMLButtonElement).hidden = itens.length >= 3;
       document.getElementById('limite')!.hidden = itens.length < 3;
       const q = new URLSearchParams(); itens.forEach((it, i) => { if (it.acad) q.set('abc'[i], it.acad); });
+      // Mantém na URL os pedidos de entrada que ainda valem, para recarregar ou compartilhar sem perder o cenário.
+      if (exemploIntacto) q.set('exemplo', '1');
+      if (itens.some((it) => it.c.personal !== 'nao')) q.set('personal', '1');
+      const benAtivo = itens.find((it) => it.beneficio)?.beneficio; if (benAtivo) q.set('beneficio', benAtivo);
       history.replaceState(null, '', q.toString() ? `?${q}` : location.pathname);
+      // Grupos de rádio: só a opção marcada entra no Tab; as setas trocam a opção.
+      raiz.querySelectorAll('[role="radiogroup"]').forEach((g) => g.querySelectorAll<HTMLElement>('[role="radio"]').forEach((r) => { r.tabIndex = r.getAttribute('aria-checked') === 'true' ? 0 : -1; }));
+      // Anúncio único para leitor de tela (o cartão é redesenhado e perderia a região ao vivo).
+      clearTimeout(tAnuncio);
+      tAnuncio = window.setTimeout(() => {
+        const partes = itens.map((it, i) => { const r = rs[i]; return `${it.c.nome || `Opção ${i + 1}`}: ${r.mensal !== null ? `${reais(r.mensal)} por mês` : 'valor do mês pendente'}${r.porIda !== null ? `, ${reais(r.porIda)} por treino` : ''}.`; });
+        const nota = document.getElementById('resumo-nota')?.textContent?.trim() ?? '';
+        anuncio.textContent = [...partes, itens.length > 1 ? nota : ''].filter(Boolean).join(' ');
+      }, 700);
     }
 
     function desenhar(i?: number, foco?: string) {
@@ -381,11 +398,13 @@ const perguntas = [
 
     // ---------- eventos ----------
     box.addEventListener('input', (e) => {
+      exemploIntacto = false;
       const t = e.target as HTMLInputElement; const el = t.closest<HTMLElement>('[data-i]'); if (!el) return;
       const i = Number(el.dataset.i), it = itens[i];
       if (t.hasAttribute('data-busca')) { it.busca = t.value; el.querySelector('.ac-lista')!.innerHTML = listaAcad(t.value); return; }
       if (!t.dataset.k) return;
       (it.c as any)[t.dataset.k] = t.value;
+      if (t.dataset.k === 'acessoValor') it.c.mesGratis = false;
       if (t.dataset.k === 'nome') { const h = el.querySelector('h3'); if (h) h.lastChild!.textContent = t.value || 'Outra academia'; }
       atualizar();
     });
@@ -395,33 +414,46 @@ const perguntas = [
     });
     box.addEventListener('click', (e) => {
       const b = (e.target as HTMLElement).closest<HTMLElement>('button'); if (!b) return;
+      exemploIntacto = false;
       const el = b.closest<HTMLElement>('[data-i]'); if (!el) return;
       const i = Number(el.dataset.i), it = itens[i];
       if (b.dataset.remover !== undefined) { itens.splice(i, 1); desenhar(undefined, 'add'); return; }
       if (b.dataset.tipo) { escolherTipo(it, b.dataset.tipo as Tipo); desenhar(i, b.dataset.tipo === 'guia' ? `c${i}-busca` : b.dataset.tipo === 'manual' ? `c${i}-nome` : `c${i}-tipo-${b.dataset.tipo}`); return; }
       if (b.dataset.acad) { escolherAcad(it, b.dataset.acad); desenhar(i, `c${i}-freqValor`); return; }
       if (b.dataset.acao === 'sem-beneficio') { it.beneficio = undefined; escolherAcad(it, it.acad); desenhar(i, `c${i}-acessoValor`); return; }
-      if (b.dataset.acao === 'trocar') { it.acad = ''; it.plano = ''; it.beneficio = undefined; desenhar(i, `c${i}-busca`); return; }
+      if (b.dataset.acao === 'trocar') { it.acad = ''; it.plano = ''; it.beneficio = undefined; it.c.nome = ''; desenhar(i, `c${i}-busca`); return; }
       if (b.dataset.plano !== undefined) { escolherPlano(it, b.dataset.plano); desenhar(i, `c${i}-acessoValor`); return; }
-      if (b.dataset.extra) { const k = b.dataset.extra as 'inicial' | 'transporte' | 'personal' | 'anual'; it.c[k] = it.c[k] === 'nao' ? 'valor' : 'nao'; if (k === 'personal' && it.c.personal !== 'nao') aplicarPE(it); desenhar(i, it.c[k] === 'nao' ? undefined : `c${i}-${k}Valor`); return; }
-      if (b.dataset.extraSai) { (it.c as any)[b.dataset.extraSai] = 'nao'; desenhar(i); return; }
+      if (b.dataset.extra) { const k = b.dataset.extra as 'inicial' | 'transporte' | 'personal' | 'anual'; it.c[k] = it.c[k] === 'nao' ? 'valor' : 'nao'; if (k === 'personal' && it.c.personal !== 'nao') aplicarPE(it); desenhar(i, it.c[k] === 'nao' ? `c${i}-chip-${k}` : `c${i}-${k}Valor`); return; }
+      if (b.dataset.extraSai) { (it.c as any)[b.dataset.extraSai] = 'nao'; desenhar(i, `c${i}-chip-${b.dataset.extraSai}`); return; }
       if (b.dataset.passo) {
         const k = b.dataset.passo; const atual = parseFloat(String((it.c as any)[k] || '0').replace(',', '.')) || 0;
-        (it.c as any)[k] = String(Math.max(0, atual + Number(b.dataset.d))); const inp = el.querySelector<HTMLInputElement>(`#c${i}-${k}`); if (inp) inp.value = (it.c as any)[k];
+        (it.c as any)[k] = String(Math.max(0, atual + Number(b.dataset.d))).replace('.', ','); const inp = el.querySelector<HTMLInputElement>(`#c${i}-${k}`); if (inp) inp.value = (it.c as any)[k];
         atualizar(); return;
       }
       if (b.dataset.k && b.dataset.v !== undefined) { (it.c as any)[b.dataset.k] = b.dataset.v; desenhar(i, b.id); return; }
     });
-    document.getElementById('add')!.addEventListener('click', () => { if (itens.length < 3) { itens.push(novo()); desenhar(undefined, `c${itens.length - 1}-tipo-guia`); } });
+    document.getElementById('add')!.addEventListener('click', () => { exemploIntacto = false; if (itens.length < 3) { itens.push(novo()); desenhar(undefined, `c${itens.length - 1}-tipo-guia`); } });
     document.querySelectorAll<HTMLButtonElement>('[data-crit]').forEach((b) => b.addEventListener('click', () => {
       criterio = b.dataset.crit as Criterio;
       document.querySelectorAll('[data-crit]').forEach((x) => x.setAttribute('aria-checked', String(x === b)));
       atualizar();
     }));
 
+    // Grupos de rádio (role="radiogroup"): setas trocam a opção, como pede o padrão ARIA.
+    document.addEventListener('keydown', (e) => {
+      const t = e.target as HTMLElement;
+      if (t.getAttribute('role') !== 'radio' || !['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp'].includes(e.key)) return;
+      const grupo = t.closest('[role="radiogroup"]'); if (!grupo || !raiz.contains(grupo)) return;
+      const ops = [...grupo.querySelectorAll<HTMLElement>('[role="radio"]')]; const k = ops.indexOf(t); if (k < 0) return;
+      e.preventDefault();
+      const prox = ops[(k + (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : ops.length - 1)) % ops.length];
+      const id = prox.id; prox.click(); (id ? document.getElementById(id) : prox)?.focus();
+    });
+
     // Estado inicial: ?a=&b=&c= (comparador ou ficha), ?exemplo=1 ou uma opção vazia.
     const p = new URLSearchParams(location.search);
     const de = p.get('de');
+    let exemploIntacto = p.get('exemplo') === '1';
     if (p.get('exemplo') === '1') {
       const mk = (tipo: Tipo, c: Partial<Cenario>) => { const it = novo(); escolherTipo(it, tipo); Object.assign(it.c, c); return it; };
       itens = [
@@ -432,7 +464,7 @@ const perguntas = [
     } else {
       const ids = ['a', 'b', 'c'].map((k) => p.get(k)).filter((v, i, arr): v is string => !!v && !!porId(v) && arr.indexOf(v) === i).slice(0, 3);
       const ben = p.get('beneficio'); const benOk = ben === 'wellhub' || ben === 'totalpass' ? ben : '';
-      itens = ids.length ? ids.map((id) => { const it = novo(); escolherAcad(it, id); if (benOk && porId(id)!.ags.some((g) => g.nome.toLowerCase() === benOk)) { it.beneficio = benOk; it.plano = ''; it.c.acessoValor = ''; it.c.inicial = 'nao'; it.c.inicialValor = ''; } if (p.get('personal') === '1') { it.c.personal = 'valor'; aplicarPE(it); } return it; }) : [novo()];
+      itens = ids.length ? ids.map((id) => { const it = novo(); escolherAcad(it, id); if (benOk && porId(id)!.ags.some((g) => g.nome.toLowerCase() === benOk)) { it.beneficio = benOk; it.plano = ''; it.c.acessoValor = ''; it.c.inicial = 'nao'; it.c.inicialValor = ''; } if (p.get('personal') === '1') { it.c.personal = 'valor'; aplicarPE(it); } return it; }) : [(() => { const it = novo(); if (p.get('personal') === '1') it.c.personal = 'valor'; return it; })()];
     }
     desenhar();
     ev('calculadora_aberta', { origem: de === 'comparador' || de === 'ficha' || de === 'personal-externo' || de === 'beneficios' ? de : p.get('exemplo') ? 'exemplo' : 'direta' });
@@ -447,7 +479,7 @@ const perguntas = [
   .calc .cen{background:#fff;border:1px solid var(--c-borda);border-radius:16px;box-shadow:0 8px 24px rgba(16,27,45,.07);overflow:hidden;min-width:0}
   .calc .cen [hidden]{display:none!important}
   .calc .cen-cab{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--c-borda)}
-  .calc .cen-cab .num{flex:none;width:32px;height:32px;border-radius:50%;background:var(--c-laranja);color:#fff;font:800 16px/32px var(--display);text-align:center}
+  .calc .cen-cab .num{flex:none;width:32px;height:32px;border-radius:50%;background:var(--c-laranja);color:#151515;font:800 16px/32px var(--display);text-align:center}
   .calc .cen-cab h3{margin:0;font-size:19px;line-height:1.2;flex:1;min-width:0;overflow-wrap:anywhere}
   .calc .fechar{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--c-borda);background:#fff;font-size:22px;line-height:1;color:var(--cinza);cursor:pointer}
   .calc .fechar:hover{background:var(--c-suave);color:var(--tinta)}
@@ -520,6 +552,7 @@ const perguntas = [
   .calc .res-sec{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.16)}
   .calc .res-sec b{display:block;margin-top:2px;font:700 17px var(--display)}
   .calc .pendv{color:#C9D3E3;font-weight:600;font-size:.75em}
+  .calc #barras .pendv,.calc #resumo .pendv{color:#5A6475}
   .calc .res-prem{margin:12px 0 0;font-size:13px;line-height:1.4;color:#C9D3E3}
   .calc .res-alerta{margin:10px 0 0;font:600 13.5px/1.4 var(--display);color:#FFD6A8}
   .calc .res-comp{margin-top:12px;border-top:1px solid rgba(255,255,255,.16);padding-top:8px}

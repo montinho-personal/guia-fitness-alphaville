@@ -157,7 +157,7 @@ const schema = [{ '@type': 'WebApplication', name: titulo, url: new URL(URL_PAG,
       av.textContent = avisos.join(' '); av.hidden = !avisos.length;
       $('pp-volta').innerHTML = VOLTA[formato].map((t) => `<li>${t}</li>`).join('');
       $('pp-mem').innerHTML = r.memoria.map((l: string) => `<li>${l}</li>`).join('');
-      f.querySelectorAll<HTMLInputElement>('input[name="freq"]').forEach((i) => { i.closest('label')!.classList.toggle('pp-off', formato === 'online'); });
+      f.querySelectorAll<HTMLInputElement>('input[name="freq"]').forEach((i) => { i.disabled = formato === 'online'; i.closest('label')!.classList.toggle('pp-off', formato === 'online'); });
       const q = new URLSearchParams({ local: r.local.id, formato, freq: String(r.freq) }); history.replaceState(null, '', `?${q}`);
       if (origem !== 'inicio') ev('preco_personal_calculo', { local: r.local.id, formato, freq: r.freq, fallback: r.fallback ? 1 : 0 });
     }
@@ -179,7 +179,7 @@ const schema = [{ '@type': 'WebApplication', name: titulo, url: new URL(URL_PAG,
   .pp .pp-op span { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 8px 14px; border-radius: 999px; border: 1.5px solid #111827; background: #fff; font-weight: 600; }
   .pp .pp-op-n span { min-width: 52px; }
   .pp .pp-op input:checked + span { background: #111827; color: #fff; }
-  .pp .pp-op input:focus-visible + span { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .pp .pp-op input:focus-visible + span { outline: 3px solid #A84300; outline-offset: 2px; }
   .pp .pp-off span { opacity: .45; }
   .pp .pp-res { padding: 20px 18px; border-radius: 14px; background: #111827; color: #F5F1E8; }
   .pp .pp-res-t { color: #fff; font-size: 22px; margin: 0 0 4px; }
@@ -199,6 +199,6 @@ const schema = [{ '@type': 'WebApplication', name: titulo, url: new URL(URL_PAG,
   .pp .pp-mem ol { margin: 8px 0 0; padding-left: 22px; font-size: 15px; }
   .pp .pp-acoes { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin: 14px 0 0; }
   .pp .pp-acoes a:not(.btn) { color: #FFB066; }
-  .pp .pp-res a:focus-visible, .pp .pp-mem summary:focus-visible { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .pp .pp-res a:focus-visible, .pp .pp-mem summary:focus-visible { outline: 3px solid #A84300; outline-offset: 2px; }
   .pp table.dados.pp-t { min-width: 560px; }
 </style>

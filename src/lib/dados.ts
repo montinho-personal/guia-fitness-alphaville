@@ -147,7 +147,9 @@ export function linkMontinho(caminho: string, posicao: string, pagina: string): 
   // Mesmo padrão dos links curtos do site do Montinho (/l/guia-*): origem = guiafitnessalphaville.
   // utm_campaign = posição do link (bloco, rodape, servicos, video); utm_content = página de origem.
   const p = new URLSearchParams({ utm_source: 'guiafitnessalphaville', utm_medium: 'referral', utm_campaign: posicao, utm_content: pagina });
-  return `https://www.montinhopersonal.com.br${caminho}?${p}`;
+  // A âncora (#) vai depois dos parâmetros; senão o UTM fica dentro dela e a visita não é atribuída.
+  const [rota, ancora] = caminho.split('#');
+  return `https://www.montinhopersonal.com.br${rota}?${p}${ancora ? `#${ancora}` : ''}`;
 }
 
 /** Dados enxutos para as ferramentas no navegador. */
