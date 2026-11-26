@@ -17,11 +17,13 @@ const LOCAIS = [['Alphaville', 'alphaville'], ['Tamboré', 'tambore'], ['Aldeia 
 // Tabela "o que dá para fazer com cada equipamento": só exercícios que usam aquele equipamento.
 const porEquip = EQUIPAMENTOS.map((e) => ({ e, xs: EXERCICIOS.filter((x) => x.requer.includes(e.id)).map((x) => x.nome + (x.requer.length > 1 ? ` (com ${x.requer.filter((r) => r !== e.id).map((r) => NOME_EQUIP[r].toLowerCase()).join(' e ')})` : '')) }));
 const soHalteres = avaliar(['halteres'], 3, 'treina'), halteresBanco = avaliar(['halteres', 'banco'], 3, 'treina'), semNada = avaliar([], 3, 'treina');
-const exHalteres = soHalteres.cobertura.filter((c) => c.padrao !== 'cardio').map((c) => c.exercicios[0].toLowerCase());
+// Grupos de força (sem cardio e sem abdômen, que não pede equipamento), com o primeiro exercício que usa halteres.
+const REQ = new Map(EXERCICIOS.map((x) => [x.nome, x.requer]));
+const exHalteres = soHalteres.cobertura.filter((c) => c.padrao !== 'cardio' && c.padrao !== 'core').map((c) => (c.exercicios.find((n) => REQ.get(n)?.includes('halteres')) ?? c.exercicios[0]).toLowerCase());
 const perguntas = [
   { p: 'Dá para ter resultado treinando na academia do condomínio?', r: 'Depende mais da constância e da progressão do que do tamanho da sala. Uma academia de prédio com halteres, banco e um aparelho de cardio já permite treinar o corpo inteiro. O limite costuma aparecer nas pernas e nas costas, quando os pesos ficam leves; aí entram as adaptações ou um complemento em academia.' },
   { p: 'Que treino fazer na academia do condomínio?', r: 'Organize por movimento, não por aparelho: um exercício de empurrar, um de puxar, um de agachar, um de levantar do chão, um de abdômen e um pouco de cardio. Com 2 ou 3 dias na semana, faça o corpo inteiro em cada dia; com 4 ou 5, alterne parte de cima e pernas. O simulador mostra os exercícios possíveis com o que o seu prédio tem.' },
-  { p: 'Dá para treinar o corpo todo só com halteres?', r: `Dá. Só com halteres há exercício para os cinco grupos de força: ${exHalteres.join(', ')}. Com um banco, as opções aumentam. O que os halteres não resolvem é o cardio, que fica por conta de caminhada, corrida ou corda.` },
+  { p: 'Dá para treinar o corpo todo só com halteres?', r: `Dá. Só com halteres há exercício com carga para os quatro grupos de força (empurrar, puxar, agachar e levantar do chão): ${exHalteres.join(', ')}. O abdômen não precisa de equipamento. Com um banco, as opções aumentam. O que os halteres não resolvem é o cardio, que fica por conta de caminhada, corrida ou corda.` },
   { p: 'O que não pode faltar numa academia de condomínio?', r: 'Pelo critério do guia, o que mais amplia o treino é um jogo de halteres com várias cargas, um banco regulável e uma estação com polia. Depois vêm um aparelho de cardio e colchonetes. Aparelhos de perna entram quando há espaço, porque é nas pernas que os halteres ficam leves primeiro.' },
   { p: 'O que fazer quando os pesos do prédio ficam leves?', r: 'Antes de desistir da sala: faça o exercício com uma perna ou um braço de cada vez, desça mais devagar, diminua o descanso e aumente as repetições. Quando nem isso resolver, vale complementar com uma academia, nem que seja uma ou duas vezes por semana.' },
   { p: 'Personal trainer pode dar aula na academia do condomínio?', r: 'Quem decide é o condomínio, pelo regimento interno ou por regra do síndico: alguns pedem cadastro do profissional, outros limitam horário. Pergunte na administração antes de contratar. As páginas de personal em condomínio do guia explicam o que conferir em cada região.' },
@@ -111,7 +113,7 @@ const schema = [{ '@type': 'WebApplication', name: 'Simulador de treino na acade
       <p>Sem equipamento nenhum, ficam: {semNada.cobertura.flatMap((c) => c.exercicios).map((x) => x.toLowerCase()).join('; ')}.</p>
 
       <h2>Treino só com halteres: até onde vai</h2>
-      <p>Um par de halteres resolve mais do que parece. No critério do simulador, só com eles os cinco grupos de força ficam cobertos: {exHalteres.join(', ')}. Com um banco, entram {halteresBanco.cobertura.find((c) => c.padrao === 'empurrar')!.exercicios[0].toLowerCase()} e {halteresBanco.cobertura.find((c) => c.padrao === 'puxar')!.exercicios[0].toLowerCase()}, que deixam o treino de cima mais estável.</p>
+      <p>Um par de halteres resolve mais do que parece. No critério do simulador, só com eles os quatro grupos de força ficam cobertos com carga: {exHalteres.join(', ')}; o abdômen não precisa de equipamento. Com um banco, entram {halteresBanco.cobertura.find((c) => c.padrao === 'empurrar')!.exercicios[0].toLowerCase()} e {halteresBanco.cobertura.find((c) => c.padrao === 'puxar')!.exercicios[0].toLowerCase()}, que deixam o treino de cima mais estável.</p>
       <p>O limite aparece quando existe uma carga só, ou quando o halter mais pesado do prédio fica leve. As pernas chegam lá primeiro, porque aguentam mais peso que os braços. Antes de trocar de lugar, dá para ganhar tempo com exercícios de uma perna de cada vez, descida mais lenta e menos descanso.</p>
 
       <h2>Como dividir a semana</h2>
@@ -164,7 +166,7 @@ const schema = [{ '@type': 'WebApplication', name: 'Simulador de treino na acade
       $('tc-prox').innerHTML = `<h3>Próximos passos</h3><ul class="tc-aj">${prox.map((p) => `<li>${p}</li>`).join('')}</ul>`;
       const wa = $<HTMLAnchorElement>('tc-wa'); wa.href = `https://wa.me/${J.whats}?text=${encodeURIComponent(mensagemCondominio(eq, dias, local, regiao))}`; wa.dataset.ref = `treino-condominio:${r.veredito}`;
       res.hidden = false;
-      const q = new URLSearchParams(); if (eq.length) q.set('eq', eq.join(',')); q.set('dias', String(dias)); if (local === 'casa') q.set('local', 'casa');
+      const q = new URLSearchParams(); if (eq.length) q.set('eq', eq.join(',')); q.set('dias', String(dias)); if (local === 'casa') q.set('local', 'casa'); if (exp === 'treina') q.set('exp', 'treina'); if (regiao) q.set('regiao', regiao);
       history.replaceState(null, '', `${location.pathname}?${q}`);
       if (rolar) { res.focus({ preventScroll: true }); res.scrollIntoView({ block: 'start', behavior: 'smooth' }); ev('treino_condominio_resultado', { resultado: r.veredito, equipamentos: eq.length, dias, local }); }
     }
@@ -179,6 +181,9 @@ const schema = [{ '@type': 'WebApplication', name: 'Simulador de treino na acade
       f.querySelectorAll<HTMLInputElement>('input[name="eq"]').forEach((i) => { i.checked = marcados.has(i.value); });
       const d = f.querySelector<HTMLInputElement>(`input[name="dias"][value="${p0.get('dias')}"]`); if (d) d.checked = true;
       if (p0.get('local') === 'casa') $<HTMLSelectElement>('tc-local').value = 'casa';
+      const ex = f.querySelector<HTMLInputElement>(`input[name="exp"][value="${p0.get('exp') === 'treina' ? 'treina' : 'comecando'}"]`); if (ex) ex.checked = true;
+      const rg = f.elements.namedItem('regiao') as HTMLSelectElement | null; const rv = p0.get('regiao');
+      if (rg && rv && [...rg.options].some((o) => o.value === rv)) rg.value = rv;
       calcular(false);
     } else if (p0.get('local') === 'casa') $<HTMLSelectElement>('tc-local').value = 'casa';
   </script>

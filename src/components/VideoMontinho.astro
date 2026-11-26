@@ -5,7 +5,7 @@ import Instagram from './Instagram.astro';
 interface Props { id: string; titulo: string; pagina: string }
 const { id, titulo, pagina } = Astro.props;
 ---
-<aside class="video-montinho" aria-label="Vídeo do Montinho" data-ref={pagina}>
+<aside class="video-montinho nao-imprime" aria-label="Vídeo do Montinho" data-ref={pagina}>
   <span class="rotulo cor-marca">Vídeo do Montinho · publicidade da casa</span>
   <h2>{titulo}</h2>
   <div class="video-caixa">

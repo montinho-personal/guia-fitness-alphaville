@@ -14,11 +14,13 @@ export const carga = (d: Divisao, estacaoId: string): string | null => (d as unk
 
 /** "1:30:00", "1h30", "90" (minutos) ou "6:15" → segundos. `padrao` diz como ler um número solto ou "a:b". */
 export function paraSegundos(txt: string, padrao: 'prova' | 'ritmo'): number | null {
-  const t = txt.trim().toLowerCase().replace(/\s+/g, '').replace(',', '.');
+  // Espaço entre números separa as partes ("1 30" = 1:30), em vez de juntar em "130".
+  const t = txt.trim().toLowerCase().replace(/(\d)\s+(?=\d)/g, '$1:').replace(/\s+/g, '').replace(',', '.');
   if (!t) return null;
   const h = t.match(/^(\d{1,2})h(\d{1,2})?(?:m(?:in)?)?$/);
   if (h) return Number(h[1]) * 3600 + Number(h[2] ?? 0) * 60;
-  const p = t.replace(/["']/g, ':').replace(/min$|m$/, '').split(':');
+  // 6'15" (minutos e segundos com aspas): a aspa final não vira uma parte vazia.
+  const p = t.replace(/["']+$/, '').replace(/["']/g, ':').replace(/min$|m$/, '').split(':');
   if (p.some((x) => x === '' || !/^\d+(\.\d+)?$/.test(x))) return null;
   const n = p.map(Number);
   let s: number;
@@ -63,7 +65,8 @@ export function plano(e: Entrada, estacoes: Estacao[]): Plano {
   if (!Number.isFinite(e.metaSeg) || e.metaSeg < LIMITES.metaMin || e.metaSeg > LIMITES.metaMax) return { ...vazio, erro: 'Informe uma meta entre 40 minutos e 4 horas.' };
   if (!Number.isFinite(e.ritmoSeg) || e.ritmoSeg < LIMITES.ritmoMin || e.ritmoSeg > LIMITES.ritmoMax) return { ...vazio, erro: 'Informe um ritmo de corrida entre 2:30 e 15:00 por km.' };
   const corridaTotal = N * e.ritmoSeg;
-  const ritmoMaximo = Math.floor((e.metaSeg - trans) / N);
+  // Ritmo mais lento que ainda deixa 30 s para cada estação.
+  const ritmoMaximo = Math.floor((e.metaSeg - trans - N * 30) / N);
   const proprios = (e.estacoesSeg ?? []).slice(0, N);
   const fixos = proprios.filter((x): x is number => typeof x === 'number' && x > 0);
   const personalizado = fixos.length > 0;
@@ -72,16 +75,22 @@ export function plano(e: Entrada, estacoes: Estacao[]): Plano {
   if (livres > 0 && restante < livres * 30) {
     return { ...vazio, corridaTotal, ritmoMaximo, personalizado, erro: personalizado
       ? 'Com esses tempos, não sobra tempo para as estações que ficaram em branco. Aumente a meta ou ajuste os tempos.'
+      : trans > 0 && e.metaSeg - corridaTotal >= livres * 30
+        ? `As transições que você reservou (${porExtenso(trans)}) não deixam tempo para as estações. Diminua as transições ou aumente a meta.`
       : `Com esse ritmo, a corrida sozinha leva ${porExtenso(corridaTotal)} e não sobra tempo para as estações. Para essa meta, o ritmo teria de ficar bem abaixo de ${relogio(ritmoMaximo)} por km.` };
   }
   const media = livres > 0 ? restante / livres : 0;
-  const durs = estacoes.slice(0, N).map((_, i) => { const p = proprios[i]; return typeof p === 'number' && p > 0 ? p : media; });
+  // Durações inteiras que fecham com o total: o resto do arredondamento vai, segundo a segundo, para as primeiras estações livres.
+  const base = Math.floor(media); let sobra = Math.round(restante - base * livres);
+  const durs = estacoes.slice(0, N).map((_, i) => { const p = proprios[i]; if (typeof p === 'number' && p > 0) return p; const d = base + (sobra > 0 ? 1 : 0); if (sobra > 0) sobra--; return d; });
+  const tBase = Math.floor(trans / N); let tSobra = Math.round(trans - tBase * N);
+  const transI = estacoes.slice(0, N).map(() => { const d = tBase + (tSobra > 0 ? 1 : 0); if (tSobra > 0) tSobra--; return d; });
   const estacoesTotal = durs.reduce((a, b) => a + b, 0);
   const segmentos: Segmento[] = [];
   let acum = 0;
   estacoes.slice(0, N).forEach((est, i) => {
     acum += e.ritmoSeg; segmentos.push({ tipo: 'corrida', n: i + 1, nome: `Corrida ${i + 1} (1 km)`, dur: e.ritmoSeg, acum: Math.round(acum) });
-    acum += trans / N + durs[i]; segmentos.push({ tipo: 'estacao', n: i + 1, nome: est.nome, dur: Math.round(durs[i]), acum: Math.round(acum) });
+    acum += transI[i] + durs[i]; segmentos.push({ tipo: 'estacao', n: i + 1, nome: est.nome, dur: Math.round(durs[i]), acum: Math.round(acum) });
   });
   const total = Math.round(acum);
   return { ok: true, corridaTotal, transTotal: trans, estacoesTotal: Math.round(estacoesTotal), mediaEstacao: Math.round(estacoesTotal / N), total, diferenca: total - e.metaSeg, ritmoMaximo, personalizado, segmentos };

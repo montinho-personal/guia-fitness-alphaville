@@ -54,7 +54,7 @@ test('plano com parte das estações preenchida: as outras dividem o resto', () 
 });
 test('ritmo lento demais para a meta devolve erro com o ritmo-limite', () => {
   const p = plano({ metaSeg: 3600, ritmoSeg: 450 }, E);
-  assert.equal(p.ok, false); assert.equal(p.ritmoMaximo, 450); assert.match(p.erro!, /corrida sozinha leva 1h/);
+  assert.equal(p.ok, false); assert.equal(p.ritmoMaximo, 420); // 30 s por estação: (3600 − 240) ÷ 8 (era 450 até 26/11, sem esse mínimo) assert.match(p.erro!, /corrida sozinha leva 1h/);
 });
 test('limites de entrada', () => {
   assert.equal(plano({ metaSeg: 600, ritmoSeg: 360 }, E).ok, false); assert.equal(plano({ metaSeg: 5400, ritmoSeg: 60 }, E).ok, false); assert.equal(plano({ metaSeg: NaN, ritmoSeg: 360 }, E).ok, false);
