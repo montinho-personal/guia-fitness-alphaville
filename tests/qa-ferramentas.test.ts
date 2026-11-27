@@ -145,3 +145,12 @@ test('benefícios: filtro de CrossFit pega CrossFit e cross training, não "Cros
   for (const s of ['CrossFit', 'Crossfit', 'CrossFit infantil', 'Templo SA – CrossFit', 'Cross training', 'WOD']) assert.ok(re.test(s), s);
   for (const s of ['Cross Fight', 'Cross Funcional', 'Crossfoot']) assert.ok(!re.test(s), s);
 });
+
+test('benefícios: "Fisiculturismo" no Wellhub conta como musculação (decisão do Renato, 27/11/2026)', async () => {
+  const { MODS_BEN } = await import('../src/lib/beneficios.ts');
+  assert.ok(MODS_BEN.musculacao.re.test('Fisiculturismo'));
+  for (const f of ['forja-academia-jardim-alagoas', 'forth-academia-jardim-sao-luis']) {
+    const y = readFileSync(new URL(`../src/data/academias/${f}.yaml`, import.meta.url), 'utf8');
+    assert.match(y, /atividades: \[[^\]]*Fisiculturismo[^\]]*\]\n(?:\s*#.*\n)?\s*musculacao: true/, f);
+  }
+});

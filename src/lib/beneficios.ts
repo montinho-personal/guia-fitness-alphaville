@@ -13,7 +13,8 @@ export interface EntradaBen {
 
 /** Modalidades do buscador e palavras que as identificam na lista de atividades do benefício. */
 export const MODS_BEN: Record<string, { rotulo: string; re: RegExp }> = {
-  musculacao: { rotulo: 'Musculação', re: /muscula/i },
+  // "Fisiculturismo" é o nome que o Wellhub usa para musculação em algumas academias (decisão do Renato, 27/11/2026).
+  musculacao: { rotulo: 'Musculação', re: /muscula|fisiculturismo/i },
   funcional: { rotulo: 'Funcional e HIIT', re: /funcional|hiit|\bhit\b|circuito|treino h[íi]brido|cross training/i },
   lutas: { rotulo: 'Lutas', re: /jiu|muay|boxe|mma|luta|fight|karat|jud[ôo]|kick/i },
   pilates: { rotulo: 'Pilates', re: /pilates/i },

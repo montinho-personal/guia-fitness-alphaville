@@ -37,7 +37,8 @@ agregadores:
 - nome: Wellhub
   situacao: confirmada
   atividades: ["Fisiculturismo"]
-  musculacao: false
+  # "Fisiculturismo" no Wellhub conta como musculação (decisão do Renato, 27/11/2026).
+  musculacao: true
   conferido_em: '2026-11-17'
   plano_minimo: Starter
   preco_plano: R$ 39,99
