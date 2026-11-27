@@ -18,7 +18,8 @@ export const MODS_BEN: Record<string, { rotulo: string; re: RegExp }> = {
   lutas: { rotulo: 'Lutas', re: /jiu|muay|boxe|mma|luta|fight|karat|jud[ôo]|kick/i },
   pilates: { rotulo: 'Pilates', re: /pilates/i },
   yoga: { rotulo: 'Yoga', re: /yoga|ioga/i },
-  crossfit: { rotulo: 'CrossFit e cross training', re: /crossfit|cross training|cross\b|wod/i },
+  // Só CrossFit e cross training de verdade: "Cross Fight" (luta) e "Cross Funcional" não entram (decisão do Renato, 27/11/2026).
+  crossfit: { rotulo: 'CrossFit e cross training', re: /crossfit|cross[ -]?training|\bwod\b/i },
   danca: { rotulo: 'Dança', re: /dan[çc]a|zumba|ritmos|fitdance|fitness dance|street|bal[ée]/i },
   bike: { rotulo: 'Bike indoor', re: /bike|spinning|ciclismo|cycle/i },
   'esportes-de-areia': { rotulo: 'Beach tennis e areia', re: /beach|futev[ôo]lei|v[ôo]lei de praia|areia/i },
