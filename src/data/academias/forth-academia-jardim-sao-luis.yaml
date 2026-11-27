@@ -52,7 +52,8 @@ agregadores:
 - nome: Wellhub
   situacao: confirmada
   atividades: ["Fisiculturismo", "HIIT funcional", "Mat Pilates", "Power Step"]
-  musculacao: false
+  # "Fisiculturismo" no Wellhub conta como musculação (decisão do Renato, 27/11/2026).
+  musculacao: true
   condicoes: ["Reserva ou agendamento necessário, segundo o Wellhub."]
   conferido_em: '2026-11-17'
   plano_minimo: Basic+
