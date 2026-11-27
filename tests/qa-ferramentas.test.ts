@@ -104,3 +104,37 @@ test('hyrox: tempo digitado no teclado numérico do celular ("6.30", "6,30", "1.
   assert.equal(paraSegundos('1.30', 'prova'), 5400);
   assert.equal(paraSegundos('6,5', 'ritmo'), 390); // um dígito: 6,5 minutos
 });
+
+// Rodada 3 (27/11/2026): academia perto de casa ou do trabalho e buscador Wellhub/TotalPass.
+import { planoComum, type EntradaBen } from '../src/lib/beneficios.ts';
+import { mensagemCaminho } from '../src/lib/caminho.ts';
+import { readdirSync } from 'node:fs';
+
+test('benefícios: planoComum não depende da ordem das unidades', () => {
+  const W = ['Starter', 'Basic', 'Basic+', 'Silver', 'Silver+', 'Gold', 'Gold+', 'Platinum', 'Diamond'];
+  const soAreia: EntradaBen[] = [{ nome: 'Wellhub', plano_minimo: 'Diamond', musculacao: false, atividades: ['Beach tennis'] }];
+  const ab = planoComum([], soAreia, 'Wellhub', 'musculacao', W), ba = planoComum(soAreia, [], 'Wellhub', 'musculacao', W);
+  assert.equal(ab.tipo, ba.tipo); assert.equal(ab.tipo, 'incompativel');
+});
+
+test('caminho: mensagem do WhatsApp com só o destino (origem pela localização)', () => {
+  assert.match(mensagemCaminho('', 'Shopping Iguatemi Alphaville'), /Trabalho perto de Shopping Iguatemi Alphaville\./);
+});
+
+test('dados: preço e plano mínimo de cada ficha batem com a tabela oficial dos agregadores', () => {
+  const Dd = new URL('../src/data/', import.meta.url);
+  const P = JSON.parse(readFileSync(new URL('planos-agregadores.json', Dd), 'utf8'));
+  const tab: Record<string, Record<string, string>> = { Wellhub: Object.fromEntries(P.wellhub.planos), TotalPass: Object.fromEntries(P.totalpass.planos) };
+  const ord: Record<string, string[]> = { Wellhub: P.wellhub.planos.map((x: string[]) => x[0]), TotalPass: P.totalpass.planos.map((x: string[]) => x[0]) };
+  for (const f of readdirSync(new URL('academias/', Dd))) {
+    const y = readFileSync(new URL('academias/' + f, Dd), 'utf8');
+    for (const [, ben, corpo] of y.matchAll(/- nome: (Wellhub|TotalPass)\n([\s\S]*?)(?=\n- nome:|\n[a-z_]+:)/g)) {
+      const min = /plano_minimo: (.+)/.exec(corpo)?.[1].trim(); if (!min) continue;
+      const preco = /preco_plano: R\$ (.+)/.exec(corpo)?.[1].trim();
+      assert.ok(ord[ben].includes(min), `${f}: ${min} fora da ordem`);
+      if (preco) assert.equal(preco, tab[ben][min], `${f} ${ben} ${min}`);
+      const lista = /planos: \[(.+)\]/.exec(corpo)?.[1].split(',').map((s) => s.trim().replace(/"/g, ''));
+      if (lista) assert.equal(ord[ben].find((p) => lista.includes(p)), min, `${f}: plano_minimo não é o menor da lista`);
+    }
+  }
+});

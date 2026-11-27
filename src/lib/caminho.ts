@@ -57,6 +57,6 @@ export function analisar<T extends Lugar>(casa: Ponto, trabalho: Ponto | null, l
 
 /** Mensagem do WhatsApp para o Montinho: só os nomes dos pontos escolhidos, nunca coordenadas. */
 export function mensagemCaminho(casa: string, trabalho: string): string {
-  const onde = casa && trabalho ? `Moro perto de ${casa} e trabalho perto de ${trabalho}.` : casa ? `Fico perto de ${casa}.` : '';
+  const onde = casa && trabalho ? `Moro perto de ${casa} e trabalho perto de ${trabalho}.` : casa ? `Fico perto de ${casa}.` : trabalho ? `Trabalho perto de ${trabalho}.` : '';
   return `Olá, Montinho! Usei a busca de academia perto de casa ou do trabalho no Guia Fitness Alphaville. ${onde} Quero treinar com personal: como funciona o seu atendimento?`.replace(/\s+/g, ' ');
 }

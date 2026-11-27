@@ -5,8 +5,8 @@ tipo: estudio
 resumo: Escola de jiu-jitsu no Mackenzie Mall, na Av. Tucunaré, no Centro Empresarial Tamboré, com aulas de muay thai e boxe listadas no TotalPass.
 endereco: Av. Tucunaré, 1498, loja 05 (Mackenzie Mall) - Centro Empresarial Tamboré, Barueri - SP
 geo:
-  lat: -23.494059
-  lng: -46.835607
+  lat: -23.488764
+  lng: -46.833994
 horario:
   seg:
   - 06:00-22:00
@@ -84,9 +84,9 @@ proveniencia:
   nivel: fonte-publica
 - campos:
   - geo
-  fonte: OpenStreetMap, trecho da Av. Tucunaré (posição aproximada pela rua)
-  url: https://www.openstreetmap.org/
-  conferido_em: '2026-11-16'
+  fonte: 'Localização aproximada: coordenadas do Mackenzie Mall (Av. Tucunaré, 1498), tiradas da página da Bluefit Tamboré, no mesmo endereço, no Wellhub. Até 27/11/2026 a ficha usava um ponto da rua cerca de 600 m adiante'
+  url: https://wellhub.com/pt-br/search/partners/academia-bluefit-tambore-granja-viana-cotia/
+  conferido_em: '2026-11-27'
   nivel: fonte-publica
 divergencias:
 - 'Sábado: o Wellhub informa das 9h às 12h; o TotalPass, das 9h às 16h. A ficha usa o horário menor.'
