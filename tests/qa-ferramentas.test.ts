@@ -138,3 +138,10 @@ test('dados: preço e plano mínimo de cada ficha batem com a tabela oficial dos
     }
   }
 });
+
+test('benefícios: filtro de CrossFit pega CrossFit e cross training, não "Cross Fight" nem "Cross Funcional"', async () => {
+  const { MODS_BEN } = await import('../src/lib/beneficios.ts');
+  const re = MODS_BEN.crossfit.re;
+  for (const s of ['CrossFit', 'Crossfit', 'CrossFit infantil', 'Templo SA – CrossFit', 'Cross training', 'WOD']) assert.ok(re.test(s), s);
+  for (const s of ['Cross Fight', 'Cross Funcional', 'Crossfoot']) assert.ok(!re.test(s), s);
+});

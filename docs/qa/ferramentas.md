@@ -134,5 +134,5 @@ A conta de distância, os grupos e os preços dos planos estavam certos.
 
 **Pendente:**
 - Forja e Forth listam "Fisiculturismo" no Wellhub, mas a página diz "sem musculação". Conferir no Wellhub se fisiculturismo conta como musculação.
-- O filtro de CrossFit conta "Cross Fight" e "Cross Funcional". Decidir se entram.
+- ~~O filtro de CrossFit conta "Cross Fight" e "Cross Funcional".~~ Decidido pelo Renato em 27/11/2026: não são CrossFit e não entram. Filtro corrigido e coberto por teste.
 - Com dois pontos e nada no raio, a mensagem só cita a academia mais próxima da origem.
