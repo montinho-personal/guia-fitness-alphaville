@@ -13,8 +13,8 @@ achados e o que foi corrigido.
 | 2 | Calculadora de preço de personal | `/ferramentas/calculadora-preco-personal-alphaville/` | `src/lib/precoPersonal.ts`, `tests/preco-personal.test.ts`, `tests/qa-ferramentas.test.ts` | 26/11/2026 |
 | 3 | Calculadora Hyrox | `/ferramentas/calculadora-hyrox/` | `src/lib/hyrox.ts`, `src/data/hyrox.json`, `tests/hyrox.test.ts`, `tests/qa-ferramentas.test.ts` | 26/11/2026 |
 | 4 | Treino na academia do condomínio | `/ferramentas/treino-academia-do-condominio/` | `src/lib/treinoCondominio.ts`, `tests/treino-condominio.test.ts`, `tests/qa-ferramentas.test.ts` | 26/11/2026 |
-| 5 | Academia perto de casa ou do trabalho | `/ferramentas/academia-perto-de-casa-ou-do-trabalho/` | `src/lib/caminho.ts`, `tests/caminho.test.ts` | — |
-| 6 | Buscador Wellhub e TotalPass | `/academias/wellhub-totalpass/` | `tests/beneficios.test.ts` | — |
+| 5 | Academia perto de casa ou do trabalho | `/ferramentas/academia-perto-de-casa-ou-do-trabalho/` | `src/lib/caminho.ts`, `tests/caminho.test.ts`, `tests/qa-ferramentas.test.ts` | 27/11/2026 |
+| 6 | Buscador Wellhub e TotalPass | `/academias/wellhub-totalpass/` | `tests/beneficios.test.ts`, `tests/qa-ferramentas.test.ts` | 27/11/2026 |
 | 7 | Academias abertas (domingo e 24h) | `/ferramentas/academias-abertas-alphaville/` | `tests/horarios.test.ts` | — |
 | 8 | Diária e aula experimental | `/ferramentas/academias-diaria-aula-experimental-alphaville/` | `tests/acesso.test.ts` | — |
 | 9 | Academias que aceitam personal externo | `/ferramentas/academias-que-aceitam-personal-externo/` | `tests/personal.test.ts` | — |
@@ -88,3 +88,51 @@ Especialistas: QA funcional (Playwright, desktop), mobile e acessibilidade (Pixe
 - Não foi possível conferir as cargas no site oficial do Hyrox (bloqueado aqui). O JSON diz "50 m (2 × 25 m)" para os trenós, e o auditor lembra de 4 × 12,5 m no regulamento. Fica para conferir quando o site abrir.
 - Uma estação preenchida com "0:00" ainda é tratada como em branco.
 - A dica de cada campo da Hyrox ainda é lida duas vezes pelo leitor de tela.
+
+### Rodada 3 — 27/11/2026: academia perto de casa ou do trabalho e buscador Wellhub e TotalPass
+
+Especialistas:
+- **QA funcional:** Playwright em desktop. Testou 252 links internos, 88 páginas de agregador e as 35.721 combinações do modo "duas unidades".
+- **Mobile e acessibilidade:** Pixel 7 e iPhone 13.
+- **Auditor de cálculos e dados:** fez a distância por haversine próprio, conferida com Vincenty; recalculou os grupos; conferiu os preços das 86 entradas de agregador e as coordenadas de uma amostra de fichas.
+
+A conta de distância, os grupos e os preços dos planos estavam certos.
+
+**Erros achados e corrigidos (academia perto de casa ou do trabalho):**
+- **Destaque da casa:** a Arena 18, que abre cada grupo por regra, empurrava a 8ª academia mais perto para "E mais N". Agora o destaque entra além das 8 mais perto. Nos textos que afirmam "as mais perto" (resposta direta e perguntas), a ordem é só a da distância.
+- **Fechadas no horário:** o resumo dizia que academias tinham ficado de fora por estar fechadas mesmo quando estavam fora da distância. Agora só conta as fechadas que entrariam na lista.
+- **Distância máxima:** o resumo mandava "aumente a distância" mesmo já em 5 km. Agora sugere tirar um filtro.
+- **Endereço da busca:** com "Minha localização", ou depois de um erro, o endereço ficava com a busca anterior. Agora ele acompanha a tela, sem a coordenada.
+- **WhatsApp:** a mensagem perdia o destino quando a origem era a localização.
+- **Texto:** "1 academias que funcionam" passou a sair no singular.
+- **Acessibilidade:**
+  - No erro, o foco ia para um `<select>` escondido. Agora vai para o seletor visível; a correção vale para o site todo.
+  - O contorno de foco e a caixa marcada tinham 2,87:1 de contraste.
+
+**Erros achados e corrigidos (Wellhub e TotalPass):**
+- **Clique no cartão:** clicar em qualquer parte de um cartão filtrava a lista pela região dele.
+- **Qual plano cobre as duas:** a resposta mudava com a ordem das unidades (Sodimac + Estação dava "pendente"; na ordem inversa, "incompatível").
+- **"Plano mais baixo":** a pergunta frequente e a resposta direta incluíam a Arena 18 (Gold e TP 4) entre as de plano mais baixo. Agora a lista é por plano.
+- **Endereço da página:** com par inválido, o endereço ficava com o par anterior; `?reg=` desconhecido zerava a lista.
+- **Mobile e acessibilidade:**
+  - "Limpar filtros" fazia o foco sumir.
+  - O benefício não respondia às setas.
+  - O último chip de região ficava escondido fora da tela.
+  - No modo de duas unidades, o nome da unidade aparecia cortado no celular.
+
+**No site todo:**
+- A folha do seletor ganhou nome acessível.
+- O título dos grupos da folha ganhou contraste (4,25:1 → mais escuro).
+
+**Dados corrigidos:**
+- **Templo Jiu Jitsu (Av. Tucunaré, 1498):** a coordenada estava cerca de 600 m adiante, num ponto aproximado da rua. Agora usa a da Bluefit Tamboré, no mesmo Mackenzie Mall.
+- **SIX (Av. Copacabana, 325):** usava o ponto da VoiFit, cerca de 290 m dali. Agora usa o da 4Perform, no mesmo endereço.
+
+**Testes:**
+- 3 testes novos: a simetria do plano em comum, a mensagem com só o destino e a coerência de preço e plano mínimo de todas as fichas com a tabela oficial.
+- O reteste nos dois aparelhos achou um erro introduzido na correção (`RAIOS` não importado no script da página), que foi corrigido. Depois disso, passou sem erro de JavaScript.
+
+**Pendente:**
+- Forja e Forth listam "Fisiculturismo" no Wellhub, mas a página diz "sem musculação". Conferir no Wellhub se fisiculturismo conta como musculação.
+- O filtro de CrossFit conta "Cross Fight" e "Cross Funcional". Decidir se entram.
+- Com dois pontos e nada no raio, a mensagem só cita a academia mais próxima da origem.

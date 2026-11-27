@@ -209,6 +209,16 @@ const urlPE = (nome: string) => `/ferramentas/academias-que-aceitam-personal-ext
       history.replaceState(null, '', `?${q}`);
     }
     document.querySelectorAll<HTMLButtonElement>('[data-ben][role=radio]').forEach((b) => b.addEventListener('click', () => { ben = b.dataset.ben as Beneficio; opcoesPlano(); aplicar(); ev('beneficio_filtro', { filtro: 'beneficio' }); }));
+    // Grupo de rádio do benefício: setas trocam a opção; só a marcada entra no Tab.
+    const radiosBen = [...document.querySelectorAll<HTMLButtonElement>('[data-ben][role=radio]')];
+    const tabBen = () => radiosBen.forEach((r) => { r.tabIndex = r.getAttribute('aria-checked') === 'true' ? 0 : -1; });
+    radiosBen.forEach((b, i) => b.addEventListener('keydown', (e) => {
+      if (!['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'].includes(e.key)) return;
+      e.preventDefault(); const prox = radiosBen[(i + (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : radiosBen.length - 1)) % radiosBen.length];
+      prox.click(); tabBen(); prox.focus();
+    }));
+    radiosBen.forEach((b) => b.addEventListener('click', () => setTimeout(tabBen)));
+    tabBen();
     selPlano.addEventListener('change', () => { aplicar(); ev('beneficio_filtro', { filtro: 'plano' }); });
     selMod.addEventListener('change', () => { aplicar(); ev('beneficio_filtro', { filtro: 'modalidade' }); });
     document.querySelectorAll<HTMLButtonElement>('button[data-reg]').forEach((b) => b.addEventListener('click', () => {
@@ -271,7 +281,7 @@ const urlPE = (nome: string) => `/ferramentas/academias-que-aceitam-personal-ext
   .bn-linha{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
   .bn-linha label{display:flex;flex-direction:column;gap:5px;font:600 13px var(--display);color:var(--cinza);min-width:0}
   .bn-linha select{width:100%;font:700 16px var(--display);padding:12px;border:1.5px solid #E3DDCF;border-radius:12px;background:#fff;color:var(--tinta)}
-  .bn-chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  .bn-chips{display:flex;flex-wrap:wrap;gap:8px}
   .bn-chips button{flex:none;border:1.5px solid #E3DDCF;background:#fff;border-radius:999px;padding:8px 13px;font:700 13.5px var(--display);color:var(--tinta);cursor:pointer;white-space:nowrap}
   .bn-chips button[aria-pressed=true]{background:var(--tinta);border-color:var(--tinta);color:#fff}
   .bn-conta{margin:0;font:700 14px var(--display);color:var(--alameda)}
@@ -297,6 +307,7 @@ const urlPE = (nome: string) => `/ferramentas/academias-que-aceitam-personal-ext
   .bn-vazio{margin-top:12px}
   .bn-intro{margin:0 0 12px}
   .par-res{margin-top:14px}
+  @media(max-width:699px){#modo-par .bn-linha{grid-template-columns:minmax(0,1fr)}}
   .par-grade{display:grid;gap:12px}
   @media(min-width:700px){.par-grade{grid-template-columns:1fr 1fr}}
   .par-card{background:#fff;border:1px solid #E3DDCF;border-radius:16px;padding:14px 16px}

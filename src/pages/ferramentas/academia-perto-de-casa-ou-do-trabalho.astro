@@ -144,7 +144,7 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
 
   <script type="application/json" id="cm-dados" set:html={JSON.stringify({ U, pontos: PONTOS.map(({ id, nome, lat, lng }) => ({ id, nome, lat, lng })), feriados: FER.feriados, whats: WHATSAPP })}></script>
   <script>
-    import { analisar, distKm, distTexto, mensagemCaminho, type Item, type Lugar } from '../../lib/caminho';
+    import { analisar, distKm, distTexto, mensagemCaminho, RAIOS, type Item, type Lugar } from '../../lib/caminho';
     import { avaliar, diaDaSemana, somaDias, hora, textoMotivo, type Feriado, type UnidadeHorario } from '../../lib/horarios';
     type Un = Lugar & UnidadeHorario & { url: string; tipo: string; preco: string; musc: boolean; bairro: string; lugar: string; e24: boolean; beneficios: string[] };
     const J = JSON.parse(document.getElementById('cm-dados')!.textContent!) as { U: Un[]; pontos: (Lugar)[]; feriados: Feriado[]; whats: string };
@@ -261,9 +261,9 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
   .cm .campo label.rotulo { display: block; }
   .cm .cm-geo { margin-top: 8px; min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 1.5px solid #111827; background: #fff; font: 700 14.5px/1 var(--display); cursor: pointer; }
   .cm .cm-geo:hover { background: #111827; color: #fff; }
-  .cm .cm-geo:focus-visible, .cm .cm-check input:focus-visible { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .cm .cm-geo:focus-visible, .cm .cm-check input:focus-visible { outline: 3px solid #A84300; outline-offset: 2px; }
   .cm .cm-check { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 16px; cursor: pointer; }
-  .cm .cm-check input { width: 22px; height: 22px; accent-color: #FF6A00; }
+  .cm .cm-check input { width: 22px; height: 22px; accent-color: #C24E00; }
   .cm .cm-erro { color: #a11; font-weight: 700; margin: 0; }
   .cm .cm-nota { font-size: 14px; color: var(--cinza, #4b5563); margin: 0; }
   .cm .cm-res { margin: 10px 0 20px; scroll-margin-top: 12px; }

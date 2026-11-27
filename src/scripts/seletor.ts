@@ -23,7 +23,7 @@ function rotuloDe(sel: HTMLSelectElement): string {
 
 function criaFolha(): HTMLDialogElement {
   const d = document.createElement('dialog');
-  d.className = 'sel-folha';
+  d.className = 'sel-folha'; d.setAttribute('aria-labelledby', 'sel-titulo');
   d.innerHTML = '<div class="sel-caixa"><div class="sel-topo"><h2 class="sel-titulo" id="sel-titulo"></h2><button type="button" class="sel-fechar" aria-label="Fechar">×</button></div>'
     + '<div class="sel-busca" hidden><input type="search" placeholder="Buscar na lista" aria-label="Buscar na lista" autocomplete="off"></div>'
     + '<div class="sel-lista" role="listbox" aria-labelledby="sel-titulo" tabindex="-1"></div><p class="sel-vazio" hidden>Nada encontrado.</p></div>';
@@ -102,6 +102,8 @@ function melhora(sel: HTMLSelectElement) {
   // Dentro de <label>, o botão vira o controle do rótulo (vem antes do select). Com <label for>, damos o nome à mão.
   btn.dataset.rot = rot; btn.setAttribute('aria-label', rot);
   (sel as any)._selBtn = btn;
+  // O <select> fica escondido: quem chamar sel.focus() (erro de formulário, "Limpar filtros") leva o foco ao botão.
+  sel.focus = (o?: FocusOptions) => btn.focus(o);
   sel.before(btn); sel.classList.add('sel-nativo'); sel.tabIndex = -1; sel.setAttribute('aria-hidden', 'true');
   btn.addEventListener('click', () => abre(sel, btn));
   btn.addEventListener('keydown', (e) => { if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); abre(sel, btn); } });
