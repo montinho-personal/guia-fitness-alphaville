@@ -29,7 +29,8 @@ const conta = (ben: Beneficio, mod?: string, reg?: string) => linhas.filter((l) 
 const academiasMusc = todas.filter((a) => a.data.tipo === 'academia');
 const semBen = (ben: Beneficio) => academiasMusc.filter((a) => !ents(a).some((x) => x.nome === ben));
 const lista = (xs: string[]) => xs.join(', ').replace(/, ([^,]*)$/, ' e $1');
-const minMusc = (ben: Beneficio) => linhas.filter((l) => l.ben === ben && l.mods.includes('musculacao') && l.a.data.regiao === 'alphaville').slice(0, 6).map((l) => `${l.a.data.nome} (${l.e.plano_minimo})`);
+// "Plano mais baixo": ordem só pelo plano (o destaque da casa, que abre as listas, não entra nesta afirmação).
+const minMusc = (ben: Beneficio) => linhas.filter((l) => l.ben === ben && l.mods.includes('musculacao') && l.a.data.regiao === 'alphaville').slice().sort((x, y) => x.rank - y.rank || x.a.data.nome.localeCompare(y.a.data.nome, 'pt-BR')).slice(0, 6).map((l) => `${l.a.data.nome} (${l.e.plano_minimo})`);
 const conf = new Date(planos.conferido_em);
 const R = (n: string) => n.replace('.', ',');
 
@@ -208,9 +209,19 @@ const urlPE = (nome: string) => `/ferramentas/academias-que-aceitam-personal-ext
       history.replaceState(null, '', `?${q}`);
     }
     document.querySelectorAll<HTMLButtonElement>('[data-ben][role=radio]').forEach((b) => b.addEventListener('click', () => { ben = b.dataset.ben as Beneficio; opcoesPlano(); aplicar(); ev('beneficio_filtro', { filtro: 'beneficio' }); }));
+    // Grupo de rádio do benefício: setas trocam a opção; só a marcada entra no Tab.
+    const radiosBen = [...document.querySelectorAll<HTMLButtonElement>('[data-ben][role=radio]')];
+    const tabBen = () => radiosBen.forEach((r) => { r.tabIndex = r.getAttribute('aria-checked') === 'true' ? 0 : -1; });
+    radiosBen.forEach((b, i) => b.addEventListener('keydown', (e) => {
+      if (!['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp'].includes(e.key)) return;
+      e.preventDefault(); const prox = radiosBen[(i + (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : radiosBen.length - 1)) % radiosBen.length];
+      prox.click(); tabBen(); prox.focus();
+    }));
+    radiosBen.forEach((b) => b.addEventListener('click', () => setTimeout(tabBen)));
+    tabBen();
     selPlano.addEventListener('change', () => { aplicar(); ev('beneficio_filtro', { filtro: 'plano' }); });
     selMod.addEventListener('change', () => { aplicar(); ev('beneficio_filtro', { filtro: 'modalidade' }); });
-    document.querySelectorAll<HTMLButtonElement>('[data-reg]').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll<HTMLButtonElement>('button[data-reg]').forEach((b) => b.addEventListener('click', () => {
       reg = b.dataset.reg || ''; document.querySelectorAll('[data-reg]').forEach((x) => { if (x.tagName === 'BUTTON') x.setAttribute('aria-pressed', String(x === b)); }); aplicar(); ev('beneficio_filtro', { filtro: 'regiao' });
     }));
     $('bn-limpar').addEventListener('click', () => { selPlano.value = ''; selMod.value = 'musculacao'; reg = ''; document.querySelectorAll('[data-reg]').forEach((x) => { if (x.tagName === 'BUTTON') x.setAttribute('aria-pressed', String(!(x as HTMLElement).dataset.reg)); }); aplicar(); selPlano.focus(); });
@@ -220,8 +231,9 @@ const urlPE = (nome: string) => `/ferramentas/academias-que-aceitam-personal-ext
     const sa = $('par-a') as HTMLSelectElement, sb = $('par-b') as HTMLSelectElement, sm = $('par-mod') as HTMLSelectElement;
     function comparar(registrar = true) {
       const a = porId(sa.value), b = porId(sb.value); const out = $('par-res');
-      if (!a || !b) { out.innerHTML = '<p class="nota-pq">Escolha as duas unidades.</p>'; return; }
-      if (a.id === b.id) { out.innerHTML = '<p class="nota-pq">Escolha duas unidades diferentes.</p>'; return; }
+      const urlPar = () => { const q = new URLSearchParams({ modo: 'par' }); if (a) q.set('a', a.id); if (b) q.set('b', b.id); if (sm.value !== 'musculacao') q.set('mod', sm.value); history.replaceState(null, '', `?${q}`); };
+      if (!a || !b) { out.innerHTML = '<p class="nota-pq">Escolha as duas unidades.</p>'; urlPar(); return; }
+      if (a.id === b.id) { out.innerHTML = '<p class="nota-pq">Escolha duas unidades diferentes.</p>'; urlPar(); return; }
       const mod = sm.value; const rot = J.mods[mod].toLowerCase();
       const cards = (['Wellhub', 'TotalPass'] as Beneficio[]).map((bn) => {
         const r = planoComum(a.ags, b.ags, bn, mod, J.ordem[bn], [a.nome, b.nome]);
@@ -248,7 +260,7 @@ const urlPE = (nome: string) => `/ferramentas/academias-que-aceitam-personal-ext
     // ---------- estado inicial pela URL ----------
     opcoesPlano(p.get('plano') || '');
     if (p.get('mod') && J.mods[p.get('mod')!]) { selMod.value = p.get('mod')!; sm.value = p.get('mod')!; }
-    if (p.get('reg')) { reg = p.get('reg')!; document.querySelectorAll('[data-reg]').forEach((x) => { if (x.tagName === 'BUTTON') x.setAttribute('aria-pressed', String((x as HTMLElement).dataset.reg === reg)); }); }
+    if (p.get('reg') && document.querySelector(`button[data-reg="${CSS.escape(p.get('reg')!)}"]`)) { reg = p.get('reg')!; document.querySelectorAll('[data-reg]').forEach((x) => { if (x.tagName === 'BUTTON') x.setAttribute('aria-pressed', String((x as HTMLElement).dataset.reg === reg)); }); }
     if (p.get('modo') === 'par' || (p.get('a') && p.get('b'))) {
       if (porId(p.get('a') || '')) sa.value = p.get('a')!; if (porId(p.get('b') || '')) sb.value = p.get('b')!;
       abrir(1);
@@ -269,7 +281,7 @@ const urlPE = (nome: string) => `/ferramentas/academias-que-aceitam-personal-ext
   .bn-linha{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
   .bn-linha label{display:flex;flex-direction:column;gap:5px;font:600 13px var(--display);color:var(--cinza);min-width:0}
   .bn-linha select{width:100%;font:700 16px var(--display);padding:12px;border:1.5px solid #E3DDCF;border-radius:12px;background:#fff;color:var(--tinta)}
-  .bn-chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  .bn-chips{display:flex;flex-wrap:wrap;gap:8px}
   .bn-chips button{flex:none;border:1.5px solid #E3DDCF;background:#fff;border-radius:999px;padding:8px 13px;font:700 13.5px var(--display);color:var(--tinta);cursor:pointer;white-space:nowrap}
   .bn-chips button[aria-pressed=true]{background:var(--tinta);border-color:var(--tinta);color:#fff}
   .bn-conta{margin:0;font:700 14px var(--display);color:var(--alameda)}
@@ -295,6 +307,7 @@ const urlPE = (nome: string) => `/ferramentas/academias-que-aceitam-personal-ext
   .bn-vazio{margin-top:12px}
   .bn-intro{margin:0 0 12px}
   .par-res{margin-top:14px}
+  @media(max-width:699px){#modo-par .bn-linha{grid-template-columns:minmax(0,1fr)}}
   .par-grade{display:grid;gap:12px}
   @media(min-width:700px){.par-grade{grid-template-columns:1fr 1fr}}
   .par-card{background:#fff;border:1px solid #E3DDCF;border-radius:16px;padding:14px 16px}

@@ -7,8 +7,8 @@ titulo_seo: 'SIX Alphaville: mensalidade, endereço e horário'
 resumo: Wellness club de alto padrão no rooftop do 23º andar do Empresarial 18 do Forte, com musculação, aulas, spa e valet, inaugurado em outubro de 2026.
 endereco: Av. Copacabana, 325, 23º andar - Empresarial 18 do Forte, Barueri - SP, 06472-001
 geo:
-  lat: -23.486614
-  lng: -46.856577
+  lat: -23.484725617660207
+  lng: -46.85466955767254
 horario:
   seg:
   - 06:00-22:00
@@ -69,9 +69,9 @@ proveniencia:
   nivel: fonte-publica
 - campos:
   - geo
-  fonte: 'Localização aproximada: coordenadas do Empresarial 18 do Forte, tiradas da página da VoiFit, no mesmo conjunto, no Wellhub'
-  url: https://wellhub.com/pt-br/search/partners/voifit-academia-alphaville-empresarial-18-do-forte-barueri/
-  conferido_em: '2026-11-14'
+  fonte: 'Localização aproximada: coordenadas da Av. Copacabana, 325 (Empresarial 18 do Forte), tiradas da página da 4Perform, no mesmo endereço, no TotalPass. Até 27/11/2026 a ficha usava o ponto da VoiFit, na Av. Alphaville, cerca de 290 m dali'
+  url: https://totalpass.com/br/academias/4perform/
+  conferido_em: '2026-11-27'
   nivel: fonte-publica
 - campos:
   - analise

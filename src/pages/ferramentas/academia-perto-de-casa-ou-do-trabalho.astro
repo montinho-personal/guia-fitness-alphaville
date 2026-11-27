@@ -41,7 +41,8 @@ const conferido = new Date(P0.conferido_em + 'T12:00:00Z').toLocaleDateString('p
 const pt = (id: string) => PONTOS.find((p) => p.id === id)!;
 const ex = analisar(pt('alphaville-10'), pt('iguatemi-alphaville'), U.filter((u) => u.musc), RAIO_PADRAO);
 const exN = ex.casa.length + ex.trabalho.length + ex.caminho.length;
-const nomes = (xs: { lugar: { nome: string } }[], n = 3) => xs.slice(0, n).map((x) => x.lugar.nome).join(', ');
+// Nos textos que dizem "as mais perto", a ordem é só a da distância: o destaque da casa fica de fora da afirmação.
+const nomes = (xs: { lugar: { nome: string; destaque?: boolean } }[], n = 3) => xs.filter((x) => !x.lugar.destaque).slice(0, n).map((x) => x.lugar.nome).join(', ');
 const n24 = U.filter((u) => u.e24).length, nBen = U.filter((u) => u.beneficios.length).length;
 const comPreco = U.filter((u) => u.preco);
 const titulo = 'Academia perto de casa ou do trabalho em Alphaville e Barueri';
@@ -50,7 +51,7 @@ const perguntas = [
   { p: 'É melhor academia perto de casa ou do trabalho?', r: 'Depende de quando você treina. Quem treina antes ou depois do expediente costuma ir mais à que fica perto do trabalho ou no caminho, porque não depende de sair de casa de novo. Quem treina no fim de semana ou trabalha de casa alguns dias aproveita mais a que fica perto de casa. A ferramenta mostra as três situações lado a lado para você comparar.' },
   { p: 'Como achar academia no caminho do trabalho em Alphaville?', r: `Escolha o ponto mais próximo da sua casa e o do trabalho. A busca separa as academias perto de casa, perto do trabalho e no caminho, que são as que exigem pouco desvio. Exemplo: de Alphaville Residencial 10 ao Shopping Iguatemi Alphaville, com distância e desvio de até 1,6 km, aparecem ${exN} academias de musculação com ficha no guia: ${ex.casa.length} perto de casa, ${ex.trabalho.length} perto do shopping e ${ex.caminho.length} no caminho.` },
   { p: 'Como a distância é calculada?', r: 'Em linha reta entre as coordenadas, sem considerar ruas, trânsito ou portarias. Na região, com residenciais fechados e avenidas de mão única, o caminho real costuma ser mais longo. Use a distância para montar uma lista curta e confira o trajeto no seu aplicativo de mapas antes de decidir.' },
-  { p: 'Tem academia 24 horas perto de mim em Alphaville?', r: `O guia tem ${n24} academias com ficha que funcionam 24 horas todos os dias. Escolha o seu ponto e marque um horário: a busca só mostra as que estão abertas naquele dia e hora. Para madrugada e feriados, use também o buscador de academias abertas.` },
+  { p: 'Tem academia 24 horas perto de mim em Alphaville?', r: `O guia tem ${n24} ${n24 === 1 ? 'academia com ficha que funciona' : 'academias com ficha que funcionam'} 24 horas todos os dias. Escolha o seu ponto e marque um horário: a busca só mostra as que estão abertas naquele dia e hora. Para madrugada e feriados, use também o buscador de academias abertas.` },
   { p: 'Quais academias perto de mim aceitam Wellhub ou TotalPass?', r: `Das ${U.length} fichas do guia, ${nBen} informam plano do Wellhub (antigo Gympass) ou do TotalPass. Marque a opção "Aceita Wellhub ou TotalPass" para ver só essas. O plano mínimo de cada uma está na página de Wellhub e TotalPass.` },
   { p: 'A busca mostra o valor da mensalidade das academias perto de mim?', r: `Mostra quando a academia publica o preço. Hoje são ${comPreco.length} das ${U.length} fichas: ${comPreco.map((u) => `${u.nome} (${u.preco})`).join('; ')}. Marque "Só com mensalidade publicada" para ver apenas essas. As demais não divulgam valor no site; a página de preços reúne o que cada uma informa e os planos de benefício que dão acesso.` },
   { p: 'Posso usar a minha localização?', r: 'Pode. O botão "Usar minha localização" pede a permissão do navegador e usa a posição só para calcular as distâncias no seu aparelho. Ela não é enviada nem guardada. Se preferir, escolha um ponto da lista.' },
@@ -143,7 +144,7 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
 
   <script type="application/json" id="cm-dados" set:html={JSON.stringify({ U, pontos: PONTOS.map(({ id, nome, lat, lng }) => ({ id, nome, lat, lng })), feriados: FER.feriados, whats: WHATSAPP })}></script>
   <script>
-    import { analisar, distKm, distTexto, mensagemCaminho, type Item, type Lugar } from '../../lib/caminho';
+    import { analisar, distKm, distTexto, mensagemCaminho, RAIOS, type Item, type Lugar } from '../../lib/caminho';
     import { avaliar, diaDaSemana, somaDias, hora, textoMotivo, type Feriado, type UnidadeHorario } from '../../lib/horarios';
     type Un = Lugar & UnidadeHorario & { url: string; tipo: string; preco: string; musc: boolean; bairro: string; lugar: string; e24: boolean; beneficios: string[] };
     const J = JSON.parse(document.getElementById('cm-dados')!.textContent!) as { U: Un[]; pontos: (Lugar)[]; feriados: Feriado[]; whats: string };
@@ -176,9 +177,9 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
       erro.hidden = true;
       const A = ponto(selA.value), B = ponto(selB.value);
       if (!A) { erro.textContent = 'Escolha de onde você sai, ou use a sua localização.'; erro.hidden = false; res.hidden = true; selA.focus(); return; }
-      if (B && B.id === A.id) { erro.textContent = 'Os dois pontos são iguais. Troque o segundo ou deixe em branco.'; erro.hidden = false; res.hidden = true; selB.focus(); return; }
+      if (B && B.id === A.id) { erro.textContent = 'Os dois pontos são iguais. Troque o segundo ou deixe em branco.'; erro.hidden = false; res.hidden = true; history.replaceState(null, '', location.pathname); selB.focus(); return; }
       const raio = Number($<HTMLSelectElement>('cm-r').value), q = quando($<HTMLSelectElement>('cm-q').value), ben = $<HTMLInputElement>('cm-ben').checked, musc = $<HTMLInputElement>('cm-musc').checked, soPreco = $<HTMLInputElement>('cm-preco').checked;
-      let foraHorario = 0;
+      const fechadas: Un[] = [];
       const status = new Map<string, string>();
       const cand = J.U.filter((u) => {
         if (musc && !u.musc) return false;
@@ -186,11 +187,13 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
         if (soPreco && !u.preco) return false;
         if (!q) return true;
         const r = avaliar(u, q.data, q.ini, 60, J.feriados);
-        if (r.tipo === 'incompativel') { foraHorario++; return false; }
+        if (r.tipo === 'incompativel') { fechadas.push(u); return false; }
         status.set(u.id, r.tipo === 'compativel' ? `<span class="cm-ok">Aberta ${esc(q.texto)}${u.e24 ? '' : r.fecha >= 1440 ? ' · aberta até a meia-noite ou depois' : ` · fecha às ${hora(r.fecha)}`}</span>` : `<span class="cm-pend">${esc(textoMotivo(r.motivo))}</span>`);
         return true;
       });
       const an = analisar(A, B, cand, raio);
+      // Só contam como "fora por estar fechadas" as que entrariam na lista pela distância.
+      const anF = analisar(A, B, fechadas, raio), foraHorario = anF.casa.length + anF.trabalho.length + anF.caminho.length;
       const total = an.casa.length + an.trabalho.length + an.caminho.length;
       const cartao = (x: Item<Un>, grupo: string) => {
         const u = x.lugar, ds: string[] = [];
@@ -201,14 +204,16 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
         const tags = [u.tipo, u.e24 ? '24 horas' : '', ...u.beneficios].filter(Boolean).map((t) => `<span>${esc(t)}</span>`).join('');
         return `<li class="cm-item${u.destaque ? ' cm-destaque' : ''}">${u.destaque ? '<span class="selo-destaque">Destaque · publicidade da casa</span>' : ''}<a class="cm-nome" href="${u.url}" data-evento="clique_academia" data-ref="academia-no-caminho:${u.id}">${esc(u.nome)}</a><p class="cm-onde">${esc(u.bairro)}${u.bairro.includes(u.lugar) ? '' : ` · ${esc(u.lugar)}`}</p><p class="cm-dist">${ds.join(' · ')}</p>${status.get(u.id) ? `<p class="cm-hor">${status.get(u.id)}</p>` : ''}${u.preco ? `<p class="cm-preco">Mensalidade publicada: <b>${esc(u.preco)}</b></p>` : ''}<p class="cm-tags">${tags}</p></li>`;
       };
-      const bloco = (t: string, sub: string, xs: Item<Un>[], g: string) => (xs.length ? `<section class="cm-g"><h3>${t} <small>${xs.length}</small></h3><p class="cm-sub">${sub}</p><ol class="cm-lista">${xs.slice(0, 8).map((x) => cartao(x, g)).join('')}</ol>${xs.length > 8 ? `<p class="cm-mais">E mais ${xs.length - 8}: diminua a distância para ver só as mais próximas.</p>` : ''}</section>` : '');
+      // O destaque da casa abre o grupo, mas não tira do corte nenhuma das 8 mais perto.
+      const vis = (xs: Item<Un>[]) => [...xs.filter((x) => x.lugar.destaque), ...xs.filter((x) => !x.lugar.destaque).slice(0, 8)];
+      const bloco = (t: string, sub: string, xs: Item<Un>[], g: string) => (xs.length ? `<section class="cm-g"><h3>${t} <small>${xs.length}</small></h3><p class="cm-sub">${sub}</p><ol class="cm-lista">${vis(xs).map((x) => cartao(x, g)).join('')}</ol>${xs.length > vis(xs).length ? `<p class="cm-mais">E mais ${xs.length - vis(xs).length}: diminua a distância para ver só as mais próximas.</p>` : ''}</section>` : '');
       $('cm-res-t').textContent = total ? `${total} ${total === 1 ? (musc ? 'academia' : 'lugar') : musc ? 'academias' : 'lugares'} ${B ? 'na sua rota' : 'perto do ponto escolhido'}` : 'Nenhuma academia dentro dessa distância';
       const partes = [B ? `Entre ${A.nome} e ${B.nome} são ${distTexto(an.trajeto!)} em linha reta.` : `Ponto: ${A.nome}.`];
       if (q) partes.push(`Horário: ${q.texto}, com 1 hora de treino.${foraHorario ? ` ${foraHorario} ${foraHorario === 1 ? 'ficou' : 'ficaram'} de fora por estar${foraHorario === 1 ? '' : 'em'} fechada${foraHorario === 1 ? '' : 's'} nesse horário.` : ''}`);
       if (ben) partes.push('Só as que informam plano do Wellhub ou do TotalPass.');
       if (!musc) partes.push('Inclui boxes e estúdios.');
       if (soPreco) partes.push('Só as que publicam a mensalidade.');
-      if (!total && an.maisPertoCasa) partes.push(`A mais próxima de onde você sai é ${an.maisPertoCasa.lugar.nome}, a cerca de ${distTexto(an.maisPertoCasa.dCasa)}. Aumente a distância para vê-la.`);
+      if (!total && an.maisPertoCasa) partes.push(`A mais próxima de onde você sai é ${an.maisPertoCasa.lugar.nome}, a cerca de ${distTexto(an.maisPertoCasa.dCasa)}. ${raio >= RAIOS[RAIOS.length - 1] ? 'Já está na maior distância: tire um dos filtros (horário, benefício ou mensalidade) para ver mais opções.' : 'Aumente a distância para vê-la.'}`);
       $('cm-resumo').textContent = partes.join(' ');
       $('cm-grupos').innerHTML = bloco(B ? 'Perto de onde você sai' : 'As mais próximas', `Até ${distTexto(raio)} em linha reta.`, an.casa, 'casa') + bloco('Perto de onde você vai', `Até ${distTexto(raio)} em linha reta.`, an.trabalho, 'trabalho') + bloco('No caminho', `Desvio de até ${distTexto(raio)} em relação ao trajeto direto.`, an.caminho, 'caminho');
       const arena = J.U.find((u) => u.destaque);
@@ -216,7 +221,8 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
       const nA = A.id === 'geo' ? '' : A.nome, nB = B ? (B.id === 'geo' ? '' : B.nome) : '';
       $<HTMLAnchorElement>('cm-wa').href = `https://wa.me/${J.whats}?text=${encodeURIComponent(mensagemCaminho(nA, nB))}`;
       res.hidden = false;
-      if (A.id !== 'geo' && (!B || B.id !== 'geo')) { const p = new URLSearchParams({ a: A.id }); if (B) p.set('b', B.id); if (raio !== 1.6) p.set('r', String(raio)); const qv = $<HTMLSelectElement>('cm-q').value; if (qv) p.set('q', qv); if (ben) p.set('ben', '1'); if (!musc) p.set('tudo', '1'); if (soPreco) p.set('preco', '1'); history.replaceState(null, '', `${location.pathname}?${p}`); }
+      // Localização do aparelho não vai para o endereço (é coordenada); o resto da busca vai, sem deixar a busca anterior.
+      { const p = new URLSearchParams(); if (A.id !== 'geo') p.set('a', A.id); if (B && B.id !== 'geo') p.set('b', B.id); if (raio !== 1.6) p.set('r', String(raio)); const qv = $<HTMLSelectElement>('cm-q').value; if (qv) p.set('q', qv); if (ben) p.set('ben', '1'); if (!musc) p.set('tudo', '1'); if (soPreco) p.set('preco', '1'); history.replaceState(null, '', `${location.pathname}?${p}`); }
       if (rolar) { res.focus({ preventScroll: true }); res.scrollIntoView({ block: 'start', behavior: 'smooth' }); ev('academia_caminho_busca', { modo: B ? 'dois-pontos' : 'um-ponto', origem: A.id, destino: B ? B.id : '', raio_km: raio, quando: $<HTMLSelectElement>('cm-q').value || 'qualquer', resultados: total }); }
     }
     f.addEventListener('submit', (e) => { e.preventDefault(); buscar(true); });
@@ -255,9 +261,9 @@ const opcoes = (sel?: string) => GRUPOS.map((g) => ({ g, ps: PONTOS.filter((p) =
   .cm .campo label.rotulo { display: block; }
   .cm .cm-geo { margin-top: 8px; min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 1.5px solid #111827; background: #fff; font: 700 14.5px/1 var(--display); cursor: pointer; }
   .cm .cm-geo:hover { background: #111827; color: #fff; }
-  .cm .cm-geo:focus-visible, .cm .cm-check input:focus-visible { outline: 3px solid #FF6A00; outline-offset: 2px; }
+  .cm .cm-geo:focus-visible, .cm .cm-check input:focus-visible { outline: 3px solid #A84300; outline-offset: 2px; }
   .cm .cm-check { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 16px; cursor: pointer; }
-  .cm .cm-check input { width: 22px; height: 22px; accent-color: #FF6A00; }
+  .cm .cm-check input { width: 22px; height: 22px; accent-color: #C24E00; }
   .cm .cm-erro { color: #a11; font-weight: 700; margin: 0; }
   .cm .cm-nota { font-size: 14px; color: var(--cinza, #4b5563); margin: 0; }
   .cm .cm-res { margin: 10px 0 20px; scroll-margin-top: 12px; }

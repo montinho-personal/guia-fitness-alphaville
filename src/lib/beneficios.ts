@@ -79,8 +79,11 @@ export function planoComum(a: EntradaBen[], b: EntradaBen[], ben: Beneficio, mod
   for (const [c, n] of [[ca, nomes[0]], [cb, nomes[1]]] as const) {
     if (c.estado === 'nao-aceita') return { tipo: 'incompativel', motivo: `${n} não aceita o ${ben}, segundo a fonte.` };
   }
+  // Primeiro o que torna a dupla incompatível nas duas unidades; só depois o que deixa pendente (a ordem não muda o resultado).
   for (const [c, n] of [[ca, nomes[0]], [cb, nomes[1]]] as const) {
     if (c.estado === 'outra-modalidade') return { tipo: 'incompativel', motivo: `${n} aceita o ${ben}, mas a página do benefício não lista ${rot}.` };
+  }
+  for (const [c, n] of [[ca, nomes[0]], [cb, nomes[1]]] as const) {
     if (c.estado === 'a-confirmar') return { tipo: 'pendente', motivo: c.e ? `A página do ${ben} de ${n} não detalha as atividades.` : `${n} não aparece no catálogo do ${ben} conferido pelo guia; confirme no aplicativo.` };
   }
   const pa = planosQueAcessam(ca.e!, ordem), pb = planosQueAcessam(cb.e!, ordem);
